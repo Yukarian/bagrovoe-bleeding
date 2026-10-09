@@ -1,0 +1,33 @@
+name: Release Foundry module
+on:
+  push:
+    tags:
+      - 'v*'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate release
+        run: |
+          node --check scripts/bleeding.js
+          node -e 'const fs = require("fs"); const m = JSON.parse(fs.readFileSync("module.json", "utf8")); if (process.env.GITHUB_REF_NAME !== `v${m.version}`) throw new Error("Tag and manifest version differ"); for (const p of m.esmodules) if (!fs.existsSync(p)) throw new Error(`Missing file: ${p}`);'
+      - name: Package module
+        run: |
+          mkdir -p dist/bagrovoe-bleeding/scripts
+          cp module.json dist/bagrovoe-bleeding/
+          cp scripts/bleeding.js dist/bagrovoe-bleeding/scripts/
+          cd dist
+          zip -r ../bagrovoe-bleeding.zip bagrovoe-bleeding
+      - uses: softprops/action-gh-release@v2
+        with:
+          fail_on_unmatched_files: true
+          body: |
+            Багровое Причастие — Кровотечение, версия 3.0.0.
+            Предназначен для Foundry VTT V14 и D&D5e 6.0.5.
+            Интеграционное тестирование в запущенной Foundry не проводилось.
+          files: |
+            bagrovoe-bleeding.zip
+            module.json
