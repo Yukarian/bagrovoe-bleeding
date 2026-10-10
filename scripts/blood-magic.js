@@ -3,7 +3,7 @@ const processed = new WeakSet();
 const inFlight = new Map();
 const num = (v, fallback=0) => Number.isFinite(Number(v)) ? Number(v) : fallback;
 const clamp = (x, low, high) => Math.max(low,Math.min(high,x));
-const enabled = (a) => a?.getFlag?.(MOD,"bloodMagic") === true || a?.system?.details?.type?.subtype === "заражённый";
+
 const owned = actor => actor?.isOwner || game.user?.isGM;
 const isBloodNpc = actor => actor?.type === "npc" && (actor?.getFlag?.(MOD,"bloodMagic") === true || actor?.system?.details?.type?.subtype === "заражённый");
 const bloodCast = activity => activity?.type === "cast" && (activity?.spell?.uuid?.startsWith("Compendium.bagrovoe-bleeding.blood-spells.") || activity?.item?.getFlag?.(MOD,"bloodMagic") === true);
@@ -11,7 +11,7 @@ function hdPools(actor) {
   const classes = actor.items.filter(item => item.type === "class");
   if (classes.length) return classes.map(cls => ({
     doc:cls, path:"system.hd.spent", size: Math.max(1,num(cls.system.hd?.denomination?.replace("d",""),8)),
-    maximum:Math.max(0,num(cls.system.levels,0)+num(cls.system.hd?.additional,0)),
+    maximum:Math.max(0,num(cls.system.levels,0)),
     spent:Math.max(0,num(cls.system.hd?.spent))
   })).filter(p=>p.maximum);
   const hd=actor.system.attributes.hd??{};
@@ -46,7 +46,7 @@ async function pay(actor,cost) {
    const hp=actor.system.attributes.hp;
    await actor.update({"system.attributes.hp.value":Math.max(0,hp.value-total)});
    if(hp.value-total<=0) await actor.toggleStatusEffect("unconscious",{active:true});
-   if(hp.value-total<=-Math.max(1,hp.max))await actor.toggleStatusEffect("dead",{active:true});
+   if(total>=hp.value+Math.max(1,hp.max))await actor.toggleStatusEffect("dead",{active:true});
  }
  await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content:`<p><strong>Кровавое колдовство:</strong> ${actor.name} — стоимость ${cost} КХ, потрачено ${cost-missing}, нехватка ${missing}${missing?`, урон ${expression} = ${total} (без защит и временных хитов)`:""}.</p>`});
  return {missing,total};
@@ -89,6 +89,36 @@ Hooks.on("dnd5e.postUseLinkedSpell",(activity,usageConfig,results)=>{
      .finally(()=>{if(inFlight.get(actor.uuid)===next)inFlight.delete(actor.uuid);});
 });
 
+
+/**
+ * Player item powers only. Explicitly configured items may spend Hit Dice or HP.
+ * Does not enable blood spellcasting or passive regeneration for player characters.
+ * Configuration flag on item: flags["bagrovoe-bleeding"].itemBloodCost = {
+ *   hitDice: 1, allowHealthSubstitution: false, healthDice: 1,
+ *   healthDie: 8, requireSurvival: false
+ * }
+ * Call by a macro/on-use integration, not by ordinary character spell activity.
+ */
+async function activateItemBloodCost(item) {
+ const actor=item?.actor;
+ if(!actor||!owned(actor))throw new Error("Недостаточно прав на предмет");
+ const config=item.getFlag?.(MOD,"itemBloodCost");
+ if(!config)throw new Error("Предмет не требует кровавой оплаты");
+ const cost=clamp(Math.trunc(num(config.hitDice,0)),0,20);
+ const pools=chooseDice(actor,cost);
+ if(pools.missing&&!config.allowHealthSubstitution)throw new Error("Недостаточно Костей Хитов");
+ const hp=actor.system.attributes.hp;
+ const rollCount= Math.max(pools.missing,clamp(Math.trunc(num(config.healthDice,0)),0,20));
+ const die=clamp(Math.trunc(num(config.healthDie,pools.die)),4,20);
+ const harm=rollCount?(await new Roll(`${rollCount}d${die}`).evaluate()).total:0;
+ if(config.requireSurvival&&hp.value<=harm)throw new Error("Для активации недостаточно здоровья");
+ for(const {pool,count} of pools.spent)await pool.doc.update({[pool.path]:pool.spent+count});
+ if(harm)await actor.update({"system.attributes.hp.value":Math.max(0,hp.value-harm)});
+ await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content:
+   `<p><strong>${item.name}:</strong> потрачено ${cost-pools.missing} Костей Хитов; жертва ${harm} HP.</p>`});
+ return {spent:cost-pools.missing,harm};
+}
+
 function isBleeding(token){
  return Boolean(token?.actor?.effects?.some(e=>!e.disabled && e.getFlag?.(MOD,"bleeding") &&
    (!e.getFlag(MOD,"tokenUuid")||e.getFlag(MOD,"tokenUuid")===token.uuid)));
@@ -98,7 +128,7 @@ async function bloodAttackLifesteal(chat){
  const activity=chat.getAssociatedActivity?.();
  if(activity?.type!=="attack")return;
  const item=activity.item;
- if(!(item?.getFlag?.(MOD,"bloodMagic") || item?.getFlag?.(MOD,"abilities")?.bloodMagic))return;
+ if(!item?.getFlag?.(MOD,"bloodMagic") && !item?.getFlag?.(MOD,"abilities")?.bloodMagic)return;
  const caster=item.actor;
  if(!isBloodNpc(caster))return;
  const combat=game.combat;
@@ -135,6 +165,6 @@ Hooks.once("ready",()=>{
  const module=game.modules.get(MOD);
  if(!module)return;
  module.api??={};
- Object.assign(module.api,{bloodMagic:{hdPools,chooseDice,pay,regain,steal}});
- globalThis.BagrovoeBloodMagic={hdPools,chooseDice,pay,regain,steal};
+ Object.assign(module.api,{bloodMagic:{hdPools,chooseDice,pay,regain,steal,activateItemBloodCost}});
+ globalThis.BagrovoeBloodMagic={hdPools,chooseDice,pay,regain,steal,activateItemBloodCost};
 });
