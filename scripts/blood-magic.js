@@ -67,54 +67,61 @@ async function steal(caster,target,amount=1,heal=0){
 }
 // Intercept before activity use. A re-entrant call with a bypass flag is the only
 // way to guarantee payment precedes the effect without pretending an async hook awaits.
-const authorizedUses = new WeakSet();
-const paymentQueue = new Map();
+// v3.5.5: fail-closed payment gate. A single user click can never launch
+// more than one paid replay; nested and repeated hooks are rejected.
+const activePayments = new Set();
+const authorizedReplays = new Map();
+function activityKey(activity) {
+ const actor=activity?.item?.actor;
+ return actor && activity ? actor.uuid + ":" +
+   (activity.uuid ?? activity.item?.uuid + ":" + activity.id) : null;
+}
 function guardedActivity(activity) {
  const actor=activity?.item?.actor;
  if(!actor || !owned(actor)) return null;
- if(isBloodNpc(actor) && bloodCast(activity)) return { actor, item:activity.item, spell:true };
- if(activity?.item?.getFlag?.(MOD,"itemBloodCost") && (actor.type==="npc" || actor.type==="character")) return { actor,item:activity.item,spell:false };
+ if(isBloodNpc(actor) && bloodCast(activity)) return {actor,item:activity.item,spell:true};
+ if(activity.item?.getFlag?.(MOD,"itemBloodCost") &&
+   (actor.type==="npc" || actor.type==="character")) return {actor,item:activity.item,spell:false};
  return null;
 }
 Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig)=>{
  const entry=guardedActivity(activity);
- if(!entry || authorizedUses.has(activity)){
-   if(entry && authorizedUses.has(activity)) authorizedUses.delete(activity);
-   if(entry?.spell){
+ if(!entry)return;
+ const key=activityKey(activity);
+ if(!key)return false;
+ if(authorizedReplays.has(key)){
+   // Only one nested activation per paid click is authorized.
+   const token=authorizedReplays.get(key);
+   authorizedReplays.delete(key);
+   if(entry.spell) {
      usageConfig.consume??={};
      usageConfig.consume.spellSlot=false;
    }
    return;
  }
- const key=entry.actor.uuid;
- // Queue concurrent requests instead of preventing another activation.
- // Each user activation pays once, independently, in serial order.
- const prior=paymentQueue.get(key) ?? Promise.resolve();
- const job=prior.catch(()=>{}).then(async()=>{
-   const result=entry.spell
-     ? await pay(entry.actor,await costOf(activity,usageConfig))
-     : await activateItemBloodCost(entry.item);
-   if(result?.killed || entry.actor.statuses?.has?.("dead"))return;
-   authorizedUses.add(activity);
-   const next=foundry.utils.deepClone(usageConfig);
-   next.consume??={};
-   if(entry.spell)next.consume.spellSlot=false;
-   // The core may keep the returned Promise pending after displaying the roll.
-   // Invoke synchronously to pass the re-entry guard, but do not hold payment queue
-   // until the entire interactive activity lifecycle completes.
-   try {
-     const useResult=activity.use(next,{...dialogConfig,configure:false},messageConfig);
-     Promise.resolve(useResult).catch(error=>{
-       console.error(MOD,error);
-       ui.notifications.error("Багровое Причастие: "+error.message);
-     });
-   } finally { authorizedUses.delete(activity); }
- });
- paymentQueue.set(key,job);
- job.catch(error=>{
-   console.error(MOD,error);
-   ui.notifications.error("Багровое Причастие: "+error.message);
- }).finally(()=>{if(paymentQueue.get(key)===job)paymentQueue.delete(key);});
+ if(activePayments.has(key))return false; // No warning, no repeated attack.
+ activePayments.add(key);
+ (async()=>{
+   try{
+     const result=entry.spell
+       ? await pay(entry.actor,await costOf(activity,usageConfig))
+       : await activateItemBloodCost(entry.item);
+     if(result?.killed || entry.actor.statuses?.has?.("dead"))return;
+     const next=foundry.utils.deepClone(usageConfig);
+     next.consume??={};
+     if(entry.spell)next.consume.spellSlot=false;
+     authorizedReplays.set(key,true);
+     try {
+       await activity.use(next,{...dialogConfig,configure:false},messageConfig);
+     } finally {authorizedReplays.delete(key);}
+   }catch(error){
+     console.error(MOD,error);
+     ui.notifications.error("Багровое Причастие: "+error.message);
+   }finally{
+     authorizedReplays.delete(key);
+     activePayments.delete(key);
+   }
+ })();
  return false;
 });
 /**
