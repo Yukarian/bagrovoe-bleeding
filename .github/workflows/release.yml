@@ -39,11 +39,18 @@ jobs:
       - name: Validate manifest and tag
         run: |
           node -e 'const fs = require("fs"); const m = JSON.parse(fs.readFileSync("module.json", "utf8")); for (const p of m.esmodules) if (!fs.existsSync(p)) throw new Error(`Missing file: ${p}`);'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Build blood-spell compendium
+        run: |
+          npm install --no-save classic-level@2
+          node scripts/build-pack.mjs
       - name: Package module
         run: |
           mkdir -p dist/bagrovoe-bleeding
           cp module.json README.md CHANGELOG.md TESTING.md dist/bagrovoe-bleeding/
-          cp -r scripts icons dist/bagrovoe-bleeding/
+          cp -r scripts icons packs dist/bagrovoe-bleeding/
           cd dist
           zip -r ../bagrovoe-bleeding.zip bagrovoe-bleeding
           cd ..
