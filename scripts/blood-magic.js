@@ -15,8 +15,8 @@ function hdPools(actor) {
   const hd=actor.system.attributes.hd??{};
   const formula=actor.system.attributes.hp?.formula??"";
   const match=String(formula).match(/(\d+)d(\d+)/i);
-  return [{doc:actor,path:"system.attributes.hd.spent",size:Math.max(1,num(hd.denomination?.replace?.("d",""),num(match?.[2],8))),
-    maximum:Math.max(0,num(hd.max,num(match?.[1],0))),spent:Math.max(0,num(hd.spent))}];
+  return [{doc:actor,path:"flags.bagrovoe-bleeding.hitDiceSpent",size:Math.max(1,num(hd.denomination?.replace?.("d",""),num(match?.[2],8))),
+    maximum:Math.max(0,num(hd.max,num(match?.[1],0))),spent:Math.max(0,num(actor.getFlag?.(MOD,"hitDiceSpent") ?? hd.spent))}];
 }
 function chooseDice(actor, count) {
  const pools=hdPools(actor).sort((a,b)=>a.size-b.size);
@@ -181,10 +181,84 @@ async function bloodAttackLifesteal(chat){
 }
 Hooks.on("createChatMessage",chat=>{void bloodAttackLifesteal(chat).catch(error=>console.error(MOD,error));});
 
+
+function hitDiceSummary(actor) {
+ const pools=hdPools(actor);
+ const maximum=pools.reduce((n,p)=>n+p.maximum,0);
+ const spent=pools.reduce((n,p)=>n+Math.min(p.maximum,p.spent),0);
+ return { maximum, spent, available:Math.max(0,maximum-spent),
+   dice:pools.map(p=>`${Math.max(0,p.maximum-p.spent)}/${p.maximum}к${p.size}`).join(", ") };
+}
+async function setAvailableHitDice(actor,available) {
+ if(!game.user?.isGM)throw new Error("Изменять Кости Хитов NPC может только ведущий.");
+ if(actor?.type!=="npc")throw new Error("Этот счётчик предназначен для NPC.");
+ const pools=hdPools(actor);
+ if(pools.length!==1)throw new Error("Для этого NPC используется несколько наборов Костей Хитов.");
+ const p=pools[0];
+ const left=clamp(Math.trunc(num(available)),0,p.maximum);
+ await p.doc.update({[p.path]:p.maximum-left});
+ return hitDiceSummary(actor);
+}
+function hitDiceRoot(html) {
+ return html instanceof HTMLElement ? html : html?.[0] instanceof HTMLElement ? html[0] : null;
+}
+function drawHitDiceCounter(app,html) {
+ const actor=app.actor ?? app.document;
+ if(actor?.type!=="npc" || !game.user?.isGM) return;
+ const root=hitDiceRoot(html);
+ if(!root)return;
+ const data=hitDiceSummary(actor);
+ if(!data.maximum)return;
+ root.querySelector('[data-bagrovoe-hit-dice]')?.remove();
+ const el=document.createElement("section");
+ el.dataset.bagrovoeHitDice="true";
+ el.style.cssText="padding:8px 12px;margin:5px 8px;border:1px solid #803445;border-radius:6px;background:rgba(55,0,13,.14);display:flex;align-items:center;gap:10px;flex-wrap:wrap;";
+ const title=document.createElement("strong");
+ title.textContent="🩸 Кости Хитов";
+ const stat=document.createElement("span");
+ stat.textContent=data.dice;
+ stat.title=`Доступно ${data.available}, потрачено ${data.spent}`;
+ const actions=document.createElement("div");
+ actions.style.cssText="display:flex;gap:4px;margin-left:auto;";
+ const makeButton=(label,title,fn)=>{
+   const button=document.createElement("button");
+   button.type="button";button.textContent=label;button.title=title;
+   button.style.cssText="padding:2px 8px;min-width:30px;";
+   button.addEventListener("click",event=>{event.preventDefault();event.stopPropagation();void fn().catch(error=>{
+     console.error(MOD,error);ui.notifications.error("Багровое Причастие: "+error.message);
+   });});
+   actions.append(button);
+ };
+ makeButton("−","Потратить одну Кость Хитов",()=>setAvailableHitDice(actor,hitDiceSummary(actor).available-1));
+ makeButton("+","Восстановить одну Кость Хитов",()=>setAvailableHitDice(actor,hitDiceSummary(actor).available+1));
+ makeButton("✎","Задать точный остаток",async()=>{
+   const state=hitDiceSummary(actor);
+   const result=await foundry.applications.api.DialogV2.wait({
+     window:{title:"Кости Хитов — "+actor.name},
+     content:`<p>Доступно ${state.available} из ${state.maximum}. Размер: ${state.dice}</p><label>Осталось Костей Хитов<input name="available" type="number" min="0" max="${state.maximum}" step="1" value="${state.available}"></label>`,
+     buttons:[
+       {action:"save",label:"Сохранить",default:true,callback:(_event,button)=>Number(button.form.elements.available.value)},
+       {action:"cancel",label:"Отмена",callback:()=>null}
+     ],rejectClose:false
+   });
+   if(result!==null && result!==undefined)await setAvailableHitDice(actor,result);
+ });
+ el.append(title,stat,actions);
+ const anchor=root.querySelector(".sheet-body") ?? root.querySelector(".window-content") ?? root;
+ anchor.prepend(el);
+}
+Hooks.on("renderActorSheet",drawHitDiceCounter);
+Hooks.on("updateActor",actor=>{
+ if(actor?.type!=="npc")return;
+ for(const app of Object.values(actor.apps??{})) {
+   if(app.rendered)app.render(false);
+ }
+});
+
 Hooks.once("ready",()=>{
  const module=game.modules.get(MOD);
  if(!module)return;
  module.api??={};
- Object.assign(module.api,{bloodMagic:{hdPools,chooseDice,pay,regain,steal,activateItemBloodCost}});
- globalThis.BagrovoeBloodMagic={hdPools,chooseDice,pay,regain,steal,activateItemBloodCost};
+ Object.assign(module.api,{bloodMagic:{hdPools,chooseDice,pay,regain,steal,activateItemBloodCost,hitDiceSummary,setAvailableHitDice}});
+ globalThis.BagrovoeBloodMagic={hdPools,chooseDice,pay,regain,steal,activateItemBloodCost,hitDiceSummary,setAvailableHitDice};
 });
