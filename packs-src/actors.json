@@ -2671,7 +2671,7 @@
         "name": "Кровавое копьё",
         "type": "feat",
         "_id": "0d2eed975ffe5c5f",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-spear.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -2679,13 +2679,13 @@
           },
           "activities": {
             "0d4e0413ae7e887c": {
-              "type": "attack",
               "_id": "0d4e0413ae7e887c",
+              "type": "attack",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
@@ -2704,30 +2704,43 @@
                 "override": false,
                 "expiry": null
               },
-              "effects": [],
               "range": {
-                "override": false,
-                "units": "self"
+                "value": "90",
+                "units": "ft",
+                "special": "",
+                "override": true
               },
               "target": {
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
-                  "contiguous": false,
-                  "units": "ft",
                   "type": "",
+                  "units": "ft",
+                  "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "choice": false,
-                  "type": ""
-                },
-                "override": false,
+                "override": true,
                 "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "",
+                "recovery": []
               },
+              "name": "Кровавое копьё",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-spear.svg",
+              "behaviors": [],
               "attack": {
                 "critical": {
                   "threshold": null
@@ -2763,26 +2776,16 @@
                     "modifiers": []
                   }
                 ]
-              },
-              "name": "Кровавое копьё",
-              "flags": {},
-              "visibility": {
-                "level": {},
-                "requireAttunement": false,
-                "requireIdentification": false,
-                "requireMagic": false
-              },
-              "img": null,
-              "behaviors": []
+              }
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 0 Костей Хитов.</strong></p><p>90 футов, одна цель. Маг создаёт плотное кровавое копьё и направляет его в противника. Совершите дальнобойную магическую атаку. При попадании цель получает 3к8 некротического урона.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 90 футов<br><strong>Цель:</strong> 1 существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно</p><p>Маг вытягивает перед собой ладонь, и капли его крови или магически вызванная багровая жидкость сплетаются в длинное плотное копьё. Оно стремительно пронзает воздух и распадается после удара.</p><p>Совершите дальнобойную атаку заклинанием по одному существу в пределах дистанции. При попадании цель получает <strong>3к8 некротического урона</strong>. При промахе копьё рассыпается, не причиняя вреда.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-7d42b79",
@@ -2799,13 +2802,40 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "90",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "inst",
+            "expiry": null
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
-            "bloodMagicAbility": true
+            "bloodMagic": true,
+            "spellKey": "blood-spear",
+            "bloodMagicAbility": true,
+            "spellLevel": 0
           }
         },
         "ownership": {
@@ -2817,7 +2847,7 @@
         "name": "Багровая игла",
         "type": "feat",
         "_id": "0d47399a21d91f45",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-needle.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -2825,13 +2855,13 @@
           },
           "activities": {
             "4d9c9bcec2c99bde": {
-              "type": "attack",
               "_id": "4d9c9bcec2c99bde",
+              "type": "attack",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
@@ -2850,30 +2880,43 @@
                 "override": false,
                 "expiry": null
               },
-              "effects": [],
               "range": {
-                "override": false,
-                "units": "self"
+                "value": "60",
+                "units": "ft",
+                "special": "",
+                "override": true
               },
               "target": {
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
-                  "contiguous": false,
-                  "units": "ft",
                   "type": "",
+                  "units": "ft",
+                  "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "choice": false,
-                  "type": ""
-                },
-                "override": false,
+                "override": true,
                 "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "",
+                "recovery": []
               },
+              "name": "Багровая игла",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-needle.svg",
+              "behaviors": [],
               "attack": {
                 "critical": {
                   "threshold": null
@@ -2909,26 +2952,16 @@
                     "modifiers": []
                   }
                 ]
-              },
-              "name": "Багровая игла",
-              "flags": {},
-              "visibility": {
-                "level": {},
-                "requireAttunement": false,
-                "requireIdentification": false,
-                "requireMagic": false
-              },
-              "img": null,
-              "behaviors": []
+              }
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 1 Костей Хитов.</strong></p><p>60 футов, одна цель. Тонкая кровавая игла проникает в тело жертвы. Совершите дальнобойную магическую атаку. При попадании цель получает 2к6 некротического урона и совершает спасбросок Телосложения Сл 17; при провале получает 1 уровень кровотечения.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов<br><strong>Цель:</strong> 1 существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно</p><p>У кончиков пальцев мага появляется тонкая алая игла. Она устремляется к противнику и, достигнув тела, нарушает течение крови в его сосудах.</p><p>Совершите дальнобойную атаку заклинанием по одному существу в пределах дистанции. При попадании цель получает <strong>2к6 некротического урона</strong> и должна совершить спасбросок Телосложения против <strong>Сл кровавой магии заклинателя</strong>. При провале она получает <strong>1 уровень кровотечения</strong>, при успехе кровотечение не накладывается. Урон от попадания не зависит от результата спасброска.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-f0bdfe8",
@@ -2945,27 +2978,47 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "inst",
+            "expiry": null
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
-            "bloodMagicAbility": true,
-            "itemBloodCost": {
-              "hitDice": 1,
-              "allowHealthSubstitution": true,
-              "healthDice": 0,
-              "healthDie": 8,
-              "requireSurvival": false
-            },
             "abilities": {
               "bleed": {
                 "levels": 1,
-                "dc": 17,
-                "count": 1
+                "count": 1,
+                "dcFormula": "bloodExpert"
               }
-            }
+            },
+            "bloodMagic": true,
+            "spellKey": "crimson-needle",
+            "bloodMagicAbility": true,
+            "spellLevel": 1
           }
         },
         "ownership": {
@@ -2977,7 +3030,7 @@
         "name": "Рассекающая волна",
         "type": "feat",
         "_id": "e190c1311903d4b6",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/cutting-wave.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -2985,14 +3038,13 @@
           },
           "activities": {
             "3fe678e1a94064dc": {
-              "type": "save",
-              "name": "Рассекающая волна",
               "_id": "3fe678e1a94064dc",
+              "type": "save",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
@@ -3011,13 +3063,19 @@
                 "override": false,
                 "expiry": null
               },
-              "effects": [],
               "range": {
-                "override": false,
-                "units": "self",
-                "special": ""
+                "value": "60",
+                "units": "ft",
+                "special": "",
+                "override": true
               },
               "target": {
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
                   "type": "line",
                   "size": "30",
@@ -3026,18 +3084,15 @@
                   "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "type": "creature"
-                },
                 "override": true,
                 "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "",
+                "recovery": []
               },
-              "img": "systems/dnd5e/icons/svg/monster.svg",
+              "name": "Рассекающая волна",
               "flags": {},
               "visibility": {
                 "level": {},
@@ -3045,6 +3100,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/cutting-wave.svg",
               "behaviors": [],
               "save": {
                 "ability": [
@@ -3052,7 +3108,7 @@
                 ],
                 "dc": {
                   "calculation": "formula",
-                  "formula": "17"
+                  "formula": "8 + 2 * @prof + @abilities.con.mod"
                 },
                 "visible": true
               },
@@ -3084,12 +3140,12 @@
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 2 Костей Хитов.</strong></p><p>Линия длиной 30 футов и шириной 5 футов исходит от мага. Каждое существо в области совершает спасбросок Ловкости Сл 17. При провале получает 3к6 рубящего урона, при успехе половину.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> На себя (линия 30 × 5 футов)<br><strong>Цель:</strong> Все существа в линии<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно</p><p>Маг проводит резким движением руки перед собой. Из его ладони вырывается широкая, почти невесомая полоса сгущённой крови, рассекающая пространство по прямой.</p><p>Каждое существо в линии длиной <strong>30 футов</strong> и шириной <strong>5 футов</strong> должно совершить спасбросок Ловкости против <strong>Сл кровавой магии заклинателя</strong>. При провале оно получает <strong>3к6 рубящего урона</strong>, при успехе — половину этого урона. Волна не огибает полное укрытие.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-70b72a7",
@@ -3106,20 +3162,42 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "line",
+              "size": "30",
+              "width": "5",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "inst",
+            "expiry": null
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
+            "bloodMagic": true,
+            "spellKey": "cutting-wave",
             "bloodMagicAbility": true,
-            "itemBloodCost": {
-              "hitDice": 2,
-              "allowHealthSubstitution": true,
-              "healthDice": 0,
-              "healthDie": 8,
-              "requireSurvival": false
-            }
+            "spellLevel": 2
           }
         },
         "ownership": {
@@ -3131,7 +3209,7 @@
         "name": "Взрыв крови",
         "type": "feat",
         "_id": "81ec1eb2978eaf78",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-explosion.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -3139,21 +3217,26 @@
           },
           "activities": {
             "88b61dcfc79d19a3": {
-              "type": "save",
-              "name": "Взрыв крови",
               "_id": "88b61dcfc79d19a3",
+              "type": "save",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
                   "allowed": false
                 },
                 "spellSlot": false,
-                "targets": []
+                "targets": [
+                  {
+                    "type": "activityUses",
+                    "value": "1",
+                    "scaling": {}
+                  }
+                ]
               },
               "description": {
                 "chatFlavor": "",
@@ -3165,14 +3248,19 @@
                 "override": false,
                 "expiry": null
               },
-              "effects": [],
               "range": {
-                "override": true,
-                "value": 60,
+                "value": "60",
                 "units": "ft",
-                "special": ""
+                "special": "",
+                "override": true
               },
               "target": {
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
                   "type": "sphere",
                   "size": "10",
@@ -3180,19 +3268,20 @@
                   "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "type": "creature",
-                  "choice": false
-                },
                 "override": true,
                 "prompt": true
               },
               "uses": {
+                "max": "2",
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "recovery": [
+                  {
+                    "period": "day",
+                    "type": "recoverAll"
+                  }
+                ]
               },
-              "img": "systems/dnd5e/icons/svg/monster.svg",
+              "name": "Взрыв крови",
               "flags": {},
               "visibility": {
                 "level": {},
@@ -3200,6 +3289,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-explosion.svg",
               "behaviors": [],
               "save": {
                 "ability": [
@@ -3207,7 +3297,7 @@
                 ],
                 "dc": {
                   "calculation": "formula",
-                  "formula": "17"
+                  "formula": "8 + 2 * @prof + @abilities.con.mod"
                 },
                 "visible": true
               },
@@ -3239,12 +3329,12 @@
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 3 Костей Хитов.</strong></p><p>Точка в пределах 60 футов взрывается сферой радиусом 10 футов. Каждое существо в области совершает спасбросок Ловкости Сл 17: 5к6 некротического урона при провале или половина при успехе. Доступность определяется ведущим.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов (сфера радиусом 10 футов)<br><strong>Цель:</strong> Все существа в сфере<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно</p><p>Маг собирает в выбранной видимой точке плотный сгусток багровой энергии. Сгусток на мгновение сжимается, после чего взрывается множеством острых кровавых брызг.</p><p>Выберите точку в пределах <strong>60 футов</strong>. Каждое существо в сфере радиусом <strong>10 футов</strong> с центром в этой точке совершает спасбросок Ловкости против <strong>Сл кровавой магии заклинателя</strong>. При провале существо получает <strong>5к6 некротического урона</strong>, при успехе — половину этого урона. <strong>Использование:</strong> в исходном наборе NPC 2 раза в день; если используется вариант с перезарядкой 5–6, ведущий отдельно отслеживает её.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-5305408",
@@ -3261,20 +3351,41 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "sphere",
+              "size": "10",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "inst",
+            "expiry": null
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
+            "bloodMagic": true,
+            "spellKey": "blood-explosion",
             "bloodMagicAbility": true,
-            "itemBloodCost": {
-              "hitDice": 3,
-              "allowHealthSubstitution": true,
-              "healthDice": 0,
-              "healthDie": 8,
-              "requireSurvival": false
-            }
+            "spellLevel": 3
           }
         },
         "ownership": {
@@ -3286,7 +3397,7 @@
         "name": "Кровавый серп",
         "type": "feat",
         "_id": "8a42fea1f5ebcc09",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-sickle.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -3294,13 +3405,13 @@
           },
           "activities": {
             "665b246bf3529016": {
-              "type": "attack",
               "_id": "665b246bf3529016",
+              "type": "attack",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
@@ -3319,30 +3430,43 @@
                 "override": false,
                 "expiry": null
               },
-              "effects": [],
               "range": {
-                "override": false,
-                "units": "self"
+                "value": "60",
+                "units": "ft",
+                "special": "",
+                "override": true
               },
               "target": {
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
-                  "contiguous": false,
-                  "units": "ft",
                   "type": "",
+                  "units": "ft",
+                  "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "choice": false,
-                  "type": ""
-                },
-                "override": false,
+                "override": true,
                 "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "",
+                "recovery": []
               },
+              "name": "Кровавый серп",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-sickle.svg",
+              "behaviors": [],
               "attack": {
                 "critical": {
                   "threshold": null
@@ -3378,26 +3502,16 @@
                     "modifiers": []
                   }
                 ]
-              },
-              "name": "Кровавый серп",
-              "flags": {},
-              "visibility": {
-                "level": {},
-                "requireAttunement": false,
-                "requireIdentification": false,
-                "requireMagic": false
-              },
-              "img": null,
-              "behaviors": []
+              }
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 0 Костей Хитов.</strong></p><p>60 футов, одна цель. Маг метает серпообразное лезвие из сгущённой крови. Дальнобойная магическая атака; 3к6 рубящего урона при попадании.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов<br><strong>Цель:</strong> 1 существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно</p><p>Маг сгибает руку, вытягивая из багровых струй дугообразное лезвие. Серп срывается с ладони, вращаясь в воздухе, и рассеивается алыми искрами после попадания.</p><p>Совершите дальнобойную атаку заклинанием по одному существу в пределах дистанции. При попадании цель получает <strong>3к6 рубящего урона</strong>. Несмотря на материальный облик, это магическая атака, а не удар обычным оружием.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-cc2a8f6",
@@ -3414,13 +3528,40 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "inst",
+            "expiry": null
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
-            "bloodMagicAbility": true
+            "bloodMagic": true,
+            "spellKey": "blood-sickle",
+            "bloodMagicAbility": true,
+            "spellLevel": 0
           }
         },
         "ownership": {
@@ -3432,7 +3573,7 @@
         "name": "Разрыв артерии",
         "type": "feat",
         "_id": "06c20fc530cb0eb7",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/artery-rupture.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -3440,13 +3581,13 @@
           },
           "activities": {
             "191d2dff406d5072": {
-              "type": "attack",
               "_id": "191d2dff406d5072",
+              "type": "attack",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
@@ -3465,30 +3606,43 @@
                 "override": false,
                 "expiry": null
               },
-              "effects": [],
               "range": {
-                "override": false,
-                "units": "self"
+                "value": "60",
+                "units": "ft",
+                "special": "",
+                "override": true
               },
               "target": {
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
-                  "contiguous": false,
-                  "units": "ft",
                   "type": "",
+                  "units": "ft",
+                  "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "choice": false,
-                  "type": ""
-                },
-                "override": false,
+                "override": true,
                 "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "",
+                "recovery": []
               },
+              "name": "Разрыв артерии",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/artery-rupture.svg",
+              "behaviors": [],
               "attack": {
                 "critical": {
                   "threshold": null
@@ -3524,26 +3678,16 @@
                     "modifiers": []
                   }
                 ]
-              },
-              "name": "Разрыв артерии",
-              "flags": {},
-              "visibility": {
-                "level": {},
-                "requireAttunement": false,
-                "requireIdentification": false,
-                "requireMagic": false
-              },
-              "img": null,
-              "behaviors": []
+              }
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 3 Костей Хитов.</strong></p><p>60 футов, одна цель. Маг запускает в цель разрушительный кровавый импульс. Дальнобойная магическая атака; 4к8 некротического урона при попадании. Телосложение Сл 17 против 2 уровней кровотечения.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов<br><strong>Цель:</strong> 1 существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно</p><p>Маг сжимает кулак, и магическая кровь вокруг цели на миг повторяет форму её сосудов. Вслед за этим по телу жертвы проходит болезненный внутренний толчок.</p><p>Совершите дальнобойную атаку заклинанием по одному существу в пределах дистанции. При попадании цель получает <strong>4к8 некротического урона</strong> и совершает спасбросок Телосложения против <strong>Сл кровавой магии заклинателя</strong>. При провале она получает <strong>2 уровня кровотечения</strong>; при успехе уровни кровотечения не добавляются. Сам урон от попадания сохраняется в обоих случаях.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-8b6db03",
@@ -3560,27 +3704,47 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "inst",
+            "expiry": null
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
-            "bloodMagicAbility": true,
-            "itemBloodCost": {
-              "hitDice": 3,
-              "allowHealthSubstitution": true,
-              "healthDice": 0,
-              "healthDie": 8,
-              "requireSurvival": false
-            },
             "abilities": {
               "bleed": {
                 "levels": 2,
-                "dc": 17,
-                "count": 1
+                "count": 1,
+                "dcFormula": "bloodExpert"
               }
-            }
+            },
+            "bloodMagic": true,
+            "spellKey": "artery-rupture",
+            "bloodMagicAbility": true,
+            "spellLevel": 3
           }
         },
         "ownership": {
@@ -6175,7 +6339,7 @@
         "name": "Кровавое копьё",
         "type": "feat",
         "_id": "0d2eed975ffe5c5f",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-spear.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -6183,13 +6347,13 @@
           },
           "activities": {
             "0d4e0413ae7e887c": {
-              "type": "attack",
               "_id": "0d4e0413ae7e887c",
+              "type": "attack",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
@@ -6208,30 +6372,43 @@
                 "override": false,
                 "expiry": null
               },
-              "effects": [],
               "range": {
-                "override": false,
-                "units": "self"
+                "value": "90",
+                "units": "ft",
+                "special": "",
+                "override": true
               },
               "target": {
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
-                  "contiguous": false,
-                  "units": "ft",
                   "type": "",
+                  "units": "ft",
+                  "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "choice": false,
-                  "type": ""
-                },
-                "override": false,
+                "override": true,
                 "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "",
+                "recovery": []
               },
+              "name": "Кровавое копьё",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-spear.svg",
+              "behaviors": [],
               "attack": {
                 "critical": {
                   "threshold": null
@@ -6267,26 +6444,16 @@
                     "modifiers": []
                   }
                 ]
-              },
-              "name": "Кровавое копьё",
-              "flags": {},
-              "visibility": {
-                "level": {},
-                "requireAttunement": false,
-                "requireIdentification": false,
-                "requireMagic": false
-              },
-              "img": null,
-              "behaviors": []
+              }
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 0 Костей Хитов.</strong></p><p>90 футов, одна цель. Маг создаёт плотное кровавое копьё и направляет его в противника. Совершите дальнобойную магическую атаку. При попадании цель получает 3к8 некротического урона.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 90 футов<br><strong>Цель:</strong> 1 существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно</p><p>Маг вытягивает перед собой ладонь, и капли его крови или магически вызванная багровая жидкость сплетаются в длинное плотное копьё. Оно стремительно пронзает воздух и распадается после удара.</p><p>Совершите дальнобойную атаку заклинанием по одному существу в пределах дистанции. При попадании цель получает <strong>3к8 некротического урона</strong>. При промахе копьё рассыпается, не причиняя вреда.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-7d42b79",
@@ -6303,13 +6470,40 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "90",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "inst",
+            "expiry": null
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
-            "bloodMagicAbility": true
+            "bloodMagic": true,
+            "spellKey": "blood-spear",
+            "bloodMagicAbility": true,
+            "spellLevel": 0
           }
         },
         "ownership": {
@@ -6321,7 +6515,7 @@
         "name": "Сосудистый импульс",
         "type": "feat",
         "_id": "0214e1c2bb3f016a",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/vascular-pulse.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -6329,14 +6523,13 @@
           },
           "activities": {
             "35a610bc9c6145b1": {
-              "type": "utility",
-              "name": "Сосудистый импульс",
               "_id": "35a610bc9c6145b1",
+              "type": "heal",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
@@ -6355,39 +6548,34 @@
                 "override": false,
                 "expiry": null
               },
-              "effects": [],
               "range": {
-                "override": true,
-                "value": 60,
+                "value": "60",
                 "units": "ft",
-                "special": ""
+                "special": "",
+                "override": true
               },
               "target": {
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
-                  "contiguous": false,
-                  "units": "ft",
                   "type": "",
+                  "units": "ft",
+                  "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "choice": false,
-                  "type": ""
-                },
-                "override": false,
+                "override": true,
                 "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "",
+                "recovery": []
               },
-              "roll": {
-                "prompt": false,
-                "visible": false,
-                "name": "",
-                "formula": ""
-              },
-              "img": "systems/dnd5e/icons/svg/monster.svg",
+              "name": "Сосудистый импульс",
               "flags": {},
               "visibility": {
                 "level": {},
@@ -6395,16 +6583,33 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "behaviors": []
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/vascular-pulse.svg",
+              "behaviors": [],
+              "healing": {
+                "number": null,
+                "denomination": 0,
+                "bonus": "7",
+                "types": [
+                  "temphp"
+                ],
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 1 Костей Хитов.</strong></p><p>Одно согласное видимое существо в пределах 60 футов получает 7 временных хитов. Временные хиты не складываются с уже имеющимися и не снимают кровотечение.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов<br><strong>Цель:</strong> 1 согласное существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно (временные хиты сохраняются по общим правилам)</p><p>Маг направляет к союзнику короткий импульс багровой энергии. Под его действием кровообращение ускоряется, движения становятся увереннее, а ткани на короткое время выдерживают повреждения лучше обычного.</p><p>Выберите одно согласное существо в пределах дистанции, которое маг видит. Оно получает <strong>7 временных хитов</strong>. Временные хиты не складываются с уже имеющимися: цель выбирает, какие оставить. Получение временных хитов не является лечением и не снимает кровотечение.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-01f633e",
@@ -6421,20 +6626,40 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "inst",
+            "expiry": null
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
+            "bloodMagic": true,
+            "spellKey": "vascular-pulse",
             "bloodMagicAbility": true,
-            "itemBloodCost": {
-              "hitDice": 1,
-              "allowHealthSubstitution": true,
-              "healthDice": 0,
-              "healthDie": 8,
-              "requireSurvival": false
-            }
+            "spellLevel": 1
           }
         },
         "ownership": {
@@ -6446,7 +6671,7 @@
         "name": "Сведение мышц",
         "type": "feat",
         "_id": "38da35324ff613ff",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/muscle-constriction.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -6454,14 +6679,13 @@
           },
           "activities": {
             "96496cb43027cb25": {
-              "type": "save",
-              "name": "Сведение мышц",
               "_id": "96496cb43027cb25",
+              "type": "save",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
@@ -6475,40 +6699,40 @@
                 "value": ""
               },
               "duration": {
-                "units": "round",
                 "value": "1",
+                "units": "round",
+                "expiry": "turnEnd",
                 "override": true,
-                "concentration": false,
-                "expiry": null
+                "concentration": false
               },
-              "effects": [],
               "range": {
-                "override": true,
-                "value": 60,
+                "value": "60",
                 "units": "ft",
-                "special": ""
+                "special": "",
+                "override": true
               },
               "target": {
-                "prompt": true,
-                "override": true,
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
                   "type": "",
                   "units": "ft",
                   "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "type": "creature",
-                  "count": "1",
-                  "choice": false
-                }
+                "override": true,
+                "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "",
+                "recovery": []
               },
-              "img": "systems/dnd5e/icons/svg/monster.svg",
+              "name": "Сведение мышц",
               "flags": {},
               "visibility": {
                 "level": {},
@@ -6516,6 +6740,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/muscle-constriction.svg",
               "behaviors": [],
               "save": {
                 "ability": [
@@ -6523,19 +6748,23 @@
                 ],
                 "dc": {
                   "calculation": "formula",
-                  "formula": "17"
+                  "formula": "8 + 2 * @prof + @abilities.con.mod"
                 },
                 "visible": true
+              },
+              "damage": {
+                "parts": [],
+                "onSave": "half"
               }
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 2 Костей Хитов.</strong></p><p>Одно видимое живое существо в пределах 60 футов совершает спасбросок Телосложения Сл 17. При провале его скорость уменьшается вдвое до конца следующего хода мага.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов<br><strong>Цель:</strong> 1 живое существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> До конца следующего хода мага</p><p>Маг незаметным движением нарушает работу мышц цели. Конечности начинают двигаться рывками, а каждое усилие требует непривычно большого напряжения.</p><p>Одно видимое живое существо в пределах дистанции совершает спасбросок Телосложения против <strong>Сл кровавой магии заклинателя</strong>. При провале <strong>все значения скорости цели уменьшаются вдвое</strong> до конца следующего хода мага. При успехе заклинание не оказывает эффекта. Эффект не обездвиживает существо и не отнимает у него действия.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-fcdb08f",
@@ -6552,20 +6781,40 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "round",
+            "expiry": "turnEnd"
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
+            "bloodMagic": true,
+            "spellKey": "muscle-constriction",
             "bloodMagicAbility": true,
-            "itemBloodCost": {
-              "hitDice": 2,
-              "allowHealthSubstitution": true,
-              "healthDice": 0,
-              "healthDie": 8,
-              "requireSurvival": false
-            }
+            "spellLevel": 2
           }
         },
         "ownership": {
@@ -6577,7 +6826,7 @@
         "name": "Кровавые путы",
         "type": "feat",
         "_id": "cc388fce1ee46aa8",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-bonds.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -6585,14 +6834,13 @@
           },
           "activities": {
             "1da8a2e0273e13cb": {
-              "type": "save",
-              "name": "Кровавые путы",
               "_id": "1da8a2e0273e13cb",
+              "type": "save",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
@@ -6606,40 +6854,40 @@
                 "value": ""
               },
               "duration": {
-                "units": "round",
                 "value": "1",
+                "units": "round",
+                "expiry": "turnEnd",
                 "override": true,
-                "concentration": false,
-                "expiry": null
+                "concentration": false
               },
-              "effects": [],
               "range": {
-                "override": true,
-                "value": 60,
+                "value": "60",
                 "units": "ft",
-                "special": ""
+                "special": "",
+                "override": true
               },
               "target": {
-                "prompt": true,
-                "override": true,
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
                   "type": "",
                   "units": "ft",
                   "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "type": "creature",
-                  "count": "1",
-                  "choice": false
-                }
+                "override": true,
+                "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "",
+                "recovery": []
               },
-              "img": "systems/dnd5e/icons/svg/monster.svg",
+              "name": "Кровавые путы",
               "flags": {},
               "visibility": {
                 "level": {},
@@ -6647,6 +6895,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-bonds.svg",
               "behaviors": [],
               "save": {
                 "ability": [
@@ -6654,19 +6903,23 @@
                 ],
                 "dc": {
                   "calculation": "formula",
-                  "formula": "17"
+                  "formula": "8 + 2 * @prof + @abilities.con.mod"
                 },
                 "visible": true
+              },
+              "damage": {
+                "parts": [],
+                "onSave": "half"
               }
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 2 Костей Хитов.</strong></p><p>Одно видимое живое существо в пределах 60 футов совершает спасбросок Силы Сл 17. При провале получает состояние Обездвижен до конца следующего хода мага.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов<br><strong>Цель:</strong> 1 живое существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> До конца следующего хода мага</p><p>Маг сжимает пальцы, словно удерживая невидимые нити. Кровь в теле противника откликается на жест, а мышцы и сухожилия внезапно застывают в напряжении.</p><p>Одно видимое живое существо в пределах дистанции совершает спасбросок Силы против <strong>Сл кровавой магии заклинателя</strong>. При провале оно получает состояние <strong>Обездвижен (Restrained)</strong> до конца следующего хода мага. При успехе ничего не происходит. Пока действует эффект, цель не обязана повторять спасбросок; состояние заканчивается автоматически в указанный момент.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-d9a138e",
@@ -6683,20 +6936,40 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "round",
+            "expiry": "turnEnd"
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
+            "bloodMagic": true,
+            "spellKey": "blood-bonds",
             "bloodMagicAbility": true,
-            "itemBloodCost": {
-              "hitDice": 2,
-              "allowHealthSubstitution": true,
-              "healthDice": 0,
-              "healthDie": 8,
-              "requireSurvival": false
-            }
+            "spellLevel": 2
           }
         },
         "ownership": {
@@ -6708,7 +6981,7 @@
         "name": "Насильственная перестройка",
         "type": "feat",
         "_id": "47a5c18e65d9a257",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/forced-reconstruction.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -6716,14 +6989,13 @@
           },
           "activities": {
             "7704a7ba6549a455": {
-              "type": "utility",
-              "name": "Насильственная перестройка",
               "_id": "7704a7ba6549a455",
+              "type": "heal",
               "sort": 0,
               "activation": {
                 "type": "action",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
@@ -6742,39 +7014,34 @@
                 "override": false,
                 "expiry": null
               },
-              "effects": [],
               "range": {
-                "override": true,
-                "value": 30,
+                "value": "60",
                 "units": "ft",
-                "special": ""
+                "special": "",
+                "override": true
               },
               "target": {
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
-                  "contiguous": false,
-                  "units": "ft",
                   "type": "",
+                  "units": "ft",
+                  "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "choice": false,
-                  "type": ""
-                },
-                "override": false,
+                "override": true,
                 "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "",
+                "recovery": []
               },
-              "roll": {
-                "prompt": false,
-                "visible": false,
-                "name": "",
-                "formula": ""
-              },
-              "img": "systems/dnd5e/icons/svg/monster.svg",
+              "name": "Насильственная перестройка",
               "flags": {},
               "visibility": {
                 "level": {},
@@ -6782,16 +7049,33 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "behaviors": []
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/forced-reconstruction.svg",
+              "behaviors": [],
+              "healing": {
+                "number": null,
+                "denomination": 0,
+                "bonus": "10",
+                "types": [
+                  "temphp"
+                ],
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 3 Костей Хитов.</strong></p><p>До трёх согласных видимых существ в пределах 30 футов получают по 10 временных хитов. Эти хиты не складываются с имеющимися.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 30 футов<br><strong>Цель:</strong> До 3 согласных существ<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно (временные хиты сохраняются по общим правилам)</p><p>Маг резко разводит руки, разделяя багровый импульс между несколькими союзниками. Их мышцы натягиваются, а повреждённые участки тела на короткое время укрепляются магически изменённой кровью.</p><p>Выберите до <strong>трёх согласных существ</strong> в пределах дистанции, которых маг видит. Каждая цель получает <strong>10 временных хитов</strong>. Временные хиты не складываются с имеющимися: каждая цель выбирает, какие сохранить. Это не восстанавливает обычные хиты и не снимает кровотечение.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-b2dbc54",
@@ -6808,20 +7092,40 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "inst",
+            "expiry": null
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
+            "bloodMagic": true,
+            "spellKey": "forced-reconstruction",
             "bloodMagicAbility": true,
-            "itemBloodCost": {
-              "hitDice": 3,
-              "allowHealthSubstitution": true,
-              "healthDice": 0,
-              "healthDie": 8,
-              "requireSurvival": false
-            }
+            "spellLevel": 3
           }
         },
         "ownership": {
@@ -6833,7 +7137,7 @@
         "name": "Уплотнение сосудов",
         "type": "feat",
         "_id": "a5cfec9af1584562",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/spells/vessel-hardening.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -6841,21 +7145,26 @@
           },
           "activities": {
             "9fc68d60c491ba1e": {
-              "type": "utility",
-              "name": "Уплотнение сосудов",
               "_id": "9fc68d60c491ba1e",
+              "type": "utility",
               "sort": 0,
               "activation": {
                 "type": "reaction",
                 "value": 1,
-                "override": true
+                "override": false
               },
               "consumption": {
                 "scaling": {
                   "allowed": false
                 },
                 "spellSlot": false,
-                "targets": []
+                "targets": [
+                  {
+                    "type": "activityUses",
+                    "value": "1",
+                    "scaling": {}
+                  }
+                ]
               },
               "description": {
                 "chatFlavor": "",
@@ -6867,39 +7176,39 @@
                 "override": false,
                 "expiry": null
               },
-              "effects": [],
               "range": {
-                "override": true,
-                "value": 0,
+                "value": "60",
                 "units": "ft",
-                "special": ""
+                "special": "",
+                "override": true
               },
               "target": {
+                "affects": {
+                  "special": "",
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false
+                },
                 "template": {
-                  "contiguous": false,
-                  "units": "ft",
                   "type": "",
+                  "units": "ft",
+                  "contiguous": false,
                   "stationary": false
                 },
-                "affects": {
-                  "choice": false,
-                  "type": ""
-                },
-                "override": false,
+                "override": true,
                 "prompt": true
               },
               "uses": {
                 "spent": 0,
-                "recovery": [],
-                "max": ""
+                "max": "2",
+                "recovery": [
+                  {
+                    "period": "day",
+                    "type": "recoverAll"
+                  }
+                ]
               },
-              "roll": {
-                "prompt": false,
-                "visible": false,
-                "name": "",
-                "formula": ""
-              },
-              "img": "systems/dnd5e/icons/svg/monster.svg",
+              "name": "Уплотнение сосудов",
               "flags": {},
               "visibility": {
                 "level": {},
@@ -6907,16 +7216,17 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
+              "img": "modules/bagrovoe-bleeding/assets/icons/spells/vessel-hardening.svg",
               "behaviors": []
             }
           },
           "uses": {
-            "spent": 0,
             "max": "",
+            "spent": 0,
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Кровавая способность — стоимость: 1 Костей Хитов.</strong></p><p>Реакция, когда маг видит попадание атаки по себе: +3 КД только против этой атаки. Если бонус обращает попадание в промах, урона нет.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 реакция<br><strong>Дистанция:</strong> На себя<br><strong>Цель:</strong> Маг<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> До разрешения вызвавшей реакцию атаки</p><p>За мгновение до удара маг заставляет собственную кровь уплотнить ткани и создать под кожей кратковременный защитный слой. На поверхности тела проступает багровый сосудистый узор.</p><p><strong>Реакция:</strong> когда по магу попадают атакой, которую он видит. Маг получает <strong>+3 к КД только против вызвавшей реакцию атаки</strong>. Если повышение КД превращает попадание в промах, атака не наносит урон. <strong>Использование:</strong> 2 раза в день, если особенность NPC не задаёт иного лимита.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-c70bc91",
@@ -6933,20 +7243,40 @@
           "properties": [],
           "requirements": "",
           "advancement": {},
-          "crewed": false
+          "crewed": false,
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "duration": {
+            "value": "1",
+            "units": "inst",
+            "expiry": null
+          }
         },
         "effects": [],
         "sort": -100000,
         "flags": {
           "bagrovoe-bleeding": {
+            "bloodMagic": true,
+            "spellKey": "vessel-hardening",
             "bloodMagicAbility": true,
-            "itemBloodCost": {
-              "hitDice": 1,
-              "allowHealthSubstitution": true,
-              "healthDice": 0,
-              "healthDie": 8,
-              "requireSurvival": false
-            }
+            "spellLevel": 1
           }
         },
         "ownership": {

@@ -32,7 +32,16 @@ async function costOf(activity,config) {
   const spell=await fromUuid(uuid);
   return clamp(Math.trunc(num(spell?.system?.level)),0,9);
 }
-async function pay(actor,cost) {
+const paymentQueues = new Map();
+function pay(actor,cost) {
+ const key=actor.uuid;
+ const result=(paymentQueues.get(key)??Promise.resolve()).catch(()=>{}).then(()=>performPayment(actor,cost));
+ paymentQueues.set(key,result);
+ const clean=()=>{if(paymentQueues.get(key)===result)paymentQueues.delete(key);};
+ result.then(clean,clean);
+ return result;
+}
+async function performPayment(actor,cost) {
  if(!isBloodNpc(actor))throw Error("Кровавое колдовство пока доступно только заражённым NPC");
  if(!owned(actor))throw Error("Нет прав на изменение Костей Хитов");
  const {spent,missing,die}=chooseDice(actor,cost);
@@ -42,9 +51,10 @@ async function pay(actor,cost) {
    expression=`${missing}d${die}`;
    total=(await new Roll(expression).evaluate()).total;
    const hp=actor.system.attributes.hp;
-   await actor.update({"system.attributes.hp.value":Math.max(0,hp.value-total)});
-   if(hp.value-total<=0) await actor.toggleStatusEffect("unconscious",{active:true});
-   if(hp.value-total<=0 && actor.type==="npc")await actor.toggleStatusEffect("dead",{active:true});
+   const remainingHP=Math.max(0,hp.value-total);
+   await actor.update({"system.attributes.hp.value":remainingHP});
+   if(remainingHP<=0) await actor.toggleStatusEffect("unconscious",{active:true});
+   if(remainingHP<=0 && actor.type==="npc")await actor.toggleStatusEffect("dead",{active:true});
  }
  await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content:`<p><strong>Кровавое колдовство:</strong> ${actor.name} — стоимость ${cost} КХ, потрачено ${cost-missing}, нехватка ${missing}${missing?`, урон ${expression} = ${total} (без защит и временных хитов)`:""}.</p>`});
  return {missing,total,killed:total>0 && actor.system.attributes.hp.value<=0};
@@ -78,7 +88,8 @@ function activityKey(activity) {
 function guardedActivity(activity) {
  const actor=activity?.item?.actor;
  if(!actor || !owned(actor))return null;
- if(isBloodNpc(actor) && bloodCast(activity))return {actor,item:activity.item,spell:true};
+ if(isBloodNpc(actor) && (bloodCast(activity) || activity.item?.getFlag?.(MOD,"spellKey") ||
+   (activity.item?.type === "spell" && activity.item?.getFlag?.(MOD,"bloodMagic"))))return {actor,item:activity.item,spell:true};
  if(activity.item?.getFlag?.(MOD,"itemBloodCost") &&
    (actor.type==="npc" || actor.type==="character"))return {actor,item:activity.item,spell:false};
  return null;
@@ -90,6 +101,8 @@ function finishBloodUse(key,state) {
  }
 }
 Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig)=>{
+ if(globalThis.BagrovoeSpellRuntime?.validateUse(activity,usageConfig,messageConfig) === false)return false;
+ if(usageConfig._bagrovoePaid)return;
  const entry=guardedActivity(activity);
  if(!entry)return;
  const key=activityKey(activity);
@@ -113,7 +126,9 @@ Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig
  (async()=>{
    try{
      const result=entry.spell
-       ? await pay(entry.actor,await costOf(activity,usageConfig))
+       ? await pay(entry.actor,activity.item.getFlag?.(MOD,"spellKey")
+         ? num(activity.item.getFlag?.(MOD,"spellLevel"),num(activity.item.system.level))
+         : await costOf(activity,usageConfig))
        : await activateItemBloodCost(entry.item);
      if(result?.killed || entry.actor.statuses?.has?.("dead"))return;
      const next=foundry.utils.deepClone(usageConfig);
@@ -168,6 +183,7 @@ async function bloodAttackLifesteal(chat){
  if(!game.user?.isGM || game.users?.activeGM?.id!==game.user.id || chat.type!=="attack")return;
  const activity=chat.getAssociatedActivity?.();
  if(activity?.type!=="attack")return;
+ await globalThis.BagrovoeSpellRuntime?.resolveAttack(chat);
  const item=activity.item;
  if(!item?.getFlag?.(MOD,"bloodMagic") && !item?.getFlag?.(MOD,"abilities")?.bloodMagic)return;
  const caster=item.actor;
@@ -204,6 +220,7 @@ async function bloodAttackLifesteal(chat){
 async function autoBloodSaves(chat) {
  if(!game.user?.isGM || game.users?.activeGM?.id!==game.user.id)return;
  const activity=chat.getAssociatedActivity?.();
+ if(activity?.item?.getFlag?.(MOD,"spellKey"))return;
  if(activity?.type!=="save" || !activity.item?.getFlag?.(MOD,"bloodMagicAbility"))return;
  const targets=chat.system?.evaluatedTargets ?? [];
  if(!targets.length)return;

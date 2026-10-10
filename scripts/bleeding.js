@@ -221,6 +221,7 @@ async function handleAttack(chat) {
   const config = biteConfig(activity.item);
   if (!config) return;
   return enqueue("attack:" + chat.id, async () => {
+    await globalThis.BagrovoeSpellRuntime?.resolveAttack(chat);
     const targets = chat.system?.evaluatedTargets ?? [];
     // The attack message may be created before the target's hit/miss data exists.
     // Apply only to explicitly confirmed hits, never to unresolved targets.

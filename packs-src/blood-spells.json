@@ -3,11 +3,12 @@
     "_id": "BldSpell00000001",
     "name": "Кровавое копьё",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-spear.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "blood-spear"
       }
     },
     "system": {
@@ -92,21 +93,25 @@
             "expiry": null
           },
           "range": {
-            "override": true,
-            "value": 90,
+            "value": "90",
             "units": "ft",
-            "special": ""
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -122,7 +127,7 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-spear.svg",
           "behaviors": [],
           "attack": {
             "critical": {
@@ -176,7 +181,7 @@
     "_id": "BldSpell00000002",
     "name": "Багровая игла",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-needle.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
@@ -187,7 +192,8 @@
             "dcFormula": "bloodExpert"
           }
         },
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "crimson-needle"
       }
     },
     "system": {
@@ -272,21 +278,25 @@
             "expiry": null
           },
           "range": {
-            "override": true,
-            "value": 60,
+            "value": "60",
             "units": "ft",
-            "special": ""
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -302,7 +312,7 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-needle.svg",
           "behaviors": [],
           "attack": {
             "critical": {
@@ -356,11 +366,12 @@
     "_id": "BldSpell00000003",
     "name": "Рассекающая волна",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/cutting-wave.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "cutting-wave"
       }
     },
     "system": {
@@ -391,7 +402,9 @@
           "choice": false
         },
         "template": {
-          "type": "",
+          "type": "line",
+          "size": "30",
+          "width": "5",
           "units": "ft",
           "contiguous": false,
           "stationary": false
@@ -445,19 +458,27 @@
             "expiry": null
           },
           "range": {
-            "override": false,
-            "units": "ft"
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "line",
+              "size": "30",
+              "width": "5",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -473,7 +494,7 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/cutting-wave.svg",
           "behaviors": [],
           "save": {
             "ability": [
@@ -507,7 +528,8 @@
                 },
                 "modifiers": []
               }
-            ]
+            ],
+            "onSave": "half"
           }
         }
       },
@@ -525,11 +547,12 @@
     "_id": "BldSpell00000004",
     "name": "Взрыв крови",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-explosion.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "blood-explosion"
       }
     },
     "system": {
@@ -560,7 +583,8 @@
           "choice": false
         },
         "template": {
-          "type": "",
+          "type": "sphere",
+          "size": "10",
           "units": "ft",
           "contiguous": false,
           "stationary": false
@@ -601,7 +625,13 @@
               "allowed": false
             },
             "spellSlot": false,
-            "targets": []
+            "targets": [
+              {
+                "type": "activityUses",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
           },
           "description": {
             "chatFlavor": "",
@@ -614,25 +644,37 @@
             "expiry": null
           },
           "range": {
-            "override": false,
-            "units": "ft"
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "sphere",
+              "size": "10",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
+            "max": "2",
             "spent": 0,
-            "max": "",
-            "recovery": []
+            "recovery": [
+              {
+                "period": "day",
+                "type": "recoverAll"
+              }
+            ]
           },
           "name": "Взрыв крови",
           "flags": {},
@@ -642,7 +684,7 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-explosion.svg",
           "behaviors": [],
           "save": {
             "ability": [
@@ -676,7 +718,8 @@
                 },
                 "modifiers": []
               }
-            ]
+            ],
+            "onSave": "half"
           }
         }
       },
@@ -694,11 +737,12 @@
     "_id": "BldSpell00000005",
     "name": "Кровавый барьер",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-barrier.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "blood-barrier"
       }
     },
     "system": {
@@ -789,19 +833,25 @@
             "expiry": null
           },
           "range": {
-            "override": false,
-            "units": "ft"
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -822,7 +872,7 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-barrier.svg",
           "behaviors": []
         }
       },
@@ -840,11 +890,12 @@
     "_id": "BldSpell00000006",
     "name": "Кровавый серп",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-sickle.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "blood-sickle"
       }
     },
     "system": {
@@ -929,21 +980,25 @@
             "expiry": null
           },
           "range": {
-            "override": true,
-            "value": 60,
+            "value": "60",
             "units": "ft",
-            "special": ""
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -959,7 +1014,7 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-sickle.svg",
           "behaviors": [],
           "attack": {
             "critical": {
@@ -1013,7 +1068,7 @@
     "_id": "BldSpell00000007",
     "name": "Разрыв артерии",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/artery-rupture.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
@@ -1024,7 +1079,8 @@
             "dcFormula": "bloodExpert"
           }
         },
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "artery-rupture"
       }
     },
     "system": {
@@ -1109,21 +1165,25 @@
             "expiry": null
           },
           "range": {
-            "override": true,
-            "value": 60,
+            "value": "60",
             "units": "ft",
-            "special": ""
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -1139,7 +1199,7 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/artery-rupture.svg",
           "behaviors": [],
           "attack": {
             "critical": {
@@ -1193,11 +1253,12 @@
     "_id": "BldSpell00000008",
     "name": "Сосудистый импульс",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/vascular-pulse.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "vascular-pulse"
       }
     },
     "system": {
@@ -1257,7 +1318,7 @@
       "activities": {
         "ActBlood00000007": {
           "_id": "ActBlood00000007",
-          "type": "utility",
+          "type": "heal",
           "sort": 0,
           "activation": {
             "type": "action",
@@ -1282,19 +1343,25 @@
             "expiry": null
           },
           "range": {
-            "override": false,
-            "units": "ft"
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -1310,8 +1377,24 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
-          "behaviors": []
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/vascular-pulse.svg",
+          "behaviors": [],
+          "healing": {
+            "number": null,
+            "denomination": 0,
+            "bonus": "7",
+            "types": [
+              "temphp"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "number": 1
+            },
+            "modifiers": []
+          }
         }
       },
       "identifier": "blood-8",
@@ -1328,11 +1411,12 @@
     "_id": "BldSpell00000009",
     "name": "Сведение мышц",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/muscle-constriction.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "muscle-constriction"
       }
     },
     "system": {
@@ -1352,8 +1436,8 @@
       },
       "duration": {
         "value": "1",
-        "units": "inst",
-        "expiry": null
+        "units": "round",
+        "expiry": "turnEnd"
       },
       "target": {
         "affects": {
@@ -1411,25 +1495,32 @@
             "value": ""
           },
           "duration": {
-            "units": "inst",
-            "concentration": false,
-            "override": false,
-            "expiry": null
+            "value": "1",
+            "units": "round",
+            "expiry": "turnEnd",
+            "override": true,
+            "concentration": false
           },
           "range": {
-            "override": false,
-            "units": "ft"
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -1445,7 +1536,7 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/muscle-constriction.svg",
           "behaviors": [],
           "save": {
             "ability": [
@@ -1456,6 +1547,10 @@
               "formula": "8 + 2 * @prof + @abilities.con.mod"
             },
             "visible": true
+          },
+          "damage": {
+            "parts": [],
+            "onSave": "half"
           }
         }
       },
@@ -1473,11 +1568,12 @@
     "_id": "BldSpell00000010",
     "name": "Кровавые путы",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-bonds.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "blood-bonds"
       }
     },
     "system": {
@@ -1497,8 +1593,8 @@
       },
       "duration": {
         "value": "1",
-        "units": "inst",
-        "expiry": null
+        "units": "round",
+        "expiry": "turnEnd"
       },
       "target": {
         "affects": {
@@ -1556,25 +1652,32 @@
             "value": ""
           },
           "duration": {
-            "units": "inst",
-            "concentration": false,
-            "override": false,
-            "expiry": null
+            "value": "1",
+            "units": "round",
+            "expiry": "turnEnd",
+            "override": true,
+            "concentration": false
           },
           "range": {
-            "override": false,
-            "units": "ft"
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -1590,7 +1693,7 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-bonds.svg",
           "behaviors": [],
           "save": {
             "ability": [
@@ -1601,6 +1704,10 @@
               "formula": "8 + 2 * @prof + @abilities.con.mod"
             },
             "visible": true
+          },
+          "damage": {
+            "parts": [],
+            "onSave": "half"
           }
         }
       },
@@ -1618,11 +1725,12 @@
     "_id": "BldSpell00000011",
     "name": "Уплотнение сосудов",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/vessel-hardening.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "vessel-hardening"
       }
     },
     "system": {
@@ -1713,19 +1821,25 @@
             "expiry": null
           },
           "range": {
-            "override": false,
-            "units": "ft"
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -1746,7 +1860,7 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/vessel-hardening.svg",
           "behaviors": []
         }
       },
@@ -1764,11 +1878,12 @@
     "_id": "BldSpell00000012",
     "name": "Насильственная перестройка",
     "type": "spell",
-    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/forced-reconstruction.svg",
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "spellKey": "forced-reconstruction"
       }
     },
     "system": {
@@ -1828,7 +1943,7 @@
       "activities": {
         "ActBlood00000011": {
           "_id": "ActBlood00000011",
-          "type": "utility",
+          "type": "heal",
           "sort": 0,
           "activation": {
             "type": "action",
@@ -1853,19 +1968,25 @@
             "expiry": null
           },
           "range": {
-            "override": false,
-            "units": "ft"
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
           },
           "target": {
-            "template": {
-              "contiguous": false,
-              "units": "ft",
-              "stationary": false
-            },
             "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
               "choice": false
             },
-            "override": false,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
             "prompt": true
           },
           "uses": {
@@ -1881,8 +2002,24 @@
             "requireIdentification": false,
             "requireMagic": false
           },
-          "img": null,
-          "behaviors": []
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/forced-reconstruction.svg",
+          "behaviors": [],
+          "healing": {
+            "number": null,
+            "denomination": 0,
+            "bonus": "10",
+            "types": [
+              "temphp"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "number": 1
+            },
+            "modifiers": []
+          }
         }
       },
       "identifier": "blood-12",
