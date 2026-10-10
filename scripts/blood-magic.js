@@ -99,8 +99,16 @@ Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig
    const next=foundry.utils.deepClone(usageConfig);
    next.consume??={};
    if(entry.spell)next.consume.spellSlot=false;
-   try { await activity.use(next,{...dialogConfig,configure:false},messageConfig); }
-   finally {authorizedUses.delete(activity); }
+   // The core may keep the returned Promise pending after displaying the roll.
+   // Invoke synchronously to pass the re-entry guard, but do not hold payment queue
+   // until the entire interactive activity lifecycle completes.
+   try {
+     const useResult=activity.use(next,{...dialogConfig,configure:false},messageConfig);
+     Promise.resolve(useResult).catch(error=>{
+       console.error(MOD,error);
+       ui.notifications.error("Багровое Причастие: "+error.message);
+     });
+   } finally { authorizedUses.delete(activity); }
  });
  paymentQueue.set(key,job);
  job.catch(error=>{
