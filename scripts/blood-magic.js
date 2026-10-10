@@ -25,7 +25,14 @@ function chooseDice(actor, count) {
  for(const pool of pools){const use=Math.min(missing, Math.max(0,pool.maximum-pool.spent));if(use){spent.push({pool,count:use});missing-=use;}}
  return {spent,missing,die:pools[0]?.size??8};
 }
-const costOf=(activity,config)=>clamp(Math.trunc(num(config?.spellLevel ?? config?.slotLevel ?? activity?.spell?.level,0)),0,9);
+async function costOf(activity,config) {
+  const selected = config?.spellLevel ?? config?.slotLevel ?? activity?.spell?.level;
+  if(selected !== null && selected !== undefined) return clamp(Math.trunc(num(selected)),0,9);
+  const uuid=activity?.spell?.uuid;
+  if(!uuid)return 0;
+  const spell=await fromUuid(uuid);
+  return clamp(Math.trunc(num(spell?.system?.level)),0,9);
+}
 async function pay(actor,cost) {
  if(!owned(actor))throw Error("Нет прав на изменение Костей Хитов");
  const {spent,missing,die}=chooseDice(actor,cost);
@@ -70,10 +77,11 @@ Hooks.on("dnd5e.postUseLinkedSpell",(activity,usageConfig,results)=>{
  if(!owned(actor))return;
  if(processed.has(results))return;
  processed.add(results);
- const cost=costOf(activity,usageConfig);
- if(!cost)return;
  const previous=inFlight.get(actor.uuid)??Promise.resolve();
- const next=previous.catch(()=>{}).then(()=>pay(actor,cost));
+ const next=previous.catch(()=>{}).then(async()=>{
+   const cost=await costOf(activity,usageConfig);
+   if(cost)return pay(actor,cost);
+ });
  inFlight.set(actor.uuid,next);
  next.catch(error=>ui.notifications.error("Багровое Причастие: "+error.message))
      .finally(()=>{if(inFlight.get(actor.uuid)===next)inFlight.delete(actor.uuid);});
