@@ -215,18 +215,17 @@ function biteConfig(item) {
 }
 
 async function handleAttack(chat) {
-  if (!isLeadingGM() || chat.type !== "attack" || !chat.rolls?.length) return;
+  if (!isLeadingGM()) return;
   const activity = chat.getAssociatedActivity?.();
   if (activity?.type !== "attack") return;
   const config = biteConfig(activity.item);
   if (!config) return;
   return enqueue("attack:" + chat.id, async () => {
     const targets = chat.system?.evaluatedTargets ?? [];
-    if (!targets.length) {
-      ui.notifications.warn("Багровое Причастие: назначьте цель (T) перед броском атаки.");
-      return;
-    }
-    for (const target of targets.filter(t => !t.isMiss)) {
+    // The attack message may be created before the target's hit/miss data exists.
+    // Apply only to explicitly confirmed hits, never to unresolved targets.
+    if (!targets.length) return;
+    for (const target of targets.filter(t => t.isMiss === false || t.isHit === true)) {
       const token = await fromUuid(target.token);
       if (token?.documentName !== "Token" || !token.actor) continue;
       const key = token.parent.id + "_" + token.id;
@@ -361,6 +360,7 @@ async function medicine() {
 }
 Hooks.on("dnd5e.preApplyDamage", prepareDamage);
 Hooks.on("createChatMessage", chat => { void handleAttack(chat).catch(report); });
+Hooks.on("updateChatMessage", chat => { void handleAttack(chat).catch(report); });
 Hooks.on("combatTurnChange", (combat, _prior, current) => { void tick(combat, { ...current }).catch(report); });
 // Previous HP comes from D&D5e's update options on every client, even player healing.
 Hooks.on("updateActor", (actor, changes, options) => {
