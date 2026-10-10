@@ -192,6 +192,37 @@ async function bloodAttackLifesteal(chat){
    return;
  }
 }
+
+async function autoBloodSaves(chat) {
+ if(!game.user?.isGM || game.users?.activeGM?.id!==game.user.id)return;
+ const activity=chat.getAssociatedActivity?.();
+ if(activity?.type!=="save" || !activity.item?.getFlag?.(MOD,"bloodMagicAbility"))return;
+ const targets=chat.system?.evaluatedTargets ?? [];
+ if(!targets.length)return;
+ const ability=activity.save?.ability?.[0];
+ if(!ability)return;
+ const caster=activity.item.actor;
+ const dc=8 + 2*Number(caster?.system?.attributes?.prof??3)+Number(caster?.system?.abilities?.con?.mod??0);
+ for(const target of targets){
+   const token=await fromUuid(target.token);
+   if(!token?.actor)continue;
+   const key=token.uuid?.replaceAll(".","_") ?? token.id;
+   if(chat.getFlag(MOD,"bloodSaveResults")?.[key])continue;
+   await chat.setFlag(MOD,"bloodSaveResults."+key,{pending:true});
+   try {
+     const result=await token.actor.rollSavingThrow(
+       {ability,target:dc},{configure:false},
+       {data:{speaker:ChatMessage.getSpeaker({token})}}
+     );
+     const total=result?.[0]?.total;
+     await chat.setFlag(MOD,"bloodSaveResults."+key,{done:true,total});
+   }catch(error){
+     await chat.unsetFlag(MOD,"bloodSaveResults."+key);
+     console.error(MOD,error);
+   }
+ }
+}
+
 Hooks.on("createChatMessage",chat=>{
  // Foundry can keep activity.use() pending after chat output. Once its actual
  // roll/activity card is created, release the input lock so the NPC can act again.
@@ -202,6 +233,7 @@ Hooks.on("createChatMessage",chat=>{
    pendingCast.delete(key);
    spending.delete(key);
  }
+ void autoBloodSaves(chat).catch(error=>console.error(MOD,error));
  void bloodAttackLifesteal(chat).catch(error=>console.error(MOD,error));
 });
 
