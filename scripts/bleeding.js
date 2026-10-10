@@ -198,7 +198,9 @@ function biteConfig(item) {
     bleed: bleed ? {
       levels: integer(bleed.levels ?? 1, 1, 5, 1),
       count: integer(bleed.count ?? 1, 1, 10, 1),
-      dc: integer(bleed.dc ?? 11, 1, 99, 11),
+      dc: bleed.dcFormula === "bloodExpert"
+        ? Math.max(1, 8 + 2 * Math.max(0, Number(item.actor?.system?.attributes?.prof ?? 2)) + Number(item.actor?.system?.abilities?.con?.mod ?? 0))
+        : integer(bleed.dc ?? 11, 1, 99, 11),
       bonusLevelsIfBleeding: integer(bleed.bonusLevelsIfBleeding ?? 0, 0, 5, 0),
       requiresBleeding: Boolean(bleed.requiresBleeding)
     } : null,
