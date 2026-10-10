@@ -1,6 +1,4 @@
 const MOD = "bagrovoe-bleeding";
-const processed = new WeakSet();
-const inFlight = new Map();
 const num = (v, fallback=0) => Number.isFinite(Number(v)) ? Number(v) : fallback;
 const clamp = (x, low, high) => Math.max(low,Math.min(high,x));
 
@@ -49,7 +47,7 @@ async function pay(actor,cost) {
    if(total>=hp.value+Math.max(1,hp.max))await actor.toggleStatusEffect("dead",{active:true});
  }
  await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content:`<p><strong>Кровавое колдовство:</strong> ${actor.name} — стоимость ${cost} КХ, потрачено ${cost-missing}, нехватка ${missing}${missing?`, урон ${expression} = ${total} (без защит и временных хитов)`:""}.</p>`});
- return {missing,total};
+ return {missing,total,killed:total>0 && actor.system.attributes.hp.value<=0};
 }
 async function regain(actor,number=1){
  const spent=hdPools(actor).sort((a,b)=>b.size-a.size);
@@ -67,29 +65,51 @@ async function steal(caster,target,amount=1,heal=0){
  if(heal&&stolen){const hp=caster.system.attributes.hp;await caster.update({"system.attributes.hp.value":Math.min(hp.max,hp.value+heal*stolen)});}
  return restored;
 }
-Hooks.on("dnd5e.preUseLinkedSpell",(activity,usageConfig)=>{
- if(!bloodCast(activity)||!isBloodNpc(activity?.item?.actor))return;
- // Do not spend regular spell slots for a blood cast.
- usageConfig.consumeSpellSlot=false;
- if(usageConfig.consumption)usageConfig.consumption.spellSlot=false;
+// Intercept before activity use. A re-entrant call with a bypass flag is the only
+// way to guarantee payment precedes the effect without pretending an async hook awaits.
+const authorizedUses = new WeakSet();
+const spending = new Set();
+function guardedActivity(activity) {
+ const actor=activity?.item?.actor;
+ if(!actor || !owned(actor)) return null;
+ if(isBloodNpc(actor) && bloodCast(activity)) return { actor, item:activity.item, spell:true };
+ if(activity?.item?.getFlag?.(MOD,"itemBloodCost")) return { actor,item:activity.item,spell:false };
+ return null;
+}
+Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig)=>{
+ const entry=guardedActivity(activity);
+ if(!entry || authorizedUses.has(activity)) {
+   authorizedUses.delete(activity);
+   if(entry?.spell) {
+     usageConfig.consume??={};
+     usageConfig.consume.spellSlot=false;
+   }
+   return;
+ }
+ const key=entry.actor.uuid;
+ // Reject concurrent activations instead of risking double-spend.
+ if(spending.has(key)) {
+   ui.notifications.warn("Багровое Причастие: дождитесь завершения предыдущей активации");
+   return false;
+ }
+ spending.add(key);
+ (async()=>{
+   try {
+     // Both spells and item powers pay before their action's roll/effect.
+     const result=entry.spell
+       ? await pay(entry.actor,await costOf(activity,usageConfig))
+       : await activateItemBloodCost(entry.item);
+     if(result?.killed || entry.actor.statuses?.has?.("dead"))return;
+     authorizedUses.add(activity);
+     const next=foundry.utils.deepClone(usageConfig);
+     next.consume??={};
+     if(entry.spell) next.consume.spellSlot=false;
+     await activity.use(next,{...dialogConfig,configure:false},messageConfig);
+   } catch(error) { console.error(MOD,error); ui.notifications.error("Багровое Причастие: "+error.message); }
+   finally {authorizedUses.delete(activity);spending.delete(key);}
+ })();
+ return false;
 });
-Hooks.on("dnd5e.postUseLinkedSpell",(activity,usageConfig,results)=>{
- if(!bloodCast(activity)||!results||!isBloodNpc(activity.item?.actor))return;
- const actor=activity.item.actor;
- if(!owned(actor))return;
- if(processed.has(results))return;
- processed.add(results);
- const previous=inFlight.get(actor.uuid)??Promise.resolve();
- const next=previous.catch(()=>{}).then(async()=>{
-   const cost=await costOf(activity,usageConfig);
-   if(cost)return pay(actor,cost);
- });
- inFlight.set(actor.uuid,next);
- next.catch(error=>ui.notifications.error("Багровое Причастие: "+error.message))
-     .finally(()=>{if(inFlight.get(actor.uuid)===next)inFlight.delete(actor.uuid);});
-});
-
-
 /**
  * Player item powers only. Explicitly configured items may spend Hit Dice or HP.
  * Does not enable blood spellcasting or passive regeneration for player characters.
@@ -116,7 +136,7 @@ async function activateItemBloodCost(item) {
  if(harm)await actor.update({"system.attributes.hp.value":Math.max(0,hp.value-harm)});
  await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content:
    `<p><strong>${item.name}:</strong> потрачено ${cost-pools.missing} Костей Хитов; жертва ${harm} HP.</p>`});
- return {spent:cost-pools.missing,harm};
+ return {spent:cost-pools.missing,harm,killed:harm>0 && actor.system.attributes.hp.value<=0};
 }
 
 function isBleeding(token){
