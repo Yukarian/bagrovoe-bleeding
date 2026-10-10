@@ -15124,5 +15124,5821 @@
     },
     "_id": "b283f5d456bcfb74",
     "folder": null
+  },
+  {
+    "name": "Багровый олень",
+    "type": "npc",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/bagrovyj-olen.png",
+    "system": {
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "abilities": {
+        "str": {
+          "value": 18,
+          "proficient": 1,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "dex": {
+          "value": 14,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "con": {
+          "value": 14,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "int": {
+          "value": 2,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "wis": {
+          "value": 14,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "cha": {
+          "value": 6,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        }
+      },
+      "bonuses": {
+        "spell": {
+          "dc": ""
+        }
+      },
+      "skills": {
+        "acr": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ani": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "arc": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ath": {
+          "ability": "str",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "dec": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "his": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ins": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "itm": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "inv": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "med": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "nat": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "prc": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "prf": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "per": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "rel": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "slt": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ste": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "sur": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        }
+      },
+      "tools": {},
+      "spells": {
+        "spell1": {
+          "value": 0,
+          "override": null
+        },
+        "spell2": {
+          "value": 0,
+          "override": null
+        },
+        "spell3": {
+          "value": 0,
+          "override": null
+        },
+        "spell4": {
+          "value": 0,
+          "override": null
+        },
+        "spell5": {
+          "value": 0,
+          "override": null
+        },
+        "spell6": {
+          "value": 0,
+          "override": null
+        },
+        "spell7": {
+          "value": 0,
+          "override": null
+        },
+        "spell8": {
+          "value": 0,
+          "override": null
+        },
+        "spell9": {
+          "value": 0,
+          "override": null
+        },
+        "pact": {
+          "value": 0,
+          "override": null
+        }
+      },
+      "attributes": {
+        "init": {
+          "ability": "",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "movement": {
+          "units": "ft",
+          "hover": false,
+          "ignoredDifficultTerrain": [],
+          "speeds": {
+            "walk": "50"
+          }
+        },
+        "attunement": {
+          "max": 3
+        },
+        "senses": {
+          "units": "ft",
+          "special": "",
+          "ranges": {
+            "darkvision": 60,
+            "blindsight": null,
+            "tremorsense": null,
+            "truesight": null
+          }
+        },
+        "spellcasting": "con",
+        "exhaustion": 0,
+        "concentration": {
+          "ability": "",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "limit": 1
+        },
+        "ac": {
+          "flat": 14,
+          "calcs": [
+            "flat"
+          ],
+          "formulas": [],
+          "override": null
+        },
+        "hd": {
+          "max": 6,
+          "denomination": "d10",
+          "spent": 0
+        },
+        "hp": {
+          "value": 45,
+          "max": 45,
+          "temp": 0,
+          "tempmax": null,
+          "formula": "6d10 + 12"
+        },
+        "death": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "success": 0,
+          "failure": 0
+        },
+        "spell": {
+          "level": 0
+        },
+        "loyalty": {
+          "value": null
+        },
+        "price": {
+          "value": null,
+          "denomination": "gp"
+        }
+      },
+      "details": {
+        "biography": {
+          "value": "<h2>Багровый олень</h2><p>Территориальный заражённый олень. Защищает тропы и логово, отгоняет нарушителей стремительным ударом рогов. Отступает при потере половины хитов, если его не загнали в угол.</p><p>Носитель Багрового Причастия остаётся живым существом. Проклятие не передаётся обычными ранами или кровотечением, не дарует животным разум и не требует пить кровь для выживания.</p><p>Авторский лист для тестовой игры; ПО 2 предварительный.</p>",
+          "public": ""
+        },
+        "alignment": "Без мировоззрения",
+        "ideal": "",
+        "bond": "",
+        "flaw": "",
+        "race": null,
+        "type": {
+          "value": "beast",
+          "subtype": "заражённый",
+          "swarm": "",
+          "custom": ""
+        },
+        "cr": 2,
+        "habitat": {
+          "value": [],
+          "custom": ""
+        },
+        "treasure": {
+          "value": []
+        }
+      },
+      "resources": {
+        "legact": {
+          "max": 0,
+          "spent": 0
+        },
+        "legres": {
+          "max": 0,
+          "spent": 0
+        },
+        "lair": {
+          "value": false,
+          "initiative": null,
+          "inside": false
+        }
+      },
+      "source": {
+        "revision": 1,
+        "rules": "2024",
+        "book": "",
+        "page": "",
+        "custom": "Авторский бестиарий Багрового Причастия",
+        "license": ""
+      },
+      "traits": {
+        "size": "lg",
+        "di": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dr": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dv": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dm": {
+          "amount": {},
+          "bypasses": []
+        },
+        "ci": {
+          "value": [],
+          "custom": ""
+        },
+        "languages": {
+          "value": [],
+          "custom": "",
+          "communication": {}
+        },
+        "important": false
+      },
+      "identifier": "bagrovyj-olen",
+      "rolls": {}
+    },
+    "prototypeToken": {
+      "name": "Багровый олень",
+      "displayName": 0,
+      "actorLink": false,
+      "appendNumber": false,
+      "prependAdjective": false,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/bagrovoe-bleeding/assets/tokens/bagrovyj-olen.png",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff"
+      },
+      "lockRotation": true,
+      "rotation": 0,
+      "alpha": 1,
+      "disposition": -1,
+      "displayBars": 0,
+      "bar1": {
+        "attribute": "attributes.hp"
+      },
+      "bar2": {
+        "attribute": null
+      },
+      "light": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 0,
+        "color": null,
+        "coloration": 1,
+        "dim": 0,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "sight": {
+        "enabled": false,
+        "range": 0,
+        "angle": 360,
+        "visionMode": "basic",
+        "color": null,
+        "attenuation": 0.1,
+        "brightness": 0,
+        "saturation": 0,
+        "contrast": 0
+      },
+      "detectionModes": {},
+      "occludable": {
+        "radius": 0
+      },
+      "ring": {
+        "enabled": true,
+        "colors": {
+          "ring": null,
+          "background": null
+        },
+        "effects": 1,
+        "subject": {
+          "scale": 1,
+          "texture": null
+        }
+      },
+      "flags": {},
+      "randomImg": false,
+      "turnMarker": {
+        "mode": 1,
+        "animation": null,
+        "src": null,
+        "disposition": false
+      },
+      "movementAction": null,
+      "depth": 1
+    },
+    "items": [
+      {
+        "name": "Ветвистые рога",
+        "type": "weapon",
+        "_id": "1e5d145fb5acee0f",
+        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "system": {
+          "type": {
+            "value": "natural",
+            "baseItem": ""
+          },
+          "activities": {
+            "4014e292cfa15131": {
+              "_id": "4014e292cfa15131",
+              "type": "attack",
+              "sort": 0,
+              "activation": {
+                "type": "action",
+                "value": null,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": 5,
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false,
+                  "count": "1",
+                  "type": "creature",
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "attack": {
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "melee",
+                  "classification": "natural"
+                },
+                "ability": "str",
+                "bonus": ""
+              },
+              "damage": {
+                "critical": {
+                  "bonus": ""
+                },
+                "includeBase": false,
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 2,
+                    "denomination": 8,
+                    "bonus": "4",
+                    "types": [
+                      "piercing"
+                    ],
+                    "scaling": {
+                      "number": 1
+                    },
+                    "modifiers": []
+                  }
+                ]
+              },
+              "name": "Ветвистые рога",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": []
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Рукопашная атака: +6 к попаданию, досягаемость 5 футов, одна цель. Попадание: 13 (2к8 + 4) колющего урона. </p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-olen-1e5d145fb5acee0f",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "identified": true,
+          "unidentified": {
+            "description": ""
+          },
+          "container": null,
+          "quantity": 1,
+          "weight": {
+            "value": 0,
+            "units": "lb"
+          },
+          "price": {
+            "value": 0,
+            "denomination": "gp"
+          },
+          "attunement": "",
+          "armor": {
+            "value": null
+          },
+          "cover": null,
+          "hp": {
+            "value": null,
+            "max": null,
+            "dt": null,
+            "conditions": ""
+          },
+          "ammunition": {},
+          "damage": {
+            "base": {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "piercing"
+              ],
+              "scaling": {
+                "number": 1
+              },
+              "modifiers": []
+            },
+            "versatile": {
+              "number": null,
+              "denomination": 0,
+              "types": [],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            }
+          },
+          "properties": [],
+          "proficient": true,
+          "range": {
+            "value": null,
+            "long": null,
+            "reach": 5,
+            "units": "ft"
+          },
+          "mastery": "",
+          "attuned": false,
+          "equipped": true,
+          "crew": {
+            "value": []
+          },
+          "rarities": [],
+          "requirements": ""
+        },
+        "effects": [],
+        "sort": 0,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "abilities": {
+              "bleed": false
+            }
+          }
+        },
+        "ownership": {
+          "default": 0
+        },
+        "folder": null
+      },
+      {
+        "name": "Раздирающие рога",
+        "type": "weapon",
+        "_id": "aceac31e9118cfd9",
+        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "system": {
+          "type": {
+            "value": "natural",
+            "baseItem": ""
+          },
+          "activities": {
+            "257b96d68092bde2": {
+              "_id": "257b96d68092bde2",
+              "type": "attack",
+              "sort": 0,
+              "activation": {
+                "type": "action",
+                "value": null,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": "",
+                    "scaling": {}
+                  }
+                ]
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": 5,
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false,
+                  "count": "1",
+                  "type": "creature",
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "attack": {
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "melee",
+                  "classification": "natural"
+                },
+                "ability": "str",
+                "bonus": ""
+              },
+              "damage": {
+                "critical": {
+                  "bonus": ""
+                },
+                "includeBase": false,
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 2,
+                    "denomination": 8,
+                    "bonus": "4",
+                    "types": [
+                      "piercing"
+                    ],
+                    "scaling": {
+                      "number": 1
+                    },
+                    "modifiers": []
+                  }
+                ]
+              },
+              "name": "Раздирающие рога",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": []
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "1",
+            "recovery": [
+              {
+                "period": "recharge",
+                "formula": "5",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "description": {
+            "value": "<p>Рукопашная атака: +6 к попаданию, досягаемость 5 футов, одна цель. Попадание: 13 (2к8 + 4) колющего урона. Перезарядка 5–6. При попадании цель совершает спасбросок Телосложения Сл 12; при провале получает 1 уровень кровотечения.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-olen-aceac31e9118cfd9",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "identified": true,
+          "unidentified": {
+            "description": ""
+          },
+          "container": null,
+          "quantity": 1,
+          "weight": {
+            "value": 0,
+            "units": "lb"
+          },
+          "price": {
+            "value": 0,
+            "denomination": "gp"
+          },
+          "attunement": "",
+          "armor": {
+            "value": null
+          },
+          "cover": null,
+          "hp": {
+            "value": null,
+            "max": null,
+            "dt": null,
+            "conditions": ""
+          },
+          "ammunition": {},
+          "damage": {
+            "base": {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "piercing"
+              ],
+              "scaling": {
+                "number": 1
+              },
+              "modifiers": []
+            },
+            "versatile": {
+              "number": null,
+              "denomination": 0,
+              "types": [],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            }
+          },
+          "properties": [],
+          "proficient": true,
+          "range": {
+            "value": null,
+            "long": null,
+            "reach": 5,
+            "units": "ft"
+          },
+          "mastery": "",
+          "attuned": false,
+          "equipped": true,
+          "crew": {
+            "value": []
+          },
+          "rarities": [],
+          "requirements": ""
+        },
+        "effects": [],
+        "sort": 100000,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "abilities": {
+              "bleed": {
+                "levels": 1,
+                "count": 1,
+                "dc": 12
+              }
+            }
+          }
+        },
+        "ownership": {
+          "default": 0
+        },
+        "folder": null
+      },
+      {
+        "name": "Лесной бегун",
+        "type": "feat",
+        "_id": "8fa6029e4f0327fd",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {},
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Немагическая труднопроходимая местность, образованная растениями, не замедляет оленя. Он совершает с преимуществом проверки Восприятия, основанные на слухе или обонянии.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-olen-8fa6029e4f0327fd",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [
+            "trait"
+          ],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 200000,
+        "flags": {},
+        "folder": null
+      },
+      {
+        "name": "Отскок",
+        "type": "feat",
+        "_id": "9ece554ff5680dba",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {
+            "4fd8a304658d92de": {
+              "_id": "4fd8a304658d92de",
+              "type": "utility",
+              "sort": 0,
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": "",
+                    "scaling": {}
+                  }
+                ]
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "units": "self",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "type": "self",
+                  "count": "",
+                  "choice": false,
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "name": "Отскок",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": [],
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "2",
+            "recovery": [
+              {
+                "period": "lr",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "description": {
+            "value": "<p>Олень перемещается до 20 футов, не провоцируя атаки по возможности. Ведущий перемещает токен вручную.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-olen-9ece554ff5680dba",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 300000,
+        "flags": {},
+        "folder": null
+      }
+    ],
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "sourceSlug": "bagrovyj-olen",
+        "contentVersion": "3.7.0",
+        "designStatus": "playtest"
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "_id": "c0298c9300714304",
+    "folder": null
+  },
+  {
+    "name": "Багровое отродье",
+    "type": "npc",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/bagrovoe-otrodie.png",
+    "system": {
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "abilities": {
+        "str": {
+          "value": 18,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "dex": {
+          "value": 16,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "con": {
+          "value": 18,
+          "proficient": 1,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "int": {
+          "value": 8,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "wis": {
+          "value": 12,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "cha": {
+          "value": 8,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        }
+      },
+      "bonuses": {
+        "spell": {
+          "dc": ""
+        }
+      },
+      "skills": {
+        "acr": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ani": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "arc": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ath": {
+          "ability": "str",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "dec": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "his": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ins": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "itm": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "inv": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "med": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "nat": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "prc": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "prf": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "per": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "rel": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "slt": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ste": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "sur": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        }
+      },
+      "tools": {},
+      "spells": {
+        "spell1": {
+          "value": 0,
+          "override": null
+        },
+        "spell2": {
+          "value": 0,
+          "override": null
+        },
+        "spell3": {
+          "value": 0,
+          "override": null
+        },
+        "spell4": {
+          "value": 0,
+          "override": null
+        },
+        "spell5": {
+          "value": 0,
+          "override": null
+        },
+        "spell6": {
+          "value": 0,
+          "override": null
+        },
+        "spell7": {
+          "value": 0,
+          "override": null
+        },
+        "spell8": {
+          "value": 0,
+          "override": null
+        },
+        "spell9": {
+          "value": 0,
+          "override": null
+        },
+        "pact": {
+          "value": 0,
+          "override": null
+        }
+      },
+      "attributes": {
+        "init": {
+          "ability": "",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "movement": {
+          "units": "ft",
+          "hover": false,
+          "ignoredDifficultTerrain": [],
+          "speeds": {
+            "walk": "35",
+            "climb": "30"
+          }
+        },
+        "attunement": {
+          "max": 3
+        },
+        "senses": {
+          "units": "ft",
+          "special": "",
+          "ranges": {
+            "darkvision": 60,
+            "blindsight": null,
+            "tremorsense": null,
+            "truesight": null
+          }
+        },
+        "spellcasting": "con",
+        "exhaustion": 0,
+        "concentration": {
+          "ability": "",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "limit": 1
+        },
+        "ac": {
+          "flat": 15,
+          "calcs": [
+            "flat"
+          ],
+          "formulas": [],
+          "override": null
+        },
+        "hd": {
+          "max": 10,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "hp": {
+          "value": 85,
+          "max": 85,
+          "temp": 0,
+          "tempmax": null,
+          "formula": "10d8 + 40"
+        },
+        "death": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "success": 0,
+          "failure": 0
+        },
+        "spell": {
+          "level": 0
+        },
+        "loyalty": {
+          "value": null
+        },
+        "price": {
+          "value": null,
+          "denomination": "gp"
+        }
+      },
+      "details": {
+        "biography": {
+          "value": "<h2>Багровое отродье</h2><p>Живой носитель, чьё тело изменилось до неузнаваемости. Подкрадывается по стенам и охотится на отбившихся от группы. Способен понимать простые угрозы и торговаться за безопасный отход.</p><p>Носитель Багрового Причастия остаётся живым существом. Проклятие не передаётся обычными ранами или кровотечением, не дарует животным разум и не требует пить кровь для выживания.</p><p>Авторский лист для тестовой игры; ПО 4 предварительный.</p>",
+          "public": ""
+        },
+        "alignment": "Любое",
+        "ideal": "",
+        "bond": "",
+        "flaw": "",
+        "race": null,
+        "type": {
+          "value": "aberration",
+          "subtype": "заражённый",
+          "swarm": "",
+          "custom": ""
+        },
+        "cr": 4,
+        "habitat": {
+          "value": [],
+          "custom": ""
+        },
+        "treasure": {
+          "value": []
+        }
+      },
+      "resources": {
+        "legact": {
+          "max": 0,
+          "spent": 0
+        },
+        "legres": {
+          "max": 0,
+          "spent": 0
+        },
+        "lair": {
+          "value": false,
+          "initiative": null,
+          "inside": false
+        }
+      },
+      "source": {
+        "revision": 1,
+        "rules": "2024",
+        "book": "",
+        "page": "",
+        "custom": "Авторский бестиарий Багрового Причастия",
+        "license": ""
+      },
+      "traits": {
+        "size": "med",
+        "di": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dr": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dv": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dm": {
+          "amount": {},
+          "bypasses": []
+        },
+        "ci": {
+          "value": [],
+          "custom": ""
+        },
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": "",
+          "communication": {}
+        },
+        "important": false
+      },
+      "identifier": "bagrovoe-otrodie",
+      "rolls": {}
+    },
+    "prototypeToken": {
+      "name": "Багровое отродье",
+      "displayName": 0,
+      "actorLink": false,
+      "appendNumber": false,
+      "prependAdjective": false,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/bagrovoe-bleeding/assets/tokens/bagrovoe-otrodie.png",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff"
+      },
+      "lockRotation": true,
+      "rotation": 0,
+      "alpha": 1,
+      "disposition": -1,
+      "displayBars": 0,
+      "bar1": {
+        "attribute": "attributes.hp"
+      },
+      "bar2": {
+        "attribute": null
+      },
+      "light": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 0,
+        "color": null,
+        "coloration": 1,
+        "dim": 0,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "sight": {
+        "enabled": false,
+        "range": 0,
+        "angle": 360,
+        "visionMode": "basic",
+        "color": null,
+        "attenuation": 0.1,
+        "brightness": 0,
+        "saturation": 0,
+        "contrast": 0
+      },
+      "detectionModes": {},
+      "occludable": {
+        "radius": 0
+      },
+      "ring": {
+        "enabled": true,
+        "colors": {
+          "ring": null,
+          "background": null
+        },
+        "effects": 1,
+        "subject": {
+          "scale": 1,
+          "texture": null
+        }
+      },
+      "flags": {},
+      "randomImg": false,
+      "turnMarker": {
+        "mode": 1,
+        "animation": null,
+        "src": null,
+        "disposition": false
+      },
+      "movementAction": null,
+      "depth": 1
+    },
+    "items": [
+      {
+        "name": "Мультиатака",
+        "type": "feat",
+        "_id": "5048d922f597dcac",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {},
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Отродье совершает две атаки Серповидными когтями. Одну из них может заменить Рваной раной, если она доступна. Атаки выполняются отдельно.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovoe-otrodie-5048d922f597dcac",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [
+            "trait"
+          ],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 0,
+        "flags": {},
+        "folder": null
+      },
+      {
+        "name": "Серповидные когти",
+        "type": "weapon",
+        "_id": "7a81f590cd88bb24",
+        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "system": {
+          "type": {
+            "value": "natural",
+            "baseItem": ""
+          },
+          "activities": {
+            "53777a43c5c6c3e6": {
+              "_id": "53777a43c5c6c3e6",
+              "type": "attack",
+              "sort": 0,
+              "activation": {
+                "type": "action",
+                "value": null,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": 5,
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false,
+                  "count": "1",
+                  "type": "creature",
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "attack": {
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "melee",
+                  "classification": "natural"
+                },
+                "ability": "str",
+                "bonus": ""
+              },
+              "damage": {
+                "critical": {
+                  "bonus": ""
+                },
+                "includeBase": false,
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 2,
+                    "denomination": 6,
+                    "bonus": "4",
+                    "types": [
+                      "slashing"
+                    ],
+                    "scaling": {
+                      "number": 1
+                    },
+                    "modifiers": []
+                  }
+                ]
+              },
+              "name": "Серповидные когти",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": []
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Рукопашная атака: +6 к попаданию, досягаемость 5 футов, одна цель. Попадание: 11 (2к6 + 4) рубящего урона. </p>",
+            "chat": ""
+          },
+          "identifier": "bagrovoe-otrodie-7a81f590cd88bb24",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "identified": true,
+          "unidentified": {
+            "description": ""
+          },
+          "container": null,
+          "quantity": 1,
+          "weight": {
+            "value": 0,
+            "units": "lb"
+          },
+          "price": {
+            "value": 0,
+            "denomination": "gp"
+          },
+          "attunement": "",
+          "armor": {
+            "value": null
+          },
+          "cover": null,
+          "hp": {
+            "value": null,
+            "max": null,
+            "dt": null,
+            "conditions": ""
+          },
+          "ammunition": {},
+          "damage": {
+            "base": {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "slashing"
+              ],
+              "scaling": {
+                "number": 1
+              },
+              "modifiers": []
+            },
+            "versatile": {
+              "number": null,
+              "denomination": 0,
+              "types": [],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            }
+          },
+          "properties": [],
+          "proficient": true,
+          "range": {
+            "value": null,
+            "long": null,
+            "reach": 5,
+            "units": "ft"
+          },
+          "mastery": "",
+          "attuned": false,
+          "equipped": true,
+          "crew": {
+            "value": []
+          },
+          "rarities": [],
+          "requirements": ""
+        },
+        "effects": [],
+        "sort": 100000,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "abilities": {
+              "bleed": false,
+              "onHit": {
+                "requiresBleeding": true,
+                "healHP": 4,
+                "oncePerTurn": true,
+                "group": "bagrovoe-otrodie-vigor"
+              }
+            }
+          }
+        },
+        "ownership": {
+          "default": 0
+        },
+        "folder": null
+      },
+      {
+        "name": "Рваная рана",
+        "type": "weapon",
+        "_id": "083bc07417579e72",
+        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "system": {
+          "type": {
+            "value": "natural",
+            "baseItem": ""
+          },
+          "activities": {
+            "4f640e118c71ee5d": {
+              "_id": "4f640e118c71ee5d",
+              "type": "attack",
+              "sort": 0,
+              "activation": {
+                "type": "action",
+                "value": null,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": "",
+                    "scaling": {}
+                  }
+                ]
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": 5,
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false,
+                  "count": "1",
+                  "type": "creature",
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "attack": {
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "melee",
+                  "classification": "natural"
+                },
+                "ability": "str",
+                "bonus": ""
+              },
+              "damage": {
+                "critical": {
+                  "bonus": ""
+                },
+                "includeBase": false,
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 2,
+                    "denomination": 6,
+                    "bonus": "4",
+                    "types": [
+                      "slashing"
+                    ],
+                    "scaling": {
+                      "number": 1
+                    },
+                    "modifiers": []
+                  }
+                ]
+              },
+              "name": "Рваная рана",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": []
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "1",
+            "recovery": [
+              {
+                "period": "recharge",
+                "formula": "5",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "description": {
+            "value": "<p>Рукопашная атака: +6 к попаданию, досягаемость 5 футов, одна цель. Попадание: 11 (2к6 + 4) рубящего урона. Перезарядка 5–6. При попадании цель совершает спасбросок Телосложения Сл 14; при провале получает 1 уровень кровотечения.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovoe-otrodie-083bc07417579e72",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "identified": true,
+          "unidentified": {
+            "description": ""
+          },
+          "container": null,
+          "quantity": 1,
+          "weight": {
+            "value": 0,
+            "units": "lb"
+          },
+          "price": {
+            "value": 0,
+            "denomination": "gp"
+          },
+          "attunement": "",
+          "armor": {
+            "value": null
+          },
+          "cover": null,
+          "hp": {
+            "value": null,
+            "max": null,
+            "dt": null,
+            "conditions": ""
+          },
+          "ammunition": {},
+          "damage": {
+            "base": {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "slashing"
+              ],
+              "scaling": {
+                "number": 1
+              },
+              "modifiers": []
+            },
+            "versatile": {
+              "number": null,
+              "denomination": 0,
+              "types": [],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            }
+          },
+          "properties": [],
+          "proficient": true,
+          "range": {
+            "value": null,
+            "long": null,
+            "reach": 5,
+            "units": "ft"
+          },
+          "mastery": "",
+          "attuned": false,
+          "equipped": true,
+          "crew": {
+            "value": []
+          },
+          "rarities": [],
+          "requirements": ""
+        },
+        "effects": [],
+        "sort": 200000,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "abilities": {
+              "bleed": {
+                "levels": 1,
+                "count": 1,
+                "dc": 14
+              },
+              "onHit": {
+                "requiresBleeding": true,
+                "healHP": 4,
+                "oncePerTurn": true,
+                "group": "bagrovoe-otrodie-vigor"
+              }
+            }
+          }
+        },
+        "ownership": {
+          "default": 0
+        },
+        "folder": null
+      },
+      {
+        "name": "Кровавое насыщение",
+        "type": "feat",
+        "_id": "05d48566196baa1a",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {},
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Один раз за ход при попадании когтями или Рваной раной по уже кровоточащей цели отродье восстанавливает 4 хита, не превышая максимум.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovoe-otrodie-05d48566196baa1a",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [
+            "trait"
+          ],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 300000,
+        "flags": {},
+        "folder": null
+      },
+      {
+        "name": "Цепкие конечности",
+        "type": "feat",
+        "_id": "b30ea9073cfbdcef",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {},
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Отродье может лазать по отвесным поверхностям и потолкам без проверки характеристик.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovoe-otrodie-b30ea9073cfbdcef",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [
+            "trait"
+          ],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 400000,
+        "flags": {},
+        "folder": null
+      }
+    ],
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "sourceSlug": "bagrovoe-otrodie",
+        "contentVersion": "3.7.0",
+        "designStatus": "playtest"
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "_id": "89f6856eb0a7bf2a",
+    "folder": null
+  },
+  {
+    "name": "Эмили Ясати",
+    "type": "npc",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/emili-yasati.png",
+    "system": {
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "abilities": {
+        "str": {
+          "value": 18,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "dex": {
+          "value": 16,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "con": {
+          "value": 18,
+          "proficient": 1,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "int": {
+          "value": 12,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "wis": {
+          "value": 14,
+          "proficient": 1,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "cha": {
+          "value": 14,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        }
+      },
+      "bonuses": {
+        "spell": {
+          "dc": ""
+        }
+      },
+      "skills": {
+        "acr": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ani": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "arc": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ath": {
+          "ability": "str",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "dec": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "his": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ins": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "itm": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "inv": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "med": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "nat": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "prc": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "prf": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "per": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "rel": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "slt": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ste": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "sur": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        }
+      },
+      "tools": {},
+      "spells": {
+        "spell1": {
+          "value": 0,
+          "override": null
+        },
+        "spell2": {
+          "value": 0,
+          "override": null
+        },
+        "spell3": {
+          "value": 0,
+          "override": null
+        },
+        "spell4": {
+          "value": 0,
+          "override": null
+        },
+        "spell5": {
+          "value": 0,
+          "override": null
+        },
+        "spell6": {
+          "value": 0,
+          "override": null
+        },
+        "spell7": {
+          "value": 0,
+          "override": null
+        },
+        "spell8": {
+          "value": 0,
+          "override": null
+        },
+        "spell9": {
+          "value": 0,
+          "override": null
+        },
+        "pact": {
+          "value": 0,
+          "override": null
+        }
+      },
+      "attributes": {
+        "init": {
+          "ability": "",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "movement": {
+          "units": "ft",
+          "hover": false,
+          "ignoredDifficultTerrain": [],
+          "speeds": {
+            "walk": "35"
+          }
+        },
+        "attunement": {
+          "max": 3
+        },
+        "senses": {
+          "units": "ft",
+          "special": "",
+          "ranges": {
+            "darkvision": 60,
+            "blindsight": null,
+            "tremorsense": null,
+            "truesight": null
+          }
+        },
+        "spellcasting": "con",
+        "exhaustion": 0,
+        "concentration": {
+          "ability": "",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "limit": 1
+        },
+        "ac": {
+          "flat": 17,
+          "calcs": [
+            "flat"
+          ],
+          "formulas": [],
+          "override": null
+        },
+        "hd": {
+          "max": 13,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "hp": {
+          "value": 110,
+          "max": 110,
+          "temp": 0,
+          "tempmax": null,
+          "formula": "13d8 + 52"
+        },
+        "death": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "success": 0,
+          "failure": 0
+        },
+        "spell": {
+          "level": 0
+        },
+        "loyalty": {
+          "value": null
+        },
+        "price": {
+          "value": null,
+          "denomination": "gp"
+        }
+      },
+      "details": {
+        "biography": {
+          "value": "<h2>Эмили Ясати</h2><p>Воительница, сохранившая волю после Багрового Причастия. Кровавый клинок служит ей средством защиты, а не поводом для убийства. Возможная роль в приключении: союзница против охотников на заражённых либо соперница, защищающая своего подопечного. Биография — авторский вариант, который ведущий может заменить.</p><p>Носитель Багрового Причастия остаётся живым существом. Проклятие не передаётся обычными ранами или кровотечением, не дарует животным разум и не требует пить кровь для выживания.</p><p>Авторский лист для тестовой игры; ПО 6 предварительный.</p>",
+          "public": ""
+        },
+        "alignment": "Любое",
+        "ideal": "",
+        "bond": "",
+        "flaw": "",
+        "race": null,
+        "type": {
+          "value": "humanoid",
+          "subtype": "заражённый",
+          "swarm": "",
+          "custom": ""
+        },
+        "cr": 6,
+        "habitat": {
+          "value": [],
+          "custom": ""
+        },
+        "treasure": {
+          "value": []
+        }
+      },
+      "resources": {
+        "legact": {
+          "max": 0,
+          "spent": 0
+        },
+        "legres": {
+          "max": 0,
+          "spent": 0
+        },
+        "lair": {
+          "value": false,
+          "initiative": null,
+          "inside": false
+        }
+      },
+      "source": {
+        "revision": 1,
+        "rules": "2024",
+        "book": "",
+        "page": "",
+        "custom": "Авторский бестиарий Багрового Причастия",
+        "license": ""
+      },
+      "traits": {
+        "size": "med",
+        "di": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dr": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dv": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dm": {
+          "amount": {},
+          "bypasses": []
+        },
+        "ci": {
+          "value": [],
+          "custom": ""
+        },
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": "",
+          "communication": {}
+        },
+        "important": true
+      },
+      "identifier": "emili-yasati",
+      "rolls": {}
+    },
+    "prototypeToken": {
+      "name": "Эмили Ясати",
+      "displayName": 0,
+      "actorLink": false,
+      "appendNumber": false,
+      "prependAdjective": false,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/bagrovoe-bleeding/assets/tokens/emili-yasati.png",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff"
+      },
+      "lockRotation": true,
+      "rotation": 0,
+      "alpha": 1,
+      "disposition": -1,
+      "displayBars": 0,
+      "bar1": {
+        "attribute": "attributes.hp"
+      },
+      "bar2": {
+        "attribute": null
+      },
+      "light": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 0,
+        "color": null,
+        "coloration": 1,
+        "dim": 0,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "sight": {
+        "enabled": false,
+        "range": 0,
+        "angle": 360,
+        "visionMode": "basic",
+        "color": null,
+        "attenuation": 0.1,
+        "brightness": 0,
+        "saturation": 0,
+        "contrast": 0
+      },
+      "detectionModes": {},
+      "occludable": {
+        "radius": 0
+      },
+      "ring": {
+        "enabled": true,
+        "colors": {
+          "ring": null,
+          "background": null
+        },
+        "effects": 1,
+        "subject": {
+          "scale": 1,
+          "texture": null
+        }
+      },
+      "flags": {},
+      "randomImg": false,
+      "turnMarker": {
+        "mode": 1,
+        "animation": null,
+        "src": null,
+        "disposition": false
+      },
+      "movementAction": null,
+      "depth": 1
+    },
+    "items": [
+      {
+        "name": "Мультиатака",
+        "type": "feat",
+        "_id": "5e6130dcc027dbcf",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {},
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Эмили совершает две атаки Клинком сердца. Одну из них может заменить Алым рассечением, если оно доступно. Атаки выполняются отдельно.</p>",
+            "chat": ""
+          },
+          "identifier": "emili-yasati-5e6130dcc027dbcf",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [
+            "trait"
+          ],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 0,
+        "flags": {},
+        "folder": null
+      },
+      {
+        "name": "Клинок сердца",
+        "type": "weapon",
+        "_id": "dd5c7ef7140f4494",
+        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "system": {
+          "type": {
+            "value": "natural",
+            "baseItem": ""
+          },
+          "activities": {
+            "fcaf786e9f44946f": {
+              "_id": "fcaf786e9f44946f",
+              "type": "attack",
+              "sort": 0,
+              "activation": {
+                "type": "action",
+                "value": null,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": 5,
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false,
+                  "count": "1",
+                  "type": "creature",
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "attack": {
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "melee",
+                  "classification": "natural"
+                },
+                "ability": "str",
+                "bonus": ""
+              },
+              "damage": {
+                "critical": {
+                  "bonus": ""
+                },
+                "includeBase": false,
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 2,
+                    "denomination": 8,
+                    "bonus": "4",
+                    "types": [
+                      "slashing"
+                    ],
+                    "scaling": {
+                      "number": 1
+                    },
+                    "modifiers": []
+                  }
+                ]
+              },
+              "name": "Клинок сердца",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": []
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Рукопашная атака: +7 к попаданию, досягаемость 5 футов, одна цель. Попадание: 13 (2к8 + 4) рубящего урона. </p>",
+            "chat": ""
+          },
+          "identifier": "emili-yasati-dd5c7ef7140f4494",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "identified": true,
+          "unidentified": {
+            "description": ""
+          },
+          "container": null,
+          "quantity": 1,
+          "weight": {
+            "value": 0,
+            "units": "lb"
+          },
+          "price": {
+            "value": 0,
+            "denomination": "gp"
+          },
+          "attunement": "",
+          "armor": {
+            "value": null
+          },
+          "cover": null,
+          "hp": {
+            "value": null,
+            "max": null,
+            "dt": null,
+            "conditions": ""
+          },
+          "ammunition": {},
+          "damage": {
+            "base": {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "slashing"
+              ],
+              "scaling": {
+                "number": 1
+              },
+              "modifiers": []
+            },
+            "versatile": {
+              "number": null,
+              "denomination": 0,
+              "types": [],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            }
+          },
+          "properties": [],
+          "proficient": true,
+          "range": {
+            "value": null,
+            "long": null,
+            "reach": 5,
+            "units": "ft"
+          },
+          "mastery": "",
+          "attuned": false,
+          "equipped": true,
+          "crew": {
+            "value": []
+          },
+          "rarities": [],
+          "requirements": ""
+        },
+        "effects": [],
+        "sort": 100000,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "abilities": {
+              "bleed": false,
+              "onHit": {
+                "requiresBleeding": true,
+                "healHP": 4,
+                "oncePerTurn": true,
+                "group": "emili-yasati-vigor"
+              }
+            }
+          }
+        },
+        "ownership": {
+          "default": 0
+        },
+        "folder": null
+      },
+      {
+        "name": "Алое рассечение",
+        "type": "weapon",
+        "_id": "4483ee79cb6d997e",
+        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "system": {
+          "type": {
+            "value": "natural",
+            "baseItem": ""
+          },
+          "activities": {
+            "4ea4b05274f6e5e0": {
+              "_id": "4ea4b05274f6e5e0",
+              "type": "attack",
+              "sort": 0,
+              "activation": {
+                "type": "action",
+                "value": null,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": "",
+                    "scaling": {}
+                  }
+                ]
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": 5,
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false,
+                  "count": "1",
+                  "type": "creature",
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "attack": {
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "melee",
+                  "classification": "natural"
+                },
+                "ability": "str",
+                "bonus": ""
+              },
+              "damage": {
+                "critical": {
+                  "bonus": ""
+                },
+                "includeBase": false,
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 4,
+                    "denomination": 8,
+                    "bonus": "4",
+                    "types": [
+                      "slashing"
+                    ],
+                    "scaling": {
+                      "number": 1
+                    },
+                    "modifiers": []
+                  }
+                ]
+              },
+              "name": "Алое рассечение",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": []
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "1",
+            "recovery": [
+              {
+                "period": "recharge",
+                "formula": "5",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "description": {
+            "value": "<p>Рукопашная атака: +7 к попаданию, досягаемость 5 футов, одна цель. Попадание: 22 (4к8 + 4) рубящего урона. Перезарядка 5–6. При попадании цель совершает спасбросок Телосложения Сл 15; при провале получает 1 уровень кровотечения.</p>",
+            "chat": ""
+          },
+          "identifier": "emili-yasati-4483ee79cb6d997e",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "identified": true,
+          "unidentified": {
+            "description": ""
+          },
+          "container": null,
+          "quantity": 1,
+          "weight": {
+            "value": 0,
+            "units": "lb"
+          },
+          "price": {
+            "value": 0,
+            "denomination": "gp"
+          },
+          "attunement": "",
+          "armor": {
+            "value": null
+          },
+          "cover": null,
+          "hp": {
+            "value": null,
+            "max": null,
+            "dt": null,
+            "conditions": ""
+          },
+          "ammunition": {},
+          "damage": {
+            "base": {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 4,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "slashing"
+              ],
+              "scaling": {
+                "number": 1
+              },
+              "modifiers": []
+            },
+            "versatile": {
+              "number": null,
+              "denomination": 0,
+              "types": [],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            }
+          },
+          "properties": [],
+          "proficient": true,
+          "range": {
+            "value": null,
+            "long": null,
+            "reach": 5,
+            "units": "ft"
+          },
+          "mastery": "",
+          "attuned": false,
+          "equipped": true,
+          "crew": {
+            "value": []
+          },
+          "rarities": [],
+          "requirements": ""
+        },
+        "effects": [],
+        "sort": 200000,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "abilities": {
+              "bleed": {
+                "levels": 1,
+                "count": 1,
+                "dc": 15
+              },
+              "onHit": {
+                "requiresBleeding": true,
+                "healHP": 4,
+                "oncePerTurn": true,
+                "group": "emili-yasati-vigor"
+              }
+            }
+          }
+        },
+        "ownership": {
+          "default": 0
+        },
+        "folder": null
+      },
+      {
+        "name": "Несломленное сердце",
+        "type": "feat",
+        "_id": "6610cd903177a269",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {},
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Один раз за ход при попадании Клинком сердца или Алым рассечением по уже кровоточащей цели Эмили восстанавливает 4 хита, не превышая максимум.</p>",
+            "chat": ""
+          },
+          "identifier": "emili-yasati-6610cd903177a269",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [
+            "trait"
+          ],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 300000,
+        "flags": {},
+        "folder": null
+      },
+      {
+        "name": "Парирование",
+        "type": "feat",
+        "_id": "060058fcbe0d80a8",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {
+            "e3ebb21501b028f5": {
+              "_id": "e3ebb21501b028f5",
+              "type": "utility",
+              "sort": 0,
+              "activation": {
+                "type": "reaction",
+                "value": 1,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": "",
+                    "scaling": {}
+                  }
+                ]
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "units": "self",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "type": "self",
+                  "count": "",
+                  "choice": false,
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "name": "Парирование",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": [],
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "3",
+            "recovery": [
+              {
+                "period": "lr",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "description": {
+            "value": "<p>Когда видимый противник попадает по Эмили рукопашной атакой, она повышает КД на 3 против этой атаки, возможно обращая попадание в промах. Примените до подтверждения попадания: ведущий вручную меняет результат атаки.</p>",
+            "chat": ""
+          },
+          "identifier": "emili-yasati-060058fcbe0d80a8",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 400000,
+        "flags": {},
+        "folder": null
+      },
+      {
+        "name": "Рывок к союзнику",
+        "type": "feat",
+        "_id": "e0529e7bdf91994c",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {
+            "9d00b9e7ad1afe2f": {
+              "_id": "9d00b9e7ad1afe2f",
+              "type": "utility",
+              "sort": 0,
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "units": "self",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "type": "self",
+                  "count": "",
+                  "choice": false,
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "name": "Рывок к союзнику",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": [],
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Эмили перемещается до половины скорости к видимому союзнику. Это перемещение провоцирует атаки по возможности по обычным правилам. Ведущий перемещает токен вручную.</p>",
+            "chat": ""
+          },
+          "identifier": "emili-yasati-e0529e7bdf91994c",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 500000,
+        "flags": {},
+        "folder": null
+      }
+    ],
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "sourceSlug": "emili-yasati",
+        "contentVersion": "3.7.0",
+        "designStatus": "playtest"
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "_id": "4b8ade9c13c11420",
+    "folder": null
+  },
+  {
+    "name": "Багровый древний",
+    "type": "npc",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/bagrovyj-drevnij.png",
+    "system": {
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "abilities": {
+        "str": {
+          "value": 16,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "dex": {
+          "value": 14,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "con": {
+          "value": 18,
+          "proficient": 1,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "int": {
+          "value": 16,
+          "proficient": 0,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "wis": {
+          "value": 18,
+          "proficient": 1,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "cha": {
+          "value": 18,
+          "proficient": 1,
+          "max": null,
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "attack": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        }
+      },
+      "bonuses": {
+        "spell": {
+          "dc": ""
+        }
+      },
+      "skills": {
+        "acr": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ani": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "arc": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ath": {
+          "ability": "str",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "dec": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "his": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ins": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "itm": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "inv": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "med": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "nat": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "prc": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "prf": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "per": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "rel": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "slt": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "ste": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        },
+        "sur": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "passive": ""
+          }
+        }
+      },
+      "tools": {},
+      "spells": {
+        "spell1": {
+          "value": 0,
+          "override": null
+        },
+        "spell2": {
+          "value": 0,
+          "override": null
+        },
+        "spell3": {
+          "value": 0,
+          "override": null
+        },
+        "spell4": {
+          "value": 0,
+          "override": null
+        },
+        "spell5": {
+          "value": 0,
+          "override": null
+        },
+        "spell6": {
+          "value": 0,
+          "override": null
+        },
+        "spell7": {
+          "value": 0,
+          "override": null
+        },
+        "spell8": {
+          "value": 0,
+          "override": null
+        },
+        "spell9": {
+          "value": 0,
+          "override": null
+        },
+        "pact": {
+          "value": 0,
+          "override": null
+        }
+      },
+      "attributes": {
+        "init": {
+          "ability": "",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "movement": {
+          "units": "ft",
+          "hover": false,
+          "ignoredDifficultTerrain": [],
+          "speeds": {
+            "walk": "30"
+          }
+        },
+        "attunement": {
+          "max": 3
+        },
+        "senses": {
+          "units": "ft",
+          "special": "",
+          "ranges": {
+            "darkvision": 60,
+            "blindsight": null,
+            "tremorsense": null,
+            "truesight": null
+          }
+        },
+        "spellcasting": "con",
+        "exhaustion": 0,
+        "concentration": {
+          "ability": "",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "limit": 1
+        },
+        "ac": {
+          "flat": 17,
+          "calcs": [
+            "flat"
+          ],
+          "formulas": [],
+          "override": null
+        },
+        "hd": {
+          "max": 19,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "hp": {
+          "value": 161,
+          "max": 161,
+          "temp": 0,
+          "tempmax": null,
+          "formula": "19d8 + 76"
+        },
+        "death": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "success": 0,
+          "failure": 0
+        },
+        "spell": {
+          "level": 0
+        },
+        "loyalty": {
+          "value": null
+        },
+        "price": {
+          "value": null,
+          "denomination": "gp"
+        }
+      },
+      "details": {
+        "biography": {
+          "value": "<h2>Багровый древний</h2><p>Старейший носитель, научившийся направлять изменённую кровь в длинные режущие нити. Сохраняет память и разум, собирает вокруг себя последователей. Может предложить героям знания о Причастии в обмен на защиту убежища. Не является нежитью.</p><p>Носитель Багрового Причастия остаётся живым существом. Проклятие не передаётся обычными ранами или кровотечением, не дарует животным разум и не требует пить кровь для выживания.</p><p>Авторский лист для тестовой игры; ПО 10 предварительный.</p>",
+          "public": ""
+        },
+        "alignment": "Любое",
+        "ideal": "",
+        "bond": "",
+        "flaw": "",
+        "race": null,
+        "type": {
+          "value": "humanoid",
+          "subtype": "заражённый",
+          "swarm": "",
+          "custom": ""
+        },
+        "cr": 10,
+        "habitat": {
+          "value": [],
+          "custom": ""
+        },
+        "treasure": {
+          "value": []
+        }
+      },
+      "resources": {
+        "legact": {
+          "max": 2,
+          "spent": 0
+        },
+        "legres": {
+          "max": 0,
+          "spent": 0
+        },
+        "lair": {
+          "value": false,
+          "initiative": null,
+          "inside": false
+        }
+      },
+      "source": {
+        "revision": 1,
+        "rules": "2024",
+        "book": "",
+        "page": "",
+        "custom": "Авторский бестиарий Багрового Причастия",
+        "license": ""
+      },
+      "traits": {
+        "size": "med",
+        "di": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dr": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dv": {
+          "bypasses": [],
+          "value": [],
+          "custom": ""
+        },
+        "dm": {
+          "amount": {},
+          "bypasses": []
+        },
+        "ci": {
+          "value": [],
+          "custom": ""
+        },
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": "",
+          "communication": {}
+        },
+        "important": true
+      },
+      "identifier": "bagrovyj-drevnij",
+      "rolls": {}
+    },
+    "prototypeToken": {
+      "name": "Багровый древний",
+      "displayName": 0,
+      "actorLink": false,
+      "appendNumber": false,
+      "prependAdjective": false,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/bagrovoe-bleeding/assets/tokens/bagrovyj-drevnij.png",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff"
+      },
+      "lockRotation": true,
+      "rotation": 0,
+      "alpha": 1,
+      "disposition": -1,
+      "displayBars": 0,
+      "bar1": {
+        "attribute": "attributes.hp"
+      },
+      "bar2": {
+        "attribute": null
+      },
+      "light": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 0,
+        "color": null,
+        "coloration": 1,
+        "dim": 0,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "sight": {
+        "enabled": false,
+        "range": 0,
+        "angle": 360,
+        "visionMode": "basic",
+        "color": null,
+        "attenuation": 0.1,
+        "brightness": 0,
+        "saturation": 0,
+        "contrast": 0
+      },
+      "detectionModes": {},
+      "occludable": {
+        "radius": 0
+      },
+      "ring": {
+        "enabled": true,
+        "colors": {
+          "ring": null,
+          "background": null
+        },
+        "effects": 1,
+        "subject": {
+          "scale": 1,
+          "texture": null
+        }
+      },
+      "flags": {},
+      "randomImg": false,
+      "turnMarker": {
+        "mode": 1,
+        "animation": null,
+        "src": null,
+        "disposition": false
+      },
+      "movementAction": null,
+      "depth": 1
+    },
+    "items": [
+      {
+        "name": "Мультиатака",
+        "type": "feat",
+        "_id": "45f0eed7c333ea29",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {},
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Древний совершает три атаки Кровавой нитью. Одну из них может заменить Нитью истечения, если она доступна. Атаки выполняются отдельно.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-drevnij-45f0eed7c333ea29",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [
+            "trait"
+          ],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 0,
+        "flags": {},
+        "folder": null
+      },
+      {
+        "name": "Кровавая нить",
+        "type": "weapon",
+        "_id": "faf569a75e2dffcd",
+        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "system": {
+          "type": {
+            "value": "natural",
+            "baseItem": ""
+          },
+          "activities": {
+            "2cb3934abdc067c9": {
+              "_id": "2cb3934abdc067c9",
+              "type": "attack",
+              "sort": 0,
+              "activation": {
+                "type": "action",
+                "value": null,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": 60,
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false,
+                  "count": "1",
+                  "type": "creature",
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "attack": {
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "ranged",
+                  "classification": "spell"
+                },
+                "ability": "con",
+                "bonus": ""
+              },
+              "damage": {
+                "critical": {
+                  "bonus": ""
+                },
+                "includeBase": false,
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 2,
+                    "denomination": 8,
+                    "bonus": "4",
+                    "types": [
+                      "necrotic"
+                    ],
+                    "scaling": {
+                      "number": 1
+                    },
+                    "modifiers": []
+                  }
+                ]
+              },
+              "name": "Кровавая нить",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": []
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Дальнобойная атака: +8 к попаданию, дистанция 60 футов, одна цель. Попадание: 13 (2к8 + 4) некротического урона. </p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-drevnij-faf569a75e2dffcd",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "identified": true,
+          "unidentified": {
+            "description": ""
+          },
+          "container": null,
+          "quantity": 1,
+          "weight": {
+            "value": 0,
+            "units": "lb"
+          },
+          "price": {
+            "value": 0,
+            "denomination": "gp"
+          },
+          "attunement": "",
+          "armor": {
+            "value": null
+          },
+          "cover": null,
+          "hp": {
+            "value": null,
+            "max": null,
+            "dt": null,
+            "conditions": ""
+          },
+          "ammunition": {},
+          "damage": {
+            "base": {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "number": 1
+              },
+              "modifiers": []
+            },
+            "versatile": {
+              "number": null,
+              "denomination": 0,
+              "types": [],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            }
+          },
+          "properties": [],
+          "proficient": true,
+          "range": {
+            "value": 60,
+            "long": null,
+            "reach": null,
+            "units": "ft"
+          },
+          "mastery": "",
+          "attuned": false,
+          "equipped": true,
+          "crew": {
+            "value": []
+          },
+          "rarities": [],
+          "requirements": ""
+        },
+        "effects": [],
+        "sort": 100000,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "abilities": {
+              "bleed": false
+            }
+          }
+        },
+        "ownership": {
+          "default": 0
+        },
+        "folder": null
+      },
+      {
+        "name": "Нить истечения",
+        "type": "weapon",
+        "_id": "5aa3d971ac09e486",
+        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "system": {
+          "type": {
+            "value": "natural",
+            "baseItem": ""
+          },
+          "activities": {
+            "61a3a985a81c0c1a": {
+              "_id": "61a3a985a81c0c1a",
+              "type": "attack",
+              "sort": 0,
+              "activation": {
+                "type": "action",
+                "value": null,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": "",
+                    "scaling": {}
+                  }
+                ]
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": 60,
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false,
+                  "count": "1",
+                  "type": "creature",
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "attack": {
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "ranged",
+                  "classification": "spell"
+                },
+                "ability": "con",
+                "bonus": ""
+              },
+              "damage": {
+                "critical": {
+                  "bonus": ""
+                },
+                "includeBase": false,
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 2,
+                    "denomination": 8,
+                    "bonus": "4",
+                    "types": [
+                      "necrotic"
+                    ],
+                    "scaling": {
+                      "number": 1
+                    },
+                    "modifiers": []
+                  }
+                ]
+              },
+              "name": "Нить истечения",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": []
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "1",
+            "recovery": [
+              {
+                "period": "recharge",
+                "formula": "5",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "description": {
+            "value": "<p>Дальнобойная атака: +8 к попаданию, дистанция 60 футов, одна цель. Попадание: 13 (2к8 + 4) некротического урона. Перезарядка 5–6. При попадании цель совершает спасбросок Телосложения Сл 16; при провале получает 2 уровня кровотечения.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-drevnij-5aa3d971ac09e486",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "identified": true,
+          "unidentified": {
+            "description": ""
+          },
+          "container": null,
+          "quantity": 1,
+          "weight": {
+            "value": 0,
+            "units": "lb"
+          },
+          "price": {
+            "value": 0,
+            "denomination": "gp"
+          },
+          "attunement": "",
+          "armor": {
+            "value": null
+          },
+          "cover": null,
+          "hp": {
+            "value": null,
+            "max": null,
+            "dt": null,
+            "conditions": ""
+          },
+          "ammunition": {},
+          "damage": {
+            "base": {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "number": 1
+              },
+              "modifiers": []
+            },
+            "versatile": {
+              "number": null,
+              "denomination": 0,
+              "types": [],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            }
+          },
+          "properties": [],
+          "proficient": true,
+          "range": {
+            "value": 60,
+            "long": null,
+            "reach": null,
+            "units": "ft"
+          },
+          "mastery": "",
+          "attuned": false,
+          "equipped": true,
+          "crew": {
+            "value": []
+          },
+          "rarities": [],
+          "requirements": ""
+        },
+        "effects": [],
+        "sort": 200000,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "abilities": {
+              "bleed": {
+                "levels": 2,
+                "count": 1,
+                "dc": 16
+              }
+            }
+          }
+        },
+        "ownership": {
+          "default": 0
+        },
+        "folder": null
+      },
+      {
+        "name": "Легендарные действия",
+        "type": "feat",
+        "_id": "4a8407c1b54c2765",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {},
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Древний может совершить 2 легендарных действия за раунд, по одному в конце хода другого существа. В начале своего хода восстанавливает их. «Шаг древнего» и «Хлещущая нить» стоят по одному действию.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-drevnij-4a8407c1b54c2765",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [
+            "trait"
+          ],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 300000,
+        "flags": {},
+        "folder": null
+      },
+      {
+        "name": "Хлещущая нить",
+        "type": "weapon",
+        "_id": "f8476c74e224426f",
+        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "system": {
+          "type": {
+            "value": "natural",
+            "baseItem": ""
+          },
+          "activities": {
+            "a3792be2c46134f6": {
+              "_id": "a3792be2c46134f6",
+              "type": "attack",
+              "sort": 0,
+              "activation": {
+                "type": "legendary",
+                "value": 1,
+                "override": false,
+                "condition": "В конце хода другого существа"
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": 60,
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false,
+                  "count": "1",
+                  "type": "creature",
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "attack": {
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "ranged",
+                  "classification": "spell"
+                },
+                "ability": "con",
+                "bonus": ""
+              },
+              "damage": {
+                "critical": {
+                  "bonus": ""
+                },
+                "includeBase": false,
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 2,
+                    "denomination": 8,
+                    "bonus": "4",
+                    "types": [
+                      "necrotic"
+                    ],
+                    "scaling": {
+                      "number": 1
+                    },
+                    "modifiers": []
+                  }
+                ]
+              },
+              "name": "Хлещущая нить",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": []
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Дальнобойная атака: +8 к попаданию, дистанция 60 футов, одна цель. Попадание: 13 (2к8 + 4) некротического урона. Легендарное действие, стоимость 1.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-drevnij-f8476c74e224426f",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "identified": true,
+          "unidentified": {
+            "description": ""
+          },
+          "container": null,
+          "quantity": 1,
+          "weight": {
+            "value": 0,
+            "units": "lb"
+          },
+          "price": {
+            "value": 0,
+            "denomination": "gp"
+          },
+          "attunement": "",
+          "armor": {
+            "value": null
+          },
+          "cover": null,
+          "hp": {
+            "value": null,
+            "max": null,
+            "dt": null,
+            "conditions": ""
+          },
+          "ammunition": {},
+          "damage": {
+            "base": {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "number": 1
+              },
+              "modifiers": []
+            },
+            "versatile": {
+              "number": null,
+              "denomination": 0,
+              "types": [],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            }
+          },
+          "properties": [],
+          "proficient": true,
+          "range": {
+            "value": 60,
+            "long": null,
+            "reach": null,
+            "units": "ft"
+          },
+          "mastery": "",
+          "attuned": false,
+          "equipped": true,
+          "crew": {
+            "value": []
+          },
+          "rarities": [],
+          "requirements": ""
+        },
+        "effects": [],
+        "sort": 400000,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "abilities": {
+              "bleed": false
+            }
+          }
+        },
+        "ownership": {
+          "default": 0
+        },
+        "folder": null
+      },
+      {
+        "name": "Шаг древнего",
+        "type": "feat",
+        "_id": "39ffbf3726718f92",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {
+            "8e861ba183aabac1": {
+              "_id": "8e861ba183aabac1",
+              "type": "utility",
+              "sort": 0,
+              "activation": {
+                "type": "legendary",
+                "value": 1,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "units": "self",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "type": "self",
+                  "count": "",
+                  "choice": false,
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "name": "Шаг древнего",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": [],
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "description": {
+            "value": "<p>Легендарное действие, стоимость 1. Древний перемещается до 15 футов, не провоцируя атаки по возможности. Ведущий перемещает токен вручную.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-drevnij-39ffbf3726718f92",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 500000,
+        "flags": {},
+        "folder": null
+      },
+      {
+        "name": "Легендарное сопротивление",
+        "type": "feat",
+        "_id": "90711f43e17213c9",
+        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {
+            "03baf39b89c4d00d": {
+              "_id": "03baf39b89c4d00d",
+              "type": "utility",
+              "sort": 0,
+              "activation": {
+                "type": "special",
+                "value": 1,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": "",
+                    "scaling": {}
+                  }
+                ]
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "units": "self",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "type": "self",
+                  "count": "",
+                  "choice": false,
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "name": "Легендарное сопротивление",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": null,
+              "behaviors": [],
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "2",
+            "recovery": [
+              {
+                "period": "lr",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "description": {
+            "value": "<p>Когда древний проваливает спасбросок, он может вместо этого преуспеть. 2 раза за продолжительный отдых. Ведущий вручную меняет результат спасброска.</p>",
+            "chat": ""
+          },
+          "identifier": "bagrovyj-drevnij-90711f43e17213c9",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 600000,
+        "flags": {},
+        "folder": null
+      }
+    ],
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "sourceSlug": "bagrovyj-drevnij",
+        "contentVersion": "3.7.0",
+        "designStatus": "playtest"
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "_id": "737126b7bfa55139",
+    "folder": null
   }
 ]
