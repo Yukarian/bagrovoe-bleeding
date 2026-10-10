@@ -1,0 +1,1856 @@
+[
+  {
+    "_id": "BldSpell00000001",
+    "name": "Кровавое копьё",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {},
+    "system": {
+      "description": {
+        "value": "<p>Одиночная дальняя магическая атака, 90 футов.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "90",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000000": {
+          "_id": "ActBlood00000000",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "value": 90,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Кровавое копьё",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": [],
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "wis",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 3,
+                "denomination": 8,
+                "bonus": "0",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "identifier": "blood-1",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000002",
+    "name": "Багровая игла",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 1,
+            "dc": 14,
+            "count": 1
+          }
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Дальняя магическая атака. При попадании Телосложение Сл 14 против 1 уровня кровотечения.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000001": {
+          "_id": "ActBlood00000001",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "value": 60,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Багровая игла",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": [],
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "wis",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 2,
+                "denomination": 6,
+                "bonus": "0",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "identifier": "blood-2",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000003",
+    "name": "Рассекающая волна",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {},
+    "system": {
+      "description": {
+        "value": "<p>Линия 30 × 5 футов. Ловкость Сл 14; при успехе половина урона.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000002": {
+          "_id": "ActBlood00000002",
+          "type": "save",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": false,
+            "units": "ft"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Рассекающая волна",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "dex"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "14"
+            },
+            "visible": true
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 3,
+                "denomination": 6,
+                "bonus": "0",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "identifier": "blood-3",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000004",
+    "name": "Взрыв крови",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {},
+    "system": {
+      "description": {
+        "value": "<p>Сфера радиусом 10 футов на расстоянии 60 футов. Ловкость Сл 14; при успехе половина урона. Перезарядка 5–6 отслеживается ведущим.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000003": {
+          "_id": "ActBlood00000003",
+          "type": "save",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": false,
+            "units": "ft"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Взрыв крови",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "dex"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "14"
+            },
+            "visible": true
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 5,
+                "denomination": 6,
+                "bonus": "0",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "identifier": "blood-4",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000005",
+    "name": "Кровавый барьер",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {},
+    "system": {
+      "description": {
+        "value": "<p>Реакция, 2 раза в день: +3 КД против одной атаки.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000004": {
+          "_id": "ActBlood00000004",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "reaction",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "activityUses",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": false,
+            "units": "ft"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "2",
+            "recovery": [
+              {
+                "period": "day",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "name": "Кровавый барьер",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "identifier": "blood-5",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000006",
+    "name": "Кровавый серп",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {},
+    "system": {
+      "description": {
+        "value": "<p>Дальняя магическая атака на расстоянии 60 футов.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000005": {
+          "_id": "ActBlood00000005",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "value": 60,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Кровавый серп",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": [],
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "wis",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 3,
+                "denomination": 6,
+                "bonus": "0",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "identifier": "blood-6",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000007",
+    "name": "Разрыв артерии",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 2,
+            "dc": 14,
+            "count": 1
+          }
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Дальняя магическая атака. При попадании Телосложение Сл 14 против 2 уровней кровотечения.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000006": {
+          "_id": "ActBlood00000006",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "value": 60,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Разрыв артерии",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": [],
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "wis",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 4,
+                "denomination": 8,
+                "bonus": "0",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "identifier": "blood-7",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000008",
+    "name": "Сосудистый импульс",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {},
+    "system": {
+      "description": {
+        "value": "<p>Союзник в пределах 60 футов получает 7 временных хитов.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000007": {
+          "_id": "ActBlood00000007",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": false,
+            "units": "ft"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Сосудистый импульс",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "identifier": "blood-8",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000009",
+    "name": "Сведение мышц",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {},
+    "system": {
+      "description": {
+        "value": "<p>Одно существо в пределах 60 футов. Телосложение Сл 14: при провале скорость уменьшается вдвое до конца следующего хода мага.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000008": {
+          "_id": "ActBlood00000008",
+          "type": "save",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": false,
+            "units": "ft"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Сведение мышц",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "con"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "14"
+            },
+            "visible": true
+          }
+        }
+      },
+      "identifier": "blood-9",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000010",
+    "name": "Кровавые путы",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {},
+    "system": {
+      "description": {
+        "value": "<p>Одно существо в пределах 60 футов. Сила Сл 14: при провале Обездвижен до конца следующего хода мага.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000009": {
+          "_id": "ActBlood00000009",
+          "type": "save",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": false,
+            "units": "ft"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Кровавые путы",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "str"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "14"
+            },
+            "visible": true
+          }
+        }
+      },
+      "identifier": "blood-10",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000011",
+    "name": "Уплотнение сосудов",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {},
+    "system": {
+      "description": {
+        "value": "<p>Реакция, 2 раза в день: +3 КД против одной атаки.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000010": {
+          "_id": "ActBlood00000010",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "reaction",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "activityUses",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": false,
+            "units": "ft"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "2",
+            "recovery": [
+              {
+                "period": "day",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "name": "Уплотнение сосудов",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "identifier": "blood-11",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000012",
+    "name": "Насильственная перестройка",
+    "type": "spell",
+    "img": "icons/magic/unholy/orb-glowing-purple.webp",
+    "effects": [],
+    "flags": {},
+    "system": {
+      "description": {
+        "value": "<p>До трёх союзников в пределах 30 футов получают по 10 временных хитов.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000011": {
+          "_id": "ActBlood00000011",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": false,
+            "units": "ft"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Насильственная перестройка",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "identifier": "blood-12",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    }
+  }
+]
