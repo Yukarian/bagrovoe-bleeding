@@ -73,7 +73,7 @@ function guardedActivity(activity) {
  const actor=activity?.item?.actor;
  if(!actor || !owned(actor)) return null;
  if(isBloodNpc(actor) && bloodCast(activity)) return { actor, item:activity.item, spell:true };
- if(activity?.item?.getFlag?.(MOD,"itemBloodCost")) return { actor,item:activity.item,spell:false };
+ if(activity?.item?.getFlag?.(MOD,"itemBloodCost") && (actor.type==="npc" || actor.type==="character")) return { actor,item:activity.item,spell:false };
  return null;
 }
 Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig)=>{
