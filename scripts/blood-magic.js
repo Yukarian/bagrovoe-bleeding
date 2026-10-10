@@ -68,8 +68,7 @@ async function steal(caster,target,amount=1,heal=0){
 // Intercept before activity use. A re-entrant call with a bypass flag is the only
 // way to guarantee payment precedes the effect without pretending an async hook awaits.
 const authorizedUses = new WeakSet();
-const spending = new Set();
-const pendingCast = new Map();
+const paymentQueue = new Map();
 function guardedActivity(activity) {
  const actor=activity?.item?.actor;
  if(!actor || !owned(actor)) return null;
@@ -79,48 +78,35 @@ function guardedActivity(activity) {
 }
 Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig)=>{
  const entry=guardedActivity(activity);
- if(!entry || authorizedUses.has(activity)) {
-   if(entry && authorizedUses.has(activity)) {
-     // Release the actor lock as soon as the paid repeat use is accepted.
-     // activity.use() can remain pending even after the roll is posted.
-     authorizedUses.delete(activity);
-     const key=entry.actor.uuid;
-     if(pendingCast.get(key)===(activity.uuid ?? activity.id))pendingCast.delete(key);
-     spending.delete(key);
-   }
-   if(entry?.spell) {
+ if(!entry || authorizedUses.has(activity)){
+   if(entry && authorizedUses.has(activity)) authorizedUses.delete(activity);
+   if(entry?.spell){
      usageConfig.consume??={};
      usageConfig.consume.spellSlot=false;
    }
    return;
  }
  const key=entry.actor.uuid;
- // Reject concurrent activations instead of risking double-spend.
- if(spending.has(key)) {
-   ui.notifications.warn("Багровое Причастие: дождитесь завершения предыдущей активации");
-   return false;
- }
- spending.add(key);
- pendingCast.set(key,activity.uuid ?? activity.id);
- (async()=>{
-   try {
-     // Both spells and item powers pay before their action's roll/effect.
-     const result=entry.spell
-       ? await pay(entry.actor,await costOf(activity,usageConfig))
-       : await activateItemBloodCost(entry.item);
-     if(result?.killed || entry.actor.statuses?.has?.("dead"))return;
-     authorizedUses.add(activity);
-     const next=foundry.utils.deepClone(usageConfig);
-     next.consume??={};
-     if(entry.spell) next.consume.spellSlot=false;
-     await activity.use(next,{...dialogConfig,configure:false},messageConfig);
-   } catch(error) { console.error(MOD,error); ui.notifications.error("Багровое Причастие: "+error.message); }
-   finally {
-     authorizedUses.delete(activity);
-     if(pendingCast.get(key)===(activity.uuid ?? activity.id)) pendingCast.delete(key);
-     spending.delete(key);
-   }
- })();
+ // Queue concurrent requests instead of preventing another activation.
+ // Each user activation pays once, independently, in serial order.
+ const prior=paymentQueue.get(key) ?? Promise.resolve();
+ const job=prior.catch(()=>{}).then(async()=>{
+   const result=entry.spell
+     ? await pay(entry.actor,await costOf(activity,usageConfig))
+     : await activateItemBloodCost(entry.item);
+   if(result?.killed || entry.actor.statuses?.has?.("dead"))return;
+   authorizedUses.add(activity);
+   const next=foundry.utils.deepClone(usageConfig);
+   next.consume??={};
+   if(entry.spell)next.consume.spellSlot=false;
+   try { await activity.use(next,{...dialogConfig,configure:false},messageConfig); }
+   finally {authorizedUses.delete(activity); }
+ });
+ paymentQueue.set(key,job);
+ job.catch(error=>{
+   console.error(MOD,error);
+   ui.notifications.error("Багровое Причастие: "+error.message);
+ }).finally(()=>{if(paymentQueue.get(key)===job)paymentQueue.delete(key);});
  return false;
 });
 /**
@@ -224,19 +210,9 @@ async function autoBloodSaves(chat) {
 }
 
 Hooks.on("createChatMessage",chat=>{
- // Foundry can keep activity.use() pending after chat output. Once its actual
- // roll/activity card is created, release the input lock so the NPC can act again.
- const activity=chat.getAssociatedActivity?.();
- const actor=activity?.item?.actor;
- const key=actor?.uuid;
- if(key && pendingCast.get(key)===(activity.uuid ?? activity.id)){
-   pendingCast.delete(key);
-   spending.delete(key);
- }
  void autoBloodSaves(chat).catch(error=>console.error(MOD,error));
  void bloodAttackLifesteal(chat).catch(error=>console.error(MOD,error));
 });
-
 
 function hitDiceSummary(actor) {
  const pools=hdPools(actor);
