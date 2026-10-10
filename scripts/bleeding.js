@@ -206,7 +206,8 @@ function biteConfig(item) {
       requiresBleeding: Boolean(hit.requiresBleeding),
       tempHP: integer(hit.tempHP ?? 0, 0, 999, 0),
       healHP: integer(hit.healHP ?? 0, 0, 999, 0),
-      oncePerTurn: hit.oncePerTurn !== false
+      oncePerTurn: hit.oncePerTurn !== false,
+      group: String(hit.group ?? (isHound ? "hound-vigor" : (item.uuid ?? item.id ?? item.name)))
     } : null
   };
 }
@@ -238,7 +239,7 @@ async function handleAttack(chat) {
         const combat = game.combat;
         const turnKey = combat?.started
           ? [combat.id, combat.round, combat.turn].join(":") : chat.id;
-        const activityKey = activity.item.uuid ?? activity.item.id ?? activity.item.name;
+        const activityKey = hit.group;
         await enqueue(attacker.uuid, async () => {
           const history = attacker.getFlag(MOD, "onHitTurns") ?? {};
           if (hit.oncePerTurn && history[activityKey] === turnKey) return;
