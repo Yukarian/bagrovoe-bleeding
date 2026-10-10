@@ -69,6 +69,7 @@ async function steal(caster,target,amount=1,heal=0){
 // way to guarantee payment precedes the effect without pretending an async hook awaits.
 const authorizedUses = new WeakSet();
 const spending = new Set();
+const pendingCast = new Map();
 function guardedActivity(activity) {
  const actor=activity?.item?.actor;
  if(!actor || !owned(actor)) return null;
@@ -93,6 +94,7 @@ Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig
    return false;
  }
  spending.add(key);
+ pendingCast.set(key,activity);
  (async()=>{
    try {
      // Both spells and item powers pay before their action's roll/effect.
@@ -106,7 +108,11 @@ Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig
      if(entry.spell) next.consume.spellSlot=false;
      await activity.use(next,{...dialogConfig,configure:false},messageConfig);
    } catch(error) { console.error(MOD,error); ui.notifications.error("Багровое Причастие: "+error.message); }
-   finally {authorizedUses.delete(activity);spending.delete(key);}
+   finally {
+     authorizedUses.delete(activity);
+     if(pendingCast.get(key)===activity) pendingCast.delete(key);
+     spending.delete(key);
+   }
  })();
  return false;
 });
@@ -179,7 +185,18 @@ async function bloodAttackLifesteal(chat){
    return;
  }
 }
-Hooks.on("createChatMessage",chat=>{void bloodAttackLifesteal(chat).catch(error=>console.error(MOD,error));});
+Hooks.on("createChatMessage",chat=>{
+ // Foundry can keep activity.use() pending after chat output. Once its actual
+ // roll/activity card is created, release the input lock so the NPC can act again.
+ const activity=chat.getAssociatedActivity?.();
+ const actor=activity?.item?.actor;
+ const key=actor?.uuid;
+ if(key && pendingCast.get(key)===activity && chat.type!=="other"){
+   pendingCast.delete(key);
+   spending.delete(key);
+ }
+ void bloodAttackLifesteal(chat).catch(error=>console.error(MOD,error));
+});
 
 
 function hitDiceSummary(actor) {
