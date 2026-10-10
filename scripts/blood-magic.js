@@ -86,6 +86,49 @@ Hooks.on("dnd5e.postUseLinkedSpell",(activity,usageConfig,results)=>{
  next.catch(error=>ui.notifications.error("Багровое Причастие: "+error.message))
      .finally(()=>{if(inFlight.get(actor.uuid)===next)inFlight.delete(actor.uuid);});
 });
+
+function isBleeding(token){
+ return Boolean(token?.actor?.effects?.some(e=>!e.disabled && e.getFlag?.(MOD,"bleeding") &&
+   (!e.getFlag(MOD,"tokenUuid")||e.getFlag(MOD,"tokenUuid")===token.uuid)));
+}
+async function bloodAttackLifesteal(chat){
+ if(!game.user?.isGM || game.users?.activeGM?.id!==game.user.id || chat.type!=="attack")return;
+ const activity=chat.getAssociatedActivity?.();
+ if(activity?.type!=="attack")return;
+ const item=activity.item;
+ if(!(item?.getFlag?.(MOD,"bloodMagic") || item?.getFlag?.(MOD,"abilities")?.bloodMagic))return;
+ const caster=item.actor;
+ if(!caster)return;
+ const combat=game.combat;
+ const turnKey=combat?.started?[combat.id,combat.round,combat.turn].join(":"):chat.id;
+ const old=caster.getFlag(MOD,"lifestealTurn");
+ if(old===turnKey)return;
+ const targets=chat.system?.evaluatedTargets??[];
+ for(const t of targets.filter(t=>!t.isMiss)){
+   const token=await fromUuid(t.token);
+   if(!isBleeding(token))continue;
+   // Prevent double processing when chat hooks fire again.
+   if(caster.getFlag(MOD,"lifestealTurn")===turnKey)return;
+   await caster.setFlag(MOD,"lifestealTurn",turnKey);
+   const roll=await new Roll("1d6").evaluate();
+   const hp=caster.system.attributes.hp;
+   await caster.update({"system.attributes.hp.value":Math.min(hp.max,hp.value+roll.total)});
+   await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:caster}),
+     content:`<p><strong>Кровавое поглощение:</strong> ${caster.name} восстанавливает ${roll.total} хитов.</p>`});
+   const cr=num(caster.system.details?.cr,0);
+   if(cr<7 || !owned(token.actor))return;
+   const dc=8+num(caster.system.attributes.prof,Math.max(2,Math.ceil(cr/4)+1))+num(caster.system.abilities?.con?.mod,0);
+   const saves=await token.actor.rollSavingThrow({ability:"con",target:dc},{configure:false});
+   if((saves?.[0]?.total??99)<dc){
+     const gained=await steal(caster,token.actor,1,0);
+     if(gained)await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:caster}),
+       content:`<p><strong>Похищение жизненной силы:</strong> ${caster.name} восстановил ${gained} Кость Хитов.</p>`});
+   }
+   return;
+ }
+}
+Hooks.on("createChatMessage",chat=>{void bloodAttackLifesteal(chat).catch(error=>console.error(MOD,error));});
+
 Hooks.once("ready",()=>{
  const module=game.modules.get(MOD);
  if(!module)return;
