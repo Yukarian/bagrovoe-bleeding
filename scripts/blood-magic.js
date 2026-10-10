@@ -203,9 +203,9 @@ function hitDiceRoot(html) {
  return html instanceof HTMLElement ? html : html?.[0] instanceof HTMLElement ? html[0] : null;
 }
 function drawHitDiceCounter(app,html) {
- const actor=app.actor ?? app.document;
- if(actor?.type!=="npc" || !game.user?.isGM) return;
- const root=hitDiceRoot(html);
+ const actor=app.actor ?? app.document ?? app.object;
+ if(actor?.documentName!=="Actor" || actor?.type!=="npc" || !game.user?.isGM) return;
+ const root=hitDiceRoot(html) ?? hitDiceRoot(app.element);
  if(!root)return;
  const data=hitDiceSummary(actor);
  if(!data.maximum)return;
@@ -248,6 +248,7 @@ function drawHitDiceCounter(app,html) {
  anchor.prepend(el);
 }
 Hooks.on("renderActorSheet",drawHitDiceCounter);
+Hooks.on("renderApplicationV2",drawHitDiceCounter);
 Hooks.on("updateActor",actor=>{
  if(actor?.type!=="npc")return;
  for(const app of Object.values(actor.apps??{})) {
