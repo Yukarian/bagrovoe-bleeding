@@ -17,16 +17,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: foundryvtt/dnd5e
-          ref: 3ee48de02f8f6f7b2638c9f6cf3e9540c9c181cc
+          ref: 87e94dbd9f930135e0694cd7e7d49f210603cd2c
           path: .reference/dnd5e
           sparse-checkout: |
             module
             system.json
-      - name: Check JavaScript and regressions against D&D5e 6.0.5
+      - name: Check JavaScript and regressions against D&D5e 6.0.6
         env:
           DND5E_SOURCE: .reference/dnd5e
         run: |
           node --check scripts/bleeding.js
+          node --check scripts/blood-magic.js
           node --test tests/bleeding.test.mjs
   release:
     if: github.ref == 'refs/heads/main'
@@ -42,15 +43,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Build blood-spell compendium
+      - name: Build and verify native compendiums
         run: |
-          npm install --no-save classic-level@2
+          npm ci
           node scripts/build-pack.mjs
       - name: Package module
         run: |
           mkdir -p dist/bagrovoe-bleeding
-          cp module.json README.md CHANGELOG.md TESTING.md dist/bagrovoe-bleeding/
-          cp -r scripts icons packs dist/bagrovoe-bleeding/
+          cp module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md dist/bagrovoe-bleeding/
+          cp -r scripts icons assets packs dist/bagrovoe-bleeding/
           cd dist
           zip -r ../bagrovoe-bleeding.zip bagrovoe-bleeding
           cd ..

@@ -1,8 +1,8 @@
 {
   "id": "bagrovoe-bleeding",
-  "title": "Багровое Причастие — Кровотечение (автономный)",
-  "description": "Автоматическое кровотечение после Багрового укуса: спасброски, стаки, некротический урон, смерть и управление токенами. Без сторонних модулей.",
-  "version": "3.5.7",
+  "title": "Багровое Причастие — Кровотечение и бестиарий",
+  "description": "Автоматическое кровотечение после Багрового укуса: спасброски, стаки, некротический урон, смерть и управление токенами. Без сторонних модулей. Бестиарий, способности, портреты и токены в едином модуле.",
+  "version": "3.6.0",
   "compatibility": {
     "minimum": "14.367",
     "verified": "14"
@@ -22,20 +22,42 @@
         "id": "dnd5e",
         "type": "system",
         "compatibility": {
-          "minimum": "6.0.5",
-          "verified": "6.0.5"
+          "minimum": "6.0.6",
+          "verified": "6.0.6"
         }
       }
     ]
   },
   "manifest": "https://github.com/Yukarian/bagrovoe-bleeding/releases/latest/download/module.json",
-  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v3.5.7/bagrovoe-bleeding.zip",
+  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v3.6.0/bagrovoe-bleeding.zip",
   "url": "https://github.com/Yukarian/bagrovoe-bleeding",
   "packs": [
     {
       "name": "blood-spells",
       "label": "Магия крови",
       "path": "packs/blood-spells",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "actors",
+      "label": "Багровое Причастие | Бестиарий",
+      "path": "packs/actors",
+      "type": "Actor",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "abilities",
+      "label": "Багровое Причастие | Способности",
+      "path": "packs/abilities",
       "type": "Item",
       "system": "dnd5e",
       "ownership": {

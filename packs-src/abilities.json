@@ -1,0 +1,6386 @@
+[
+  {
+    "name": "Острый взгляд",
+    "type": "feat",
+    "_id": "4af6122e37fe507c",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Падальщик совершает с преимуществом проверки Мудрости (Восприятие), основанные на зрении.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-3e0aef8e5c",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -300000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Чует кровь",
+    "type": "feat",
+    "_id": "ef27e7186c162d90",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Падальщик совершает с преимуществом броски атаки по существам, страдающим кровотечением.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-659742e8bd",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -300000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Мультиатака",
+    "type": "feat",
+    "_id": "477506f3b0287dbc",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Падальщик совершает две атаки: одну Клювом и одну Когтями.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-2749b8c6d8",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -300000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Клюв",
+    "type": "weapon",
+    "_id": "13e81d93a37cd702",
+    "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "260948c88f2d4a37": {
+          "type": "attack",
+          "_id": "b315314b8fee42a0",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "",
+              "classification": ""
+            },
+            "ability": "dex",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": true,
+            "parts": []
+          },
+          "name": "",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><em>Рукопашная атака:</em> +5 к попаданию, досягаемость 5 футов, одна цель. <strong>Попадание:</strong> 6 (1к6 + 3) колющего урона.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-c3eb450c31",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "properties": [],
+      "identified": true,
+      "unidentified": {
+        "name": "Unidentified Weapon",
+        "description": ""
+      },
+      "mastery": "",
+      "range": {
+        "units": "ft",
+        "value": null,
+        "long": null,
+        "reach": null
+      },
+      "damage": {
+        "base": {
+          "denomination": 6,
+          "bonus": "3",
+          "number": 1,
+          "types": [
+            "piercing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": null,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        }
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "attuned": false,
+      "equipped": false,
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "proficient": null,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Когти",
+    "type": "weapon",
+    "_id": "f21bfd7f1b45c335",
+    "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "260948c88f2d4a37": {
+          "type": "attack",
+          "_id": "18acdc4d587a462e",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "",
+              "classification": ""
+            },
+            "ability": "dex",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": true,
+            "parts": []
+          },
+          "name": "",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><em>Рукопашная атака:</em> +5 к попаданию, досягаемость 5 футов, одна цель. <strong>Попадание:</strong> 7 (1к8 + 3) рубящего урона.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-44f81598da",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "properties": [],
+      "identified": true,
+      "unidentified": {
+        "name": "Unidentified Weapon",
+        "description": ""
+      },
+      "mastery": "",
+      "range": {
+        "units": "ft",
+        "value": null,
+        "long": null,
+        "reach": null
+      },
+      "damage": {
+        "base": {
+          "denomination": 8,
+          "bonus": "3",
+          "number": 1,
+          "types": [
+            "slashing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": null,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        }
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "attuned": false,
+      "equipped": false,
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "proficient": null,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Раздирающий налёт",
+    "type": "weapon",
+    "_id": "05f1b637cd716d10",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "260948c88f2d4a37": {
+          "type": "attack",
+          "_id": "1426ff1c42be45f3",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": [
+              {
+                "type": "itemUses",
+                "value": "1",
+                "target": "",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "",
+              "classification": ""
+            },
+            "ability": "dex",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": true,
+            "parts": []
+          },
+          "name": "",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><strong></strong> <em>Рукопашная атака:</em> +5 к попаданию, досягаемость 5 футов, одна цель. <strong>Попадание:</strong> 8 (1к10 + 3) рубящего урона. Цель совершает спасбросок Телосложения Сл 12. При провале получает 1 уровень кровотечения. Если цель уже страдает кровотечением, атака наносит дополнительно 3 (1к6) рубящего урона.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-5ada1f5976",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "properties": [],
+      "identified": true,
+      "unidentified": {
+        "name": "Unidentified Weapon",
+        "description": ""
+      },
+      "mastery": "",
+      "range": {
+        "units": "ft",
+        "value": null,
+        "long": null,
+        "reach": null
+      },
+      "damage": {
+        "base": {
+          "denomination": 10,
+          "bonus": "3",
+          "number": 1,
+          "types": [
+            "slashing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": null,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        }
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "attuned": false,
+      "equipped": false,
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "proficient": null,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      },
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 1,
+            "dc": 12,
+            "count": 1
+          },
+          "onHit": {
+            "requiresBleeding": true,
+            "tempHP": 3,
+            "oncePerTurn": true,
+            "group": "scavenger-feast"
+          }
+        }
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровавый пир",
+    "type": "feat",
+    "_id": "90be2e1ec68ef016",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Один раз за ход, когда Алый падальщик попадает атакой по существу, уже страдающему кровотечением, он получает 3 временных хита. Они не складываются с уже имеющимися временными хитами.</p><p><em>Эффект применяется автоматически модулем «Багровое Причастие» через флаг атаки.</em></p>",
+        "chat": ""
+      },
+      "identifier": "krovavyj-pir",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -250000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровавая вспышка",
+    "type": "weapon",
+    "_id": "c5f737e25d01ae04",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "YeB7cBHXeaBqxxK2": {
+          "type": "attack",
+          "_id": "YeB7cBHXeaBqxxK2",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "self"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "type": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "",
+              "classification": ""
+            },
+            "ability": "con",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": true,
+            "parts": []
+          },
+          "name": "",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>[[/attack extended]]. [[/damage average extended]]. Атака использует Телосложение.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-burst",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "properties": [],
+      "mastery": "",
+      "range": {
+        "units": "ft",
+        "reach": 5,
+        "value": 90,
+        "long": null
+      },
+      "damage": {
+        "base": {
+          "denomination": 8,
+          "bonus": "",
+          "number": 3,
+          "types": [
+            "necrotic"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": null,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        }
+      },
+      "identified": true,
+      "unidentified": {
+        "description": ""
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "attuned": false,
+      "equipped": true,
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "proficient": null,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagic": true
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "_id": "b3574003bd457639",
+    "name": "Кровавое перемещение",
+    "type": "feat",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "sstmyMnemXbXqI5Y": {
+          "type": "utility",
+          "_id": "sstmyMnemXbXqI5Y",
+          "sort": 0,
+          "activation": {
+            "type": "bonus",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "value": "1",
+                "target": "",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "value": 0,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Кровавое перемещение",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "3",
+        "recovery": [
+          {
+            "period": "day",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "description": {
+        "value": "<p>Бонусным действием маг перемещается в видимое свободное пространство в пределах 30 футов. 3 раза в день. Это врождённая способность заражённого и не является заклинанием крови.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-shift",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "effects": [],
+    "flags": {},
+    "sort": 3,
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "_id": "314849ee131ec2fb",
+    "name": "Кровавое поглощение",
+    "type": "feat",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "identifier": "blood-absorption",
+      "description": {
+        "value": "<p>Один раз за ход, когда маг попадает Кровавой вспышкой по существу с действующим кровотечением, он восстанавливает 1к6 хитов. Не восстанавливает Кости Хитов. Обрабатывается модулем «Багровое Причастие».</p>",
+        "chat": ""
+      },
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "properties": [],
+      "advancement": {}
+    },
+    "effects": [],
+    "flags": {},
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровавое копьё",
+    "type": "feat",
+    "_id": "c80e480afd2e55a4",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "0d4e0413ae7e887c": {
+          "type": "attack",
+          "_id": "0d4e0413ae7e887c",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "self"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "type": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "con",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 3,
+                "denomination": 8,
+                "bonus": "0",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Кровавое копьё",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 0 Костей Хитов.</strong></p><p>90 футов, одна цель. Маг создаёт плотное кровавое копьё и направляет его в противника. Совершите дальнобойную магическую атаку. При попадании цель получает 3к8 некротического урона.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-7d42b79",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Багровая игла",
+    "type": "feat",
+    "_id": "dfd7efe407b8f359",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "4d9c9bcec2c99bde": {
+          "type": "attack",
+          "_id": "4d9c9bcec2c99bde",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "self"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "type": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "con",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 2,
+                "denomination": 6,
+                "bonus": "0",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Багровая игла",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 1 Костей Хитов.</strong></p><p>60 футов, одна цель. Тонкая кровавая игла проникает в тело жертвы. Совершите дальнобойную магическую атаку. При попадании цель получает 2к6 некротического урона и совершает спасбросок Телосложения Сл 17; при провале получает 1 уровень кровотечения.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-f0bdfe8",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true,
+        "itemBloodCost": {
+          "hitDice": 1,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": false
+        },
+        "abilities": {
+          "bleed": {
+            "levels": 1,
+            "dc": 17,
+            "count": 1
+          }
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Рассекающая волна",
+    "type": "feat",
+    "_id": "2b217eb668927784",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "3fe678e1a94064dc": {
+          "type": "save",
+          "name": "Рассекающая волна",
+          "_id": "3fe678e1a94064dc",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "self",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "type": "line",
+              "size": "30",
+              "width": "5",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature"
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "img": "systems/dnd5e/icons/svg/monster.svg",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "dex"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "17"
+            },
+            "visible": true
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 3,
+                "denomination": 6,
+                "bonus": "0",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ],
+            "onSave": "half"
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 2 Костей Хитов.</strong></p><p>Линия длиной 30 футов и шириной 5 футов исходит от мага. Каждое существо в области совершает спасбросок Ловкости Сл 17. При провале получает 3к6 рубящего урона, при успехе половину.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-70b72a7",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true,
+        "itemBloodCost": {
+          "hitDice": 2,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": false
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Взрыв крови",
+    "type": "feat",
+    "_id": "1586ba9e91e86405",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "88b61dcfc79d19a3": {
+          "type": "save",
+          "name": "Взрыв крови",
+          "_id": "88b61dcfc79d19a3",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 60,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "type": "sphere",
+              "size": "10",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "choice": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "img": "systems/dnd5e/icons/svg/monster.svg",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "dex"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "17"
+            },
+            "visible": true
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 5,
+                "denomination": 6,
+                "bonus": "0",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ],
+            "onSave": "half"
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 3 Костей Хитов.</strong></p><p>Точка в пределах 60 футов взрывается сферой радиусом 10 футов. Каждое существо в области совершает спасбросок Ловкости Сл 17: 5к6 некротического урона при провале или половина при успехе. Доступность определяется ведущим.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-5305408",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true,
+        "itemBloodCost": {
+          "hitDice": 3,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": false
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровавый серп",
+    "type": "feat",
+    "_id": "4e578b2190ec53ab",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "665b246bf3529016": {
+          "type": "attack",
+          "_id": "665b246bf3529016",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "self"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "type": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "con",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 3,
+                "denomination": 6,
+                "bonus": "0",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Кровавый серп",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 0 Костей Хитов.</strong></p><p>60 футов, одна цель. Маг метает серпообразное лезвие из сгущённой крови. Дальнобойная магическая атака; 3к6 рубящего урона при попадании.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-cc2a8f6",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Разрыв артерии",
+    "type": "feat",
+    "_id": "9cf8e33b80afe9c0",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "191d2dff406d5072": {
+          "type": "attack",
+          "_id": "191d2dff406d5072",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "self"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "type": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "con",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 4,
+                "denomination": 8,
+                "bonus": "0",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Разрыв артерии",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 3 Костей Хитов.</strong></p><p>60 футов, одна цель. Маг запускает в цель разрушительный кровавый импульс. Дальнобойная магическая атака; 4к8 некротического урона при попадании. Телосложение Сл 17 против 2 уровней кровотечения.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-8b6db03",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true,
+        "itemBloodCost": {
+          "hitDice": 3,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": false
+        },
+        "abilities": {
+          "bleed": {
+            "levels": 2,
+            "dc": 17,
+            "count": 1
+          }
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровавое насыщение",
+    "type": "feat",
+    "_id": "30651c40304662bc",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Один раз за ход, когда Кровопийца попадает атакой ближнего боя по существу, страдающему кровотечением, он восстанавливает 5 хитов (не выше максимума).</p>",
+        "chat": ""
+      },
+      "identifier": "krovopijca-0",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровопускание",
+    "type": "weapon",
+    "_id": "83a4b6c52b461518",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "f8643621588344fd": {
+          "_id": "f8643621588344fd",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "value": "1",
+                "target": ""
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 5,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "melee",
+              "classification": "natural"
+            },
+            "ability": "dex",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 2,
+                "denomination": 10,
+                "bonus": "4",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Атака",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><strong>Атака ближнего боя:</strong> +7 к попаданию, 5 футов, одна цель. <strong>Попадание:</strong> 15 (2к10 + 4) рубящего урона. Цель совершает спасбросок Телосложения Сл 15. При провале получает 2 уровня кровотечения.</p>",
+        "chat": ""
+      },
+      "identifier": "krovopijca-4",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "identified": true,
+      "unidentified": {
+        "description": ""
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "damage": {
+        "base": {
+          "number": 2,
+          "denomination": 6,
+          "types": [
+            "slashing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "",
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": 0,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "",
+          "modifiers": []
+        }
+      },
+      "properties": [],
+      "proficient": true,
+      "range": {
+        "value": null,
+        "long": null,
+        "reach": 5,
+        "units": "ft"
+      },
+      "mastery": "sap",
+      "attuned": false,
+      "equipped": true,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      },
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 2,
+            "dc": 15,
+            "count": 1
+          },
+          "onHit": {
+            "requiresBleeding": true,
+            "healHP": 5,
+            "oncePerTurn": true,
+            "group": "blood-drinker-heal"
+          }
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Хищный рывок",
+    "type": "feat",
+    "_id": "8fe287837b3a1a49",
+    "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "Ms63W7e3Mv2Margn": {
+          "type": "utility",
+          "name": "Мультиатака",
+          "_id": "Ms63W7e3Mv2Margn",
+          "sort": 0,
+          "activation": {
+            "type": "bonus",
+            "value": null,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "value": "Рывок или Отход."
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "self"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": []
+          },
+          "roll": {
+            "prompt": false,
+            "visible": false
+          },
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Бонусным действием Кровопийца совершает Рывок или Отход.</p>",
+        "chat": ""
+      },
+      "identifier": "krovopijca-1",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 100000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Сосудистый импульс",
+    "type": "feat",
+    "_id": "6919b832e5a4e648",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "35a610bc9c6145b1": {
+          "type": "utility",
+          "name": "Сосудистый импульс",
+          "_id": "35a610bc9c6145b1",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 60,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "type": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          },
+          "img": "systems/dnd5e/icons/svg/monster.svg",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 1 Костей Хитов.</strong></p><p>Одно согласное видимое существо в пределах 60 футов получает 7 временных хитов. Временные хиты не складываются с уже имеющимися и не снимают кровотечение.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-01f633e",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true,
+        "itemBloodCost": {
+          "hitDice": 1,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": false
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Сведение мышц",
+    "type": "feat",
+    "_id": "0c856fb61670e2d3",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "96496cb43027cb25": {
+          "type": "save",
+          "name": "Сведение мышц",
+          "_id": "96496cb43027cb25",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "round",
+            "value": "1",
+            "override": true,
+            "concentration": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 60,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "prompt": true,
+            "override": true,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "img": "systems/dnd5e/icons/svg/monster.svg",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "con"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "17"
+            },
+            "visible": true
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 2 Костей Хитов.</strong></p><p>Одно видимое живое существо в пределах 60 футов совершает спасбросок Телосложения Сл 17. При провале его скорость уменьшается вдвое до конца следующего хода мага.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-fcdb08f",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true,
+        "itemBloodCost": {
+          "hitDice": 2,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": false
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровавые путы",
+    "type": "feat",
+    "_id": "219bff36f1619905",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "1da8a2e0273e13cb": {
+          "type": "save",
+          "name": "Кровавые путы",
+          "_id": "1da8a2e0273e13cb",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "round",
+            "value": "1",
+            "override": true,
+            "concentration": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 60,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "prompt": true,
+            "override": true,
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "img": "systems/dnd5e/icons/svg/monster.svg",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "str"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "17"
+            },
+            "visible": true
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 2 Костей Хитов.</strong></p><p>Одно видимое живое существо в пределах 60 футов совершает спасбросок Силы Сл 17. При провале получает состояние Обездвижен до конца следующего хода мага.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-d9a138e",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true,
+        "itemBloodCost": {
+          "hitDice": 2,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": false
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Насильственная перестройка",
+    "type": "feat",
+    "_id": "650de98b55304e82",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "7704a7ba6549a455": {
+          "type": "utility",
+          "name": "Насильственная перестройка",
+          "_id": "7704a7ba6549a455",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 30,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "type": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          },
+          "img": "systems/dnd5e/icons/svg/monster.svg",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 3 Костей Хитов.</strong></p><p>До трёх согласных видимых существ в пределах 30 футов получают по 10 временных хитов. Эти хиты не складываются с имеющимися.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-b2dbc54",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true,
+        "itemBloodCost": {
+          "hitDice": 3,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": false
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Уплотнение сосудов",
+    "type": "feat",
+    "_id": "76522f23d69e3d4f",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "9fc68d60c491ba1e": {
+          "type": "utility",
+          "name": "Уплотнение сосудов",
+          "_id": "9fc68d60c491ba1e",
+          "sort": 0,
+          "activation": {
+            "type": "reaction",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 0,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "type": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          },
+          "img": "systems/dnd5e/icons/svg/monster.svg",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Кровавая способность — стоимость: 1 Костей Хитов.</strong></p><p>Реакция, когда маг видит попадание атаки по себе: +3 КД только против этой атаки. Если бонус обращает попадание в промах, урона нет.</p><p>Сл кровавых способностей = 8 + удвоенный бонус мастерства + модификатор Телосложения; для этого NPC Сл 17. При нехватке Костей Хитов маг получает 1к8 прямого урона за каждую недостающую кость. Оплата происходит до применения способности.</p>",
+        "chat": ""
+      },
+      "identifier": "blood-ability-c70bc91",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagicAbility": true,
+        "itemBloodCost": {
+          "hitDice": 1,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": false
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Багровый клинок",
+    "type": "weapon",
+    "_id": "2247ef144c32296f",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "b8ed680658de4f77": {
+          "_id": "b8ed680658de4f77",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 5,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "melee",
+              "classification": "weapon"
+            },
+            "ability": "str",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 2,
+                "denomination": 8,
+                "bonus": "5",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Багровый клинок",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><strong>Атака ближнего боя:</strong> +8 к попаданию, досягаемость 5 футов, одна цель. <strong>Попадание:</strong> 2к8 + 5 рубящего урона.</p>",
+        "chat": ""
+      },
+      "identifier": "edrik-bloodblade",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "identified": true,
+      "unidentified": {
+        "description": ""
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "damage": {
+        "base": {
+          "number": 2,
+          "denomination": 8,
+          "types": [
+            "slashing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "5",
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": 0,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "",
+          "modifiers": []
+        }
+      },
+      "properties": [],
+      "proficient": true,
+      "range": {
+        "value": null,
+        "long": null,
+        "reach": 5,
+        "units": "ft"
+      },
+      "mastery": "sap",
+      "attuned": false,
+      "equipped": true,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": false,
+          "onHit": {
+            "requiresBleeding": true,
+            "healHP": 7,
+            "oncePerTurn": true,
+            "group": "edrik-crimson-vigor"
+          }
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Рассечение жизни",
+    "type": "weapon",
+    "_id": "910405a7e37813cf",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "a510c323dd2c45d2": {
+          "_id": "a510c323dd2c45d2",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 5,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "melee",
+              "classification": "weapon"
+            },
+            "ability": "str",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 3,
+                "denomination": 10,
+                "bonus": "5",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Рассечение жизни",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><strong>Атака ближнего боя:</strong> +8 к попаданию, досягаемость 5 футов, одна цель. <strong>Попадание:</strong> 3к10 + 5 рубящего урона.</p><p>Цель совершает спасбросок Телосложения Сл 17. При провале получает 2 уровня кровотечения.</p><p><strong>Кровавая жертва:</strong> до атаки Эдрик расходует 2 Кости Хитов. За каждую недостающую кость получает 1к10 прямого урона, минуя защиты. При падении до 0 HP атака не совершается.</p>",
+        "chat": ""
+      },
+      "identifier": "edrik-life-rend",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "identified": true,
+      "unidentified": {
+        "description": ""
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "damage": {
+        "base": {
+          "number": 3,
+          "denomination": 10,
+          "types": [
+            "slashing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "5",
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": 0,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "",
+          "modifiers": []
+        }
+      },
+      "properties": [],
+      "proficient": true,
+      "range": {
+        "value": null,
+        "long": null,
+        "reach": 5,
+        "units": "ft"
+      },
+      "mastery": "sap",
+      "attuned": false,
+      "equipped": true,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 2,
+            "count": 1,
+            "dcFormula": "bloodExpert"
+          },
+          "onHit": {
+            "requiresBleeding": true,
+            "healHP": 7,
+            "oncePerTurn": true,
+            "group": "edrik-crimson-vigor"
+          }
+        },
+        "itemBloodCost": {
+          "hitDice": 2,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 10,
+          "requireSurvival": false
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Похищение жизненной силы (1/ход)",
+    "type": "feat",
+    "_id": "df00c018302bf0f4",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>После попадания кровавой атакой по кровоточащему живому существу Эдрик может заставить его совершить спасбросок Телосложения Сл 17. При провале цель теряет 1 доступную Кость Хитов, а Эдрик возвращает 1 собственную израсходованную Кость Хитов. Не действует на нежить и существ без доступных Костей Хитов. Проверять не чаще одного раза в ход.</p>",
+        "chat": ""
+      },
+      "identifier": "edrik-steal",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 100000,
+    "flags": {},
+    "folder": null
+  },
+  {
+    "name": "Легендарные действия (2)",
+    "type": "feat",
+    "_id": "7f1429527693cdc2",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Эдрик может совершить два легендарных действия за раунд, по одному за раз в конце хода другого существа. В начале своего хода восстанавливает все потраченные легендарные действия. <strong>Шаг охотника (1 действие):</strong> перемещается на расстояние до половины скорости, не провоцируя атаки по возможности. <strong>Клинок отступника (1 действие):</strong> совершает одну атаку Багровым клинком.</p>",
+        "chat": ""
+      },
+      "identifier": "edrik-legendary",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 100000,
+    "flags": {},
+    "folder": null
+  },
+  {
+    "name": "Легендарное сопротивление (1/день)",
+    "type": "feat",
+    "_id": "90bb21fb488ef4da",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Если Эдрик проваливает спасбросок, он может вместо этого преуспеть. 1 раз в день.</p>",
+        "chat": ""
+      },
+      "identifier": "edrik-resistance",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 100000,
+    "flags": {},
+    "folder": null
+  },
+  {
+    "name": "Тактика стаи",
+    "type": "feat",
+    "_id": "87ae476ce46e6aa1",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Волк совершает броски атаки с преимуществом против существа, если в пределах 5 футов от этого существа находится хотя бы один союзник волка, не находящийся в состоянии Недееспособный.</p>",
+        "chat": ""
+      },
+      "identifier": "pack-tactics",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Укус",
+    "type": "weapon",
+    "_id": "205876ab32db4e5d",
+    "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "260948c88f2d4a37": {
+          "type": "attack",
+          "_id": "260948c88f2d4a37",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "",
+              "classification": ""
+            },
+            "ability": "str",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": true,
+            "parts": []
+          },
+          "name": "",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><em>Рукопашная атака:</em> +4 к попаданию, досягаемость 5 футов, одна цель. <em>Попадание:</em> 5 (1к6 + 2) колющего урона. Если цель Среднего размера или меньше, она падает ничком.</p>",
+        "chat": ""
+      },
+      "identifier": "bagrovyj-volk-ukus",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "properties": [],
+      "identified": true,
+      "unidentified": {
+        "name": "Unidentified Weapon",
+        "description": ""
+      },
+      "mastery": "",
+      "range": {
+        "units": "ft",
+        "value": null,
+        "long": null,
+        "reach": null
+      },
+      "damage": {
+        "base": {
+          "denomination": 6,
+          "bonus": "2",
+          "number": 1,
+          "types": [
+            "piercing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": null,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        }
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "attuned": false,
+      "equipped": false,
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "proficient": null,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Багровый укус",
+    "type": "weapon",
+    "_id": "f4de8e52f6cd5247",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "9c7395b9f9654825": {
+          "type": "attack",
+          "_id": "9c7395b9f9654825",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": [
+              {
+                "type": "itemUses",
+                "value": "1",
+                "target": "",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "",
+              "classification": ""
+            },
+            "ability": "str",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": true,
+            "parts": []
+          },
+          "name": "Багровый укус",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><strong></strong> <em>Рукопашная атака:</em> +4 к попаданию, досягаемость 5 футов, одна цель. <em>Попадание:</em> 5 (1к6 + 2) колющего урона. Если цель Среднего размера или меньше, она падает ничком.</p><p>Цель должна преуспеть в спасброске Телосложения Сл 11, иначе получает 1 уровень кровотечения.</p>",
+        "chat": ""
+      },
+      "identifier": "bagrovyj-volk-bagrovyj-ukus",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "properties": [],
+      "identified": true,
+      "unidentified": {
+        "name": "Unidentified Weapon",
+        "description": ""
+      },
+      "mastery": "",
+      "range": {
+        "units": "ft",
+        "value": null,
+        "long": null,
+        "reach": null
+      },
+      "damage": {
+        "base": {
+          "denomination": 6,
+          "bonus": "2",
+          "number": 1,
+          "types": [
+            "piercing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": null,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        }
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "attuned": false,
+      "equipped": false,
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "proficient": null,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      },
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 1,
+            "dc": 11,
+            "count": 1,
+            "bonusLevelsIfBleeding": 0
+          }
+        }
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Управление кровью",
+    "type": "feat",
+    "_id": "64bedce7de682905",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Кровотворец формирует из собственной крови иглы и простые лезвия. Его кровяные атаки имеют магическую природу.</p>",
+        "chat": ""
+      },
+      "identifier": "krovotvorec-3b0738f15e",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -300000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Чует слабость",
+    "type": "feat",
+    "_id": "a4a36cd5ab43b0c2",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Когда Кровотворец попадает Кровавой иглой по существу, страдающему кровотечением, атака наносит дополнительно 3 (1к6) некротического урона.</p>",
+        "chat": ""
+      },
+      "identifier": "krovotvorec-4c532f5350",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -300000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровавая игла",
+    "type": "weapon",
+    "_id": "497eebbb540a0d45",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "simpleR",
+        "baseItem": ""
+      },
+      "activities": {
+        "4503bee9d11b46dc": {
+          "type": "attack",
+          "_id": "4503bee9d11b46dc",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "cha",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": true,
+            "parts": []
+          },
+          "name": "",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><em>Дальнобойная атака заклинанием:</em> +4 к попаданию, дистанция 60 футов, одна цель. <strong>Попадание:</strong> 7 (1к8 + 2) некротического урона. Если цель страдает кровотечением, она получает дополнительно 3 (1к6) некротического урона.</p>",
+        "chat": ""
+      },
+      "identifier": "krovotvorec-3a7f914828",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "properties": [],
+      "identified": true,
+      "unidentified": {
+        "name": "Unidentified Weapon",
+        "description": ""
+      },
+      "mastery": "",
+      "range": {
+        "units": "ft",
+        "value": 60,
+        "long": null,
+        "reach": null
+      },
+      "damage": {
+        "base": {
+          "denomination": 8,
+          "bonus": "2",
+          "number": 1,
+          "types": [
+            "necrotic"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": null,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        }
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "attuned": false,
+      "equipped": false,
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "proficient": null,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Багровый шип",
+    "type": "weapon",
+    "_id": "db30f11d4cb284c9",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "simpleR",
+        "baseItem": ""
+      },
+      "activities": {
+        "c09a42948fbb4fe9": {
+          "type": "attack",
+          "_id": "c09a42948fbb4fe9",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "cha",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": true,
+            "parts": []
+          },
+          "name": "",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><em>Дальнобойная атака заклинанием:</em> +4 к попаданию, дистанция 60 футов, одна цель. <strong>Попадание:</strong> 6 (1к6 + 2) некротического урона. Цель совершает спасбросок Телосложения Сл 13. При провале получает 1 уровень кровотечения.</p>",
+        "chat": ""
+      },
+      "identifier": "krovotvorec-67f48c325b",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "properties": [],
+      "identified": true,
+      "unidentified": {
+        "name": "Unidentified Weapon",
+        "description": ""
+      },
+      "mastery": "",
+      "range": {
+        "units": "ft",
+        "value": 60,
+        "long": null,
+        "reach": null
+      },
+      "damage": {
+        "base": {
+          "denomination": 6,
+          "bonus": "2",
+          "number": 1,
+          "types": [
+            "necrotic"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": null,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        }
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "attuned": false,
+      "equipped": false,
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "proficient": null,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      },
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 1,
+            "count": 1,
+            "dcFormula": "bloodExpert"
+          }
+        }
+      }
+    },
+    "folder": null
+  },
+  {
+    "_id": "82a04af50afd30c0",
+    "name": "Кровавый выброс",
+    "type": "feat",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "fc4c8cf9e5d242a5": {
+          "type": "save",
+          "_id": "fc4c8cf9e5d242a5",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": [
+              {
+                "type": "itemUses",
+                "value": "1",
+                "target": "",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "ft",
+            "special": "",
+            "value": "30"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "size": "",
+              "count": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "damage": {
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 3,
+                "denomination": 6,
+                "bonus": "",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ],
+            "onSave": "half"
+          },
+          "save": {
+            "ability": [
+              "con"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "8 + 2 * @prof + @abilities.con.mod"
+            },
+            "visible": true
+          },
+          "name": "",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [
+          {
+            "period": "recharge",
+            "formula": "5",
+            "type": "recoverAll"
+          }
+        ],
+        "max": "1"
+      },
+      "description": {
+        "value": "<p><strong>Перезарядка 5–6.</strong> Одно видимое существо в пределах 30 футов совершает спасбросок Телосложения Сл 13. При провале получает 10 (3к6) некротического урона; если уже страдает кровотечением, уровень кровотечения повышается на 1. При успехе получает половину урона.</p><p><em>Повышение кровотечения при этом спасброске ведущий применяет вручную; модуль автоматизирует кровотечение только после попаданий атакой.</em></p>",
+        "chat": ""
+      },
+      "identifier": "krovotvorec-vybros",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "cover": null,
+      "crewed": false
+    },
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "effects": [],
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "sort": 300000,
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Уплотнить кровь",
+    "type": "feat",
+    "_id": "17e28cfe67e689cb",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "28983fa40b1444c7": {
+          "type": "utility",
+          "_id": "28983fa40b1444c7",
+          "sort": 0,
+          "activation": {
+            "type": "bonus",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><strong>1 раз за короткий или продолжительный отдых.</strong> Если Кровотворец видит в пределах 30 футов существо с кровотечением, он получает 5 временных хитов.</p>",
+        "chat": ""
+      },
+      "identifier": "krovotvorec-9cf2106797",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -300000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровавое возбуждение",
+    "type": "feat",
+    "_id": "7855cf20d626f3fe",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Истязатель совершает с преимуществом броски атаки по существам, страдающим кровотечением.</p>",
+        "chat": ""
+      },
+      "identifier": "crimson-7d51a31bd",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Костяной клинок",
+    "type": "weapon",
+    "_id": "de6f20909175ae5b",
+    "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "51119f01f45343b3": {
+          "_id": "51119f01f45343b3",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 5,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "melee",
+              "classification": "natural"
+            },
+            "ability": "str",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 2,
+                "denomination": 6,
+                "bonus": "3",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Атака",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Атака ближнего боя: +5 к попаданию, досягаемость 5 футов, одна цель. Попадание: 2d6 + 3 рубящего урона.</p>",
+        "chat": ""
+      },
+      "identifier": "crimson-bone-blade",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "identified": true,
+      "unidentified": {
+        "description": ""
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "damage": {
+        "base": {
+          "number": 2,
+          "denomination": 6,
+          "types": [
+            "slashing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "",
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": 0,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "",
+          "modifiers": []
+        }
+      },
+      "properties": [],
+      "proficient": true,
+      "range": {
+        "value": null,
+        "long": null,
+        "reach": 5,
+        "units": "ft"
+      },
+      "mastery": "sap",
+      "attuned": false,
+      "equipped": true,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Рассечение сосудов",
+    "type": "weapon",
+    "_id": "9a84d1c2466b3656",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "f8643621588344fd": {
+          "_id": "f8643621588344fd",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "value": "1",
+                "target": ""
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 5,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "melee",
+              "classification": "natural"
+            },
+            "ability": "str",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 2,
+                "denomination": 10,
+                "bonus": "3",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Атака",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Атака ближнего боя: +5 к попаданию, досягаемость 5 футов, одна цель. Попадание: 2d10 + 3 рубящего урона.</p><p>Цель совершает спасбросок Телосложения Сл 13. При провале получает 2 уровня кровотечения.</p><p><strong>Жертва плоти.</strong> Перед атакой истязатель тратит 1 Кость Хитов. Если доступных нет, получает 1к8 прямого урона по обычным хитам, игнорируя сопротивления, иммунитеты и временные хиты. Если падает до 0 HP, атака не происходит.</p>",
+        "chat": ""
+      },
+      "identifier": "crimson-vessel-rend",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "identified": true,
+      "unidentified": {
+        "description": ""
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "damage": {
+        "base": {
+          "number": 2,
+          "denomination": 6,
+          "types": [
+            "slashing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "",
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": 0,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "",
+          "modifiers": []
+        }
+      },
+      "properties": [],
+      "proficient": true,
+      "range": {
+        "value": null,
+        "long": null,
+        "reach": 5,
+        "units": "ft"
+      },
+      "mastery": "sap",
+      "attuned": false,
+      "equipped": true,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      },
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 2,
+            "dc": 13,
+            "count": 1
+          }
+        },
+        "itemBloodCost": {
+          "hitDice": 1,
+          "allowHealthSubstitution": true,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": false
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Чувство пульса",
+    "type": "feat",
+    "_id": "938833af594e570c",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Провидец чувствует местоположение живых существ с кровью в пределах 30 футов, если они не скрыты сплошной преградой. Невидимость сама по себе не защищает от этого чувства.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-providec-af13b318",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровавое прозрение",
+    "type": "feat",
+    "_id": "c34ef1129c8c4e87",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Провидец совершает с преимуществом броски атаки по существам, страдающим кровотечением.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-providec-9c0bbbfb",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Кровавая стрела",
+    "type": "weapon",
+    "_id": "eadcaca56d6b0fb0",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "338593d303d44136": {
+          "_id": "338593d303d44136",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 5,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "wis",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 2,
+                "denomination": 6,
+                "bonus": "3",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Атака",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><em>Дальнобойная атака:</em> +6 к попаданию, дистанция 90 футов, одна цель. <strong>Попадание:</strong> 10 (2к6 + 3) некротического урона.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-providec-1d80b275",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "identified": true,
+      "unidentified": {
+        "description": ""
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "damage": {
+        "base": {
+          "number": 2,
+          "denomination": 6,
+          "types": [
+            "necrotic"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "3",
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": 0,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "",
+          "modifiers": []
+        }
+      },
+      "properties": [],
+      "proficient": true,
+      "range": {
+        "value": 90,
+        "long": null,
+        "reach": 5,
+        "units": "ft"
+      },
+      "mastery": "sap",
+      "attuned": false,
+      "equipped": true,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Вскрытие сосудов",
+    "type": "weapon",
+    "_id": "d8ae070e079e7021",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "a3d3f6c6d3c8421c": {
+          "_id": "a3d3f6c6d3c8421c",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": 5,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "wis",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 2,
+                "denomination": 6,
+                "bonus": "3",
+                "types": [
+                  "slashing"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          },
+          "name": "Атака",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><strong></strong> <em>Дальнобойная атака:</em> +6 к попаданию, дистанция 60 футов, одна цель. <strong>Попадание:</strong> 14 (3к6 + 3) некротического урона. Цель совершает спасбросок Телосложения Сл 18. При провале получает 2 уровня кровотечения.</p><p>Это предвидение повреждений живых сосудов, а не стандартная магия за Кости Хитов. Телосложение определяет Сл кровавого воздействия.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-providec-a8bb600b",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "identified": true,
+      "unidentified": {
+        "description": ""
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "damage": {
+        "base": {
+          "number": 3,
+          "denomination": 6,
+          "types": [
+            "necrotic"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "3",
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": 0,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "",
+          "modifiers": []
+        }
+      },
+      "properties": [],
+      "proficient": true,
+      "range": {
+        "value": 60,
+        "long": null,
+        "reach": 5,
+        "units": "ft"
+      },
+      "mastery": "sap",
+      "attuned": false,
+      "equipped": true,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      },
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 2,
+            "count": 1,
+            "dcFormula": "bloodExpert"
+          }
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    },
+    "folder": null
+  },
+  {
+    "name": "Предвидение удара",
+    "type": "feat",
+    "_id": "accfb07eceabfe5b",
+    "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "Ms63W7e3Mv2Margn": {
+          "type": "utility",
+          "name": "Мультиатака",
+          "_id": "Ms63W7e3Mv2Margn",
+          "sort": 0,
+          "activation": {
+            "type": "bonus",
+            "value": null,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "value": "Две атаки Костяным клинком."
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "self"
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": []
+          },
+          "roll": {
+            "prompt": false,
+            "visible": false
+          },
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><strong>3/день.</strong> Провидец получает преимущество на следующий спасбросок Ловкости до начала своего следующего хода.</p>",
+        "chat": ""
+      },
+      "identifier": "alyj-providec-df8bd2ef",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 100000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Острый слух и нюх",
+    "type": "feat",
+    "_id": "0a414669b1663d16",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Гончий совершает с преимуществом проверки Мудрости (Восприятие), основанные на слухе или обонянии.</p>",
+        "chat": ""
+      },
+      "identifier": "ostryj-sluh-i-njuh",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -300000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Чутьё на кровь",
+    "type": "feat",
+    "_id": "5b8dc4d58970b6bb",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Гончий чувствует направление к существам с кровотечением в пределах 60 футов, если запах не перекрыт герметичной преградой. Броски атаки гончего по кровоточащим существам имеют преимущество.</p>",
+        "chat": ""
+      },
+      "identifier": "chutje-na-krov",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -200000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Живучесть заражённого",
+    "type": "feat",
+    "_id": "dca86bfb9289af61",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p>Один раз за ход, когда гончий попадает укусом по существу, страдающему кровотечением, он получает 3 временных хита.</p>",
+        "chat": ""
+      },
+      "identifier": "zhivuchest-zarazhennogo",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [
+        "trait"
+      ],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": -100000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Разрывающий укус",
+    "type": "weapon",
+    "_id": "3590dd65d1a70183",
+    "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+    "system": {
+      "type": {
+        "value": "natural",
+        "baseItem": ""
+      },
+      "activities": {
+        "9c7395b9f9654825": {
+          "type": "attack",
+          "_id": "af2adbcbfff041f6",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": [
+              {
+                "type": "itemUses",
+                "value": "1",
+                "target": "",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false,
+              "count": "1",
+              "type": "creature",
+              "special": ""
+            },
+            "override": false,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "",
+              "classification": ""
+            },
+            "ability": "dex",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": true,
+            "parts": []
+          },
+          "name": "Атака",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": null,
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "recovery": [
+          {
+            "period": "recharge",
+            "formula": "5",
+            "type": "recoverAll"
+          }
+        ],
+        "max": "1"
+      },
+      "description": {
+        "value": "<p><strong>Перезарядка 5–6.</strong> Рукопашная атака: +5 к попаданию, досягаемость 5 футов. Попадание: 1к12 + 3 колющего урона. Цель совершает спасбросок Телосложения Сл 13. При провале получает 1 уровень кровотечения, либо 2 уровня, если уже страдает кровотечением.</p>",
+        "chat": ""
+      },
+      "identifier": "razryvajushchij-ukus",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "properties": [],
+      "identified": true,
+      "unidentified": {
+        "name": "Unidentified Weapon",
+        "description": ""
+      },
+      "mastery": "",
+      "range": {
+        "units": "ft",
+        "value": null,
+        "long": null,
+        "reach": null
+      },
+      "damage": {
+        "base": {
+          "denomination": 12,
+          "bonus": "3",
+          "number": 1,
+          "types": [
+            "piercing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        },
+        "versatile": {
+          "number": null,
+          "denomination": null,
+          "types": [],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "modifiers": []
+        }
+      },
+      "container": null,
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "attunement": "",
+      "attuned": false,
+      "equipped": false,
+      "armor": {
+        "value": null
+      },
+      "cover": null,
+      "hp": {
+        "value": null,
+        "max": null,
+        "dt": null,
+        "conditions": ""
+      },
+      "ammunition": {},
+      "proficient": null,
+      "crew": {
+        "value": []
+      },
+      "rarities": []
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      },
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 1,
+            "bonusLevelsIfBleeding": 1,
+            "dc": 13,
+            "count": 1
+          },
+          "onHit": {
+            "requiresBleeding": true,
+            "tempHP": 3,
+            "oncePerTurn": true,
+            "group": "hound-vigor"
+          }
+        }
+      }
+    },
+    "folder": null
+  },
+  {
+    "name": "Преследование раненого",
+    "type": "feat",
+    "_id": "8613aa4fbdd5f407",
+    "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "recovery": [],
+        "max": ""
+      },
+      "description": {
+        "value": "<p><strong>Бонусное действие.</strong> Гончий перемещается на расстояние до половины своей скорости по направлению к видимому существу с кровотечением. Это перемещение не провоцирует атаки по возможности от выбранного существа.</p>",
+        "chat": ""
+      },
+      "identifier": "presledovanie-ranenogo",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "Союзник в радиусе 5 футов от цели",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 300000,
+    "flags": {
+      "dnd5e": {
+        "-=riders": null
+      }
+    },
+    "folder": null
+  }
+]

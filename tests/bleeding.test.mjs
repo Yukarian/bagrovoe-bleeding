@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const reference = process.env.DND5E_SOURCE ?? path.resolve(root, '../dnd5e');
 const system = JSON.parse(fs.readFileSync(path.join(reference, 'system.json'), 'utf8'));
-assert.equal(system.version, '6.0.5', 'Tests require the actual D&D5e 6.0.5 source checkout');
+assert.equal(system.version, '6.0.6', 'Tests require the actual D&D5e 6.0.6 source checkout');
 const nativeSource = fs.readFileSync(path.join(reference, 'module/documents/actor/actor.mjs'), 'utf8');
 const damageMethods = nativeSource.slice(nativeSource.indexOf('  async applyDamage('), nativeSource.indexOf('  async applyTempHP('));
 assert.ok(damageMethods.includes('#changeHasEffect'));
@@ -171,7 +171,7 @@ for (const [label, options, expectedHP, expectedTemp] of [
   ['temporary HP', {hp:{temp:5}}, 18, 0], ['temp HP absorbs all', {hp:{temp:10}}, 20, 3],
   ['resistance then temp HP', {resist:true,hp:{temp:5}}, 20, 2],
   ['damage threshold', {hp:{dt:8}}, 20, 0], ['flat reduction', {modifiers:{necrotic:-2}}, 15, 0]
-]) test(`native 6.0.5 damage: ${label}`, async () => {
+]) test(`native 6.0.6 damage: ${label}`, async () => {
   const h = harness(), a = h.actor('a', options), t = h.token(a);
   await h.api.apply(t); await h.api.tick(...h.combat(t));
   assert.equal(a.system.attributes.hp.value, expectedHP); assert.equal(a.system.attributes.hp.temp, expectedTemp);
