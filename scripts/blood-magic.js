@@ -5,6 +5,7 @@ const num = (v, fallback=0) => Number.isFinite(Number(v)) ? Number(v) : fallback
 const clamp = (x, low, high) => Math.max(low,Math.min(high,x));
 const enabled = (a) => a?.getFlag?.(MOD,"bloodMagic") === true || a?.system?.details?.type?.subtype === "заражённый";
 const owned = actor => actor?.isOwner || game.user?.isGM;
+const isBloodNpc = actor => actor?.type === "npc" && (actor?.getFlag?.(MOD,"bloodMagic") === true || actor?.system?.details?.type?.subtype === "заражённый");
 const bloodCast = activity => activity?.type === "cast" && (activity?.spell?.uuid?.startsWith("Compendium.bagrovoe-bleeding.blood-spells.") || activity?.item?.getFlag?.(MOD,"bloodMagic") === true);
 function hdPools(actor) {
   const classes = actor.items.filter(item => item.type === "class");
@@ -34,6 +35,7 @@ async function costOf(activity,config) {
   return clamp(Math.trunc(num(spell?.system?.level)),0,9);
 }
 async function pay(actor,cost) {
+ if(!isBloodNpc(actor))throw Error("Кровавое колдовство пока доступно только заражённым NPC");
  if(!owned(actor))throw Error("Нет прав на изменение Костей Хитов");
  const {spent,missing,die}=chooseDice(actor,cost);
  for(const {pool,count} of spent)await pool.doc.update({[pool.path]:pool.spent+count});
@@ -66,13 +68,13 @@ async function steal(caster,target,amount=1,heal=0){
  return restored;
 }
 Hooks.on("dnd5e.preUseLinkedSpell",(activity,usageConfig)=>{
- if(!bloodCast(activity))return;
+ if(!bloodCast(activity)||!isBloodNpc(activity?.item?.actor))return;
  // Do not spend regular spell slots for a blood cast.
  usageConfig.consumeSpellSlot=false;
  if(usageConfig.consumption)usageConfig.consumption.spellSlot=false;
 });
 Hooks.on("dnd5e.postUseLinkedSpell",(activity,usageConfig,results)=>{
- if(!bloodCast(activity)||!results||!activity.item?.actor)return;
+ if(!bloodCast(activity)||!results||!isBloodNpc(activity.item?.actor))return;
  const actor=activity.item.actor;
  if(!owned(actor))return;
  if(processed.has(results))return;
@@ -98,7 +100,7 @@ async function bloodAttackLifesteal(chat){
  const item=activity.item;
  if(!(item?.getFlag?.(MOD,"bloodMagic") || item?.getFlag?.(MOD,"abilities")?.bloodMagic))return;
  const caster=item.actor;
- if(!caster)return;
+ if(!isBloodNpc(caster))return;
  const combat=game.combat;
  const turnKey=combat?.started?[combat.id,combat.round,combat.turn].join(":"):chat.id;
  const old=caster.getFlag(MOD,"lifestealTurn");
