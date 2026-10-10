@@ -178,79 +178,103 @@ async function tick(combat, current) {
     await message(`<p><strong>${escape(token.name)}</strong>: ${count}к${LEVEL_DICE[level]} = ${roll.total}; после защит <strong>${context.amount}</strong> некротического урона. Потеря хитов: ${before.value - after.value}; временных: ${(before.temp ?? 0) - (after.temp ?? 0)}.${details}</p><p>${escape(roll.result)}</p>`);
   });
 }
+
 function biteConfig(item) {
-  const flag = item?.getFlag(MOD, "inflict");
-  const isHound = item?.getFlag(MOD, "houndBite") === true;
-  const rend = item?.getFlag(MOD, "houndRend");
-  if (flag === false || flag?.enabled === false) return null;
+  const abilities = item?.getFlag?.(MOD, "abilities");
+  const legacy = item?.getFlag?.(MOD, "inflict");
+  const isHound = item?.getFlag?.(MOD, "houndBite") === true;
+  const rend = item?.getFlag?.(MOD, "houndRend");
   const named = item?.name?.trim().toLocaleLowerCase("ru") === "багровый укус";
-  if (!flag && !named && !isHound) return null;
+  if (abilities?.enabled === false || legacy === false || legacy?.enabled === false) return null;
+  if (!abilities && !legacy && !isHound && !named) return null;
+  let bleed = abilities?.bleed;
+  if (bleed === undefined) bleed = isHound && !rend ? false :
+    (legacy || named || rend ? { levels: legacy?.levels ?? 1,
+      dc: rend?.dc ?? legacy?.dc ?? 11, count: legacy?.count ?? 1,
+      bonusLevelsIfBleeding: rend ? 1 : 0 } : false);
+  const hit = abilities?.onHit ?? (isHound
+    ? { requiresBleeding: true, tempHP: 3, oncePerTurn: true } : null);
   return {
-    isHound,
-    isRend: isHound && Boolean(rend),
-    levels: integer(flag?.levels ?? 1, 1, 5, 1),
-    count: integer(flag?.count ?? 1, 1, 10, 1),
-    dc: integer(rend?.dc ?? flag?.dc ?? 11, 1, 99, 11)
+    bleed: bleed ? {
+      levels: integer(bleed.levels ?? 1, 1, 5, 1),
+      count: integer(bleed.count ?? 1, 1, 10, 1),
+      dc: integer(bleed.dc ?? 11, 1, 99, 11),
+      bonusLevelsIfBleeding: integer(bleed.bonusLevelsIfBleeding ?? 0, 0, 5, 0),
+      requiresBleeding: Boolean(bleed.requiresBleeding)
+    } : null,
+    onHit: hit && (Number(hit.tempHP) > 0 || Number(hit.healHP) > 0) ? {
+      requiresBleeding: Boolean(hit.requiresBleeding),
+      tempHP: integer(hit.tempHP ?? 0, 0, 999, 0),
+      healHP: integer(hit.healHP ?? 0, 0, 999, 0),
+      oncePerTurn: hit.oncePerTurn !== false
+    } : null
   };
 }
-// This hook reaches all clients. Use native hit evaluation and saved target UUIDs,
-// so player attacks never depend on the leading GM's current targets.
+
 async function handleAttack(chat) {
   if (!isLeadingGM() || chat.type !== "attack" || !chat.rolls?.length) return;
-  const activity = chat.getAssociatedActivity();
+  const activity = chat.getAssociatedActivity?.();
   if (activity?.type !== "attack") return;
   const config = biteConfig(activity.item);
   if (!config) return;
-  return enqueue(`attack:${chat.id}`, async () => {
-    const targets = chat.system.evaluatedTargets ?? [];
+  return enqueue("attack:" + chat.id, async () => {
+    const targets = chat.system?.evaluatedTargets ?? [];
     if (!targets.length) {
-      ui.notifications.warn("Багровый укус: перед броском атаки назначьте цель (T).");
+      ui.notifications.warn("Багровое Причастие: назначьте цель (T) перед броском атаки.");
       return;
     }
     for (const target of targets.filter(t => !t.isMiss)) {
       const token = await fromUuid(target.token);
       if (token?.documentName !== "Token" || !token.actor) continue;
-      const key = `${token.parent.id}_${token.id}`;
-      const receipt = `${chat.id}:${key}`;
-      const saved = chat.getFlag(MOD, "saves")?.[key];
-      const bleedingBefore = Boolean(effectOf(token));
-      // The hound gains 3 temporary HP once per turn after biting a bleeding creature.
-      if (config.isHound && bleedingBefore) {
-        const attacker = activity.item.actor;
-        if (attacker) {
-          const combat = game.combat;
-          const turnKey = combat?.started
-            ? [combat.id, combat.round, combat.turn].join(":")
-            : chat.id;
-          if (attacker.getFlag(MOD, "houndTempTurn") !== turnKey) {
-            await attacker.setFlag(MOD, "houndTempTurn", turnKey);
-            const hp = Number(attacker.system?.attributes?.hp?.temp ?? 0);
-            if (hp < 3) {
-              await attacker.update({ "system.attributes.hp.temp": 3 });
-              await message("<p><strong>" + escape(attacker.name) + "</strong> получает 3 временных хита («Живучесть заражённого»).</p>", chat);
-            }
+      const key = token.parent.id + "_" + token.id;
+      const receipt = chat.id + ":" + key;
+      const current = effectOf(token);
+      const bleedingBefore = Boolean(current && !current.disabled && !current.isSuppressed);
+      const attacker = activity.item.actor;
+      const hit = config.onHit;
+
+      if (hit && attacker && (!hit.requiresBleeding || bleedingBefore)
+          && !chat.getFlag(MOD, "hitEffects")?.[key]) {
+        const combat = game.combat;
+        const turnKey = combat?.started
+          ? [combat.id, combat.round, combat.turn].join(":") : chat.id;
+        const activityKey = activity.item.uuid ?? activity.item.id ?? activity.item.name;
+        await enqueue(attacker.uuid, async () => {
+          const history = attacker.getFlag(MOD, "onHitTurns") ?? {};
+          if (hit.oncePerTurn && history[activityKey] === turnKey) return;
+          await attacker.setFlag(MOD, "onHitTurns", { ...history, [activityKey]: turnKey });
+          const hp = attacker.system?.attributes?.hp;
+          if (!hp) return;
+          if (hit.tempHP && (hp.temp ?? 0) < hit.tempHP)
+            await attacker.update({ "system.attributes.hp.temp": hit.tempHP });
+          if (hit.healHP && hp.value < (hp.effectiveMax ?? hp.max)) {
+            const next = Math.min(hp.effectiveMax ?? hp.max, hp.value + hit.healHP);
+            await attacker.update({ "system.attributes.hp.value": next });
           }
-        }
+        });
+        await chat.setFlag(MOD, "hitEffects." + key, true);
       }
-      // A normal Hound bite grants temporary HP but causes no bleeding.
-      if (config.isHound && !config.isRend) continue;
+      if (!config.bleed || (config.bleed.requiresBleeding && !bleedingBefore)) continue;
+      const saved = chat.getFlag(MOD, "saves")?.[key];
       if (saved?.done) continue;
       let total = saved?.total;
       if (!Number.isFinite(total)) {
         const rolls = await token.actor.rollSavingThrow(
-          { ability: "con", target: config.dc }, { configure: false },
-          { data: { speaker: ChatMessage.getSpeaker({ token }), whisper: [...chat.whisper], blind: chat.blind },
-            rollMode: chat.blind ? "blindroll" : chat.whisper.length ? "gmroll" : "publicroll" }
+          { ability: "con", target: config.bleed.dc }, { configure: false },
+          { data: { speaker: ChatMessage.getSpeaker({ token }), whisper: [...(chat.whisper ?? [])], blind: chat.blind },
+            rollMode: chat.blind ? "blindroll" : chat.whisper?.length ? "gmroll" : "publicroll" }
         );
         total = rolls?.[0]?.total;
         if (!Number.isFinite(total)) continue;
-        await chat.setFlag(MOD, `saves.${key}`, { total, done: false });
+        await chat.setFlag(MOD, "saves." + key, { total, done: false });
       }
-      if (total < config.dc) {
-        await enqueue(token.actor.uuid, () => changeEffect(token, { ...config, level: config.isRend && bleedingBefore ? 2 : config.levels },
-          { additive: true, source: chat, receipt }));
-      } else await message(`<p>${escape(token.name)}: Телосложение ${total} против Сл ${config.dc}, кровотечение не наложено.</p>`, chat);
-      await chat.setFlag(MOD, `saves.${key}.done`, true);
+      if (total < config.bleed.dc) {
+        const levels = config.bleed.levels + (bleedingBefore ? config.bleed.bonusLevelsIfBleeding : 0);
+        await enqueue(token.actor.uuid, () => changeEffect(token,
+          { ...config.bleed, level: levels }, { additive: true, source: chat, receipt }));
+      } else await message("<p>" + escape(token.name) + ": Телосложение " + total
+        + " против Сл " + config.bleed.dc + ", кровотечение не наложено.</p>", chat);
+      await chat.setFlag(MOD, "saves." + key + ".done", true);
     }
   });
 }
