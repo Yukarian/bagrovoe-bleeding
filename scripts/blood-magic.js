@@ -25,7 +25,7 @@ function chooseDice(actor, count) {
  return {spent,missing,die:pools[0]?.size??8};
 }
 async function costOf(activity,config) {
-  const selected = config?.spellLevel ?? config?.slotLevel ?? activity?.spell?.level;
+  const selected = config?.spellLevel ?? config?.slotLevel ?? (activity?.spell?.level > 0 ? activity.spell.level : null);
   if(selected !== null && selected !== undefined) return clamp(Math.trunc(num(selected)),0,9);
   const uuid=activity?.spell?.uuid;
   if(!uuid)return 0;
@@ -44,7 +44,7 @@ async function pay(actor,cost) {
    const hp=actor.system.attributes.hp;
    await actor.update({"system.attributes.hp.value":Math.max(0,hp.value-total)});
    if(hp.value-total<=0) await actor.toggleStatusEffect("unconscious",{active:true});
-   if(total>=hp.value+Math.max(1,hp.max))await actor.toggleStatusEffect("dead",{active:true});
+   if(hp.value-total<=0 && actor.type==="npc")await actor.toggleStatusEffect("dead",{active:true});
  }
  await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content:`<p><strong>Кровавое колдовство:</strong> ${actor.name} — стоимость ${cost} КХ, потрачено ${cost-missing}, нехватка ${missing}${missing?`, урон ${expression} = ${total} (без защит и временных хитов)`:""}.</p>`});
  return {missing,total,killed:total>0 && actor.system.attributes.hp.value<=0};
@@ -128,7 +128,7 @@ async function activateItemBloodCost(item) {
  const pools=chooseDice(actor,cost);
  if(pools.missing&&!config.allowHealthSubstitution)throw new Error("Недостаточно Костей Хитов");
  const hp=actor.system.attributes.hp;
- const rollCount= Math.max(pools.missing,clamp(Math.trunc(num(config.healthDice,0)),0,20));
+ const rollCount= pools.missing+clamp(Math.trunc(num(config.healthDice,0)),0,20);
  const die=clamp(Math.trunc(num(config.healthDie,pools.die)),4,20);
  const harm=rollCount?(await new Roll(`${rollCount}d${die}`).evaluate()).total:0;
  if(config.requireSurvival&&hp.value<=harm)throw new Error("Для активации недостаточно здоровья");
