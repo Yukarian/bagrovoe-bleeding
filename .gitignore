@@ -1,0 +1,4 @@
+.reference/
+dist/
+*.zip
+node_modules/
