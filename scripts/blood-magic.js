@@ -212,7 +212,7 @@ function drawHitDiceCounter(app,html) {
  root.querySelector('[data-bagrovoe-hit-dice]')?.remove();
  const el=document.createElement("section");
  el.dataset.bagrovoeHitDice="true";
- el.style.cssText="padding:8px 12px;margin:5px 8px;border:1px solid #803445;border-radius:6px;background:rgba(55,0,13,.14);display:flex;align-items:center;gap:10px;flex-wrap:wrap;";
+ el.style.cssText="box-sizing:border-box;width:100%;min-height:42px;padding:6px 10px;margin:0 0 8px;border:1px solid #803445;border-radius:6px;background:rgba(55,0,13,.55);display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;position:relative;z-index:5;pointer-events:auto;";
  const title=document.createElement("strong");
  title.textContent="🩸 Кости Хитов";
  const stat=document.createElement("span");
@@ -223,7 +223,8 @@ function drawHitDiceCounter(app,html) {
  const makeButton=(label,title,fn)=>{
    const button=document.createElement("button");
    button.type="button";button.textContent=label;button.title=title;
-   button.style.cssText="padding:2px 8px;min-width:30px;";
+   button.style.cssText="display:inline-flex;align-items:center;justify-content:center;padding:3px 8px;min-width:30px;min-height:28px;cursor:pointer;pointer-events:auto;";
+   for(const eventName of ["pointerdown","mousedown"]) button.addEventListener(eventName,event=>event.stopPropagation());
    button.addEventListener("click",event=>{event.preventDefault();event.stopPropagation();void fn().catch(error=>{
      console.error(MOD,error);ui.notifications.error("Багровое Причастие: "+error.message);
    });});
@@ -244,8 +245,16 @@ function drawHitDiceCounter(app,html) {
    if(result!==null && result!==undefined)await setAvailableHitDice(actor,result);
  });
  el.append(title,stat,actions);
- const anchor=root.querySelector(".sheet-body") ?? root.querySelector(".window-content") ?? root;
- anchor.prepend(el);
+ // Attach to the right-side activity list, not to the sheet-body grid:
+ // inserting as a grid child breaks the D&D5e 2024 two-column NPC layout.
+ const list=root.querySelector(".items-list") ?? root.querySelector(".inventory-list") ??
+   root.querySelector('[class*="items-section"]') ?? root.querySelector(".activities");
+ const search=root.querySelector('input[placeholder*="Поиск особенностей"]') ??
+   root.querySelector('input[placeholder*="Search"]');
+ if(list?.parentElement) list.parentElement.insertBefore(el,list);
+ else if(search?.parentElement?.parentElement) search.parentElement.parentElement.insertAdjacentElement("afterend",el);
+ else return; // Never insert into .sheet-body or a grid root as fallback.
+
 }
 Hooks.on("renderActorSheet",drawHitDiceCounter);
 Hooks.on("renderApplicationV2",drawHitDiceCounter);
