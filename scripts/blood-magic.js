@@ -94,7 +94,7 @@ Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig
    return false;
  }
  spending.add(key);
- pendingCast.set(key,activity);
+ pendingCast.set(key,activity.uuid ?? activity.id);
  (async()=>{
    try {
      // Both spells and item powers pay before their action's roll/effect.
@@ -110,7 +110,7 @@ Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig
    } catch(error) { console.error(MOD,error); ui.notifications.error("Багровое Причастие: "+error.message); }
    finally {
      authorizedUses.delete(activity);
-     if(pendingCast.get(key)===activity) pendingCast.delete(key);
+     if(pendingCast.get(key)===(activity.uuid ?? activity.id)) pendingCast.delete(key);
      spending.delete(key);
    }
  })();
@@ -191,7 +191,7 @@ Hooks.on("createChatMessage",chat=>{
  const activity=chat.getAssociatedActivity?.();
  const actor=activity?.item?.actor;
  const key=actor?.uuid;
- if(key && pendingCast.get(key)===activity && chat.type!=="other"){
+ if(key && pendingCast.get(key)===(activity.uuid ?? activity.id)){
    pendingCast.delete(key);
    spending.delete(key);
  }
