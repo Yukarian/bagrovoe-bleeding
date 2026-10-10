@@ -180,13 +180,17 @@ async function tick(combat, current) {
 }
 function biteConfig(item) {
   const flag = item?.getFlag(MOD, "inflict");
+  const isHound = item?.getFlag(MOD, "houndBite") === true;
+  const rend = item?.getFlag(MOD, "houndRend");
   if (flag === false || flag?.enabled === false) return null;
   const named = item?.name?.trim().toLocaleLowerCase("ru") === "багровый укус";
-  if (!flag && !named) return null;
+  if (!flag && !named && !isHound) return null;
   return {
+    isHound,
+    isRend: isHound && Boolean(rend),
     levels: integer(flag?.levels ?? 1, 1, 5, 1),
     count: integer(flag?.count ?? 1, 1, 10, 1),
-    dc: integer(flag?.dc ?? 11, 1, 99, 11)
+    dc: integer(rend?.dc ?? flag?.dc ?? 11, 1, 99, 11)
   };
 }
 // This hook reaches all clients. Use native hit evaluation and saved target UUIDs,
@@ -209,6 +213,27 @@ async function handleAttack(chat) {
       const key = `${token.parent.id}_${token.id}`;
       const receipt = `${chat.id}:${key}`;
       const saved = chat.getFlag(MOD, "saves")?.[key];
+      const bleedingBefore = Boolean(effectOf(token));
+      // The hound gains 3 temporary HP once per turn after biting a bleeding creature.
+      if (config.isHound && bleedingBefore) {
+        const attacker = activity.item.actor;
+        if (attacker) {
+          const combat = game.combat;
+          const turnKey = combat?.started
+            ? [combat.id, combat.round, combat.turn].join(":")
+            : chat.id;
+          if (attacker.getFlag(MOD, "houndTempTurn") !== turnKey) {
+            await attacker.setFlag(MOD, "houndTempTurn", turnKey);
+            const hp = Number(attacker.system?.attributes?.hp?.temp ?? 0);
+            if (hp < 3) {
+              await attacker.update({ "system.attributes.hp.temp": 3 });
+              await message("<p><strong>" + escape(attacker.name) + "</strong> получает 3 временных хита («Живучесть заражённого»).</p>", chat);
+            }
+          }
+        }
+      }
+      // A normal Hound bite grants temporary HP but causes no bleeding.
+      if (config.isHound && !config.isRend) continue;
       if (saved?.done) continue;
       let total = saved?.total;
       if (!Number.isFinite(total)) {
@@ -222,7 +247,7 @@ async function handleAttack(chat) {
         await chat.setFlag(MOD, `saves.${key}`, { total, done: false });
       }
       if (total < config.dc) {
-        await enqueue(token.actor.uuid, () => changeEffect(token, { ...config, level: config.levels },
+        await enqueue(token.actor.uuid, () => changeEffect(token, { ...config, level: config.isRend && bleedingBefore ? 2 : config.levels },
           { additive: true, source: chat, receipt }));
       } else await message(`<p>${escape(token.name)}: Телосложение ${total} против Сл ${config.dc}, кровотечение не наложено.</p>`, chat);
       await chat.setFlag(MOD, `saves.${key}.done`, true);
@@ -353,5 +378,5 @@ Hooks.once("ready", () => {
     for (const actor of actors.values()) void enqueue(actor.uuid, () => migrateActor(actor)).catch(report);
   }
   refreshCounters();
-  console.info(`${MOD}: v3.1.0, API готов`);
+  console.info(`${MOD}: v3.1.1, API готов`);
 });
