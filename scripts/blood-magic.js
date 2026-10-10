@@ -80,7 +80,14 @@ function guardedActivity(activity) {
 Hooks.on("dnd5e.preUseActivity",(activity,usageConfig,dialogConfig,messageConfig)=>{
  const entry=guardedActivity(activity);
  if(!entry || authorizedUses.has(activity)) {
-   authorizedUses.delete(activity);
+   if(entry && authorizedUses.has(activity)) {
+     // Release the actor lock as soon as the paid repeat use is accepted.
+     // activity.use() can remain pending even after the roll is posted.
+     authorizedUses.delete(activity);
+     const key=entry.actor.uuid;
+     if(pendingCast.get(key)===(activity.uuid ?? activity.id))pendingCast.delete(key);
+     spending.delete(key);
+   }
    if(entry?.spell) {
      usageConfig.consume??={};
      usageConfig.consume.spellSlot=false;
