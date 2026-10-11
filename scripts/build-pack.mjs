@@ -5,7 +5,7 @@ import { compilePack, extractPack } from '@foundryvtt/foundryvtt-cli';
 import { organizePack } from './pack-folders.mjs';
 
 const manifest = JSON.parse(fs.readFileSync('module.json', 'utf8'));
-const expected = { 'blood-spells': 18, actors: 14, abilities: 75, relics: 7, 'iron-hounds': 8 };
+const expected = { 'blood-spells': 18, actors: 14, abilities: 75, relics: 7, 'iron-hounds': 8, settlements: 2 };
 const scratch = fs.mkdtempSync(path.resolve('.build-'));
 const assetPrefix = `modules/${manifest.id}/`;
 function validate(value) {
@@ -20,7 +20,7 @@ function validate(value) {
 function keys(d, collection, parent='') {
   assert.match(d._id, /^[A-Za-z0-9]{16}$/);
   d._key = `!${collection}!${parent}${d._id}`;
-  for (const child of ['items', 'effects']) {
+  for (const child of ['items', 'effects', 'pages']) {
     const seen = new Set();
     for (const e of d[child] ?? []) {
       assert.ok(!seen.has(e._id), `Duplicate embedded ID in ${d.name}`);seen.add(e._id);
@@ -42,8 +42,8 @@ try {
     const seen = new Set();
     for (const doc of docs) {
       assert.ok(!seen.has(doc._id));seen.add(doc._id);validate(doc);
-      assert.ok(pack.type === 'Actor' ? doc.type === 'npc' : ['spell','feat','weapon','equipment','consumable'].includes(doc.type));
-      keys(doc, pack.type === 'Actor' ? 'actors' : 'items');
+      assert.ok(pack.type === 'JournalEntry' ? Array.isArray(doc.pages) : pack.type === 'Actor' ? doc.type === 'npc' : ['spell','feat','weapon','equipment','consumable'].includes(doc.type));
+      keys(doc, {Actor:'actors',Item:'items',JournalEntry:'journal'}[pack.type]);
       fs.writeFileSync(path.join(src, doc._id + '.json'), JSON.stringify(doc));
     }
     for(const folder of folders){

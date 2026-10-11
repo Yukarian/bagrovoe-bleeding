@@ -32,6 +32,9 @@ jobs:
           node --check scripts/relics.js
           node --check scripts/new-spells.js
           node --check scripts/siblings.js
+          node --check scripts/villages.js
+          node --check scripts/village-model.mjs
+          node --check scripts/village-view.mjs
           node --test tests/*.test.mjs
   release:
     if: github.ref == 'refs/heads/main'
@@ -54,8 +57,8 @@ jobs:
       - name: Package module
         run: |
           mkdir -p dist/bagrovoe-bleeding
-          cp module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md NEW_NPCS.md SPELLS.md RELICS.md SIBLINGS.md FOLDERS.md dist/bagrovoe-bleeding/
-          cp -r scripts icons assets packs bandits dist/bagrovoe-bleeding/
+          cp module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md NEW_NPCS.md SPELLS.md RELICS.md SIBLINGS.md FOLDERS.md SETTLEMENTS.md dist/bagrovoe-bleeding/
+          cp -r scripts styles icons assets packs bandits dist/bagrovoe-bleeding/
           cd dist
           zip -r ../bagrovoe-bleeding.zip bagrovoe-bleeding
           cd ..
@@ -72,5 +75,5 @@ jobs:
           fi
           gh release create "$TAG" bagrovoe-bleeding.zip module.json SHA256SUMS.txt \
             --target "$GITHUB_SHA" \
-            --title "Багровое Причастие $VERSION" \
+            --title "Мир Ортес $VERSION" \
             --notes-file RELEASE_NOTES.md
