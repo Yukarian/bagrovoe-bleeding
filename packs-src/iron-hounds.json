@@ -1,0 +1,2746 @@
+[
+  {
+    "_id": "IHon9km400000000",
+    "name": "Рядовой Железных Гончих",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 14,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "dex": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "con": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "int": {
+          "value": 10,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "wis": {
+          "value": 11,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "cha": {
+          "value": 10,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 16
+        },
+        "hp": {
+          "value": 27,
+          "max": 27,
+          "formula": "5d8+5"
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        },
+        "init": {
+          "ability": "dex"
+        },
+        "hd": {
+          "max": 5,
+          "denomination": "d8",
+          "spent": 0
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "человек"
+        },
+        "alignment": "",
+        "cr": 0.5,
+        "xp": {
+          "value": 100
+        },
+        "biography": {
+          "value": "<h2>Железные Гончие</h2><p>Строевая выучка: один раз в ход +1к4 урона копьём, когда цель рядом с союзником.</p><p>Щитовая стойка: преимущество на спасброски от сбивания с ног при использовании щита.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {},
+      "identifier": "iron-hounds-ihon9km400000000"
+    },
+    "items": [
+      {
+        "name": "Копьё",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +4; 1d6+2 piercing.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IH1wgiwyy0000000": {
+              "_id": "IH1wgiwyy0000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "4",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d6+2"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "76a473a107a1ca5a"
+      },
+      {
+        "name": "Короткий меч",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +4; 1d6+2 piercing.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IH1iup5jj0000000": {
+              "_id": "IH1iup5jj0000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "4",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d6+2"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "038029f31c5b91d8"
+      },
+      {
+        "name": "Строевая выучка",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Строевая выучка: один раз в ход +1к4 урона копьём, когда цель рядом с союзником.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "49f178818ef53410"
+      },
+      {
+        "name": "Щитовая стойка",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Щитовая стойка: преимущество на спасброски от сбивания с ног при использовании щита.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "b740989c0ffb96d1"
+      }
+    ],
+    "prototypeToken": {
+      "name": "Рядовой Железных Гончих",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": -1,
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "ironHound": true
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "IHsjnr7k00000000",
+    "name": "Арбалетчик Железных Гончих",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 10,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "dex": {
+          "value": 15,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "con": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "int": {
+          "value": 10,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "wis": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "cha": {
+          "value": 10,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 14
+        },
+        "hp": {
+          "value": 22,
+          "max": 22,
+          "formula": "4d8+4"
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        },
+        "init": {
+          "ability": "dex"
+        },
+        "hd": {
+          "max": 4,
+          "denomination": "d8",
+          "spent": 0
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "человек"
+        },
+        "alignment": "",
+        "cr": 0.5,
+        "xp": {
+          "value": 100
+        },
+        "biography": {
+          "value": "<h2>Железные Гончие</h2><p>Удобная позиция: +1к4 урона дальнобойной атакой, если в свой ход не перемещался.</p><p>Прикрывающий огонь: попавшая цель не совершает атаки по возможности до начала следующего хода арбалетчика.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {},
+      "identifier": "iron-hounds-ihsjnr7k00000000"
+    },
+    "items": [
+      {
+        "name": "Лёгкий арбалет",
+        "type": "weapon",
+        "img": "icons/svg/target.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +4; 1d8+2 piercing.</p>"
+          },
+          "type": {
+            "value": "simpleR"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IH16miwvz0000000": {
+              "_id": "IH16miwvz0000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "4",
+                "flat": true,
+                "type": {
+                  "value": "ranged",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d8+2"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 80,
+                "long": 320
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "94becd5f75f2bfa5"
+      },
+      {
+        "name": "Кинжал",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +4; 1d4+2 piercing.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IH59pec000000000": {
+              "_id": "IH59pec000000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "4",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4+2"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "0d21b1923cf94350"
+      },
+      {
+        "name": "Удобная позиция",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Удобная позиция: +1к4 урона дальнобойной атакой, если в свой ход не перемещался.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "ac4fe921077e4971"
+      },
+      {
+        "name": "Прикрывающий огонь",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Прикрывающий огонь: попавшая цель не совершает атаки по возможности до начала следующего хода арбалетчика.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "d07770c65c21949a"
+      }
+    ],
+    "prototypeToken": {
+      "name": "Арбалетчик Железных Гончих",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": -1,
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "ironHound": true
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "IHc0tn3p00000000",
+    "name": "Разведчик Железных Гончих",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 10,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "dex": {
+          "value": 16,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "con": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "int": {
+          "value": 11,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "wis": {
+          "value": 13,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "cha": {
+          "value": 10,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 14
+        },
+        "hp": {
+          "value": 24,
+          "max": 24,
+          "formula": "5d8+5"
+        },
+        "movement": {
+          "walk": 35,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        },
+        "init": {
+          "ability": "dex"
+        },
+        "hd": {
+          "max": 5,
+          "denomination": "d8",
+          "spent": 0
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "человек"
+        },
+        "alignment": "",
+        "cr": 0.5,
+        "xp": {
+          "value": 100
+        },
+        "biography": {
+          "value": "<h2>Железные Гончие</h2><p>Ловкий отход: Отход или Рывок бонусным действием.</p><p>Точный выстрел: один раз в ход +2к6 урона при преимуществе либо при союзнике рядом с целью.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {},
+      "identifier": "iron-hounds-ihc0tn3p00000000"
+    },
+    "items": [
+      {
+        "name": "Короткий лук",
+        "type": "weapon",
+        "img": "icons/svg/target.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +5; 1d6+3 piercing.</p>"
+          },
+          "type": {
+            "value": "simpleR"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IHntr1l000000000": {
+              "_id": "IHntr1l000000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "5",
+                "flat": true,
+                "type": {
+                  "value": "ranged",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d6+3"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 80,
+                "long": 320
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "5f91bd74e0d4c7b9"
+      },
+      {
+        "name": "Короткий меч",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +5; 1d6+3 piercing.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IH1ikpjuk0000000": {
+              "_id": "IH1ikpjuk0000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "5",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d6+3"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "0ed9ea98eb1bcbe8"
+      },
+      {
+        "name": "Ловкий отход",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Ловкий отход: Отход или Рывок бонусным действием.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "5e56b1f28ff453f7"
+      },
+      {
+        "name": "Точный выстрел",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Точный выстрел: один раз в ход +2к6 урона при преимуществе либо при союзнике рядом с целью.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "8edf7a01070c3f16"
+      }
+    ],
+    "prototypeToken": {
+      "name": "Разведчик Железных Гончих",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": -1,
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "ironHound": true
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "IH1p3mhwp0000000",
+    "name": "Ветеран Железных Гончих",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 16,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "dex": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "con": {
+          "value": 14,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "int": {
+          "value": 10,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "wis": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "cha": {
+          "value": 11,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 17
+        },
+        "hp": {
+          "value": 45,
+          "max": 45,
+          "formula": "7d8+14"
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        },
+        "init": {
+          "ability": "dex"
+        },
+        "hd": {
+          "max": 7,
+          "denomination": "d8",
+          "spent": 0
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "человек"
+        },
+        "alignment": "",
+        "cr": 1,
+        "xp": {
+          "value": 200
+        },
+        "biography": {
+          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки мечом.</p><p>Опыт строевого боя: +1 к КД, пока в пределах 5 футов есть союзник.</p><p>Прикрывающая реакция: накладывает помеху на атаку по соседнему союзнику.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {},
+      "identifier": "iron-hounds-ih1p3mhwp0000000"
+    },
+    "items": [
+      {
+        "name": "Длинный меч",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +5; 1d8+3 slashing.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IHsggrck00000000": {
+              "_id": "IHsggrck00000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "5",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "slashing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d8+3"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "0d5e9abd19d10308"
+      },
+      {
+        "name": "Алебарда",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +5; 1d10+3 slashing.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IH1agf5al0000000": {
+              "_id": "IH1agf5al0000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "5",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "slashing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d10+3"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 10,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "12913f31442d5305"
+      },
+      {
+        "name": "Мультиатака",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Мультиатака: две атаки мечом.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "b8d1dee87d2a9464"
+      },
+      {
+        "name": "Опыт строевого боя",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Опыт строевого боя: +1 к КД, пока в пределах 5 футов есть союзник.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "d0d2290702e4615b"
+      },
+      {
+        "name": "Прикрывающая реакция",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Прикрывающая реакция: накладывает помеху на атаку по соседнему союзнику.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "3167fa4dd1a61a45"
+      }
+    ],
+    "prototypeToken": {
+      "name": "Ветеран Железных Гончих",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": -1,
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "ironHound": true
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "IH65pem500000000",
+    "name": "Гаррет Хольм",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 17,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "dex": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "con": {
+          "value": 16,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "int": {
+          "value": 10,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "wis": {
+          "value": 11,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "cha": {
+          "value": 13,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 16
+        },
+        "hp": {
+          "value": 60,
+          "max": 60,
+          "formula": "8d8+24"
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        },
+        "init": {
+          "ability": "dex"
+        },
+        "hd": {
+          "max": 8,
+          "denomination": "d8",
+          "spent": 0
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "человек"
+        },
+        "alignment": "",
+        "cr": 2,
+        "xp": {
+          "value": 450
+        },
+        "biography": {
+          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки булавой.</p><p>Жестокий надсмотрщик: +1к8 урона по цели, раненой в этом раунде.</p><p>Запугивающий рёв (перезарядка 5–6): спасбросок Мудрости Сл 11 в радиусе 10 футов; помеха на следующую атаку при провале.</p><p>Толчок щитом: попадание 1к4+3 дробящего урона, Сила Сл 13 либо состояние Сбитый с ног.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {},
+      "identifier": "iron-hounds-ih65pem500000000"
+    },
+    "items": [
+      {
+        "name": "Тяжёлая булава",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +5; 1d8+4 bludgeoning.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IH17d23ax0000000": {
+              "_id": "IH17d23ax0000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "5",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "bludgeoning"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d8+4"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "dff9445686c93748"
+      },
+      {
+        "name": "Толчок щитом",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +5; 1d4+3 bludgeoning.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IHfdljye00000000": {
+              "_id": "IHfdljye00000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "5",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "bludgeoning"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4+3"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "20f68f9b1a2cfbdb"
+      },
+      {
+        "name": "Мультиатака",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Мультиатака: две атаки булавой.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "bf32a840fd54d9a7"
+      },
+      {
+        "name": "Жестокий надсмотрщик",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Жестокий надсмотрщик: +1к8 урона по цели, раненой в этом раунде.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "54e34720b465389f"
+      },
+      {
+        "name": "Запугивающий рёв (перезарядка 5–6)",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Запугивающий рёв (перезарядка 5–6): спасбросок Мудрости Сл 11 в радиусе 10 футов; помеха на следующую атаку при провале.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "5bc715a6aaf5376a"
+      },
+      {
+        "name": "Толчок щитом",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Толчок щитом: попадание 1к4+3 дробящего урона, Сила Сл 13 либо состояние Сбитый с ног.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "e662e3b7ef1ff4c3"
+      }
+    ],
+    "prototypeToken": {
+      "name": "Гаррет Хольм",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": -1,
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "ironHound": true
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "IH12pu65u0000000",
+    "name": "Сайлас Вейн",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 10,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "dex": {
+          "value": 16,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "con": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "int": {
+          "value": 14,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "wis": {
+          "value": 13,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "cha": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 15
+        },
+        "hp": {
+          "value": 49,
+          "max": 49,
+          "formula": "9d8+9"
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        },
+        "init": {
+          "ability": "dex"
+        },
+        "hd": {
+          "max": 9,
+          "denomination": "d8",
+          "spent": 0
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "человек"
+        },
+        "alignment": "",
+        "cr": 2,
+        "xp": {
+          "value": 450
+        },
+        "biography": {
+          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки арбалетом или кинжалом.</p><p>Хитрый отход: Отход или Засада бонусным действием.</p><p>Выверенный выстрел: +3к6 урона один раз в ход при преимуществе или при союзнике рядом с целью.</p><p>Скользкий шаг (реакция): отступление на половину скорости после приближения противника.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {},
+      "identifier": "iron-hounds-ih12pu65u0000000"
+    },
+    "items": [
+      {
+        "name": "Ручной арбалет",
+        "type": "weapon",
+        "img": "icons/svg/target.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +5; 1d6+3 piercing.</p>"
+          },
+          "type": {
+            "value": "simpleR"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IH1g4gjxw0000000": {
+              "_id": "IH1g4gjxw0000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "5",
+                "flat": true,
+                "type": {
+                  "value": "ranged",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d6+3"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 30,
+                "long": 120
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "4c140186c6226e1d"
+      },
+      {
+        "name": "Кинжал",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +5; 1d4+3 piercing.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IHf9b3b000000000": {
+              "_id": "IHf9b3b000000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "5",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4+3"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "92339c03b91c60f2"
+      },
+      {
+        "name": "Мультиатака",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Мультиатака: две атаки арбалетом или кинжалом.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "0fbed02264bc36ef"
+      },
+      {
+        "name": "Хитрый отход",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Хитрый отход: Отход или Засада бонусным действием.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "e7ce9b6e4d66ab27"
+      },
+      {
+        "name": "Выверенный выстрел",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Выверенный выстрел: +3к6 урона один раз в ход при преимуществе или при союзнике рядом с целью.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "0ede2c42b5d50786"
+      },
+      {
+        "name": "Скользкий шаг (реакция)",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Скользкий шаг (реакция): отступление на половину скорости после приближения противника.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "c14f21c351ac1ee5"
+      }
+    ],
+    "prototypeToken": {
+      "name": "Сайлас Вейн",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": -1,
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "ironHound": true
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "IHxx4hiz00000000",
+    "name": "Марта Грейвс",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 16,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "dex": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "con": {
+          "value": 16,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "int": {
+          "value": 11,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "wis": {
+          "value": 13,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "cha": {
+          "value": 14,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 18
+        },
+        "hp": {
+          "value": 68,
+          "max": 68,
+          "formula": "9d8+27"
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        },
+        "init": {
+          "ability": "dex"
+        },
+        "hd": {
+          "max": 9,
+          "denomination": "d8",
+          "spent": 0
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "человек"
+        },
+        "alignment": "",
+        "cr": 3,
+        "xp": {
+          "value": 700
+        },
+        "biography": {
+          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки длинным мечом.</p><p>Стена щитов: союзникам в 5 футах +1 к КД против дальнобойных атак.</p><p>Верная защитница (реакция): меняется местами с соседним союзником, принимая атаку на себя.</p><p>Командный окрик (перезарядка 5–6): два союзника в 30 футах перемещаются на половину скорости без провоцирования атак.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {},
+      "identifier": "iron-hounds-ihxx4hiz00000000"
+    },
+    "items": [
+      {
+        "name": "Длинный меч",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +5; 1d8+3 slashing.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IHsggrck00000000": {
+              "_id": "IHsggrck00000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "5",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "slashing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d8+3"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "01f67aaf0a9c6710"
+      },
+      {
+        "name": "Мультиатака",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Мультиатака: две атаки длинным мечом.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "cffefc393b216058"
+      },
+      {
+        "name": "Стена щитов",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Стена щитов: союзникам в 5 футах +1 к КД против дальнобойных атак.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "508fe34896fefde7"
+      },
+      {
+        "name": "Верная защитница (реакция)",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Верная защитница (реакция): меняется местами с соседним союзником, принимая атаку на себя.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "965ce053eb22d587"
+      },
+      {
+        "name": "Командный окрик (перезарядка 5–6)",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Командный окрик (перезарядка 5–6): два союзника в 30 футах перемещаются на половину скорости без провоцирования атак.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "91bef5f690db4d98"
+      }
+    ],
+    "prototypeToken": {
+      "name": "Марта Грейвс",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": -1,
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "ironHound": true
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "IH1s138yf0000000",
+    "name": "Родерик Варн",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 18,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "dex": {
+          "value": 14,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "con": {
+          "value": 18,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "int": {
+          "value": 12,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "wis": {
+          "value": 14,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        },
+        "cha": {
+          "value": 16,
+          "proficient": 0,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          }
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 18
+        },
+        "hp": {
+          "value": 110,
+          "max": 110,
+          "formula": "13d8+52"
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        },
+        "init": {
+          "ability": "dex"
+        },
+        "hd": {
+          "max": 13,
+          "denomination": "d8",
+          "spent": 0
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "человек"
+        },
+        "alignment": "",
+        "cr": 6,
+        "xp": {
+          "value": 2300
+        },
+        "biography": {
+          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки длинным мечом.</p><p>Закалённый командир: преимущество против Испуга.</p><p>Железная дисциплина: выбранным союзникам в 30 футах +1 к спасброскам против Испуга и Очарования.</p><p>Боевой расчёт: один раз в ход +1к8 урона по цели рядом с союзником Родерика.</p><p>Командный приказ (перезарядка 5–6): два союзника в 60 футах используют реакции, чтобы атаковать или переместиться на половину скорости.</p><p>Боевой натиск (1/день): лечение 1к10+11 хитов.</p><p>Парирование (реакция): +3 КД против одной рукопашной атаки.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {},
+      "identifier": "iron-hounds-ih1s138yf0000000"
+    },
+    "items": [
+      {
+        "name": "Длинный меч",
+        "type": "weapon",
+        "img": "icons/svg/sword.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +7; 1d10+4 slashing.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IH9hq19800000000": {
+              "_id": "IH9hq19800000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "7",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "slashing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d10+4"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "a24d06ab75023f3b"
+      },
+      {
+        "name": "Тяжёлый арбалет",
+        "type": "weapon",
+        "img": "icons/svg/target.svg",
+        "system": {
+          "description": {
+            "value": "<p>Атака +5; 1d10+2 piercing.</p>"
+          },
+          "type": {
+            "value": "simpleR"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "IH128odx70000000": {
+              "_id": "IH128odx70000000",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "5",
+                "flat": true,
+                "type": {
+                  "value": "ranged",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d10+2"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 100,
+                "long": 400
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          }
+        },
+        "effects": [],
+        "_id": "cafc0b67ab3028f5"
+      },
+      {
+        "name": "Мультиатака",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Мультиатака: две атаки длинным мечом.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "d29c8cd9d1daad4f"
+      },
+      {
+        "name": "Закалённый командир",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Закалённый командир: преимущество против Испуга.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "d0f5b1d39696b7ca"
+      },
+      {
+        "name": "Железная дисциплина",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Железная дисциплина: выбранным союзникам в 30 футах +1 к спасброскам против Испуга и Очарования.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "0e6ce3e1ab7db602"
+      },
+      {
+        "name": "Боевой расчёт",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Боевой расчёт: один раз в ход +1к8 урона по цели рядом с союзником Родерика.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "ac3064ddf33e6329"
+      },
+      {
+        "name": "Командный приказ (перезарядка 5–6)",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Командный приказ (перезарядка 5–6): два союзника в 60 футах используют реакции, чтобы атаковать или переместиться на половину скорости.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "80b44d4a1c26dca3"
+      },
+      {
+        "name": "Боевой натиск (1/день)",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Боевой натиск (1/день): лечение 1к10+11 хитов.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "eac31255eff0b971"
+      },
+      {
+        "name": "Парирование (реакция)",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "system": {
+          "description": {
+            "value": "<p>Парирование (реакция): +3 КД против одной рукопашной атаки.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": [],
+        "_id": "09813314e0b59a84"
+      }
+    ],
+    "prototypeToken": {
+      "name": "Родерик Варн",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": -1,
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "ironHound": true
+      }
+    },
+    "effects": []
+  }
+]

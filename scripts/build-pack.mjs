@@ -2,9 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { compilePack, extractPack } from '@foundryvtt/foundryvtt-cli';
+import { organizePack } from './pack-folders.mjs';
 
 const manifest = JSON.parse(fs.readFileSync('module.json', 'utf8'));
-const expected = { 'blood-spells': 18, actors: 14, abilities: 75, relics: 7 };
+const expected = { 'blood-spells': 18, actors: 14, abilities: 75, relics: 7, 'iron-hounds': 8 };
 const scratch = fs.mkdtempSync(path.resolve('.build-'));
 const assetPrefix = `modules/${manifest.id}/`;
 function validate(value) {
@@ -34,7 +35,7 @@ function stripKeys(v) {
 }
 try {
   for (const pack of manifest.packs) {
-    const docs = JSON.parse(fs.readFileSync(`packs-src/${pack.name}.json`, 'utf8'));
+    const {docs,folders} = organizePack(pack,JSON.parse(fs.readFileSync(`packs-src/${pack.name}.json`, 'utf8')));
     assert.equal(docs.length, expected[pack.name]);
     const src = path.join(scratch, pack.name), out = path.join(scratch, pack.name + '-roundtrip');
     fs.mkdirSync(src);
@@ -45,13 +46,19 @@ try {
       keys(doc, pack.type === 'Actor' ? 'actors' : 'items');
       fs.writeFileSync(path.join(src, doc._id + '.json'), JSON.stringify(doc));
     }
+    for(const folder of folders){
+      assert.ok(!seen.has(folder._id));seen.add(folder._id);
+      keys(folder,'folders');
+      fs.writeFileSync(path.join(src, folder._id+'.json'),JSON.stringify(folder));
+    }
+    assert.ok(docs.every(d=>folders.some(f=>f._id===d.folder)));
     await compilePack(src, pack.path);
     await extractPack(pack.path, out);
     const restored = fs.readdirSync(out).filter(f=>f.endsWith('.json')).map(f=>JSON.parse(fs.readFileSync(path.join(out,f),'utf8')));
-    assert.equal(restored.length, docs.length);
+    assert.equal(restored.length, docs.length+folders.length);
     const sort = d => d.map(stripKeys).sort((a,b)=>a._id.localeCompare(b._id));
-    assert.deepEqual(sort(restored), sort(docs), `Roundtrip failed: ${pack.name}`);
-    console.log(`Verified ${pack.name}: ${docs.length} documents, embedded items/effects and asset paths`);
+    assert.deepEqual(sort(restored), sort([...docs,...folders]), `Roundtrip failed: ${pack.name}`);
+    console.log(`Verified ${pack.name}: ${docs.length} documents, ${folders.length} folders, embedded items/effects and asset paths`);
   }
 } finally {
   // mkdtemp creates this directory directly under the repository; never remove external paths.
