@@ -29,8 +29,8 @@ function harness(){
  const load=n=>vm.runInContext(fs.readFileSync(path.join(root,'scripts',n),'utf8'),ctx);
  return {ctx,hooks,docs,actor,load,notifications};
 }
-test('twelve unique bundled icons, bleed flags, native healing, templates and save damage',()=>{
- assert.equal(new Set(spells.map(s=>s.img)).size,12);
+test('eighteen unique bundled icons, bleed flags, native healing, templates and save damage',()=>{
+ assert.equal(new Set(spells.map(s=>s.img)).size,18);
  for(const s of spells)assert.ok(fs.existsSync(path.join(root,s.img.replace('modules/bagrovoe-bleeding/',''))));
  for(const n of [1,6])assert.equal(spells[n].flags[MOD].abilities.bleed.levels,n===1?1:2);
  for(const [n,value] of [[7,7],[11,10]]){const a=Object.values(spells[n].system.activities)[0];assert.equal(a.type,'heal');assert.deepEqual(a.healing.types,['temphp']);assert.equal(Number(a.healing.bonus),value);}
@@ -63,6 +63,11 @@ test('control lasts through caster next turn and survives reload, expires afterw
  const e=flagged({id:'e'});await e.setFlag(MOD,'expires',x);h.actor.effects=[e];
  c.round=3;await h.ctx.BagrovoeSpellRuntime.expireControls();assert.equal(h.actor.effects.length,1);
  c.turn=1;await h.ctx.BagrovoeSpellRuntime.expireControls();assert.equal(h.actor.effects.length,0);
+});
+test('seal expires at start of caster next turn, while ordinary controls remain',async()=>{
+ const h=harness();h.load('spell-runtime.js');const c={id:'c',started:true,round:2,turn:0,turns:[{id:'caster',actor:h.actor},{id:'other'}]};h.ctx.game.combat=c;h.ctx.game.combats.set('c',c);
+ const e=flagged({id:'seal'});await e.setFlag(MOD,'expires',{...h.ctx.BagrovoeSpellRuntime.expiry(h.actor),start:true});h.actor.effects=[e];
+ await h.ctx.BagrovoeSpellRuntime.expireControls();assert.equal(h.actor.effects.length,1);c.round=3;await h.ctx.BagrovoeSpellRuntime.expireControls();assert.equal(h.actor.effects.length,0);
 });
 test('auto saves use persisted target and Set ability once, with native origin',async()=>{
  const h=harness();h.load('spell-runtime.js');const item=flagged({actor:h.actor});await item.setFlag(MOD,'spellKey','blood-bonds');

@@ -132,6 +132,13 @@ function harness() {
   return { c: context, api: context.api, actor, token, combat, attack, Hooks, messages, warnings, flush };
 }
 
+test('clotting seal blocks new bleeding on its token only, and disabled seal does not', async () => {
+  const h=harness(),a=h.actor(),t=h.token(a),other=h.token(a);
+  const [seal]=await a.createEmbeddedDocuments('ActiveEffect',[{flags:{[MOD]:{clottingSeal:t.uuid}}}]);
+  await h.api.apply(t,{levels:2});assert.equal(h.api.effectOf(t),undefined);
+  await h.api.apply(other,{levels:1});assert.equal(h.api.effectOf(other).getFlag(MOD,'level'),1);
+  seal.disabled=true;await h.api.apply(t,{levels:2});assert.equal(h.api.effectOf(t).getFlag(MOD,'level'),2);
+});
 test('successful attack rolls one automatic CON save using stored targets, not GM selection', async () => {
   const h = harness(), a = h.actor(), t = h.token(a), other = h.token(h.actor('other'));
   h.c.game.user.targets.add(other.object);

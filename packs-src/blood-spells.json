@@ -2031,5 +2031,925 @@
     "ownership": {
       "default": 0
     }
+  },
+  {
+    "_id": "BldSpell00000013",
+    "name": "Алая нить",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/scarlet-thread.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagic": true,
+        "spellKey": "scarlet-thread"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Дальнобойная атака заклинанием: 2к6 некротического урона. При попадании кровоточащую цель можно притянуть на 10 футов к заклинателю. Ведущий подтверждает свободный путь.</p><p>Компоненты: С. Цена: 1 Костей Хитов. Магия заражённых NPC; ячейки заклинаний не расходуются. Усиления от ячейки нет.</p><p>Урон применяйте штатной кнопкой карточки.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 1,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000012": {
+          "_id": "ActBlood00000012",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "value": "30",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Алая нить",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/scarlet-thread.svg",
+          "behaviors": [],
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "con",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 2,
+                "denomination": 6,
+                "bonus": "0",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 0
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "identifier": "scarlet-thread",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 1200000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000014",
+    "name": "Печать свёртывания",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/clotting-seal.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagic": true,
+        "spellKey": "clotting-seal"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Касание: остановите кровотечение у одного согласного существа. До начала вашего следующего хода оно не может получить кровотечение. Здоровье не восстанавливается.</p><p>Компоненты: С. Цена: 1 Костей Хитов. Магия заражённых NPC; ячейки заклинаний не расходуются. Усиления от ячейки нет.</p><p>Эффект обрабатывает активный ведущий после подтверждения; повторно применять урон не нужно.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "5",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 1,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000013": {
+          "_id": "ActBlood00000013",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "value": "5",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Печать свёртывания",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/clotting-seal.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "clotting-seal",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 1300000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000015",
+    "name": "Багровый шаг",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-step.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagic": true,
+        "spellKey": "crimson-step"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Бонусным действием телепортируйтесь на 30 футов в видимое свободное место. Если в пределах 5 футов от места появления есть другое кровоточащее существо, получите 5 временных хитов. Ведущий задаёт смещение в клетках и подтверждает видимость.</p><p>Компоненты: С. Цена: 2 Костей Хитов. Магия заражённых NPC; ячейки заклинаний не расходуются. Усиления от ячейки нет.</p><p>Эффект обрабатывает активный ведущий после подтверждения; повторно применять урон не нужно.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "bonus",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "type": "self",
+          "count": "",
+          "choice": false,
+          "special": ""
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 2,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000014": {
+          "_id": "ActBlood00000014",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "bonus",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "value": "30",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "type": "self",
+              "count": "",
+              "choice": false,
+              "special": ""
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Багровый шаг",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-step.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "crimson-step",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 1400000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000016",
+    "name": "Переливание",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/transfusion.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagic": true,
+        "spellKey": "transfusion"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Потеряйте от 1 до 15 текущих хитов: одно другое согласное существо в пределах 30 футов восстанавливает столько же хитов. Нельзя потратить последний хит. Это потеря здоровья, сверх оплаты 2 Костей Хитов; временные хиты и сопротивления не уменьшают цену.</p><p>Компоненты: С. Цена: 2 Костей Хитов. Магия заражённых NPC; ячейки заклинаний не расходуются. Усиления от ячейки нет.</p><p>Эффект обрабатывает активный ведущий после подтверждения; повторно применять урон не нужно.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 2,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000015": {
+          "_id": "ActBlood00000015",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "value": "30",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Переливание",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/transfusion.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "transfusion",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 1500000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000017",
+    "name": "Багровая жатва",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-harvest.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagic": true,
+        "spellKey": "crimson-harvest"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>15-футовый конус: спасбросок Телосложения против Сл вашей магии крови (8 + удвоенный бонус мастерства + модификатор Телосложения). Урон 4к6 некротический; при успехе половина. Получите 3 временных хита за каждую кровоточащую цель, провалившую спасбросок, максимум 9. Ведущий подтверждает выбранные цели конуса.</p><p>Компоненты: С. Цена: 3 Костей Хитов. Магия заражённых NPC; ячейки заклинаний не расходуются. Усиления от ячейки нет.</p><p>Эффект обрабатывает активный ведущий после подтверждения; повторно применять урон не нужно.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "",
+          "choice": false
+        },
+        "template": {
+          "type": "cone",
+          "size": "15",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "15",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 3,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000016": {
+          "_id": "ActBlood00000016",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "value": "15",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "",
+              "choice": false
+            },
+            "template": {
+              "type": "cone",
+              "size": "15",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Багровая жатва",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-harvest.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "crimson-harvest",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 1600000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "BldSpell00000018",
+    "name": "Пульс палача",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/executioners-pulse.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagic": true,
+        "spellKey": "executioners-pulse"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Одна кровоточащая цель в пределах 60 футов: спасбросок Телосложения против Сл вашей магии крови (8 + удвоенный бонус мастерства + модификатор Телосложения). Получает 4к8 + 1к8 за каждый уровень кровотечения (максимум 9к8) некротического урона, при успехе половину. После урона её кровотечение прекращается при любом результате спасброска.</p><p>Компоненты: С. Цена: 4 Костей Хитов. Магия заражённых NPC; ячейки заклинаний не расходуются. Усиления от ячейки нет.</p><p>Эффект обрабатывает активный ведущий после подтверждения; повторно применять урон не нужно.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 4,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [],
+      "activities": {
+        "ActBlood00000017": {
+          "_id": "ActBlood00000017",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Пульс палача",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/executioners-pulse.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "executioners-pulse",
+      "method": "spell",
+      "prepared": 0,
+      "sourceItem": ""
+    },
+    "sort": 1700000,
+    "ownership": {
+      "default": 0
+    }
   }
 ]

@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { compilePack, extractPack } from '@foundryvtt/foundryvtt-cli';
 
 const manifest = JSON.parse(fs.readFileSync('module.json', 'utf8'));
-const expected = { 'blood-spells': 12, actors: 14, abilities: 73, relics: 7 };
+const expected = { 'blood-spells': 18, actors: 14, abilities: 73, relics: 7 };
 const scratch = fs.mkdtempSync(path.resolve('.build-'));
 const assetPrefix = `modules/${manifest.id}/`;
 function validate(value) {

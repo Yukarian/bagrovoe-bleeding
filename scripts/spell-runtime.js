@@ -138,7 +138,7 @@ async function expireControls() {
       const x=e.getFlag(MOD,'expires');if(!x)continue;
       const c=x.combat?game.combats.get(x.combat):null;
       const turn=c?.turns?.findIndex(t=>t.id===x.combatant)??-1;
-      const expired=x.combat?(!c?.started||turn<0||c.round>x.round||(c.round===x.round&&c.turn>turn)):game.time.worldTime>=x.worldTime;
+      const expired=x.combat?(!c?.started||turn<0||c.round>x.round||(c.round===x.round&&(x.start?c.turn>=turn:c.turn>turn))):game.time.worldTime>=x.worldTime;
       if(expired)remove.push(e.id);
     }
     if(remove.length)await actor.deleteEmbeddedDocuments('ActiveEffect',remove);

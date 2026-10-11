@@ -91,6 +91,7 @@ async function changeEffect(token, values, { additive = false, source, receipt }
   if (receipt && old?.getFlag(MOD, "receipts")?.includes(receipt)) return old;
   const level = integer((additive ? prior.level : 0) + Number(values.level ?? values.levels ?? 1), 0, 5, 1);
   if (!level) return removeEffect(token);
+  if (level > prior.level && actor.effects.some(e => !e.disabled && e.getFlag(MOD, 'clottingSeal') === token.uuid)) return old;
   const count = integer(additive ? Math.max(prior.level ? prior.count : 1, Number(values.count ?? 1)) : (values.count ?? prior.count), 1, 10, 1);
   const dc = integer(values.dc ?? prior.dc, 1, 99, 11);
   const data = effectData(token, { level, count, dc: additive ? Math.max(dc, prior.level ? prior.dc : 0) : dc });

@@ -30,6 +30,7 @@ jobs:
           node --check scripts/blood-magic.js
           node --check scripts/spell-runtime.js
           node --check scripts/relics.js
+          node --check scripts/new-spells.js
           node --test tests/*.test.mjs
   release:
     if: github.ref == 'refs/heads/main'
