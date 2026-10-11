@@ -36,9 +36,9 @@ function actor(n){
 Hooks.once("ready", async()=>{
  if(!game.user.isGM)return;
  try{
-  let pack=game.packs.get(MOD+"."+PACK);
+  let pack=game.packs.get("world."+PACK);
   if(!pack){
-   pack=await CompendiumCollection.createCompendium({name:PACK,label:"Железные Гончие | Разбойники",type:"Actor",package:MOD});
+   pack=await CompendiumCollection.createCompendium({name:PACK,label:"Железные Гончие | Разбойники",type:"Actor",package:"world"});
   }
   const existing=await pack.getIndex({fields:["name"]});
   for(const n of npc){
