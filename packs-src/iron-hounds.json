@@ -3,7 +3,7 @@
     "_id": "IHon9km400000000",
     "name": "Рядовой Железных Гончих",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/soldier.png",
     "system": {
       "abilities": {
         "str": {
@@ -311,7 +311,7 @@
     "prototypeToken": {
       "name": "Рядовой Железных Гончих",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/soldier.png"
       },
       "disposition": -1,
       "actorLink": false,
@@ -332,7 +332,7 @@
     "_id": "IHsjnr7k00000000",
     "name": "Арбалетчик Железных Гончих",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/crossbowman.png",
     "system": {
       "abilities": {
         "str": {
@@ -640,7 +640,7 @@
     "prototypeToken": {
       "name": "Арбалетчик Железных Гончих",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/crossbowman.png"
       },
       "disposition": -1,
       "actorLink": false,
@@ -661,7 +661,7 @@
     "_id": "IHc0tn3p00000000",
     "name": "Разведчик Железных Гончих",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/scout.png",
     "system": {
       "abilities": {
         "str": {
@@ -969,7 +969,7 @@
     "prototypeToken": {
       "name": "Разведчик Железных Гончих",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/scout.png"
       },
       "disposition": -1,
       "actorLink": false,
@@ -990,7 +990,7 @@
     "_id": "IH1p3mhwp0000000",
     "name": "Ветеран Железных Гончих",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/veteran.png",
     "system": {
       "abilities": {
         "str": {
@@ -1314,7 +1314,7 @@
     "prototypeToken": {
       "name": "Ветеран Железных Гончих",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/veteran.png"
       },
       "disposition": -1,
       "actorLink": false,
@@ -1335,7 +1335,7 @@
     "_id": "IH65pem500000000",
     "name": "Гаррет Хольм",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/garret-holm.png",
     "system": {
       "abilities": {
         "str": {
@@ -1675,7 +1675,7 @@
     "prototypeToken": {
       "name": "Гаррет Хольм",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/garret-holm.png"
       },
       "disposition": -1,
       "actorLink": false,
@@ -1696,7 +1696,7 @@
     "_id": "IH12pu65u0000000",
     "name": "Сайлас Вейн",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/silas-vein.png",
     "system": {
       "abilities": {
         "str": {
@@ -2036,7 +2036,7 @@
     "prototypeToken": {
       "name": "Сайлас Вейн",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/silas-vein.png"
       },
       "disposition": -1,
       "actorLink": false,
@@ -2057,7 +2057,7 @@
     "_id": "IHxx4hiz00000000",
     "name": "Марта Грейвс",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/marta-greivs.png",
     "system": {
       "abilities": {
         "str": {
@@ -2317,7 +2317,7 @@
     "prototypeToken": {
       "name": "Марта Грейвс",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/marta-greivs.png"
       },
       "disposition": -1,
       "actorLink": false,
@@ -2338,7 +2338,7 @@
     "_id": "IH1s138yf0000000",
     "name": "Родерик Варн",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/roderik-varn.png",
     "system": {
       "abilities": {
         "str": {
@@ -2726,7 +2726,7 @@
     "prototypeToken": {
       "name": "Родерик Варн",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/roderik-varn.png"
       },
       "disposition": -1,
       "actorLink": false,
