@@ -118,7 +118,7 @@
       {
         "name": "Копьё",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/spear.svg",
         "system": {
           "description": {
             "value": "<p>Атака +4; 1d6+2 piercing.</p>"
@@ -188,7 +188,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/spear.svg"
             }
           }
         },
@@ -198,7 +199,7 @@
       {
         "name": "Короткий меч",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "description": {
             "value": "<p>Атака +4; 1d6+2 piercing.</p>"
@@ -268,7 +269,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg"
             }
           }
         },
@@ -278,7 +280,7 @@
       {
         "name": "Строевая выучка",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/formation.svg",
         "system": {
           "description": {
             "value": "<p>Строевая выучка: один раз в ход +1к4 урона копьём, когда цель рядом с союзником.</p>"
@@ -294,7 +296,7 @@
       {
         "name": "Щитовая стойка",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/shield.svg",
         "system": {
           "description": {
             "value": "<p>Щитовая стойка: преимущество на спасброски от сбивания с ног при использовании щита.</p>"
@@ -447,7 +449,7 @@
       {
         "name": "Лёгкий арбалет",
         "type": "weapon",
-        "img": "icons/svg/target.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/crossbow.svg",
         "system": {
           "description": {
             "value": "<p>Атака +4; 1d8+2 piercing.</p>"
@@ -517,7 +519,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/crossbow.svg"
             }
           }
         },
@@ -527,7 +530,7 @@
       {
         "name": "Кинжал",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/dagger.svg",
         "system": {
           "description": {
             "value": "<p>Атака +4; 1d4+2 piercing.</p>"
@@ -597,7 +600,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/dagger.svg"
             }
           }
         },
@@ -607,7 +611,7 @@
       {
         "name": "Удобная позиция",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/aim.svg",
         "system": {
           "description": {
             "value": "<p>Удобная позиция: +1к4 урона дальнобойной атакой, если в свой ход не перемещался.</p>"
@@ -623,7 +627,7 @@
       {
         "name": "Прикрывающий огонь",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/crossbow.svg",
         "system": {
           "description": {
             "value": "<p>Прикрывающий огонь: попавшая цель не совершает атаки по возможности до начала следующего хода арбалетчика.</p>"
@@ -776,7 +780,7 @@
       {
         "name": "Короткий лук",
         "type": "weapon",
-        "img": "icons/svg/target.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/bow.svg",
         "system": {
           "description": {
             "value": "<p>Атака +5; 1d6+3 piercing.</p>"
@@ -846,7 +850,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/bow.svg"
             }
           }
         },
@@ -856,7 +861,7 @@
       {
         "name": "Короткий меч",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "description": {
             "value": "<p>Атака +5; 1d6+3 piercing.</p>"
@@ -926,7 +931,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg"
             }
           }
         },
@@ -936,7 +942,7 @@
       {
         "name": "Ловкий отход",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
         "system": {
           "description": {
             "value": "<p>Ловкий отход: Отход или Рывок бонусным действием.</p>"
@@ -952,7 +958,7 @@
       {
         "name": "Точный выстрел",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/aim.svg",
         "system": {
           "description": {
             "value": "<p>Точный выстрел: один раз в ход +2к6 урона при преимуществе либо при союзнике рядом с целью.</p>"
@@ -1105,7 +1111,7 @@
       {
         "name": "Длинный меч",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "description": {
             "value": "<p>Атака +5; 1d8+3 slashing.</p>"
@@ -1175,7 +1181,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg"
             }
           }
         },
@@ -1185,7 +1192,7 @@
       {
         "name": "Алебарда",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/halberd.svg",
         "system": {
           "description": {
             "value": "<p>Атака +5; 1d10+3 slashing.</p>"
@@ -1255,7 +1262,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/halberd.svg"
             }
           }
         },
@@ -1265,7 +1273,7 @@
       {
         "name": "Мультиатака",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "description": {
             "value": "<p>Мультиатака: две атаки мечом.</p>"
@@ -1281,7 +1289,7 @@
       {
         "name": "Опыт строевого боя",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/formation.svg",
         "system": {
           "description": {
             "value": "<p>Опыт строевого боя: +1 к КД, пока в пределах 5 футов есть союзник.</p>"
@@ -1297,7 +1305,7 @@
       {
         "name": "Прикрывающая реакция",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/parry.svg",
         "system": {
           "description": {
             "value": "<p>Прикрывающая реакция: накладывает помеху на атаку по соседнему союзнику.</p>"
@@ -1450,7 +1458,7 @@
       {
         "name": "Тяжёлая булава",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg",
         "system": {
           "description": {
             "value": "<p>Атака +5; 1d8+4 bludgeoning.</p>"
@@ -1520,7 +1528,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg"
             }
           }
         },
@@ -1530,7 +1539,7 @@
       {
         "name": "Толчок щитом",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/shield.svg",
         "system": {
           "description": {
             "value": "<p>Атака +5; 1d4+3 bludgeoning.</p>"
@@ -1600,7 +1609,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/shield.svg"
             }
           }
         },
@@ -1610,7 +1620,7 @@
       {
         "name": "Мультиатака",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "description": {
             "value": "<p>Мультиатака: две атаки булавой.</p>"
@@ -1626,7 +1636,7 @@
       {
         "name": "Жестокий надсмотрщик",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/menace.svg",
         "system": {
           "description": {
             "value": "<p>Жестокий надсмотрщик: +1к8 урона по цели, раненой в этом раунде.</p>"
@@ -1642,7 +1652,7 @@
       {
         "name": "Запугивающий рёв (перезарядка 5–6)",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/menace.svg",
         "system": {
           "description": {
             "value": "<p>Запугивающий рёв (перезарядка 5–6): спасбросок Мудрости Сл 11 в радиусе 10 футов; помеха на следующую атаку при провале.</p>"
@@ -1658,7 +1668,7 @@
       {
         "name": "Толчок щитом",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/shield.svg",
         "system": {
           "description": {
             "value": "<p>Толчок щитом: попадание 1к4+3 дробящего урона, Сила Сл 13 либо состояние Сбитый с ног.</p>"
@@ -1811,7 +1821,7 @@
       {
         "name": "Ручной арбалет",
         "type": "weapon",
-        "img": "icons/svg/target.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/crossbow.svg",
         "system": {
           "description": {
             "value": "<p>Атака +5; 1d6+3 piercing.</p>"
@@ -1881,7 +1891,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/crossbow.svg"
             }
           }
         },
@@ -1891,7 +1902,7 @@
       {
         "name": "Кинжал",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/dagger.svg",
         "system": {
           "description": {
             "value": "<p>Атака +5; 1d4+3 piercing.</p>"
@@ -1961,7 +1972,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/dagger.svg"
             }
           }
         },
@@ -1971,7 +1983,7 @@
       {
         "name": "Мультиатака",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "description": {
             "value": "<p>Мультиатака: две атаки арбалетом или кинжалом.</p>"
@@ -1987,7 +1999,7 @@
       {
         "name": "Хитрый отход",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
         "system": {
           "description": {
             "value": "<p>Хитрый отход: Отход или Засада бонусным действием.</p>"
@@ -2003,7 +2015,7 @@
       {
         "name": "Выверенный выстрел",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/aim.svg",
         "system": {
           "description": {
             "value": "<p>Выверенный выстрел: +3к6 урона один раз в ход при преимуществе или при союзнике рядом с целью.</p>"
@@ -2019,7 +2031,7 @@
       {
         "name": "Скользкий шаг (реакция)",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
         "system": {
           "description": {
             "value": "<p>Скользкий шаг (реакция): отступление на половину скорости после приближения противника.</p>"
@@ -2172,7 +2184,7 @@
       {
         "name": "Длинный меч",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "description": {
             "value": "<p>Атака +5; 1d8+3 slashing.</p>"
@@ -2242,7 +2254,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg"
             }
           }
         },
@@ -2252,7 +2265,7 @@
       {
         "name": "Мультиатака",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "description": {
             "value": "<p>Мультиатака: две атаки длинным мечом.</p>"
@@ -2268,7 +2281,7 @@
       {
         "name": "Стена щитов",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/formation.svg",
         "system": {
           "description": {
             "value": "<p>Стена щитов: союзникам в 5 футах +1 к КД против дальнобойных атак.</p>"
@@ -2284,7 +2297,7 @@
       {
         "name": "Верная защитница (реакция)",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/parry.svg",
         "system": {
           "description": {
             "value": "<p>Верная защитница (реакция): меняется местами с соседним союзником, принимая атаку на себя.</p>"
@@ -2300,7 +2313,7 @@
       {
         "name": "Командный окрик (перезарядка 5–6)",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/command.svg",
         "system": {
           "description": {
             "value": "<p>Командный окрик (перезарядка 5–6): два союзника в 30 футах перемещаются на половину скорости без провоцирования атак.</p>"
@@ -2453,7 +2466,7 @@
       {
         "name": "Длинный меч",
         "type": "weapon",
-        "img": "icons/svg/sword.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "description": {
             "value": "<p>Атака +7; 1d10+4 slashing.</p>"
@@ -2523,7 +2536,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg"
             }
           }
         },
@@ -2533,7 +2547,7 @@
       {
         "name": "Тяжёлый арбалет",
         "type": "weapon",
-        "img": "icons/svg/target.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/crossbow.svg",
         "system": {
           "description": {
             "value": "<p>Атака +5; 1d10+2 piercing.</p>"
@@ -2603,7 +2617,8 @@
                 "spent": 0,
                 "max": "",
                 "recovery": []
-              }
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/crossbow.svg"
             }
           }
         },
@@ -2613,7 +2628,7 @@
       {
         "name": "Мультиатака",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "description": {
             "value": "<p>Мультиатака: две атаки длинным мечом.</p>"
@@ -2629,7 +2644,7 @@
       {
         "name": "Закалённый командир",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/shield.svg",
         "system": {
           "description": {
             "value": "<p>Закалённый командир: преимущество против Испуга.</p>"
@@ -2645,7 +2660,7 @@
       {
         "name": "Железная дисциплина",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/formation.svg",
         "system": {
           "description": {
             "value": "<p>Железная дисциплина: выбранным союзникам в 30 футах +1 к спасброскам против Испуга и Очарования.</p>"
@@ -2661,7 +2676,7 @@
       {
         "name": "Боевой расчёт",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/tactics.svg",
         "system": {
           "description": {
             "value": "<p>Боевой расчёт: один раз в ход +1к8 урона по цели рядом с союзником Родерика.</p>"
@@ -2677,7 +2692,7 @@
       {
         "name": "Командный приказ (перезарядка 5–6)",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/command.svg",
         "system": {
           "description": {
             "value": "<p>Командный приказ (перезарядка 5–6): два союзника в 60 футах используют реакции, чтобы атаковать или переместиться на половину скорости.</p>"
@@ -2693,7 +2708,7 @@
       {
         "name": "Боевой натиск (1/день)",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/recovery.svg",
         "system": {
           "description": {
             "value": "<p>Боевой натиск (1/день): лечение 1к10+11 хитов.</p>"
@@ -2709,7 +2724,7 @@
       {
         "name": "Парирование (реакция)",
         "type": "feat",
-        "img": "icons/svg/book.svg",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/parry.svg",
         "system": {
           "description": {
             "value": "<p>Парирование (реакция): +3 КД против одной рукопашной атаки.</p>"
