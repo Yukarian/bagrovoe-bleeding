@@ -1,0 +1,1761 @@
+[
+  {
+    "_id": "e8397e441acbc86c",
+    "name": "Нэри Вэйл",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 11,
+          "proficient": 0
+        },
+        "dex": {
+          "value": 14,
+          "proficient": 0
+        },
+        "con": {
+          "value": 10,
+          "proficient": 0
+        },
+        "int": {
+          "value": 10,
+          "proficient": 0
+        },
+        "wis": {
+          "value": 13,
+          "proficient": 0
+        },
+        "cha": {
+          "value": 12,
+          "proficient": 0
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 12
+        },
+        "hp": {
+          "value": 9,
+          "max": 9,
+          "formula": "2d8"
+        },
+        "hd": {
+          "max": 2,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "эльф"
+        },
+        "alignment": "",
+        "cr": 0,
+        "xp": {
+          "value": 10
+        },
+        "biography": {
+          "value": "<h3>Профессия и район</h3><p>Лодочница. Квартал Белых Листьев.</p><h3>Внешность</h3><p>Молодая эльфийка с короткой косой, выцветшим дождевиком и постоянно мокрыми рукавами.</p><h3>Характер и привычки</h3><p>Разговорчивая, но никогда не пересказывает чужие признания с именами. Перед отплытием дважды стучит веслом по борту, предупреждая водных духов.</p><h3>Цель</h3><p>Починить семейную лодку, сохранив старое белое дерево.</p><h3>Чем полезен</h3><p>Перевозит людей и небольшие грузы по каналам, знает причалы, короткие пути и смены портовых работников. Вместо платы согласится на помощь с ремонтом.</p><h3>Первая встреча</h3><p>Лодка застряла под мостиком из-за плохо закреплённого груза. Нэри пытается освободиться, не разбив корзины с лекарствами.</p><h3>На будущее</h3><p>Кто-то регулярно оставляет в лодке свёрток и плату за доставку. Однажды получатель не приходит.</p><h3>Связи</h3><p>Перевозит сборы Сэли Арвен.</p><h3>Реплика</h3><p>По улице быстрее. По воде — спокойнее. Обычно.</p><h3>При опасности</h3><p>Уводит лодку от опасности и помогает людям выбраться из воды.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common",
+            "elvish"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {
+        "ath": {
+          "value": 1
+        },
+        "prc": {
+          "value": 1
+        },
+        "sur": {
+          "value": 1
+        }
+      },
+      "identifier": "neri-veyl"
+    },
+    "items": [
+      {
+        "name": "Весло (дубинка)",
+        "type": "weapon",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg",
+        "system": {
+          "description": {
+            "value": "<p>Рукопашная атака: +2 к попаданию, досягаемость 5 футов, одна цель. Урон: 1d4+0 дробящего.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "4453ee454c442da0": {
+              "_id": "4453ee454c442da0",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "2",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4+0"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg"
+            }
+          }
+        },
+        "effects": [],
+        "_id": "cc384bc8a7017e53"
+      },
+      {
+        "_id": "a0cd57af756bc491",
+        "name": "Лодочница",
+        "type": "feat",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
+        "system": {
+          "description": {
+            "value": "<p>Перевозит людей и небольшие грузы по каналам, знает причалы, короткие пути и смены портовых работников. Вместо платы согласится на помощь с ремонтом.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": []
+      }
+    ],
+    "prototypeToken": {
+      "name": "Нэри Вэйл",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": 0,
+      "actorLink": true,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "suiguResident": true,
+        "sourceSlug": "neri-veyl",
+        "district": "Квартал Белых Листьев",
+        "profession": "Лодочница"
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "cff56a8a201e552e",
+    "name": "Орин Таль",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 9,
+          "proficient": 0
+        },
+        "dex": {
+          "value": 12,
+          "proficient": 0
+        },
+        "con": {
+          "value": 10,
+          "proficient": 0
+        },
+        "int": {
+          "value": 14,
+          "proficient": 0
+        },
+        "wis": {
+          "value": 13,
+          "proficient": 0
+        },
+        "cha": {
+          "value": 10,
+          "proficient": 0
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 11
+        },
+        "hp": {
+          "value": 9,
+          "max": 9,
+          "formula": "2d8"
+        },
+        "hd": {
+          "max": 2,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "эльф"
+        },
+        "alignment": "",
+        "cr": 0,
+        "xp": {
+          "value": 10
+        },
+        "biography": {
+          "value": "<h3>Профессия и район</h3><p>Ремонтник светильников. Лесной Предел.</p><h3>Внешность</h3><p>Пожилой эльф в залатанном жилете, с коробочкой кристаллов, проволоки и деревянных зажимов.</p><h3>Характер и привычки</h3><p>Ворчит на работу, но не уходит, пока всё не исправит. Разговаривает с неисправными фонарями, будто с ленивыми подмастерьями.</p><h3>Цель</h3><p>Найти ученика, которому хватит терпения чинить старое.</p><h3>Чем полезен</h3><p>Обслуживает уличные огни и домашние светильники, чинит простые магические устройства и знаком с жильцами нескольких улиц.</p><h3>Первая встреча</h3><p>Просит придержать лестницу, затем поручает героям доставить обед соседке.</p><h3>На будущее</h3><p>Светильники одной улицы начали гаснуть в одинаковое время. Причину выбирает ведущий: повреждение питания, чужой эксперимент или сюжетная угроза.</p><h3>Связи</h3><p>Ремонтирует печной светильник Талена Ро.</p><h3>Реплика</h3><p>Не трогай. Он не потух — он обиделся. А теперь подай щипцы.</p><h3>При опасности</h3><p>Ищет укрытие и зовёт стражу.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common",
+            "elvish"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {
+        "arc": {
+          "value": 1
+        },
+        "inv": {
+          "value": 1
+        },
+        "prc": {
+          "value": 1
+        }
+      },
+      "identifier": "orin-tal"
+    },
+    "items": [
+      {
+        "name": "Дубинка",
+        "type": "weapon",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg",
+        "system": {
+          "description": {
+            "value": "<p>Рукопашная атака: +1 к попаданию, досягаемость 5 футов, одна цель. Урон: 1d4-1 дробящего.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "c262fdda7ee37d86": {
+              "_id": "c262fdda7ee37d86",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "1",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4-1"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg"
+            }
+          }
+        },
+        "effects": [],
+        "_id": "8d4efd533a51482f"
+      },
+      {
+        "_id": "78df25d145707561",
+        "name": "Ремонтник светильников",
+        "type": "feat",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/recovery.svg",
+        "system": {
+          "description": {
+            "value": "<p>Обслуживает уличные огни и домашние светильники, чинит простые магические устройства и знаком с жильцами нескольких улиц.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": []
+      }
+    ],
+    "prototypeToken": {
+      "name": "Орин Таль",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": 0,
+      "actorLink": true,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "suiguResident": true,
+        "sourceSlug": "orin-tal",
+        "district": "Лесной Предел",
+        "profession": "Ремонтник светильников"
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "49236cf21ee7e6d3",
+    "name": "Сэли Арвен",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 9,
+          "proficient": 0
+        },
+        "dex": {
+          "value": 12,
+          "proficient": 0
+        },
+        "con": {
+          "value": 10,
+          "proficient": 0
+        },
+        "int": {
+          "value": 12,
+          "proficient": 0
+        },
+        "wis": {
+          "value": 14,
+          "proficient": 0
+        },
+        "cha": {
+          "value": 11,
+          "proficient": 0
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 11
+        },
+        "hp": {
+          "value": 9,
+          "max": 9,
+          "formula": "2d8"
+        },
+        "hd": {
+          "max": 2,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "житель Суйгу"
+        },
+        "alignment": "",
+        "cr": 0,
+        "xp": {
+          "value": 10
+        },
+        "biography": {
+          "value": "<h3>Профессия и район</h3><p>Сушильщица трав. Поля Аравэна.</p><h3>Внешность</h3><p>Рабочий передник, тканевые мешочки со сборами и пальцы, пахнущие травами.</p><h3>Характер и привычки</h3><p>Безошибочно различает сборы по запаху, но постоянно путает имена заказчиков.</p><h3>Цель</h3><p>Спасти сезонный сбор от сырости.</p><h3>Чем полезен</h3><p>Подготавливает и хранит травы, замечает испорченные партии.</p><h3>Первая встреча</h3><p>Просит перенести сушильные рамы перед дождём.</p><h3>На будущее</h3><p>В знакомом сборе обнаружились листья, которых поставщик не выращивает.</p><h3>Связи</h3><p>Отправляет травы с Нэри Вэйл.</p><h3>При опасности</h3><p>Избегает боя, отступает и зовёт на помощь.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {
+        "nat": {
+          "value": 1
+        },
+        "med": {
+          "value": 1
+        },
+        "sur": {
+          "value": 1
+        }
+      },
+      "identifier": "seli-arven"
+    },
+    "items": [
+      {
+        "name": "Дубинка",
+        "type": "weapon",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg",
+        "system": {
+          "description": {
+            "value": "<p>Рукопашная атака: +1 к попаданию, досягаемость 5 футов, одна цель. Урон: 1d4-1 дробящего.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "af415bef0a67682e": {
+              "_id": "af415bef0a67682e",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "1",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4-1"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg"
+            }
+          }
+        },
+        "effects": [],
+        "_id": "ee3aeeb19f67e495"
+      },
+      {
+        "_id": "b5b3743b1d95791b",
+        "name": "Сушильщица трав",
+        "type": "feat",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/recovery.svg",
+        "system": {
+          "description": {
+            "value": "<p>Подготавливает и хранит травы, замечает испорченные партии.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": []
+      }
+    ],
+    "prototypeToken": {
+      "name": "Сэли Арвен",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": 0,
+      "actorLink": true,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "suiguResident": true,
+        "sourceSlug": "seli-arven",
+        "district": "Поля Аравэна",
+        "profession": "Сушильщица трав"
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "8f2cf5abc4879fbd",
+    "name": "Вэса Лин",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 8,
+          "proficient": 0
+        },
+        "dex": {
+          "value": 14,
+          "proficient": 0
+        },
+        "con": {
+          "value": 10,
+          "proficient": 0
+        },
+        "int": {
+          "value": 13,
+          "proficient": 0
+        },
+        "wis": {
+          "value": 12,
+          "proficient": 0
+        },
+        "cha": {
+          "value": 11,
+          "proficient": 0
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 12
+        },
+        "hp": {
+          "value": 9,
+          "max": 9,
+          "formula": "2d8"
+        },
+        "hd": {
+          "max": 2,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "житель Суйгу"
+        },
+        "alignment": "",
+        "cr": 0,
+        "xp": {
+          "value": 10
+        },
+        "biography": {
+          "value": "<h3>Профессия и район</h3><p>Переплётчица. Фиолетовый Переплёт.</p><h3>Внешность</h3><p>Пятна клея на рукавах, костяная гладилка и стопка книг с бумажными закладками.</p><h3>Характер и привычки</h3><p>Просит сначала стряхнуть с учебников остаточные заклинания.</p><h3>Цель</h3><p>Накопить на хороший переплётный пресс.</p><h3>Чем полезен</h3><p>Чинит книги, замечает заменённые страницы и следы небрежного вскрытия переплёта.</p><h3>Первая встреча</h3><p>Из принесённого учебника высыпаются искры, мешая закончить заказ.</p><h3>На будущее</h3><p>В корешке старой книги найдена записка, не связанная с её содержанием.</p><h3>Связи</h3><p>Переплетает записи Иллена Са.</p><h3>При опасности</h3><p>Избегает боя, отступает и зовёт на помощь.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {
+        "arc": {
+          "value": 1
+        },
+        "inv": {
+          "value": 1
+        },
+        "slt": {
+          "value": 1
+        }
+      },
+      "identifier": "vesa-lin"
+    },
+    "items": [
+      {
+        "name": "Дубинка",
+        "type": "weapon",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg",
+        "system": {
+          "description": {
+            "value": "<p>Рукопашная атака: +1 к попаданию, досягаемость 5 футов, одна цель. Урон: 1d4-1 дробящего.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "d4d8e6d095d06967": {
+              "_id": "d4d8e6d095d06967",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "1",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4-1"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg"
+            }
+          }
+        },
+        "effects": [],
+        "_id": "c0ed3d1ff580458b"
+      },
+      {
+        "_id": "e820bae3e8af09d0",
+        "name": "Переплётчица",
+        "type": "feat",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/tactics.svg",
+        "system": {
+          "description": {
+            "value": "<p>Чинит книги, замечает заменённые страницы и следы небрежного вскрытия переплёта.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": []
+      }
+    ],
+    "prototypeToken": {
+      "name": "Вэса Лин",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": 0,
+      "actorLink": true,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "suiguResident": true,
+        "sourceSlug": "vesa-lin",
+        "district": "Фиолетовый Переплёт",
+        "profession": "Переплётчица"
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "70f471d0adb72044",
+    "name": "Тален Ро",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 12,
+          "proficient": 0
+        },
+        "dex": {
+          "value": 11,
+          "proficient": 0
+        },
+        "con": {
+          "value": 12,
+          "proficient": 0
+        },
+        "int": {
+          "value": 10,
+          "proficient": 0
+        },
+        "wis": {
+          "value": 12,
+          "proficient": 0
+        },
+        "cha": {
+          "value": 13,
+          "proficient": 0
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 10
+        },
+        "hp": {
+          "value": 11,
+          "max": 11,
+          "formula": "2d8+2"
+        },
+        "hd": {
+          "max": 2,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "житель Суйгу"
+        },
+        "alignment": "",
+        "cr": 0,
+        "xp": {
+          "value": 10
+        },
+        "biography": {
+          "value": "<h3>Профессия и район</h3><p>Пекарь. Лесной Предел.</p><h3>Внешность</h3><p>Мука на бровях, закатанные рукава и корзина под полотенцем.</p><h3>Характер и привычки</h3><p>Принимает оплату продуктами и услугами; помнит, кому нельзя орехи.</p><h3>Цель</h3><p>Сохранить доступные цены после плохой поставки муки.</p><h3>Чем полезен</h3><p>Кормит путников, знает соседей и может передать сообщение постоянному покупателю.</p><h3>Первая встреча</h3><p>Просит разнести хлеб пожилым соседям в обмен на завтрак.</p><h3>На будущее</h3><p>Обычный покупатель перестал забирать хлеб, хотя за неделю уже заплачено.</p><h3>Связи</h3><p>Доверяет ремонт светильника Орину Талю.</p><h3>При опасности</h3><p>Избегает боя, отступает и зовёт на помощь.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {
+        "ins": {
+          "value": 1
+        },
+        "per": {
+          "value": 1
+        }
+      },
+      "identifier": "talen-ro"
+    },
+    "items": [
+      {
+        "name": "Дубинка",
+        "type": "weapon",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg",
+        "system": {
+          "description": {
+            "value": "<p>Рукопашная атака: +3 к попаданию, досягаемость 5 футов, одна цель. Урон: 1d4+1 дробящего.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "3120138ab563aae5": {
+              "_id": "3120138ab563aae5",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "3",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4+1"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg"
+            }
+          }
+        },
+        "effects": [],
+        "_id": "704565c971df6f52"
+      },
+      {
+        "_id": "103b11d5ac12cd6c",
+        "name": "Пекарь",
+        "type": "feat",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/recovery.svg",
+        "system": {
+          "description": {
+            "value": "<p>Кормит путников, знает соседей и может передать сообщение постоянному покупателю.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": []
+      }
+    ],
+    "prototypeToken": {
+      "name": "Тален Ро",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": 0,
+      "actorLink": true,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "suiguResident": true,
+        "sourceSlug": "talen-ro",
+        "district": "Лесной Предел",
+        "profession": "Пекарь"
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "c686a681577211af",
+    "name": "Эйра Ним",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 10,
+          "proficient": 0
+        },
+        "dex": {
+          "value": 14,
+          "proficient": 0
+        },
+        "con": {
+          "value": 10,
+          "proficient": 0
+        },
+        "int": {
+          "value": 12,
+          "proficient": 0
+        },
+        "wis": {
+          "value": 11,
+          "proficient": 0
+        },
+        "cha": {
+          "value": 13,
+          "proficient": 0
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 12
+        },
+        "hp": {
+          "value": 9,
+          "max": 9,
+          "formula": "2d8"
+        },
+        "hd": {
+          "max": 2,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "житель Суйгу"
+        },
+        "alignment": "",
+        "cr": 0,
+        "xp": {
+          "value": 10
+        },
+        "biography": {
+          "value": "<h3>Профессия и район</h3><p>Помощница сцены. Лесной Предел.</p><h3>Внешность</h3><p>Тёмная рабочая одежда, ленты на запястье и карманы, полные булавок.</p><h3>Характер и привычки</h3><p>Во время представлений незаметно исправляет ошибки иллюзионистов.</p><h3>Цель</h3><p>Добиться собственного небольшого номера в Доме Ветра и Воды.</p><h3>Чем полезен</h3><p>Знает закулисье театра, реквизит и расписание выступлений.</p><h3>Первая встреча</h3><p>Просит подменить отсутствующего участника короткой сцены.</p><h3>На будущее</h3><p>Среди реквизита оказался настоящий предмет, который кто-то настойчиво требует вернуть.</p><h3>При опасности</h3><p>Избегает боя, отступает и зовёт на помощь.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {
+        "acr": {
+          "value": 1
+        },
+        "prf": {
+          "value": 1
+        },
+        "slt": {
+          "value": 1
+        }
+      },
+      "identifier": "eyra-nim"
+    },
+    "items": [
+      {
+        "name": "Дубинка",
+        "type": "weapon",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg",
+        "system": {
+          "description": {
+            "value": "<p>Рукопашная атака: +2 к попаданию, досягаемость 5 футов, одна цель. Урон: 1d4+0 дробящего.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "f3ff4312e3294752": {
+              "_id": "f3ff4312e3294752",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "2",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4+0"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg"
+            }
+          }
+        },
+        "effects": [],
+        "_id": "e722dae1d5348c82"
+      },
+      {
+        "_id": "12bfe3f3a3076059",
+        "name": "Помощница сцены",
+        "type": "feat",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
+        "system": {
+          "description": {
+            "value": "<p>Знает закулисье театра, реквизит и расписание выступлений.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": []
+      }
+    ],
+    "prototypeToken": {
+      "name": "Эйра Ним",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": 0,
+      "actorLink": true,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "suiguResident": true,
+        "sourceSlug": "eyra-nim",
+        "district": "Лесной Предел",
+        "profession": "Помощница сцены"
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "d6c3a2540868e966",
+    "name": "Иллен Са",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 8,
+          "proficient": 0
+        },
+        "dex": {
+          "value": 11,
+          "proficient": 0
+        },
+        "con": {
+          "value": 10,
+          "proficient": 0
+        },
+        "int": {
+          "value": 14,
+          "proficient": 0
+        },
+        "wis": {
+          "value": 12,
+          "proficient": 0
+        },
+        "cha": {
+          "value": 12,
+          "proficient": 0
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 10
+        },
+        "hp": {
+          "value": 9,
+          "max": 9,
+          "formula": "2d8"
+        },
+        "hd": {
+          "max": 2,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "житель Суйгу"
+        },
+        "alignment": "",
+        "cr": 0,
+        "xp": {
+          "value": 10
+        },
+        "biography": {
+          "value": "<h3>Профессия и район</h3><p>Младший писарь. Голубой корень.</p><h3>Внешность</h3><p>Чернильные пальцы, тщательно приглаженные волосы и слишком большая папка.</p><h3>Характер и привычки</h3><p>Искренне помогает посетителям, хотя сам не понимает половины новых постановлений.</p><h3>Цель</h3><p>Разобраться в противоречивых правилах, не подставив просителей.</p><h3>Чем полезен</h3><p>Помогает составить обращение и найти нужного служащего.</p><h3>Первая встреча</h3><p>Героям возвращают заявление из-за формальности; Иллен тихо объясняет, как её исправить.</p><h3>На будущее</h3><p>Два одинаковых разрешения выданы на одну постройку разным людям.</p><h3>Связи</h3><p>Отдаёт записи на переплёт Вэсе Лин.</p><h3>При опасности</h3><p>Избегает боя, отступает и зовёт на помощь.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {
+        "his": {
+          "value": 1
+        },
+        "inv": {
+          "value": 1
+        },
+        "per": {
+          "value": 1
+        }
+      },
+      "identifier": "illen-sa"
+    },
+    "items": [
+      {
+        "name": "Дубинка",
+        "type": "weapon",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg",
+        "system": {
+          "description": {
+            "value": "<p>Рукопашная атака: +1 к попаданию, досягаемость 5 футов, одна цель. Урон: 1d4-1 дробящего.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "525353230fd40983": {
+              "_id": "525353230fd40983",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "1",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4-1"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg"
+            }
+          }
+        },
+        "effects": [],
+        "_id": "6864b3f23deca058"
+      },
+      {
+        "_id": "c26bd271d456b3e3",
+        "name": "Младший писарь",
+        "type": "feat",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/tactics.svg",
+        "system": {
+          "description": {
+            "value": "<p>Помогает составить обращение и найти нужного служащего.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": []
+      }
+    ],
+    "prototypeToken": {
+      "name": "Иллен Са",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": 0,
+      "actorLink": true,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "suiguResident": true,
+        "sourceSlug": "illen-sa",
+        "district": "Голубой корень",
+        "profession": "Младший писарь"
+      }
+    },
+    "effects": []
+  },
+  {
+    "_id": "d9a10f800cc7d0cb",
+    "name": "Борен Лист",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 13,
+          "proficient": 0
+        },
+        "dex": {
+          "value": 11,
+          "proficient": 0
+        },
+        "con": {
+          "value": 12,
+          "proficient": 0
+        },
+        "int": {
+          "value": 10,
+          "proficient": 0
+        },
+        "wis": {
+          "value": 13,
+          "proficient": 0
+        },
+        "cha": {
+          "value": 9,
+          "proficient": 0
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calc": "flat",
+          "flat": 10
+        },
+        "hp": {
+          "value": 11,
+          "max": 11,
+          "formula": "2d8+2"
+        },
+        "hd": {
+          "max": 2,
+          "denomination": "d8",
+          "spent": 0
+        },
+        "movement": {
+          "walk": 30,
+          "units": "ft"
+        },
+        "senses": {
+          "units": "ft"
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "житель Суйгу"
+        },
+        "alignment": "",
+        "cr": 0,
+        "xp": {
+          "value": 10
+        },
+        "biography": {
+          "value": "<h3>Профессия и район</h3><p>Чистильщик каналов. Квартал Белых Листьев.</p><h3>Внешность</h3><p>Высокие сапоги, длинный багор и аккуратно завязанный мешок находок.</p><h3>Характер и привычки</h3><p>Хранит найденные вещи и старается вернуть их владельцам.</p><h3>Цель</h3><p>Добиться ремонта опасного участка набережной.</p><h3>Чем полезен</h3><p>Знает стоки, решётки и места, где течение скапливает потерянные вещи.</p><h3>Первая встреча</h3><p>Просит помочь вытащить застрявший под мостом сундук.</p><h3>На будущее</h3><p>Несколько дней подряд находит одинаковые жетоны в разных каналах.</p><h3>При опасности</h3><p>Избегает боя, отступает и зовёт на помощь.</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "skills": {
+        "ath": {
+          "value": 1
+        },
+        "prc": {
+          "value": 1
+        },
+        "sur": {
+          "value": 1
+        }
+      },
+      "identifier": "boren-list"
+    },
+    "items": [
+      {
+        "name": "Дубинка",
+        "type": "weapon",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg",
+        "system": {
+          "description": {
+            "value": "<p>Рукопашная атака: +3 к попаданию, досягаемость 5 футов, одна цель. Урон: 1d4+1 дробящего.</p>"
+          },
+          "type": {
+            "value": "simpleM"
+          },
+          "equipped": true,
+          "identified": true,
+          "properties": [],
+          "activities": {
+            "d3ded54150de8337": {
+              "_id": "d3ded54150de8337",
+              "type": "attack",
+              "name": "Атака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "3",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": true,
+                      "formula": "1d4+1"
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg"
+            }
+          }
+        },
+        "effects": [],
+        "_id": "f023623653e5d721"
+      },
+      {
+        "_id": "c473e3c674b1ebae",
+        "name": "Чистильщик каналов",
+        "type": "feat",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
+        "system": {
+          "description": {
+            "value": "<p>Знает стоки, решётки и места, где течение скапливает потерянные вещи.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {}
+        },
+        "effects": []
+      }
+    ],
+    "prototypeToken": {
+      "name": "Борен Лист",
+      "texture": {
+        "src": "icons/svg/mystery-man.svg"
+      },
+      "disposition": 0,
+      "actorLink": true,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "suiguResident": true,
+        "sourceSlug": "boren-list",
+        "district": "Квартал Белых Листьев",
+        "profession": "Чистильщик каналов"
+      }
+    },
+    "effects": []
+  }
+]
