@@ -3,7 +3,7 @@
     "_id": "e8397e441acbc86c",
     "name": "Нэри Вэйл",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/suigu/neri-veyl.png",
     "system": {
       "abilities": {
         "str": {
@@ -200,7 +200,7 @@
     "prototypeToken": {
       "name": "Нэри Вэйл",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/portraits/suigu/neri-veyl.png"
       },
       "disposition": 0,
       "actorLink": true,
@@ -224,7 +224,7 @@
     "_id": "cff56a8a201e552e",
     "name": "Орин Таль",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/suigu/orin-tal.png",
     "system": {
       "abilities": {
         "str": {
@@ -421,7 +421,7 @@
     "prototypeToken": {
       "name": "Орин Таль",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/portraits/suigu/orin-tal.png"
       },
       "disposition": 0,
       "actorLink": true,
@@ -445,7 +445,7 @@
     "_id": "49236cf21ee7e6d3",
     "name": "Сэли Арвен",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/suigu/seli-arven.png",
     "system": {
       "abilities": {
         "str": {
@@ -641,7 +641,7 @@
     "prototypeToken": {
       "name": "Сэли Арвен",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/portraits/suigu/seli-arven.png"
       },
       "disposition": 0,
       "actorLink": true,
@@ -665,7 +665,7 @@
     "_id": "8f2cf5abc4879fbd",
     "name": "Вэса Лин",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/suigu/vesa-lin.png",
     "system": {
       "abilities": {
         "str": {
@@ -861,7 +861,7 @@
     "prototypeToken": {
       "name": "Вэса Лин",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/portraits/suigu/vesa-lin.png"
       },
       "disposition": 0,
       "actorLink": true,
@@ -885,7 +885,7 @@
     "_id": "70f471d0adb72044",
     "name": "Тален Ро",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/suigu/talen-ro.png",
     "system": {
       "abilities": {
         "str": {
@@ -1078,7 +1078,7 @@
     "prototypeToken": {
       "name": "Тален Ро",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/portraits/suigu/talen-ro.png"
       },
       "disposition": 0,
       "actorLink": true,
@@ -1102,7 +1102,7 @@
     "_id": "c686a681577211af",
     "name": "Эйра Ним",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/suigu/eyra-nim.png",
     "system": {
       "abilities": {
         "str": {
@@ -1298,7 +1298,7 @@
     "prototypeToken": {
       "name": "Эйра Ним",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/portraits/suigu/eyra-nim.png"
       },
       "disposition": 0,
       "actorLink": true,
@@ -1322,7 +1322,7 @@
     "_id": "d6c3a2540868e966",
     "name": "Иллен Са",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/suigu/illen-sa.png",
     "system": {
       "abilities": {
         "str": {
@@ -1518,7 +1518,7 @@
     "prototypeToken": {
       "name": "Иллен Са",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/portraits/suigu/illen-sa.png"
       },
       "disposition": 0,
       "actorLink": true,
@@ -1542,7 +1542,7 @@
     "_id": "d9a10f800cc7d0cb",
     "name": "Борен Лист",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/suigu/boren-list.png",
     "system": {
       "abilities": {
         "str": {
@@ -1738,7 +1738,7 @@
     "prototypeToken": {
       "name": "Борен Лист",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/portraits/suigu/boren-list.png"
       },
       "disposition": 0,
       "actorLink": true,
