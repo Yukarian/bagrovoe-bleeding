@@ -31,6 +31,7 @@ jobs:
           node --check scripts/spell-runtime.js
           node --check scripts/relics.js
           node --check scripts/new-spells.js
+          node --check scripts/siblings.js
           node --test tests/*.test.mjs
   release:
     if: github.ref == 'refs/heads/main'
@@ -53,7 +54,7 @@ jobs:
       - name: Package module
         run: |
           mkdir -p dist/bagrovoe-bleeding
-          cp module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md NEW_NPCS.md SPELLS.md RELICS.md dist/bagrovoe-bleeding/
+          cp module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md NEW_NPCS.md SPELLS.md RELICS.md SIBLINGS.md dist/bagrovoe-bleeding/
           cp -r scripts icons assets packs dist/bagrovoe-bleeding/
           cd dist
           zip -r ../bagrovoe-bleeding.zip bagrovoe-bleeding

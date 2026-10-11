@@ -12,8 +12,8 @@ function serial(key, fn) {
 }
 const report = error => { console.error(MOD,error);ui.notifications.error(`Багровое Причастие: ${error.message}`); };
 function validateUse(activity, usage, message) {
-  const item=activity.item,key=keyOf(item);if(!key)return;
-  if(shields.has(key) && !usage._bagrovoeReaction) {
+  const item=activity.item,key=keyOf(item),parry=item?.getFlag?.(MOD,'npcParry');if(!key&&!parry)return;
+  if((shields.has(key)||parry) && !usage._bagrovoeReaction) {
     ui.notifications.info('Эта защита предлагается ведущему автоматически при попадании атаки по владельцу.');return false;
   }
   const uses=activity.uses;
@@ -50,20 +50,25 @@ async function resolveDefense(chat) {
       const reactionKey=combat?.started?`${combat.id}:${combat.round-(combat.turn<ownTurn?1:0)}`:chat.id;
       if(actor.getFlag(MOD,'shieldReaction')===reactionKey)continue;
       const options=[];
-      for(const item of actor.items??[])if(shields.has(keyOf(item)))for(const a of item.system.activities??[]) {
-        if(!a.uses?.max || Number(a.uses.spent??0)<Number(a.uses.max))options.push(a);
+      for(const item of actor.items??[])if(shields.has(keyOf(item))||item.getFlag?.(MOD,'npcParry'))for(const a of item.system.activities??[]) {
+        const parry=item.getFlag?.(MOD,'npcParry');
+        if(parry&&chat.getAssociatedActivity?.()?.attack?.type?.value!=='melee')continue;
+        const uses=parry?item.system.uses:a.uses;
+        if(!uses?.max || Number(uses.spent??0)<Number(uses.max))options.push(a);
       }
       if(!options.length)continue;
       const esc=foundry.utils.escapeHTML;
       const choice=await foundry.applications.api.DialogV2.wait({
         window:{title:'Багровая защита'},
-        content:`<p>${esc(actor.name)}: атака ${roll.total} против КД ${hit.ac}. Потратить реакцию и 1 Кость Хитов, чтобы превратить попадание в промах? Это также расходует применение защиты. Подтвердите, только если существо видит атакующего и ещё может реагировать.</p>`,
+        content:`<p>${esc(actor.name)}: атака ${roll.total} против КД ${hit.ac}. Потратить реакцию и применение защиты, чтобы превратить попадание в промах? Магическая защита дополнительно стоит 1 Кость Хитов; парирование костей не расходует. Подтвердите, только если существо видит атакующего и ещё может реагировать.</p>`,
         buttons:[...options.map((a,n)=>({action:String(n),label:a.item.name,callback:()=>n})),{action:'skip',label:'Пропустить',default:true,callback:()=>null}],rejectClose:false
       });
       if(choice===null||choice===undefined)continue;
       const activity=options[choice];if(!activity)continue;
-      const paid=await game.modules.get(MOD).api.bloodMagic.pay(actor,1);
-      if(paid.killed)continue;
+      if(!activity.item.getFlag?.(MOD,'npcParry')){
+        const paid=await game.modules.get(MOD).api.bloodMagic.pay(actor,1);
+        if(paid.killed)continue;
+      }
       const result=await activity.use({_bagrovoePaid:true,_bagrovoeReaction:true,consume:{spellSlot:false}}, {configure:false});
       if(!result)continue;
       await actor.setFlag(MOD,'shieldReaction',reactionKey);

@@ -2,7 +2,7 @@
   "id": "bagrovoe-bleeding",
   "title": "Багровое Причастие — Кровотечение и бестиарий",
   "description": "Автоматическое кровотечение после Багрового укуса: спасброски, стаки, некротический урон, смерть и управление токенами. Без сторонних модулей. Бестиарий, способности, портреты и токены в едином модуле.",
-  "version": "3.10.4",
+  "version": "3.11.0",
   "compatibility": {
     "minimum": "14.367",
     "verified": "14"
@@ -17,7 +17,8 @@
     "scripts/blood-magic.js",
     "scripts/spell-runtime.js",
     "scripts/relics.js",
-    "scripts/new-spells.js"
+    "scripts/new-spells.js",
+    "scripts/siblings.js"
   ],
   "relationships": {
     "systems": [
@@ -32,7 +33,7 @@
     ]
   },
   "manifest": "https://github.com/Yukarian/bagrovoe-bleeding/releases/latest/download/module.json",
-  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v3.10.4/bagrovoe-bleeding.zip",
+  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v3.11.0/bagrovoe-bleeding.zip",
   "url": "https://github.com/Yukarian/bagrovoe-bleeding",
   "packs": [
     {

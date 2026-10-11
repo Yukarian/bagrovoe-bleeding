@@ -30,3 +30,18 @@ for(const slug of slugs) test(`${slug}: artwork, resources, attack arithmetic an
   }
  }
 });
+
+test('siblings share CR 6 with native attack, resource and support activities',()=>{
+ const edrik=actors.find(a=>a._id==='fbe21544072d0152'),emili=actors.find(a=>a._id==='4b8ade9c13c11420');
+ for(const actor of [edrik,emili]){
+  assert.equal(actor.system.details.cr,6);
+  for(const item of actor.items){
+   const copy=abilities.find(x=>x.system.identifier===item.system.identifier);assert.ok(copy);assert.deepEqual({...copy,_id:item._id},item);
+   assert.doesNotMatch(item.system.description.value,/вручную|Ведущий|Foundry|Обрабатывается модулем/);
+  }
+ }
+ assert.equal(edrik.system.resources.legact.max,0);assert.equal(edrik.system.attributes.hp.max,112);
+ const ward=emili.items.find(i=>i.flags['bagrovoe-bleeding']?.siblingWard),activity=Object.values(ward.system.activities)[0];
+ assert.equal(activity.type,'heal');assert.deepEqual(activity.healing.types,['temphp']);assert.equal(ward.flags['bagrovoe-bleeding'].itemBloodCost.allowHealthSubstitution,false);
+ assert.ok(activity.consumption.targets.some(t=>t.type==='itemUses'));
+});

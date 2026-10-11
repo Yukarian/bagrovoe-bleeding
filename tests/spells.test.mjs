@@ -115,3 +115,42 @@ test('declining a defensive reaction never spends a resource or changes the atta
  const chat=flagged({id:'attack',type:'attack',rolls:[{total:16}],system:{evaluatedTargets:[{token:'token',ac:15,isMiss:false}],targets:[{token:'token',ac:15}]}});
  await h.ctx.BagrovoeSpellRuntime.resolveAttack(chat);assert.equal(chat.system.targets[0].ac,15);
 });
+
+for(const [kind,critical,spent,expected] of [['melee',false,0,1],['ranged',false,0,0],['melee',true,0,0],['melee',false,3,0]])test(`parry ${kind}, critical ${critical}, spent ${spent}`,async()=>{
+ const h=harness();h.load('spell-runtime.js');let used=0;
+ const item=flagged({actor:h.actor,name:'Parry'});await item.setFlag(MOD,'npcParry',true);
+ const activity={item,async use(u){assert.equal(u._bagrovoeReaction,true);used++;return {message:{}};}};
+ item.system={uses:{max:3,spent},activities:[activity]};h.actor.items=[item];
+ h.ctx.game.modules.get(MOD).api.bloodMagic={pay:()=>{throw Error('Parry must not cost Hit Dice');}};
+ h.ctx.foundry.applications.api.DialogV2.wait=async()=>0;h.docs.set('target',{actor:h.actor});
+ const chat=flagged({id:'parry',type:'attack',rolls:[{total:16,isCritical:critical}],getAssociatedActivity:()=>({attack:{type:{value:kind}}}),system:{targets:[{token:'target',ac:15}]},async update(d){this.system.targets=d['system.targets'];}});
+ Object.defineProperty(chat.system,'evaluatedTargets',{get(){return this.targets.map(t=>({...t,isMiss:16<t.ac}));}});
+ await Promise.all([h.ctx.BagrovoeSpellRuntime.resolveAttack(chat),h.ctx.BagrovoeSpellRuntime.resolveAttack(chat)]);
+ await h.ctx.BagrovoeSpellRuntime.resolveAttack(chat);
+ assert.equal(used,expected);assert.equal(chat.system.targets[0].ac,15+3*expected);
+});
+
+test('heart blade only slows bleeding hits, once per message, refreshes without stacking',async()=>{
+ const h=harness();h.load('spell-runtime.js');h.load('siblings.js');let bleeding=true;
+ h.ctx.game.modules.get(MOD).api.get=()=>bleeding?{}:null;
+ const item=flagged({actor:h.actor,uuid:'Item.blade',img:'blade.svg'});await item.setFlag(MOD,'onHitSlow',true);
+ h.docs.set('target',{actor:h.actor});
+ const attack=id=>flagged({id,type:'attack',getAssociatedActivity:()=>({item}),system:{evaluatedTargets:[{token:'target',isMiss:false}]}});
+ const chat=attack('one');await Promise.all([h.ctx.BagrovoeSiblings.slow(chat),h.ctx.BagrovoeSiblings.slow(chat)]);await h.ctx.BagrovoeSiblings.slow(chat);
+ assert.equal(h.actor.effects.length,1);assert.equal(h.actor.effects[0].changes[0].value,'0.5');assert.equal(h.actor.effects[0].getFlag(MOD,'expires').start,true);
+ await h.ctx.BagrovoeSiblings.slow(attack('two'));assert.equal(h.actor.effects.length,1);
+ h.actor.effects=[];bleeding=false;await h.ctx.BagrovoeSiblings.slow(attack('three'));assert.equal(h.actor.effects.length,0);
+ bleeding=true;const miss=attack('four');miss.system.evaluatedTargets[0].isMiss=true;await h.ctx.BagrovoeSiblings.slow(miss);assert.equal(h.actor.effects.length,0);
+ h.ctx.game.users.activeGM={id:'other'};await h.ctx.BagrovoeSiblings.slow(attack('five'));assert.equal(h.actor.effects.length,0);
+});
+
+test('ward validates native pre-use targets without a speaker, and blocks self/range/exhaustion',()=>{
+ const h=harness();h.load('spell-runtime.js');h.load('siblings.js');let range=20;
+ const self={actor:h.actor},target={actor:{uuid:'Actor.other'}};
+ h.ctx.ChatMessage.getSpeaker=()=>({scene:'s',token:'self'});h.ctx.game.scenes=new Map([['s',{tokens:new Map([['self',self]])}]]);
+ h.ctx.fromUuidSync=u=>u==='self'?self:target;h.ctx.BagrovoeNewSpells={distance:()=>range};
+ const item=flagged({actor:h.actor,system:{uses:{max:3,spent:0}}});item.flags={[MOD]:{siblingWard:true}};
+ const use=(targets)=>h.ctx.BagrovoeSpellRuntime.validateUse({item},{},{data:{system:{targets}}});
+ assert.notEqual(use([{token:'other'}]),false);assert.equal(use([{token:'self'}]),false);assert.equal(use([]),false);
+ range=35;assert.equal(use([{token:'other'}]),false);range=20;item.system.uses.spent=3;assert.equal(use([{token:'other'}]),false);
+});

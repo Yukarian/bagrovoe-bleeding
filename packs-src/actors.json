@@ -792,7 +792,7 @@
         "name": "Мультиатака",
         "type": "feat",
         "_id": "7f369b2f6ab549c8",
-        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -839,7 +839,7 @@
         "name": "Клюв",
         "type": "weapon",
         "_id": "95d697bdf95748b0",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -927,7 +927,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -1030,7 +1030,7 @@
         "name": "Когти",
         "type": "weapon",
         "_id": "47041b93d22148f0",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/claws.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -1118,7 +1118,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/claws.svg",
               "behaviors": []
             }
           },
@@ -1221,7 +1221,7 @@
         "name": "Раздирающий налёт",
         "type": "weapon",
         "_id": "de2ab187d1c24a3c",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -1316,7 +1316,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -1447,7 +1447,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p>Один раз за ход, когда Алый падальщик попадает атакой по существу, уже страдающему кровотечением, он получает 3 временных хита. Они не складываются с уже имеющимися временными хитами.</p><p><em>Эффект применяется автоматически модулем «Багровое Причастие» через флаг атаки.</em></p>",
+            "value": "<p>Один раз за ход, когда Алый падальщик попадает атакой по существу, уже страдающему кровотечением, он получает 3 временных хита. Они не складываются с уже имеющимися временными хитами.</p>",
             "chat": ""
           },
           "identifier": "krovavyj-pir",
@@ -2213,7 +2213,7 @@
         "name": "Мультиатака",
         "type": "feat",
         "_id": "mmMultiattack000",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -2280,7 +2280,7 @@
                 "name": "",
                 "formula": ""
               },
-              "img": "systems/dnd5e/icons/svg/monster.svg",
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
               "flags": {},
               "visibility": {
                 "level": {},
@@ -2328,7 +2328,7 @@
         "name": "Кровавая вспышка",
         "type": "weapon",
         "_id": "mmArcaneBurst000",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -2413,7 +2413,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -2649,7 +2649,7 @@
           },
           "identifier": "blood-absorption",
           "description": {
-            "value": "<p>Один раз за ход, когда маг попадает Кровавой вспышкой по существу с действующим кровотечением, он восстанавливает 1к6 хитов. Не восстанавливает Кости Хитов. Обрабатывается модулем «Багровое Причастие».</p>",
+            "value": "<p>Один раз за ход, когда маг попадает Кровавой вспышкой по существу с действующим кровотечением, он восстанавливает 1к6 хитов. Не восстанавливает Кости Хитов.</p>",
             "chat": ""
           },
           "source": {
@@ -3334,7 +3334,7 @@
             "recovery": []
           },
           "description": {
-            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов (сфера радиусом 10 футов)<br><strong>Цель:</strong> Все существа в сфере<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно</p><p>Маг собирает в выбранной видимой точке плотный сгусток багровой энергии. Сгусток на мгновение сжимается, после чего взрывается множеством острых кровавых брызг.</p><p>Выберите точку в пределах <strong>60 футов</strong>. Каждое существо в сфере радиусом <strong>10 футов</strong> с центром в этой точке совершает спасбросок Ловкости против <strong>Сл кровавой магии заклинателя</strong>. При провале существо получает <strong>5к6 некротического урона</strong>, при успехе — половину этого урона. <strong>Использование:</strong> в исходном наборе NPC 2 раза в день; если используется вариант с перезарядкой 5–6, ведущий отдельно отслеживает её.</p>",
+            "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов (сфера радиусом 10 футов)<br><strong>Цель:</strong> Все существа в сфере<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно</p><p>Маг собирает в выбранной видимой точке плотный сгусток багровой энергии. Сгусток на мгновение сжимается, после чего взрывается множеством острых кровавых брызг.</p><p>Выберите точку в пределах <strong>60 футов</strong>. Каждое существо в сфере радиусом <strong>10 футов</strong> с центром в этой точке совершает спасбросок Ловкости против <strong>Сл кровавой магии заклинателя</strong>. При провале существо получает <strong>5к6 некротического урона</strong>, при успехе — половину этого урона. <strong>Использование:</strong> 2 раза в день.</p>",
             "chat": ""
           },
           "identifier": "blood-ability-5305408",
@@ -4594,7 +4594,7 @@
         "name": "Мультиатака",
         "type": "feat",
         "_id": "37cca91549404093",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -4659,7 +4659,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
               "behaviors": []
             }
           },
@@ -4701,7 +4701,7 @@
         "name": "Когти",
         "type": "weapon",
         "_id": "6ad0d19cf8194fa6",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/claws.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -4807,7 +4807,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/claws.svg",
               "behaviors": []
             }
           },
@@ -4924,7 +4924,7 @@
         "name": "Кровопускание",
         "type": "weapon",
         "_id": "054fb12c533e423f",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -5036,7 +5036,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -5157,7 +5157,7 @@
         "name": "Хищный рывок",
         "type": "feat",
         "_id": "e739d305dad2409d",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -5222,7 +5222,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -5996,7 +5996,7 @@
         "name": "Кровавая вспышка",
         "type": "weapon",
         "_id": "mmArcaneBurst000",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -6081,7 +6081,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -6317,7 +6317,7 @@
           },
           "identifier": "blood-absorption",
           "description": {
-            "value": "<p>Один раз за ход, когда маг попадает Кровавой вспышкой по существу с действующим кровотечением, он восстанавливает 1к6 хитов. Не восстанавливает Кости Хитов. Обрабатывается модулем «Багровое Причастие».</p>",
+            "value": "<p>Один раз за ход, когда маг попадает Кровавой вспышкой по существу с действующим кровотечением, он восстанавливает 1к6 хитов. Не восстанавливает Кости Хитов.</p>",
             "chat": ""
           },
           "source": {
@@ -7392,8 +7392,8 @@
       },
       "abilities": {
         "str": {
-          "value": 20,
-          "proficient": 1,
+          "value": 16,
+          "proficient": 0,
           "max": null,
           "check": {
             "roll": {
@@ -7418,8 +7418,8 @@
           }
         },
         "dex": {
-          "value": 16,
-          "proficient": 0,
+          "value": 18,
+          "proficient": 1,
           "max": null,
           "check": {
             "roll": {
@@ -7828,7 +7828,7 @@
           "hover": false,
           "ignoredDifficultTerrain": [],
           "speeds": {
-            "walk": "35"
+            "walk": "40"
           }
         },
         "attunement": {
@@ -7856,7 +7856,7 @@
           "limit": 1
         },
         "ac": {
-          "flat": 17,
+          "flat": 16,
           "calcs": [
             "flat"
           ],
@@ -7865,15 +7865,15 @@
         },
         "hd": {
           "spent": 0,
-          "max": 18,
-          "denomination": "d10"
+          "max": 15,
+          "denomination": "d8"
         },
         "hp": {
-          "value": 153,
-          "max": 153,
+          "value": 112,
+          "max": 112,
           "temp": 0,
           "tempmax": null,
-          "formula": "18d10 + 54"
+          "formula": "15d8 + 45"
         },
         "death": {
           "roll": {
@@ -7897,7 +7897,7 @@
       },
       "details": {
         "biography": {
-          "value": "<h2>Эдрик Вальтер — Алый Отступник</h2><p>Бывший охотник на чудовищ, добровольно принявший Багровое Причастие ради выживания. Охотится на сильных заражённых, чтобы развивать собственные способности. Не служит Богу Крови и не убивает без нужды, но считает допустимым использовать кровь опасных существ для усиления.</p><p><strong>Ситуация встречи:</strong> Эдрик удерживает молодого заражённого, который ранее погубил жителей поселения. Он намерен извлечь из него ценную кровь. Герои могут поддержать Эдрика, предложить равноценную замену или потребовать освободить пленника. Против героев первым не нападает, если они не переходят к насилию.</p><p><strong>Переговоры:</strong> уважает обоснованные предложения и исполненные обещания; допускает мирное решение при наличии альтернативного источника редкой крови или сведений.</p><p><strong>Сл кровавой магии:</strong> 8 + 2 × БМ + модификатор Телосложения = 17. Обычные атаки используют свои параметры.</p>",
+          "value": "<h2>Эдрик Вальтер — Алый Отступник</h2><p>Брат Эмили Ясати. После разлуки с семьёй скрывается под фамилией Вальтер. Бывший охотник на чудовищ, добровольно принявший Багровое Причастие ради выживания. Отвергает власть Бога Крови, но всё ещё считает кровь опасных заражённых допустимой платой за спасение близких.</p><p>Эмили для него — последняя связь с прежней жизнью. Он хочет уничтожить тех, кто искалечил их семью; она хочет, чтобы после мести у них осталось будущее. Они спорят о средствах, но не оставляют друг друга в беде.</p><p>В бою Эдрик — подвижный дуэлянт. Он открывает раны, преследует ослабленную цель и отвечает на промахи. Его выживание держится на движении и кровавом насыщении, а не на тяжёлой защите.</p><p><strong>Встреча:</strong> Эдрик удерживает опасного заражённого ради его крови, а Эмили требует найти способ спасти пленника. Герои могут предложить альтернативу и склонить брата и сестру к общему решению.</p>",
           "public": ""
         },
         "alignment": "Нейтральный",
@@ -7911,7 +7911,7 @@
           "swarm": "",
           "custom": ""
         },
-        "cr": 8,
+        "cr": 6,
         "habitat": {
           "value": [
             {
@@ -7926,11 +7926,11 @@
       },
       "resources": {
         "legact": {
-          "max": 2,
+          "max": 0,
           "spent": 0
         },
         "legres": {
-          "max": 1,
+          "max": 0,
           "spent": 0
         },
         "lair": {
@@ -8077,7 +8077,7 @@
         "name": "Мультиатака",
         "type": "feat",
         "_id": "08bf91aed5624dea",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -8102,7 +8102,7 @@
                 "targets": []
               },
               "description": {
-                "value": "Две атаки Костяным клинком."
+                "value": ""
               },
               "duration": {
                 "units": "inst",
@@ -8144,7 +8144,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
               "behaviors": []
             }
           },
@@ -8154,7 +8154,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p>Эдрик совершает две атаки Багровым клинком. Вместо этого он может совершить одну атаку Рассечением жизни.</p>",
+            "value": "<p>Эдрик совершает две атаки Багровым клинком. Одну из них может заменить Рассечением жизни.</p>",
             "chat": ""
           },
           "identifier": "edrik-multiattack",
@@ -8182,7 +8182,7 @@
         "name": "Багровый клинок",
         "type": "weapon",
         "_id": "3be3fc5959f04cc6",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -8253,7 +8253,7 @@
                   "value": "melee",
                   "classification": "weapon"
                 },
-                "ability": "str",
+                "ability": "dex",
                 "bonus": ""
               },
               "damage": {
@@ -8268,13 +8268,13 @@
                       "formula": ""
                     },
                     "number": 2,
-                    "denomination": 8,
-                    "bonus": "5",
+                    "denomination": 6,
+                    "bonus": "4",
                     "types": [
-                      "slashing"
+                      "piercing"
                     ],
                     "scaling": {
-                      "number": 1
+                      "number": 0
                     },
                     "modifiers": []
                   }
@@ -8288,7 +8288,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -8298,7 +8298,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p><strong>Атака ближнего боя:</strong> +8 к попаданию, досягаемость 5 футов, одна цель. <strong>Попадание:</strong> 2к8 + 5 рубящего урона.</p>",
+            "value": "<p>Рукопашная атака: +7 к попаданию, досягаемость 5 футов, одна цель. Попадание: 11 (2к6 + 4) колющего урона.</p>",
             "chat": ""
           },
           "identifier": "edrik-bloodblade",
@@ -8335,9 +8335,9 @@
           "damage": {
             "base": {
               "number": 2,
-              "denomination": 8,
+              "denomination": 6,
               "types": [
-                "slashing"
+                "piercing"
               ],
               "custom": {
                 "enabled": false
@@ -8345,7 +8345,7 @@
               "scaling": {
                 "number": 1
               },
-              "bonus": "5",
+              "bonus": "",
               "modifiers": []
             },
             "versatile": {
@@ -8386,7 +8386,7 @@
               "bleed": false,
               "onHit": {
                 "requiresBleeding": true,
-                "healHP": 7,
+                "healHP": 4,
                 "oncePerTurn": true,
                 "group": "edrik-crimson-vigor"
               }
@@ -8402,7 +8402,7 @@
         "name": "Рассечение жизни",
         "type": "weapon",
         "_id": "e3306e5cffd64562",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -8473,7 +8473,7 @@
                   "value": "melee",
                   "classification": "weapon"
                 },
-                "ability": "str",
+                "ability": "dex",
                 "bonus": ""
               },
               "damage": {
@@ -8488,13 +8488,13 @@
                       "formula": ""
                     },
                     "number": 3,
-                    "denomination": 10,
-                    "bonus": "5",
+                    "denomination": 8,
+                    "bonus": "4",
                     "types": [
-                      "slashing"
+                      "piercing"
                     ],
                     "scaling": {
-                      "number": 1
+                      "number": 0
                     },
                     "modifiers": []
                   }
@@ -8508,7 +8508,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -8518,7 +8518,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p><strong>Атака ближнего боя:</strong> +8 к попаданию, досягаемость 5 футов, одна цель. <strong>Попадание:</strong> 3к10 + 5 рубящего урона.</p><p>Цель совершает спасбросок Телосложения Сл 17. При провале получает 2 уровня кровотечения.</p><p><strong>Кровавая жертва:</strong> до атаки Эдрик расходует 2 Кости Хитов. За каждую недостающую кость получает 1к10 прямого урона, минуя защиты. При падении до 0 HP атака не совершается.</p>",
+            "value": "<p>Рукопашная атака: +7 к попаданию, досягаемость 5 футов, одна цель. Попадание: 17 (3к8 + 4) колющего урона. Цель совершает спасбросок Телосложения Сл 15; при провале получает 1 уровень кровотечения. До атаки Эдрик расходует 1 Кость Хитов. Если доступных костей нет, теряет 1к8 хитов, минуя временные хиты и защиты. При падении до 0 хитов атака не совершается.</p>",
             "chat": ""
           },
           "identifier": "edrik-life-rend",
@@ -8555,9 +8555,9 @@
           "damage": {
             "base": {
               "number": 3,
-              "denomination": 10,
+              "denomination": 8,
               "types": [
-                "slashing"
+                "piercing"
               ],
               "custom": {
                 "enabled": false
@@ -8565,7 +8565,7 @@
               "scaling": {
                 "number": 1
               },
-              "bonus": "5",
+              "bonus": "",
               "modifiers": []
             },
             "versatile": {
@@ -8604,22 +8604,22 @@
           "bagrovoe-bleeding": {
             "abilities": {
               "bleed": {
-                "levels": 2,
+                "levels": 1,
                 "count": 1,
-                "dcFormula": "bloodExpert"
+                "dc": 15
               },
               "onHit": {
                 "requiresBleeding": true,
-                "healHP": 7,
+                "healHP": 4,
                 "oncePerTurn": true,
                 "group": "edrik-crimson-vigor"
               }
             },
             "itemBloodCost": {
-              "hitDice": 2,
+              "hitDice": 1,
               "allowHealthSubstitution": true,
               "healthDice": 0,
-              "healthDie": 10,
+              "healthDie": 8,
               "requireSurvival": false
             }
           }
@@ -8646,7 +8646,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p>Один раз за ход, когда Эдрик попадает Багровым клинком или Рассечением жизни по существу с действующим кровотечением, он восстанавливает 7 хитов. Это восстановление не повышает хиты выше максимума.</p>",
+            "value": "<p>Один раз за ход, попав Багровым клинком или Рассечением жизни по уже кровоточащему существу, Эдрик восстанавливает 4 хита, не превышая максимум.</p>",
             "chat": ""
           },
           "identifier": "edrik-drain",
@@ -8671,23 +8671,138 @@
         "folder": null
       },
       {
-        "name": "Похищение жизненной силы (1/ход)",
-        "type": "feat",
+        "name": "Ответный выпад",
+        "type": "weapon",
         "_id": "7dbb78c5e3264c0a",
-        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/riposte.svg",
         "system": {
           "type": {
-            "value": "monster",
-            "subtype": ""
+            "value": "natural",
+            "baseItem": ""
           },
-          "activities": {},
+          "activities": {
+            "be30964eba37128e": {
+              "_id": "be30964eba37128e",
+              "type": "attack",
+              "sort": 0,
+              "activation": {
+                "type": "reaction",
+                "value": null,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": "",
+                    "scaling": {}
+                  }
+                ]
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": 5,
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false,
+                  "count": "1",
+                  "type": "creature",
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "attack": {
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                },
+                "ability": "dex",
+                "bonus": ""
+              },
+              "damage": {
+                "critical": {
+                  "bonus": ""
+                },
+                "includeBase": false,
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 1,
+                    "denomination": 8,
+                    "bonus": "4",
+                    "types": [
+                      "piercing"
+                    ],
+                    "scaling": {
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ]
+              },
+              "name": "Ответный выпад",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/riposte.svg",
+              "behaviors": []
+            }
+          },
           "uses": {
             "spent": 0,
-            "recovery": [],
-            "max": ""
+            "max": "3",
+            "recovery": [
+              {
+                "period": "lr",
+                "type": "recoverAll"
+              }
+            ]
           },
           "description": {
-            "value": "<p>После попадания кровавой атакой по кровоточащему живому существу Эдрик может заставить его совершить спасбросок Телосложения Сл 17. При провале цель теряет 1 доступную Кость Хитов, а Эдрик возвращает 1 собственную израсходованную Кость Хитов. Не действует на нежить и существ без доступных Костей Хитов. Проверять не чаще одного раза в ход.</p>",
+            "value": "<p>Когда видимый противник в пределах 5 футов промахивается по Эдрику рукопашной атакой, Эдрик может реакцией совершить ответный выпад. Рукопашная атака: +7 к попаданию, досягаемость 5 футов, одна цель — промахнувшийся противник. Попадание: 8 (1к8 + 4) колющего урона. Три применения за продолжительный отдых.</p>",
             "chat": ""
           },
           "identifier": "edrik-steal",
@@ -8695,40 +8810,182 @@
             "revision": 1,
             "rules": "2024"
           },
-          "enchant": {},
-          "prerequisites": {
-            "level": null,
-            "repeatable": false,
-            "items": []
+          "identified": true,
+          "unidentified": {
+            "description": ""
+          },
+          "container": null,
+          "quantity": 1,
+          "weight": {
+            "value": 0,
+            "units": "lb"
+          },
+          "price": {
+            "value": 0,
+            "denomination": "gp"
+          },
+          "attunement": "",
+          "armor": {
+            "value": null
+          },
+          "cover": null,
+          "hp": {
+            "value": null,
+            "max": null,
+            "dt": null,
+            "conditions": ""
+          },
+          "ammunition": {},
+          "damage": {
+            "base": {
+              "number": 1,
+              "denomination": 8,
+              "types": [
+                "piercing"
+              ],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            },
+            "versatile": {
+              "number": null,
+              "denomination": 0,
+              "types": [],
+              "custom": {
+                "enabled": false
+              },
+              "scaling": {
+                "number": 1
+              },
+              "bonus": "",
+              "modifiers": []
+            }
           },
           "properties": [],
-          "requirements": "",
-          "advancement": {},
-          "crewed": false
+          "proficient": true,
+          "range": {
+            "value": null,
+            "long": null,
+            "reach": 5,
+            "units": "ft"
+          },
+          "mastery": "sap",
+          "attuned": false,
+          "equipped": true,
+          "crew": {
+            "value": []
+          },
+          "rarities": []
         },
         "effects": [],
-        "sort": 100000,
-        "flags": {},
+        "sort": 0,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "abilities": {
+              "bleed": false
+            }
+          }
+        },
+        "ownership": {
+          "default": 0
+        },
         "folder": null
       },
       {
-        "name": "Легендарные действия (2)",
+        "name": "Шаг по следу",
         "type": "feat",
         "_id": "fce20c158acb4127",
-        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
         "system": {
           "type": {
             "value": "monster",
             "subtype": ""
           },
-          "activities": {},
+          "activities": {
+            "5d84b826f1f11bbc": {
+              "_id": "5d84b826f1f11bbc",
+              "type": "utility",
+              "sort": 0,
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "units": "self",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "type": "self",
+                  "count": "",
+                  "choice": false,
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "name": "Шаг по следу",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
+              "behaviors": [],
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
           "uses": {
             "spent": 0,
             "recovery": [],
             "max": ""
           },
           "description": {
-            "value": "<p>Эдрик может совершить два легендарных действия за раунд, по одному за раз в конце хода другого существа. В начале своего хода восстанавливает все потраченные легендарные действия. <strong>Шаг охотника (1 действие):</strong> перемещается на расстояние до половины скорости, не провоцируя атаки по возможности. <strong>Клинок отступника (1 действие):</strong> совершает одну атаку Багровым клинком.</p>",
+            "value": "<p>Бонусным действием Эдрик перемещается до 20 футов к видимому кровоточащему врагу. Каждая часть перемещения должна приближать его к этой цели. Цель не может совершать атаки по возможности против этого перемещения; другие существа могут.</p>",
             "chat": ""
           },
           "identifier": "edrik-legendary",
@@ -8748,48 +9005,7 @@
           "crewed": false
         },
         "effects": [],
-        "sort": 100000,
-        "flags": {},
-        "folder": null
-      },
-      {
-        "name": "Легендарное сопротивление (1/день)",
-        "type": "feat",
-        "_id": "bf667f5bd9f14c3f",
-        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
-        "system": {
-          "type": {
-            "value": "monster",
-            "subtype": ""
-          },
-          "activities": {},
-          "uses": {
-            "spent": 0,
-            "recovery": [],
-            "max": ""
-          },
-          "description": {
-            "value": "<p>Если Эдрик проваливает спасбросок, он может вместо этого преуспеть. 1 раз в день.</p>",
-            "chat": ""
-          },
-          "identifier": "edrik-resistance",
-          "source": {
-            "revision": 1,
-            "rules": "2024"
-          },
-          "enchant": {},
-          "prerequisites": {
-            "level": null,
-            "repeatable": false,
-            "items": []
-          },
-          "properties": [],
-          "requirements": "",
-          "advancement": {},
-          "crewed": false
-        },
-        "effects": [],
-        "sort": 100000,
+        "sort": 500000,
         "flags": {},
         "folder": null
       }
@@ -8797,7 +9013,10 @@
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
-        "bloodMagic": true
+        "bloodMagic": true,
+        "sourceSlug": "edrik-valter",
+        "contentVersion": "3.11.0",
+        "sibling": "emili-yasati"
       },
       "bagrovoe-content": {
         "sourceSlug": "edrik-valter",
@@ -9555,7 +9774,7 @@
         "name": "Укус",
         "type": "weapon",
         "_id": "11e69750df7d4c29",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/fangs.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -9643,7 +9862,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/fangs.svg",
               "behaviors": []
             }
           },
@@ -9746,7 +9965,7 @@
         "name": "Багровый укус",
         "type": "weapon",
         "_id": "bb6b4b95679349d4",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/fangs.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -9841,7 +10060,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/fangs.svg",
               "behaviors": []
             }
           },
@@ -10756,7 +10975,7 @@
         "name": "Кровавая игла",
         "type": "weapon",
         "_id": "41c90a54cd544ad0",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "simpleR",
@@ -10844,7 +11063,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -10947,7 +11166,7 @@
         "name": "Багровый шип",
         "type": "weapon",
         "_id": "fc747eabbceb4497",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "simpleR",
@@ -11035,7 +11254,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -11272,7 +11491,7 @@
             "max": "1"
           },
           "description": {
-            "value": "<p><strong>Перезарядка 5–6.</strong> Одно видимое существо в пределах 30 футов совершает спасбросок Телосложения Сл 13. При провале получает 10 (3к6) некротического урона; если уже страдает кровотечением, уровень кровотечения повышается на 1. При успехе получает половину урона.</p><p><em>Повышение кровотечения при этом спасброске ведущий применяет вручную; модуль автоматизирует кровотечение только после попаданий атакой.</em></p>",
+            "value": "<p><strong>Перезарядка 5–6.</strong> Одно видимое существо в пределах 30 футов совершает спасбросок Телосложения Сл 13. При провале получает 10 (3к6) некротического урона; если уже страдает кровотечением, уровень кровотечения повышается на 1. При успехе получает половину урона.</p>",
             "chat": ""
           },
           "identifier": "krovotvorec-vybros",
@@ -12182,7 +12401,7 @@
         "name": "Мультиатака",
         "type": "feat",
         "_id": "11f70fc1ebf54e07",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -12247,7 +12466,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
               "behaviors": []
             }
           },
@@ -12289,7 +12508,7 @@
         "name": "Костяной клинок",
         "type": "weapon",
         "_id": "b016a05b4d7a46c6",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -12395,7 +12614,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -12501,7 +12720,7 @@
         "name": "Рассечение сосудов",
         "type": "weapon",
         "_id": "e827d249a9c84b0b",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -12613,7 +12832,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -13539,7 +13758,7 @@
         "name": "Мультиатака",
         "type": "feat",
         "_id": "14af01245e35484a",
-        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -13586,7 +13805,7 @@
         "name": "Кровавая стрела",
         "type": "weapon",
         "_id": "eff5824c6a1f4273",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -13692,7 +13911,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -13798,7 +14017,7 @@
         "name": "Вскрытие сосудов",
         "type": "weapon",
         "_id": "fa86827c310a4dd7",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -13904,7 +14123,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -14019,7 +14238,7 @@
         "name": "Предвидение удара",
         "type": "feat",
         "_id": "c06497ac5b9e4d50",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -14084,7 +14303,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -14656,7 +14875,7 @@
       },
       "details": {
         "biography": {
-          "value": "<h2>Кровавый гончий</h2><p>Заражённый хищник, чья мутация усилила скорость, обоняние и способность наносить незаживающие раны. Не обладает разумом выше животного.</p><h3>Кровотечение</h3><p>Разрывающий укус: Телосложение Сл 13, провал даёт 1 уровень кровотечения; если кровотечение уже есть, по авторскому правилу даёт 2 уровня вместо 1. В текущем модуле дополнительный уровень не определяется автоматически: ведущий добавляет его вручную. Начало хода: 1к4/1к6/1к8/1к10/1к12 некротического урона по уровню. Лечение настоящих хитов или успешная Медицина Сл 13 действием снимает эффект.</p>",
+          "value": "<h2>Кровавый гончий</h2><p>Заражённый хищник, чья мутация усилила скорость, обоняние и способность наносить незаживающие раны. Не обладает разумом выше животного.</p><h3>Кровотечение</h3><p>Разрывающий укус: Телосложение Сл 13, провал даёт 1 уровень кровотечения; если кровотечение уже есть, по авторскому правилу даёт 2 уровня вместо 1. Начало хода: 1к4/1к6/1к8/1к10/1к12 некротического урона по уровню. Лечение настоящих хитов или успешная Медицина Сл 13 действием снимает эффект.</p>",
           "public": ""
         },
         "alignment": "Без мировоззрения",
@@ -14979,7 +15198,7 @@
         "name": "Укус",
         "type": "weapon",
         "_id": "0582787b77c14504",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/fangs.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -15067,7 +15286,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/fangs.svg",
               "behaviors": []
             }
           },
@@ -15181,7 +15400,7 @@
         "name": "Разрывающий укус",
         "type": "weapon",
         "_id": "c8a26f4ecae44025",
-        "img": "modules/bagrovoe-bleeding/assets/icons/blood.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/fangs.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -15276,7 +15495,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/fangs.svg",
               "behaviors": []
             }
           },
@@ -16151,7 +16370,7 @@
         "name": "Ветвистые рога",
         "type": "weapon",
         "_id": "1e5d145fb5acee0f",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -16257,7 +16476,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -16367,7 +16586,7 @@
         "name": "Раздирающие рога",
         "type": "weapon",
         "_id": "aceac31e9118cfd9",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -16480,7 +16699,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -16740,7 +16959,7 @@
             ]
           },
           "description": {
-            "value": "<p>Олень перемещается до 20 футов, не провоцируя атаки по возможности. Ведущий перемещает токен вручную.</p>",
+            "value": "<p>Олень перемещается до 20 футов, не провоцируя атаки по возможности.</p>",
             "chat": ""
           },
           "identifier": "bagrovyj-olen-9ece554ff5680dba",
@@ -17478,7 +17697,7 @@
         "name": "Мультиатака",
         "type": "feat",
         "_id": "5048d922f597dcac",
-        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -17491,7 +17710,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p>Отродье совершает две атаки Серповидными когтями. Одну из них может заменить Рваной раной, если она доступна. Атаки выполняются отдельно.</p>",
+            "value": "<p>Отродье совершает две атаки Серповидными когтями. Одну из них может заменить Рваной раной, если она доступна.</p>",
             "chat": ""
           },
           "identifier": "bagrovoe-otrodie-5048d922f597dcac",
@@ -17521,7 +17740,7 @@
         "name": "Серповидные когти",
         "type": "weapon",
         "_id": "7a81f590cd88bb24",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/claws.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -17627,7 +17846,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/claws.svg",
               "behaviors": []
             }
           },
@@ -17743,7 +17962,7 @@
         "name": "Рваная рана",
         "type": "weapon",
         "_id": "083bc07417579e72",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -17856,7 +18075,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -18598,7 +18817,7 @@
       },
       "details": {
         "biography": {
-          "value": "<h2>Эмили Ясати</h2><p>Воительница, сохранившая волю после Багрового Причастия. Кровавый клинок служит ей средством защиты, а не поводом для убийства. Возможная роль в приключении: союзница против охотников на заражённых либо соперница, защищающая своего подопечного. Биография — авторский вариант, который ведущий может заменить.</p><p>Носитель Багрового Причастия остаётся живым существом. Проклятие не передаётся обычными ранами или кровотечением, не дарует животным разум и не требует пить кровь для выживания.</p><p>Авторский лист для тестовой игры; ПО 6 предварительный.</p>",
+          "value": "<h2>Эмили Ясати</h2><p>Сестра Эдрика Вальтера. После Багрового Причастия сохранила фамилию семьи, которую брат предпочитает скрывать. За спокойствием Эмили скрывается упрямое желание защитить тех, кого ещё можно спасти.</p><p>Она не одобряет охоту брата за чужой силой, но понимает его страх потерять близких снова. Её цель — разорвать связь семьи с Богом Крови, не превратившись в чудовищ.</p><p>В бою Эмили — защитница. Она связывает кровоточащих врагов ударами, парирует и даёт союзникам запас жизненной силы. Пока Эдрик преследует раненую добычу, она удерживает остальных рядом с собой.</p>",
           "public": ""
         },
         "alignment": "Любое",
@@ -18777,7 +18996,7 @@
         "name": "Мультиатака",
         "type": "feat",
         "_id": "5e6130dcc027dbcf",
-        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -18790,7 +19009,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p>Эмили совершает две атаки Клинком сердца. Одну из них может заменить Алым рассечением, если оно доступно. Атаки выполняются отдельно.</p>",
+            "value": "<p>Эмили совершает две атаки Клинком сердца. Одну из них может заменить Алым рассечением, если оно доступно.</p>",
             "chat": ""
           },
           "identifier": "emili-yasati-5e6130dcc027dbcf",
@@ -18820,7 +19039,7 @@
         "name": "Клинок сердца",
         "type": "weapon",
         "_id": "dd5c7ef7140f4494",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/heartblade.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -18926,7 +19145,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/heartblade.svg",
               "behaviors": []
             }
           },
@@ -18936,7 +19155,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p>Рукопашная атака: +7 к попаданию, досягаемость 5 футов, одна цель. Попадание: 13 (2к8 + 4) рубящего урона. </p>",
+            "value": "<p>Рукопашная атака: +7 к попаданию, досягаемость 5 футов, одна цель. Попадание: 13 (2к8 + 4) рубящего урона. Если цель уже кровоточит, её скорость уменьшается вдвое до начала следующего хода Эмили. Повторные попадания не усиливают замедление.</p>",
             "chat": ""
           },
           "identifier": "emili-yasati-dd5c7ef7140f4494",
@@ -19030,6 +19249,9 @@
                 "oncePerTurn": true,
                 "group": "emili-yasati-vigor"
               }
+            },
+            "onHitSlow": {
+              "requiresBleeding": true
             }
           }
         },
@@ -19042,7 +19264,7 @@
         "name": "Алое рассечение",
         "type": "weapon",
         "_id": "4483ee79cb6d997e",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -19155,7 +19377,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -19324,7 +19546,7 @@
         "name": "Парирование",
         "type": "feat",
         "_id": "060058fcbe0d80a8",
-        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/parry.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -19400,7 +19622,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/parry.svg",
               "behaviors": [],
               "roll": {
                 "formula": "",
@@ -19421,7 +19643,7 @@
             ]
           },
           "description": {
-            "value": "<p>Когда видимый противник попадает по Эмили рукопашной атакой, она повышает КД на 3 против этой атаки, возможно обращая попадание в промах. Примените до подтверждения попадания: ведущий вручную меняет результат атаки.</p>",
+            "value": "<p>Когда видимый противник попадает по Эмили рукопашной атакой, она может реакцией повысить КД на 3 против этой атаки, возможно обращая попадание в промах. Три применения за продолжительный отдых.</p>",
             "chat": ""
           },
           "identifier": "emili-yasati-060058fcbe0d80a8",
@@ -19442,14 +19664,18 @@
         },
         "effects": [],
         "sort": 400000,
-        "flags": {},
+        "flags": {
+          "bagrovoe-bleeding": {
+            "npcParry": true
+          }
+        },
         "folder": null
       },
       {
         "name": "Рывок к союзнику",
         "type": "feat",
         "_id": "e0529e7bdf91994c",
-        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -19518,7 +19744,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
               "behaviors": [],
               "roll": {
                 "formula": "",
@@ -19534,7 +19760,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p>Эмили перемещается до половины скорости к видимому союзнику. Это перемещение провоцирует атаки по возможности по обычным правилам. Ведущий перемещает токен вручную.</p>",
+            "value": "<p>Эмили перемещается до половины скорости к видимому союзнику. Это перемещение провоцирует атаки по возможности по обычным правилам.</p>",
             "chat": ""
           },
           "identifier": "emili-yasati-e0529e7bdf91994c",
@@ -19557,14 +19783,162 @@
         "sort": 500000,
         "flags": {},
         "folder": null
+      },
+      {
+        "name": "Сердечный заслон",
+        "type": "feat",
+        "_id": "6df985812a90d908",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/ward.svg",
+        "system": {
+          "type": {
+            "value": "monster",
+            "subtype": ""
+          },
+          "activities": {
+            "528d9c8299c8f7f6": {
+              "_id": "528d9c8299c8f7f6",
+              "type": "heal",
+              "sort": 0,
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": false,
+                "condition": ""
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": "",
+                    "scaling": {}
+                  }
+                ]
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": false,
+                "expiry": null
+              },
+              "effects": [],
+              "range": {
+                "override": true,
+                "value": "30",
+                "units": "ft",
+                "special": ""
+              },
+              "target": {
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "type": "",
+                  "stationary": false
+                },
+                "affects": {
+                  "type": "creature",
+                  "count": "1",
+                  "choice": false,
+                  "special": ""
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "name": "Сердечный заслон",
+              "flags": {},
+              "visibility": {
+                "level": {},
+                "requireAttunement": false,
+                "requireIdentification": false,
+                "requireMagic": false
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/ward.svg",
+              "behaviors": [],
+              "healing": {
+                "number": 1,
+                "denomination": 8,
+                "bonus": "4",
+                "types": [
+                  "temphp"
+                ],
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "scaling": {
+                  "number": 0
+                },
+                "modifiers": []
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "3",
+            "recovery": [
+              {
+                "period": "lr",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "description": {
+            "value": "<p>Бонусным действием Эмили расходует 1 Кость Хитов. Одно другое видимое согласное существо в пределах 30 футов получает 1к8 + 4 временных хита. Эта трата не восстанавливает хиты Эмили; при нехватке Костей Хитов способность недоступна. Три применения за продолжительный отдых.</p>",
+            "chat": ""
+          },
+          "identifier": "emili-heart-ward",
+          "source": {
+            "revision": 1,
+            "rules": "2024"
+          },
+          "enchant": {},
+          "prerequisites": {
+            "level": null,
+            "repeatable": false,
+            "items": []
+          },
+          "properties": [],
+          "requirements": "",
+          "advancement": {},
+          "crewed": false
+        },
+        "effects": [],
+        "sort": 400000,
+        "flags": {
+          "bagrovoe-bleeding": {
+            "siblingWard": true,
+            "itemBloodCost": {
+              "hitDice": 1,
+              "allowHealthSubstitution": false,
+              "healthDice": 0,
+              "healthDie": 8,
+              "requireSurvival": true
+            }
+          }
+        },
+        "folder": null
       }
     ],
     "effects": [],
     "flags": {
       "bagrovoe-bleeding": {
         "sourceSlug": "emili-yasati",
-        "contentVersion": "3.7.0",
-        "designStatus": "playtest"
+        "contentVersion": "3.11.0",
+        "designStatus": "playtest",
+        "sibling": "edrik-valter"
       }
     },
     "ownership": {
@@ -20271,7 +20645,7 @@
         "name": "Мультиатака",
         "type": "feat",
         "_id": "45f0eed7c333ea29",
-        "img": "modules/bagrovoe-bleeding/assets/icons/passive.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "type": {
             "value": "monster",
@@ -20284,7 +20658,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p>Древний совершает три атаки Кровавой нитью. Одну из них может заменить Нитью истечения, если она доступна. Атаки выполняются отдельно.</p>",
+            "value": "<p>Древний совершает три атаки Кровавой нитью. Одну из них может заменить Нитью истечения, если она доступна.</p>",
             "chat": ""
           },
           "identifier": "bagrovyj-drevnij-45f0eed7c333ea29",
@@ -20314,7 +20688,7 @@
         "name": "Кровавая нить",
         "type": "weapon",
         "_id": "faf569a75e2dffcd",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -20420,7 +20794,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -20530,7 +20904,7 @@
         "name": "Нить истечения",
         "type": "weapon",
         "_id": "5aa3d971ac09e486",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -20643,7 +21017,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -20806,7 +21180,7 @@
         "name": "Хлещущая нить",
         "type": "weapon",
         "_id": "f8476c74e224426f",
-        "img": "modules/bagrovoe-bleeding/assets/icons/attack.png",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "type": {
             "value": "natural",
@@ -20912,7 +21286,7 @@
                 "requireIdentification": false,
                 "requireMagic": false
               },
-              "img": null,
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
               "behaviors": []
             }
           },
@@ -21107,7 +21481,7 @@
             "max": ""
           },
           "description": {
-            "value": "<p>Легендарное действие, стоимость 1. Древний перемещается до 15 футов, не провоцируя атаки по возможности. Ведущий перемещает токен вручную.</p>",
+            "value": "<p>Легендарное действие, стоимость 1. Древний перемещается до 15 футов, не провоцируя атаки по возможности.</p>",
             "chat": ""
           },
           "identifier": "bagrovyj-drevnij-39ffbf3726718f92",
@@ -21232,7 +21606,7 @@
             ]
           },
           "description": {
-            "value": "<p>Когда древний проваливает спасбросок, он может вместо этого преуспеть. 2 раза за продолжительный отдых. Ведущий вручную меняет результат спасброска.</p>",
+            "value": "<p>Когда древний проваливает спасбросок, он может вместо этого преуспеть. 2 раза за продолжительный отдых.</p>",
             "chat": ""
           },
           "identifier": "bagrovyj-drevnij-90711f43e17213c9",
