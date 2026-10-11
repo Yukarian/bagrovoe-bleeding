@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { compilePack, extractPack } from '@foundryvtt/foundryvtt-cli';
 
 const manifest = JSON.parse(fs.readFileSync('module.json', 'utf8'));
-const expected = { 'blood-spells': 12, actors: 14, abilities: 73 };
+const expected = { 'blood-spells': 12, actors: 14, abilities: 73, relics: 7 };
 const scratch = fs.mkdtempSync(path.resolve('.build-'));
 const assetPrefix = `modules/${manifest.id}/`;
 function validate(value) {
@@ -41,7 +41,7 @@ try {
     const seen = new Set();
     for (const doc of docs) {
       assert.ok(!seen.has(doc._id));seen.add(doc._id);validate(doc);
-      assert.ok(pack.type === 'Actor' ? doc.type === 'npc' : ['spell','feat','weapon'].includes(doc.type));
+      assert.ok(pack.type === 'Actor' ? doc.type === 'npc' : ['spell','feat','weapon','equipment','consumable'].includes(doc.type));
       keys(doc, pack.type === 'Actor' ? 'actors' : 'items');
       fs.writeFileSync(path.join(src, doc._id + '.json'), JSON.stringify(doc));
     }

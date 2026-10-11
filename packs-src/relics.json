@@ -1,0 +1,859 @@
+[
+  {
+    "_id": "775ab9c349b00258",
+    "name": "Нить последнего шва",
+    "type": "consumable",
+    "img": "modules/bagrovoe-bleeding/assets/icons/relics/last-stitch.svg",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "last-stitch",
+        "hitDiceCost": 1
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Действием потратьте одну свою Кость Хитов и прекратите кровотечение у себя или существа в пределах касания. Хиты не восстанавливаются. После применения нить расходуется.</p><p><strong>Работа в Foundry:</strong> выберите цель (T) при необходимости и используйте предмет. Ведущий подтверждает условия и выполняет действие. До подтверждения ресурсы не расходуются. Инструкции: раздел «Реликвии» в документации модуля.</p><p>Кости Хитов расходуются без обычного лечения. При нехватке костей использование невозможно; замены на потерю хитов нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "last-stitch",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "common"
+      ],
+      "attunement": "",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "spent": 0,
+        "max": "1",
+        "recovery": [],
+        "autoDestroy": false
+      },
+      "activities": {
+        "ac610f1ee9933a16": {
+          "_id": "ac610f1ee9933a16",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "units": "spec",
+            "special": "См. описание"
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Использовать реликвию",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/relics/last-stitch.svg",
+          "behaviors": []
+        }
+      }
+    }
+  },
+  {
+    "_id": "c5c43ccfc91f63ef",
+    "name": "Браслет алого заслона",
+    "type": "equipment",
+    "img": "modules/bagrovoe-bleeding/assets/icons/relics/scarlet-bracelet.svg",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "scarlet-bracelet",
+        "hitDiceCost": 1
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Когда вы получаете урон, реакцией потратьте и бросьте одну Кость Хитов. Урон уменьшается на результат плюс бонус мастерства, минимум до нуля. Не действует на кровотечение и цену кровавых способностей. Число применений равно бонусу мастерства; восстанавливается после продолжительного отдыха.</p><p><strong>Работа в Foundry:</strong> выберите цель (T) при необходимости и используйте предмет. Ведущий подтверждает условия и выполняет действие. До подтверждения ресурсы не расходуются. Инструкции: раздел «Реликвии» в документации модуля.</p><p>Кости Хитов расходуются без обычного лечения. При нехватке костей использование невозможно; замены на потерю хитов нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "scarlet-bracelet",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "uncommon"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "spent": 0,
+        "max": "@prof",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "73854dfde49ed222": {
+          "_id": "73854dfde49ed222",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "reaction",
+            "value": 1,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "units": "spec",
+            "special": "См. описание"
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Использовать реликвию",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/relics/scarlet-bracelet.svg",
+          "behaviors": []
+        }
+      }
+    }
+  },
+  {
+    "_id": "90d2738bb1c0fc92",
+    "name": "Линза багрового следа",
+    "type": "equipment",
+    "img": "modules/bagrovoe-bleeding/assets/icons/relics/crimson-lens.svg",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "crimson-lens",
+        "hitDiceCost": 0
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Бонусным действием отметьте видимое кровоточащее существо в пределах 60 футов до конца своего следующего хода. Пока цель в пределах 60 футов, вы знаете её местоположение; линза не позволяет видеть сквозь стены и не отменяет помеху от невидимости. Один раз за ход попадание по отмеченной цели атакой оружием или заклинанием наносит дополнительно 1к4 некротического урона. Три применения за продолжительный отдых.</p><p><strong>Работа в Foundry:</strong> выберите цель (T) при необходимости и используйте предмет. Ведущий подтверждает условия и выполняет действие. До подтверждения ресурсы не расходуются. Инструкции: раздел «Реликвии» в документации модуля.</p><p>Кости Хитов расходуются без обычного лечения. При нехватке костей использование невозможно; замены на потерю хитов нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "crimson-lens",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "uncommon"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "spent": 0,
+        "max": "3",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "df1469a14f7aa03c": {
+          "_id": "df1469a14f7aa03c",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "bonus",
+            "value": 1,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "units": "spec",
+            "special": "См. описание"
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Использовать реликвию",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/relics/crimson-lens.svg",
+          "behaviors": []
+        }
+      }
+    }
+  },
+  {
+    "_id": "540765e76f99a3d6",
+    "name": "Чётки разделённой боли",
+    "type": "equipment",
+    "img": "modules/bagrovoe-bleeding/assets/icons/relics/shared-pain.svg",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "shared-pain",
+        "hitDiceCost": 1
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Один раз за ход, восстановив другому существу хиты заклинанием, потратьте и бросьте одну Кость Хитов. Одна цель восстанавливает дополнительные хиты: результат плюс модификатор вашей заклинательной характеристики, минимум 1. После лечения вы получаете один уровень кровотечения. Три применения за продолжительный отдых.</p><p><strong>Работа в Foundry:</strong> выберите цель (T) при необходимости и используйте предмет. Ведущий подтверждает условия и выполняет действие. До подтверждения ресурсы не расходуются. Инструкции: раздел «Реликвии» в документации модуля.</p><p>Кости Хитов расходуются без обычного лечения. При нехватке костей использование невозможно; замены на потерю хитов нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "shared-pain",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "rare"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "spent": 0,
+        "max": "3",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "921251ed9aba4e1e": {
+          "_id": "921251ed9aba4e1e",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "special",
+            "value": 1,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "units": "spec",
+            "special": "См. описание"
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Использовать реликвию",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/relics/shared-pain.svg",
+          "behaviors": []
+        }
+      }
+    }
+  },
+  {
+    "_id": "cc493805736c93c5",
+    "name": "Перстень открытой раны",
+    "type": "equipment",
+    "img": "modules/bagrovoe-bleeding/assets/icons/relics/open-wound.svg",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "open-wound",
+        "hitDiceCost": 1
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Один раз за свой ход после попадания атакой оружием или заклинанием потратьте одну Кость Хитов. Цель совершает спасбросок Телосложения: Сл 8 + бонус мастерства + ваш модификатор Телосложения. При провале получает один уровень кровотечения. Три применения за продолжительный отдых. Несколько лучей одного заклинания не дают дополнительных активаций за ход.</p><p><strong>Работа в Foundry:</strong> выберите цель (T) при необходимости и используйте предмет. Ведущий подтверждает условия и выполняет действие. До подтверждения ресурсы не расходуются. Инструкции: раздел «Реликвии» в документации модуля.</p><p>Кости Хитов расходуются без обычного лечения. При нехватке костей использование невозможно; замены на потерю хитов нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "open-wound",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "rare"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "spent": 0,
+        "max": "3",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "605ff64a1dc6c62e": {
+          "_id": "605ff64a1dc6c62e",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "special",
+            "value": 1,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "units": "spec",
+            "special": "См. описание"
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Использовать реликвию",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/relics/open-wound.svg",
+          "behaviors": []
+        }
+      }
+    }
+  },
+  {
+    "_id": "e169ccbd058cb99b",
+    "name": "Закладка живых чернил",
+    "type": "equipment",
+    "img": "modules/bagrovoe-bleeding/assets/icons/relics/living-ink.svg",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "living-ink",
+        "hitDiceCost": 1
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Когда видимое существо в пределах 60 футов успешно проходит спасбросок против вашего заклинания, реакцией потратьте и бросьте одну Кость Хитов. Получите столько же некротического урона: он не уменьшается и обходит временные хиты. Затем уменьшите результат спасброска на 1к4, возможно превращая успех в провал. Не отменяет легендарное сопротивление. Одно применение за продолжительный отдых. Требует настройки заклинателем.</p><p><strong>Работа в Foundry:</strong> выберите цель (T) при необходимости и используйте предмет. Ведущий подтверждает условия и выполняет действие. До подтверждения ресурсы не расходуются. Инструкции: раздел «Реликвии» в документации модуля.</p><p>Кости Хитов расходуются без обычного лечения. При нехватке костей использование невозможно; замены на потерю хитов нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "living-ink",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "rare"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "spent": 0,
+        "max": "1",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "2ea5248ae5c35e21": {
+          "_id": "2ea5248ae5c35e21",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "reaction",
+            "value": 1,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "units": "spec",
+            "special": "См. описание"
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Использовать реликвию",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/relics/living-ink.svg",
+          "behaviors": []
+        }
+      }
+    }
+  },
+  {
+    "_id": "be8e5d2f193900b6",
+    "name": "Сердце второго пульса",
+    "type": "equipment",
+    "img": "modules/bagrovoe-bleeding/assets/icons/relics/second-heart.svg",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "second-heart",
+        "hitDiceCost": 2
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Когда урон должен опустить ваши хиты до нуля, но не убивает мгновенно, потратьте две Кости Хитов, чтобы остаться с 1 хитом. Бросьте потраченные кости и получите временные хиты, равные сумме. Затем получите два уровня кровотечения. Одно применение за продолжительный отдых. Не предотвращает падение от кровотечения или платы за кровавую способность.</p><p><strong>Работа в Foundry:</strong> выберите цель (T) при необходимости и используйте предмет. Ведущий подтверждает условия и выполняет действие. До подтверждения ресурсы не расходуются. Инструкции: раздел «Реликвии» в документации модуля.</p><p>Кости Хитов расходуются без обычного лечения. При нехватке костей использование невозможно; замены на потерю хитов нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "second-heart",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "veryRare"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "spent": 0,
+        "max": "1",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "2694ea9b8019f935": {
+          "_id": "2694ea9b8019f935",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "special",
+            "value": 1,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "override": true,
+            "units": "spec",
+            "special": "См. описание"
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Использовать реликвию",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/relics/second-heart.svg",
+          "behaviors": []
+        }
+      }
+    }
+  }
+]
