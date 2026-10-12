@@ -43,6 +43,7 @@ async function resolveDefense(chat) {
     for(const hit of chat.system?.evaluatedTargets??[]) {
       if(hit.isMiss!==false || roll.isCritical || hit.ac==null || roll.total>=hit.ac+3)continue;
       const token=await fromUuid(hit.token),actor=token?.actor;if(!actor)continue;
+      if(globalThis.BagrovoeExpandedSpells?.reactionBlocked(actor))continue;
       if(actor.type!=='npc'||!(actor.getFlag(MOD,'bloodMagic')||actor.system.details?.type?.subtype==='заражённый'))continue;
       const combat=game.combat;
       const ownTurn=combat?.turns?.findIndex(c=>c.actor?.uuid===actor.uuid)??-1;

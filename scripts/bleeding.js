@@ -168,7 +168,8 @@ async function tick(combat, current) {
     const roll = await new Roll(`${count}d${LEVEL_DICE[level]}`).evaluate();
     const context = { round, ledgerPath: `flags.${MOD}.ticks.${key}` };
     const before = { ...actor.system.attributes.hp };
-    await actor.applyDamage([{ value: roll.total, type: "necrotic", properties: new Set() }], { [MOD]: context });
+    const amount = globalThis.BagrovoeExpandedSpells?.reduceBleedingDamage(token, roll.total) ?? roll.total;
+    await actor.applyDamage([{ value: amount, type: "necrotic", properties: new Set() }], { [MOD]: context });
     if (actor.getFlag(MOD, "ticks")?.[key] !== round) return;
     if (context.breakStable) await actor.toggleStatusEffect("stable", { active: false });
     if (context.instantDeath || actor.system.attributes.death?.failure >= 3) {

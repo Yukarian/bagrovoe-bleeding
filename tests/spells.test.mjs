@@ -70,7 +70,7 @@ for(const flag of ['bloodMagicAbility','npcSave'])test(`${flag} save accepts nat
  await h.ctx.autoBloodSaves(chat);await h.ctx.autoBloodSaves(chat);assert.equal(calls,1);
 });
 test('eighteen unique bundled icons, bleed flags, native healing, templates and save damage',()=>{
- assert.equal(new Set(spells.map(s=>s.img)).size,18);
+ assert.equal(new Set(spells.map(s=>s.img)).size,30);
  for(const s of spells)assert.ok(fs.existsSync(path.join(root,s.img.replace('modules/bagrovoe-bleeding/',''))));
  for(const n of [1,6])assert.equal(spells[n].flags[MOD].abilities.bleed.levels,n===1?1:2);
  for(const [n,value] of [[7,7],[11,10]]){const a=Object.values(spells[n].system.activities)[0];assert.equal(a.type,'heal');assert.deepEqual(a.healing.types,['temphp']);assert.equal(Number(a.healing.bonus),value);}

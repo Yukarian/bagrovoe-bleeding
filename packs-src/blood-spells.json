@@ -169,7 +169,7 @@
       },
       "identifier": "blood-1",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -354,7 +354,7 @@
       },
       "identifier": "blood-2",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -535,7 +535,7 @@
       },
       "identifier": "blood-3",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -725,7 +725,7 @@
       },
       "identifier": "blood-4",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -878,7 +878,7 @@
       },
       "identifier": "blood-5",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -1056,7 +1056,7 @@
       },
       "identifier": "blood-6",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -1241,7 +1241,7 @@
       },
       "identifier": "blood-7",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -1399,7 +1399,7 @@
       },
       "identifier": "blood-8",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -1556,7 +1556,7 @@
       },
       "identifier": "blood-9",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -1713,7 +1713,7 @@
       },
       "identifier": "blood-10",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -1866,7 +1866,7 @@
       },
       "identifier": "blood-11",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -2024,7 +2024,7 @@
       },
       "identifier": "blood-12",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 0,
@@ -2202,7 +2202,7 @@
       },
       "identifier": "scarlet-thread",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 1200000,
@@ -2350,7 +2350,7 @@
       },
       "identifier": "clotting-seal",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 1300000,
@@ -2498,7 +2498,7 @@
       },
       "identifier": "crimson-step",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 1400000,
@@ -2646,7 +2646,7 @@
       },
       "identifier": "transfusion",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 1500000,
@@ -2796,7 +2796,7 @@
       },
       "identifier": "crimson-harvest",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 1600000,
@@ -2944,10 +2944,1974 @@
       },
       "identifier": "executioners-pulse",
       "method": "spell",
-      "prepared": 0,
+      "prepared": 1,
       "sourceItem": ""
     },
     "sort": 1700000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "75331f3f61b3c0c2",
+    "name": "Знак сопричастности",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/communion-mark.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "communion-mark",
+        "bloodMagic": false,
+        "resourceMode": "slots",
+        "expandedSpell": {
+          "key": "communion-mark",
+          "range": 5,
+          "min": 1,
+          "max": 1,
+          "seconds": 60,
+          "concentration": false
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Касанием отметьте согласное живое существо на 1 минуту. В пределах 60 футов вы чувствуете, в сознании ли оно и кровоточит ли, но не узнаёте местоположение. Одновременно можно поддерживать число отметин, равное бонусу мастерства. Новая отметина сверх предела заменяет самую старую.</p><p>Длительность: 1 минута. Сл = 8 + бонус мастерства + модификатор Мудрости. Использует обычные ячейки заклинаний. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "1",
+        "units": "minute",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "size": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "5",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 0,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "activities": {
+        "ff605382eefe5873": {
+          "_id": "ff605382eefe5873",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "1",
+            "units": "minute",
+            "expiry": null,
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "value": "5",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "size": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Знак сопричастности",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/communion-mark.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "communion-mark",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 1800000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "da1b9dbfcbbf54a9",
+    "name": "Дар донора",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/donors-gift.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "donors-gift",
+        "bloodMagic": false,
+        "resourceMode": "slots",
+        "expandedSpell": {
+          "key": "donors-gift",
+          "range": 30,
+          "min": 2,
+          "max": 2,
+          "seconds": 0,
+          "concentration": false
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Выберите двух разных согласных живых существ в пределах 30 футов. Одно тратит и бросает свою Кость Хитов; другое восстанавливает столько хитов плюс модификатор Мудрости жреца (минимум 0). Донор не получает лечения от этой траты.</p><p>Сл = 8 + бонус мастерства + модификатор Мудрости. Использует обычные ячейки заклинаний. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "2",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "size": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 1,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "activities": {
+        "c53ac5757f6c51c8": {
+          "_id": "c53ac5757f6c51c8",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "",
+            "units": "inst",
+            "expiry": null,
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "value": "30",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "2",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "size": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Дар донора",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/donors-gift.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "donors-gift",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 1900000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "e1f60f0c059bca99",
+    "name": "Епитимья",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/penance.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "penance",
+        "bloodMagic": false,
+        "resourceMode": "slots",
+        "expandedSpell": {
+          "key": "penance",
+          "range": 60,
+          "min": 1,
+          "max": 1,
+          "seconds": 60,
+          "concentration": true
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Одно живое существо совершает спасбросок Мудрости. При провале первая за каждый собственный ход причинённая им другому существу рана вызывает 2к6 некротического урона по носителю печати. В конце каждого своего хода цель повторяет спасбросок, завершая эффект при успехе. Урон печати не запускает другие печати.</p><p>Концентрация. Длительность: 1 минута. Сл = 8 + бонус мастерства + модификатор Мудрости. Использует обычные ячейки заклинаний. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "1",
+        "units": "minute",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "size": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 2,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic",
+        "concentration"
+      ],
+      "activities": {
+        "1e95a6ff5dcfa36c": {
+          "_id": "1e95a6ff5dcfa36c",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "1",
+            "units": "minute",
+            "expiry": null,
+            "concentration": true,
+            "override": true
+          },
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "size": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Епитимья",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/penance.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "penance",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 2000000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "6616d91554971648",
+    "name": "Обет общей боли",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/shared-pain.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "shared-pain",
+        "bloodMagic": false,
+        "resourceMode": "slots",
+        "expandedSpell": {
+          "key": "shared-pain",
+          "range": 30,
+          "min": 2,
+          "max": 2,
+          "seconds": 60,
+          "concentration": true
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Свяжите двух разных согласных живых существ. Когда одно получает урон, второе может реакцией принять половину, округляя вниз. Делится урон после защит исходной цели. Переданная часть не уменьшается защитами повторно и не может быть снова передана. Связь заканчивается при расстоянии между участниками более 60 футов.</p><p>Концентрация. Длительность: 1 минута. Сл = 8 + бонус мастерства + модификатор Мудрости. Использует обычные ячейки заклинаний. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "1",
+        "units": "minute",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "2",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "size": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 2,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic",
+        "concentration"
+      ],
+      "activities": {
+        "559c9426f2144af8": {
+          "_id": "559c9426f2144af8",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "1",
+            "units": "minute",
+            "expiry": null,
+            "concentration": true,
+            "override": true
+          },
+          "range": {
+            "value": "30",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "2",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "size": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Обет общей боли",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/shared-pain.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "shared-pain",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 2100000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "21670051de40f16d",
+    "name": "Литания стойкости",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/litany-of-endurance.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "litany-of-endurance",
+        "bloodMagic": false,
+        "resourceMode": "slots",
+        "expandedSpell": {
+          "key": "litany-of-endurance",
+          "range": 15,
+          "min": 1,
+          "max": 99,
+          "seconds": 60,
+          "concentration": true
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Выберите согласных живых союзников в пределах 15 футов, включая себя. Пока они в пределах 15 футов от вас, они получают преимущество против испуга, а урон их кровотечения уменьшается вдвое, округляя вниз. Уровни кровотечения сохраняются.</p><p>Концентрация. Длительность: 1 минута. Сл = 8 + бонус мастерства + модификатор Мудрости. Использует обычные ячейки заклинаний. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "1",
+        "units": "minute",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "size": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "15",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 3,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic",
+        "concentration"
+      ],
+      "activities": {
+        "a2957100aa0813fb": {
+          "_id": "a2957100aa0813fb",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "1",
+            "units": "minute",
+            "expiry": null,
+            "concentration": true,
+            "override": true
+          },
+          "range": {
+            "value": "15",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "size": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Литания стойкости",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/litany-of-endurance.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "litany-of-endurance",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 2200000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "9f7bc2c21cf7e94b",
+    "name": "Отсроченная кончина",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/deferred-death.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "deferred-death",
+        "bloodMagic": false,
+        "resourceMode": "slots",
+        "expandedSpell": {
+          "key": "deferred-death",
+          "range": 30,
+          "min": 1,
+          "max": 1,
+          "seconds": 0,
+          "concentration": false
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Реакция: видимое живое существо в 30 футах должно опуститься до 0 хитов от урона, но не погибнуть мгновенно. Вместо этого оно остаётся с 1 хитом. Цель тратит одну доступную Кость Хитов; если у неё нет костей, одну тратит жрец. Если костей нет у обоих, сотворение невозможно и ячейка не расходуется. Одно существо может получить эту помощь лишь раз до продолжительного отдыха.</p><p>Сл = 8 + бонус мастерства + модификатор Мудрости. Использует обычные ячейки заклинаний. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "reaction",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "size": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "wis",
+      "level": 4,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "activities": {
+        "9318448f0b95bf7e": {
+          "_id": "9318448f0b95bf7e",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "reaction",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": true,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "",
+            "units": "inst",
+            "expiry": null,
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "value": "30",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "size": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Отсроченная кончина",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/deferred-death.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "deferred-death",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 2300000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "f6312f3578b99930",
+    "name": "Эхо пульса",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/pulse-echo.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "pulse-echo",
+        "bloodMagic": true,
+        "resourceMode": "hitDice",
+        "expandedSpell": {
+          "key": "pulse-echo",
+          "range": 30,
+          "min": 0,
+          "max": 0,
+          "seconds": 600,
+          "concentration": true
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Вы чувствуете наличие и число кровоточащих живых существ в пределах 30 футов, но не их точное положение. Полное укрытие блокирует чувство. Ритуальное сотворение занимает дополнительно 10 минут; цена в Костях Хитов сохраняется.</p><p>Концентрация. Длительность: 10 минут. Сл = 8 + удвоенный бонус мастерства + модификатор Телосложения. Цена равна уровню в Костях Хитов; при нехватке действует обычная замена здоровьем. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "10",
+        "units": "minute",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "size": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 1,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic",
+        "concentration",
+        "ritual"
+      ],
+      "activities": {
+        "1893181d85b2bf25": {
+          "_id": "1893181d85b2bf25",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "10",
+            "units": "minute",
+            "expiry": null,
+            "concentration": true,
+            "override": true
+          },
+          "range": {
+            "value": "30",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "size": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Эхо пульса",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/pulse-echo.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "pulse-echo",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 2400000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "c07051207b54f732",
+    "name": "Багровые шипы",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-thorns.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "crimson-thorns",
+        "bloodMagic": true,
+        "resourceMode": "hitDice",
+        "expandedSpell": {
+          "key": "crimson-thorns",
+          "range": 60,
+          "min": 0,
+          "max": 0,
+          "seconds": 60,
+          "concentration": true
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>В точке на земле в пределах 60 футов возникает круг радиусом 10 футов: труднопроходимая местность. Первое добровольное перемещение существа внутри круга за каждый ход вызывает спасбросок Ловкости. При провале существо получает 2к4 колющего урона; если оно уже кровоточило, получает ещё 1 уровень кровотечения.</p><p>Концентрация. Длительность: 1 минута. Сл = 8 + удвоенный бонус мастерства + модификатор Телосложения. Цена равна уровню в Костях Хитов; при нехватке действует обычная замена здоровьем. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "1",
+        "units": "minute",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "",
+          "choice": false
+        },
+        "template": {
+          "type": "radius",
+          "size": "10",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 2,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic",
+        "concentration"
+      ],
+      "activities": {
+        "4e83b2294fe9ab26": {
+          "_id": "4e83b2294fe9ab26",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "1",
+            "units": "minute",
+            "expiry": null,
+            "concentration": true,
+            "override": true
+          },
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "",
+              "choice": false
+            },
+            "template": {
+              "type": "radius",
+              "size": "10",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Багровые шипы",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-thorns.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "crimson-thorns",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 2500000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "3a4b85379967da59",
+    "name": "Срыв пульса",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/pulse-disruption.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "pulse-disruption",
+        "bloodMagic": true,
+        "resourceMode": "hitDice",
+        "expandedSpell": {
+          "key": "pulse-disruption",
+          "range": 60,
+          "min": 1,
+          "max": 1,
+          "seconds": 0,
+          "concentration": false
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Одно живое существо совершает спасбросок Телосложения. При провале получает 3к6 некротического урона и не может совершать реакции до начала следующего хода заклинателя. При успехе получает половину урона и сохраняет реакции.</p><p>Сл = 8 + удвоенный бонус мастерства + модификатор Телосложения. Цена равна уровню в Костях Хитов; при нехватке действует обычная замена здоровьем. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "size": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 2,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "activities": {
+        "982684aca234a004": {
+          "_id": "982684aca234a004",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "",
+            "units": "inst",
+            "expiry": null,
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "size": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Срыв пульса",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/pulse-disruption.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "pulse-disruption",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 2600000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "18b9bf6a4e9eb84e",
+    "name": "Похищение жизненной силы",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/vital-theft.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "vital-theft",
+        "bloodMagic": true,
+        "resourceMode": "hitDice",
+        "expandedSpell": {
+          "key": "vital-theft",
+          "range": 30,
+          "min": 1,
+          "max": 1,
+          "seconds": 0,
+          "concentration": false
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Одна живая кровоточащая цель совершает спасбросок Телосложения. При провале получает 3к8 некротического урона, теряет одну доступную Кость Хитов, а заклинатель восстанавливает одну свою израсходованную. При успехе — половина урона без похищения. Если у цели нет доступных костей, восстановления нет. Это заклинание не требует ПО 7 и не вызывает пассивное похищение.</p><p>Сл = 8 + удвоенный бонус мастерства + модификатор Телосложения. Цена равна уровню в Костях Хитов; при нехватке действует обычная замена здоровьем. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "",
+        "units": "inst",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "type": "",
+          "size": "",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 3,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "activities": {
+        "998a75d2a5c4e390": {
+          "_id": "998a75d2a5c4e390",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "",
+            "units": "inst",
+            "expiry": null,
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "value": "30",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "size": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Похищение жизненной силы",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/vital-theft.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "vital-theft",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 2700000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "8499974ba686113b",
+    "name": "Алая завеса",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/scarlet-veil.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "scarlet-veil",
+        "bloodMagic": true,
+        "resourceMode": "hitDice",
+        "expandedSpell": {
+          "key": "scarlet-veil",
+          "range": 60,
+          "min": 0,
+          "max": 0,
+          "seconds": 60,
+          "concentration": true
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Создайте неподвижную сферу багрового тумана радиусом 15 футов в пределах 60 футов. Она сильно заслоняет область. Находясь внутри, вы чувствуете точное положение кровоточащих живых существ в сфере. Это не зрение и не позволяет применять способности, требующие видеть цель.</p><p>Концентрация. Длительность: 1 минута. Сл = 8 + удвоенный бонус мастерства + модификатор Телосложения. Цена равна уровню в Костях Хитов; при нехватке действует обычная замена здоровьем. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "1",
+        "units": "minute",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "",
+          "choice": false
+        },
+        "template": {
+          "type": "radius",
+          "size": "15",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 3,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic",
+        "concentration"
+      ],
+      "activities": {
+        "1fd58d3658eddf48": {
+          "_id": "1fd58d3658eddf48",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "1",
+            "units": "minute",
+            "expiry": null,
+            "concentration": true,
+            "override": true
+          },
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "",
+              "choice": false
+            },
+            "template": {
+              "type": "radius",
+              "size": "15",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Алая завеса",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/scarlet-veil.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "scarlet-veil",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 2800000,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "55c458fcca1d130e",
+    "name": "Собор открытых ран",
+    "type": "spell",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/cathedral-of-wounds.svg",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "spellKey": "cathedral-of-wounds",
+        "bloodMagic": true,
+        "resourceMode": "hitDice",
+        "expandedSpell": {
+          "key": "cathedral-of-wounds",
+          "range": 90,
+          "min": 0,
+          "max": 0,
+          "seconds": 60,
+          "concentration": true
+        }
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>В круге радиусом 20 футов в пределах 90 футов возникают алые нити. В начале своего хода каждая живая кровоточащая цель в области совершает спасбросок Телосложения: 3к8 некротического урона при провале, половина при успехе. Некровоточащие существа не затрагиваются.</p><p>Концентрация. Длительность: 1 минута. Сл = 8 + удвоенный бонус мастерства + модификатор Телосложения. Цена равна уровню в Костях Хитов; при нехватке действует обычная замена здоровьем. Усиления от более высокой ячейки нет.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "revision": 1,
+        "rules": "2024"
+      },
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": "1",
+        "units": "minute",
+        "expiry": null
+      },
+      "target": {
+        "affects": {
+          "special": "",
+          "type": "creature",
+          "count": "",
+          "choice": false
+        },
+        "template": {
+          "type": "radius",
+          "size": "20",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": true
+        }
+      },
+      "range": {
+        "value": "90",
+        "units": "ft",
+        "special": ""
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "ability": "con",
+      "level": 5,
+      "school": "trs",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "properties": [
+        "vocal",
+        "somatic",
+        "concentration"
+      ],
+      "activities": {
+        "4a49439d524e7818": {
+          "_id": "4a49439d524e7818",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "condition": ""
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "1",
+            "units": "minute",
+            "expiry": null,
+            "concentration": true,
+            "override": true
+          },
+          "range": {
+            "value": "90",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "",
+              "choice": false
+            },
+            "template": {
+              "type": "radius",
+              "size": "20",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Собор открытых ран",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/cathedral-of-wounds.svg",
+          "behaviors": [],
+          "roll": {
+            "prompt": false,
+            "visible": false,
+            "name": "",
+            "formula": ""
+          }
+        }
+      },
+      "identifier": "cathedral-of-wounds",
+      "method": "spell",
+      "prepared": 1,
+      "sourceItem": ""
+    },
+    "sort": 2900000,
     "ownership": {
       "default": 0
     }

@@ -11,14 +11,15 @@ for(const slug of slugs)test(`${slug}: complete native activities, costs, assets
  const con=Math.floor((a.system.abilities.con.value-10)/2);assert.equal(a.system.attributes.hp.max,Math.floor(a.system.attributes.hd.max*(4.5+con)));
  assert.equal(new Set(a.items.map(i=>i._id)).size,a.items.length);
  for(const i of a.items){
-  assert.deepEqual(abilities.find(x=>x._id===i._id),i);assert.doesNotMatch(i.system.description.value,/Foundry|ведущий|вручную/i);
+  if(!i.flags[MOD]?.sourceSpellId)assert.deepEqual(abilities.find(x=>x._id===i._id),i);
+  assert.doesNotMatch(i.system.description.value,/Foundry|ведущий|вручную/i);
   for(const [key,x] of Object.entries(i.system.activities)){
-   assert.equal(key,x._id);assert.equal(x.img,i.img);assert.equal(x.consumption.spellSlot,false);
+   assert.equal(key,x._id);assert.equal(x.img,i.img);assert.equal(x.consumption.spellSlot,i.flags[MOD]?.resourceMode==='slots'&&i.system.level>0);
    if(i.system.uses.max)assert.ok(x.consumption.targets.some(t=>t.type==='itemUses'&&t.value==='1'));
-   if(x.type==='save')assert.ok(x.save.ability.length && x.save.dc.formula);
+   if(x.type==='save')assert.ok(x.save.ability.length && (x.save.dc.formula||x.save.dc.calculation==='spellcasting'));
    if(x.type==='heal')assert.ok(x.healing.types.includes('healing')||x.healing.types.includes('temphp'));
   }
-  if(slug!=='severin-velt'){assert.ok(!i.flags[MOD]?.bloodMagic);assert.ok(!i.flags[MOD]?.itemBloodCost);assert.ok(!i.flags[MOD]?.spellKey);}
+  if(slug!=='severin-velt'){assert.ok(!i.flags[MOD]?.bloodMagic);assert.ok(!i.flags[MOD]?.itemBloodCost);if(i.flags[MOD]?.spellKey)assert.equal(i.flags[MOD].resourceMode,'slots');}
  }
  for(const img of [a.img,a.prototypeToken.texture.src,...a.items.map(i=>i.img)])assert.ok(fs.existsSync(new URL('../'+img.replace(`modules/${MOD}/`,''),import.meta.url)));
 });
@@ -26,7 +27,7 @@ test('Severin keeps the unmasked portrait and blood costs, support mage has diff
  const named=actors.find(a=>a.system.identifier==='severin-velt'),ordinary=actors.find(a=>a.name==='Маг крови [Бафф-Дебафф]');
  assert.notEqual(named.img,ordinary.img);const ward=named.items.find(i=>i.system.identifier.endsWith('architect-ward'));assert.equal(ward.flags[MOD].itemBloodCost.hitDice,1);
  const barrier=named.items.find(i=>i.flags[MOD]?.spellKey==='blood-barrier');assert.equal(Object.values(barrier.system.activities)[0].uses.max,'3');
- assert.equal(named.items.find(i=>i.flags[MOD]?.spellKey==='blood-bonds').flags[MOD].spellLevel,2);
+ assert.equal(named.items.find(i=>i.flags[MOD]?.spellKey==='blood-bonds').system.level,2);
 });
 const flagged=x=>Object.assign(x,{flags:{},getFlag(m,k){return this.flags[m]?.[k];},async setFlag(m,k,v){(this.flags[m]??={})[k]=v;}});
 function harness(){

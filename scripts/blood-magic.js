@@ -33,6 +33,17 @@ async function costOf(activity,config) {
   return clamp(Math.trunc(num(spell?.system?.level)),0,9);
 }
 const paymentQueues = new Map();
+function spendAvailableDie(actor) {
+ const key=actor.uuid;
+ const result=(paymentQueues.get(key)??Promise.resolve()).catch(()=>{}).then(async()=>{
+  if(!owned(actor))throw Error('Нет прав на расход Кости Хитов');
+  const choice=chooseDice(actor,1);if(choice.missing)throw Error('Нет доступной Кости Хитов');
+  const p=choice.spent[0].pool;await p.doc.update({[p.path]:p.spent+1});return p.size;
+ });
+ paymentQueues.set(key,result);
+ const clean=()=>{if(paymentQueues.get(key)===result)paymentQueues.delete(key);};
+ result.then(clean,clean);return result;
+}
 function pay(actor,cost) {
  const key=actor.uuid;
  const result=(paymentQueues.get(key)??Promise.resolve()).catch(()=>{}).then(()=>performPayment(actor,cost));
@@ -88,6 +99,7 @@ function activityKey(activity) {
 function guardedActivity(activity) {
  const actor=activity?.item?.actor;
  if(!actor || !owned(actor))return null;
+ if(activity.item.getFlag?.(MOD,'resourceMode')==='slots')return null;
  if(isBloodNpc(actor) && (bloodCast(activity) || activity.item?.getFlag?.(MOD,"spellKey") ||
    (activity.item?.type === "spell" && activity.item?.getFlag?.(MOD,"bloodMagic"))))return {actor,item:activity.item,spell:true};
  if(activity.item?.getFlag?.(MOD,"itemBloodCost") &&
@@ -357,6 +369,6 @@ Hooks.once("ready",()=>{
  const module=game.modules.get(MOD);
  if(!module)return;
  module.api??={};
- Object.assign(module.api,{bloodMagic:{hdPools,chooseDice,pay,regain,steal,activateItemBloodCost,hitDiceSummary,setAvailableHitDice}});
- globalThis.BagrovoeBloodMagic={hdPools,chooseDice,pay,regain,steal,activateItemBloodCost,hitDiceSummary,setAvailableHitDice};
+ globalThis.BagrovoeBloodMagic={hdPools,chooseDice,pay,regain,steal,activateItemBloodCost,hitDiceSummary,setAvailableHitDice,spendAvailableDie};
+ Object.assign(module.api,{bloodMagic:globalThis.BagrovoeBloodMagic});
 });

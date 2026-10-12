@@ -5,7 +5,7 @@ import { compilePack, extractPack } from '@foundryvtt/foundryvtt-cli';
 import { organizePack } from './pack-folders.mjs';
 
 const manifest = JSON.parse(fs.readFileSync('module.json', 'utf8'));
-const expected = { 'blood-spells': 18, actors: 17, abilities: 96, relics: 7, 'iron-hounds': 8, settlements: 2, 'suigu-residents': 8 };
+const expected = { 'blood-spells': 30, actors: 17, abilities: 96, relics: 7, 'iron-hounds': 8, settlements: 2, 'suigu-residents': 8 };
 const scratch = fs.mkdtempSync(path.resolve('.build-'));
 const assetPrefix = `modules/${manifest.id}/`;
 function validate(value) {

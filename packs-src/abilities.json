@@ -11387,14 +11387,10 @@
   },
   {
     "name": "Слово утешения",
-    "type": "feat",
+    "type": "spell",
     "_id": "304d5ee4dfa1ee5e",
     "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-heal.svg",
     "system": {
-      "type": {
-        "value": "monster",
-        "subtype": ""
-      },
       "activities": {
         "ef6dd6e13e16bfff": {
           "_id": "ef6dd6e13e16bfff",
@@ -11406,18 +11402,11 @@
             "override": false
           },
           "consumption": {
+            "spellSlot": true,
             "scaling": {
               "allowed": false
             },
-            "spellSlot": false,
-            "targets": [
-              {
-                "type": "itemUses",
-                "target": "",
-                "value": "1",
-                "scaling": {}
-              }
-            ]
+            "targets": []
           },
           "description": {
             "chatFlavor": "",
@@ -11487,16 +11476,11 @@
       },
       "uses": {
         "spent": 0,
-        "max": "3",
-        "recovery": [
-          {
-            "period": "lr",
-            "type": "recoverAll"
-          }
-        ]
+        "max": "",
+        "recovery": []
       },
       "description": {
-        "value": "<p>Бонусным действием исповедник выбирает одно видимое согласное живое существо в пределах 30 футов, включая себя. Каждая цель восстанавливает 2к6 + 3 хитов. Не действует на нежить и конструктов. Три раза за продолжительный отдых.</p>",
+        "value": "<p>Бонусным действием исповедник выбирает одно видимое согласное живое существо в пределах 30 футов, включая себя. Каждая цель восстанавливает 2к6 + 3 хитов. Не действует на нежить и конструктов. </p><p>Заклинание 2-го уровня; расходует обычную ячейку. Усиления от более высокой ячейки нет.</p>",
         "chat": ""
       },
       "identifier": "bagrovyj-ispovednik-communion-mercy",
@@ -11505,16 +11489,51 @@
         "rules": "2024",
         "revision": 1
       },
-      "enchant": {},
-      "prerequisites": {
-        "level": null,
-        "repeatable": false,
-        "items": []
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "level": 2,
+      "ability": "wis",
+      "method": "spell",
+      "prepared": 1,
+      "school": "evo",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
       },
-      "properties": [],
-      "requirements": "",
-      "advancement": {},
-      "crewed": false
+      "activation": {
+        "type": "bonus",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "units": "inst",
+        "concentration": false,
+        "expiry": null
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "target": {
+        "template": {
+          "contiguous": false,
+          "units": "ft",
+          "type": "",
+          "stationary": false
+        },
+        "affects": {
+          "type": "creature",
+          "count": "1",
+          "choice": false,
+          "special": ""
+        },
+        "prompt": true
+      }
     },
     "effects": [],
     "sort": 200000,
@@ -11525,7 +11544,8 @@
           "maxTargets": 1,
           "range": 30,
           "living": true
-        }
+        },
+        "resourceMode": "slots"
       }
     },
     "folder": null,
@@ -11535,14 +11555,10 @@
   },
   {
     "name": "Малый покров",
-    "type": "feat",
+    "type": "spell",
     "_id": "f4e562a977d1ed97",
     "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-ward.svg",
     "system": {
-      "type": {
-        "value": "monster",
-        "subtype": ""
-      },
       "activities": {
         "4f22b55cb34ed53b": {
           "_id": "4f22b55cb34ed53b",
@@ -11554,18 +11570,11 @@
             "override": false
           },
           "consumption": {
+            "spellSlot": true,
             "scaling": {
               "allowed": false
             },
-            "spellSlot": false,
-            "targets": [
-              {
-                "type": "itemUses",
-                "target": "",
-                "value": "1",
-                "scaling": {}
-              }
-            ]
+            "targets": []
           },
           "description": {
             "chatFlavor": "",
@@ -11635,16 +11644,11 @@
       },
       "uses": {
         "spent": 0,
-        "max": "2",
-        "recovery": [
-          {
-            "period": "lr",
-            "type": "recoverAll"
-          }
-        ]
+        "max": "",
+        "recovery": []
       },
       "description": {
-        "value": "<p>Действием исповедник выбирает одно видимое согласное существо в пределах 30 футов, включая себя. Каждая цель получает 1к8 + 3 временных хита. Временные хиты не складываются и не останавливают кровотечение. Два раза за продолжительный отдых.</p>",
+        "value": "<p>Действием исповедник выбирает одно видимое согласное существо в пределах 30 футов, включая себя. Каждая цель получает 1к8 + 3 временных хита. Временные хиты не складываются и не останавливают кровотечение. </p><p>Заклинание 1-го уровня; расходует обычную ячейку. Усиления от более высокой ячейки нет.</p>",
         "chat": ""
       },
       "identifier": "bagrovyj-ispovednik-flock-ward",
@@ -11653,16 +11657,51 @@
         "rules": "2024",
         "revision": 1
       },
-      "enchant": {},
-      "prerequisites": {
-        "level": null,
-        "repeatable": false,
-        "items": []
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "level": 1,
+      "ability": "wis",
+      "method": "spell",
+      "prepared": 1,
+      "school": "evo",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
       },
-      "properties": [],
-      "requirements": "",
-      "advancement": {},
-      "crewed": false
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "units": "inst",
+        "concentration": false,
+        "expiry": null
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "target": {
+        "template": {
+          "contiguous": false,
+          "units": "ft",
+          "type": "",
+          "stationary": false
+        },
+        "affects": {
+          "type": "creature",
+          "count": "1",
+          "choice": false,
+          "special": ""
+        },
+        "prompt": true
+      }
     },
     "effects": [],
     "sort": 300000,
@@ -11673,7 +11712,8 @@
           "maxTargets": 1,
           "range": 30,
           "living": false
-        }
+        },
+        "resourceMode": "slots"
       }
     },
     "folder": null,
@@ -11683,14 +11723,10 @@
   },
   {
     "name": "Повеление: на колени",
-    "type": "feat",
+    "type": "spell",
     "_id": "9c33b410a8ffd938",
     "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-command.svg",
     "system": {
-      "type": {
-        "value": "monster",
-        "subtype": ""
-      },
       "activities": {
         "00c17cb99ce0bf97": {
           "_id": "00c17cb99ce0bf97",
@@ -11702,18 +11738,11 @@
             "override": false
           },
           "consumption": {
+            "spellSlot": true,
             "scaling": {
               "allowed": false
             },
-            "spellSlot": false,
-            "targets": [
-              {
-                "type": "itemUses",
-                "target": "",
-                "value": "1",
-                "scaling": {}
-              }
-            ]
+            "targets": []
           },
           "description": {
             "chatFlavor": "",
@@ -11768,8 +11797,8 @@
               "wis"
             ],
             "dc": {
-              "calculation": "",
-              "formula": "13"
+              "calculation": "spellcasting",
+              "formula": ""
             },
             "visible": true
           },
@@ -11781,16 +11810,11 @@
       },
       "uses": {
         "spent": 0,
-        "max": "3",
-        "recovery": [
-          {
-            "period": "lr",
-            "type": "recoverAll"
-          }
-        ]
+        "max": "",
+        "recovery": []
       },
       "description": {
-        "value": "<p>Одно видимое живое существо в пределах 60 футов, которое слышит и понимает жреца, совершает спасбросок Мудрости Сл 13. При провале падает ничком. Не действует на нежить и конструктов. Подняться можно по обычным правилам. Три раза за продолжительный отдых.</p>",
+        "value": "<p>Одно видимое живое существо в пределах 60 футов, которое слышит и понимает жреца, совершает спасбросок Мудрости Сл 13. При провале падает ничком. Не действует на нежить и конструктов. Подняться можно по обычным правилам. </p><p>Заклинание 1-го уровня; расходует обычную ячейку. Усиления от более высокой ячейки нет.</p>",
         "chat": ""
       },
       "identifier": "bagrovyj-ispovednik-kneel",
@@ -11799,16 +11823,51 @@
         "rules": "2024",
         "revision": 1
       },
-      "enchant": {},
-      "prerequisites": {
-        "level": null,
-        "repeatable": false,
-        "items": []
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "level": 1,
+      "ability": "wis",
+      "method": "spell",
+      "prepared": 1,
+      "school": "evo",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
       },
-      "properties": [],
-      "requirements": "",
-      "advancement": {},
-      "crewed": false
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "units": "inst",
+        "concentration": false,
+        "expiry": null
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "target": {
+        "template": {
+          "contiguous": false,
+          "units": "ft",
+          "type": "",
+          "stationary": false
+        },
+        "affects": {
+          "type": "creature",
+          "count": "1",
+          "choice": false,
+          "special": ""
+        },
+        "prompt": true
+      }
     },
     "effects": [],
     "sort": 400000,
@@ -11816,7 +11875,8 @@
       "bagrovoe-bleeding": {
         "communionFeature": true,
         "npcSave": true,
-        "communionKneel": true
+        "communionKneel": true,
+        "resourceMode": "slots"
       }
     },
     "folder": null,
@@ -12075,14 +12135,10 @@
   },
   {
     "name": "Милость Причастия",
-    "type": "feat",
+    "type": "spell",
     "_id": "ab79eb9da70e6b04",
     "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-heal.svg",
     "system": {
-      "type": {
-        "value": "monster",
-        "subtype": ""
-      },
       "activities": {
         "484af4b6ded048a7": {
           "_id": "484af4b6ded048a7",
@@ -12094,18 +12150,11 @@
             "override": false
           },
           "consumption": {
+            "spellSlot": true,
             "scaling": {
               "allowed": false
             },
-            "spellSlot": false,
-            "targets": [
-              {
-                "type": "itemUses",
-                "target": "",
-                "value": "1",
-                "scaling": {}
-              }
-            ]
+            "targets": []
           },
           "description": {
             "chatFlavor": "",
@@ -12175,16 +12224,11 @@
       },
       "uses": {
         "spent": 0,
-        "max": "3",
-        "recovery": [
-          {
-            "period": "lr",
-            "type": "recoverAll"
-          }
-        ]
+        "max": "",
+        "recovery": []
       },
       "description": {
-        "value": "<p>Бонусным действием Агата выбирает до трёх видимых согласных живых существ в пределах 30 футов, включая себя. Каждая цель восстанавливает 2к6 + 4 хитов. Не действует на нежить и конструктов. Три раза за продолжительный отдых.</p>",
+        "value": "<p>Бонусным действием Агата выбирает до трёх видимых согласных живых существ в пределах 30 футов, включая себя. Каждая цель восстанавливает 2к6 + 4 хитов. Не действует на нежить и конструктов. </p><p>Заклинание 3-го уровня; расходует обычную ячейку. Усиления от более высокой ячейки нет.</p>",
         "chat": ""
       },
       "identifier": "agata-morn-communion-mercy",
@@ -12193,16 +12237,51 @@
         "rules": "2024",
         "revision": 1
       },
-      "enchant": {},
-      "prerequisites": {
-        "level": null,
-        "repeatable": false,
-        "items": []
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "level": 3,
+      "ability": "wis",
+      "method": "spell",
+      "prepared": 1,
+      "school": "evo",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
       },
-      "properties": [],
-      "requirements": "",
-      "advancement": {},
-      "crewed": false
+      "activation": {
+        "type": "bonus",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "units": "inst",
+        "concentration": false,
+        "expiry": null
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "target": {
+        "template": {
+          "contiguous": false,
+          "units": "ft",
+          "type": "",
+          "stationary": false
+        },
+        "affects": {
+          "type": "creature",
+          "count": "3",
+          "choice": false,
+          "special": ""
+        },
+        "prompt": true
+      }
     },
     "effects": [],
     "sort": 300000,
@@ -12213,7 +12292,8 @@
           "maxTargets": 3,
           "range": 30,
           "living": true
-        }
+        },
+        "resourceMode": "slots"
       }
     },
     "folder": null,
@@ -12223,14 +12303,10 @@
   },
   {
     "name": "Покров паствы",
-    "type": "feat",
+    "type": "spell",
     "_id": "0707a6f0b3b9cf32",
     "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-ward.svg",
     "system": {
-      "type": {
-        "value": "monster",
-        "subtype": ""
-      },
       "activities": {
         "1c6f2864be568cec": {
           "_id": "1c6f2864be568cec",
@@ -12242,18 +12318,11 @@
             "override": false
           },
           "consumption": {
+            "spellSlot": true,
             "scaling": {
               "allowed": false
             },
-            "spellSlot": false,
-            "targets": [
-              {
-                "type": "itemUses",
-                "target": "",
-                "value": "1",
-                "scaling": {}
-              }
-            ]
+            "targets": []
           },
           "description": {
             "chatFlavor": "",
@@ -12323,16 +12392,11 @@
       },
       "uses": {
         "spent": 0,
-        "max": "2",
-        "recovery": [
-          {
-            "period": "lr",
-            "type": "recoverAll"
-          }
-        ]
+        "max": "",
+        "recovery": []
       },
       "description": {
-        "value": "<p>Действием Агата выбирает до трёх видимых согласных существ в пределах 30 футов, включая себя. Каждая цель получает 2к6 + 4 временных хита. Временные хиты не складываются и не останавливают кровотечение. Два раза за продолжительный отдых.</p>",
+        "value": "<p>Действием Агата выбирает до трёх видимых согласных существ в пределах 30 футов, включая себя. Каждая цель получает 2к6 + 4 временных хита. Временные хиты не складываются и не останавливают кровотечение. </p><p>Заклинание 3-го уровня; расходует обычную ячейку. Усиления от более высокой ячейки нет.</p>",
         "chat": ""
       },
       "identifier": "agata-morn-flock-ward",
@@ -12341,16 +12405,51 @@
         "rules": "2024",
         "revision": 1
       },
-      "enchant": {},
-      "prerequisites": {
-        "level": null,
-        "repeatable": false,
-        "items": []
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "level": 3,
+      "ability": "wis",
+      "method": "spell",
+      "prepared": 1,
+      "school": "evo",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
       },
-      "properties": [],
-      "requirements": "",
-      "advancement": {},
-      "crewed": false
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "units": "inst",
+        "concentration": false,
+        "expiry": null
+      },
+      "range": {
+        "value": "30",
+        "units": "ft",
+        "special": ""
+      },
+      "target": {
+        "template": {
+          "contiguous": false,
+          "units": "ft",
+          "type": "",
+          "stationary": false
+        },
+        "affects": {
+          "type": "creature",
+          "count": "3",
+          "choice": false,
+          "special": ""
+        },
+        "prompt": true
+      }
     },
     "effects": [],
     "sort": 400000,
@@ -12361,7 +12460,8 @@
           "maxTargets": 3,
           "range": 30,
           "living": false
-        }
+        },
+        "resourceMode": "slots"
       }
     },
     "folder": null,
@@ -12371,14 +12471,10 @@
   },
   {
     "name": "Повеление: на колени",
-    "type": "feat",
+    "type": "spell",
     "_id": "166ca0db217c4403",
     "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-command.svg",
     "system": {
-      "type": {
-        "value": "monster",
-        "subtype": ""
-      },
       "activities": {
         "5a39db0830a53594": {
           "_id": "5a39db0830a53594",
@@ -12390,18 +12486,11 @@
             "override": false
           },
           "consumption": {
+            "spellSlot": true,
             "scaling": {
               "allowed": false
             },
-            "spellSlot": false,
-            "targets": [
-              {
-                "type": "itemUses",
-                "target": "",
-                "value": "1",
-                "scaling": {}
-              }
-            ]
+            "targets": []
           },
           "description": {
             "chatFlavor": "",
@@ -12456,8 +12545,8 @@
               "wis"
             ],
             "dc": {
-              "calculation": "",
-              "formula": "15"
+              "calculation": "spellcasting",
+              "formula": ""
             },
             "visible": true
           },
@@ -12469,16 +12558,11 @@
       },
       "uses": {
         "spent": 0,
-        "max": "3",
-        "recovery": [
-          {
-            "period": "lr",
-            "type": "recoverAll"
-          }
-        ]
+        "max": "",
+        "recovery": []
       },
       "description": {
-        "value": "<p>Одно видимое живое существо в пределах 60 футов, которое слышит и понимает жреца, совершает спасбросок Мудрости Сл 15. При провале падает ничком. Не действует на нежить и конструктов. Подняться можно по обычным правилам. Три раза за продолжительный отдых.</p>",
+        "value": "<p>Одно видимое живое существо в пределах 60 футов, которое слышит и понимает жреца, совершает спасбросок Мудрости Сл 15. При провале падает ничком. Не действует на нежить и конструктов. Подняться можно по обычным правилам. </p><p>Заклинание 1-го уровня; расходует обычную ячейку. Усиления от более высокой ячейки нет.</p>",
         "chat": ""
       },
       "identifier": "agata-morn-kneel",
@@ -12487,16 +12571,51 @@
         "rules": "2024",
         "revision": 1
       },
-      "enchant": {},
-      "prerequisites": {
-        "level": null,
-        "repeatable": false,
-        "items": []
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "level": 1,
+      "ability": "wis",
+      "method": "spell",
+      "prepared": 1,
+      "school": "evo",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
       },
-      "properties": [],
-      "requirements": "",
-      "advancement": {},
-      "crewed": false
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "units": "inst",
+        "concentration": false,
+        "expiry": null
+      },
+      "range": {
+        "value": "60",
+        "units": "ft",
+        "special": ""
+      },
+      "target": {
+        "template": {
+          "contiguous": false,
+          "units": "ft",
+          "type": "",
+          "stationary": false
+        },
+        "affects": {
+          "type": "creature",
+          "count": "1",
+          "choice": false,
+          "special": ""
+        },
+        "prompt": true
+      }
     },
     "effects": [],
     "sort": 500000,
@@ -12504,7 +12623,8 @@
       "bagrovoe-bleeding": {
         "communionFeature": true,
         "npcSave": true,
-        "communionKneel": true
+        "communionKneel": true,
+        "resourceMode": "slots"
       }
     },
     "folder": null,
@@ -12514,14 +12634,10 @@
   },
   {
     "name": "Ектения пепла",
-    "type": "feat",
+    "type": "spell",
     "_id": "ef7e341072af0865",
     "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-censer.svg",
     "system": {
-      "type": {
-        "value": "monster",
-        "subtype": ""
-      },
       "activities": {
         "38cea0083c11561c": {
           "_id": "38cea0083c11561c",
@@ -12533,18 +12649,11 @@
             "override": false
           },
           "consumption": {
+            "spellSlot": true,
             "scaling": {
               "allowed": false
             },
-            "spellSlot": false,
-            "targets": [
-              {
-                "type": "itemUses",
-                "target": "",
-                "value": "1",
-                "scaling": {}
-              }
-            ]
+            "targets": []
           },
           "description": {
             "chatFlavor": "",
@@ -12599,8 +12708,8 @@
               "wis"
             ],
             "dc": {
-              "calculation": "",
-              "formula": "15"
+              "calculation": "spellcasting",
+              "formula": ""
             },
             "visible": true
           },
@@ -12629,16 +12738,11 @@
       },
       "uses": {
         "spent": 0,
-        "max": "2",
-        "recovery": [
-          {
-            "period": "lr",
-            "type": "recoverAll"
-          }
-        ]
+        "max": "",
+        "recovery": []
       },
       "description": {
-        "value": "<p>Каждое существо в 15-футовом конусе совершает спасбросок Мудрости Сл 15. При провале получает 22 (5к8) урона излучением, при успехе — половину. Два раза за продолжительный отдых.</p>",
+        "value": "<p>Каждое существо в 15-футовом конусе совершает спасбросок Мудрости Сл 15. При провале получает 22 (5к8) урона излучением, при успехе — половину. </p><p>Заклинание 3-го уровня; расходует обычную ячейку. Усиления от более высокой ячейки нет.</p>",
         "chat": ""
       },
       "identifier": "agata-morn-ash-litany",
@@ -12647,23 +12751,59 @@
         "rules": "2024",
         "revision": 1
       },
-      "enchant": {},
-      "prerequisites": {
-        "level": null,
-        "repeatable": false,
-        "items": []
+      "properties": [
+        "vocal",
+        "somatic"
+      ],
+      "level": 3,
+      "ability": "wis",
+      "method": "spell",
+      "prepared": 1,
+      "school": "evo",
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
       },
-      "properties": [],
-      "requirements": "",
-      "advancement": {},
-      "crewed": false
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": ""
+      },
+      "duration": {
+        "units": "inst",
+        "concentration": false,
+        "expiry": null
+      },
+      "range": {
+        "value": "",
+        "units": "self"
+      },
+      "target": {
+        "template": {
+          "type": "cone",
+          "size": "15",
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        },
+        "affects": {
+          "type": "creature",
+          "count": "",
+          "choice": false,
+          "special": ""
+        },
+        "prompt": true
+      }
     },
     "effects": [],
     "sort": 600000,
     "flags": {
       "bagrovoe-bleeding": {
         "communionFeature": true,
-        "npcSave": true
+        "npcSave": true,
+        "resourceMode": "slots"
       }
     },
     "folder": null,
