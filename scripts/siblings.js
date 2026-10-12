@@ -20,7 +20,7 @@
    await chat.setFlag(MOD,`siblingSlow.${key}`,true);
    const previous=actor.effects.filter(e=>e.getFlag(MOD,'heartBladeSlow'));
    if(previous.length)await actor.deleteEmbeddedDocuments('ActiveEffect',previous.map(e=>e.id));
-   await actor.createEmbeddedDocuments('ActiveEffect',[{name:'Клинок сердца: замедление',img:item.img,origin:item.uuid,transfer:false,disabled:false,
+   await actor.createEmbeddedDocuments('ActiveEffect',[{name:`${item.name}: замедление`,img:item.img,origin:item.uuid,transfer:false,disabled:false,
     changes:[{key:'system.attributes.movement.multiplier',mode:1,value:'0.5',priority:20}],
     flags:{[MOD]:{heartBladeSlow:true,expires:{...globalThis.BagrovoeSpellRuntime.expiry(item.actor),start:true}}}}]);
   }

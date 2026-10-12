@@ -7,7 +7,7 @@ export function category(pack,doc){
   if(pack==='suigu-residents')return doc.flags[MOD].district;
   if(pack==='settlements')return doc.flags?.[MOD]?.village?'Шаблоны поселений':'Правила и помощь';
   if(pack==='actors'){
-    if(['edrik-valter','emili-yasati'].includes(doc.flags?.[MOD]?.sourceSlug))return 'Именные персонажи';
+    if(doc.flags?.[MOD]?.namedNpc || ['edrik-valter','emili-yasati'].includes(doc.flags?.[MOD]?.sourceSlug))return 'Именные персонажи';
     return doc.system.details.type.value==='humanoid'?'Гуманоиды':'Звери и чудовища';
   }
   if(pack==='iron-hounds')return ['Родерик Варн','Марта Грейвс','Гаррет Хольм','Сайлас Вейн'].includes(doc.name)?'Командование':'Бойцы';

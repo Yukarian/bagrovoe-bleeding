@@ -10179,5 +10179,2496 @@
       }
     },
     "folder": null
+  },
+  {
+    "name": "Мультиатака",
+    "type": "feat",
+    "_id": "9ae1e878e26242d7",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p>Северин совершает две атаки Осколком печати. Одну из этих атак может заменить применением Кровавых пут или Сведения мышц, оплачивая обычную стоимость выбранного заклинания.</p>",
+        "chat": ""
+      },
+      "identifier": "severin-velt-multiattack",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Осколок печати",
+    "type": "feat",
+    "_id": "cc9b9c4007fa5b0b",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/seal-shard.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "2a4396de79986a73": {
+          "_id": "2a4396de79986a73",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Осколок печати",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/seal-shard.svg",
+          "behaviors": [],
+          "attack": {
+            "ability": "con",
+            "bonus": "",
+            "flat": false,
+            "critical": {
+              "threshold": null
+            },
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            }
+          },
+          "damage": {
+            "includeBase": false,
+            "critical": {
+              "bonus": ""
+            },
+            "parts": [
+              {
+                "number": 2,
+                "denomination": 8,
+                "bonus": "3",
+                "types": [
+                  "necrotic"
+                ],
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "scaling": {
+                  "number": 0
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p>Дальнобойная атака заклинанием: +6 к попаданию, дистанция 60 футов, одна цель. Попадание: 12 (2к8 + 3) некротического урона. Если цель уже кровоточит, её скорость уменьшается вдвое до начала следующего хода Северина. Повторные попадания не складывают замедление.</p>",
+        "chat": ""
+      },
+      "identifier": "severin-velt-seal-shard",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true,
+        "bloodMagic": true,
+        "onHitSlow": {
+          "requiresBleeding": true
+        }
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Кровавое поглощение",
+    "type": "feat",
+    "_id": "a463e7d3d870d02c",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/recovery.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p>Один раз за ход при попадании атакой магии крови по живому кровоточащему существу Северин восстанавливает 1к6 хитов. Это не восстанавливает Кости Хитов.</p>",
+        "chat": ""
+      },
+      "identifier": "severin-velt-absorption",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Багровая игла",
+    "type": "feat",
+    "_id": "4ba7e13e64caaf00",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-needle.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "d4d78a18bc62d1ed": {
+          "_id": "d4d78a18bc62d1ed",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Багровая игла",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/crimson-needle.svg",
+          "behaviors": [],
+          "attack": {
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            },
+            "ability": "con",
+            "bonus": ""
+          },
+          "damage": {
+            "critical": {
+              "bonus": ""
+            },
+            "includeBase": false,
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 2,
+                "denomination": 6,
+                "bonus": "0",
+                "types": [
+                  "necrotic"
+                ],
+                "scaling": {
+                  "number": 1
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов<br><strong>Цель:</strong> 1 существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> Мгновенно</p><p>У кончиков пальцев мага появляется тонкая алая игла. Она устремляется к противнику и, достигнув тела, нарушает течение крови в его сосудах.</p><p>Совершите дальнобойную атаку заклинанием по одному существу в пределах дистанции. При попадании цель получает <strong>2к6 некротического урона</strong> и должна совершить спасбросок Телосложения против <strong>Сл кровавой магии заклинателя</strong>. При провале она получает <strong>1 уровень кровотечения</strong>, при успехе кровотечение не накладывается. Урон от попадания не зависит от результата спасброска.</p>",
+        "chat": ""
+      },
+      "identifier": "severin-velt-crimson-needle",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 300000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "abilities": {
+          "bleed": {
+            "levels": 1,
+            "count": 1,
+            "dcFormula": "bloodExpert"
+          }
+        },
+        "bloodMagic": true,
+        "spellKey": "crimson-needle",
+        "bloodMagicAbility": true,
+        "spellLevel": 1,
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Кровавые путы",
+    "type": "feat",
+    "_id": "7dd19988a464aa70",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-bonds.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "bfb071ecba907eb9": {
+          "_id": "bfb071ecba907eb9",
+          "type": "save",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "1",
+            "units": "round",
+            "expiry": "turnEnd",
+            "override": true,
+            "concentration": false
+          },
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Кровавые путы",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-bonds.svg",
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "str"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "8 + 2 * @prof + @abilities.con.mod"
+            },
+            "visible": true
+          },
+          "damage": {
+            "parts": [],
+            "onSave": "half"
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов<br><strong>Цель:</strong> 1 живое существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> До конца следующего хода мага</p><p>Маг сжимает пальцы, словно удерживая невидимые нити. Кровь в теле противника откликается на жест, а мышцы и сухожилия внезапно застывают в напряжении.</p><p>Одно видимое живое существо в пределах дистанции совершает спасбросок Силы против <strong>Сл кровавой магии заклинателя</strong>. При провале оно получает состояние <strong>Обездвижен (Restrained)</strong> до конца следующего хода мага. При успехе ничего не происходит. Пока действует эффект, цель не обязана повторять спасбросок; состояние заканчивается автоматически в указанный момент.</p>",
+        "chat": ""
+      },
+      "identifier": "severin-velt-blood-bonds",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 400000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagic": true,
+        "spellKey": "blood-bonds",
+        "bloodMagicAbility": true,
+        "spellLevel": 2,
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Сведение мышц",
+    "type": "feat",
+    "_id": "10735141a2f860a0",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/muscle-constriction.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "31d15ef2d71f1f30": {
+          "_id": "31d15ef2d71f1f30",
+          "type": "save",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "value": "1",
+            "units": "round",
+            "expiry": "turnEnd",
+            "override": true,
+            "concentration": false
+          },
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "name": "Сведение мышц",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/muscle-constriction.svg",
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "con"
+            ],
+            "dc": {
+              "calculation": "formula",
+              "formula": "8 + 2 * @prof + @abilities.con.mod"
+            },
+            "visible": true
+          },
+          "damage": {
+            "parts": [],
+            "onSave": "half"
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p><strong>Время сотворения:</strong> 1 действие<br><strong>Дистанция:</strong> 60 футов<br><strong>Цель:</strong> 1 живое существо<br><strong>Компоненты:</strong> С (соматический жест, без материальных компонентов)<br><strong>Длительность:</strong> До конца следующего хода мага</p><p>Маг незаметным движением нарушает работу мышц цели. Конечности начинают двигаться рывками, а каждое усилие требует непривычно большого напряжения.</p><p>Одно видимое живое существо в пределах дистанции совершает спасбросок Телосложения против <strong>Сл кровавой магии заклинателя</strong>. При провале <strong>все значения скорости цели уменьшаются вдвое</strong> до конца следующего хода мага. При успехе заклинание не оказывает эффекта. Эффект не обездвиживает существо и не отнимает у него действия.</p>",
+        "chat": ""
+      },
+      "identifier": "severin-velt-muscle-constriction",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 500000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagic": true,
+        "spellKey": "muscle-constriction",
+        "bloodMagicAbility": true,
+        "spellLevel": 2,
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Кровавый барьер",
+    "type": "feat",
+    "_id": "a647c577040e460a",
+    "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-barrier.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "97d499d2ad024696": {
+          "_id": "97d499d2ad024696",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "reaction",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "activityUses",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "value": "60",
+            "units": "ft",
+            "special": "",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "special": "",
+              "type": "creature",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "max": "3",
+            "recovery": [
+              {
+                "period": "lr",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "name": "Кровавый барьер",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/spells/blood-barrier.svg",
+          "behaviors": []
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p>Реакцией на попадание атаки Северин повышает КД против этой атаки на 3, возможно превращая попадание в промах. Три раза за продолжительный отдых. Стоимость: 1 Кость Хитов; при нехватке применяется обычная замена здоровьем кровавого колдовства.</p>",
+        "chat": ""
+      },
+      "identifier": "severin-velt-blood-barrier",
+      "source": {
+        "revision": 1,
+        "rules": "2024"
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 600000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "bloodMagic": true,
+        "spellKey": "blood-barrier",
+        "bloodMagicAbility": true,
+        "spellLevel": 1,
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Печать архитектора",
+    "type": "feat",
+    "_id": "509029f51472f031",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/seal-ward.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "9e9fd611e1b95222": {
+          "_id": "9e9fd611e1b95222",
+          "type": "heal",
+          "sort": 0,
+          "activation": {
+            "type": "bonus",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": "30",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Печать архитектора",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/seal-ward.svg",
+          "behaviors": [],
+          "healing": {
+            "number": 1,
+            "denomination": 8,
+            "bonus": "4",
+            "types": [
+              "temphp"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "number": 0
+            },
+            "modifiers": []
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "3",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "description": {
+        "value": "<p>Бонусным действием Северин выбирает одно видимое согласное существо в пределах 30 футов, включая себя. Цель получает 1к8 + 4 временных хита. Северин тратит 1 Кость Хитов; при их отсутствии способность недоступна. Три раза за продолжительный отдых.</p>",
+        "chat": ""
+      },
+      "identifier": "severin-velt-architect-ward",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 700000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true,
+        "communionSupport": {
+          "maxTargets": 1,
+          "range": 30,
+          "living": false
+        },
+        "itemBloodCost": {
+          "hitDice": 1,
+          "allowHealthSubstitution": false,
+          "healthDice": 0,
+          "healthDie": 8,
+          "requireSurvival": true
+        }
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Кровавое колдовство",
+    "type": "feat",
+    "_id": "5997d386858ac8d4",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/tactics.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p>Заклинания крови Северина используют Телосложение; Сл спасбросков 17, бонус атаки +6. Стоимость заклинания равна его уровню в Костях Хитов. Каждая недостающая кость заменяется потерей 1к8 хитов, минуя временные хиты и защиты. Заговоры и Осколок печати костей не расходуют.</p>",
+        "chat": ""
+      },
+      "identifier": "severin-velt-blood-casting",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 800000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Несокрушимая вера",
+    "type": "feat",
+    "_id": "d8ca179c2c8212a7",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-faith.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p>Преимущество на спасброски против очарования и испуга. Это не иммунитет к указанным состояниям.</p>",
+        "chat": ""
+      },
+      "identifier": "bagrovyj-ispovednik-devotion",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Карающий шёпот",
+    "type": "feat",
+    "_id": "11f852e6ad53a05a",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-judgment.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "07d677d29a236199": {
+          "_id": "07d677d29a236199",
+          "type": "save",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Карающий шёпот",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-judgment.svg",
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "wis"
+            ],
+            "dc": {
+              "calculation": "",
+              "formula": "13"
+            },
+            "visible": true
+          },
+          "damage": {
+            "onSave": "none",
+            "parts": [
+              {
+                "number": 3,
+                "denomination": 8,
+                "bonus": "0",
+                "types": [
+                  "radiant"
+                ],
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "scaling": {
+                  "number": 0
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p>Одно видимое существо в пределах 60 футов совершает спасбросок Мудрости Сл 13. При провале получает 13 (3к8) урона излучением, при успехе — никакого.</p>",
+        "chat": ""
+      },
+      "identifier": "bagrovyj-ispovednik-whisper-of-judgment",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true,
+        "npcSave": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Слово утешения",
+    "type": "feat",
+    "_id": "304d5ee4dfa1ee5e",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-heal.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "ef6dd6e13e16bfff": {
+          "_id": "ef6dd6e13e16bfff",
+          "type": "heal",
+          "sort": 0,
+          "activation": {
+            "type": "bonus",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": "30",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Слово утешения",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-heal.svg",
+          "behaviors": [],
+          "healing": {
+            "number": 2,
+            "denomination": 6,
+            "bonus": "3",
+            "types": [
+              "healing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "number": 0
+            },
+            "modifiers": []
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "3",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "description": {
+        "value": "<p>Бонусным действием исповедник выбирает одно видимое согласное живое существо в пределах 30 футов, включая себя. Каждая цель восстанавливает 2к6 + 3 хитов. Не действует на нежить и конструктов. Три раза за продолжительный отдых.</p>",
+        "chat": ""
+      },
+      "identifier": "bagrovyj-ispovednik-communion-mercy",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true,
+        "communionSupport": {
+          "maxTargets": 1,
+          "range": 30,
+          "living": true
+        }
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Малый покров",
+    "type": "feat",
+    "_id": "f4e562a977d1ed97",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-ward.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "4f22b55cb34ed53b": {
+          "_id": "4f22b55cb34ed53b",
+          "type": "heal",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": "30",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Малый покров",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-ward.svg",
+          "behaviors": [],
+          "healing": {
+            "number": 1,
+            "denomination": 8,
+            "bonus": "3",
+            "types": [
+              "temphp"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "number": 0
+            },
+            "modifiers": []
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "2",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "description": {
+        "value": "<p>Действием исповедник выбирает одно видимое согласное существо в пределах 30 футов, включая себя. Каждая цель получает 1к8 + 3 временных хита. Временные хиты не складываются и не останавливают кровотечение. Два раза за продолжительный отдых.</p>",
+        "chat": ""
+      },
+      "identifier": "bagrovyj-ispovednik-flock-ward",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 300000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true,
+        "communionSupport": {
+          "maxTargets": 1,
+          "range": 30,
+          "living": false
+        }
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Повеление: на колени",
+    "type": "feat",
+    "_id": "9c33b410a8ffd938",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-command.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "00c17cb99ce0bf97": {
+          "_id": "00c17cb99ce0bf97",
+          "type": "save",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Повеление: на колени",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-command.svg",
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "wis"
+            ],
+            "dc": {
+              "calculation": "",
+              "formula": "13"
+            },
+            "visible": true
+          },
+          "damage": {
+            "onSave": "none",
+            "parts": []
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "3",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "description": {
+        "value": "<p>Одно видимое живое существо в пределах 60 футов, которое слышит и понимает жреца, совершает спасбросок Мудрости Сл 13. При провале падает ничком. Не действует на нежить и конструктов. Подняться можно по обычным правилам. Три раза за продолжительный отдых.</p>",
+        "chat": ""
+      },
+      "identifier": "bagrovyj-ispovednik-kneel",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 400000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true,
+        "npcSave": true,
+        "communionKneel": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Несокрушимая вера",
+    "type": "feat",
+    "_id": "96da37535ee71b89",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-faith.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p>Преимущество на спасброски против очарования и испуга. Это не иммунитет к указанным состояниям.</p>",
+        "chat": ""
+      },
+      "identifier": "agata-morn-devotion",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 0,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Мультиатака",
+    "type": "feat",
+    "_id": "f10100473f6e3c30",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p>Агата дважды использует Слово кары. Вместо этого может применить Ектению пепла или другую способность, требующую действия.</p>",
+        "chat": ""
+      },
+      "identifier": "agata-morn-multiattack",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 100000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Слово кары",
+    "type": "feat",
+    "_id": "bb575eebed9855fe",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-judgment.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "c221d68ed639e524": {
+          "_id": "c221d68ed639e524",
+          "type": "attack",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Слово кары",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-judgment.svg",
+          "behaviors": [],
+          "attack": {
+            "ability": "wis",
+            "bonus": "",
+            "flat": false,
+            "critical": {
+              "threshold": null
+            },
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            }
+          },
+          "damage": {
+            "includeBase": false,
+            "critical": {
+              "bonus": ""
+            },
+            "parts": [
+              {
+                "number": 2,
+                "denomination": 8,
+                "bonus": "4",
+                "types": [
+                  "radiant"
+                ],
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "scaling": {
+                  "number": 0
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "description": {
+        "value": "<p>Дальнобойная атака заклинанием: +7 к попаданию, дистанция 60 футов, одна цель. Попадание: 13 (2к8 + 4) урона излучением.</p>",
+        "chat": ""
+      },
+      "identifier": "agata-morn-word-of-judgment",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 200000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Милость Причастия",
+    "type": "feat",
+    "_id": "ab79eb9da70e6b04",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-heal.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "484af4b6ded048a7": {
+          "_id": "484af4b6ded048a7",
+          "type": "heal",
+          "sort": 0,
+          "activation": {
+            "type": "bonus",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": "30",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "3",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Милость Причастия",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-heal.svg",
+          "behaviors": [],
+          "healing": {
+            "number": 2,
+            "denomination": 6,
+            "bonus": "4",
+            "types": [
+              "healing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "number": 0
+            },
+            "modifiers": []
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "3",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "description": {
+        "value": "<p>Бонусным действием Агата выбирает до трёх видимых согласных живых существ в пределах 30 футов, включая себя. Каждая цель восстанавливает 2к6 + 4 хитов. Не действует на нежить и конструктов. Три раза за продолжительный отдых.</p>",
+        "chat": ""
+      },
+      "identifier": "agata-morn-communion-mercy",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 300000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true,
+        "communionSupport": {
+          "maxTargets": 3,
+          "range": 30,
+          "living": true
+        }
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Покров паствы",
+    "type": "feat",
+    "_id": "0707a6f0b3b9cf32",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-ward.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "1c6f2864be568cec": {
+          "_id": "1c6f2864be568cec",
+          "type": "heal",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": "30",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "3",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Покров паствы",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-ward.svg",
+          "behaviors": [],
+          "healing": {
+            "number": 2,
+            "denomination": 6,
+            "bonus": "4",
+            "types": [
+              "temphp"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "number": 0
+            },
+            "modifiers": []
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "2",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "description": {
+        "value": "<p>Действием Агата выбирает до трёх видимых согласных существ в пределах 30 футов, включая себя. Каждая цель получает 2к6 + 4 временных хита. Временные хиты не складываются и не останавливают кровотечение. Два раза за продолжительный отдых.</p>",
+        "chat": ""
+      },
+      "identifier": "agata-morn-flock-ward",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 400000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true,
+        "communionSupport": {
+          "maxTargets": 3,
+          "range": 30,
+          "living": false
+        }
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Повеление: на колени",
+    "type": "feat",
+    "_id": "166ca0db217c4403",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-command.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "5a39db0830a53594": {
+          "_id": "5a39db0830a53594",
+          "type": "save",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "override": true,
+            "value": "60",
+            "units": "ft",
+            "special": ""
+          },
+          "target": {
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "type": "",
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "1",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Повеление: на колени",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-command.svg",
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "wis"
+            ],
+            "dc": {
+              "calculation": "",
+              "formula": "15"
+            },
+            "visible": true
+          },
+          "damage": {
+            "onSave": "none",
+            "parts": []
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "3",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "description": {
+        "value": "<p>Одно видимое живое существо в пределах 60 футов, которое слышит и понимает жреца, совершает спасбросок Мудрости Сл 15. При провале падает ничком. Не действует на нежить и конструктов. Подняться можно по обычным правилам. Три раза за продолжительный отдых.</p>",
+        "chat": ""
+      },
+      "identifier": "agata-morn-kneel",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 500000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true,
+        "npcSave": true,
+        "communionKneel": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "name": "Ектения пепла",
+    "type": "feat",
+    "_id": "ef7e341072af0865",
+    "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-censer.svg",
+    "system": {
+      "type": {
+        "value": "monster",
+        "subtype": ""
+      },
+      "activities": {
+        "38cea0083c11561c": {
+          "_id": "38cea0083c11561c",
+          "type": "save",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": false
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1",
+                "scaling": {}
+              }
+            ]
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "effects": [],
+          "range": {
+            "value": "",
+            "units": "self",
+            "override": true
+          },
+          "target": {
+            "template": {
+              "type": "cone",
+              "size": "15",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            },
+            "affects": {
+              "type": "creature",
+              "count": "",
+              "choice": false,
+              "special": ""
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "name": "Ектения пепла",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "modules/bagrovoe-bleeding/assets/icons/combat/prayer-censer.svg",
+          "behaviors": [],
+          "save": {
+            "ability": [
+              "wis"
+            ],
+            "dc": {
+              "calculation": "",
+              "formula": "15"
+            },
+            "visible": true
+          },
+          "damage": {
+            "onSave": "half",
+            "parts": [
+              {
+                "number": 5,
+                "denomination": 8,
+                "bonus": "0",
+                "types": [
+                  "radiant"
+                ],
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "scaling": {
+                  "number": 0
+                },
+                "modifiers": []
+              }
+            ]
+          }
+        }
+      },
+      "uses": {
+        "spent": 0,
+        "max": "2",
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "description": {
+        "value": "<p>Каждое существо в 15-футовом конусе совершает спасбросок Мудрости Сл 15. При провале получает 22 (5к8) урона излучением, при успехе — половину. Два раза за продолжительный отдых.</p>",
+        "chat": ""
+      },
+      "identifier": "agata-morn-ash-litany",
+      "source": {
+        "book": "Мир Ортес — авторские NPC",
+        "rules": "2024",
+        "revision": 1
+      },
+      "enchant": {},
+      "prerequisites": {
+        "level": null,
+        "repeatable": false,
+        "items": []
+      },
+      "properties": [],
+      "requirements": "",
+      "advancement": {},
+      "crewed": false
+    },
+    "effects": [],
+    "sort": 600000,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "communionFeature": true,
+        "npcSave": true
+      }
+    },
+    "folder": null,
+    "ownership": {
+      "default": 0
+    }
   }
 ]

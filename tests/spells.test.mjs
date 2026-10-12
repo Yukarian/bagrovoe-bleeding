@@ -60,9 +60,9 @@ for(const [cr,save,miss,expected] of [[7,1,false,1],[7,30,false,0],[6,1,false,0]
  assert.equal(target.getFlag(MOD,'hitDiceSpent')??0,expected);assert.equal(h.actor.getFlag(MOD,'hitDiceSpent'),3-expected);
  assert.equal(h.actor.system.attributes.hp.value,miss?20:24);
 });
-test('legacy blood ability save accepts native Set and links to usage card',async()=>{
+for(const flag of ['bloodMagicAbility','npcSave'])test(`${flag} save accepts native Set and links to usage card`,async()=>{
  const h=harness();h.load('blood-magic.js');let calls=0;
- const item=flagged({actor:h.actor});await item.setFlag(MOD,'bloodMagicAbility',true);
+ const item=flagged({actor:h.actor});await item.setFlag(MOD,flag,true);
  const activity={type:'save',item,save:{ability:new Set(['con']),dc:{value:16}},messageSources:{activity:{uuid:'ability'}}};
  h.docs.set('Scene.s.Token.t',{actor:h.actor,id:'t',uuid:'Scene.s.Token.t'});
  h.actor.rollSavingThrow=async(r,d,m)=>{calls++;assert.equal(r.ability,'con');assert.equal(r.target,16);assert.equal(m.data.system.origin,'usage');return [{total:12}];};

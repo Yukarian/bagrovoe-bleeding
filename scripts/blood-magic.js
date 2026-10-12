@@ -231,7 +231,7 @@ async function autoBloodSaves(chat) {
  if(!game.user?.isGM || game.users?.activeGM?.id!==game.user.id || chat.type!=="usage")return;
  const activity=chat.getAssociatedActivity?.();
  if(activity?.item?.getFlag?.(MOD,"spellKey"))return;
- if(activity?.type!=="save" || !activity.item?.getFlag?.(MOD,"bloodMagicAbility"))return;
+ if(activity?.type!=="save" || !(activity.item?.getFlag?.(MOD,"bloodMagicAbility") || activity.item?.getFlag?.(MOD,"npcSave")))return;
  const targets=chat.system?.targets ?? [];
  if(!targets.length)return;
  const ability=Array.from(activity.save?.ability ?? [])[0];
@@ -241,6 +241,7 @@ async function autoBloodSaves(chat) {
  for(const target of targets){
    const token=await fromUuid(target.token);
    if(!token?.actor)continue;
+   if(activity.item.getFlag(MOD,'communionKneel') && (token.actor.statuses?.has('dead') || ['undead','construct'].includes(token.actor.system.details?.type?.value)))continue;
    const key=token.uuid?.replaceAll(".","_") ?? token.id;
    if(chat.getFlag(MOD,"bloodSaveResults")?.[key])continue;
    await chat.setFlag(MOD,"bloodSaveResults."+key,{pending:true});
