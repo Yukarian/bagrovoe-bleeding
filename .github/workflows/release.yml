@@ -33,6 +33,7 @@ jobs:
           node --check scripts/new-spells.js
           node --check scripts/siblings.js
           node --check scripts/villages.js
+          node --check scripts/library.mjs
           node --check scripts/village-model.mjs
           node --check scripts/village-view.mjs
           node --test tests/*.test.mjs

@@ -29,6 +29,46 @@ function harness(){
  const load=n=>vm.runInContext(fs.readFileSync(path.join(root,'scripts',n),'utf8'),ctx);
  return {ctx,hooks,docs,actor,load,notifications};
 }
+
+for(const kind of ['character','npc'])test(`Hit Die theft drains a ${kind} and restores the caster, stops at zero`,async()=>{
+ const h=harness();h.load('blood-magic.js');for(const ready of h.hooks.get('ready'))ready();
+ await h.actor.setFlag(MOD,'hitDiceSpent',3);
+ const target=harness().actor;target.type=kind;target.uuid='Actor.target';target.system.details.type.value='humanoid';
+ if(kind==='character')target.items=[{type:'class',system:{levels:2,hd:{denomination:'d10',spent:1}},async update(d){for(const [k,v] of Object.entries(d))put(this,k,v);}}];
+ else await target.setFlag(MOD,'hitDiceSpent',7);
+ assert.equal(await h.ctx.BagrovoeBloodMagic.steal(h.actor,target),1);
+ assert.equal(h.actor.getFlag(MOD,'hitDiceSpent'),2);
+ assert.equal(kind==='character'?target.items[0].system.hd.spent:target.getFlag(MOD,'hitDiceSpent'),kind==='character'?2:8);
+ assert.equal(await h.ctx.BagrovoeBloodMagic.steal(h.actor,target),0);
+ assert.equal(h.actor.getFlag(MOD,'hitDiceSpent'),2);
+});
+test('Hit Die theft excludes dead and undead targets',async()=>{
+ const h=harness();h.load('blood-magic.js');for(const ready of h.hooks.get('ready'))ready();
+ const target=harness().actor;target.system.details.type.value='undead';
+ assert.equal(await h.ctx.BagrovoeBloodMagic.steal(h.actor,target),0);
+ target.system.details.type.value='humanoid';target.statuses.add('dead');assert.equal(await h.ctx.BagrovoeBloodMagic.steal(h.actor,target),0);
+});
+for(const [cr,save,miss,expected] of [[7,1,false,1],[7,30,false,0],[6,1,false,0],[7,1,true,0]])test(`automatic theft CR ${cr}, save ${save}, miss ${miss}`,async()=>{
+ const h=harness();h.load('blood-magic.js');h.actor.system.details.cr=cr;h.actor.system.attributes.hp.value=20;await h.actor.setFlag(MOD,'hitDiceSpent',3);
+ h.ctx.game.combat={id:'combat',started:true,round:1,turn:0};
+ const target=harness().actor;target.uuid='Actor.target';target.system.details.type.value='humanoid';
+ const bleed=flagged({disabled:false});await bleed.setFlag(MOD,'bleeding',true);target.effects=[bleed];
+ target.rollSavingThrow=async()=>[{total:save}];h.docs.set('token',{actor:target,uuid:'token'});
+ const item=flagged({actor:h.actor});await item.setFlag(MOD,'bloodMagic',true);
+ const chat={id:'attack',type:'attack',getAssociatedActivity:()=>({type:'attack',item}),system:{evaluatedTargets:[{token:'token',isMiss:miss}]}};
+ await Promise.all([h.ctx.bloodAttackLifesteal(chat),h.ctx.bloodAttackLifesteal(chat)]);
+ assert.equal(target.getFlag(MOD,'hitDiceSpent')??0,expected);assert.equal(h.actor.getFlag(MOD,'hitDiceSpent'),3-expected);
+ assert.equal(h.actor.system.attributes.hp.value,miss?20:24);
+});
+test('legacy blood ability save accepts native Set and links to usage card',async()=>{
+ const h=harness();h.load('blood-magic.js');let calls=0;
+ const item=flagged({actor:h.actor});await item.setFlag(MOD,'bloodMagicAbility',true);
+ const activity={type:'save',item,save:{ability:new Set(['con']),dc:{value:16}},messageSources:{activity:{uuid:'ability'}}};
+ h.docs.set('Scene.s.Token.t',{actor:h.actor,id:'t',uuid:'Scene.s.Token.t'});
+ h.actor.rollSavingThrow=async(r,d,m)=>{calls++;assert.equal(r.ability,'con');assert.equal(r.target,16);assert.equal(m.data.system.origin,'usage');return [{total:12}];};
+ const chat=flagged({id:'usage',type:'usage',system:{targets:[{token:'Scene.s.Token.t'}]},getAssociatedActivity:()=>activity});
+ await h.ctx.autoBloodSaves(chat);await h.ctx.autoBloodSaves(chat);assert.equal(calls,1);
+});
 test('eighteen unique bundled icons, bleed flags, native healing, templates and save damage',()=>{
  assert.equal(new Set(spells.map(s=>s.img)).size,18);
  for(const s of spells)assert.ok(fs.existsSync(path.join(root,s.img.replace('modules/bagrovoe-bleeding/',''))));

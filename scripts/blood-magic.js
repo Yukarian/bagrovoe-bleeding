@@ -67,7 +67,7 @@ async function regain(actor,number=1){
 }
 async function steal(caster,target,amount=1,heal=0){
  if(!owned(caster)||!owned(target))throw Error("Для похищения ведущий должен иметь доступ к обоим актёрам");
- if(target.statuses.has("dead")||target.system.details?.type?.value==="undead")return 0;
+ if(target.statuses.has("dead")||["undead","construct"].includes(target.system.details?.type?.value))return 0;
  const pools=hdPools(target);
  let remaining=amount,stolen=0;
  for(const p of pools){const n=Math.min(remaining,Math.max(0,p.maximum-p.spent));if(n){await p.doc.update({[p.path]:p.spent+n});stolen+=n;remaining-=n;}}
@@ -179,7 +179,16 @@ function isBleeding(token){
  return Boolean(token?.actor?.effects?.some(e=>!e.disabled && e.getFlag?.(MOD,"bleeding") &&
    (!e.getFlag(MOD,"tokenUuid")||e.getFlag(MOD,"tokenUuid")===token.uuid)));
 }
-async function bloodAttackLifesteal(chat){
+const lifestealQueues = new Map();
+function bloodAttackLifesteal(chat){
+ const key=chat.getAssociatedActivity?.()?.item?.actor?.uuid;
+ if(!key)return Promise.resolve();
+ const result=(lifestealQueues.get(key)??Promise.resolve()).catch(()=>{}).then(()=>performBloodAttackLifesteal(chat));
+ lifestealQueues.set(key,result);
+ const clean=()=>{if(lifestealQueues.get(key)===result)lifestealQueues.delete(key);};
+ result.then(clean,clean);return result;
+}
+async function performBloodAttackLifesteal(chat){
  if(!game.user?.isGM || game.users?.activeGM?.id!==game.user.id || chat.type!=="attack")return;
  const activity=chat.getAssociatedActivity?.();
  if(activity?.type!=="attack")return;
@@ -196,6 +205,7 @@ async function bloodAttackLifesteal(chat){
  for(const t of targets.filter(t=>!t.isMiss)){
    const token=await fromUuid(t.token);
    if(!isBleeding(token))continue;
+   if(token.actor.statuses?.has('dead') || ['undead','construct'].includes(token.actor.system.details?.type?.value))continue;
    // Prevent double processing when chat hooks fire again.
    if(caster.getFlag(MOD,"lifestealTurn")===turnKey)return;
    await caster.setFlag(MOD,"lifestealTurn",turnKey);
@@ -218,16 +228,16 @@ async function bloodAttackLifesteal(chat){
 }
 
 async function autoBloodSaves(chat) {
- if(!game.user?.isGM || game.users?.activeGM?.id!==game.user.id)return;
+ if(!game.user?.isGM || game.users?.activeGM?.id!==game.user.id || chat.type!=="usage")return;
  const activity=chat.getAssociatedActivity?.();
  if(activity?.item?.getFlag?.(MOD,"spellKey"))return;
  if(activity?.type!=="save" || !activity.item?.getFlag?.(MOD,"bloodMagicAbility"))return;
- const targets=chat.system?.evaluatedTargets ?? [];
+ const targets=chat.system?.targets ?? [];
  if(!targets.length)return;
- const ability=activity.save?.ability?.[0];
+ const ability=Array.from(activity.save?.ability ?? [])[0];
  if(!ability)return;
  const caster=activity.item.actor;
- const dc=8 + 2*Number(caster?.system?.attributes?.prof??3)+Number(caster?.system?.abilities?.con?.mod??0);
+ const dc=Number(activity.save?.dc?.value ?? (8 + 2*Number(caster?.system?.attributes?.prof??3)+Number(caster?.system?.abilities?.con?.mod??0)));
  for(const target of targets){
    const token=await fromUuid(target.token);
    if(!token?.actor)continue;
@@ -237,7 +247,7 @@ async function autoBloodSaves(chat) {
    try {
      const result=await token.actor.rollSavingThrow(
        {ability,target:dc},{configure:false},
-       {data:{speaker:ChatMessage.getSpeaker({token})}}
+       {data:{speaker:ChatMessage.getSpeaker({token}),system:{...activity.messageSources,origin:chat.id},whisper:[...(chat.whisper??[])],blind:chat.blind}}
      );
      const total=result?.[0]?.total;
      await chat.setFlag(MOD,"bloodSaveResults."+key,{done:true,total});
