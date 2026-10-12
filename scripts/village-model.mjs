@@ -51,9 +51,13 @@ export function validate(s){
  return s;
 }
 export function stats(s){return {total:s.buildings.length,intact:s.buildings.filter(b=>b.condition==='intact').length,damaged:s.buildings.filter(b=>b.condition==='damaged').length,ruined:s.buildings.filter(b=>b.condition==='ruined').length,empty:s.buildings.filter(b=>!b.occupied).length,housed:s.buildings.reduce((n,b)=>n+b.residents,0),vacant:s.buildings.reduce((n,b)=>n+b.posts.filter(p=>!p.npcId).length,0)};}
-export function addLog(s,text){s.log.push({week:s.week,text});s.log=s.log.slice(-100);}
+export function addLog(s,text){s.log.push({week:s.week,text});const recent=new Set(s.log.filter(l=>!l.manual).slice(-100));s.log=s.log.filter(l=>l.manual||recent.has(l));}
+export function writeNote(source,id,text){
+ const value=String(text??'').trim();if(!value||value.length>10000)fail('Запись должна содержать от 1 до 10000 символов.');
+ return editVillage(source,s=>{const old=s.log.find(l=>l.id===id);if(old){if(!old.manual)fail('Системную запись нельзя изменить.');old.text=value;}else{s.log.push({id,week:s.week,text:value,manual:true});}});
+}
 export function editVillage(source,change){const next=copy(source);change(next);next.revision++;next.undo=null;return validate(next);}
-export function canWork(b){return b.condition==='intact'&&b.occupied&&b.posts.some(p=>p.npcId);}
+export function canWork(b){return b.condition==='intact'&&b.occupied&&!b.staffBlocked&&b.posts.some(p=>p.npcId);}
 export function startJob(source,buildingId,job){return editVillage(source,s=>{
  const b=s.buildings.find(b=>b.id===buildingId);if(!b)fail('Здание не найдено.');if(b.job)fail('В здании уже выполняется приказ.');if(!canWork(b))fail('Нужны целое используемое здание и назначенный работник.');
  if(job.targetId&&s.buildings.some(x=>x.job?.targetId===job.targetId))fail('На этом здании уже ведутся работы.');

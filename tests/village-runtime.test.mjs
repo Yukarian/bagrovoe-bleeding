@@ -25,4 +25,7 @@ test('settlement window actions save settings, building, NPC, staff, order, week
  fill({name:'Урожай',weeks:'1',costsupplies:'0',costmaterials:'0',costgold:'5',gainsupplies:'8',gainmaterials:'0',gaingold:'0',orderGain:'0',targetId:'',note:''});await app.command('job',b.id);assert.equal(d.state.resources.gold,45);
  await app.command('week');assert.equal(d.state.week,2);assert.equal(d.state.resources.supplies,26);assert.equal(d.state.buildings[0].job,null);
  await app.command('undo');assert.equal(d.state.week,1);assert.equal(d.state.resources.supplies,20);assert.ok(d.state.buildings[0].job);assert.deepEqual(messages,[]);
+ fill({text:'Прибыл караван.\nНужен склад.'});await app.command('note','');const note=d.state.log.find(l=>l.manual);assert.ok(note);assert.match(note.text,/\n/);
+ fill({text:'Караван разгружен.'});await app.command('note',note.id);assert.equal(d.state.log.find(l=>l.id===note.id).text,'Караван разгружен.');
+ await app.command('removeNote',note.id);assert.ok(!d.state.log.some(l=>l.id===note.id));assert.deepEqual(messages,[]);
 });

@@ -33,6 +33,7 @@ jobs:
           node --check scripts/new-spells.js
           node --check scripts/siblings.js
           node --check scripts/villages.js
+          node --check scripts/bastion-bridge.mjs
           node --check scripts/library.mjs
           node --check scripts/expanded-spells.js
           node --check scripts/spellbooks.js
