@@ -2,7 +2,7 @@
   "id": "bagrovoe-bleeding",
   "title": "Мир Ортес",
   "description": "Мир Ортес: Багровое Причастие, Железные Гончие, бестиарий, предметы и управление поселениями с упрощённым Бастионом.",
-  "version": "4.5.0",
+  "version": "4.6.0",
   "compatibility": {
     "minimum": "14.367",
     "verified": "14"
@@ -24,7 +24,8 @@
     "scripts/spellbooks.js",
     "scripts/villages.js",
     "scripts/library.mjs",
-    "scripts/key-npcs.mjs"
+    "scripts/key-npcs.mjs",
+    "scripts/tower.mjs"
   ],
   "relationships": {
     "systems": [
@@ -39,7 +40,7 @@
     ]
   },
   "manifest": "https://github.com/Yukarian/bagrovoe-bleeding/releases/latest/download/module.json",
-  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v4.5.0/bagrovoe-bleeding.zip",
+  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v4.6.0/bagrovoe-bleeding.zip",
   "url": "https://github.com/Yukarian/bagrovoe-bleeding",
   "packs": [
     {
