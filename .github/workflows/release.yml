@@ -43,6 +43,11 @@ jobs:
           node --check scripts/communion.js
           node --check scripts/village-model.mjs
           node --check scripts/village-view.mjs
+          node --check scripts/village-simple.mjs
+          node --check scripts/village-events.mjs
+          node --check scripts/ortes-date.mjs
+          node --check scripts/ortes-clock.mjs
+          node --check scripts/ortes-calendar.mjs
           node --test tests/*.test.mjs
   release:
     if: github.ref == 'refs/heads/main'
@@ -65,7 +70,7 @@ jobs:
       - name: Package module
         run: |
           mkdir -p dist/bagrovoe-bleeding
-          cp module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md NEW_NPCS.md SPELLS.md RELICS.md SIBLINGS.md FOLDERS.md SETTLEMENTS.md SUIGU.md COMMUNION_NPCS.md SPELLBOOKS.md KEY_NPCS.md TOWER_COUNCIL.md GROVE_COUNCIL.md ART_PROMPTS_GROVE.md ART_PROMPTS_TOWER.md ART_PROMPTS_KEY_NPCS.md SRD_ATTRIBUTION.md dist/bagrovoe-bleeding/
+          cp module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md NEW_NPCS.md SPELLS.md RELICS.md SIBLINGS.md FOLDERS.md SETTLEMENTS.md SETTLEMENT_EVENTS.md SUIGU.md COMMUNION_NPCS.md SPELLBOOKS.md KEY_NPCS.md TOWER_COUNCIL.md GROVE_COUNCIL.md ART_PROMPTS_GROVE.md ART_PROMPTS_TOWER.md ART_PROMPTS_KEY_NPCS.md SRD_ATTRIBUTION.md dist/bagrovoe-bleeding/
           cp -r scripts styles icons assets packs bandits dist/bagrovoe-bleeding/
           cd dist
           zip -r ../bagrovoe-bleeding.zip bagrovoe-bleeding

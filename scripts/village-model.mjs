@@ -1,3 +1,4 @@
+import {validateSimple} from './village-simple.mjs';
 // Pure settlement rules: no Foundry globals, dice or automatic calendar changes.
 export const RESOURCES={supplies:'Припасы',materials:'Материалы',gold:'Золото'};
 export const TYPES={house:'Жилой дом',tavern:'Таверна',smithy:'Кузница',temple:'Храм',clinic:'Лечебница',barracks:'Казарма',farm:'Ферма',workshop:'Мастерская',other:'Другое'};
@@ -22,6 +23,7 @@ function integer(value,label,max=100000000){number(value,label,max);if(!Number.i
 function budget(values,label){for(const k of Object.keys(RESOURCES))number(values?.[k]??0,`${label}: ${RESOURCES[k]}`);}
 function unique(list,label){const ids=new Set();for(const x of list){if(!x.id||ids.has(x.id))fail(`Повторяющийся идентификатор: ${label}.`);ids.add(x.id);}return ids;}
 export function validate(s){
+ if(s.schema===2)return validateSimple(s);
  if(s.schema!==1)fail('Неизвестная версия данных поселения.');
  if(!s.name?.trim())fail('Укажите название поселения.');
  integer(s.revision,'Версия');integer(s.week,'Неделя');integer(s.population,'Население');integer(s.order,'Порядок',5);
@@ -51,10 +53,10 @@ export function validate(s){
  return s;
 }
 export function stats(s){return {total:s.buildings.length,intact:s.buildings.filter(b=>b.condition==='intact').length,damaged:s.buildings.filter(b=>b.condition==='damaged').length,ruined:s.buildings.filter(b=>b.condition==='ruined').length,empty:s.buildings.filter(b=>!b.occupied).length,housed:s.buildings.reduce((n,b)=>n+b.residents,0),vacant:s.buildings.reduce((n,b)=>n+b.posts.filter(p=>!p.npcId).length,0)};}
-export function addLog(s,text){s.log.push({week:s.week,text});const recent=new Set(s.log.filter(l=>!l.manual).slice(-100));s.log=s.log.filter(l=>l.manual||recent.has(l));}
+export function addLog(s,text){s.log.push({week:s.week,...(s.schema===2?{day:s.calendarDay}:{}),text});if(s.schema===2)return;const recent=new Set(s.log.filter(l=>!l.manual).slice(-100));s.log=s.log.filter(l=>l.manual||recent.has(l));}
 export function writeNote(source,id,text){
  const value=String(text??'').trim();if(!value||value.length>10000)fail('Запись должна содержать от 1 до 10000 символов.');
- return editVillage(source,s=>{const old=s.log.find(l=>l.id===id);if(old){if(!old.manual)fail('Системную запись нельзя изменить.');old.text=value;}else{s.log.push({id,week:s.week,text:value,manual:true});}});
+ return editVillage(source,s=>{const old=s.log.find(l=>l.id===id);if(old){if(!old.manual)fail('Системную запись нельзя изменить.');old.text=value;}else{s.log.push({id,week:s.week,...(s.schema===2?{day:s.calendarDay}:{}),text:value,manual:true});}});
 }
 export function editVillage(source,change){const next=copy(source);change(next);next.revision++;next.undo=null;return validate(next);}
 export function canWork(b){return b.condition==='intact'&&b.occupied&&!b.staffBlocked&&b.posts.some(p=>p.npcId);}

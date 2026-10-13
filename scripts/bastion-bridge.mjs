@@ -1,3 +1,6 @@
+let simpleClock=null;
+export function enableSimpleClock(adapter){simpleClock=adapter;}
+export function nativeFacilityAdvance(...args){return nativeAdvance?.(...args);}
 import {copy,editVillage,previewWeek,addLog} from './village-model.mjs';
 const MOD='bagrovoe-bleeding';
 let commit,refresh=()=>{},nativeAdvance,nativeAll,turnQueue=Promise.resolve(),installed=false;
@@ -19,7 +22,7 @@ export function withBastionStaff(source){
  const s=copy(source),assigned=new Map();
  for(const uuid of links(s))for(const item of facilities(character(uuid)))for(const u of item.system.hirelings.value)assigned.set(u,item.name);
  for(const n of s.npcs)n.bastionJob=assigned.get(n.actorUuid)??'';
- for(const b of s.buildings)b.staffBlocked=b.posts.some(p=>s.npcs.find(n=>n.id===p.npcId)?.bastionJob);
+ for(const b of s.buildings)b.staffBlocked=s.schema!==2&&b.posts.some(p=>s.npcs.find(n=>n.id===p.npcId)?.bastionJob);
  return s;
 }
 export function linkedBastions(s){
@@ -91,7 +94,7 @@ export async function advanceVillage(doc,expected){
  });
 }
 export async function syncCalendar(){
- if(!writer()||!calendar())return;
+ if(simpleClock||!writer()||!calendar())return;
  const now=Number(game.time.worldTime),docs=journals().filter(d=>links(state(d)).length&&Number.isFinite(state(d).bastionClock)&&elapsedDays(state(d).bastionClock,now)>0);
  if(!docs.length)return;
  // Count native calendar midnights, including custom day lengths. Fallback retains fractional days.
@@ -104,6 +107,7 @@ export function installBridge(adapter){
  const b=globalThis.dnd5e?.bastion;if(!b)return;installed=true;
  nativeAdvance=b.advanceAllFacilities.bind(b);nativeAll=b.advanceAllBastions.bind(b);
  b.advanceAllFacilities=async(actor,options={})=>{
+  if(simpleClock&&!calendar()&&options.performUpdates!==false&&options.turn!==false)return simpleClock.advance(options.duration??duration());
   const doc=journals().find(d=>links(state(d)).includes(actor.uuid));
   if(!doc||options.performUpdates===false||options.turn===false||calendar())return nativeAdvance(actor,options);
   requireWriter();return enqueue(()=>runSharedTurn([doc],async()=>{
@@ -111,6 +115,7 @@ export function installBridge(adapter){
   },options.duration??duration()));
  };
  b.advanceAllBastions=async()=>{
+  if(simpleClock&&!calendar())return simpleClock.advance(duration());
   if(calendar())return nativeAll();
   const all=game.actors.filter(a=>a.system.isCharacter&&facilities(a).length),ids=new Set(all.map(a=>a.uuid)),docs=journals().filter(d=>links(state(d)).some(u=>ids.has(u)));
   if(!docs.length)return nativeAll();requireWriter();
@@ -118,7 +123,7 @@ export function installBridge(adapter){
  };
  Hooks.on('updateWorldTime',()=>{if(writer()&&calendar())void enqueue(syncCalendar).catch(report);});
  Hooks.on('updateSetting',setting=>{
-  if(!writer()||setting.key!=='dnd5e.calendarConfig')return;
+  if(simpleClock||!writer()||setting.key!=='dnd5e.calendarConfig')return;
   void enqueue(async()=>{for(const doc of journals())if(links(state(doc)).length&&state(doc).bastionCalendar!==calendar())await commit(doc,state(doc).revision,x=>editVillage(x,n=>{n.bastionClock=game.time.worldTime;n.bastionCalendar=calendar();}));}).catch(report);
  });
 }

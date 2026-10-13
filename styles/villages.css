@@ -22,3 +22,27 @@
 @media(max-width:700px){.ortes-stats{grid-template-columns:repeat(3,1fr)}.ortes-body{padding:12px}.ortes-form fieldset{grid-template-columns:1fr}}
 
 .ortes-form input[type="checkbox"]{width:18px;height:18px;min-height:0;accent-color:#c3d6ac}.ortes-form label:has(input[type="checkbox"]){display:flex;align-items:center;gap:8px}.ortes-card details{margin:8px 0}.ortes-card summary{cursor:pointer}
+
+/* Compact settlement lists and a separate campaign calendar. */
+.ortes-stats{grid-template-columns:repeat(4,minmax(95px,1fr))}
+.ortes-economy{font-size:13px;color:var(--ortes-muted)!important;margin:10px 0 20px}
+.ortes-list,.ortes-section,.ortes-house-group{border:1px solid #3d4b4e;border-radius:6px;overflow:hidden}
+.ortes-section{margin:14px 0}.ortes-section>summary,.ortes-house-group>summary{padding:12px 14px;background:#222b2e;cursor:pointer;font-weight:bold}
+.ortes-section>p,.ortes-section>.ortes-log-entry{margin:10px 14px}.ortes-section>button{margin:10px 14px}
+.ortes-row{border-bottom:1px solid #3d4b4e}.ortes-row:last-child{border-bottom:0}
+.ortes-row>summary{padding:10px 14px;cursor:pointer;display:list-item;list-style-position:inside;line-height:1.5}
+.ortes-row>summary strong{display:inline-block;min-width:38%;font-size:14px;margin-right:12px}
+.ortes-row>summary span,.ortes-row>summary em{font-size:12px;color:var(--ortes-muted);font-style:normal}
+.ortes-row>summary em{display:block;margin-left:16px}.ortes-row[open]>summary{background:#253330}
+.ortes-row-content{padding:4px 16px 14px;background:#1b2325}.ortes-row-content>p{margin:8px 0}.ortes-row-content button{margin:3px 4px 0 0}
+.ortes-row-content ul{padding-left:18px}.ortes-row-content li{margin:6px 0}.ortes-row-content li button{min-height:26px;padding:2px 8px}
+.ortes-menu{position:relative;font-size:13px;font-weight:normal;display:inline-block}
+.ortes-menu>summary{cursor:pointer;padding:6px 12px;min-height:34px;border:1px solid #758882;border-radius:4px;background:#303e41;list-style-position:inside}
+.ortes-menu[open]{display:flex;flex-wrap:wrap;gap:5px;align-items:center}.ortes-menu button{font-size:12px}
+.ortes-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:16px 0}
+.ortes-calendar-grid>b{text-align:center;color:var(--ortes-muted);font-size:12px;padding:5px}
+.ortes-calendar-grid .ortes-day{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;min-height:90px;padding:7px;background:#222b2e;border-color:#3d4b4e;text-align:left;overflow-wrap:anywhere;gap:4px}
+.ortes-calendar-grid .ortes-day.current{border:2px solid #c3d6ac;background:#2e3d35}
+.ortes-day strong{font-size:14px}.ortes-event{display:block;font-size:10px;line-height:1.25;padding:3px 4px;border-radius:3px;color:#f4f2ea;border-left:3px solid}
+.ortes-event.negative{background:#492d2d;border-color:#d9968c}.ortes-event.neutral{background:#433f26;border-color:#d0c172}.ortes-event.positive{background:#263f30;border-color:#91c894}.ortes-event.important{background:#263d4d;border-color:#8bbce0}.ortes-event.construction{background:#3b343f;border-color:#c3a5d3}
+@media(max-width:700px){.ortes-stats{grid-template-columns:repeat(2,1fr)}.ortes-row>summary strong{min-width:0;display:block}.ortes-calendar-grid .ortes-day{min-height:65px;padding:4px}.ortes-event{font-size:9px}}
