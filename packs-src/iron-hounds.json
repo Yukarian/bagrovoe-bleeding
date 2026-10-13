@@ -1,7 +1,7 @@
 [
   {
     "_id": "IHon9km400000000",
-    "name": "Рядовой Железных Гончих",
+    "name": "Разбойник-копейщик",
     "type": "npc",
     "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/soldier.png",
     "system": {
@@ -57,7 +57,10 @@
       },
       "attributes": {
         "ac": {
-          "calc": "flat",
+          "calc": "natural",
+          "calcs": [
+            "natural"
+          ],
           "flat": 16
         },
         "hp": {
@@ -92,7 +95,7 @@
           "value": 100
         },
         "biography": {
-          "value": "<h2>Железные Гончие</h2><p>Строевая выучка: один раз в ход +1к4 урона копьём, когда цель рядом с союзником.</p><p>Щитовая стойка: преимущество на спасброски от сбивания с ног при использовании щита.</p>"
+          "value": "<p>Независимый шаблон разбойника. Подходит любой банде, наёмному отряду или гарнизону. Принадлежность определяет ведущий.</p><p>Подробности боевых ролей и лагеря — в журнале «Лагерь Железных Гончих».</p>"
         }
       },
       "traits": {
@@ -112,7 +115,7 @@
         "cp": 0
       },
       "skills": {},
-      "identifier": "iron-hounds-ihon9km400000000"
+      "identifier": "bandit-soldier"
     },
     "items": [
       {
@@ -154,14 +157,19 @@
                   {
                     "number": 1,
                     "denomination": 6,
-                    "bonus": "",
+                    "bonus": "2",
                     "types": [
                       "piercing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d6+2"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -182,7 +190,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -235,14 +244,19 @@
                   {
                     "number": 1,
                     "denomination": 6,
-                    "bonus": "",
+                    "bonus": "2",
                     "types": [
                       "piercing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d6+2"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -263,7 +277,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -283,12 +298,98 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/formation.svg",
         "system": {
           "description": {
-            "value": "<p>Строевая выучка: один раз в ход +1к4 урона копьём, когда цель рядом с союзником.</p>"
+            "value": "<p>Один раз в свой ход при попадании копьём: +1к4 колющего урона, если в 5 футах от цели есть дееспособный союзник копейщика.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "3dcb65a5cf549775": {
+              "_id": "3dcb65a5cf549775",
+              "type": "damage",
+              "name": "Строевая выучка",
+              "activation": {
+                "type": "special",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "override": true,
+                "units": "spec",
+                "special": "Попавшая атака"
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "damage": {
+                "critical": {
+                  "allow": true,
+                  "bonus": ""
+                },
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 4,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ],
+                "onSave": "none"
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "49f178818ef53410"
@@ -304,14 +405,18 @@
           "type": {
             "value": "monster"
           },
-          "activities": {}
+          "activities": {},
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "b740989c0ffb96d1"
       }
     ],
     "prototypeToken": {
-      "name": "Рядовой Железных Гончих",
+      "name": "Разбойник-копейщик",
       "texture": {
         "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/soldier.png"
       },
@@ -325,14 +430,17 @@
     },
     "flags": {
       "bagrovoe-bleeding": {
-        "ironHound": true
+        "ironHound": false,
+        "contentVersion": "4.9.0",
+        "genericBandit": true,
+        "sourceSlug": "soldier"
       }
     },
     "effects": []
   },
   {
     "_id": "IHsjnr7k00000000",
-    "name": "Арбалетчик Железных Гончих",
+    "name": "Разбойник-арбалетчик",
     "type": "npc",
     "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/crossbowman.png",
     "system": {
@@ -388,7 +496,10 @@
       },
       "attributes": {
         "ac": {
-          "calc": "flat",
+          "calc": "natural",
+          "calcs": [
+            "natural"
+          ],
           "flat": 14
         },
         "hp": {
@@ -423,7 +534,7 @@
           "value": 100
         },
         "biography": {
-          "value": "<h2>Железные Гончие</h2><p>Удобная позиция: +1к4 урона дальнобойной атакой, если в свой ход не перемещался.</p><p>Прикрывающий огонь: попавшая цель не совершает атаки по возможности до начала следующего хода арбалетчика.</p>"
+          "value": "<p>Независимый шаблон разбойника. Подходит любой банде, наёмному отряду или гарнизону. Принадлежность определяет ведущий.</p><p>Подробности боевых ролей и лагеря — в журнале «Лагерь Железных Гончих».</p>"
         }
       },
       "traits": {
@@ -443,7 +554,7 @@
         "cp": 0
       },
       "skills": {},
-      "identifier": "iron-hounds-ihsjnr7k00000000"
+      "identifier": "bandit-crossbowman"
     },
     "items": [
       {
@@ -484,15 +595,20 @@
                 "parts": [
                   {
                     "number": 1,
-                    "denomination": 6,
-                    "bonus": "",
+                    "denomination": 8,
+                    "bonus": "2",
                     "types": [
                       "piercing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d8+2"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -513,7 +629,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -565,15 +682,20 @@
                 "parts": [
                   {
                     "number": 1,
-                    "denomination": 6,
-                    "bonus": "",
+                    "denomination": 4,
+                    "bonus": "2",
                     "types": [
                       "piercing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d4+2"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -594,7 +716,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -614,12 +737,98 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/aim.svg",
         "system": {
           "description": {
-            "value": "<p>Удобная позиция: +1к4 урона дальнобойной атакой, если в свой ход не перемещался.</p>"
+            "value": "<p>Один раз в свой ход при попадании арбалетом: +1к4 колющего урона, если арбалетчик ещё не перемещался в этот ход. После применения до конца хода его скорость равна 0.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "19d8157c0826cdcf": {
+              "_id": "19d8157c0826cdcf",
+              "type": "damage",
+              "name": "Удобная позиция",
+              "activation": {
+                "type": "special",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "override": true,
+                "units": "spec",
+                "special": "Попавшая атака"
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "damage": {
+                "critical": {
+                  "allow": true,
+                  "bonus": ""
+                },
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 4,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ],
+                "onSave": "none"
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "ac4fe921077e4971"
@@ -630,19 +839,24 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/crossbow.svg",
         "system": {
           "description": {
-            "value": "<p>Прикрывающий огонь: попавшая цель не совершает атаки по возможности до начала следующего хода арбалетчика.</p>"
+            "value": "<p>Один раз в свой ход после попадания арбалетом арбалетчик может подавить цель: она не совершает атак по возможности до начала следующего хода арбалетчика.</p>",
+            "chat": ""
           },
           "type": {
             "value": "monster"
           },
-          "activities": {}
+          "activities": {},
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "d07770c65c21949a"
       }
     ],
     "prototypeToken": {
-      "name": "Арбалетчик Железных Гончих",
+      "name": "Разбойник-арбалетчик",
       "texture": {
         "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/crossbowman.png"
       },
@@ -656,14 +870,17 @@
     },
     "flags": {
       "bagrovoe-bleeding": {
-        "ironHound": true
+        "ironHound": false,
+        "contentVersion": "4.9.0",
+        "genericBandit": true,
+        "sourceSlug": "crossbowman"
       }
     },
     "effects": []
   },
   {
     "_id": "IHc0tn3p00000000",
-    "name": "Разведчик Железных Гончих",
+    "name": "Разбойник-разведчик",
     "type": "npc",
     "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/scout.png",
     "system": {
@@ -719,12 +936,15 @@
       },
       "attributes": {
         "ac": {
-          "calc": "flat",
+          "calc": "natural",
+          "calcs": [
+            "natural"
+          ],
           "flat": 14
         },
         "hp": {
-          "value": 24,
-          "max": 24,
+          "value": 27,
+          "max": 27,
           "formula": "5d8+5"
         },
         "movement": {
@@ -749,12 +969,12 @@
           "subtype": "человек"
         },
         "alignment": "",
-        "cr": 0.5,
+        "cr": 1,
         "xp": {
-          "value": 100
+          "value": 200
         },
         "biography": {
-          "value": "<h2>Железные Гончие</h2><p>Ловкий отход: Отход или Рывок бонусным действием.</p><p>Точный выстрел: один раз в ход +2к6 урона при преимуществе либо при союзнике рядом с целью.</p>"
+          "value": "<p>Независимый шаблон разбойника. Подходит любой банде, наёмному отряду или гарнизону. Принадлежность определяет ведущий.</p><p>Подробности боевых ролей и лагеря — в журнале «Лагерь Железных Гончих».</p>"
         }
       },
       "traits": {
@@ -774,7 +994,7 @@
         "cp": 0
       },
       "skills": {},
-      "identifier": "iron-hounds-ihc0tn3p00000000"
+      "identifier": "bandit-scout"
     },
     "items": [
       {
@@ -816,14 +1036,19 @@
                   {
                     "number": 1,
                     "denomination": 6,
-                    "bonus": "",
+                    "bonus": "3",
                     "types": [
                       "piercing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d6+3"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -844,7 +1069,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -897,14 +1123,19 @@
                   {
                     "number": 1,
                     "denomination": 6,
-                    "bonus": "",
+                    "bonus": "3",
                     "types": [
                       "piercing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d6+3"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -925,7 +1156,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -945,12 +1177,71 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
         "system": {
           "description": {
-            "value": "<p>Ловкий отход: Отход или Рывок бонусным действием.</p>"
+            "value": "<p>Бонусным действием совершает Рывок или Отход.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "f2c97d857dadf8b7": {
+              "_id": "f2c97d857dadf8b7",
+              "type": "utility",
+              "name": "Ловкий отход",
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "5e56b1f28ff453f7"
@@ -961,19 +1252,105 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/aim.svg",
         "system": {
           "description": {
-            "value": "<p>Точный выстрел: один раз в ход +2к6 урона при преимуществе либо при союзнике рядом с целью.</p>"
+            "value": "<p>Один раз в свой ход при попадании луком или коротким мечом: +2к6 колющего урона, если есть преимущество либо дееспособный союзник в 5 футах от цели; при помехе не применяется.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "58ca09c46d7c84af": {
+              "_id": "58ca09c46d7c84af",
+              "type": "damage",
+              "name": "Точный выстрел",
+              "activation": {
+                "type": "special",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "override": true,
+                "units": "spec",
+                "special": "Попавшая атака"
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "damage": {
+                "critical": {
+                  "allow": true,
+                  "bonus": ""
+                },
+                "parts": [
+                  {
+                    "number": 2,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ],
+                "onSave": "none"
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "8edf7a01070c3f16"
       }
     ],
     "prototypeToken": {
-      "name": "Разведчик Железных Гончих",
+      "name": "Разбойник-разведчик",
       "texture": {
         "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/scout.png"
       },
@@ -987,14 +1364,17 @@
     },
     "flags": {
       "bagrovoe-bleeding": {
-        "ironHound": true
+        "ironHound": false,
+        "contentVersion": "4.9.0",
+        "genericBandit": true,
+        "sourceSlug": "scout"
       }
     },
     "effects": []
   },
   {
     "_id": "IH1p3mhwp0000000",
-    "name": "Ветеран Железных Гончих",
+    "name": "Разбойник-ветеран",
     "type": "npc",
     "img": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/veteran.png",
     "system": {
@@ -1050,7 +1430,10 @@
       },
       "attributes": {
         "ac": {
-          "calc": "flat",
+          "calc": "natural",
+          "calcs": [
+            "natural"
+          ],
           "flat": 17
         },
         "hp": {
@@ -1080,12 +1463,12 @@
           "subtype": "человек"
         },
         "alignment": "",
-        "cr": 1,
+        "cr": 2,
         "xp": {
-          "value": 200
+          "value": 450
         },
         "biography": {
-          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки мечом.</p><p>Опыт строевого боя: +1 к КД, пока в пределах 5 футов есть союзник.</p><p>Прикрывающая реакция: накладывает помеху на атаку по соседнему союзнику.</p>"
+          "value": "<p>Независимый шаблон разбойника. Подходит любой банде, наёмному отряду или гарнизону. Принадлежность определяет ведущий.</p><p>Подробности боевых ролей и лагеря — в журнале «Лагерь Железных Гончих».</p>"
         }
       },
       "traits": {
@@ -1105,7 +1488,7 @@
         "cp": 0
       },
       "skills": {},
-      "identifier": "iron-hounds-ih1p3mhwp0000000"
+      "identifier": "bandit-veteran"
     },
     "items": [
       {
@@ -1146,15 +1529,20 @@
                 "parts": [
                   {
                     "number": 1,
-                    "denomination": 6,
-                    "bonus": "",
+                    "denomination": 8,
+                    "bonus": "3",
                     "types": [
                       "slashing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d8+3"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -1175,7 +1563,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -1190,98 +1579,76 @@
         "_id": "0d5e9abd19d10308"
       },
       {
-        "name": "Алебарда",
-        "type": "weapon",
-        "img": "modules/bagrovoe-bleeding/assets/icons/combat/halberd.svg",
+        "name": "Мультиатака",
+        "type": "feat",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "description": {
-            "value": "<p>Атака +5; 1d10+3 slashing.</p>"
+            "value": "<p>Действием совершает две атаки длинным мечом.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "simpleM"
+            "value": "monster",
+            "subtype": ""
           },
-          "equipped": true,
-          "identified": true,
-          "properties": [],
           "activities": {
-            "IH1agf5al0000000": {
-              "_id": "IH1agf5al0000000",
-              "type": "attack",
-              "name": "Атака",
+            "9c9a067145588f86": {
+              "_id": "9c9a067145588f86",
+              "type": "utility",
+              "name": "Мультиатака",
               "activation": {
                 "type": "action",
                 "value": 1,
                 "override": true
               },
-              "attack": {
-                "ability": "",
-                "bonus": "5",
-                "flat": true,
-                "type": {
-                  "value": "melee",
-                  "classification": "weapon"
-                }
-              },
-              "damage": {
-                "includeBase": false,
-                "parts": [
-                  {
-                    "number": 1,
-                    "denomination": 6,
-                    "bonus": "",
-                    "types": [
-                      "slashing"
-                    ],
-                    "custom": {
-                      "enabled": true,
-                      "formula": "1d10+3"
-                    }
-                  }
-                ]
-              },
-              "range": {
-                "override": true,
-                "units": "ft",
-                "value": 10,
-                "long": null
-              },
-              "target": {
-                "override": true,
-                "affects": {
-                  "type": "creature",
-                  "count": "1"
-                }
-              },
               "consumption": {
                 "targets": [],
+                "spellSlot": false,
                 "scaling": {
                   "allowed": false
                 }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
               },
               "uses": {
                 "spent": 0,
                 "max": "",
                 "recovery": []
               },
-              "img": "modules/bagrovoe-bleeding/assets/icons/combat/halberd.svg"
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
             }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
           }
-        },
-        "effects": [],
-        "_id": "12913f31442d5305"
-      },
-      {
-        "name": "Мультиатака",
-        "type": "feat",
-        "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
-        "system": {
-          "description": {
-            "value": "<p>Мультиатака: две атаки мечом.</p>"
-          },
-          "type": {
-            "value": "monster"
-          },
-          "activities": {}
         },
         "effects": [],
         "_id": "b8d1dee87d2a9464"
@@ -1292,12 +1659,16 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/formation.svg",
         "system": {
           "description": {
-            "value": "<p>Опыт строевого боя: +1 к КД, пока в пределах 5 футов есть союзник.</p>"
+            "value": "<p>Пока в 5 футах есть дееспособный союзник, КД ветерана повышается на 1. Этот условный бонус не включён в КД 17.</p>"
           },
           "type": {
             "value": "monster"
           },
-          "activities": {}
+          "activities": {},
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "d0d2290702e4615b"
@@ -1308,19 +1679,78 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/parry.svg",
         "system": {
           "description": {
-            "value": "<p>Прикрывающая реакция: накладывает помеху на атаку по соседнему союзнику.</p>"
+            "value": "<p>Когда видимое существо атакует другого союзника в 5 футах от ветерана, ветеран со щитом реакцией накладывает помеху на эту атаку до броска.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "966401c631f97925": {
+              "_id": "966401c631f97925",
+              "type": "utility",
+              "name": "Прикрывающая реакция",
+              "activation": {
+                "type": "reaction",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "3167fa4dd1a61a45"
       }
     ],
     "prototypeToken": {
-      "name": "Ветеран Железных Гончих",
+      "name": "Разбойник-ветеран",
       "texture": {
         "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/veteran.png"
       },
@@ -1334,7 +1764,10 @@
     },
     "flags": {
       "bagrovoe-bleeding": {
-        "ironHound": true
+        "ironHound": false,
+        "contentVersion": "4.9.0",
+        "genericBandit": true,
+        "sourceSlug": "veteran"
       }
     },
     "effects": []
@@ -1347,7 +1780,7 @@
     "system": {
       "abilities": {
         "str": {
-          "value": 17,
+          "value": 16,
           "proficient": 0,
           "bonuses": {
             "check": "",
@@ -1397,7 +1830,10 @@
       },
       "attributes": {
         "ac": {
-          "calc": "flat",
+          "calc": "natural",
+          "calcs": [
+            "natural"
+          ],
           "flat": 16
         },
         "hp": {
@@ -1432,7 +1868,7 @@
           "value": 450
         },
         "biography": {
-          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки булавой.</p><p>Жестокий надсмотрщик: +1к8 урона по цели, раненой в этом раунде.</p><p>Запугивающий рёв (перезарядка 5–6): спасбросок Мудрости Сл 11 в радиусе 10 футов; помеха на следующую атаку при провале.</p><p>Толчок щитом: попадание 1к4+3 дробящего урона, Сила Сл 13 либо состояние Сбитый с ног.</p>"
+          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки булавой.</p><p>Жестокий надсмотрщик: +1к8 урона по цели, раненой в этом раунде.</p><p>Запугивающий рёв (перезарядка 5–6): спасбросок Мудрости Сл 11 в радиусе 10 футов; помеха на следующую атаку при провале.</p><p>Толчок щитом: попадание 1к4+3 дробящего урона, Сила Сл 13 либо состояние Сбитый с ног.</p><p>Подробности боевых ролей и лагеря — в журнале «Лагерь Железных Гончих».</p>"
         }
       },
       "traits": {
@@ -1461,7 +1897,8 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/mace.svg",
         "system": {
           "description": {
-            "value": "<p>Атака +5; 1d8+4 bludgeoning.</p>"
+            "value": "<p>Атака +5; урон 1d8+3 дробящий.</p>",
+            "chat": ""
           },
           "type": {
             "value": "simpleM"
@@ -1493,15 +1930,20 @@
                 "parts": [
                   {
                     "number": 1,
-                    "denomination": 6,
-                    "bonus": "",
+                    "denomination": 8,
+                    "bonus": "3",
                     "types": [
                       "bludgeoning"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d8+4"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -1522,7 +1964,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -1542,7 +1985,8 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/shield.svg",
         "system": {
           "description": {
-            "value": "<p>Атака +5; 1d4+3 bludgeoning.</p>"
+            "value": "<p>Заменяет одну атаку булавой в Мультиатаке либо применяется отдельным действием: атака щитом +5, 1к4+3 дробящего урона. При попадании цель размера Большой или меньше совершает спасбросок Силы Сл 13; при провале падает ничком. Не более одного толчка в Мультиатаке.</p>",
+            "chat": ""
           },
           "type": {
             "value": "simpleM"
@@ -1574,15 +2018,20 @@
                 "parts": [
                   {
                     "number": 1,
-                    "denomination": 6,
-                    "bonus": "",
+                    "denomination": 4,
+                    "bonus": "3",
                     "types": [
                       "bludgeoning"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d4+3"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -1603,7 +2052,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -1611,6 +2061,55 @@
                 "recovery": []
               },
               "img": "modules/bagrovoe-bleeding/assets/icons/combat/shield.svg"
+            },
+            "7bb67013eec88adc": {
+              "_id": "7bb67013eec88adc",
+              "type": "save",
+              "name": "Удержаться на ногах",
+              "activation": {
+                "type": "special",
+                "value": 1,
+                "override": true
+              },
+              "damage": {
+                "parts": [],
+                "onSave": "none"
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": 5,
+                "long": null
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "img": "modules/bagrovoe-bleeding/assets/icons/combat/shield.svg",
+              "save": {
+                "ability": [
+                  "str"
+                ],
+                "dc": {
+                  "calculation": "",
+                  "formula": "13"
+                }
+              }
             }
           }
         },
@@ -1623,12 +2122,71 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "description": {
-            "value": "<p>Мультиатака: две атаки булавой.</p>"
+            "value": "<p>Действием совершает две атаки тяжёлой булавой; одну из них может заменить Толчком щитом.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "f06fad017821c21b": {
+              "_id": "f06fad017821c21b",
+              "type": "utility",
+              "name": "Мультиатака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "bf32a840fd54d9a7"
@@ -1639,47 +2197,205 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/menace.svg",
         "system": {
           "description": {
-            "value": "<p>Жестокий надсмотрщик: +1к8 урона по цели, раненой в этом раунде.</p>"
+            "value": "<p>Один раз в свой ход при попадании булавой по цели, которая уже получила урон после начала текущего раунда: +1к8 дробящего урона.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "9e59bf6a1380fb79": {
+              "_id": "9e59bf6a1380fb79",
+              "type": "damage",
+              "name": "Жестокий надсмотрщик",
+              "activation": {
+                "type": "special",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "override": true,
+                "units": "spec",
+                "special": "Попавшая атака"
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "damage": {
+                "critical": {
+                  "allow": true,
+                  "bonus": ""
+                },
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 8,
+                    "bonus": "",
+                    "types": [
+                      "bludgeoning"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ],
+                "onSave": "none"
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "54e34720b465389f"
       },
       {
-        "name": "Запугивающий рёв (перезарядка 5–6)",
+        "name": "Запугивающий рёв",
         "type": "feat",
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/menace.svg",
         "system": {
           "description": {
-            "value": "<p>Запугивающий рёв (перезарядка 5–6): спасбросок Мудрости Сл 11 в радиусе 10 футов; помеха на следующую атаку при провале.</p>"
+            "value": "<p>Действием: выбранные враги в 10 футах, слышащие Гаррета, совершают спасбросок Мудрости Сл 12. При провале — помеха на следующую атаку до конца их следующего хода. Перезарядка 5–6.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "755919602057b138": {
+              "_id": "755919602057b138",
+              "type": "save",
+              "name": "Запугивающий рёв",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "target": "",
+                    "value": "1"
+                  }
+                ],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "override": true,
+                "prompt": true,
+                "affects": {
+                  "type": "enemy",
+                  "count": ""
+                },
+                "template": {
+                  "type": "radius",
+                  "size": "10",
+                  "units": "ft"
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "save": {
+                "ability": [
+                  "wis"
+                ],
+                "dc": {
+                  "calculation": "",
+                  "formula": "12"
+                }
+              },
+              "damage": {
+                "parts": [],
+                "onSave": "none"
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "1",
+            "recovery": [
+              {
+                "period": "recharge",
+                "type": "recoverAll",
+                "formula": "5"
+              }
+            ]
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "5bc715a6aaf5376a"
-      },
-      {
-        "name": "Толчок щитом",
-        "type": "feat",
-        "img": "modules/bagrovoe-bleeding/assets/icons/combat/shield.svg",
-        "system": {
-          "description": {
-            "value": "<p>Толчок щитом: попадание 1к4+3 дробящего урона, Сила Сл 13 либо состояние Сбитый с ног.</p>"
-          },
-          "type": {
-            "value": "monster"
-          },
-          "activities": {}
-        },
-        "effects": [],
-        "_id": "e662e3b7ef1ff4c3"
       }
     ],
     "prototypeToken": {
@@ -1688,7 +2404,7 @@
         "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/garret-holm.png"
       },
       "disposition": -1,
-      "actorLink": false,
+      "actorLink": true,
       "width": 1,
       "height": 1,
       "bar1": {
@@ -1697,7 +2413,10 @@
     },
     "flags": {
       "bagrovoe-bleeding": {
-        "ironHound": true
+        "ironHound": true,
+        "contentVersion": "4.9.0",
+        "genericBandit": false,
+        "sourceSlug": "garret-holm"
       }
     },
     "effects": []
@@ -1760,7 +2479,10 @@
       },
       "attributes": {
         "ac": {
-          "calc": "flat",
+          "calc": "natural",
+          "calcs": [
+            "natural"
+          ],
           "flat": 15
         },
         "hp": {
@@ -1795,7 +2517,7 @@
           "value": 450
         },
         "biography": {
-          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки арбалетом или кинжалом.</p><p>Хитрый отход: Отход или Засада бонусным действием.</p><p>Выверенный выстрел: +3к6 урона один раз в ход при преимуществе или при союзнике рядом с целью.</p><p>Скользкий шаг (реакция): отступление на половину скорости после приближения противника.</p>"
+          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки арбалетом или кинжалом.</p><p>Хитрый отход: Отход или Засада бонусным действием.</p><p>Выверенный выстрел: +3к6 урона один раз в ход при преимуществе или при союзнике рядом с целью.</p><p>Скользкий шаг (реакция): отступление на половину скорости после приближения противника.</p><p>Подробности боевых ролей и лагеря — в журнале «Лагерь Железных Гончих».</p>"
         }
       },
       "traits": {
@@ -1857,14 +2579,19 @@
                   {
                     "number": 1,
                     "denomination": 6,
-                    "bonus": "",
+                    "bonus": "3",
                     "types": [
                       "piercing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d6+3"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -1885,7 +2612,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -1937,15 +2665,20 @@
                 "parts": [
                   {
                     "number": 1,
-                    "denomination": 6,
-                    "bonus": "",
+                    "denomination": 4,
+                    "bonus": "3",
                     "types": [
                       "piercing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d4+3"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -1966,7 +2699,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -1986,12 +2720,71 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "description": {
-            "value": "<p>Мультиатака: две атаки арбалетом или кинжалом.</p>"
+            "value": "<p>Действием совершает две атаки ручным арбалетом или кинжалом в любой комбинации.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "65ce6100107752c9": {
+              "_id": "65ce6100107752c9",
+              "type": "utility",
+              "name": "Мультиатака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "0fbed02264bc36ef"
@@ -2002,12 +2795,71 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
         "system": {
           "description": {
-            "value": "<p>Хитрый отход: Отход или Засада бонусным действием.</p>"
+            "value": "<p>Бонусным действием совершает Отход или Засаду.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "94db69b42bf4413d": {
+              "_id": "94db69b42bf4413d",
+              "type": "utility",
+              "name": "Хитрый отход",
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "e7ce9b6e4d66ab27"
@@ -2018,28 +2870,173 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/aim.svg",
         "system": {
           "description": {
-            "value": "<p>Выверенный выстрел: +3к6 урона один раз в ход при преимуществе или при союзнике рядом с целью.</p>"
+            "value": "<p>Один раз в свой ход при попадании ручным арбалетом или кинжалом: +3к6 колющего урона, если есть преимущество либо дееспособный союзник в 5 футах от цели; при помехе не применяется.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "1e6fce42e9d5d839": {
+              "_id": "1e6fce42e9d5d839",
+              "type": "damage",
+              "name": "Выверенный выстрел",
+              "activation": {
+                "type": "special",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "override": true,
+                "units": "spec",
+                "special": "Попавшая атака"
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "damage": {
+                "critical": {
+                  "allow": true,
+                  "bonus": ""
+                },
+                "parts": [
+                  {
+                    "number": 3,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ],
+                "onSave": "none"
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "0ede2c42b5d50786"
       },
       {
-        "name": "Скользкий шаг (реакция)",
+        "name": "Скользкий шаг",
         "type": "feat",
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/pursuit.svg",
         "system": {
           "description": {
-            "value": "<p>Скользкий шаг (реакция): отступление на половину скорости после приближения противника.</p>"
+            "value": "<p>Когда видимый враг завершает перемещение в 5 футах от Сайласа, тот реакцией перемещается на 15 футов без атак по возможности.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "55a98ae89cd2bf60": {
+              "_id": "55a98ae89cd2bf60",
+              "type": "utility",
+              "name": "Скользкий шаг",
+              "activation": {
+                "type": "reaction",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "c14f21c351ac1ee5"
@@ -2051,7 +3048,7 @@
         "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/silas-vein.png"
       },
       "disposition": -1,
-      "actorLink": false,
+      "actorLink": true,
       "width": 1,
       "height": 1,
       "bar1": {
@@ -2060,7 +3057,10 @@
     },
     "flags": {
       "bagrovoe-bleeding": {
-        "ironHound": true
+        "ironHound": true,
+        "contentVersion": "4.9.0",
+        "genericBandit": false,
+        "sourceSlug": "silas-vein"
       }
     },
     "effects": []
@@ -2123,12 +3123,15 @@
       },
       "attributes": {
         "ac": {
-          "calc": "flat",
+          "calc": "natural",
+          "calcs": [
+            "natural"
+          ],
           "flat": 18
         },
         "hp": {
-          "value": 68,
-          "max": 68,
+          "value": 67,
+          "max": 67,
           "formula": "9d8+27"
         },
         "movement": {
@@ -2158,7 +3161,7 @@
           "value": 700
         },
         "biography": {
-          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки длинным мечом.</p><p>Стена щитов: союзникам в 5 футах +1 к КД против дальнобойных атак.</p><p>Верная защитница (реакция): меняется местами с соседним союзником, принимая атаку на себя.</p><p>Командный окрик (перезарядка 5–6): два союзника в 30 футах перемещаются на половину скорости без провоцирования атак.</p>"
+          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки длинным мечом.</p><p>Стена щитов: союзникам в 5 футах +1 к КД против дальнобойных атак.</p><p>Верная защитница (реакция): меняется местами с соседним союзником, принимая атаку на себя.</p><p>Командный окрик (перезарядка 5–6): два союзника в 30 футах перемещаются на половину скорости без провоцирования атак.</p><p>Подробности боевых ролей и лагеря — в журнале «Лагерь Железных Гончих».</p>"
         }
       },
       "traits": {
@@ -2187,7 +3190,8 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "description": {
-            "value": "<p>Атака +5; 1d8+3 slashing.</p>"
+            "value": "<p>Атака +5; урон 2d8+3 рубящий.</p>",
+            "chat": ""
           },
           "type": {
             "value": "simpleM"
@@ -2218,16 +3222,21 @@
                 "includeBase": false,
                 "parts": [
                   {
-                    "number": 1,
-                    "denomination": 6,
-                    "bonus": "",
+                    "number": 2,
+                    "denomination": 8,
+                    "bonus": "3",
                     "types": [
                       "slashing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d8+3"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -2248,7 +3257,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -2268,12 +3278,71 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "description": {
-            "value": "<p>Мультиатака: две атаки длинным мечом.</p>"
+            "value": "<p>Действием совершает две атаки длинным мечом. Усиленный урон отражает выучку Марты, а не магическое оружие.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "cb12b41f203a9750": {
+              "_id": "cb12b41f203a9750",
+              "type": "utility",
+              "name": "Мультиатака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "cffefc393b216058"
@@ -2284,44 +3353,178 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/formation.svg",
         "system": {
           "description": {
-            "value": "<p>Стена щитов: союзникам в 5 футах +1 к КД против дальнобойных атак.</p>"
+            "value": "<p>Пока Марта дееспособна и держит щит, другие союзники в 5 футах получают +1 КД против дальнобойных атак. Несколько таких черт не складываются.</p>"
           },
           "type": {
             "value": "monster"
           },
-          "activities": {}
+          "activities": {},
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "508fe34896fefde7"
       },
       {
-        "name": "Верная защитница (реакция)",
+        "name": "Верная защитница",
         "type": "feat",
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/parry.svg",
         "system": {
           "description": {
-            "value": "<p>Верная защитница (реакция): меняется местами с соседним союзником, принимая атаку на себя.</p>"
+            "value": "<p>Когда союзник в 5 футах становится целью атаки, до броска Марта может реакцией поменяться с ним местами и стать целью этой атаки. Обоим нужны доступные клетки и возможность двигаться.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "f3aa39a7bc27e605": {
+              "_id": "f3aa39a7bc27e605",
+              "type": "utility",
+              "name": "Верная защитница",
+              "activation": {
+                "type": "reaction",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "965ce053eb22d587"
       },
       {
-        "name": "Командный окрик (перезарядка 5–6)",
+        "name": "Командный окрик",
         "type": "feat",
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/command.svg",
         "system": {
           "description": {
-            "value": "<p>Командный окрик (перезарядка 5–6): два союзника в 30 футах перемещаются на половину скорости без провоцирования атак.</p>"
+            "value": "<p>Бонусным действием выбирает до двух слышащих союзников в 30 футах. Каждый может потратить реакцию и переместиться на половину скорости без атак по возможности. Перезарядка 5–6.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "ec276e6689e9a3af": {
+              "_id": "ec276e6689e9a3af",
+              "type": "utility",
+              "name": "Командный окрик",
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "target": "",
+                    "value": "1"
+                  }
+                ],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "1",
+            "recovery": [
+              {
+                "period": "recharge",
+                "type": "recoverAll",
+                "formula": "5"
+              }
+            ]
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "91bef5f690db4d98"
@@ -2333,7 +3536,7 @@
         "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/marta-greivs.png"
       },
       "disposition": -1,
-      "actorLink": false,
+      "actorLink": true,
       "width": 1,
       "height": 1,
       "bar1": {
@@ -2342,7 +3545,10 @@
     },
     "flags": {
       "bagrovoe-bleeding": {
-        "ironHound": true
+        "ironHound": true,
+        "contentVersion": "4.9.0",
+        "genericBandit": false,
+        "sourceSlug": "marta-greivs"
       }
     },
     "effects": []
@@ -2405,7 +3611,10 @@
       },
       "attributes": {
         "ac": {
-          "calc": "flat",
+          "calc": "natural",
+          "calcs": [
+            "natural"
+          ],
           "flat": 18
         },
         "hp": {
@@ -2440,7 +3649,7 @@
           "value": 2300
         },
         "biography": {
-          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки длинным мечом.</p><p>Закалённый командир: преимущество против Испуга.</p><p>Железная дисциплина: выбранным союзникам в 30 футах +1 к спасброскам против Испуга и Очарования.</p><p>Боевой расчёт: один раз в ход +1к8 урона по цели рядом с союзником Родерика.</p><p>Командный приказ (перезарядка 5–6): два союзника в 60 футах используют реакции, чтобы атаковать или переместиться на половину скорости.</p><p>Боевой натиск (1/день): лечение 1к10+11 хитов.</p><p>Парирование (реакция): +3 КД против одной рукопашной атаки.</p>"
+          "value": "<h2>Железные Гончие</h2><p>Мультиатака: две атаки длинным мечом.</p><p>Закалённый командир: преимущество против Испуга.</p><p>Железная дисциплина: выбранным союзникам в 30 футах +1 к спасброскам против Испуга и Очарования.</p><p>Боевой расчёт: один раз в ход +1к8 урона по цели рядом с союзником Родерика.</p><p>Командный приказ (перезарядка 5–6): два союзника в 60 футах используют реакции, чтобы атаковать или переместиться на половину скорости.</p><p>Боевой натиск (1/день): лечение 1к10+11 хитов.</p><p>Парирование (реакция): +3 КД против одной рукопашной атаки.</p><p>Подробности боевых ролей и лагеря — в журнале «Лагерь Железных Гончих».</p>"
         }
       },
       "traits": {
@@ -2469,7 +3678,8 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/sword.svg",
         "system": {
           "description": {
-            "value": "<p>Атака +7; 1d10+4 slashing.</p>"
+            "value": "<p>Атака +7; урон 2d8+4 рубящий.</p>",
+            "chat": ""
           },
           "type": {
             "value": "simpleM"
@@ -2500,16 +3710,21 @@
                 "includeBase": false,
                 "parts": [
                   {
-                    "number": 1,
-                    "denomination": 6,
-                    "bonus": "",
+                    "number": 2,
+                    "denomination": 8,
+                    "bonus": "4",
                     "types": [
                       "slashing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d10+4"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -2530,7 +3745,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -2582,15 +3798,20 @@
                 "parts": [
                   {
                     "number": 1,
-                    "denomination": 6,
-                    "bonus": "",
+                    "denomination": 10,
+                    "bonus": "2",
                     "types": [
                       "piercing"
                     ],
                     "custom": {
-                      "enabled": true,
-                      "formula": "1d10+2"
-                    }
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
                   }
                 ]
               },
@@ -2611,7 +3832,8 @@
                 "targets": [],
                 "scaling": {
                   "allowed": false
-                }
+                },
+                "spellSlot": false
               },
               "uses": {
                 "spent": 0,
@@ -2631,12 +3853,71 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/multiattack.svg",
         "system": {
           "description": {
-            "value": "<p>Мультиатака: две атаки длинным мечом.</p>"
+            "value": "<p>Действием совершает три атаки длинным мечом или две атаки тяжёлым арбалетом. Усиленный урон мечом отражает боевую выучку, а не магическое оружие.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "95a3cbb4260c2ee1": {
+              "_id": "95a3cbb4260c2ee1",
+              "type": "utility",
+              "name": "Мультиатака",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "d29c8cd9d1daad4f"
@@ -2652,7 +3933,11 @@
           "type": {
             "value": "monster"
           },
-          "activities": {}
+          "activities": {},
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "d0f5b1d39696b7ca"
@@ -2663,12 +3948,16 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/formation.svg",
         "system": {
           "description": {
-            "value": "<p>Железная дисциплина: выбранным союзникам в 30 футах +1 к спасброскам против Испуга и Очарования.</p>"
+            "value": "<p>Пока Родерик дееспособен, слышащие его союзники в 30 футах получают +1 к спасброскам против испуга и очарования.</p>"
           },
           "type": {
             "value": "monster"
           },
-          "activities": {}
+          "activities": {},
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "0e6ce3e1ab7db602"
@@ -2679,60 +3968,363 @@
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/tactics.svg",
         "system": {
           "description": {
-            "value": "<p>Боевой расчёт: один раз в ход +1к8 урона по цели рядом с союзником Родерика.</p>"
+            "value": "<p>Один раз в свой ход при попадании мечом: +1к8 рубящего урона, если в 5 футах от цели есть дееспособный союзник Родерика.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "cf6cb719bbb533e2": {
+              "_id": "cf6cb719bbb533e2",
+              "type": "damage",
+              "name": "Боевой расчёт",
+              "activation": {
+                "type": "special",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "override": true,
+                "units": "spec",
+                "special": "Попавшая атака"
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "damage": {
+                "critical": {
+                  "allow": true,
+                  "bonus": ""
+                },
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 8,
+                    "bonus": "",
+                    "types": [
+                      "slashing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ],
+                "onSave": "none"
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "ac3064ddf33e6329"
       },
       {
-        "name": "Командный приказ (перезарядка 5–6)",
+        "name": "Командный приказ",
         "type": "feat",
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/command.svg",
         "system": {
           "description": {
-            "value": "<p>Командный приказ (перезарядка 5–6): два союзника в 60 футах используют реакции, чтобы атаковать или переместиться на половину скорости.</p>"
+            "value": "<p>Бонусным действием выбирает до двух слышащих союзников в 60 футах. Каждый тратит реакцию на одну атаку оружием или перемещение на половину скорости без атак по возможности. Мультиатака не разрешена. Перезарядка 5–6.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "92b311c1fb715607": {
+              "_id": "92b311c1fb715607",
+              "type": "utility",
+              "name": "Командный приказ",
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "target": "",
+                    "value": "1"
+                  }
+                ],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "1",
+            "recovery": [
+              {
+                "period": "recharge",
+                "type": "recoverAll",
+                "formula": "5"
+              }
+            ]
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "80b44d4a1c26dca3"
       },
       {
-        "name": "Боевой натиск (1/день)",
+        "name": "Боевой натиск",
         "type": "feat",
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/recovery.svg",
         "system": {
           "description": {
-            "value": "<p>Боевой натиск (1/день): лечение 1к10+11 хитов.</p>"
+            "value": "<p>Бонусным действием восстанавливает 1к10+11 хитов. Один раз за продолжительный отдых.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "2df2af3128d44b52": {
+              "_id": "2df2af3128d44b52",
+              "type": "heal",
+              "name": "Боевой натиск",
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "target": "",
+                    "value": "1"
+                  }
+                ],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "healing": {
+                "number": 1,
+                "denomination": 10,
+                "bonus": "11",
+                "types": [
+                  "healing"
+                ],
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "scaling": {
+                  "mode": "",
+                  "number": 0
+                },
+                "modifiers": []
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "1",
+            "recovery": [
+              {
+                "period": "lr",
+                "type": "recoverAll"
+              }
+            ]
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "eac31255eff0b971"
       },
       {
-        "name": "Парирование (реакция)",
+        "name": "Парирование",
         "type": "feat",
         "img": "modules/bagrovoe-bleeding/assets/icons/combat/parry.svg",
         "system": {
           "description": {
-            "value": "<p>Парирование (реакция): +3 КД против одной рукопашной атаки.</p>"
+            "value": "<p>Когда видимый противник попадает по Родерику рукопашной атакой, Родерик с мечом реакцией повышает КД против этой атаки на 3, что может превратить попадание в промах.</p>",
+            "chat": ""
           },
           "type": {
-            "value": "monster"
+            "value": "monster",
+            "subtype": ""
           },
-          "activities": {}
+          "activities": {
+            "5978e95053344bdc": {
+              "_id": "5978e95053344bdc",
+              "type": "utility",
+              "name": "Парирование",
+              "activation": {
+                "type": "reaction",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "self",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "self",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": false,
+                "override": true
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          },
+          "uses": {
+            "spent": 0,
+            "max": "",
+            "recovery": []
+          },
+          "source": {
+            "book": "Мир Ортес — авторские разбойники",
+            "rules": "2024"
+          }
         },
         "effects": [],
         "_id": "09813314e0b59a84"
@@ -2744,7 +4336,7 @@
         "src": "modules/bagrovoe-bleeding/assets/tokens/iron-hounds/roderik-varn.png"
       },
       "disposition": -1,
-      "actorLink": false,
+      "actorLink": true,
       "width": 1,
       "height": 1,
       "bar1": {
@@ -2753,7 +4345,10 @@
     },
     "flags": {
       "bagrovoe-bleeding": {
-        "ironHound": true
+        "ironHound": true,
+        "contentVersion": "4.9.0",
+        "genericBandit": false,
+        "sourceSlug": "roderik-varn"
       }
     },
     "effects": []

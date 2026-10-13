@@ -21,11 +21,11 @@ test('Iron Hounds are a separate native roster with stable embedded IDs and atta
  assert.equal(actors.length,8);assert.equal(actors.find(a=>a.name==='Родерик Варн').system.details.cr,6);
  assert.equal(new Set(actors.map(a=>a._id)).size,8);
  for(const a of actors){
-  assert.equal(a.flags['bagrovoe-bleeding'].ironHound,true);
+  assert.equal(a.flags['bagrovoe-bleeding'].ironHound,!a.flags['bagrovoe-bleeding'].genericBandit);
   assert.equal(new Set(a.items.map(i=>i._id)).size,a.items.length);
   for(const i of a.items){assert.match(i._id,/^[a-z0-9]{16}$/);for(const activity of Object.values(i.system.activities)){
-   assert.equal(activity.type,'attack');assert.equal(activity.attack.flat,true);assert.ok(Number(activity.attack.bonus)>0);
-   assert.match(activity.damage.parts[0].custom.formula,/^\d+d\d+\+\d+$/);
+   if(activity.type!=='attack')continue;assert.equal(activity.attack.flat,true);assert.ok(Number(activity.attack.bonus)>0);
+   assert.ok(activity.damage.parts[0].number>0);assert.ok(activity.damage.parts[0].denomination>=4);assert.equal(activity.damage.parts[0].custom.enabled,false);
   }}
  }
 });

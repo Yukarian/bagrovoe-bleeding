@@ -6,12 +6,13 @@ const rarities={common:'Обычные',uncommon:'Необычные',rare:'Ре
 export function category(pack,doc){
   if(pack==='key-npcs')return doc.flags[MOD].category;
   if(pack==='suigu-residents')return doc.flags[MOD].district;
+  if(pack==='settlements'&&doc.flags?.[MOD]?.adventure)return 'Приключения';
   if(pack==='settlements')return doc.flags?.[MOD]?.village?'Шаблоны поселений':'Правила и помощь';
   if(pack==='actors'){
     if(doc.flags?.[MOD]?.namedNpc || ['edrik-valter','emili-yasati'].includes(doc.flags?.[MOD]?.sourceSlug))return 'Именные персонажи';
     return doc.system.details.type.value==='humanoid'?'Гуманоиды':'Звери и чудовища';
   }
-  if(pack==='iron-hounds')return ['Родерик Варн','Марта Грейвс','Гаррет Хольм','Сайлас Вейн'].includes(doc.name)?'Командование':'Бойцы';
+  if(pack==='iron-hounds')return ['Родерик Варн','Марта Грейвс','Гаррет Хольм','Сайлас Вейн'].includes(doc.name)?'Командование':'Разбойники — универсальные';
   if(pack==='blood-spells')return Number(doc.system.level)===0?'Заговоры':`${doc.system.level} уровень`;
   if(pack==='relics')return rarities[doc.system.rarities?.[0]]??'Прочие предметы';
   if(pack==='abilities'){
