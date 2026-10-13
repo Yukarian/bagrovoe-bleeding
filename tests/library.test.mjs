@@ -16,10 +16,10 @@ function harness(isGM=true) {
 }
 test('existing world permissions close both player roles; legacy folder moves beneath Ortes and unrelated packs survive',async()=>{
   const h=harness();await h.ctx.configureLibrary();
-  assert.equal(h.writes.length,7);for(const p of h.packs.slice(0,7)){assert.equal(p.ownership.PLAYER,'NONE');assert.equal(p.ownership.TRUSTED,'NONE');}
+  assert.equal(h.writes.length,manifest.packs.length);for(const p of h.packs.slice(0,manifest.packs.length)){assert.equal(p.ownership.PLAYER,'NONE');assert.equal(p.ownership.TRUSTED,'NONE');}
   const root=h.folders.find(f=>f.name==='Мир Ортес');assert.equal(h.old.folder,root.id);
-  assert.equal(h.packs.at(-1).ownership.PLAYER,'OBSERVER');assert.equal(h.packs.at(-1).folder.name,'Other');assert.equal(h.version(),1);
-  const count=h.folders.length;await h.ctx.configureLibrary();assert.equal(h.folders.length,count);assert.equal(h.writes.length,7);
+  assert.equal(h.packs.at(-1).ownership.PLAYER,'OBSERVER');assert.equal(h.packs.at(-1).folder.name,'Other');assert.equal(h.version(),2);
+  const count=h.folders.length;await h.ctx.configureLibrary();assert.equal(h.folders.length,count);assert.equal(h.writes.length,manifest.packs.length);
 });
 test('player session cannot configure libraries',async()=>{const h=harness(false);await h.ctx.configureLibrary();assert.equal(h.writes.length,0);assert.equal(h.version(),0);});
 test('every shipped pack denies PLAYER and TRUSTED',()=>{for(const p of manifest.packs){assert.equal(p.ownership.PLAYER,'NONE');assert.equal(p.ownership.TRUSTED,'NONE');}});

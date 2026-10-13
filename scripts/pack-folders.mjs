@@ -4,6 +4,7 @@ const MOD='bagrovoe-bleeding';
 const id=value=>createHash('sha256').update(value).digest('hex').slice(0,16);
 const rarities={common:'Обычные',uncommon:'Необычные',rare:'Редкие',veryRare:'Очень редкие',legendary:'Легендарные'};
 export function category(pack,doc){
+  if(pack==='key-npcs')return doc.flags[MOD].category;
   if(pack==='suigu-residents')return doc.flags[MOD].district;
   if(pack==='settlements')return doc.flags?.[MOD]?.village?'Шаблоны поселений':'Правила и помощь';
   if(pack==='actors'){

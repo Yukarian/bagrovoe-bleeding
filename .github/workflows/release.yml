@@ -35,6 +35,7 @@ jobs:
           node --check scripts/villages.js
           node --check scripts/bastion-bridge.mjs
           node --check scripts/library.mjs
+          node --check scripts/key-npcs.mjs
           node --check scripts/expanded-spells.js
           node --check scripts/spellbooks.js
           node --check scripts/communion.js
@@ -62,7 +63,7 @@ jobs:
       - name: Package module
         run: |
           mkdir -p dist/bagrovoe-bleeding
-          cp module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md NEW_NPCS.md SPELLS.md RELICS.md SIBLINGS.md FOLDERS.md SETTLEMENTS.md SUIGU.md COMMUNION_NPCS.md SPELLBOOKS.md dist/bagrovoe-bleeding/
+          cp module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md NEW_NPCS.md SPELLS.md RELICS.md SIBLINGS.md FOLDERS.md SETTLEMENTS.md SUIGU.md COMMUNION_NPCS.md SPELLBOOKS.md KEY_NPCS.md ART_PROMPTS_KEY_NPCS.md SRD_ATTRIBUTION.md dist/bagrovoe-bleeding/
           cp -r scripts styles icons assets packs bandits dist/bagrovoe-bleeding/
           cd dist
           zip -r ../bagrovoe-bleeding.zip bagrovoe-bleeding
