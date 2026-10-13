@@ -23,6 +23,15 @@ async function settlementFolder(){
  let child=game.folders.find(f=>f.type==='JournalEntry'&&f.name==='Поселения'&&f.folder?.id===root.id);
  child??=await Folder.create({name:'Поселения',type:'JournalEntry',folder:root.id,color:'#35564a'});return child;
 }
+export async function ensureWesterholm(){
+ if(!game.user.isGM||game.users.activeGM?.id!==game.user.id)return;
+ if(game.journal.some(d=>d.getFlag(MOD,'settlementSeed')==='westerholm'||d.name==='Вестерхольм'))return;
+ const pack=game.packs.get(MOD+'.settlements');if(!pack)return;
+ const source=await pack.getDocument('ortesWesterholm1');if(!source)return;
+ const data=source.toObject();delete data._id;data.folder=(await settlementFolder()).id;data.ownership={default:0};
+ await JournalEntry.create(data);
+}
+Hooks.once('ready',()=>{void ensureWesterholm().catch(error=>{console.error('Ortes: Westerholm import',error);ui.notifications.error('Не удалось создать Вестерхольм. Его можно импортировать из библиотеки поселений.');});});
 export class VillageApp extends ApplicationV2{
  static DEFAULT_OPTIONS={id:'ortes-villages',classes:['ortes-villages'],window:{title:'Мир Ортес — Поселения',icon:'fa-solid fa-house-chimney',resizable:true},position:{width:980,height:760}};
  selected=null;snapshot=null;busy=false;
@@ -41,6 +50,7 @@ export class VillageApp extends ApplicationV2{
   if(this.busy)return;this.busy=true;
   try{
    if(!game.user.isGM)throw Error('Требуются права ведущего.');
+   if(cmd==='journal'){await game.journal.get(this.selected)?.sheet.render(true);return;}
    if(cmd==='refresh'){await this.render({force:true});return;}
    if(cmd==='actor'){const n=this.snapshot.npcs.find(n=>n.id===id),a=await fromUuid(n.actorUuid);if(!a)throw Error('Связанный персонаж не найден.');await a.sheet.render({force:true});return;}
    requireWriter();
