@@ -37,6 +37,7 @@ jobs:
           node --check scripts/library.mjs
           node --check scripts/key-npcs.mjs
           node --check scripts/tower.mjs
+          node --check scripts/npc-names.mjs
           node --check scripts/expanded-spells.js
           node --check scripts/spellbooks.js
           node --check scripts/communion.js

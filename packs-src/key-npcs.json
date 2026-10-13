@@ -1,6 +1,6 @@
 [
   {
-    "name": "Лаэрин Таль’Мир — Архидруид Суйгу",
+    "name": "Лаэрин Таль’Мир",
     "type": "npc",
     "img": "modules/bagrovoe-bleeding/assets/portraits/key-npcs/laerin-tal-mir.png",
     "system": {
@@ -609,7 +609,7 @@
       "rolls": {}
     },
     "prototypeToken": {
-      "name": "Лаэрин Таль’Мир — Архидруид Суйгу",
+      "name": "Лаэрин Таль’Мир",
       "displayName": 20,
       "actorLink": true,
       "appendNumber": false,
@@ -8579,7 +8579,7 @@
     }
   },
   {
-    "name": "Назир’Хан — Собиратель историй",
+    "name": "Назир’Хан",
     "type": "npc",
     "img": "modules/bagrovoe-bleeding/assets/portraits/key-npcs/nazir-khan.png",
     "system": {
@@ -9194,7 +9194,7 @@
       "rolls": {}
     },
     "prototypeToken": {
-      "name": "Назир’Хан — Собиратель историй",
+      "name": "Назир’Хан",
       "displayName": 20,
       "actorLink": true,
       "appendNumber": false,

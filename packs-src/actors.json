@@ -8756,7 +8756,7 @@
     "folder": null
   },
   {
-    "name": "Эдрик Вальтер — Алый Отступник",
+    "name": "Эдрик Вальтер",
     "type": "npc",
     "img": "modules/bagrovoe-bleeding/assets/portraits/edrik-valter.png",
     "system": {
@@ -24188,7 +24188,7 @@
     "folder": null
   },
   {
-    "name": "Северин Вельт — Алый Архитектор",
+    "name": "Северин Вельт",
     "type": "npc",
     "img": "modules/bagrovoe-bleeding/assets/portraits/severin-velt.png",
     "system": {
@@ -24799,7 +24799,7 @@
       "rolls": {}
     },
     "prototypeToken": {
-      "name": "Северин Вельт — Алый Архитектор",
+      "name": "Северин Вельт",
       "displayName": 0,
       "actorLink": true,
       "appendNumber": false,
@@ -29267,7 +29267,7 @@
     "folder": null
   },
   {
-    "name": "Агата Морн — Глас Причастия",
+    "name": "Агата Морн",
     "type": "npc",
     "img": "modules/bagrovoe-bleeding/assets/portraits/agata-morn.png",
     "system": {
@@ -29878,7 +29878,7 @@
       "rolls": {}
     },
     "prototypeToken": {
-      "name": "Агата Морн — Глас Причастия",
+      "name": "Агата Морн",
       "displayName": 0,
       "actorLink": true,
       "appendNumber": false,
