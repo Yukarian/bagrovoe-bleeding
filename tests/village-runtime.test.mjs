@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {migrateVillage} from '../scripts/village-simple.mjs';
+import {migrateDevelopment as migrateVillage} from '../scripts/village-development.mjs';
 import {freshVillage,editVillage,previewWeek} from '../scripts/village-model.mjs';
 globalThis.foundry={applications:{api:{ApplicationV2:class{},DialogV2:{}}},utils:{}};
 globalThis.Hooks={once(){},on(){}};
@@ -11,8 +11,9 @@ test('simultaneous week confirmation commits once and rejects stale retry',async
 test('writes reject non-GMs and secondary GMs',async()=>{const d=doc();game.user.isGM=false;await assert.rejects(commitVillage(d,0,s=>s),/активный/);game.user.isGM=true;game.users.activeGM.id='another';await assert.rejects(commitVillage(d,0,s=>s),/активный/);game.users.activeGM.id='gm';assert.equal(d.state.revision,0);});
 test('failed document update leaves state retryable without spending',async()=>{const d=doc(),update=d.update;d.update=async()=>{throw Error('offline');};await assert.rejects(commitVillage(d,0,s=>editVillage(s,x=>{x.resources.gold=10;})),/offline/);assert.equal(d.state.resources.gold,0);d.update=update;await commitVillage(d,0,s=>editVillage(s,x=>{x.resources.gold=10;}));assert.equal(d.state.resources.gold,10);});
 
-test('compact settlement actions save resources, buildings, NPC assignments and notes',async()=>{
- const {VillageApp}=await import('../scripts/villages.js');const d=doc();d.id='v';const messages=[];
+test('settlement actions preserve buildings and notes without workforce controls',async()=>{
+ const {VillageApp}=await import('../scripts/villages.js');const d=doc();d.id='v';d.testUserPermission=()=>true;const messages=[];
+ globalThis.JournalEntry={create:async data=>{const doc={...data,id:'pub',getFlag:(_,k)=>data.flags?.['bagrovoe-bleeding']?.[k],update:async()=>{}};game.journal.push(doc);return doc;}};
  globalThis.ui={notifications:{error:m=>messages.push(m),warn:m=>messages.push(m)}};
  game.journal=Object.assign([d],{get:id=>id==='v'?d:null});game.actors=[];game.settings={get:()=>({day:0,revision:0})};d.state=migrateVillage(d.state);
  let counter=0;foundry.utils.randomID=()=>`id${++counter}`;
@@ -22,8 +23,8 @@ test('compact settlement actions save resources, buildings, NPC assignments and 
  fill({name:'Тестовая',population:'4',incomeMode:'auto',ressupplies:'20',resmaterials:'10',resgold:'50',upsupplies:'2',upmaterials:'0',upgold:'0',notes:''});await app.command('settings');assert.equal(d.state.population,4);
  fill({name:'Ферма',type:'farm',condition:'intact',occupied:'yes',capacity:'4',residents:'2',owner:'Игроки',img:'',notes:''});await app.command('building','');const b=d.state.buildings[0];assert.equal(b.posts[0].title,'Фермер');
  fill({name:'Фермер',actorUuid:'',homeId:b.id,notes:''});await app.command('npc','');const n=d.state.npcs[0];
- fill({title:'Фермер',npcId:n.id});await app.command('post',b.id+':'+b.posts[0].id);
- assert.equal(d.state.supplyIncome,null);assert.equal(d.state.buildings[0].posts[0].npcId,n.id);assert.deepEqual(messages,[]);
+
+ assert.equal(d.state.supplyIncome,null);assert.equal(d.state.buildings[0].posts[0].npcId,'');assert.deepEqual(messages,[]);
  fill({text:'Прибыл караван.\nНужен склад.'});await app.command('note','');const note=d.state.log.find(l=>l.manual);assert.ok(note);assert.match(note.text,/\n/);
  fill({text:'Караван разгружен.'});await app.command('note',note.id);assert.equal(d.state.log.find(l=>l.id===note.id).text,'Караван разгружен.');
  await app.command('removeNote',note.id);assert.ok(!d.state.log.some(l=>l.id===note.id));assert.deepEqual(messages,[]);

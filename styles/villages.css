@@ -46,3 +46,21 @@
 .ortes-day strong{font-size:14px}.ortes-event{display:block;font-size:10px;line-height:1.25;padding:3px 4px;border-radius:3px;color:#f4f2ea;border-left:3px solid}
 .ortes-event.negative{background:#492d2d;border-color:#d9968c}.ortes-event.neutral{background:#433f26;border-color:#d0c172}.ortes-event.positive{background:#263f30;border-color:#91c894}.ortes-event.important{background:#263d4d;border-color:#8bbce0}.ortes-event.construction{background:#3b343f;border-color:#c3a5d3}
 @media(max-width:700px){.ortes-stats{grid-template-columns:repeat(2,1fr)}.ortes-row>summary strong{min-width:0;display:block}.ortes-calendar-grid .ortes-day{min-height:65px;padding:4px}.ortes-event{font-size:9px}}
+
+/* Development reuses the existing quiet palette and keeps detail collapsed. */
+.ortes-villages .ortes-development-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.ortes-villages .ortes-development-card {padding:16px;border:1px solid #526262;border-radius:8px;background:#202b2d;color:#e4e6df;}
+.ortes-villages .ortes-development-card header {display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+.ortes-villages .ortes-development-card h3 {font-size:18px;margin:0;}
+.ortes-villages .ortes-development-card h4 {margin:12px 0 6px;color:#e1d7b2;}
+.ortes-villages .ortes-development-card.complete {border-color:#698776;background:#23332c;}
+.ortes-villages .ortes-stage-progress {display:flex;gap:6px;margin:12px 0;}
+.ortes-villages .ortes-stage-progress span {height:9px;flex:1;background:#455154;border-radius:3px;}
+.ortes-villages .ortes-stage-progress .complete {background:#8dab8d;}
+.ortes-villages .ortes-stage-progress .active {background:#c6af77;}
+.ortes-villages .ortes-stage-progress .paid,.ortes-villages .ortes-stage-progress .waiting {background:#7e8fa8;}
+.ortes-villages .ortes-condition {padding:8px;border-left:3px solid #b29c69;color:#e3d6b9;}
+.ortes-villages .ortes-development-card li {margin-bottom:14px;}
+.ortes-villages .ortes-development-card small {display:block;}
+.ortes-villages .ortes-archive {white-space:pre-wrap;max-height:350px;overflow:auto;color:inherit;}
+@media(max-width:720px){.ortes-villages .ortes-development-grid{grid-template-columns:1fr;}}

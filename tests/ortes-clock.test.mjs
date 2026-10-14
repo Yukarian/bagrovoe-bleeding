@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {freshVillage} from '../scripts/village-model.mjs';
+import {finance,quote} from '../scripts/village-development.mjs';
 import {beginConstruction} from '../scripts/village-simple.mjs';
 import {MONTHS} from '../scripts/ortes-date.mjs';
 const MOD='bagrovoe-bleeding',listeners={};
@@ -28,8 +29,8 @@ async function setup({enabled=false}={}){
  await clock.ensureClock();return d;
 }
 test('calendar advances all villages once, calls native duration exactly once and rejects stale confirmations',async()=>{
- const d=await setup(),initial=clock.publicClock().revision;await clock.advanceCalendar(30,{expected:initial});assert.equal(clock.publicClock().day,30);assert.equal(game.time.worldTime,30*86400);assert.equal(nativeCalls.reduce((n,o)=>n+o.duration,0),30);assert.equal(nativeCalls.filter(o=>o.turn).length,4);assert.equal(d.getFlag(MOD,'village').pendingEvents.length,5);
- await assert.rejects(clock.advanceCalendar(7,{expected:initial}),/изменилась/);assert.equal(clock.publicClock().day,30);await clock.bootClock();assert.equal(d.getFlag(MOD,'village').pendingEvents.length,5);
+ const d=await setup(),initial=clock.publicClock().revision;await clock.advanceCalendar(30,{expected:initial});assert.equal(clock.publicClock().day,30);assert.equal(game.time.worldTime,30*86400);assert.equal(nativeCalls.reduce((n,o)=>n+o.duration,0),30);assert.equal(nativeCalls.filter(o=>o.turn).length,4);assert.equal(d.getFlag(MOD,'village').developmentEvents.length,0);
+ await assert.rejects(clock.advanceCalendar(7,{expected:initial}),/изменилась/);assert.equal(clock.publicClock().day,30);await clock.bootClock();assert.equal(d.getFlag(MOD,'village').developmentEvents.length,0);
  assert.deepEqual(Object.keys(clock.publicClock()).sort(),['day','months','revision']);
 });
 test('partial native failure blocks retry, persists plan and recovery never replays native actions',async()=>{
@@ -37,12 +38,12 @@ test('partial native failure blocks retry, persists plan and recovery never repl
  await assert.rejects(clock.advanceCalendar(7),/незавершённый/);assert.equal(nativeCalls.length,1);failNative=false;await clock.recoverCalendar();assert.equal(clock.publicClock().day,7);assert.equal(d.getFlag(MOD,'village').elapsedDays,7);assert.equal(nativeCalls.length,1);await clock.recoverCalendar();assert.equal(nativeCalls.length,1);
 });
 test('village update interruption recovers stored plan once without rerolling',async()=>{
- const d=await setup();failVillage=true;await assert.rejects(clock.advanceCalendar(7),/document disconnected/);assert.equal(clock.calendarStatus().pending.phase,'native-done');await clock.recoverCalendar();assert.equal(d.getFlag(MOD,'village').pendingEvents.length,1);assert.equal(nativeCalls.length,1);await clock.bootClock();assert.equal(d.getFlag(MOD,'village').pendingEvents.length,1);
+ const d=await setup();failVillage=true;await assert.rejects(clock.advanceCalendar(7),/document disconnected/);assert.equal(clock.calendarStatus().pending.phase,'native-done');await clock.recoverCalendar();assert.equal(d.getFlag(MOD,'village').developmentEvents.length,0);assert.equal(nativeCalls.length,1);await clock.bootClock();assert.equal(d.getFlag(MOD,'village').developmentEvents.length,0);
 });
 test('date correction preserves remaining construction, period counters and all supplies without native time',async()=>{
- const d=await setup();await d.setFlag(MOD,'village',beginConstruction(d.getFlag(MOD,'village'),'small','house',0));await clock.advanceCalendar(6);nativeCalls=[];const before=structuredClone(d.getFlag(MOD,'village')),world=game.time.worldTime;
- await clock.correctCalendar(359,MONTHS);const after=d.getFlag(MOD,'village');assert.equal(after.elapsedDays,6);assert.equal(after.buildings[0].construction.end-359,15);assert.deepEqual(after.resources,before.resources);assert.equal(game.time.worldTime,world);assert.equal(nativeCalls.length,0);
- await clock.advanceCalendar(1);assert.equal(nativeCalls[0].duration,1);assert.equal(nativeCalls[0].turn,true);assert.equal(d.getFlag(MOD,'village').pendingEvents.length,1);assert.equal(clock.publicClock().day,360);
+ const d=await setup();await d.setFlag(MOD,'village',finance(d.getFlag(MOD,'village'),'agriculture',0,{id:'pay',actor:'a',gold:500},0));await clock.advanceCalendar(6);nativeCalls=[];const before=structuredClone(d.getFlag(MOD,'village')),world=game.time.worldTime;
+ await clock.correctCalendar(359,MONTHS);const after=d.getFlag(MOD,'village');assert.equal(after.elapsedDays,6);assert.equal(after.development.tracks.agriculture[0].end-359,9);assert.deepEqual(after.resources,before.resources);assert.equal(game.time.worldTime,world);assert.equal(nativeCalls.length,0);
+ await clock.advanceCalendar(1);assert.equal(nativeCalls[0].duration,1);assert.equal(nativeCalls[0].turn,true);assert.equal(d.getFlag(MOD,'village').developmentEvents.length,0);assert.equal(clock.publicClock().day,360);
 });
 test('enabled D&D calendar owns native facility progress, so module never repeats it',async()=>{
  await setup({enabled:true});await clock.advanceCalendar(7);assert.equal(nativeCalls.length,0);assert.equal(game.time.worldTime,7*86400);assert.equal(clock.publicClock().day,7);
@@ -73,6 +74,6 @@ test('enabled native calendar asynchronous work settles before village commit; n
 });
 test('external fractional days accumulate, backwards time and repeated hooks cannot double charge',async()=>{
  const d=await setup();const tick=async()=>{for(const fn of listeners.updateWorldTime)fn();await new Promise(r=>setTimeout(r,12));};
- game.time.worldTime=3.5*86400;await tick();assert.equal(clock.publicClock().day,3);game.time.worldTime=7*86400;await tick();assert.equal(clock.publicClock().day,7);assert.equal(d.getFlag(MOD,'village').pendingEvents.length,1);
- await tick();game.time.worldTime=2*86400;await tick();game.time.worldTime=7*86400;await tick();assert.equal(clock.publicClock().day,7);assert.equal(d.getFlag(MOD,'village').pendingEvents.length,1);assert.equal(nativeCalls.reduce((sum,x)=>sum+x.duration,0),7);
+ game.time.worldTime=3.5*86400;await tick();assert.equal(clock.publicClock().day,3);game.time.worldTime=7*86400;await tick();assert.equal(clock.publicClock().day,7);assert.equal(d.getFlag(MOD,'village').developmentEvents.length,0);
+ await tick();game.time.worldTime=2*86400;await tick();game.time.worldTime=7*86400;await tick();assert.equal(clock.publicClock().day,7);assert.equal(d.getFlag(MOD,'village').developmentEvents.length,0);assert.equal(nativeCalls.reduce((sum,x)=>sum+x.duration,0),7);
 });

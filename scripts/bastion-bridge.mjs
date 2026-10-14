@@ -1,3 +1,4 @@
+import {settlementEntries} from './village-storage.mjs';
 let simpleClock=null;
 export function enableSimpleClock(adapter){simpleClock=adapter;}
 export function nativeFacilityAdvance(...args){return nativeAdvance?.(...args);}
@@ -7,7 +8,7 @@ let commit,refresh=()=>{},nativeAdvance,nativeAll,turnQueue=Promise.resolve(),in
 const activeTurns=new Set();
 const state=d=>d.getFlag(MOD,'village');
 const writer=()=>game.user?.isGM&&game.users.activeGM?.id===game.user.id;
-const journals=()=>game.journal.filter(d=>state(d));
+const journals=()=>settlementEntries();
 const links=s=>s.bastions??[];
 const character=u=>game.actors.find(a=>a.uuid===u&&a.type==='character');
 const facilities=a=>a?.items.filter(i=>i.type==='facility')??[];
@@ -22,7 +23,7 @@ export function withBastionStaff(source){
  const s=copy(source),assigned=new Map();
  for(const uuid of links(s))for(const item of facilities(character(uuid)))for(const u of item.system.hirelings.value)assigned.set(u,item.name);
  for(const n of s.npcs)n.bastionJob=assigned.get(n.actorUuid)??'';
- for(const b of s.buildings)b.staffBlocked=s.schema!==2&&b.posts.some(p=>s.npcs.find(n=>n.id===p.npcId)?.bastionJob);
+ for(const b of s.buildings)b.staffBlocked=s.schema<2&&b.posts.some(p=>s.npcs.find(n=>n.id===p.npcId)?.bastionJob);
  return s;
 }
 export function linkedBastions(s){

@@ -43,6 +43,11 @@ jobs:
           node --check scripts/spellbooks.js
           node --check scripts/communion.js
           node --check scripts/village-model.mjs
+          node --check scripts/village-development.mjs
+          node --check scripts/village-storage.mjs
+          node --check scripts/development-runtime.mjs
+          node --check scripts/development-view.mjs
+          node --check scripts/development-ui.mjs
           node --check scripts/village-view.mjs
           node --check scripts/village-simple.mjs
           node --check scripts/village-events.mjs
