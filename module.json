@@ -2,7 +2,7 @@
   "id": "bagrovoe-bleeding",
   "title": "Мир Ортес",
   "description": "Мир Ортес: Багровое Причастие, Железные Гончие, бестиарий, предметы, простое управление поселениями, общий календарь и штатные Оплоты D&D5e.",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "compatibility": {
     "minimum": "14.367",
     "verified": "14"
@@ -26,7 +26,8 @@
     "scripts/library.mjs",
     "scripts/key-npcs.mjs",
     "scripts/tower.mjs",
-    "scripts/npc-names.mjs"
+    "scripts/npc-names.mjs",
+    "scripts/leorina.mjs"
   ],
   "relationships": {
     "systems": [
@@ -41,7 +42,7 @@
     ]
   },
   "manifest": "https://github.com/Yukarian/bagrovoe-bleeding/releases/latest/download/module.json",
-  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v5.0.0/bagrovoe-bleeding.zip",
+  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v5.1.0/bagrovoe-bleeding.zip",
   "url": "https://github.com/Yukarian/bagrovoe-bleeding",
   "packs": [
     {
