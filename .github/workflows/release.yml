@@ -54,6 +54,10 @@ jobs:
           node --check scripts/ortes-date.mjs
           node --check scripts/ortes-clock.mjs
           node --check scripts/ortes-calendar.mjs
+          node --check scripts/casino-model.mjs
+          node --check scripts/casino-runtime.mjs
+          node --check scripts/casino-view.mjs
+          node --check scripts/casino.mjs
           node --test tests/*.test.mjs
   release:
     if: github.ref == 'refs/heads/main'
@@ -76,7 +80,7 @@ jobs:
       - name: Package module
         run: |
           mkdir -p dist/bagrovoe-bleeding
-          cp module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md NEW_NPCS.md SPELLS.md RELICS.md SIBLINGS.md FOLDERS.md SETTLEMENTS.md SETTLEMENT_EVENTS.md SUIGU.md COMMUNION_NPCS.md SPELLBOOKS.md KEY_NPCS.md LEORINA.md TOWER_COUNCIL.md GROVE_COUNCIL.md ART_PROMPTS_GROVE.md ART_PROMPTS_TOWER.md ART_PROMPTS_KEY_NPCS.md SRD_ATTRIBUTION.md dist/bagrovoe-bleeding/
+          cp CASINO.md module.json README.md CHANGELOG.md TESTING.md CONTENT_MODULE.md RELEASE_NOTES.md NEW_NPCS.md SPELLS.md RELICS.md SIBLINGS.md FOLDERS.md SETTLEMENTS.md SETTLEMENT_EVENTS.md SUIGU.md COMMUNION_NPCS.md SPELLBOOKS.md KEY_NPCS.md LEORINA.md TOWER_COUNCIL.md GROVE_COUNCIL.md ART_PROMPTS_GROVE.md ART_PROMPTS_TOWER.md ART_PROMPTS_KEY_NPCS.md SRD_ATTRIBUTION.md dist/bagrovoe-bleeding/
           cp -r scripts styles icons assets packs bandits exports dist/bagrovoe-bleeding/
           cd dist
           zip -r ../bagrovoe-bleeding.zip bagrovoe-bleeding

@@ -1,0 +1,21 @@
+.ortes-casino{--casino-bg:#171c22;--casino-panel:#222a32;--casino-border:#47545d;--casino-text:#e8e5db;--casino-gold:#d4bb80;color:var(--casino-text);background:var(--casino-bg)}
+.ortes-casino .window-content{background:var(--casino-bg);color:var(--casino-text);padding:18px;overflow:auto}
+.ortes-casino-body{font-family:var(--font-body,serif);line-height:1.45;color:var(--casino-text)}
+.ortes-casino-body h2,.ortes-casino-body h3,.ortes-casino-body h4{color:var(--casino-gold);border:0;text-shadow:none;margin:0 0 10px}
+.ortes-casino-body header{display:flex;gap:20px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--casino-border);padding-bottom:16px}
+.ortes-casino-body header>div{flex:1}.ortes-casino-body label{display:block;color:var(--casino-text)}
+.ortes-casino-body select,.ortes-casino-body input{color:var(--casino-text);background:#10161b;border:1px solid var(--casino-border);height:34px;border-radius:4px;padding:3px 8px}
+.ortes-casino-body option{background:#10161b;color:var(--casino-text)}
+.ortes-casino-body input[type=number]{width:90px}.ortes-casino-body input[type=checkbox]{height:16px;width:16px}
+.ortes-casino-body button{width:auto;height:auto;min-height:34px;background:#38434c;color:#fff2cf;border:1px solid #65717a;border-radius:5px;padding:6px 12px;white-space:normal;box-shadow:none}
+.ortes-casino-body button:hover:not(:disabled){background:#4b5963}.ortes-casino-body button:disabled{opacity:.45;cursor:default}
+.casino-balance{font-size:26px;color:var(--casino-gold)}.casino-balance small{display:block;font-size:12px;font-weight:normal}
+.casino-toolbar{display:flex;flex-wrap:wrap;align-items:end;gap:10px;margin:12px 0}.casino-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:16px 0}
+.casino-grid>section,.casino-table{border:1px solid var(--casino-border);border-radius:8px;padding:18px;background:var(--casino-panel)}
+.ortes-casino-body details{border-top:1px solid var(--casino-border);margin-top:14px;padding:12px 0}.ortes-casino-body summary{color:var(--casino-gold);cursor:pointer}
+.casino-reels{display:flex;gap:8px;min-height:115px;align-items:center}.casino-reels label{flex:1;text-align:center;font-size:11px}.casino-reels span{display:block;padding:16px 4px;background:#10161b;border:1px solid #72664c;border-radius:6px;font-size:18px;color:var(--casino-gold)}
+.casino-wheel{width:110px;height:110px;border:4px double #b5a06b;border-radius:50%;margin:4px auto 10px;display:grid;place-items:center;background:repeating-conic-gradient(#27363e 0deg 36deg,#34414a 36deg 72deg)}
+.casino-wheel span{display:grid;place-items:center;width:65px;height:65px;border:3px double #b5a06b;border-radius:50%;background:#222a32;font-size:30px;color:var(--casino-gold)}
+.casino-bets{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;margin:14px 0}.casino-bets label{text-align:center}.casino-bets input[type=number]{width:100%;padding:2px}
+.casino-notice{border:1px solid #b5a06b;padding:12px;margin:12px 0}.casino-muted{color:#b8c0c5;font-size:13px}.casino-accent{color:var(--casino-gold)}.casino-claims article{padding:10px 0;border-bottom:1px solid var(--casino-border)}
+@media(max-width:700px){.casino-grid{grid-template-columns:1fr}.casino-bets{grid-template-columns:repeat(5,minmax(0,1fr))}}
