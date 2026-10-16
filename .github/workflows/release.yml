@@ -57,6 +57,7 @@ jobs:
           node --check scripts/casino-model.mjs
           node --check scripts/casino-runtime.mjs
           node --check scripts/casino-view.mjs
+          node --check scripts/casino-animation.mjs
           node --check scripts/casino.mjs
           node --test tests/*.test.mjs
   release:

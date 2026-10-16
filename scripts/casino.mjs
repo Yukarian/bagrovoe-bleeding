@@ -1,5 +1,7 @@
+import {installCasinoAnimations} from './casino-animation.mjs';
 import {casinoHTML} from './casino-view.mjs';
 import {activeCasinoGM,bootCasino,casinoSnapshot,requestCasino,recoverCasino,pendingCasino} from './casino-runtime.mjs';
+installCasinoAnimations();
 const MOD='bagrovoe-bleeding';const {ApplicationV2,DialogV2}=foundry.applications.api;
 export class CasinoApp extends ApplicationV2{
  static DEFAULT_OPTIONS={id:'ortes-casino',classes:['ortes-casino'],window:{title:'Мир Ортес — Колесо фортуны',resizable:true},position:{width:900,height:800}};

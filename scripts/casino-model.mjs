@@ -16,7 +16,7 @@ export function publicCasino(s){return {enabled:s.enabled,wallets:copy(s.wallets
 export function slotMatch(dice){if(dice.length!==3||dice.some(d=>!Number.isInteger(d)||d<1||d>6))throw Error('Неверные барабаны.');const count={};for(const d of dice)count[d]=(count[d]??0)+1;const pair=Object.entries(count).find(([,n])=>n>=2);return pair?{symbol:Number(pair[0]),jackpot:pair[1]===3}:{modron:[...dice].sort().join(',')==='2,4,6'};}
 export function handWinners(entries){const scores=entries.map(e=>({...e,total:e.dice.includes(1)?0:e.dice.reduce((a,b)=>a+b,0),bust:e.dice.includes(1)})),best=Math.max(0,...scores.map(e=>e.total));return {scores,winners:best?scores.filter(e=>e.total===best).map(e=>e.actor):[]};}
 export async function transition(original,command,ctx){
- const s=copy(original),{action,actor}=command,c=command;const id=ctx.id,now=ctx.now;let gold=0;const results=[];
+ const s=copy(original),{action,actor}=command,c=command;const id=ctx.id,now=ctx.now;let gold=0,presentation=null;const results=[];
  const gm=()=>{if(!ctx.isGM)throw Error('Только ведущий.');};
  const wallet=(who=actor)=>s.wallets[who]??=( {chips:0,modron:false,lastWheel:null,slot:null} );
  const take=n=>{integer(n);const w=wallet();if(w.chips<n)throw Error('Недостаточно бритволистов.');w.chips-=n;};
@@ -31,15 +31,15 @@ export async function transition(original,command,ctx){
   if(!s.enabled&&action!=='cancelTable')throw Error('Ведущий ещё не открыл казино.');
   if(['buy','sell'].includes(action)){integer(c.amount,1,100000);if(action==='buy'){gold=c.amount*10;add(actor,c.amount);}else{take(c.amount);gold=-c.amount*10;}log(`${action==='buy'?'Куплено':'Обменено на золото'} ${c.amount} бритволистов.`);}
   else if(action==='slots'){
-   if(wallet().slot)throw Error('Сначала завершите предыдущий автомат.');take(1);const dice=await ctx.roll(6,3);
+   if(wallet().slot)throw Error('Сначала завершите предыдущий автомат.');take(1);const dice=await ctx.roll(6,3);presentation={kind:"slots",dice:[...dice],indices:[0,1,2]};
    if(wallet().modron){wallet().modron=false;wallet().slot={dice,id};log('Время модрона: выберите барабаны для одного переброса или оставьте результат.');}
    else await finishSlots(dice);
   }else if(action==='reroll'){
-   const p=wallet().slot;if(!p||p.id!==c.round)throw Error('Автомат уже завершён.');if(!Array.isArray(c.indices)||new Set(c.indices).size!==c.indices.length||c.indices.some(i=>!Number.isInteger(i)||i<0||i>2))throw Error('Неверные барабаны.');const dice=[...p.dice];if(c.indices.length){const rolls=await ctx.roll(6,c.indices.length);c.indices.forEach((n,i)=>dice[n]=rolls[i]);}wallet().slot=null;await finishSlots(dice);
+   const p=wallet().slot;if(!p||p.id!==c.round)throw Error('Автомат уже завершён.');if(!Array.isArray(c.indices)||new Set(c.indices).size!==c.indices.length||c.indices.some(i=>!Number.isInteger(i)||i<0||i>2))throw Error('Неверные барабаны.');const dice=[...p.dice];if(c.indices.length){const rolls=await ctx.roll(6,c.indices.length);c.indices.forEach((n,i)=>dice[n]=rolls[i]);}wallet().slot=null;presentation={kind:"slots",dice:[...dice],indices:[...c.indices]};await finishSlots(dice);
   }else if(action==='wheel'){
    const w=wallet();if(w.lastWheel!==null&&now-w.lastWheel<86400)throw Error('Колесо доступно раз в 24 игровых часа.');take(5);let ring=0,key,trail=[];
    for(let n=0;n<100;n++){const [d]=await ctx.roll(10,1);key=WHEEL[ring][d-1];trail.push(`${ring+1}:${d}`);if(key==='next')ring++;else if(key==='back')ring--;else break;}
-   if(['next','back'].includes(key))throw Error('Слишком длинная серия переходов; ставка не списана.');w.lastWheel=now;const cash={coin:50,coins2:500,coins3:5000}[key];if(cash)gold=-cash;else if(key!=='none')claim(PRIZES[key]);log(`Колесо [${trail.join(' → ')}]: ${PRIZES[key]}${cash?' — зачислено в монеты персонажа':''}.`);
+   if(['next','back'].includes(key))throw Error('Слишком длинная серия переходов; ставка не списана.');presentation={kind:"wheel",path:trail.map(t=>t.split(":").map(Number)),prize:PRIZES[key]};w.lastWheel=now;const cash={coin:50,coins2:500,coins3:5000}[key];if(cash)gold=-cash;else if(key!=='none')claim(PRIZES[key]);log(`Колесо [${trail.join(' → ')}]: ${PRIZES[key]}${cash?' — зачислено в монеты персонажа':''}.`);
   }else if(action==='openTable'){
    gm();if(s.table)throw Error('Сначала завершите или отмените открытый стол.');if(!['hand','olida'].includes(c.game))throw Error('Неизвестный стол.');s.table={id,game:c.game,stake:c.game==='hand'?integer(c.stake,1,100000):0,dealerDice:c.game==='hand'?integer(c.dice,1,100):0,entries:{}};log('Приём ставок: '+GAMES[c.game]);
   }else if(action==='join'){
@@ -50,12 +50,12 @@ export async function transition(original,command,ctx){
    gm();const t=table();for(const[a,e]of Object.entries(t.entries))add(a,e.stake);s.table=null;log('Стол отменён, все ставки возвращены.');
   }else if(action==='resolveTable'){
    gm();const t=table(),entries=Object.entries(t.entries);if(!entries.length)throw Error('Нет участников.');
-   if(t.game==='olida'){const[d]=await ctx.roll(20,1);const payouts=[];for(const[a,e]of entries){const n=(e.bets[d]??0)*5;if(n)add(a,n);payouts.push(`${ctx.name(a)}: ставки ${Object.entries(e.bets).map(([k,v])=>`${k}×${v}`).join(', ')}; выплата ${n}`);}log(`Олидаммара: ${d}. ${payouts.join('; ')}.`);}
-   else{const rows=[{actor:'dealer',dice:await ctx.roll(6,t.dealerDice)}];for(const[a,e]of entries)rows.push({actor:a,dice:await ctx.roll(6,e.dice)});const {scores,winners}=handWinners(rows),bank=t.stake*(entries.length+1),share=winners.length?Math.floor(bank/winners.length):0;for(const a of winners)if(a!=='dealer')add(a,share);log(`Мёртвая рука: ${scores.map(r=>`${r.actor==='dealer'?'Крупье':ctx.name(r.actor)} [${r.dice.join(', ')}] ${r.bust?'перебор (единица)':r.total}`).join('; ')}. Банк ${bank}; ${winners.length?'победители: '+winners.map(a=>a==='dealer'?'Крупье':ctx.name(a)).join(', ')+`, по ${share} фишек`:'все проиграли'}. Остаток неделимого банка остаётся казино.`);}
+   if(t.game==='olida'){const[d]=await ctx.roll(20,1);presentation={kind:'dice',sides:20,rows:[{name:'Крупье',dice:[d]}]};const payouts=[];for(const[a,e]of entries){const n=(e.bets[d]??0)*5;if(n)add(a,n);payouts.push(`${ctx.name(a)}: ставки ${Object.entries(e.bets).map(([k,v])=>`${k}×${v}`).join(', ')}; выплата ${n}`);}log(`Олидаммара: ${d}. ${payouts.join('; ')}.`);}
+   else{const rows=[{actor:'dealer',dice:await ctx.roll(6,t.dealerDice)}];for(const[a,e]of entries)rows.push({actor:a,dice:await ctx.roll(6,e.dice)});presentation={kind:'dice',sides:6,rows:rows.map(r=>({name:r.actor==='dealer'?'Крупье':ctx.name(r.actor),dice:[...r.dice]}))};const {scores,winners}=handWinners(rows),bank=t.stake*(entries.length+1),share=winners.length?Math.floor(bank/winners.length):0;for(const a of winners)if(a!=='dealer')add(a,share);log(`Мёртвая рука: ${scores.map(r=>`${r.actor==='dealer'?'Крупье':ctx.name(r.actor)} [${r.dice.join(', ')}] ${r.bust?'перебор (единица)':r.total}`).join('; ')}. Банк ${bank}; ${winners.length?'победители: '+winners.map(a=>a==='dealer'?'Крупье':ctx.name(a)).join(', ')+`, по ${share} фишек`:'все проиграли'}. Остаток неделимого банка остаётся казино.`);}
    s.table=null;
   }else throw Error('Неизвестное действие.');
  }
- s.processed[id]=true;return {state:s,gold,results};
+ s.processed[id]=true;return {state:s,gold,results,presentation};
  function table(){if(!s.table||s.table.id!==c.round)throw Error('Раунд уже завершён.');return s.table;}
  async function finishSlots(dice){const m=slotMatch(dice);let prize='Нет приза';if(m.modron){wallet().modron=true;prize='Время модрона: один переброс выбранных барабанов следующей игры';}else if(m.symbol){if(m.jackpot&&!s.jackpots.includes(m.symbol)){s.jackpots.push(m.symbol);prize='Джекпот: '+JACKPOTS[m.symbol];claim(prize);}else {switch(m.symbol){case 1:prize=`Ларвы: ${(await ctx.roll(3,1))[0]}`;break;case 2:prize=`Зубы: ${(await ctx.roll(4,1))[0]+1}`;break;case 3:prize='Золотое кольцо (стоимость 15 зм)';break;case 4:prize='Медная шестерня (стоимость 25 зм)';break;case 5:prize=`Получить ${(await ctx.roll(10,1))[0]} временных хитов`;break;case 6:prize=`Получить ${(await ctx.roll(6,1))[0]} урона огнём (учесть сопротивления и временные хиты)`;break;}claim(prize);}}log(`Автомат [${dice.map(n=>SYMBOLS[n]).join(' · ')}]: ${prize}.`);}
 }
