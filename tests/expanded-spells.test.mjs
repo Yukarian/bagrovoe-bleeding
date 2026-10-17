@@ -150,3 +150,25 @@ for(const interrupted of [false,true])test(`world spellbook upgrade backs up bef
  if(interrupted)await assert.rejects(run,/connection interrupted/);else{assert.equal(await run(),1);assert.equal(actor.items.filter(i=>i.type==='spell').length,source.items.filter(i=>i.type==='spell').length);}
  const before=writes;assert.equal(await run(),0);assert.equal(writes,before);assert.equal(actor.getFlag(MOD,'spellbookBackup430').items.length,old.items.length);
 });
+
+test('V14 reads legacy source metadata without requesting an inactive flag scope',async()=>{
+ const strict=data=>({...data,getFlag(scope,key){if(scope!==MOD)throw Error('Flag scope '+scope+' is not valid or not currently active');return this.flags?.[scope]?.[key];}});
+ const source=strict({flags:{[MOD]:{spellbookVersion:'4.3.0'},'bagrovoe-content':{sourceSlug:'mag-krovi-uron'}},items:[]});let backups=0,writes=0;
+ const actor=strict({name:'Маг',uuid:'Actor.old',type:'npc',flags:{'bagrovoe-content':{sourceSlug:'mag-krovi-uron'}},items:[],system:{spells:{},attributes:{spell:{}}},async setFlag(scope,k,v){this.flags[scope]??={};this.flags[scope][k]=v;backups++;},async update(data){writes++;for(const[k,v]of Object.entries(data))put(this,k,v);}});
+ const gm={id:'gm',isGM:true},game={user:gm,users:{activeGM:gm},packs:new Map([[MOD+'.actors',{getDocuments:async()=>[source]}]]),actors:[actor],scenes:[]};
+ const ctx=vm.createContext({game,Hooks:{once(){}},console,foundry:{utils:{deepClone:structuredClone}},ui:{notifications:{info(){}}}});vm.runInContext(fs.readFileSync(new URL('../scripts/spellbooks.js',import.meta.url),'utf8'),ctx);
+ assert.equal(await ctx.BagrovoeSpellbooks.updateSpellbooks(),1);assert.equal(backups,1);assert.equal(writes,1);assert.equal(actor.getFlag(MOD,'spellbookVersion'),'4.3.0');
+});
+test('no eligible NPC means no pack load or orphaned synthetic actor initialization',async()=>{
+ const gm={id:'gm',isGM:true},game={user:gm,users:{activeGM:gm},actors:[],scenes:[{tokens:[{actorId:'deleted',get actor(){throw Error('unrelated token should not initialize');}}]}],packs:new Map([[MOD+'.actors',{getDocuments:async()=>{throw Error('unnecessary pack read');}}]])};
+ const ctx=vm.createContext({game,Hooks:{once(){}},console});vm.runInContext(fs.readFileSync(new URL('../scripts/spellbooks.js',import.meta.url),'utf8'),ctx);assert.equal(await ctx.BagrovoeSpellbooks.updateSpellbooks(),0);
+});
+test('pack read failure identifies the phase without claiming a saved backup',async()=>{
+ const actor=flagged({name:'Маг',uuid:'Actor.old',type:'npc',flags:{'bagrovoe-content':{sourceSlug:'mag-krovi-uron'}}}),gm={id:'gm',isGM:true};const game={user:gm,users:{activeGM:gm},actors:[actor],scenes:[],packs:new Map([[MOD+'.actors',{getDocuments:async()=>{throw Error('broken pack');}}]])};
+ const ctx=vm.createContext({game,Hooks:{once(){}},console});vm.runInContext(fs.readFileSync(new URL('../scripts/spellbooks.js',import.meta.url),'utf8'),ctx);await assert.rejects(ctx.BagrovoeSpellbooks.updateSpellbooks(),e=>/чтение бестиария.*broken pack/.test(e.message)&&!/Резервная запись сохранена/.test(e.message));assert.equal(actor.getFlag(MOD,'spellbookBackup430'),undefined);
+});
+test('simultaneous book updates share a single upgrade and snapshot',async()=>{
+ let loads=0,backups=0,writes=0;const source=flagged({flags:{[MOD]:{spellbookVersion:'4.3.0',sourceSlug:'mag-krovi-uron'}},items:[]}),actor=flagged({name:'Маг',uuid:'Actor.old',type:'npc',flags:{[MOD]:{sourceSlug:'mag-krovi-uron'}},items:[],system:{spells:{},attributes:{}},async update(data){writes++;for(const[k,v]of Object.entries(data))put(this,k,v);}});const original=actor.setFlag.bind(actor);actor.setFlag=async(...args)=>{backups++;return original(...args);};
+ const gm={id:'gm',isGM:true},game={user:gm,users:{activeGM:gm},actors:[actor],scenes:[],packs:new Map([[MOD+'.actors',{getDocuments:async()=>{loads++;await new Promise(r=>setTimeout(r,5));return[source];}}]])};
+ const ctx=vm.createContext({game,Hooks:{once(){}},console,foundry:{utils:{deepClone:structuredClone}},ui:{notifications:{info(){}}}});vm.runInContext(fs.readFileSync(new URL('../scripts/spellbooks.js',import.meta.url),'utf8'),ctx);assert.deepEqual(await Promise.all([ctx.BagrovoeSpellbooks.updateSpellbooks(),ctx.BagrovoeSpellbooks.updateSpellbooks()]),[1,1]);assert.equal(loads,1);assert.equal(backups,1);assert.equal(writes,1);
+});
