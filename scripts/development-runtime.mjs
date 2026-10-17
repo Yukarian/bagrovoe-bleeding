@@ -1,4 +1,4 @@
-import {editEconomy} from './village-economy.mjs';
+import {editEconomy,adjustEconomy} from './village-economy.mjs';
 import {settlementEntries,settlementById,ensurePrivateStorage} from './village-storage.mjs';
 import {finance,quote,editProject,decideDevelopmentEvent,publicDevelopment} from './village-development.mjs';
 import {publicClock,calendarAdvancing,calendarStatus} from './ortes-clock.mjs';
@@ -27,3 +27,5 @@ export function fundingRequests(){if(!game.user.isGM)return [];return (game.mess
 export async function reviewFunding(id,accept,approval){guard();const m=game.messages.get(id),r=m?.getFlag(MOD,'developmentRequest');if(!r||m.getFlag(MOD,'developmentHandled'))throw Error('Запрос уже обработан.');if(accept){const d=developmentDoc(r.village),s=d.getFlag(MOD,'village'),a=await fromUuid(r.actor);if(approval&&(s.revision!==approval.revision||quote(s,r.key,Number(r.through)).gold!==approval.gold))throw Error('Стоимость или состояние изменились после подтверждения.');if(!s.development.allowFunding||!m.author||!a?.testUserPermission(m.author,'OWNER'))throw Error('Автор запроса не имеет разрешения.');if(s.development.transactions.some(t=>t.id==='request:'+m.id)){await m.setFlag(MOD,'developmentHandled',true);return;}await fundDevelopment(r.village,r.key,r.through,r.actor,s.revision,m.id);}await m.setFlag(MOD,'developmentHandled',true);}
 
 export function updateEconomy(village,input,expected){return serial(async()=>{guard();const d=developmentDoc(village);return commit(d,expected,s=>editEconomy(s,input));});}
+
+export function adjustVillageEconomy(village,input,expected){return serial(async()=>{guard();const d=developmentDoc(village);return commit(d,expected,s=>adjustEconomy(s,input,publicClock().day));});}

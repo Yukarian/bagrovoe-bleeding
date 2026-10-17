@@ -1,3 +1,4 @@
+import {adjustEconomyDialog} from './economy-dialog.mjs';
 import {correctWesterholm,WESTERHOLM_PAGE} from './westerholm-content.mjs';
 import {privateEntries,settlementEntries,settlementById,ensurePrivateStorage} from './village-storage.mjs';
 import {freshVillage,copy,validate,editVillage,writeNote,RESOURCES,TYPES,ROLES} from './village-model.mjs';
@@ -75,7 +76,8 @@ export class VillageApp extends ApplicationV2{
     const s=copy(this.snapshot),doc=settlementById(this.selected);if(!doc||!s)throw Error('Выберите поселение.');
     if(s.schema!==3&&cmd!=='resolveTurn')throw Error('Сначала завершите прежний ход Оплота для переноса деревни.');
     const save=fn=>commitVillage(doc,s.revision,fn),edit=fn=>save(current=>editVillage(current,fn));
-    if(cmd==='deleteVillage'){
+    if(cmd==='adjustEconomy'){await adjustEconomyDialog(doc.id,s,id);
+    }else if(cmd==='deleteVillage'){
      if(await confirm('Удалить поселение?',`<p>Удалить «${esc(s.name)}» и его страницы? Листы персонажей и их Оплоты сохранятся.</p>`))await deleteVillage(doc.id,s.revision);
     }else if(cmd==='linkBastion'){
      const choices=Object.fromEntries(game.actors.filter(a=>a.type==='character'&&!(s.bastions??[]).includes(a.uuid)).map(a=>[a.uuid,a.name]));

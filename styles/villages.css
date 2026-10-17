@@ -66,10 +66,12 @@
 @media(max-width:720px){.ortes-villages .ortes-development-grid{grid-template-columns:1fr;}}
 
 .ortes-villages .ortes-economy-panel {margin:16px 0 24px;}
-.ortes-villages .ortes-economy-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;}
+.ortes-villages .ortes-economy-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;}
 .ortes-villages .ortes-economy-grid article {background:#202c30;border:1px solid #42565b;border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:8px;}
 .ortes-villages .ortes-economy-grid strong {font-size:22px;color:#d6ddb5;}
 .ortes-villages .ortes-economy-grid small {line-height:1.4;color:#c8d6d6;}
 .ortes-villages .ortes-economy-controls {display:flex;justify-content:space-between;align-items:start;gap:12px;margin-top:12px;}
 .ortes-villages .ortes-stage-economy {color:#d6ddb5;line-height:1.5;}
 @media(max-width:700px){.ortes-villages .ortes-economy-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+.ortes-villages button.ortes-adjust{width:auto;min-width:28px;padding:2px 7px;margin-left:4px;font-size:12px;line-height:1.4;}
