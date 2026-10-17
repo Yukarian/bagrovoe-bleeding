@@ -26,13 +26,15 @@ const PLACES={
  watch:{name:'Пост стражи',type:'barracks',npc:'garret',notes:'Здесь собираются стражники Гаррета Вейла, прежде чем отправиться на обход деревни.'}
 };
 export function correctWesterholm(source,actors=[]){
- const s=structuredClone(source);if(s.westerholmContentVersion===1)return s;
+ const s=structuredClone(source);if(s.westerholmContentVersion===2)return s;
  // Retain custom residents and all economic/construction state; replace only the invented storekeeper.
  s.npcs=s.npcs.filter(n=>!(n.id==='oren'&&n.name==='Орен'&&!n.actorUuid));
  for(const r of RESIDENTS){let n=s.npcs.find(n=>n.id===r.id);if(!n){n={id:r.id,homeId:r.homeId,actorUuid:''};s.npcs.push(n);}Object.assign(n,{name:r.name,profession:r.role,notes:r.description});const matches=actors.filter(a=>a.type==='npc'&&a.name===r.name);if(matches.length===1)n.actorUuid=matches[0].uuid;}
  for(const[id,p]of Object.entries(PLACES)){let b=s.buildings.find(b=>b.id===id);if(!b){if(!['pier','shop','watch'].includes(id))continue;b={id,condition:'intact',occupied:true,capacity:0,residents:0,owner:'Община Вестерхольма',img:'',job:null};s.buildings.push(b);}Object.assign(b,{name:p.name,type:p.type,notes:p.notes,posts:p.npc?[{id:id+'post',title:RESIDENTS.find(n=>n.id===p.npc).role,npcId:p.npc}]:p.role?[{id:id+'post',title:p.role,npcId:''}]:[]});}
  for(const b of s.buildings)for(const p of b.posts??[])if(!s.npcs.some(n=>n.id===p.npcId))p.npcId='';
  const oldHunter=s.buildings.find(b=>b.id==='house6');if(oldHunter){oldHunter.posts=oldHunter.posts.filter(p=>p.id!=='house6post');oldHunter.notes='Жилой дом Рикки.';}
- s.westerholmContentVersion=1;s.revision++;return s;
+ if(s.notes?.startsWith('Прибрежная деревня, 50 жителей: 9 именных и 41 прочий.'))s.notes='Прибрежная деревня у тихой бухты. Дороги соединяют дома, огороды, мастерские и рыбацкий причал.';
+ for(const entry of s.log??[]){if(entry.id==='outsidePeople'&&entry.text.includes('Последний Предел'))entry.text='Эдрик и Эмили живут вместе в домике неподалёку от деревни.';if(entry.id==='initialState'&&entry.text.startsWith('Начальное состояние Вестерхольма:'))entry.text='В Вестерхольме живут 50 человек. Мельница нуждается в ремонте, кузнице не хватает железа, а в таверну редко заходят путники.';}
+ s.westerholmContentVersion=2;s.revision++;return s;
 }
 export const WESTERHOLM_PAGE=`<h1>Вестерхольм</h1><p>Небольшая прибрежная деревня у тихой бухты. Дороги огибают озеро, соединяя дома, огороды и мастерские. У воды стоят рыбацкие лодки; над берегом слышны удары молота из кузницы и голоса людей, занятых повседневными делами.</p><figure><img src="modules/bagrovoe-bleeding/assets/maps/westerholm.png" alt="Карта Вестерхольма"></figure><h2>Места деревни</h2><ul>${Object.values(PLACES).map(p=>`<li><strong>${p.name}.</strong> ${p.notes}</li>`).join('')}</ul><h2>Люди Вестерхольма</h2>${RESIDENTS.map(r=>`<h3>${r.name}</h3><p><strong>${r.role}.</strong> ${r.description}</p>`).join('')}`;

@@ -187,7 +187,7 @@ export async function refreshWesterholmContent(){
  if(!game.user.isGM||game.users.activeGM?.id!==game.user.id)return;
  for(const doc of settlementEntries().filter(d=>d.getFlag(MOD,'settlementSeed')==='westerholm')){
   const s=doc.getFlag(MOD,FLAG);
-  if(s.westerholmContentVersion!==1)await commitVillage(doc,s.revision,x=>correctWesterholm(x,[...game.actors]));
+  if(s.westerholmContentVersion!==2)await commitVillage(doc,s.revision,x=>correctWesterholm(x,[...game.actors]));
   for(const journal of game.journal.filter(d=>d.id===doc.id||d.getFlag(MOD,'privateStateReference')===doc.id)){
    if(journal.getFlag(MOD,'westerholmPublicVersion')===1)continue;
    const page=journal.pages?.find(p=>p.id==='westerholmPage01'||p.name==='Вестерхольм и начальное состояние');
