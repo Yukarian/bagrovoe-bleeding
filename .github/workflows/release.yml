@@ -44,6 +44,8 @@ jobs:
           node --check scripts/communion.js
           node --check scripts/village-model.mjs
           node --check scripts/village-development.mjs
+          node --check scripts/village-economy.mjs
+          node --check scripts/economy-view.mjs
           node --check scripts/village-storage.mjs
           node --check scripts/development-runtime.mjs
           node --check scripts/development-view.mjs

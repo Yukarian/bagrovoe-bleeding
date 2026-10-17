@@ -1,4 +1,4 @@
-import {weeklySupplies} from './westerholm-content.mjs';
+import {economyHTML} from './economy-view.mjs';
 import {RESOURCES,TYPES} from './village-model.mjs';
 import {consumption,income} from './village-simple.mjs';
 import {dateLabel} from './ortes-date.mjs';
@@ -16,7 +16,7 @@ export function villageHTML(s,entries,selected,bastions=[],clock={day:0}){
  <p class="ortes-economy">За 7 дней: припасы <strong>+${income(s)} / −${consumption(s)}</strong> · итог ${income(s)-consumption(s)>=0?'+':''}${income(s)-consumption(s)}</p>
  ${s.shortage?`<p class="ortes-alert">Не хватает ${s.shortage.amount} припасов. Решение — за ведущим.</p>`:''}
 `}
- <p class="ortes-economy">Потребление: <strong>${weeklySupplies(s.population)} припасов в неделю</strong> — 1 на каждые 10 жителей, с округлением вверх. Справочный расход, без автоматического списания.</p>
+ ${s.schema===3?economyHTML(s):''}
  ${s.syncPending?`<p class="ortes-alert">Прежний ход Оплота прерван. ${button('resolveTurn','Проверить ход')}</p>`:''}
  ${work.length?`<p>Строится: ${work.map(b=>esc(b.name)+' — '+esc(dateLabel(b.construction.end,clock.months))).join('; ')}</p>`:''}
  ${(s.developmentEvents??s.pendingEvents??[]).length?`<p>${button('events','События на рассмотрении: '+(s.developmentEvents??s.pendingEvents).length)}</p>`:''}
