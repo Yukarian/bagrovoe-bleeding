@@ -1,3 +1,4 @@
+import {weeklySupplies} from './westerholm-content.mjs';
 import {RESOURCES,TYPES} from './village-model.mjs';
 import {consumption,income} from './village-simple.mjs';
 import {dateLabel} from './ortes-date.mjs';
@@ -5,7 +6,7 @@ export const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;'
 export const button=(cmd,label,id='')=>`<button type="button" data-cmd="${cmd}" data-id="${esc(id)}">${label}</button>`;
 export function villageHTML(s,entries,selected,bastions=[],clock={day:0}){
  const options=entries.map(d=>`<option value="${esc(d.id)}" ${d.id===selected?'selected':''}>${esc(d.name)}</option>`).join('');
- const header=`<header class="ortes-toolbar"><select aria-label="Поселение" data-village>${options||'<option>Нет поселений</option>'}</select>${button('development','Развитие')}${button('calendar','Календарь')}<details class="ortes-menu"><summary>Ещё</summary>${button('create','＋ Поселение')}${button('refresh','Обновить')}${button('journal','Карта и описание')}</details></header>`;
+ const header=`<header class="ortes-toolbar"><select aria-label="Поселение" data-village>${options||'<option>Нет поселений</option>'}</select>${button('development','Развитие')}${button('calendar','Календарь')}<details class="ortes-menu"><summary>Ещё</summary>${button('create','＋ Поселение')}${button('refresh','Обновить')}${button('journal','Карта деревни')}${selected?button('deleteVillage','Удалить поселение'):''}</details></header>`;
  if(!s)return header+'<p>Выберите или создайте поселение.</p>';
  const npc=id=>s.npcs.find(n=>n.id===id)?.name??'';
  const row=b=>`<details class="ortes-row" data-row="${esc(b.id)}"><summary><strong>${esc(b.name)}</strong><span>${esc((b.posts??[]).map(p=>npc(p.npcId)).filter(Boolean).join(', ')||TYPES[b.type])}</span>${b.construction&&!b.construction.complete?'<em>Строится до '+esc(dateLabel(b.construction.end,clock.months))+'</em>':''}</summary><div class="ortes-row-content">${b.img?`<img class="ortes-building-image" src="${esc(safeImage(b.img))}" alt="">`:''}<p class="ortes-notes">${esc(b.notes)}</p><p>${s.schema!==3&&b.type==='house'?`Жильцы: ${b.residents} / ${b.capacity}. `:''}${esc(b.owner)}</p><ul>${(b.posts??[]).map(p=>`<li>${esc(p.title)}: ${esc(npc(p.npcId)||'не назначен')} ${s.schema===3?'':button('post','Изменить',b.id+':'+p.id)+button('removePost','Убрать',b.id+':'+p.id)}</li>`).join('')}</ul><div class="ortes-actions">${button('building','Изменить',b.id)}${s.schema===3?'':button('post','＋ NPC',b.id)}${button('removeBuilding','Удалить',b.id)}</div></div></details>`;
@@ -15,15 +16,15 @@ export function villageHTML(s,entries,selected,bastions=[],clock={day:0}){
  <p class="ortes-economy">За 7 дней: припасы <strong>+${income(s)} / −${consumption(s)}</strong> · итог ${income(s)-consumption(s)>=0?'+':''}${income(s)-consumption(s)}</p>
  ${s.shortage?`<p class="ortes-alert">Не хватает ${s.shortage.amount} припасов. Решение — за ведущим.</p>`:''}
 `}
+ <p class="ortes-economy">Потребление: <strong>${weeklySupplies(s.population)} припасов в неделю</strong> — 1 на каждые 10 жителей, с округлением вверх. Справочный расход, без автоматического списания.</p>
  ${s.syncPending?`<p class="ortes-alert">Прежний ход Оплота прерван. ${button('resolveTurn','Проверить ход')}</p>`:''}
  ${work.length?`<p>Строится: ${work.map(b=>esc(b.name)+' — '+esc(dateLabel(b.construction.end,clock.months))).join('; ')}</p>`:''}
  ${(s.developmentEvents??s.pendingEvents??[]).length?`<p>${button('events','События на рассмотрении: '+(s.developmentEvents??s.pendingEvents).length)}</p>`:''}
  <h3>Оплоты ${button('linkBastion','＋ Связать')}</h3>${bastions.map(bastionHTML).join('')||'<p class="ortes-muted">Подключите Оплот персонажа. Его постройки и ресурсы остаются в листе владельца.</p>'}
- <h3>Деревня <details class="ortes-menu"><summary>Добавить</summary>${s.schema===3?'':button('construct','Строительство')}${button('building','Готовое здание')}${button('npc','Жителя')}</details></h3>
- <div class="ortes-list">${others.map(row).join('')}${houses.length?`<details class="ortes-house-group" data-row="houses"><summary>Жилые дома · ${houses.length}${s.schema===3?'':' · проживает '+houses.reduce((n,b)=>n+b.residents,0)}</summary>${houses.map(row).join('')}</details>`:''}</div>
- <details class="ortes-section" data-row="people"><summary>Именные жители · ${s.npcs.length}</summary>${s.npcs.map(n=>`<details class="ortes-row" data-row="npc-${esc(n.id)}"><summary><strong>${esc(n.name)}</strong><span>${esc(s.buildings.flatMap(b=>b.posts??[]).filter(p=>p.npcId===n.id).map(p=>p.title).join(', ')||n.profession||n.notes?.split('.')[0]||'')}</span></summary><div class="ortes-row-content"><p class="ortes-notes">${esc(n.notes)}</p><p>Дом: ${esc(s.buildings.find(b=>b.id===n.homeId)?.name??'не указан')}</p>${n.bastionJob?`<p>Оплот: ${esc(n.bastionJob)}</p>`:''}${n.actorUuid?button('actor','Лист',n.id):''}${button('npc','Изменить',n.id)}${button('removeNpc','Удалить',n.id)}</div></details>`).join('')}</details>
- <details class="ortes-section" data-row="history"><summary>Журнал · ${s.log.length}</summary>${button('note','＋ Запись')}${[...s.log].reverse().map(l=>`<article class="ortes-log-entry"><p><strong>${l.day!==undefined?esc(dateLabel(l.day,clock.months)):'Неделя '+l.week}</strong> · ${esc(l.text)}</p>${l.manual?button('note','Изменить',l.id)+button('removeNote','Удалить',l.id):''}</article>`).join('')}</details>
- <details class="ortes-section" data-row="notes"><summary>Описание деревни</summary><p class="ortes-notes">${esc(s.notes)}</p></details>`;
+ <h3>Ключевые здания <details class="ortes-menu"><summary>Добавить</summary>${s.schema===3?'':button('construct','Строительство')}${button('building','Готовое здание')}</details></h3>
+ <div class="ortes-list">${others.map(row).join('')}</div>
+ <details class="ortes-section" data-row="history"><summary>Журнал · ${s.log.length}</summary>${button('note','＋ Запись')}${[...s.log].reverse().map(l=>`<article class="ortes-log-entry"><p><strong>${l.day!==undefined?esc(dateLabel(l.day,clock.months)):'Неделя '+l.week}</strong> · ${esc(l.text)}</p>${l.manual?button('note','Изменить',l.id):''}${button('removeNote','Удалить','index:'+s.log.indexOf(l))}</article>`).join('')}</details>
+`;
 }
 export function bastionHTML(b){
  if(b.missing)return `<section class="ortes-bastion"><p>${esc(b.name)}</p>${button('unlinkBastion','Отключить связь',b.uuid)}</section>`;

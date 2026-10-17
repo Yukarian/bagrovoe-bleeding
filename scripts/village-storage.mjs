@@ -4,7 +4,7 @@ let cache=null,initializing;
 const storageClass=()=>globalThis.foundry?.documents?.collections?.CompendiumCollection??globalThis.CompendiumCollection;
 export const storageReady=()=>cache!==null||!storageClass();
 export const privateEntries=()=>cache?[...cache.values()]:storageClass()?[]:(game.journal??[]);
-export const settlementEntries=()=>privateEntries().filter(d=>d.getFlag(MOD,'village'));
+export const settlementEntries=()=>privateEntries().filter(d=>d.getFlag(MOD,'village')&&d.getFlag(MOD,'villageDeleted')!==true);
 export const settlementById=id=>privateEntries().find(d=>d.id===id);
 export async function createPrivateEntry(data){const pack=game.packs?.get(PACK);if(!pack){if(cache||storageClass())throw Error('Закрытое хранилище недоступно.');return JournalEntry.create(data);}const doc=await JournalEntry.create({...data,folder:null},{pack:PACK,keepId:true});cache?.set(doc.id,doc);return doc;}
 export function ensurePrivateStorage(){return initializing??=(initialize().finally(()=>{initializing=null;}));}

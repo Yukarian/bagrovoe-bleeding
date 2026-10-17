@@ -48,6 +48,7 @@ jobs:
           node --check scripts/development-runtime.mjs
           node --check scripts/development-view.mjs
           node --check scripts/development-ui.mjs
+          node --check scripts/westerholm-content.mjs
           node --check scripts/village-view.mjs
           node --check scripts/village-simple.mjs
           node --check scripts/village-events.mjs

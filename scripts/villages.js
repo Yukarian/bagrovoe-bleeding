@@ -1,4 +1,5 @@
-import {settlementEntries,settlementById,ensurePrivateStorage} from './village-storage.mjs';
+import {correctWesterholm,WESTERHOLM_PAGE} from './westerholm-content.mjs';
+import {privateEntries,settlementEntries,settlementById,ensurePrivateStorage} from './village-storage.mjs';
 import {freshVillage,copy,validate,editVillage,writeNote,RESOURCES,TYPES,ROLES} from './village-model.mjs';
 import {esc,button,villageHTML,safeImage} from './village-view.mjs';
 import {linkedBastions,linkBastion,unlinkBastion,requireFacility,finalizeTurn,installBridge,plainHTML,withBastionStaff,enableSimpleClock,nativeFacilityAdvance} from './bastion-bridge.mjs';
@@ -21,7 +22,7 @@ function requireWriter(){if(!game.user.isGM||game.users.activeGM?.id!==game.user
 let queue=Promise.resolve();
 // One writer, serialized local operations and revision checks prevent double charging.
 export function commitVillage(doc,expected,transform,{turnToken,paymentToken}={}){
- const task=queue.catch(()=>{}).then(async()=>{requireWriter();const state=withBastionStaff(copy(doc.getFlag(MOD,FLAG)));if(state.syncPending&&state.syncPending.token!==turnToken)throw Error('Общий ход Оплота ещё не завершён. Проверьте сообщение в окне деревни.');if(state.revision!==expected)throw Error('Деревня уже изменена. Обновите окно и повторите действие.');if(state.development?.pendingPayment&&state.development.pendingPayment.id!==paymentToken)throw Error('Сначала сверьте незавершённую оплату.');const next=validate(transform(state));const pending=calendarStatus()?.pending;if((pending||calendarAdvancing())&&(!pending||next.lastCalendarTransaction!==pending.id))throw Error('Сначала завершите прерванный ход календаря.');await doc.update({name:next.name,[`flags.${MOD}.${FLAG}`]:next,...(next.schema===3?{ownership:{default:0,...Object.fromEntries((game.users?.filter?.(u=>!u.isGM)??[]).map(u=>[u.id,0]))}}:{})});await publishDevelopment(doc,next);return next;});queue=task;return task;
+ const task=queue.catch(()=>{}).then(async()=>{requireWriter();if(doc.getFlag(MOD,'villageDeleted')===true)throw Error('Поселение удалено.');const state=withBastionStaff(copy(doc.getFlag(MOD,FLAG)));if(state.syncPending&&state.syncPending.token!==turnToken)throw Error('Общий ход Оплота ещё не завершён. Проверьте сообщение в окне деревни.');if(state.revision!==expected)throw Error('Деревня уже изменена. Обновите окно и повторите действие.');if(state.development?.pendingPayment&&state.development.pendingPayment.id!==paymentToken)throw Error('Сначала сверьте незавершённую оплату.');const next=validate(transform(state));const pending=calendarStatus()?.pending;if((pending||calendarAdvancing())&&(!pending||next.lastCalendarTransaction!==pending.id))throw Error('Сначала завершите прерванный ход календаря.');await doc.update({name:next.name,[`flags.${MOD}.${FLAG}`]:next,...(next.schema===3?{ownership:{default:0,...Object.fromEntries((game.users?.filter?.(u=>!u.isGM)??[]).map(u=>[u.id,0]))}}:{})});await publishDevelopment(doc,next);return next;});queue=task;return task;
 }
 async function settlementFolder(){
  let root=game.folders.find(f=>f.type==='JournalEntry'&&f.name==='Мир Ортес'&&!f.folder);
@@ -32,7 +33,7 @@ async function settlementFolder(){
 export async function ensureWesterholm(){
  if(!game.user.isGM||game.users.activeGM?.id!==game.user.id)return;
  await ensurePrivateStorage();
- if([...game.journal,...settlementEntries()].some(d=>d.getFlag(MOD,'settlementSeed')==='westerholm'||d.name==='Вестерхольм'))return;
+ if([...game.journal,...privateEntries()].some(d=>d.getFlag(MOD,'settlementSeed')==='westerholm'||d.name==='Вестерхольм'))return;
  const pack=game.packs.get(MOD+'.settlements');if(!pack)return;
  const source=await pack.getDocument('ortesWesterholm1');if(!source)return;
  const data=source.toObject();delete data._id;data.folder=(await settlementFolder()).id;data.ownership={default:0};
@@ -46,7 +47,7 @@ export class VillageApp extends ApplicationV2{
   if(!game.user.isGM)return '<p>Управление поселениями доступно ведущему.</p>';
   const entries=settlementEntries();
   if(!entries.some(d=>d.id===this.selected))this.selected=(entries.find(d=>d.getFlag(MOD,'settlementSeed')==='westerholm'||d.name==='Вестерхольм')??entries[0])?.id??null;
-  const selectedDoc=settlementById(this.selected);if(selectedDoc?.getFlag(MOD,FLAG)?.schema!==3&&!selectedDoc.getFlag(MOD,FLAG).syncPending&&game.users.activeGM?.id===game.user.id)await ensureClock();
+  const selectedDoc=settlementById(this.selected);if(selectedDoc&&selectedDoc.getFlag(MOD,FLAG)?.schema!==3&&!selectedDoc.getFlag(MOD,FLAG).syncPending&&game.users.activeGM?.id===game.user.id)await ensureClock();
   this.snapshot=this.selected?withBastionStaff(copy(settlementById(this.selected).getFlag(MOD,FLAG))):null;
   return `<div class="ortes-body">${villageHTML(this.snapshot,entries,this.selected,this.snapshot?linkedBastions(this.snapshot):[],publicClock())}</div>`;
  }
@@ -74,7 +75,9 @@ export class VillageApp extends ApplicationV2{
     const s=copy(this.snapshot),doc=settlementById(this.selected);if(!doc||!s)throw Error('Выберите поселение.');
     if(s.schema!==3&&cmd!=='resolveTurn')throw Error('Сначала завершите прежний ход Оплота для переноса деревни.');
     const save=fn=>commitVillage(doc,s.revision,fn),edit=fn=>save(current=>editVillage(current,fn));
-    if(cmd==='linkBastion'){
+    if(cmd==='deleteVillage'){
+     if(await confirm('Удалить поселение?',`<p>Удалить «${esc(s.name)}» и его страницы? Листы персонажей и их Оплоты сохранятся.</p>`))await deleteVillage(doc.id,s.revision);
+    }else if(cmd==='linkBastion'){
      const choices=Object.fromEntries(game.actors.filter(a=>a.type==='character'&&!(s.bastions??[]).includes(a.uuid)).map(a=>[a.uuid,a.name]));
      if(!Object.keys(choices).length)throw Error('Нет свободного листа персонажа игрока для связи.');
      const fd=await form('Связать Оплот',select('owner','Владелец Оплота',choices)+'<p>Все его постройки и приказы будут общими с деревней. Один Оплот связывается с одним поселением. Несколько Оплотов в деревне проходят общий ход вместе.</p>');if(!fd)return;await linkBastion(doc,fd.get('owner'));
@@ -103,10 +106,10 @@ export class VillageApp extends ApplicationV2{
      if(cmd==='nativeDelete'&&await confirm('Удалить постройку Оплота?',`<p>«${esc(item.name)}» будет удалена и из деревни, и из листа владельца. Выполняемый приказ также исчезнет.</p>`))await item.delete();
      if(cmd==='nativeEdit'){
       const snapshot=()=>JSON.stringify([item.name,item.img,item.system.disabled,item.system.description.value]),before=snapshot();
-      const fd=await form('Постройка Оплота',input('name','Название',item.name)+input('img','Изображение',item.img)+select('disabled','Состояние',{'no':'Целая / может работать','yes':'Повреждена / работа приостановлена'},item.system.disabled?'yes':'no')+textArea('description','Описание',plainHTML(item.system.description.value))+'<p>Строительство, размеры, особые правила и приказы доступны в полном листе постройки. Повреждения восстанавливаются по штатным правилам Оплота.</p>');if(!fd)return;
+      const fd=await form('Постройка Оплота',input('name','Название',item.name)+select('disabled','Состояние',{'no':'Целая / может работать','yes':'Повреждена / работа приостановлена'},item.system.disabled?'yes':'no')+textArea('description','Описание',plainHTML(item.system.description.value))+'<p>Строительство, размеры, особые правила и приказы доступны в полном листе постройки. Повреждения восстанавливаются по штатным правилам Оплота.</p>');if(!fd)return;
       if(snapshot()!==before)throw Error('Постройка изменена в другом окне. Откройте форму заново.');
       const name=String(fd.get('name')).trim();if(!name)throw Error('Укажите название.');
-      await item.update({name,img:safeImage(fd.get('img')),'system.disabled':fd.get('disabled')==='yes','system.description.value':'<p>'+esc(fd.get('description')).replace(/\n/g,'<br>')+'</p>'});
+      await item.update({name,'system.disabled':fd.get('disabled')==='yes','system.description.value':'<p>'+esc(fd.get('description')).replace(/\n/g,'<br>')+'</p>'});
      }
      if(cmd==='nativeStaff'){
       const before=JSON.stringify([item.system.hirelings.value,item.system.defenders.value]);
@@ -126,15 +129,15 @@ export class VillageApp extends ApplicationV2{
      const old=s.log.find(l=>l.id===id);const fd=await form(old?'Изменить запись':'Запись в журнал деревни',textArea('text','Событие / заметка',old?.text??''));if(!fd)return;
      await save(x=>writeNote(x,id||uid(),fd.get('text')));
     }else if(cmd==='removeNote'){
-     if(!await confirm('Удалить запись?','<p>Будет удалена только выбранная авторская заметка.</p>'))return;
-     await edit(x=>{x.log=x.log.filter(l=>!(l.id===id&&l.manual));});
+     if(!await confirm('Удалить запись?','<p>Удалится только запись. Результат события или строительства сохранится.</p>'))return;
+     await edit(x=>{if(id.startsWith('index:')){const i=Number(id.slice(6));if(!Number.isInteger(i)||i<0||i>=x.log.length)throw Error('Запись не найдена.');x.log.splice(i,1);}else{x.log=x.log.filter(l=>l.id!==id);}});
     }else if(cmd==='settings'){
      const fd=await form('Параметры поселения',input('name','Название',s.name)+input('population','Население',s.population,'number')+textArea('notes','Заметки',s.notes));if(!fd)return;
      await edit(x=>{x.name=String(fd.get('name')).trim();x.population=Number(fd.get('population'));x.notes=String(fd.get('notes'));});
     }else if(cmd==='building'){
      const b=s.buildings.find(b=>b.id===id)??{id:uid(),name:'Новая постройка',type:'house',condition:'intact',occupied:true,capacity:4,residents:0,owner:'',img:'',notes:'',posts:[],job:null};
-     const fd=await form('Здание',input('name','Название',b.name)+select('type','Тип',TYPES,b.type)+select('occupied','Использование',{'yes':'Используется','no':'Пустует'},b.occupied?'yes':'no')+(s.schema===3?'':input('capacity','Вместимость жителей',b.capacity,'number')+input('residents','Жильцы, включая именных',b.residents,'number'))+input('owner','Владелец / группа (заметка)',b.owner)+input('img','Путь к изображению',b.img)+textArea('notes','Описание',b.notes));if(!fd)return;
-     await edit(x=>{const updated={...b,name:String(fd.get('name')).trim(),type:fd.get('type'),occupied:fd.get('occupied')==='yes',capacity:s.schema===3?b.capacity:Number(fd.get('capacity')),residents:s.schema===3?b.residents:Number(fd.get('residents')),owner:String(fd.get('owner')),img:safeImage(fd.get('img')),notes:String(fd.get('notes'))};if(!id)updated.posts=[{id:uid(),title:ROLES[updated.type],npcId:''}];const index=x.buildings.findIndex(v=>v.id===id);if(index<0)x.buildings.push(updated);else x.buildings[index]=updated;});
+     const fd=await form('Здание',input('name','Название',b.name)+select('type','Тип',TYPES,b.type)+select('occupied','Использование',{'yes':'Используется','no':'Пустует'},b.occupied?'yes':'no')+(s.schema===3?'':input('capacity','Вместимость жителей',b.capacity,'number')+input('residents','Жильцы, включая именных',b.residents,'number'))+input('owner','Владелец / группа (заметка)',b.owner)+textArea('notes','Описание',b.notes));if(!fd)return;
+     await edit(x=>{const updated={...b,name:String(fd.get('name')).trim(),type:fd.get('type'),occupied:fd.get('occupied')==='yes',capacity:s.schema===3?b.capacity:Number(fd.get('capacity')),residents:s.schema===3?b.residents:Number(fd.get('residents')),owner:String(fd.get('owner')),img:b.img,notes:String(fd.get('notes'))};if(!id)updated.posts=[{id:uid(),title:ROLES[updated.type],npcId:''}];const index=x.buildings.findIndex(v=>v.id===id);if(index<0)x.buildings.push(updated);else x.buildings[index]=updated;});
     }else if(cmd==='npc'){
      const n=s.npcs.find(n=>n.id===id)??{id:uid(),name:'Новый житель',actorUuid:'',homeId:'',notes:''};
      const actorChoices={'':'Без листа персонажа',...Object.fromEntries(game.actors.map(a=>[a.uuid,a.name]))};if(n.actorUuid&&!actorChoices[n.actorUuid])actorChoices[n.actorUuid]='Связанный лист (вне списка)';
@@ -164,6 +167,31 @@ let app;
 function openVillages(){if(!game.user.isGM)return openDevelopment();app??=new VillageApp();return app.render({force:true});}
 Hooks.once('init',()=>{game.settings.registerMenu(MOD,'villages',{name:'Поселения Ортеса',label:'Открыть управление',hint:'Здания, жители, журнал и связь со штатными Оплотами D&D5e.',icon:'fa-solid fa-house-chimney',type:VillageApp,restricted:true});});
 function refreshVillages(){if(app?.rendered&&!app.busy)void app.render({force:true});}
-Hooks.once('ready',async()=>{globalThis.OrtesWorld={...(globalThis.OrtesWorld??{}),openVillages};game.modules.get(MOD).api??={};game.modules.get(MOD).api.villages={open:openVillages};installBridge({commit:commitVillage,refresh:refreshVillages});installDevelopment({commit:commitVillage});installOrtesClock({commit:commitVillage,flush:async()=>{await flushDevelopment();await queue.catch(()=>{});},nativeAdvance:nativeFacilityAdvance,refresh:()=>{refreshVillages();refreshCalendar();refreshDevelopment();}});enableSimpleClock({advance:days=>advanceCalendar(days,{expected:publicClock().revision})});try{await ensureWesterholm();await ensurePrivateStorage();await bootClock();if(game.user.isGM&&game.users.activeGM?.id===game.user.id)for(const d of settlementEntries().filter(d=>d.getFlag(MOD,'village')?.schema===3))await publishDevelopment(d,d.getFlag(MOD,'village'));refreshVillages();}catch(e){console.error('Ortes initialization',e);ui.notifications.error('Поселения: '+e.message);}});
-for(const event of ['createItem','updateItem','deleteItem','updateActor','deleteActor','updateJournalEntry'])Hooks.on(event,refreshVillages);
+Hooks.once('ready',async()=>{globalThis.OrtesWorld={...(globalThis.OrtesWorld??{}),openVillages};game.modules.get(MOD).api??={};game.modules.get(MOD).api.villages={open:openVillages,remove:deleteVillage};installBridge({commit:commitVillage,refresh:refreshVillages});installDevelopment({commit:commitVillage});installOrtesClock({commit:commitVillage,flush:async()=>{await flushDevelopment();await queue.catch(()=>{});},nativeAdvance:nativeFacilityAdvance,refresh:()=>{refreshVillages();refreshCalendar();refreshDevelopment();}});enableSimpleClock({advance:days=>advanceCalendar(days,{expected:publicClock().revision})});try{await ensureWesterholm();await ensurePrivateStorage();await bootClock();await refreshWesterholmContent();if(game.user.isGM&&game.users.activeGM?.id===game.user.id)for(const d of settlementEntries().filter(d=>d.getFlag(MOD,'village')?.schema===3))await publishDevelopment(d,d.getFlag(MOD,'village'));refreshVillages();}catch(e){console.error('Ortes initialization',e);ui.notifications.error('Поселения: '+e.message);}});
+for(const event of ['createItem','updateItem','deleteItem','updateActor','deleteActor','updateJournalEntry','deleteJournalEntry'])Hooks.on(event,refreshVillages);
 Hooks.on('getSceneControlButtons',controls=>{if(controls.tokens)controls.tokens.tools.ortesVillage={name:'ortesVillage',title:'Мир Ортес — Поселения',icon:'fa-solid fa-house-chimney',order:100,button:true,visible:true,onChange:openVillages};});
+
+export async function deleteVillage(id,expected){
+ await flushDevelopment();
+ const task=queue.catch(()=>{}).then(async()=>{
+  requireWriter();const doc=settlementById(id),s=doc?.getFlag(MOD,FLAG);
+  if(!s||doc.getFlag(MOD,'villageDeleted')===true)throw Error('Поселение уже удалено.');
+  if(s.revision!==expected)throw Error('Поселение изменилось. Обновите окно.');
+  if(s.syncPending||s.development?.pendingPayment||calendarAdvancing()||calendarStatus()?.pending)throw Error('Сначала завершите текущий ход или расчёт.');
+  for(const d of [...game.journal].filter(d=>d.id===id||d.getFlag(MOD,'privateStateReference')===id||d.getFlag(MOD,'developmentPublic')?.villageId===id))await d.delete();
+  await doc.update({[`flags.${MOD}.villageDeleted`]:true});
+  refreshVillages();refreshDevelopment();
+ });queue=task;return task;
+}
+export async function refreshWesterholmContent(){
+ if(!game.user.isGM||game.users.activeGM?.id!==game.user.id)return;
+ for(const doc of settlementEntries().filter(d=>d.getFlag(MOD,'settlementSeed')==='westerholm')){
+  const s=doc.getFlag(MOD,FLAG);
+  if(s.westerholmContentVersion!==1)await commitVillage(doc,s.revision,x=>correctWesterholm(x,[...game.actors]));
+  for(const journal of game.journal.filter(d=>d.id===doc.id||d.getFlag(MOD,'privateStateReference')===doc.id)){
+   if(journal.getFlag(MOD,'westerholmPublicVersion')===1)continue;
+   const page=journal.pages?.find(p=>p.id==='westerholmPage01'||p.name==='Вестерхольм и начальное состояние');
+   if(page){await journal.updateEmbeddedDocuments('JournalEntryPage',[{_id:page.id,name:'Вестерхольм', 'text.content':WESTERHOLM_PAGE}]);await journal.setFlag(MOD,'westerholmPublicVersion',1);}
+  }
+ }
+}
