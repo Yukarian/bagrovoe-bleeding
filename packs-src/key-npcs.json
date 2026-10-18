@@ -75724,7 +75724,7 @@
     "_id": "55d1f9e338560c6f",
     "name": "Эдмунд Валькрейн",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/key-npcs/edmund-valkrein.png",
     "ownership": {
       "default": 0
     },
@@ -75734,8 +75734,7 @@
         "keyNpc": true,
         "namedNpc": true,
         "category": "Торговый дом Валькрейн",
-        "sourceSlug": "edmund-valkrein",
-        "portraitPending": true
+        "sourceSlug": "edmund-valkrein"
       }
     },
     "effects": [],
@@ -76089,7 +76088,7 @@
     "prototypeToken": {
       "name": "Эдмунд Валькрейн",
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "modules/bagrovoe-bleeding/assets/tokens/key-npcs/edmund-valkrein.png"
       },
       "actorLink": true,
       "disposition": 0,

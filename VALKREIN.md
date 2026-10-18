@@ -1,8 +1,6 @@
 # Торговый дом Валькрейн — подготовленные материалы
 
-Статус: содержимое подготовлено; выпуск ожидает утверждённого портрета Эдмунда.
-В рабочем листе оставлен стандартный значок пустого NPC, а не другой портрет.
-Текущая опубликованная версия модуля остаётся 6.6.1.
+Версия 6.7.0. Утверждённый портрет сохранён без изменений; из него подготовлен круглый токен с прозрачным фоном и сдержанным сине-золотым ободком.
 
 ## Где находятся записи
 
@@ -22,7 +20,7 @@
 
 ## Неутверждённые детали
 
-- Портрет: требуется исходный утверждённый файл. Не генерировать замену.
+- Портрет утверждён пользователем и включён в модуль.
 - Город: предлагается Ройн. В [описании мира](https://app.notion.com/p/292b6f7340ee80c8b9b5d1cba8dddba4) это торговый город на озере Лир у пересечения двух дорог, с торговлей артефактами и магическими услугами. Предложение содержится только в заметке мастера; публичная резиденция не привязана к городу.
 - Герб описан словами, без произвольного изображения.
 - У Сердца нет назначенных зарядов, цены, настройки или дополнительных боевых свойств; системные пустые значения не являются утверждёнными правилами артефакта.
@@ -33,3 +31,10 @@
 Исходники: packs-src/key-npcs.json, packs-src/valkrein.json, packs-src/world-items.json. Отдельные импортируемые документы находятся в exports/edmund-valkrein.json, exports/heart-of-the-archmage.json и exports/valkrein-*.json. Сборщик scripts/build-valkrein.mjs повторяемый и сохраняет уже утверждённые изображения при снятом флаге portraitPending.
 
 Сборка использует штатные компендиумы Foundry и проверяет обратное чтение, идентификаторы и пути к ассетам. Автотесты проверяют параметры NPC, права журналов, отсутствие секретов в публичном тексте и ссылки между документами. Проверка в запущенном игровом мире ещё не выполнена.
+
+## Токен
+
+Исходный портрет: assets/portraits/key-npcs/edmund-valkrein.png (побайтовая копия присланного файла).
+Токен: assets/tokens/key-npcs/edmund-valkrein.png. Создан встроенным imagegen; прозрачность сохранена.
+
+Промпт: Edit target: supplied approved portrait of Edmund Valkrein. Create one square Foundry VTT circular portrait token, transparent outside circular border. Preserve this exact man's facial identity, age 52, hairstyle gray temples, curled moustache and short gray beard, expression, burgundy embroidered noble merchant clothes and white cravat. Closely crop existing portrait to head and upper shoulders with face large and clearly readable at small size; retain original painting style and natural head pose. Do not redesign or beautify character. Modest elegant narrow dark navy enamel and antique gold circular rim, understated small engraved scales motif at bottom, no lettering. Head may slightly overlap upper rim but fully within square image margins. No elaborate ornament, no new props. Inside circle subdued original background, outside true alpha transparency. This is a token adaptation, not a new portrait.
