@@ -2,7 +2,7 @@
   "id": "bagrovoe-bleeding",
   "title": "Мир Ортес",
   "description": "Мир Ортес: Багровое Причастие, Железные Гончие, бестиарий, предметы, простое управление поселениями, общий календарь и штатные Оплоты D&D5e.",
-  "version": "6.6.1",
+  "version": "6.7.0",
   "compatibility": {
     "minimum": "14.367",
     "verified": "14"
@@ -42,7 +42,7 @@
     ]
   },
   "manifest": "https://github.com/Yukarian/bagrovoe-bleeding/releases/latest/download/module.json",
-  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v6.6.1/bagrovoe-bleeding.zip",
+  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v6.7.0/bagrovoe-bleeding.zip",
   "url": "https://github.com/Yukarian/bagrovoe-bleeding",
   "packs": [
     {
@@ -147,6 +147,31 @@
         "ASSISTANT": "OWNER",
         "GAMEMASTER": "OWNER"
       }
+    },
+    {
+      "name": "valkrein",
+      "label": "Валькрейн | Дом и сюжет",
+      "path": "packs/valkrein",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER",
+        "GAMEMASTER": "OWNER"
+      }
+    },
+    {
+      "name": "world-items",
+      "label": "Мир Ортес | Артефакты",
+      "path": "packs/world-items",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER",
+        "GAMEMASTER": "OWNER"
+      },
+      "system": "dnd5e"
     }
   ],
   "packFolders": [
@@ -217,6 +242,20 @@
           "sorting": "a",
           "packs": [
             "key-npcs"
+          ]
+        },
+        {
+          "name": "Торговый дом Валькрейн",
+          "sorting": "a",
+          "packs": [
+            "valkrein"
+          ]
+        },
+        {
+          "name": "Артефакты мира",
+          "sorting": "a",
+          "packs": [
+            "world-items"
           ]
         }
       ]

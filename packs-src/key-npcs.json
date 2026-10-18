@@ -75719,5 +75719,384 @@
         "leorinaSeals": []
       }
     }
+  },
+  {
+    "_id": "55d1f9e338560c6f",
+    "name": "Эдмунд Валькрейн",
+    "type": "npc",
+    "img": "modules/bagrovoe-bleeding/assets/portraits/key-npcs/edmund-valkrein.png",
+    "ownership": {
+      "default": 0
+    },
+    "flags": {
+      "bagrovoe-bleeding": {
+        "valkrein": true,
+        "keyNpc": true,
+        "namedNpc": true,
+        "category": "Торговый дом Валькрейн",
+        "sourceSlug": "edmund-valkrein"
+      }
+    },
+    "effects": [],
+    "items": [
+      {
+        "_id": "a0e582011fce9763",
+        "name": "Слово дороже золота",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "effects": [],
+        "system": {
+          "identifier": "valkrein-contracts",
+          "description": {
+            "value": "<p>Эдмунд тщательно обсуждает условия и выполняет данное обещание. Он готов предложить полезную услугу или уступку ради долгосрочных деловых отношений.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {},
+          "source": {
+            "custom": "Мир Ортес",
+            "rules": "2024"
+          }
+        }
+      },
+      {
+        "_id": "8537cc920715804f",
+        "name": "Деловые связи",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "effects": [],
+        "system": {
+          "identifier": "valkrein-connections",
+          "description": {
+            "value": "<p>Через торговый дом Эдмунд связывается с поставщиками, мастерами, перевозчиками и хранителями складов. Наличие контакта не гарантирует бесплатную услугу или согласие собеседника.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {},
+          "source": {
+            "custom": "Мир Ортес",
+            "rules": "2024"
+          }
+        }
+      },
+      {
+        "_id": "8f7e123d2687748f",
+        "name": "Опытный переговорщик",
+        "type": "feat",
+        "img": "icons/svg/book.svg",
+        "effects": [],
+        "system": {
+          "identifier": "valkrein-negotiator",
+          "description": {
+            "value": "<p>Убеждение +7, Обман +7, Проницательность +5, Анализ +6. Эдмунд умеет оценивать условия сделки, замечать противоречия и выбирать доводы. Его убедительность не является магическим подчинением.</p>"
+          },
+          "type": {
+            "value": "monster"
+          },
+          "activities": {},
+          "source": {
+            "custom": "Мир Ортес",
+            "rules": "2024"
+          }
+        }
+      },
+      {
+        "_id": "8be6b1c2d514bd3c",
+        "name": "Кинжал",
+        "type": "weapon",
+        "img": "modules/bagrovoe-bleeding/assets/icons/combat/dagger.svg",
+        "effects": [],
+        "system": {
+          "identifier": "valkrein-dagger",
+          "description": {
+            "value": "<p>Рукопашная атака оружием: +3 к попаданию, досягаемость 5 футов, одна цель. Попадание: 1к4 + 1 колющего урона. Кинжал можно метнуть на 20/60 футов.</p>"
+          },
+          "type": {
+            "value": "simpleM",
+            "baseItem": "dagger"
+          },
+          "quantity": 1,
+          "equipped": true,
+          "identified": true,
+          "properties": [
+            "fin",
+            "lgt",
+            "thr"
+          ],
+          "activities": {
+            "faa523cd430bbf72": {
+              "_id": "faa523cd430bbf72",
+              "type": "attack",
+              "name": "Удар кинжалом",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "dex",
+                "bonus": "3",
+                "flat": true,
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 4,
+                    "bonus": "1",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": "5",
+                "long": ""
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "spellSlot": false,
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            },
+            "caf5a69ab95ef77c": {
+              "_id": "caf5a69ab95ef77c",
+              "type": "attack",
+              "name": "Метнуть кинжал",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "attack": {
+                "ability": "dex",
+                "bonus": "3",
+                "flat": true,
+                "type": {
+                  "value": "ranged",
+                  "classification": "weapon"
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 4,
+                    "bonus": "1",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    }
+                  }
+                ]
+              },
+              "range": {
+                "override": true,
+                "units": "ft",
+                "value": "20",
+                "long": "60"
+              },
+              "target": {
+                "override": true,
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                }
+              },
+              "consumption": {
+                "spellSlot": false,
+                "targets": [],
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "uses": {
+                "spent": 0,
+                "max": "",
+                "recovery": []
+              }
+            }
+          },
+          "source": {
+            "custom": "Мир Ортес",
+            "rules": "2024"
+          }
+        }
+      }
+    ],
+    "system": {
+      "abilities": {
+        "str": {
+          "value": 9,
+          "proficient": 0
+        },
+        "dex": {
+          "value": 12,
+          "proficient": 0
+        },
+        "con": {
+          "value": 12,
+          "proficient": 0
+        },
+        "int": {
+          "value": 17,
+          "proficient": 1
+        },
+        "wis": {
+          "value": 15,
+          "proficient": 1
+        },
+        "cha": {
+          "value": 18,
+          "proficient": 0
+        }
+      },
+      "attributes": {
+        "ac": {
+          "calcs": [
+            "natural"
+          ],
+          "flat": 14
+        },
+        "hp": {
+          "value": 45,
+          "max": 45,
+          "temp": 0,
+          "formula": "8d8 + 8"
+        },
+        "hd": {
+          "spent": 0
+        },
+        "movement": {
+          "units": "ft",
+          "speeds": {
+            "walk": "30"
+          }
+        },
+        "senses": {
+          "units": "ft"
+        },
+        "spell": {
+          "level": 0
+        }
+      },
+      "details": {
+        "type": {
+          "value": "humanoid",
+          "subtype": "человек"
+        },
+        "alignment": "Законопослушно-злой",
+        "cr": 3,
+        "age": "52",
+        "biography": {
+          "value": "<p>Эдмунд Валькрейн — человек 52 лет, глава торгового дома Валькрейн. Образованный, обаятельный и состоятельный торговец, известный надёжностью и жёсткими переговорами.</p><p>Разговаривает вежливо и по существу, внимательно выслушивает собеседника. Выполняет обещания, помогает партнёрам и дорожит своим добрым именем. Девиз его дома: «Слово дороже золота».</p>",
+          "public": "<p>Эдмунд Валькрейн — человек 52 лет, глава торгового дома Валькрейн. Образованный, обаятельный и состоятельный торговец, известный надёжностью и жёсткими переговорами.</p><p>Разговаривает вежливо и по существу, внимательно выслушивает собеседника. Выполняет обещания, помогает партнёрам и дорожит своим добрым именем. Девиз его дома: «Слово дороже золота».</p>"
+        }
+      },
+      "traits": {
+        "size": "med",
+        "languages": {
+          "value": [
+            "common"
+          ],
+          "custom": ""
+        }
+      },
+      "skills": {
+        "per": {
+          "ability": "cha",
+          "value": 1,
+          "roll": {
+            "bonus": "1"
+          }
+        },
+        "dec": {
+          "ability": "cha",
+          "value": 1,
+          "roll": {
+            "bonus": "1"
+          }
+        },
+        "ins": {
+          "ability": "wis",
+          "value": 1,
+          "roll": {
+            "bonus": "1"
+          }
+        },
+        "inv": {
+          "ability": "int",
+          "value": 1,
+          "roll": {
+            "bonus": "1"
+          }
+        }
+      },
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "source": {
+        "custom": "Мир Ортес",
+        "rules": "2024"
+      },
+      "identifier": "edmund-valkrein"
+    },
+    "prototypeToken": {
+      "name": "Эдмунд Валькрейн",
+      "texture": {
+        "src": "modules/bagrovoe-bleeding/assets/tokens/key-npcs/edmund-valkrein.png"
+      },
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "attributes.hp"
+      }
+    }
   }
 ]
