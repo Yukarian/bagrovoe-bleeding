@@ -147,6 +147,31 @@
         "ASSISTANT": "OWNER",
         "GAMEMASTER": "OWNER"
       }
+    },
+    {
+      "name": "valkrein",
+      "label": "Валькрейн | Дом и сюжет",
+      "path": "packs/valkrein",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER",
+        "GAMEMASTER": "OWNER"
+      }
+    },
+    {
+      "name": "world-items",
+      "label": "Мир Ортес | Артефакты",
+      "path": "packs/world-items",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER",
+        "GAMEMASTER": "OWNER"
+      },
+      "system": "dnd5e"
     }
   ],
   "packFolders": [
@@ -217,6 +242,20 @@
           "sorting": "a",
           "packs": [
             "key-npcs"
+          ]
+        },
+        {
+          "name": "Торговый дом Валькрейн",
+          "sorting": "a",
+          "packs": [
+            "valkrein"
+          ]
+        },
+        {
+          "name": "Артефакты мира",
+          "sorting": "a",
+          "packs": [
+            "world-items"
           ]
         }
       ]
