@@ -28,6 +28,14 @@ async function setup({enabled=false}={}){
  clock.installOrtesClock({commit:async(doc,expected,fn)=>{const s=doc.getFlag(MOD,'village');assert.equal(s.revision,expected);await doc.update({[`flags.${MOD}.village`]:fn(structuredClone(s))});},nativeAdvance:async(a,o)=>{nativeCalls.push({...o});if(failNative)throw Error('native disconnected');},refresh(){}});
  await clock.ensureClock();return d;
 }
+test('existing schema-3 economy refreshes pending event catalog on boot without advancing time',async()=>{
+ const d=await setup(),s=structuredClone(d.getFlag(MOD,'village'));delete s.eventCatalogVersion;
+ s.developmentEvents=[{id:'cache:14',eventKey:'cache',status:'pending',title:'Старый тайник',text:'Старое',effects:{gold:150},day:14,elapsed:14}];
+ await d.setFlag(MOD,'village',s);await clock.ensureClock();const out=d.getFlag(MOD,'village');
+ assert.equal(out.eventCatalogVersion,2);assert.deepEqual(out.developmentEvents[0].effects,{treasury:50});assert.deepEqual(out.economy,s.economy);assert.equal(game.time.worldTime,0);assert.equal(nativeCalls.length,0);
+ await clock.ensureClock();assert.equal(d.getFlag(MOD,'village').revision,out.revision);
+});
+
 test('calendar advances all villages once, calls native duration exactly once and rejects stale confirmations',async()=>{
  const d=await setup(),initial=clock.publicClock().revision;await clock.advanceCalendar(30,{expected:initial});assert.equal(clock.publicClock().day,30);assert.equal(game.time.worldTime,30*86400);assert.equal(nativeCalls.reduce((n,o)=>n+o.duration,0),30);assert.equal(nativeCalls.filter(o=>o.turn).length,4);assert.equal(d.getFlag(MOD,'village').developmentEvents.length,0);
  await assert.rejects(clock.advanceCalendar(7,{expected:initial}),/изменилась/);assert.equal(clock.publicClock().day,30);await clock.bootClock();assert.equal(d.getFlag(MOD,'village').developmentEvents.length,0);
