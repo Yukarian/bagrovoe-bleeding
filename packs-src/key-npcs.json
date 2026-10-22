@@ -76101,7 +76101,7 @@
   },
   {
     "_id": "f4fdf0667c3b6884",
-    "name": "Безымянный архимаг",
+    "name": "Альдевальд Моркант",
     "type": "npc",
     "img": "modules/bagrovoe-bleeding/assets/archmage/human.png",
     "system": {
@@ -76729,7 +76729,7 @@
       }
     },
     "prototypeToken": {
-      "name": "Безымянный архимаг",
+      "name": "Альдевальд Моркант",
       "displayName": 20,
       "actorLink": true,
       "appendNumber": false,
@@ -82338,13 +82338,13 @@
           }
         },
         "guise": "human",
-        "category": "Безымянный архимаг — человеческий облик"
+        "category": "Альдевальд Моркант — человеческий облик"
       }
     }
   },
   {
     "_id": "c2fcd397ffc31b04",
-    "name": "Безымянный архимаг",
+    "name": "Альдевальд Моркант",
     "type": "npc",
     "img": "icons/creatures/abilities/dragon-fire-breath-orange.webp",
     "system": {
@@ -82972,7 +82972,7 @@
       }
     },
     "prototypeToken": {
-      "name": "Безымянный архимаг",
+      "name": "Альдевальд Моркант",
       "displayName": 20,
       "actorLink": true,
       "appendNumber": false,
@@ -88581,7 +88581,7 @@
           }
         },
         "guise": "dragon",
-        "category": "Безымянный архимаг — истинный облик"
+        "category": "Альдевальд Моркант — истинный облик"
       }
     }
   }

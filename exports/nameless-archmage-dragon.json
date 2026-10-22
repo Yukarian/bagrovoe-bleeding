@@ -1,6 +1,6 @@
 {
   "_id": "c2fcd397ffc31b04",
-  "name": "Безымянный архимаг",
+  "name": "Альдевальд Моркант",
   "type": "npc",
   "img": "icons/creatures/abilities/dragon-fire-breath-orange.webp",
   "system": {
@@ -628,7 +628,7 @@
     }
   },
   "prototypeToken": {
-    "name": "Безымянный архимаг",
+    "name": "Альдевальд Моркант",
     "displayName": 20,
     "actorLink": true,
     "appendNumber": false,
@@ -6237,7 +6237,7 @@
         }
       },
       "guise": "dragon",
-      "category": "Безымянный архимаг — истинный облик"
+      "category": "Альдевальд Моркант — истинный облик"
     }
   }
 }
