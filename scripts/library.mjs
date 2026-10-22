@@ -11,7 +11,7 @@ export async function configureLibrary() {
       await pack.configure({ownership: {...pack.ownership, PLAYER:'NONE', TRUSTED:'NONE', ASSISTANT:'OWNER', GAMEMASTER:'OWNER'}});
     }
   }
-  if (game.settings.get(MOD, 'libraryLayoutVersion') >= 3) return;
+  if (game.settings.get(MOD, 'libraryLayoutVersion') >= 4) return;
   const own = new Set(packs.map(p => p.collection));
   const beneath = (folder, ancestor) => {
     const seen = new Set();
@@ -42,7 +42,7 @@ export async function configureLibrary() {
     }
   }
   await arrange(module.packFolders);
-  await game.settings.set(MOD, 'libraryLayoutVersion', 3);
+  await game.settings.set(MOD, 'libraryLayoutVersion', 4);
 }
 
 Hooks.once('init', () => game.settings.register(MOD, 'libraryLayoutVersion', {scope:'world', config:false, type:Number, default:0}));

@@ -1,0 +1,141 @@
+{
+  "_id": "eb94c5af1231db12",
+  "name": "Кинжал переселения души",
+  "type": "weapon",
+  "img": "icons/weapons/daggers/dagger-jeweled-purple.webp",
+  "ownership": {
+    "default": 0
+  },
+  "effects": [],
+  "flags": {
+    "bagrovoe-bleeding": {
+      "archmage": true,
+      "category": "Безымянный архимаг — черновики",
+      "draft": true
+    }
+  },
+  "system": {
+    "identifier": "archmage-soul-dagger",
+    "description": {
+      "value": "<p>Черновик уникального магического предмета. Известный факт: после убийства красного дракона этим кинжалом душа волшебника переселилась из кареты-филактерии в мёртвое тело дракона. Обстоятельства подготовки и возможность повторения не установлены. Это не разрешение на произвольное переселение душ; кнопки переноса, бесконечных зарядов и воскрешения нет.</p><p>Обычная атака кинжалом: 1к4 колющего урона плюс модификатор характеристики. Магический бонус к попаданию не утверждён. Не добавлен в инвентарь NPC: нынешний владелец неизвестен.</p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "custom": "Мир Ортес — сюжетный черновик"
+    },
+    "type": {
+      "value": "simpleM",
+      "baseItem": "dagger"
+    },
+    "quantity": 1,
+    "properties": [
+      "fin",
+      "lgt",
+      "thr",
+      "mgc"
+    ],
+    "equipped": false,
+    "proficient": null,
+    "identified": true,
+    "weight": {
+      "value": 1,
+      "units": "lb"
+    },
+    "range": {
+      "value": 20,
+      "long": 60,
+      "reach": 5,
+      "units": "ft"
+    },
+    "damage": {
+      "base": {
+        "number": 1,
+        "denomination": 4,
+        "bonus": "",
+        "types": [
+          "piercing"
+        ],
+        "custom": {
+          "enabled": false,
+          "formula": ""
+        },
+        "scaling": {
+          "mode": "",
+          "number": 0
+        },
+        "modifiers": []
+      }
+    },
+    "activities": {
+      "43f139f8a5d61f67": {
+        "_id": "43f139f8a5d61f67",
+        "type": "attack",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true
+        },
+        "consumption": {
+          "targets": [],
+          "spellSlot": false,
+          "scaling": {
+            "allowed": false
+          }
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "range": {
+          "units": "self",
+          "override": true
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "template": {},
+          "prompt": true,
+          "override": true
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "effects": [],
+        "flags": {},
+        "roll": {
+          "formula": "",
+          "prompt": false,
+          "visible": false
+        },
+        "attack": {
+          "ability": "",
+          "flat": false,
+          "bonus": "",
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          },
+          "critical": {
+            "threshold": null
+          }
+        },
+        "damage": {
+          "includeBase": true,
+          "parts": []
+        }
+      }
+    },
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    }
+  }
+}

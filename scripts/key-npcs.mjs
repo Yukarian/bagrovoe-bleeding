@@ -10,9 +10,11 @@ export function formUpdate(actor, form) {
   return {
     img: data.img, [`flags.${MOD}.guise`]: form,
     'system.traits.size': data.size,
+    ...Object.fromEntries(Object.entries(data.abilities ?? {}).map(([key, value]) => [`system.abilities.${key}.value`, value])),
     ...Object.fromEntries(Object.entries(data.speeds).map(([key, value]) => [`system.attributes.movement.speeds.${key}`, value])),
     'prototypeToken.texture.src': data.token, 'prototypeToken.texture.scaleX': 1, 'prototypeToken.texture.scaleY': 1,
     'prototypeToken.width': data.width, 'prototypeToken.height': data.height,
+    ...(flag(actor, 'archmage') ? {'prototypeToken.depth': data.width} : {}),
     'prototypeToken.ring.enabled': false
   };
 }
@@ -26,7 +28,8 @@ export async function setForm(actor, form) {
     const tokens = [...scene.tokens].filter(t => actor.isToken ? t.uuid === actor.token?.uuid : t.actorLink && t.actorId === actor.id);
     if (tokens.length) await scene.updateEmbeddedDocuments('Token', tokens.map(t => ({
       _id: t.id, 'texture.src': data.token, 'texture.scaleX': 1, 'texture.scaleY': 1,
-      width: data.width, height: data.height, 'ring.enabled': false
+      width: data.width, height: data.height, 'ring.enabled': false,
+      ...(flag(actor, 'archmage') ? {depth: data.width} : {})
     })));
   }
 }
