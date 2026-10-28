@@ -1,0 +1,1255 @@
+{
+  "_id": "42c2986b1a7a3063",
+  "name": "Сайлас Вейн",
+  "type": "npc",
+  "img": "modules/bagrovoe-bleeding/assets/raess-company/sylas-veyn-company/portrait.png",
+  "system": {
+    "identifier": "sylas-veyn-company",
+    "currency": {
+      "pp": 0,
+      "gp": 0,
+      "ep": 0,
+      "sp": 0,
+      "cp": 0
+    },
+    "abilities": {
+      "str": {
+        "value": 11,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "dex": {
+        "value": 18,
+        "proficient": 1,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "con": {
+        "value": 14,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "int": {
+        "value": 12,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "wis": {
+        "value": 16,
+        "proficient": 1,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "cha": {
+        "value": 10,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      }
+    },
+    "bonuses": {
+      "mwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "msak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rsak": {
+        "attack": "",
+        "damage": ""
+      },
+      "abilities": {
+        "check": "",
+        "save": "",
+        "skill": ""
+      },
+      "spell": {
+        "dc": ""
+      }
+    },
+    "skills": {
+      "acr": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ani": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "arc": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ath": {
+        "ability": "str",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "dec": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "his": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ins": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "itm": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "inv": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "med": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "nat": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "prc": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 2,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "prf": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "per": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "rel": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "slt": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ste": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "sur": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      }
+    },
+    "tools": {},
+    "spells": {
+      "spell1": {
+        "value": 0,
+        "override": 0
+      },
+      "spell2": {
+        "value": 0,
+        "override": 0
+      },
+      "spell3": {
+        "value": 0,
+        "override": 0
+      },
+      "spell4": {
+        "value": 0,
+        "override": 0
+      },
+      "spell5": {
+        "value": 0,
+        "override": 0
+      },
+      "spell6": {
+        "value": 0,
+        "override": 0
+      },
+      "spell7": {
+        "value": 0,
+        "override": 0
+      },
+      "spell8": {
+        "value": 0,
+        "override": 0
+      },
+      "spell9": {
+        "value": 0,
+        "override": 0
+      },
+      "pact": {
+        "value": 0,
+        "override": 0
+      }
+    },
+    "attributes": {
+      "init": {
+        "ability": "",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "bonus": ""
+      },
+      "movement": {
+        "units": "ft",
+        "hover": false,
+        "ignoredDifficultTerrain": [],
+        "speeds": {
+          "walk": "35"
+        }
+      },
+      "attunement": {
+        "max": 3
+      },
+      "senses": {
+        "units": "ft",
+        "ranges": {},
+        "special": ""
+      },
+      "spellcasting": "",
+      "exhaustion": 0,
+      "concentration": {
+        "ability": "con",
+        "roll": {
+          "mode": 0,
+          "min": null,
+          "max": null
+        },
+        "limit": 1
+      },
+      "ac": {
+        "flat": 16,
+        "calcs": [
+          "natural"
+        ],
+        "formulas": [],
+        "override": null
+      },
+      "hd": {
+        "spent": 0
+      },
+      "hp": {
+        "value": 68,
+        "max": 68,
+        "temp": 0,
+        "formula": "11d8 + 22"
+      },
+      "death": {
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "success": 0,
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "spell": {
+        "level": 0
+      },
+      "loyalty": {
+        "value": null
+      },
+      "price": {
+        "value": null,
+        "denomination": "gp"
+      }
+    },
+    "details": {
+      "alignment": "Не определено",
+      "ideal": "",
+      "bond": "",
+      "flaw": "",
+      "race": null,
+      "cr": 3,
+      "type": {
+        "value": "humanoid",
+        "subtype": "Лесной эльф",
+        "custom": "",
+        "swarm": ""
+      },
+      "habitat": {
+        "value": [],
+        "custom": ""
+      },
+      "treasure": {
+        "value": []
+      },
+      "biography": {
+        "public": "<p>Эльфийский лучник в зелёном плаще. Спокоен, терпелив и замечает следы, которые остальные проходят мимо.</p>",
+        "value": "<p>Эльфийский лучник в зелёном плаще. Спокоен, терпелив и замечает следы, которые остальные проходят мимо.</p>"
+      }
+    },
+    "resources": {
+      "legact": {
+        "max": 0,
+        "spent": 0
+      },
+      "legres": {
+        "max": 0,
+        "spent": 0
+      },
+      "lair": {
+        "value": false,
+        "inside": false,
+        "initiative": null
+      }
+    },
+    "source": {
+      "rules": "2024",
+      "custom": "Мир Ортес — спутники Раэсса"
+    },
+    "traits": {
+      "size": "med",
+      "di": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dr": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dv": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dm": {
+        "amount": {},
+        "bypasses": []
+      },
+      "ci": {
+        "value": [],
+        "custom": ""
+      },
+      "languages": {
+        "value": [
+          "common",
+          "elvish"
+        ],
+        "custom": "",
+        "communication": {}
+      },
+      "important": true
+    }
+  },
+  "prototypeToken": {
+    "name": "Сайлас Вейн",
+    "displayName": 20,
+    "actorLink": true,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/bagrovoe-bleeding/assets/raess-company/sylas-veyn-company/token.png",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": {},
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 2,
+        "texture": null
+      }
+    },
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "depth": 1,
+    "flags": {}
+  },
+  "items": [
+    {
+      "_id": "017a0fb775421f07",
+      "name": "Длинный лук",
+      "type": "feat",
+      "img": "icons/skills/melee/strike-sword-steel-yellow.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "longbow",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Атака +6; урон 1к8 + 4. Дистанция 150/600 футов.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "activities": {
+          "0cb890dcbcebcc8b": {
+            "_id": "0cb890dcbcebcc8b",
+            "type": "attack",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "150",
+              "override": true,
+              "long": "600"
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "attack": {
+              "ability": "",
+              "bonus": "6",
+              "flat": true,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              },
+              "critical": {
+                "threshold": null
+              }
+            },
+            "damage": {
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 8,
+                  "bonus": "4",
+                  "types": [
+                    "piercing"
+                  ],
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "scaling": {
+                    "mode": "",
+                    "number": 0
+                  },
+                  "modifiers": []
+                }
+              ],
+              "critical": {
+                "bonus": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "9c09e154a8d9bfc0",
+      "name": "Мультиатака",
+      "type": "feat",
+      "img": "icons/skills/melee/strike-sword-steel-yellow.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "multiattack",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Две атаки длинным луком. Бросьте атаку дважды.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "activities": {
+          "8172518d6507729b": {
+            "_id": "8172518d6507729b",
+            "type": "utility",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "self",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "self",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": false,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {}
+          }
+        }
+      }
+    },
+    {
+      "_id": "9e252d0637ed8dc7",
+      "name": "Прицельный выстрел",
+      "type": "feat",
+      "img": "icons/skills/melee/strike-sword-steel-yellow.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "aimed-shot",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Один раз в свой ход, если до попадания не перемещался в этом ходу: одна успешная атака луком наносит дополнительные 1к8 колющего урона. При критическом попадании кости удваиваются.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "activities": {
+          "a76686d8d3a63300": {
+            "_id": "a76686d8d3a63300",
+            "type": "damage",
+            "name": "",
+            "activation": {
+              "type": "special",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "150",
+              "override": true,
+              "long": "600"
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "damage": {
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "piercing"
+                  ],
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "scaling": {
+                    "mode": "",
+                    "number": 0
+                  },
+                  "modifiers": []
+                }
+              ],
+              "critical": {
+                "allow": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "edae22a16f4e6cfa",
+      "name": "Сковывающая стрела",
+      "type": "feat",
+      "img": "icons/skills/melee/strike-sword-steel-yellow.webp",
+      "effects": [
+        {
+          "_id": "fb1c5d010e5ba0e1",
+          "name": "Сковывающая стрела",
+          "img": "icons/skills/melee/strike-sword-steel-yellow.webp",
+          "type": "base",
+          "transfer": false,
+          "disabled": false,
+          "statuses": [],
+          "changes": [],
+          "duration": {},
+          "system": {
+            "magical": true,
+            "changes": [
+              {
+                "_id": "16d5c42e38a59735",
+                "key": "system.attributes.movement.speeds.walk",
+                "value": 0,
+                "type": "override",
+                "phase": "initial",
+                "priority": null
+              },
+              {
+                "_id": "4b741e24bc18f965",
+                "key": "system.attributes.movement.speeds.fly",
+                "value": 0,
+                "type": "override",
+                "phase": "initial",
+                "priority": null
+              },
+              {
+                "_id": "843b21bc7d82597e",
+                "key": "system.attributes.movement.speeds.swim",
+                "value": 0,
+                "type": "override",
+                "phase": "initial",
+                "priority": null
+              },
+              {
+                "_id": "c57dfd9e3e7f8206",
+                "key": "system.attributes.movement.speeds.climb",
+                "value": 0,
+                "type": "override",
+                "phase": "initial",
+                "priority": null
+              },
+              {
+                "_id": "13db5204702eb4ff",
+                "key": "system.attributes.movement.speeds.burrow",
+                "value": 0,
+                "type": "override",
+                "phase": "initial",
+                "priority": null
+              }
+            ]
+          },
+          "flags": {}
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "binding-arrow",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>После попадания стрелой цель делает спасбросок Силы Сл 14. При провале её скорость равна 0 до конца следующего хода Сайласа. Два раза за долгий отдых; расходуется только после выбранного попадания. Урон лука повторно не бросается. Ведущий удаляет эффект в конце нужного хода Сайласа.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "2",
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ]
+        },
+        "activities": {
+          "17415bcaf46864f6": {
+            "_id": "17415bcaf46864f6",
+            "type": "save",
+            "name": "",
+            "activation": {
+              "type": "special",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1"
+                }
+              ],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "600",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [
+              {
+                "_id": "fb1c5d010e5ba0e1",
+                "onSave": false
+              }
+            ],
+            "flags": {},
+            "save": {
+              "ability": [
+                "str"
+              ],
+              "dc": {
+                "calculation": "",
+                "formula": "14"
+              }
+            },
+            "damage": {
+              "parts": [],
+              "onSave": "none"
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "1abec288b8827850",
+      "name": "Лесное укрытие",
+      "type": "feat",
+      "img": "icons/svg/wing.svg",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "forest-cover",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Бонусным действием совершает Засаду, соблюдая обычные условия скрытности.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "activities": {
+          "de220065a5d69849": {
+            "_id": "de220065a5d69849",
+            "type": "utility",
+            "name": "",
+            "activation": {
+              "type": "bonus",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "self",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "self",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": false,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {}
+          }
+        }
+      }
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "flags": {
+    "bagrovoe-bleeding": {
+      "keyNpc": true,
+      "namedNpc": true,
+      "raessCompany": true,
+      "category": "Отряд Раэсса Валира",
+      "sourceSlug": "sylas-veyn-company",
+      "contentVersion": "6.13.0"
+    }
+  }
+}

@@ -1,0 +1,2588 @@
+{
+  "_id": "12006da591471ecc",
+  "name": "Веспа Керн",
+  "type": "npc",
+  "img": "modules/bagrovoe-bleeding/assets/raess-company/vespa-kern/portrait.png",
+  "system": {
+    "identifier": "vespa-kern",
+    "currency": {
+      "pp": 0,
+      "gp": 0,
+      "ep": 0,
+      "sp": 0,
+      "cp": 0
+    },
+    "abilities": {
+      "str": {
+        "value": 8,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "dex": {
+        "value": 16,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "con": {
+        "value": 12,
+        "proficient": 1,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "int": {
+        "value": 14,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "wis": {
+        "value": 12,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "cha": {
+        "value": 18,
+        "proficient": 1,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      }
+    },
+    "bonuses": {
+      "mwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "msak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rsak": {
+        "attack": "",
+        "damage": ""
+      },
+      "abilities": {
+        "check": "",
+        "save": "",
+        "skill": ""
+      },
+      "spell": {
+        "dc": ""
+      }
+    },
+    "skills": {
+      "acr": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ani": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "arc": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ath": {
+        "ability": "str",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "dec": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "his": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ins": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "itm": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "inv": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "med": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "nat": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "prc": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "prf": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "per": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "rel": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "slt": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ste": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "sur": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      }
+    },
+    "tools": {},
+    "spells": {
+      "spell1": {
+        "value": 4,
+        "override": 4
+      },
+      "spell2": {
+        "value": 3,
+        "override": 3
+      },
+      "spell3": {
+        "value": 3,
+        "override": 3
+      },
+      "spell4": {
+        "value": 0,
+        "override": 0
+      },
+      "spell5": {
+        "value": 0,
+        "override": 0
+      },
+      "spell6": {
+        "value": 0,
+        "override": 0
+      },
+      "spell7": {
+        "value": 0,
+        "override": 0
+      },
+      "spell8": {
+        "value": 0,
+        "override": 0
+      },
+      "spell9": {
+        "value": 0,
+        "override": 0
+      },
+      "pact": {
+        "value": 0,
+        "override": 0
+      }
+    },
+    "attributes": {
+      "init": {
+        "ability": "",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "bonus": ""
+      },
+      "movement": {
+        "units": "ft",
+        "hover": false,
+        "ignoredDifficultTerrain": [],
+        "speeds": {
+          "walk": "30"
+        }
+      },
+      "attunement": {
+        "max": 3
+      },
+      "senses": {
+        "units": "ft",
+        "ranges": {},
+        "special": ""
+      },
+      "spellcasting": "cha",
+      "exhaustion": 0,
+      "concentration": {
+        "ability": "con",
+        "roll": {
+          "mode": 0,
+          "min": null,
+          "max": null
+        },
+        "limit": 1
+      },
+      "ac": {
+        "flat": 15,
+        "calcs": [
+          "natural"
+        ],
+        "formulas": [],
+        "override": null
+      },
+      "hd": {
+        "spent": 0
+      },
+      "hp": {
+        "value": 60,
+        "max": 60,
+        "temp": 0,
+        "formula": "11d8 + 11"
+      },
+      "death": {
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "success": 0,
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "spell": {
+        "level": 6
+      },
+      "loyalty": {
+        "value": null
+      },
+      "price": {
+        "value": null,
+        "denomination": "gp"
+      }
+    },
+    "details": {
+      "alignment": "Не определено",
+      "ideal": "",
+      "bond": "",
+      "flaw": "",
+      "race": null,
+      "cr": 4,
+      "type": {
+        "value": "humanoid",
+        "subtype": "Тифлинг",
+        "custom": "",
+        "swarm": ""
+      },
+      "habitat": {
+        "value": [],
+        "custom": ""
+      },
+      "treasure": {
+        "value": []
+      },
+      "biography": {
+        "public": "<p>Тифлинг с фиолетовой кожей и спокойной улыбкой. Наблюдательна, иронична, ценит свободу выбора и умение договариваться.</p>",
+        "value": "<p>Тифлинг с фиолетовой кожей и спокойной улыбкой. Наблюдательна, иронична, ценит свободу выбора и умение договариваться.</p>"
+      }
+    },
+    "resources": {
+      "legact": {
+        "max": 0,
+        "spent": 0
+      },
+      "legres": {
+        "max": 0,
+        "spent": 0
+      },
+      "lair": {
+        "value": false,
+        "inside": false,
+        "initiative": null
+      }
+    },
+    "source": {
+      "rules": "2024",
+      "custom": "Мир Ортес — спутники Раэсса"
+    },
+    "traits": {
+      "size": "med",
+      "di": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dr": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dv": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dm": {
+        "amount": {},
+        "bypasses": []
+      },
+      "ci": {
+        "value": [],
+        "custom": ""
+      },
+      "languages": {
+        "value": [
+          "common",
+          "infernal"
+        ],
+        "custom": "",
+        "communication": {}
+      },
+      "important": true
+    }
+  },
+  "prototypeToken": {
+    "name": "Веспа Керн",
+    "displayName": 20,
+    "actorLink": true,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/bagrovoe-bleeding/assets/raess-company/vespa-kern/token.png",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": {},
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 2,
+        "texture": null
+      }
+    },
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "depth": 1,
+    "flags": {}
+  },
+  "items": [
+    {
+      "_id": "cbb93de505dcfc5c",
+      "name": "Искажённое восприятие",
+      "type": "feat",
+      "img": "icons/svg/daze.svg",
+      "effects": [
+        {
+          "_id": "834af2fb40631b31",
+          "name": "Искажённое восприятие",
+          "img": "icons/svg/daze.svg",
+          "type": "base",
+          "transfer": false,
+          "disabled": false,
+          "statuses": [],
+          "changes": [],
+          "duration": {},
+          "system": {
+            "magical": true,
+            "changes": [
+              {
+                "_id": "39f2766d6eb6638d",
+                "key": "system.rolls.attack.mode",
+                "value": -1,
+                "type": "add",
+                "phase": "initial",
+                "priority": null
+              }
+            ]
+          },
+          "flags": {}
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "distorted-perception",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Цель в пределах 60 футов: спасбросок Мудрости Сл 14. При провале помеха на атаки до конца следующего хода Веспы. Перезарядка 5–6. Ведущий удаляет эффект в конце нужного хода Веспы.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "1",
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "recharge",
+              "type": "recoverAll",
+              "formula": "5"
+            }
+          ]
+        },
+        "activities": {
+          "23c29bdfaf3ab7a8": {
+            "_id": "23c29bdfaf3ab7a8",
+            "type": "save",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1"
+                }
+              ],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "60",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [
+              {
+                "_id": "834af2fb40631b31",
+                "onSave": false
+              }
+            ],
+            "flags": {},
+            "save": {
+              "ability": [
+                "wis"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "parts": [],
+              "onSave": "none"
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "07b1bec61c95e5d6",
+      "name": "Смена позиции",
+      "type": "feat",
+      "img": "icons/svg/wing.svg",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "reposition",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Бонусным действием телепортируется на расстояние до 15 футов. Два раза за долгий отдых.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "2",
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ]
+        },
+        "activities": {
+          "523d95b925b95167": {
+            "_id": "523d95b925b95167",
+            "type": "teleport",
+            "name": "",
+            "activation": {
+              "type": "bonus",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1"
+                }
+              ],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "self",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "self",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": false,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "teleport": {
+              "value": "15",
+              "units": "ft",
+              "override": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "e57a8e10d67f96c5",
+      "name": "Малая иллюзия",
+      "type": "spell",
+      "img": "icons/sundries/gaming/playing-cards.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы создаёте звук или образ объекта в пределах дистанции, которые существуют, пока действует заклинание. Ознакомьтесь с описанием возможных эффектов ниже. Иллюзия исчезает, если вы сотворите это заклинание снова.</p><p>Если существо выполнит действие &amp;Reference, чтобы исследовать звук или образ, оно может понять, что это иллюзия, пройдя проверку Интеллекта (Расследование). СЛ проверки равна СЛ испытаний против ваших заклинаний. Если существо распознаёт иллюзию, она становится для него едва различимой.</p><p><strong>Звук.</strong> Если вы создаёте звук, его громкость может варьироваться от шёпота до крика. Это может быть ваш или чей-то ещё голос, рёв льва, бой барабанов или что угодно ещё на ваш выбор. Звук может продолжаться всю длительность, или вы можете выбрать отдельные звуки, звучащие в разное время, пока длится заклинание.</p><p><strong>Образ.</strong> Если вы создаёте образ объекта — например, кресло, грязные следы ног или сундучок, — он должен быть не больше 5-футового Куба. Образ не может создавать звук, свет, запах или иной сенсорный эффект. Физическое взаимодействие с образом выдаёт, что это иллюзия, потому что предметы проходят сквозь неё.</p><p>Создаваемый образ или объект размещает ведущий. Отдельная библиотека призывов не требуется.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "minute"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 0,
+        "school": "ill",
+        "properties": [
+          "somatic",
+          "material"
+        ],
+        "materials": {
+          "value": "a bit of fleece",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "XkQLfFVopYW3SasN": {
+            "type": "utility",
+            "_id": "XkQLfFVopYW3SasN",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "name": "Сотворить — размещение вручную",
+            "img": "icons/sundries/gaming/playing-cards.webp",
+            "flags": {},
+            "effects": []
+          }
+        },
+        "identifier": "minor-illusion",
+        "sourceItem": "",
+        "ability": "cha",
+        "method": "atwill",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "8007875c411795bf",
+      "name": "Огненный снаряд",
+      "type": "spell",
+      "img": "icons/magic/fire/projectile-fireball-orange-green.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы бросаете комок огня в существо или объект в пределах дистанции. Совершите дистанционную атаку заклинанием по этой цели. При попадании цель получает [[/damage 1d10 fire]]. Горючий объект, по которому попало это заклинание, начинает гореть, если его не носят и не держат.</p><p><span class=\"inline-h4\"><em>Улучшение фокуса.</em></span> Урон увеличивается на [[/r 1d10]], когда вы достигаете 5-го ([[/r 2d10]]), 11-го ([[/r 3d10]]) и 17-го уровня ([[/r 4d10]]).</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creatureOrObject",
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "ft",
+          "special": "",
+          "value": "120"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 0,
+        "school": "evo",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "23hcoYMwc0GUIB6V": {
+            "type": "attack",
+            "_id": "23hcoYMwc0GUIB6V",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "attack": {
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "spell"
+              },
+              "ability": "",
+              "bonus": ""
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": "10",
+                  "bonus": "",
+                  "types": [
+                    "fire"
+                  ],
+                  "scaling": {
+                    "mode": "",
+                    "number": 0
+                  }
+                }
+              ]
+            },
+            "name": "Атака",
+            "img": "icons/magic/fire/projectile-fireball-orange-green.webp",
+            "flags": {}
+          }
+        },
+        "identifier": "fire-bolt",
+        "sourceItem": "",
+        "ability": "cha",
+        "method": "atwill",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "f2e668d7c4746f8a",
+      "name": "Волшебная рука",
+      "type": "spell",
+      "img": "icons/magic/light/hand-sparks-smoke-teal.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Парящая призрачная рука появляется в воздухе в выбранной вами точке в пределах дистанции. Она существует, пока действует заклинание. Рука исчезает, если окажется более чем в 30 футах от вас или если вы сотворите это заклинание снова.</p><p>При сотворении вы можете использовать руку, чтобы манипулировать объектами, открыть незапертую дверь или контейнер, убрать или достать предмет из открытого контейнера или выплеснуть содержимое пузырька.</p><p>В качестве действия &amp;Reference, вы можете снова управлять рукой таким образом. Частью этого действия вы можете перемещать руку на расстояние до 30 футов.</p><p>Рука не может атаковать, активировать магические предметы и поднимать более 10 фунтов.</p><p>Создаваемый образ или объект размещает ведущий. Отдельная библиотека призывов не требуется.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "minute"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 0,
+        "school": "con",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "QdMC2s97UJKjUBoD": {
+            "type": "utility",
+            "_id": "QdMC2s97UJKjUBoD",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "name": "Сотворить — размещение вручную",
+            "img": "icons/magic/light/hand-sparks-smoke-teal.webp",
+            "flags": {},
+            "effects": []
+          }
+        },
+        "identifier": "mage-hand",
+        "sourceItem": "",
+        "ability": "cha",
+        "method": "atwill",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "397f245c79808661",
+      "name": "Щит",
+      "type": "spell",
+      "img": "icons/equipment/shield/heater-crystal-blue.webp",
+      "effects": [
+        {
+          "_id": "Bv3EoHGfYCprLdG1",
+          "flags": {},
+          "disabled": false,
+          "duration": {
+            "value": 1,
+            "units": "turns",
+            "expiry": "sourceStart"
+          },
+          "tint": "#ffffff",
+          "transfer": false,
+          "name": "Щит",
+          "description": "",
+          "statuses": [],
+          "img": "icons/equipment/shield/heater-crystal-blue.webp",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.attributes.ac.bonus",
+                "value": 5,
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "AOVTL6UbE1BphM3E",
+                "conditions": "{}"
+              }
+            ],
+            "magical": true,
+            "rider": {
+              "statuses": []
+            },
+            "conditions": "{}"
+          },
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Незримый барьер магической силы защищает вас. До начала вашего следующего хода у вас бонус +5 к КБ, в том числе против атаки, вызвавшей это &amp;reference{Ответное действие}, и вы не получаете урона от заклинания Волшебная стрела</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "reaction",
+          "condition": "when you are hit by an attack roll or targeted by the Magic Missile spell",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "round"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "self",
+            "special": ""
+          },
+          "template": {
+            "units": "ft",
+            "contiguous": false,
+            "type": "",
+            "stationary": false
+          }
+        },
+        "range": {
+          "units": "self",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 1,
+        "school": "abj",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false,
+              "concentration": false
+            },
+            "effects": [
+              {
+                "_id": "Bv3EoHGfYCprLdG1",
+                "uuid": null,
+                "level": {}
+              }
+            ],
+            "range": {
+              "override": false,
+              "units": "self"
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "stationary": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": "Сотворить",
+            "img": "icons/equipment/shield/heater-crystal-blue.webp",
+            "flags": {}
+          }
+        },
+        "identifier": "shield",
+        "method": "spell",
+        "prepared": 1,
+        "sourceItem": "",
+        "ability": "cha"
+      }
+    },
+    {
+      "_id": "6f2f1f3c2f794e68",
+      "name": "Очарование личности",
+      "type": "spell",
+      "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
+      "effects": [
+        {
+          "name": "Очарование личности",
+          "duration": {
+            "value": 3600,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {},
+          "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
+          "_id": "78JcD7wFiSCOfmns",
+          "type": "base",
+          "system": {
+            "changes": [],
+            "magical": true
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": false,
+          "statuses": [
+            "charmed"
+          ],
+          "sort": 0,
+          "showIcon": 2,
+          "start": null,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Один Гуманоид, которого вы видите в пределах дистанции, проходит испытание Мудрости. У него Преимущество к испытанию, если вы или ваши союзники сражаются с ним. При провале цель &amp;Reference{Обворожена}, пока длится заклинание, либо пока вы или ваши союзники не нанесёте ей урон. Обворожённое существо &amp;Reference{Дружественно} к вам. Когда заклинание прекращает действовать, цель знает, что была Обворожена вами.</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Вы можете выбрать целью одно дополнительное существо за каждый круг ячейки выше 1-го.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "hour"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "@item.level",
+            "choice": false,
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "value": "30",
+          "units": "ft",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 1,
+        "school": "enc",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "78JcD7wFiSCOfmns",
+                "onSave": false
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": []
+            },
+            "save": {
+              "ability": [
+                "wis"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
+            "name": "Спасбросок"
+          }
+        },
+        "identifier": "charm-person",
+        "sourceItem": "",
+        "ability": "cha",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "26217c31efa19391",
+      "name": "Паутина",
+      "type": "spell",
+      "img": "icons/creatures/webs/web-spider-casting-caught-purple.webp",
+      "effects": [
+        {
+          "_id": "14c1b2a54ea54f0b",
+          "name": "Опутан паутиной",
+          "img": "icons/creatures/webs/web-spider-casting-caught-purple.webp",
+          "type": "base",
+          "transfer": false,
+          "disabled": false,
+          "statuses": [
+            "restrained"
+          ],
+          "changes": [],
+          "duration": {},
+          "system": {
+            "magical": true,
+            "changes": []
+          },
+          "flags": {}
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы призываете массу липкой паутины в точку в пределах дистанции. Паутина заполняет 20-футовый Куб, пока длится заклинание. Паутина создаёт &amp;Reference{Пересечённую местность}, а видимость в её области &amp;Reference{Слегка затруднена}.</p><p>Если не закрепить паутину на двух твёрдых поверхностях (например, на стене или деревьях) или не нанести её слоями на пол, стену или потолок, паутина обвалится и заклинание прекращает действовать в начале вашего следующего хода. Глубина слоёв паутины на плоской поверхности равна 5 футам.</p><p>Каждое существо, которое в первый раз за ход входит в паутину или начинает там свой ход, должно пройти испытание Ловкости. При провале оно &amp;Reference{Обездвижено}, пока находится в паутине или пока не освободится.</p><p>Обездвиженное паутиной существо может выполнить действие, чтобы пройти проверку [[/check ability=str skill=ath dc=@attributes.spell.dc]]{Силы (Атлетика)} со СЛ, равной СЛ испытаний против ваших заклинаний. При успехе оно больше не Обездвижено.</p><p>Паутина горюча. Любой 5-футовый Куб паутины, попав в огонь, сгорает за 1 раунд, нанося [[/damage 2d4 fire]] любому существу, которое начинает свой ход в нём.</p><p>Сначала «Создать паутину» расходует одну ячейку. Спасброски в области и урон только от подожжённой паутины — отдельные кнопки без повторного расхода. Освобождение из паутины и снятие состояния проверяет ведущий.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "hour"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": ""
+          },
+          "template": {
+            "units": "ft",
+            "type": "cube",
+            "size": "20",
+            "contiguous": false,
+            "count": "",
+            "stationary": false
+          }
+        },
+        "range": {
+          "value": "60",
+          "units": "ft",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 2,
+        "school": "con",
+        "properties": [
+          "vocal",
+          "somatic",
+          "material",
+          "concentration"
+        ],
+        "materials": {
+          "value": "a bit of spiderweb",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": false
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "effects": [
+              {
+                "_id": "14c1b2a54ea54f0b",
+                "onSave": false
+              }
+            ],
+            "range": {
+              "override": false,
+              "units": "self"
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "stationary": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "parts": [],
+              "onSave": "none"
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              },
+              "visible": true,
+              "bonus": ""
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": "Спасбросок в паутине — без ячейки",
+            "img": "icons/creatures/webs/web-spider-casting-caught-purple.webp",
+            "flags": {}
+          },
+          "095520d83333d59e": {
+            "_id": "095520d83333d59e",
+            "type": "damage",
+            "name": "Горящая паутина — только при поджигании",
+            "activation": {
+              "type": "special",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "60",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 4,
+                  "bonus": "",
+                  "types": [
+                    "fire"
+                  ],
+                  "scaling": {
+                    "mode": "",
+                    "number": 1
+                  },
+                  "modifiers": []
+                }
+              ],
+              "critical": {
+                "allow": false
+              }
+            }
+          },
+          "dbb487b07df0331f": {
+            "_id": "dbb487b07df0331f",
+            "type": "utility",
+            "name": "Создать паутину",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "spellSlot": true,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {}
+          }
+        },
+        "identifier": "web",
+        "method": "spell",
+        "prepared": 1,
+        "sourceItem": "",
+        "ability": "cha"
+      }
+    },
+    {
+      "_id": "fb3ce767d7e53ff3",
+      "name": "Невидимость",
+      "type": "spell",
+      "img": "icons/creatures/magical/spirit-undead-ghost-purple.webp",
+      "effects": [
+        {
+          "name": "Невидимость",
+          "duration": {
+            "value": 3600,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {},
+          "img": "icons/creatures/magical/spirit-undead-ghost-purple.webp",
+          "_id": "9svfDetqjhsFP3ey",
+          "type": "base",
+          "system": {
+            "changes": [],
+            "magical": true
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": false,
+          "statuses": [
+            "invisible"
+          ],
+          "sort": 0,
+          "showIcon": 2,
+          "start": null,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Существо, которого вы коснулись, получает &amp;Reference{Невидимость}, пока длится заклинание. Заклинание прекращает действовать досрочно сразу после того, как цель совершит бросок атаки, нанесёт урон или сотворит заклинание.</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Вы можете выбрать целью одно дополнительное существо за каждый круг ячейки выше 2-го.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": 1
+        },
+        "duration": {
+          "value": "1",
+          "units": "hour"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "@item.level - 1",
+            "choice": false,
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "touch",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 2,
+        "school": "ill",
+        "properties": [
+          "vocal",
+          "somatic",
+          "material",
+          "concentration"
+        ],
+        "materials": {
+          "value": "an eyelash in gum arabic",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "9svfDetqjhsFP3ey"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/creatures/magical/spirit-undead-ghost-purple.webp",
+            "name": "Сотворить"
+          }
+        },
+        "identifier": "invisibility",
+        "sourceItem": "",
+        "ability": "cha",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "df518e2670d5eab7",
+      "name": "Гипнотический узор",
+      "type": "spell",
+      "img": "icons/magic/control/hypnosis-mesmerism-swirl.webp",
+      "effects": [
+        {
+          "name": "Гипнотический узор",
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {},
+          "img": "icons/magic/control/hypnosis-mesmerism-swirl.webp",
+          "_id": "mjAs8ssQlgp0AQOp",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.attributes.movement.multiplier",
+                "value": 0,
+                "priority": null,
+                "type": "override",
+                "phase": "initial",
+                "_id": "EnLoDmMiguoOeZ1a",
+                "conditions": "{}"
+              }
+            ],
+            "magical": true,
+            "rider": {
+              "statuses": []
+            },
+            "conditions": "{}"
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": false,
+          "statuses": [
+            "charmed",
+            "incapacitated"
+          ],
+          "sort": 0,
+          "showIcon": 2,
+          "start": null,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы создаёте калейдоскопический цветной узор в 30-футовом Кубе в пределах дистанции. Узор появляется на миг и исчезает. Каждое существо в этой области, которое видело узор, проходит испытание Мудрости. При провале оно &amp;Reference{Обворожено}, пока длится заклинание. Пока существо Обворожено, оно &amp;Reference{Выведено из строя} и его Скорость равна 0.</p><p>Заклинание прекращает действовать для существа, если оно получает любой урон или если другое существо использует действие, чтобы встряхнуть существо, помогая ему выйти из ступора.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "minute"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "template": {
+            "units": "ft",
+            "type": "cube",
+            "size": "30",
+            "contiguous": false,
+            "count": "",
+            "stationary": false
+          }
+        },
+        "range": {
+          "value": "120",
+          "units": "ft",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 3,
+        "school": "ill",
+        "properties": [
+          "somatic",
+          "material",
+          "concentration"
+        ],
+        "materials": {
+          "value": "a pinch of confetti",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false,
+              "concentration": false
+            },
+            "effects": [
+              {
+                "_id": "mjAs8ssQlgp0AQOp",
+                "onSave": false,
+                "uuid": null,
+                "level": {}
+              }
+            ],
+            "range": {
+              "override": false,
+              "units": "self"
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "stationary": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": []
+            },
+            "save": {
+              "ability": [
+                "wis"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              },
+              "visible": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "img": "icons/magic/control/hypnosis-mesmerism-swirl.webp",
+            "flags": {},
+            "name": "Спасбросок"
+          }
+        },
+        "identifier": "hypnotic-pattern",
+        "method": "spell",
+        "prepared": 1,
+        "sourceItem": "",
+        "ability": "cha"
+      }
+    },
+    {
+      "_id": "89130a3c810a82d0",
+      "name": "Замедление",
+      "type": "spell",
+      "img": "icons/magic/time/clock-stopwatch-white-blue.webp",
+      "effects": [
+        {
+          "name": "Замедление",
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "disabled": false,
+          "_id": "z1lkguBohjqXRSHm",
+          "description": "",
+          "transfer": false,
+          "statuses": [],
+          "flags": {},
+          "tint": "#ffffff",
+          "img": "icons/magic/time/clock-stopwatch-white-blue.webp",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.attributes.ac.bonus",
+                "value": -2,
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "dOfo7OvlIfELRalB",
+                "conditions": "{}"
+              },
+              {
+                "key": "system.attributes.movement.multiplier",
+                "value": 0.5,
+                "priority": null,
+                "type": "multiply",
+                "phase": "initial",
+                "_id": "53qIYh6YPvWA0kh4",
+                "conditions": "{}"
+              },
+              {
+                "key": "system.abilities.dex.bonuses.save",
+                "value": -2,
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "JoFWO8VVifosg173",
+                "conditions": "{}"
+              }
+            ],
+            "magical": true,
+            "rider": {
+              "statuses": []
+            },
+            "conditions": "{}"
+          },
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы меняете ход времени для не более чем шести выбранных вами существ в 40-футовом Кубе в пределах дистанции. Каждая цель проходит испытание Мудрости, при провале она попадает под влияние заклинания, пока оно длится.</p><p>Скорость цели под влиянием заклинания уменьшается вдвое. Цель получает штраф −2 к КБ и испытаниям Ловкости и не может выполнять &amp;reference{Ответные действия}. В свой ход она может выполнить либо действие, либо Бонусное действие, но не оба, и может совершить только одну атаку действием Атака. Если цель сотворяет заклинание с &amp;Reference{Жестовым} компонентом, существует шанс [[/r 1d100cs&gt;25#Успешное сотворение заклинания при значении 1]]{25 процентов}, что оно не сработает из-за того, что цель выполняет жесты слишком медленно.</p><p>Цель под влиянием заклинания повторяет это испытание в конце каждого своего хода, при успехе заклинание прекращает действовать для неё.</p><p>При успехе повторного спасброска ведущий снимает эффект. Повторный спасбросок не расходует ячейку.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "minute"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": ""
+          },
+          "template": {
+            "units": "ft",
+            "type": "cube",
+            "size": "40",
+            "contiguous": false,
+            "count": "",
+            "stationary": false
+          }
+        },
+        "range": {
+          "value": "120",
+          "units": "ft",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 3,
+        "school": "trs",
+        "properties": [
+          "vocal",
+          "somatic",
+          "material",
+          "concentration"
+        ],
+        "materials": {
+          "value": "a drop of molasses",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false,
+              "concentration": false
+            },
+            "effects": [
+              {
+                "_id": "z1lkguBohjqXRSHm",
+                "onSave": false,
+                "uuid": null,
+                "level": {}
+              }
+            ],
+            "range": {
+              "override": false,
+              "units": "self"
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "stationary": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": []
+            },
+            "save": {
+              "ability": [
+                "wis"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              },
+              "visible": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "img": "icons/magic/time/clock-stopwatch-white-blue.webp",
+            "flags": {},
+            "name": "Спасбросок"
+          },
+          "040bd7022a0acae0": {
+            "_id": "040bd7022a0acae0",
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": false
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": false,
+              "units": "self"
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "stationary": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": []
+            },
+            "save": {
+              "ability": [
+                "wis"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              },
+              "visible": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "img": "icons/magic/time/clock-stopwatch-white-blue.webp",
+            "flags": {},
+            "name": "Повторный спасбросок в конце хода"
+          }
+        },
+        "identifier": "slow",
+        "method": "spell",
+        "prepared": 1,
+        "sourceItem": "",
+        "ability": "cha"
+      }
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "flags": {
+    "bagrovoe-bleeding": {
+      "keyNpc": true,
+      "namedNpc": true,
+      "raessCompany": true,
+      "category": "Отряд Раэсса Валира",
+      "sourceSlug": "vespa-kern",
+      "contentVersion": "6.13.0"
+    }
+  }
+}

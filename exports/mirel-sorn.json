@@ -1,0 +1,4361 @@
+{
+  "_id": "49648c24c9fa278f",
+  "name": "Мирель Сорн",
+  "type": "npc",
+  "img": "modules/bagrovoe-bleeding/assets/raess-company/mirel-sorn/portrait.png",
+  "system": {
+    "identifier": "mirel-sorn",
+    "currency": {
+      "pp": 0,
+      "gp": 0,
+      "ep": 0,
+      "sp": 0,
+      "cp": 0
+    },
+    "abilities": {
+      "str": {
+        "value": 10,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "dex": {
+        "value": 12,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "con": {
+        "value": 14,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "int": {
+        "value": 12,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "wis": {
+        "value": 18,
+        "proficient": 1,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "cha": {
+        "value": 14,
+        "proficient": 1,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      }
+    },
+    "bonuses": {
+      "mwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "msak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rsak": {
+        "attack": "",
+        "damage": ""
+      },
+      "abilities": {
+        "check": "",
+        "save": "",
+        "skill": ""
+      },
+      "spell": {
+        "dc": ""
+      }
+    },
+    "skills": {
+      "acr": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ani": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "arc": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ath": {
+        "ability": "str",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "dec": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "his": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ins": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "itm": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "inv": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "med": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 2,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "nat": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "prc": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "prf": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "per": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "rel": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "slt": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ste": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "sur": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      }
+    },
+    "tools": {},
+    "spells": {
+      "spell1": {
+        "value": 4,
+        "override": 4
+      },
+      "spell2": {
+        "value": 3,
+        "override": 3
+      },
+      "spell3": {
+        "value": 2,
+        "override": 2
+      },
+      "spell4": {
+        "value": 0,
+        "override": 0
+      },
+      "spell5": {
+        "value": 0,
+        "override": 0
+      },
+      "spell6": {
+        "value": 0,
+        "override": 0
+      },
+      "spell7": {
+        "value": 0,
+        "override": 0
+      },
+      "spell8": {
+        "value": 0,
+        "override": 0
+      },
+      "spell9": {
+        "value": 0,
+        "override": 0
+      },
+      "pact": {
+        "value": 0,
+        "override": 0
+      }
+    },
+    "attributes": {
+      "init": {
+        "ability": "",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "bonus": ""
+      },
+      "movement": {
+        "units": "ft",
+        "hover": false,
+        "ignoredDifficultTerrain": [],
+        "speeds": {
+          "walk": "30"
+        }
+      },
+      "attunement": {
+        "max": 3
+      },
+      "senses": {
+        "units": "ft",
+        "ranges": {},
+        "special": ""
+      },
+      "spellcasting": "wis",
+      "exhaustion": 0,
+      "concentration": {
+        "ability": "con",
+        "roll": {
+          "mode": 0,
+          "min": null,
+          "max": null
+        },
+        "limit": 1
+      },
+      "ac": {
+        "flat": 16,
+        "calcs": [
+          "natural"
+        ],
+        "formulas": [],
+        "override": null
+      },
+      "hd": {
+        "spent": 0
+      },
+      "hp": {
+        "value": 72,
+        "max": 72,
+        "temp": 0,
+        "formula": "11d8 + 22"
+      },
+      "death": {
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "success": 0,
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "spell": {
+        "level": 5
+      },
+      "loyalty": {
+        "value": null
+      },
+      "price": {
+        "value": null,
+        "denomination": "gp"
+      }
+    },
+    "details": {
+      "alignment": "Не определено",
+      "ideal": "",
+      "bond": "",
+      "flaw": "",
+      "race": null,
+      "cr": 3,
+      "type": {
+        "value": "humanoid",
+        "subtype": "Человек",
+        "custom": "",
+        "swarm": ""
+      },
+      "habitat": {
+        "value": [],
+        "custom": ""
+      },
+      "treasure": {
+        "value": []
+      },
+      "biography": {
+        "public": "<p>Жрица в бело-синих одеждах со звёздчатым посохом. Мягка в общении, решительна перед чужой болью и не отказывает раненым в помощи.</p>",
+        "value": "<p>Жрица в бело-синих одеждах со звёздчатым посохом. Мягка в общении, решительна перед чужой болью и не отказывает раненым в помощи.</p>"
+      }
+    },
+    "resources": {
+      "legact": {
+        "max": 0,
+        "spent": 0
+      },
+      "legres": {
+        "max": 0,
+        "spent": 0
+      },
+      "lair": {
+        "value": false,
+        "inside": false,
+        "initiative": null
+      }
+    },
+    "source": {
+      "rules": "2024",
+      "custom": "Мир Ортес — спутники Раэсса"
+    },
+    "traits": {
+      "size": "med",
+      "di": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dr": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dv": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dm": {
+        "amount": {},
+        "bypasses": []
+      },
+      "ci": {
+        "value": [],
+        "custom": ""
+      },
+      "languages": {
+        "value": [
+          "common"
+        ],
+        "custom": "",
+        "communication": {}
+      },
+      "important": true
+    }
+  },
+  "prototypeToken": {
+    "name": "Мирель Сорн",
+    "displayName": 20,
+    "actorLink": true,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/bagrovoe-bleeding/assets/raess-company/mirel-sorn/token.png",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": {},
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 2,
+        "texture": null
+      }
+    },
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "depth": 1,
+    "flags": {}
+  },
+  "items": [
+    {
+      "_id": "19d4d6a010ed4a01",
+      "name": "Целительная волна",
+      "type": "feat",
+      "img": "icons/svg/regen.svg",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "healing-wave",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Действием до трёх существ в пределах 30 футов восстанавливают 2к8 + 4 хита каждое. Один раз за долгий отдых. Выберите до трёх разных целей и примените результат к каждой один раз.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "1",
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ]
+        },
+        "activities": {
+          "cb4ba24e3582bb2f": {
+            "_id": "cb4ba24e3582bb2f",
+            "type": "heal",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1"
+                }
+              ],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "30",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "3"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "healing": {
+              "number": 2,
+              "denomination": 8,
+              "bonus": "4",
+              "types": [
+                "healing"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              },
+              "modifiers": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "f0cc96021ff939f1",
+      "name": "Защитная молитва",
+      "type": "feat",
+      "img": "icons/svg/shield.svg",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "protective-prayer",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Когда союзник в пределах 30 футов получает урон, реакцией уменьшает этот урон на 1к8 + 4, минимум до 0. Два раза за долгий отдых. Ведущий вычитает выпавшее число из одного пакета урона.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "2",
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ]
+        },
+        "activities": {
+          "4d7be7c5e27b084c": {
+            "_id": "4d7be7c5e27b084c",
+            "type": "utility",
+            "name": "",
+            "activation": {
+              "type": "reaction",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1"
+                }
+              ],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "30",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "roll": {
+              "formula": "1d8 + 4",
+              "prompt": false,
+              "visible": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "7359ade4634611dd",
+      "name": "Священное пламя",
+      "type": "spell",
+      "img": "icons/magic/fire/projectile-embers-orange.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Огненное сияние обрушивается на существо, которое вы видите в пределах дистанции. Цель проходит испытание Ловкости, при провале получая [[/damage 1d8 radiant]]. Цель не получает пользы от &amp;Reference{Укрытия наполовину} и &amp;Reference{Укрытия на три четверти} для этого испытания.</p><p><span class=\"inline-h4\"><em>Улучшение фокуса.</em></span> Урон увеличивается на [[/r 1d8]], когда вы достигаете 5 ([[/r 2d8]]), 11 ([[/r 3d8]]) и 17 уровня ([[/r 4d8]]).</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "ft",
+          "special": "",
+          "value": "60"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 0,
+        "school": "evo",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dTJW1b6fCd5TyMEa": {
+            "type": "save",
+            "name": "Спасбросок",
+            "_id": "dTJW1b6fCd5TyMEa",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": "8",
+                  "bonus": "",
+                  "types": [
+                    "radiant"
+                  ],
+                  "scaling": {
+                    "mode": "",
+                    "number": 0
+                  }
+                }
+              ],
+              "onSave": "none"
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "img": "icons/magic/fire/projectile-embers-orange.webp",
+            "flags": {}
+          }
+        },
+        "identifier": "sacred-flame",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "atwill",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "a82314f2301ffbfc",
+      "name": "Указание",
+      "type": "spell",
+      "img": "icons/sundries/lights/candle-lit-angelic.webp",
+      "effects": [
+        {
+          "name": "Указание — Акробатика",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "_id": "GezMMzvZhWXEYyGm",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.acr.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "hztU1jwwJW1djC7V"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Уход за животными",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.ani.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "rOLPGIpuzEvutjG6"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "y6aODSkiubtFt6Ap",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Магия",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.arc.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "AoTXCnO0stXN6yJf"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "Vlfh8IFOezrSpeBZ",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Атлетика",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.ath.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "0VfcZKn2gZPAx4lo"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "sPkLWVpkJ7NqDQT0",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Обман",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.dec.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "c1hh6iVNRlFGtjQK"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "Je4xWElmaiSDsOjU",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — История",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.his.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "2nd90Z42oNWOr2WS"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "cw02ZbuiRn6GyoEv",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Проницательность",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.ins.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "Sb95tCDo9J4iQjb0"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "VsU5vUhMioT9pCwG",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Анализ",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.inv.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "6FdLY1PmaZKPUXGC"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "UQixxmOdHUDjVYNh",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Запугивание",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.itm.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "pL6NlXBk0AiD4Opq"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "Cpte6tynFFJbraX2",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Медицина",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.med.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "0mVFnzd4QZDSrOTg"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "Vl1YSG1DlZvx9nSI",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Природа",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.nat.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "hGljU5itCjgKCgzl"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "IqxGXju1tYDWoda6",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Убеждение",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.per.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "00sq79Pvgcp6nvY6"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "fCdLUO5DoSIT4wVK",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Внимательность",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.prc.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "eUFc0IqrrvEvpbuh"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "qPowjrduxnzKpH8x",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Выступление",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.prf.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "4eqODkrRcKtF9v8f"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "E4BqoCkyoKLJbGmb",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Религия",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.rel.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "wV1w9JaX8nDupsrv"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "jVKWknHHFuMwvTct",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Ловкость рук",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.slt.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "zUwloYKhJiBifVmg"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "pwFahx7uqM4DOgnu",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Скрытность",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.ste.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "1wBdrr4ZaIErSDZL"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "Vb4iRJ73Nw78UUMW",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "name": "Указание — Выживание",
+          "img": "icons/sundries/lights/candle-lit-angelic.webp",
+          "transfer": false,
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.skills.sur.bonuses.check",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "0VMrFKAAC7mpiyP0"
+              }
+            ],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_id": "A1T0X0DUFIxx3qhE",
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы касаетесь согласного существа и выбираете навык. Пока длится заклинание, это существо добавляет [[/r 1d4]] к любой проверке характеристики, использующей выбранный навык.</p><p>Выберите ровно одну кнопку навыка: +1к4 действует только на этот навык, а не на все проверки.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "minute"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "willing",
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "touch",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 0,
+        "school": "div",
+        "properties": [
+          "vocal",
+          "somatic",
+          "concentration"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "c682d2fec8e1b581": {
+            "type": "utility",
+            "_id": "c682d2fec8e1b581",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "GezMMzvZhWXEYyGm"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Акробатика",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "8f1838fa0fa608b1": {
+            "type": "utility",
+            "_id": "8f1838fa0fa608b1",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "y6aODSkiubtFt6Ap"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Уход за животными",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "87d50526083ccee3": {
+            "type": "utility",
+            "_id": "87d50526083ccee3",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "Vlfh8IFOezrSpeBZ"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Магия",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "b8bb7ba511040889": {
+            "type": "utility",
+            "_id": "b8bb7ba511040889",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "sPkLWVpkJ7NqDQT0"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Атлетика",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "2028fc6d77a8605a": {
+            "type": "utility",
+            "_id": "2028fc6d77a8605a",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "Je4xWElmaiSDsOjU"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Обман",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "7ad7f119c10cc0b8": {
+            "type": "utility",
+            "_id": "7ad7f119c10cc0b8",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "cw02ZbuiRn6GyoEv"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "История",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "151be6e945f62e7d": {
+            "type": "utility",
+            "_id": "151be6e945f62e7d",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "VsU5vUhMioT9pCwG"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Проницательность",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "422d41227b7fe9ec": {
+            "type": "utility",
+            "_id": "422d41227b7fe9ec",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "UQixxmOdHUDjVYNh"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Анализ",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "90a8ca42fb76c13e": {
+            "type": "utility",
+            "_id": "90a8ca42fb76c13e",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "Cpte6tynFFJbraX2"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Запугивание",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "ac33c4995b2963bf": {
+            "type": "utility",
+            "_id": "ac33c4995b2963bf",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "Vl1YSG1DlZvx9nSI"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Медицина",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "7098dfd4500c104f": {
+            "type": "utility",
+            "_id": "7098dfd4500c104f",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "IqxGXju1tYDWoda6"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Природа",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "05b5e92609e3cb28": {
+            "type": "utility",
+            "_id": "05b5e92609e3cb28",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "fCdLUO5DoSIT4wVK"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Убеждение",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "0ec5049839005d0c": {
+            "type": "utility",
+            "_id": "0ec5049839005d0c",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "qPowjrduxnzKpH8x"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Внимательность",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "7b3b5543d8439b43": {
+            "type": "utility",
+            "_id": "7b3b5543d8439b43",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "E4BqoCkyoKLJbGmb"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Выступление",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "88443c5b4725f000": {
+            "type": "utility",
+            "_id": "88443c5b4725f000",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "jVKWknHHFuMwvTct"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Религия",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "83083a637f605e99": {
+            "type": "utility",
+            "_id": "83083a637f605e99",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "pwFahx7uqM4DOgnu"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Ловкость рук",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "ed43d68da9290d41": {
+            "type": "utility",
+            "_id": "ed43d68da9290d41",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "Vb4iRJ73Nw78UUMW"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Скрытность",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          },
+          "86b02c442a036920": {
+            "type": "utility",
+            "_id": "86b02c442a036920",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "A1T0X0DUFIxx3qhE"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Выживание",
+            "img": "icons/sundries/lights/candle-lit-angelic.webp",
+            "flags": {}
+          }
+        },
+        "identifier": "guidance",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "atwill",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "52aad5f5a6433c76",
+      "name": "Свет",
+      "type": "spell",
+      "img": "icons/sundries/lights/candle-pillar-lit-yellow.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы касаетесь одного объекта размером не больше Крупного, который никто не носит и не держит. Пока длится заклинание, этот объект будет испускать &amp;Reference в радиусе 20 футов и &amp;Reference ещё на 20 футов. Свет может быть любого цвета на ваш выбор.</p><p>Если накрыть этот объект чем-то непрозрачным, это заблокирует свет. Заклинание прекращает действовать, если вы сотворите его снова.</p><p>Создаваемый образ или объект размещает ведущий. Отдельная библиотека призывов не требуется.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "hour"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "touch",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 0,
+        "school": "evo",
+        "properties": [
+          "vocal",
+          "material"
+        ],
+        "materials": {
+          "value": "a firefly or phosphorescent moss",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "EnaiVH67oUJzyHsF": {
+            "type": "utility",
+            "_id": "EnaiVH67oUJzyHsF",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "name": "Сотворить — размещение вручную",
+            "img": "icons/sundries/lights/candle-pillar-lit-yellow.webp",
+            "flags": {},
+            "effects": []
+          }
+        },
+        "identifier": "light",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "atwill",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "5a7ef2552488a892",
+      "name": "Пощада умирающему",
+      "type": "spell",
+      "img": "icons/magic/death/hand-undead-skeleton-fire-pink.webp",
+      "effects": [
+        {
+          "name": "Пощада умирающему",
+          "img": "icons/magic/death/hand-undead-skeleton-fire-pink.webp",
+          "transfer": false,
+          "_id": "4werkFeLTqFwHRIa",
+          "type": "base",
+          "system": {
+            "changes": [],
+            "magical": true
+          },
+          "disabled": false,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [
+            "stable"
+          ],
+          "sort": 0,
+          "flags": {},
+          "showIcon": 2,
+          "start": null,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Выберите существо в пределах дистанции, у которого 0 ПЗ и которое не мертво. Существо &amp;Reference{Стабилизировано}.</p><p><span class=\"inline-h4\"><em>Улучшение фокуса.</em></span> Дистанция удваивается, когда вы достигаете 5-го (30 футов), 11-го (60 футов) и 17-го уровня (120 футов).</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": "0 Hit Points and isn't dead"
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "ft",
+          "special": "",
+          "value": "15 * pow(2, @scaling.increase)"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 0,
+        "school": "nec",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "8i1RYhFvUQJXnnNj": {
+            "type": "utility",
+            "_id": "8i1RYhFvUQJXnnNj",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "4werkFeLTqFwHRIa"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false,
+              "name": "",
+              "formula": ""
+            },
+            "name": "Сотворить",
+            "img": "icons/magic/death/hand-undead-skeleton-fire-pink.webp",
+            "flags": {}
+          }
+        },
+        "identifier": "spare-the-dying",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "atwill",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "fc8c339d2cbdd814",
+      "name": "Лечащее слово",
+      "type": "spell",
+      "img": "icons/magic/life/cross-beam-green.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Существо по вашему выбору, которое вы видите в пределах дистанции, восстанавливает ПЗ в количестве [[/r 2d4]] + модификатор вашей заклинательной характеристики.</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Исцеление увеличивается на [[/r 2d4]] за каждый круг ячейки выше 1-го.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "bonus",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1",
+            "choice": false
+          },
+          "template": {
+            "units": "",
+            "contiguous": false
+          }
+        },
+        "range": {
+          "value": "60",
+          "units": "ft"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 1,
+        "school": "abj",
+        "properties": [
+          "vocal"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "heal",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "healing": {
+              "number": 2,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": [
+                "healing"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "whole",
+                "number": 2,
+                "formula": ""
+              }
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/life/cross-beam-green.webp",
+            "name": "Лечение"
+          }
+        },
+        "identifier": "healing-word",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "052fb7443d3d0c82",
+      "name": "Лечение ран",
+      "type": "spell",
+      "img": "icons/magic/nature/leaf-drip-light-green.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Существо, которого вы коснулись, восстанавливает ПЗ в количестве, равном [[/r 2d8]] + модификатор вашей заклинательной характеристики.</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Исцеление увеличивается на [[/r 2d8]] за каждый круг ячейки выше 1-го.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1",
+            "choice": false,
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "touch",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 1,
+        "school": "abj",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "heal",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "healing": {
+              "number": 2,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": [
+                "healing"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "whole",
+                "number": 2,
+                "formula": ""
+              }
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/nature/leaf-drip-light-green.webp",
+            "name": "Лечение"
+          }
+        },
+        "identifier": "cure-wounds",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "5e0af2889a1e6ade",
+      "name": "Благословение",
+      "type": "spell",
+      "img": "icons/magic/holy/prayer-hands-glowing-yellow-white.webp",
+      "effects": [
+        {
+          "_id": "1dzvDffEh8wZ0oQy",
+          "flags": {},
+          "disabled": false,
+          "duration": {
+            "value": 60,
+            "units": "seconds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "tint": "#ffffff",
+          "transfer": false,
+          "name": "Благословение",
+          "description": "",
+          "statuses": [],
+          "img": "icons/magic/holy/prayer-hands-glowing-yellow-white.webp",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.bonuses.abilities.save",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "u5KYhzLQGr0DZxII"
+              },
+              {
+                "key": "system.bonuses.mwak.attack",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "VgdxKjLlJ5Q6LXYv"
+              },
+              {
+                "key": "system.bonuses.msak.attack",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "jM3kLTO5Oji6gidO"
+              },
+              {
+                "key": "system.bonuses.rsak.attack",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "Ywysa8yj9kxepUSR"
+              },
+              {
+                "key": "system.bonuses.rwak.attack",
+                "value": "1d4",
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "SlZ7LOIlTbuKTxFr"
+              }
+            ],
+            "magical": true
+          },
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы благословляете до трёх существ в пределах дистанции. Пока длится заклинание, когда цель совершает бросок атаки или проходит испытание, она может бросить [[/r 1d4]] и добавить к результату основного броска.</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Вы можете выбрать целью одно дополнительное существо за каждый круг ячейки выше 1-го.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "minute"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "2 + @item.level",
+            "choice": false
+          },
+          "template": {
+            "units": "",
+            "contiguous": false
+          }
+        },
+        "range": {
+          "value": "30",
+          "units": "ft"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 1,
+        "school": "enc",
+        "properties": [
+          "vocal",
+          "somatic",
+          "material",
+          "concentration"
+        ],
+        "materials": {
+          "value": "a Holy Symbol worth 5+ GP",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "1dzvDffEh8wZ0oQy"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/holy/prayer-hands-glowing-yellow-white.webp",
+            "name": "Сотворить"
+          }
+        },
+        "identifier": "bless",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "0d22745be4f7f22e",
+      "name": "Малое восстановление",
+      "type": "spell",
+      "img": "icons/magic/holy/prayer-hands-glowing-yellow-green.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы касаетесь существа и прекращаете одно из состояний для него: <br>&amp;Reference<br>&amp;Reference<br>&amp;Reference<br>&amp;Reference</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "bonus",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1",
+            "choice": false
+          },
+          "template": {
+            "units": "",
+            "contiguous": false
+          }
+        },
+        "range": {
+          "units": "touch"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 2,
+        "school": "abj",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/holy/prayer-hands-glowing-yellow-green.webp",
+            "name": "Сотворить"
+          }
+        },
+        "identifier": "lesser-restoration",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "9e0b1c4173947c38",
+      "name": "Молебен лечения",
+      "type": "spell",
+      "img": "icons/magic/holy/prayer-hands-glowing-yellow.webp",
+      "effects": [
+        {
+          "name": "Молебен лечения",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {},
+          "img": "icons/magic/holy/prayer-hands-glowing-yellow.webp",
+          "_id": "BrBVse9ezicC6IVW",
+          "type": "base",
+          "system": {
+            "changes": [],
+            "magical": true
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": false,
+          "statuses": [],
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>До пяти существ по вашему выбору, которые остаются в пределах дистанции всё время, пока вы творите заклинание, получают всю пользу от &amp;Reference{Короткого отдыха} и восстанавливают [[/r 2d8]] ПЗ. Существо не может оказаться под влиянием заклинания снова, пока не завершит &amp;Reference</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Исцеление увеличивается на [[/r 1d8]] за каждый круг ячейки выше 2-го.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "minute",
+          "condition": "",
+          "value": 10
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "5",
+            "choice": false
+          },
+          "template": {
+            "units": "",
+            "contiguous": false
+          }
+        },
+        "range": {
+          "value": "30",
+          "units": "ft"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 2,
+        "school": "abj",
+        "properties": [
+          "vocal"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "heal",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "BrBVse9ezicC6IVW"
+              }
+            ],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "healing": {
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "healing"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/holy/prayer-hands-glowing-yellow.webp",
+            "name": "Лечение"
+          }
+        },
+        "identifier": "prayer-of-healing",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "4153d1ea98fb4cfc",
+      "name": "Духовное оружие",
+      "type": "spell",
+      "img": "icons/weapons/axes/axe-double-gold.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы создаёте летающую призрачную силу, которая внешне напоминает оружие по вашему выбору и существует, пока действует заклинание. Сила появляется в пределах дистанции в пространстве по вашему выбору и вы можете немедленно совершить атаку заклинанием в ближнем бою по одному существу в пределах 5 футов от силы. При попадании цель получает урон Силой, равный [[/r 1d8]] + модификатор вашей заклинательной характеристики.</p><p>В качестве Бонусного действия в свои последующие ходы вы можете переместить силу на расстояние до 20 футов и повторить атаку по существу в пределах 5 футов от неё.</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Урон увеличивается на [[/r 1d8]] за каждый круг ячейки выше 2-го.</p><p>Создаваемый образ или объект размещает ведущий. Отдельная библиотека призывов не требуется.</p><p>После сотворения разрешена атака без дополнительного бонусного действия. В следующих ходах перемещение оружия до 20 футов и атака занимают бонусное действие. Дистанцию 5 футов измеряйте от оружия, а не от жрицы. При сотворении ячейкой 3-го круга замените 1к8 на 2к8. Концентрация обязательна (2024).</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "bonus",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "minute"
+        },
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1",
+            "choice": false,
+            "special": ""
+          },
+          "template": {
+            "units": "ft",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "value": "60",
+          "units": "ft",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 2,
+        "school": "evo",
+        "properties": [
+          "vocal",
+          "somatic",
+          "concentration"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": "Сотворить — размещение вручную",
+            "flags": {},
+            "img": "icons/weapons/axes/axe-double-gold.webp",
+            "effects": []
+          },
+          "5f4c3e5425add9e6": {
+            "_id": "5f4c3e5425add9e6",
+            "type": "attack",
+            "name": "Атака оружия — без повторной ячейки",
+            "activation": {
+              "type": "bonus",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "5",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "attack": {
+              "ability": "",
+              "bonus": "6",
+              "flat": true,
+              "type": {
+                "value": "melee",
+                "classification": "spell"
+              },
+              "critical": {
+                "threshold": null
+              }
+            },
+            "damage": {
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 8,
+                  "bonus": "4",
+                  "types": [
+                    "force"
+                  ],
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "scaling": {
+                    "mode": "",
+                    "number": 0
+                  },
+                  "modifiers": []
+                }
+              ],
+              "critical": {
+                "bonus": ""
+              }
+            }
+          }
+        },
+        "identifier": "spiritual-weapon",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "2935ab0dcf983e94",
+      "name": "Массовое лечащее слово",
+      "type": "spell",
+      "img": "icons/magic/life/heart-area-circle-red-green.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>До шести существ по вашему выбору, которых вы видите в пределах дистанции, восстанавливают ПЗ в количестве [[/r 2d4]] + модификатор вашей заклинательной характеристики.</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Исцеление увеличивается на [[/r 1d4]] за каждый круг ячейки выше 3-го.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "bonus",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "6",
+            "choice": false
+          },
+          "template": {
+            "units": "",
+            "contiguous": false
+          }
+        },
+        "range": {
+          "value": "60",
+          "units": "ft"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 3,
+        "school": "abj",
+        "properties": [
+          "vocal"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "heal",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "healing": {
+              "number": 2,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": [
+                "healing"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/life/heart-area-circle-red-green.webp",
+            "name": "Лечение"
+          }
+        },
+        "identifier": "mass-healing-word",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "cfeb1ffa3a0e43f5",
+      "name": "Возрождение",
+      "type": "spell",
+      "img": "icons/magic/holy/chalice-glowing-gold-water.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы касаетесь существа, которое умерло не более минуты назад. Это существо возрождается с 1 П3. Заклинание не может возродить существо, которое умерло от старости, и не восстанавливает утраченные части тела.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1",
+            "choice": false,
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "touch",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 3,
+        "school": "nec",
+        "properties": [
+          "vocal",
+          "somatic",
+          "material"
+        ],
+        "materials": {
+          "value": "a diamond worth 300+ GP, which the spell consumes",
+          "consumed": true,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "damage",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "critical": {
+                "allow": false,
+                "bonus": ""
+              },
+              "parts": [
+                {
+                  "number": null,
+                  "denomination": null,
+                  "bonus": "",
+                  "types": [
+                    "healing"
+                  ],
+                  "custom": {
+                    "enabled": true,
+                    "formula": "1"
+                  },
+                  "scaling": {
+                    "mode": "",
+                    "number": null,
+                    "formula": ""
+                  }
+                }
+              ]
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/holy/chalice-glowing-gold-water.webp",
+            "name": "Урон"
+          }
+        },
+        "identifier": "revivify",
+        "sourceItem": "",
+        "ability": "wis",
+        "method": "spell",
+        "prepared": 1
+      }
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "flags": {
+    "bagrovoe-bleeding": {
+      "keyNpc": true,
+      "namedNpc": true,
+      "raessCompany": true,
+      "category": "Отряд Раэсса Валира",
+      "sourceSlug": "mirel-sorn",
+      "contentVersion": "6.13.0"
+    }
+  }
+}

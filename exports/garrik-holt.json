@@ -1,0 +1,1186 @@
+{
+  "_id": "4e87e8263ff51138",
+  "name": "Гаррик Хольт",
+  "type": "npc",
+  "img": "modules/bagrovoe-bleeding/assets/raess-company/garrik-holt/portrait.png",
+  "system": {
+    "identifier": "garrik-holt",
+    "currency": {
+      "pp": 0,
+      "gp": 0,
+      "ep": 0,
+      "sp": 0,
+      "cp": 0
+    },
+    "abilities": {
+      "str": {
+        "value": 18,
+        "proficient": 1,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "dex": {
+        "value": 12,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "con": {
+        "value": 20,
+        "proficient": 1,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "int": {
+        "value": 11,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "wis": {
+        "value": 13,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "cha": {
+        "value": 14,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      }
+    },
+    "bonuses": {
+      "mwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "msak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rsak": {
+        "attack": "",
+        "damage": ""
+      },
+      "abilities": {
+        "check": "",
+        "save": "",
+        "skill": ""
+      },
+      "spell": {
+        "dc": ""
+      }
+    },
+    "skills": {
+      "acr": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ani": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "arc": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ath": {
+        "ability": "str",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "dec": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "his": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ins": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "itm": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "inv": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "med": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "nat": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "prc": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "prf": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "per": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "rel": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "slt": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ste": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "sur": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      }
+    },
+    "tools": {},
+    "spells": {
+      "spell1": {
+        "value": 0,
+        "override": 0
+      },
+      "spell2": {
+        "value": 0,
+        "override": 0
+      },
+      "spell3": {
+        "value": 0,
+        "override": 0
+      },
+      "spell4": {
+        "value": 0,
+        "override": 0
+      },
+      "spell5": {
+        "value": 0,
+        "override": 0
+      },
+      "spell6": {
+        "value": 0,
+        "override": 0
+      },
+      "spell7": {
+        "value": 0,
+        "override": 0
+      },
+      "spell8": {
+        "value": 0,
+        "override": 0
+      },
+      "spell9": {
+        "value": 0,
+        "override": 0
+      },
+      "pact": {
+        "value": 0,
+        "override": 0
+      }
+    },
+    "attributes": {
+      "init": {
+        "ability": "",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "bonus": ""
+      },
+      "movement": {
+        "units": "ft",
+        "hover": false,
+        "ignoredDifficultTerrain": [],
+        "speeds": {
+          "walk": "30"
+        }
+      },
+      "attunement": {
+        "max": 3
+      },
+      "senses": {
+        "units": "ft",
+        "ranges": {},
+        "special": ""
+      },
+      "spellcasting": "",
+      "exhaustion": 0,
+      "concentration": {
+        "ability": "con",
+        "roll": {
+          "mode": 0,
+          "min": null,
+          "max": null
+        },
+        "limit": 1
+      },
+      "ac": {
+        "flat": 18,
+        "calcs": [
+          "natural"
+        ],
+        "formulas": [],
+        "override": null
+      },
+      "hd": {
+        "spent": 0
+      },
+      "hp": {
+        "value": 95,
+        "max": 95,
+        "temp": 0,
+        "formula": "10d8 + 50"
+      },
+      "death": {
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "success": 0,
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "spell": {
+        "level": 0
+      },
+      "loyalty": {
+        "value": null
+      },
+      "price": {
+        "value": null,
+        "denomination": "gp"
+      }
+    },
+    "details": {
+      "alignment": "Не определено",
+      "ideal": "",
+      "bond": "",
+      "flaw": "",
+      "race": null,
+      "cr": 4,
+      "type": {
+        "value": "humanoid",
+        "subtype": "Человек",
+        "custom": "",
+        "swarm": ""
+      },
+      "habitat": {
+        "value": [],
+        "custom": ""
+      },
+      "treasure": {
+        "value": []
+      },
+      "biography": {
+        "public": "<p>Воин с красным плащом и шрамом на лице. Говорит коротко, внимательно следит за дорогой и за людьми рядом.</p>",
+        "value": "<p>Воин с красным плащом и шрамом на лице. Говорит коротко, внимательно следит за дорогой и за людьми рядом.</p>"
+      }
+    },
+    "resources": {
+      "legact": {
+        "max": 0,
+        "spent": 0
+      },
+      "legres": {
+        "max": 0,
+        "spent": 0
+      },
+      "lair": {
+        "value": false,
+        "inside": false,
+        "initiative": null
+      }
+    },
+    "source": {
+      "rules": "2024",
+      "custom": "Мир Ортес — спутники Раэсса"
+    },
+    "traits": {
+      "size": "med",
+      "di": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dr": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dv": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dm": {
+        "amount": {},
+        "bypasses": []
+      },
+      "ci": {
+        "value": [],
+        "custom": ""
+      },
+      "languages": {
+        "value": [
+          "common"
+        ],
+        "custom": "",
+        "communication": {}
+      },
+      "important": true
+    }
+  },
+  "prototypeToken": {
+    "name": "Гаррик Хольт",
+    "displayName": 20,
+    "actorLink": true,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/bagrovoe-bleeding/assets/raess-company/garrik-holt/token.png",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": {},
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 2,
+        "texture": null
+      }
+    },
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "depth": 1,
+    "flags": {}
+  },
+  "items": [
+    {
+      "_id": "45d35c423170317b",
+      "name": "Двуручный меч",
+      "type": "feat",
+      "img": "icons/skills/melee/strike-sword-steel-yellow.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "greatsword",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Атака +6; урон 2к6 + 4. Досягаемость 5 футов.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "activities": {
+          "98d959771a908163": {
+            "_id": "98d959771a908163",
+            "type": "attack",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "5",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "attack": {
+              "ability": "",
+              "bonus": "6",
+              "flat": true,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              },
+              "critical": {
+                "threshold": null
+              }
+            },
+            "damage": {
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "4",
+                  "types": [
+                    "slashing"
+                  ],
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "scaling": {
+                    "mode": "",
+                    "number": 0
+                  },
+                  "modifiers": []
+                }
+              ],
+              "critical": {
+                "bonus": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "b038ed66050ad2dd",
+      "name": "Мультиатака",
+      "type": "feat",
+      "img": "icons/skills/melee/strike-sword-steel-yellow.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "multiattack",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Две атаки двуручным мечом. Нажмите атаку дважды; дополнительный урон эта карточка не наносит.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "activities": {
+          "6cc8a713022f08cf": {
+            "_id": "6cc8a713022f08cf",
+            "type": "utility",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "self",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "self",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": false,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {}
+          }
+        }
+      }
+    },
+    {
+      "_id": "ff7ae691f1f2ea85",
+      "name": "Боевой приказ",
+      "type": "feat",
+      "img": "icons/skills/melee/strike-sword-steel-yellow.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "battle-order",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Один союзник в пределах 30 футов может потратить свою реакцию, переместиться на половину скорости и совершить одну атаку оружием. Перезарядка 5–6. Союзника перемещает ведущий, атаку делает из его листа.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "1",
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "recharge",
+              "type": "recoverAll",
+              "formula": "5"
+            }
+          ]
+        },
+        "activities": {
+          "8601704f286ea83b": {
+            "_id": "8601704f286ea83b",
+            "type": "utility",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1"
+                }
+              ],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "30",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {}
+          }
+        }
+      }
+    },
+    {
+      "_id": "22498f704f4ff468",
+      "name": "Стойкость ветерана",
+      "type": "feat",
+      "img": "icons/svg/regen.svg",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "veteran-endurance",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Бонусным действием восстанавливает 2к10 + 4 хита. Один раз за долгий отдых.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "1",
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ]
+        },
+        "activities": {
+          "b9a8580d29f64b5d": {
+            "_id": "b9a8580d29f64b5d",
+            "type": "heal",
+            "name": "",
+            "activation": {
+              "type": "bonus",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1"
+                }
+              ],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "self",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "self",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": false,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "healing": {
+              "number": 2,
+              "denomination": 10,
+              "bonus": "4",
+              "types": [
+                "healing"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              },
+              "modifiers": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "e1f079967cf50a9e",
+      "name": "Перехват удара",
+      "type": "feat",
+      "img": "icons/svg/shield.svg",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "intercept",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Когда союзник в пределах 5 футов получает урон, реакцией уменьшает этот урон на 1к10 + 3. Вычтите результат из одного пакета урона, минимум 0.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "activities": {
+          "9785af424cc0e778": {
+            "_id": "9785af424cc0e778",
+            "type": "utility",
+            "name": "",
+            "activation": {
+              "type": "reaction",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "5",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "roll": {
+              "formula": "1d10 + 3",
+              "prompt": false,
+              "visible": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "flags": {
+    "bagrovoe-bleeding": {
+      "keyNpc": true,
+      "namedNpc": true,
+      "raessCompany": true,
+      "category": "Отряд Раэсса Валира",
+      "sourceSlug": "garrik-holt",
+      "contentVersion": "6.13.0"
+    }
+  }
+}

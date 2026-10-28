@@ -1,0 +1,2664 @@
+{
+  "_id": "e52043b372a518fb",
+  "name": "Эйден Морст",
+  "type": "npc",
+  "img": "modules/bagrovoe-bleeding/assets/raess-company/eyden-morst/portrait.png",
+  "system": {
+    "identifier": "eyden-morst",
+    "currency": {
+      "pp": 0,
+      "gp": 0,
+      "ep": 0,
+      "sp": 0,
+      "cp": 0
+    },
+    "abilities": {
+      "str": {
+        "value": 9,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "dex": {
+        "value": 14,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "con": {
+        "value": 12,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "int": {
+        "value": 18,
+        "proficient": 1,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "wis": {
+        "value": 14,
+        "proficient": 1,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      },
+      "cha": {
+        "value": 11,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
+      }
+    },
+    "bonuses": {
+      "mwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "msak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rsak": {
+        "attack": "",
+        "damage": ""
+      },
+      "abilities": {
+        "check": "",
+        "save": "",
+        "skill": ""
+      },
+      "spell": {
+        "dc": ""
+      }
+    },
+    "skills": {
+      "acr": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ani": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "arc": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 2,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ath": {
+        "ability": "str",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "dec": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "his": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ins": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "itm": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "inv": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 1,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "med": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "nat": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "prc": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "prf": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "per": {
+        "ability": "cha",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "rel": {
+        "ability": "int",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "slt": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "ste": {
+        "ability": "dex",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      },
+      "sur": {
+        "ability": "wis",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "value": 0,
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        }
+      }
+    },
+    "tools": {},
+    "spells": {
+      "spell1": {
+        "value": 4,
+        "override": 4
+      },
+      "spell2": {
+        "value": 3,
+        "override": 3
+      },
+      "spell3": {
+        "value": 3,
+        "override": 3
+      },
+      "spell4": {
+        "value": 0,
+        "override": 0
+      },
+      "spell5": {
+        "value": 0,
+        "override": 0
+      },
+      "spell6": {
+        "value": 0,
+        "override": 0
+      },
+      "spell7": {
+        "value": 0,
+        "override": 0
+      },
+      "spell8": {
+        "value": 0,
+        "override": 0
+      },
+      "spell9": {
+        "value": 0,
+        "override": 0
+      },
+      "pact": {
+        "value": 0,
+        "override": 0
+      }
+    },
+    "attributes": {
+      "init": {
+        "ability": "",
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "bonus": ""
+      },
+      "movement": {
+        "units": "ft",
+        "hover": false,
+        "ignoredDifficultTerrain": [],
+        "speeds": {
+          "walk": "30"
+        }
+      },
+      "attunement": {
+        "max": 3
+      },
+      "senses": {
+        "units": "ft",
+        "ranges": {},
+        "special": ""
+      },
+      "spellcasting": "int",
+      "exhaustion": 0,
+      "concentration": {
+        "ability": "con",
+        "roll": {
+          "mode": 0,
+          "min": null,
+          "max": null
+        },
+        "limit": 1
+      },
+      "ac": {
+        "flat": 15,
+        "calcs": [
+          "natural"
+        ],
+        "formulas": [],
+        "override": null
+      },
+      "hd": {
+        "spent": 0
+      },
+      "hp": {
+        "value": 66,
+        "max": 66,
+        "temp": 0,
+        "formula": "12d8 + 12"
+      },
+      "death": {
+        "roll": {
+          "min": null,
+          "max": null,
+          "mode": 0
+        },
+        "success": 0,
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "spell": {
+        "level": 6
+      },
+      "loyalty": {
+        "value": null
+      },
+      "price": {
+        "value": null,
+        "denomination": "gp"
+      }
+    },
+    "details": {
+      "alignment": "Не определено",
+      "ideal": "",
+      "bond": "",
+      "flaw": "",
+      "race": null,
+      "cr": 4,
+      "type": {
+        "value": "humanoid",
+        "subtype": "Полуэльф",
+        "custom": "",
+        "swarm": ""
+      },
+      "habitat": {
+        "value": [],
+        "custom": ""
+      },
+      "treasure": {
+        "value": []
+      },
+      "biography": {
+        "public": "<p>Сереброволосый маг в тёмно-синей одежде. Любознателен, педантичен и предпочитает сначала разобраться в неизвестной магии.</p>",
+        "value": "<p>Сереброволосый маг в тёмно-синей одежде. Любознателен, педантичен и предпочитает сначала разобраться в неизвестной магии.</p>"
+      }
+    },
+    "resources": {
+      "legact": {
+        "max": 0,
+        "spent": 0
+      },
+      "legres": {
+        "max": 0,
+        "spent": 0
+      },
+      "lair": {
+        "value": false,
+        "inside": false,
+        "initiative": null
+      }
+    },
+    "source": {
+      "rules": "2024",
+      "custom": "Мир Ортес — спутники Раэсса"
+    },
+    "traits": {
+      "size": "med",
+      "di": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dr": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dv": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "dm": {
+        "amount": {},
+        "bypasses": []
+      },
+      "ci": {
+        "value": [],
+        "custom": ""
+      },
+      "languages": {
+        "value": [
+          "common",
+          "elvish"
+        ],
+        "custom": "",
+        "communication": {}
+      },
+      "important": true
+    }
+  },
+  "prototypeToken": {
+    "name": "Эйден Морст",
+    "displayName": 20,
+    "actorLink": true,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/bagrovoe-bleeding/assets/raess-company/eyden-morst/token.png",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": {},
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 2,
+        "texture": null
+      }
+    },
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "depth": 1,
+    "flags": {}
+  },
+  "items": [
+    {
+      "_id": "8b9923751480d1d3",
+      "name": "Чародейский импульс",
+      "type": "feat",
+      "img": "icons/skills/melee/strike-sword-steel-yellow.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companyFeature": true
+        }
+      },
+      "system": {
+        "identifier": "arcane-impulse",
+        "type": {
+          "value": "monster"
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "Мир Ортес"
+        },
+        "description": {
+          "value": "<p>Действием совершает дальнобойную атаку заклинанием +6 по существу в пределах 90 футов: 3к8 силового урона. Перезарядка 5–6; ячейка не требуется.</p>",
+          "chat": ""
+        },
+        "uses": {
+          "max": "1",
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "recharge",
+              "type": "recoverAll",
+              "formula": "5"
+            }
+          ]
+        },
+        "activities": {
+          "c03345ad47af3333": {
+            "_id": "c03345ad47af3333",
+            "type": "attack",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "override": true
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1"
+                }
+              ],
+              "spellSlot": false,
+              "scaling": {
+                "allowed": false
+              }
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "range": {
+              "units": "ft",
+              "value": "90",
+              "override": true
+            },
+            "target": {
+              "affects": {
+                "type": "creature",
+                "count": "1"
+              },
+              "template": {},
+              "prompt": true,
+              "override": true
+            },
+            "uses": {
+              "max": "",
+              "spent": 0,
+              "recovery": []
+            },
+            "effects": [],
+            "flags": {},
+            "attack": {
+              "ability": "",
+              "bonus": "6",
+              "flat": true,
+              "type": {
+                "value": "ranged",
+                "classification": "spell"
+              },
+              "critical": {
+                "threshold": null
+              }
+            },
+            "damage": {
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 3,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "force"
+                  ],
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "scaling": {
+                    "mode": "",
+                    "number": 0
+                  },
+                  "modifiers": []
+                }
+              ],
+              "critical": {
+                "bonus": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "1741dcf4aa503996",
+      "name": "Огненный снаряд",
+      "type": "spell",
+      "img": "icons/magic/fire/projectile-fireball-orange-green.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы бросаете комок огня в существо или объект в пределах дистанции. Совершите дистанционную атаку заклинанием по этой цели. При попадании цель получает [[/damage 1d10 fire]]. Горючий объект, по которому попало это заклинание, начинает гореть, если его не носят и не держат.</p><p><span class=\"inline-h4\"><em>Улучшение фокуса.</em></span> Урон увеличивается на [[/r 1d10]], когда вы достигаете 5-го ([[/r 2d10]]), 11-го ([[/r 3d10]]) и 17-го уровня ([[/r 4d10]]).</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creatureOrObject",
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "ft",
+          "special": "",
+          "value": "120"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 0,
+        "school": "evo",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "23hcoYMwc0GUIB6V": {
+            "type": "attack",
+            "_id": "23hcoYMwc0GUIB6V",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "attack": {
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "spell"
+              },
+              "ability": "",
+              "bonus": ""
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": "10",
+                  "bonus": "",
+                  "types": [
+                    "fire"
+                  ],
+                  "scaling": {
+                    "mode": "",
+                    "number": 0
+                  }
+                }
+              ]
+            },
+            "name": "Атака",
+            "img": "icons/magic/fire/projectile-fireball-orange-green.webp",
+            "flags": {}
+          }
+        },
+        "identifier": "fire-bolt",
+        "sourceItem": "",
+        "ability": "int",
+        "method": "atwill",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "096ff879d088dacd",
+      "name": "Луч холода",
+      "type": "spell",
+      "img": "icons/magic/water/projectile-icecicle-glowing.webp",
+      "effects": [
+        {
+          "name": "Луч холода",
+          "img": "icons/magic/water/projectile-icecicle-glowing.webp",
+          "transfer": false,
+          "_id": "7dnnwBMWLykrVJub",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.attributes.movement.bonus",
+                "value": -10,
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "IfmY3KgiCyQ3SUWQ",
+                "conditions": "{}"
+              }
+            ],
+            "magical": true,
+            "rider": {
+              "statuses": []
+            },
+            "conditions": "{}"
+          },
+          "disabled": false,
+          "duration": {
+            "value": null,
+            "units": "rounds",
+            "expiry": "sourceStart",
+            "expired": false
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Морозный луч голубого света бьёт существо в пределах дистанции. Совершите дистанционную атаку заклинанием по этой цели. При попадании она получает [[/damage 1d8 cold]] и её Скорость снижается на 10 футов до начала вашего следующего хода.</p><p><span class=\"inline-h4\"><em>Улучшение фокуса.</em></span> Урон увеличивается на [[/r 1d8]], когда вы достигаете 5 ([[/r 2d8]]), 11 ([[/r 3d8]]) и 17 уровня ([[/r 4d8]]).</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "template": {
+            "units": "ft",
+            "contiguous": false,
+            "type": "",
+            "stationary": false
+          }
+        },
+        "range": {
+          "units": "ft",
+          "special": "",
+          "value": "60"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 0,
+        "school": "evo",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "VQQgdw0BEVD6wapC": {
+            "type": "attack",
+            "_id": "VQQgdw0BEVD6wapC",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [
+              {
+                "_id": "7dnnwBMWLykrVJub",
+                "uuid": null,
+                "level": {}
+              }
+            ],
+            "range": {
+              "override": false,
+              "units": "self"
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "stationary": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "attack": {
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "spell"
+              },
+              "ability": "",
+              "bonus": ""
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "cold"
+                  ],
+                  "scaling": {
+                    "mode": "",
+                    "number": 0
+                  },
+                  "modifiers": []
+                }
+              ]
+            },
+            "name": "Атака",
+            "img": "icons/magic/water/projectile-icecicle-glowing.webp",
+            "flags": {}
+          }
+        },
+        "identifier": "ray-of-frost",
+        "method": "atwill",
+        "prepared": 1,
+        "sourceItem": "",
+        "ability": "int"
+      }
+    },
+    {
+      "_id": "593ab3a0899fb494",
+      "name": "Волшебная рука",
+      "type": "spell",
+      "img": "icons/magic/light/hand-sparks-smoke-teal.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Парящая призрачная рука появляется в воздухе в выбранной вами точке в пределах дистанции. Она существует, пока действует заклинание. Рука исчезает, если окажется более чем в 30 футах от вас или если вы сотворите это заклинание снова.</p><p>При сотворении вы можете использовать руку, чтобы манипулировать объектами, открыть незапертую дверь или контейнер, убрать или достать предмет из открытого контейнера или выплеснуть содержимое пузырька.</p><p>В качестве действия &amp;Reference, вы можете снова управлять рукой таким образом. Частью этого действия вы можете перемещать руку на расстояние до 30 футов.</p><p>Рука не может атаковать, активировать магические предметы и поднимать более 10 фунтов.</p><p>Создаваемый образ или объект размещает ведущий. Отдельная библиотека призывов не требуется.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "minute"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 0,
+        "school": "con",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "QdMC2s97UJKjUBoD": {
+            "type": "utility",
+            "_id": "QdMC2s97UJKjUBoD",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "name": "Сотворить — размещение вручную",
+            "img": "icons/magic/light/hand-sparks-smoke-teal.webp",
+            "flags": {},
+            "effects": []
+          }
+        },
+        "identifier": "mage-hand",
+        "sourceItem": "",
+        "ability": "int",
+        "method": "atwill",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "ddd91671204bc812",
+      "name": "Щит",
+      "type": "spell",
+      "img": "icons/equipment/shield/heater-crystal-blue.webp",
+      "effects": [
+        {
+          "_id": "Bv3EoHGfYCprLdG1",
+          "flags": {},
+          "disabled": false,
+          "duration": {
+            "value": 1,
+            "units": "turns",
+            "expiry": "sourceStart"
+          },
+          "tint": "#ffffff",
+          "transfer": false,
+          "name": "Щит",
+          "description": "",
+          "statuses": [],
+          "img": "icons/equipment/shield/heater-crystal-blue.webp",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.attributes.ac.bonus",
+                "value": 5,
+                "priority": null,
+                "type": "add",
+                "phase": "initial",
+                "_id": "AOVTL6UbE1BphM3E",
+                "conditions": "{}"
+              }
+            ],
+            "magical": true,
+            "rider": {
+              "statuses": []
+            },
+            "conditions": "{}"
+          },
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Незримый барьер магической силы защищает вас. До начала вашего следующего хода у вас бонус +5 к КБ, в том числе против атаки, вызвавшей это &amp;reference{Ответное действие}, и вы не получаете урона от заклинания Волшебная стрела</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "reaction",
+          "condition": "when you are hit by an attack roll or targeted by the Magic Missile spell",
+          "value": null
+        },
+        "duration": {
+          "value": "1",
+          "units": "round"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "self",
+            "special": ""
+          },
+          "template": {
+            "units": "ft",
+            "contiguous": false,
+            "type": "",
+            "stationary": false
+          }
+        },
+        "range": {
+          "units": "self",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 1,
+        "school": "abj",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false,
+              "concentration": false
+            },
+            "effects": [
+              {
+                "_id": "Bv3EoHGfYCprLdG1",
+                "uuid": null,
+                "level": {}
+              }
+            ],
+            "range": {
+              "override": false,
+              "units": "self"
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "stationary": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": "Сотворить",
+            "img": "icons/equipment/shield/heater-crystal-blue.webp",
+            "flags": {}
+          }
+        },
+        "identifier": "shield",
+        "method": "spell",
+        "prepared": 1,
+        "sourceItem": "",
+        "ability": "int"
+      }
+    },
+    {
+      "_id": "030a013f16ea7b16",
+      "name": "Волшебная стрела",
+      "type": "spell",
+      "img": "icons/magic/light/projectiles-pink-purple.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы создаёте три светящихся стрелы из магической силы. Каждая стрела поражает существо по вашему выбору, которое вы видите в пределах дистанции. Стрела наносит цели [[/damage 1d4 + 1 force]]. Стрелы поражают цели одновременно, и вы можете направить их как в одно существо, так и в несколько разных.</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Заклинание создаёт по дополнительной стреле за каждый круг ячейки выше 1-го.</p><p>Первое применение расходует одну ячейку и бросает урон одного снаряда. Остальные снаряды бросаются отдельной кнопкой без ячейки: всего 3 на базовом круге, +1 за каждый круг выше. Распределите цели вручную. Не считайте повторные броски новым сотворением.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "2 + @item.level",
+            "choice": false,
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "value": "120",
+          "units": "ft",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 1,
+        "school": "evo",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "damage",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "critical": {
+                "allow": false,
+                "bonus": ""
+              },
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 1,
+                  "denomination": 4,
+                  "bonus": "1",
+                  "types": [
+                    "force"
+                  ],
+                  "scaling": {
+                    "mode": "",
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": "Сотворить и бросить первый дротик",
+            "img": "icons/magic/light/projectiles-pink-purple.webp",
+            "flags": {}
+          },
+          "17067e78f06cf6fa": {
+            "_id": "17067e78f06cf6fa",
+            "type": "damage",
+            "activation": {
+              "type": "special",
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": false
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "critical": {
+                "allow": false,
+                "bonus": ""
+              },
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 1,
+                  "denomination": 4,
+                  "bonus": "1",
+                  "types": [
+                    "force"
+                  ],
+                  "scaling": {
+                    "mode": "",
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": "Остальные дротики — без ячейки",
+            "img": "icons/magic/light/projectiles-pink-purple.webp",
+            "flags": {}
+          }
+        },
+        "identifier": "magic-missile",
+        "sourceItem": "",
+        "ability": "int",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "9883c14cabcad2b0",
+      "name": "Магический доспех",
+      "type": "spell",
+      "img": "icons/equipment/head/hat-pointed-buckle-leather-purple.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы касаетесь согласного существа, которое не носит броню. Пока длится заклинание, базовый КБ цели становится равным 13 + её модификатор Ловкости. Заклинание прекращает действовать, если цель надевает броню.</p><p>КД Эйдена 15 уже учитывает Магический доспех: 13 + Ловкость 2. Не добавляйте ещё 3 КД. Ячейка при сотворении расходуется обычным образом. Без доспеха базовая КД 12; измените фиксированную КД вручную при окончании эффекта.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "8",
+          "units": "hour"
+        },
+        "target": {
+          "affects": {
+            "type": "willing",
+            "count": "1",
+            "choice": false,
+            "special": ""
+          },
+          "template": {
+            "units": "",
+            "contiguous": false,
+            "type": ""
+          }
+        },
+        "range": {
+          "units": "touch",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 1,
+        "school": "abj",
+        "properties": [
+          "vocal",
+          "somatic",
+          "material"
+        ],
+        "materials": {
+          "value": "a piece of cured leather",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": "Сотворить",
+            "img": "icons/equipment/head/hat-pointed-buckle-leather-purple.webp",
+            "flags": {}
+          }
+        },
+        "identifier": "mage-armor",
+        "sourceItem": "",
+        "ability": "int",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "ed44cae5827d8cdc",
+      "name": "Туманный шаг",
+      "type": "spell",
+      "img": "icons/magic/lightning/orb-ball-spiral-blue.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вас ненадолго окутывает серебристый туман, и вы телепортируетесь в незанятое пространство в пределах 30 футов, которое видите.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "bonus",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1",
+            "choice": false
+          },
+          "template": {
+            "units": "ft",
+            "contiguous": false,
+            "stationary": false
+          }
+        },
+        "range": {
+          "units": "self"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 2,
+        "school": "con",
+        "properties": [
+          "vocal"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "teleport",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false,
+              "concentration": false
+            },
+            "effects": [],
+            "range": {
+              "override": false,
+              "units": "self"
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "stationary": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "img": "icons/magic/lightning/orb-ball-spiral-blue.webp",
+            "name": "Телепортация",
+            "teleport": {
+              "override": true,
+              "value": "30",
+              "units": "ft"
+            },
+            "flags": {}
+          }
+        },
+        "identifier": "misty-step",
+        "method": "spell",
+        "prepared": 1,
+        "sourceItem": "",
+        "ability": "int"
+      }
+    },
+    {
+      "_id": "c932a79ddef25bf3",
+      "name": "Палящий луч",
+      "type": "spell",
+      "img": "icons/magic/fire/projectiles-salvo-trio-orange.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы выпускаете три огненных луча. Вы можете направить их как в одну цель в пределах дистанции, так и в несколько. Совершите дистанционную атаку заклинанием для каждого луча. При попадании цель получает [[/damage 2d6 fire]].</p><p><strong>Использование ячейки кругом выше</strong>. Вы создаёте по одному дополнительному лучу за каждый круг ячейки выше 2-го.</p><p>Первое применение расходует одну ячейку и бросает урон одного снаряда. Остальные снаряды бросаются отдельной кнопкой без ячейки: всего 3 на базовом круге, +1 за каждый круг выше. Распределите цели вручную. Не считайте повторные броски новым сотворением.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "choice": false
+          },
+          "template": {
+            "units": "",
+            "contiguous": false
+          }
+        },
+        "range": {
+          "value": "120",
+          "units": "ft"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 2,
+        "school": "evo",
+        "properties": [
+          "vocal",
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "spell"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [
+                    "fire"
+                  ],
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "scaling": {
+                    "mode": "",
+                    "number": null,
+                    "formula": ""
+                  }
+                }
+              ]
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/fire/projectiles-salvo-trio-orange.webp",
+            "name": "Сотворить и бросить первый луч"
+          },
+          "967f2453d53deeac": {
+            "_id": "967f2453d53deeac",
+            "type": "attack",
+            "activation": {
+              "type": "special",
+              "override": true
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": false
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "spell"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [
+                    "fire"
+                  ],
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "scaling": {
+                    "mode": "",
+                    "number": null,
+                    "formula": ""
+                  }
+                }
+              ]
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/fire/projectiles-salvo-trio-orange.webp",
+            "name": "Остальные лучи — без ячейки"
+          }
+        },
+        "identifier": "scorching-ray",
+        "sourceItem": "",
+        "ability": "int",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "f08195f28d095415",
+      "name": "Огненный шар",
+      "type": "spell",
+      "img": "icons/magic/fire/barrier-shield-explosion-yellow.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Полоса яркого света исходит из вас в выбранную точку в пределах дистанции, а в ней с низким гулом разрастается огненным взрывом. Каждое существо в Сфере радиусом 20 футов с центром в этой точке проходит испытание Ловкости, при провале получая [[/damage 8d6 fire]], при успехе — половину этого урона.</p><p>Горючие предметы в этой области, кроме тех, что носят или держат, начинают гореть.</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Урон увеличивается на [[/r 1d6]] за каждый круг ячейки выше 3-го.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "template": {
+            "units": "ft",
+            "type": "sphere",
+            "size": "20",
+            "contiguous": false,
+            "count": ""
+          }
+        },
+        "range": {
+          "value": "150",
+          "units": "ft",
+          "special": ""
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 3,
+        "school": "evo",
+        "properties": [
+          "vocal",
+          "somatic",
+          "material"
+        ],
+        "materials": {
+          "value": "a ball of bat guano and sulfur",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": [
+                {
+                  "number": 8,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [
+                    "fire"
+                  ],
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 1,
+                    "formula": ""
+                  }
+                }
+              ]
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/fire/barrier-shield-explosion-yellow.webp",
+            "name": "Спасбросок"
+          }
+        },
+        "identifier": "fireball",
+        "sourceItem": "",
+        "ability": "int",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "ee04fa878ef7d58e",
+      "name": "Молния",
+      "type": "spell",
+      "img": "icons/magic/lightning/bolt-strike-blue.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Удар молнии в виде Линии длиной 100 футов и шириной в 5 футов исходит от вас в выбранном вами направлении. Каждое существо на Линии проходит испытание Ловкости, при провале получая [[/damage 8d6 lightning]], при успехе — половину этого урона.</p><p><span class=\"inline-h4\"><em><strong>Использование ячейки кругом выше.</strong></em></span> Урон увеличивается на [[/r 1d6]] за каждый круг ячейки выше 3-го.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "action",
+          "condition": "",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "choice": false
+          },
+          "template": {
+            "units": "ft",
+            "width": "5",
+            "type": "line",
+            "size": "100",
+            "contiguous": false
+          }
+        },
+        "range": {
+          "units": "self"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 3,
+        "school": "evo",
+        "properties": [
+          "vocal",
+          "somatic",
+          "material"
+        ],
+        "materials": {
+          "value": "a bit of fur and a crystal rod",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": [
+                {
+                  "number": 8,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [
+                    "lightning"
+                  ],
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 1,
+                    "formula": ""
+                  }
+                }
+              ]
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/lightning/bolt-strike-blue.webp",
+            "name": "Спасбросок"
+          }
+        },
+        "identifier": "lightning-bolt",
+        "sourceItem": "",
+        "ability": "int",
+        "method": "spell",
+        "prepared": 1
+      }
+    },
+    {
+      "_id": "47d72bdda2ec877c",
+      "name": "Контрзаклинание",
+      "type": "spell",
+      "img": "icons/magic/unholy/hands-circle-light-green.webp",
+      "effects": [],
+      "flags": {
+        "bagrovoe-bleeding": {
+          "companySpell": true
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Вы пытаетесь помешать существу сотворить заклинание. Существо проходит испытание Выносливости. При провале заклинание рассеивается, не оказывая эффекта, а действие, Бонусное или &amp;reference, использованные для его сотворения, тратятся впустую. Если это заклинание было сотворено с ячейкой, то она не тратится.</p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2024",
+          "custom": "D&D 2024 / dnd5e 6.0.6"
+        },
+        "activation": {
+          "type": "reaction",
+          "condition": "when you see a creature within range casting a spell with Verbal, Somatic, or Material components",
+          "value": null
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1",
+            "choice": false
+          },
+          "template": {
+            "units": "",
+            "contiguous": false
+          }
+        },
+        "range": {
+          "value": "60",
+          "units": "ft"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "level": 3,
+        "school": "abj",
+        "properties": [
+          "somatic"
+        ],
+        "materials": {
+          "value": "",
+          "consumed": false,
+          "cost": 0,
+          "supply": 0
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "value": "",
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": []
+            },
+            "save": {
+              "ability": [
+                "con"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0,
+            "flags": {},
+            "img": "icons/magic/unholy/hands-circle-light-green.webp",
+            "name": "Спасбросок"
+          }
+        },
+        "identifier": "counterspell",
+        "sourceItem": "",
+        "ability": "int",
+        "method": "spell",
+        "prepared": 1
+      }
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "flags": {
+    "bagrovoe-bleeding": {
+      "keyNpc": true,
+      "namedNpc": true,
+      "raessCompany": true,
+      "category": "Отряд Раэсса Валира",
+      "sourceSlug": "eyden-morst",
+      "contentVersion": "6.13.0"
+    }
+  }
+}

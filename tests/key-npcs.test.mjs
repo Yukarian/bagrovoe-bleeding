@@ -20,7 +20,7 @@ function harness(){
 }
 
 test('key NPCs have independent identities, complete native spellbooks and no external module references',()=>{
- assert.equal(actors.length,21);assert.notEqual(la._id,na._id);
+ assert.equal(actors.length,28);assert.notEqual(la._id,na._id);
  assert.equal(la.items.filter(i=>i.type==='spell').length,30);assert.equal(na.items.filter(i=>i.type==='spell').length,6);
  assert.doesNotMatch(JSON.stringify(actors),/ag-fifthpendium|ag-icons|cachedFor|dnd5espellchange|@classes\.|@scale\./);
  for(const a of actors){assert.equal(new Set(a.items.map(i=>i._id)).size,a.items.length);assert.equal(a.ownership.default,0);assert.equal(a.prototypeToken.actorLink,true);for(const i of a.items){assert.match(i._id,/^[a-zA-Z0-9]{16}$/);for(const [k,x]of Object.entries(i.system.activities)){assert.equal(k,x._id);assert.notEqual(x.type,'cast');for(const e of x.effects??[])assert.ok(i.effects.some(v=>v._id===e._id),'Missing effect '+i.name);}}}
@@ -52,7 +52,7 @@ test('Nazir preserves dragon stats, breath arithmetic and native legendary recov
  for(const s of na.items.filter(i=>i.type==='spell')){assert.equal(s.system.method,'innate');for(const x of activities(s))assert.equal(x.consumption.spellSlot,false);assert.equal(s.system.uses.max,['scrying','sending'].includes(s.system.identifier)?'1':'');}
 });
 test('every shipped portrait, token and distinct spell icon exists',()=>{
- for(const a of actors){for(const url of [a.img,a.prototypeToken.texture.src,...a.items.map(i=>i.img),...Object.values(a.flags[MOD].forms??{}).flatMap(f=>[f.img,f.token])]){if((a.flags[MOD].towerCouncil||a.flags[MOD].groveCouncil||a.flags[MOD].leorina||a.flags[MOD].valkrein||a.flags[MOD].archmage||a.flags[MOD].midnight||a.flags[MOD].raess||a.flags[MOD].ragnaret)&&(url.startsWith('icons/')||url.startsWith('systems/dnd5e/')))continue;assert.ok(url.startsWith(`modules/${MOD}/`));assert.ok(fs.existsSync(new URL('../'+url.slice(`modules/${MOD}/`.length),import.meta.url)),url);}}
+ for(const a of actors){for(const url of [a.img,a.prototypeToken.texture.src,...a.items.map(i=>i.img),...Object.values(a.flags[MOD].forms??{}).flatMap(f=>[f.img,f.token])]){if((a.flags[MOD].towerCouncil||a.flags[MOD].groveCouncil||a.flags[MOD].leorina||a.flags[MOD].valkrein||a.flags[MOD].archmage||a.flags[MOD].midnight||a.flags[MOD].raess||a.flags[MOD].ragnaret||a.flags[MOD].raessCompany)&&(url.startsWith('icons/')||url.startsWith('systems/dnd5e/')))continue;assert.ok(url.startsWith(`modules/${MOD}/`));assert.ok(fs.existsSync(new URL('../'+url.slice(`modules/${MOD}/`.length),import.meta.url)),url);}}
  for(const a of [la,na]){const s=a.items.filter(i=>i.type==='spell');assert.equal(new Set(s.map(i=>i.img)).size,s.length);}
 });
 test('changing form twice preserves wounds, slots, spent resistance, effects and initiative',async()=>{
