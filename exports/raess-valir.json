@@ -2,7 +2,7 @@
   "_id": "37616c7db8da8719",
   "name": "Раэсс Валир",
   "type": "npc",
-  "img": "icons/svg/mystery-man.svg",
+  "img": "modules/bagrovoe-bleeding/assets/raess/portrait.png",
   "system": {
     "identifier": "raess-valir",
     "currency": {
@@ -624,7 +624,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "icons/svg/mystery-man.svg",
+      "src": "modules/bagrovoe-bleeding/assets/raess/token.png",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "fit": "contain",
@@ -7182,7 +7182,7 @@
       "className": "Колдун",
       "subclassName": "Король-чародей",
       "contentVersion": "6.11.0",
-      "artPending": true,
+      "artPending": false,
       "subclassVerified": true
     }
   }

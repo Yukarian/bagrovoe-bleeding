@@ -103801,7 +103801,7 @@
     "_id": "37616c7db8da8719",
     "name": "Раэсс Валир",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "modules/bagrovoe-bleeding/assets/raess/portrait.png",
     "system": {
       "identifier": "raess-valir",
       "currency": {
@@ -104423,7 +104423,7 @@
       "width": 1,
       "height": 1,
       "texture": {
-        "src": "icons/svg/mystery-man.svg",
+        "src": "modules/bagrovoe-bleeding/assets/raess/token.png",
         "anchorX": 0.5,
         "anchorY": 0.5,
         "fit": "contain",
@@ -110981,8 +110981,1816 @@
         "className": "Колдун",
         "subclassName": "Король-чародей",
         "contentVersion": "6.11.0",
-        "artPending": true,
+        "artPending": false,
         "subclassVerified": true
+      }
+    }
+  },
+  {
+    "_id": "9c410012ef2b758f",
+    "name": "Халид аль-Каир",
+    "type": "npc",
+    "img": "modules/bagrovoe-bleeding/assets/ragnaret/portrait.png",
+    "system": {
+      "identifier": "ragnaret-valkart",
+      "currency": {
+        "pp": 0,
+        "gp": 0,
+        "ep": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "abilities": {
+        "str": {
+          "value": 10,
+          "proficient": 0,
+          "max": null,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          },
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "dex": {
+          "value": 20,
+          "proficient": 1,
+          "max": null,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          },
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "con": {
+          "value": 14,
+          "proficient": 0,
+          "max": null,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          },
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "int": {
+          "value": 16,
+          "proficient": 1,
+          "max": null,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          },
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "wis": {
+          "value": 14,
+          "proficient": 0,
+          "max": null,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          },
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        },
+        "cha": {
+          "value": 18,
+          "proficient": 1,
+          "max": null,
+          "bonuses": {
+            "check": "",
+            "save": ""
+          },
+          "check": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          },
+          "save": {
+            "roll": {
+              "min": null,
+              "max": null,
+              "mode": 0
+            }
+          }
+        }
+      },
+      "bonuses": {
+        "mwak": {
+          "attack": "",
+          "damage": ""
+        },
+        "rwak": {
+          "attack": "",
+          "damage": ""
+        },
+        "msak": {
+          "attack": "",
+          "damage": ""
+        },
+        "rsak": {
+          "attack": "",
+          "damage": ""
+        },
+        "abilities": {
+          "check": "",
+          "save": "",
+          "skill": ""
+        },
+        "spell": {
+          "dc": ""
+        }
+      },
+      "skills": {
+        "acr": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "ani": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "arc": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "ath": {
+          "ability": "str",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "dec": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 2,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "his": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "ins": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 2,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "itm": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "inv": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "med": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "nat": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "prc": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 1,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "prf": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "per": {
+          "ability": "cha",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 2,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "rel": {
+          "ability": "int",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "slt": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 2,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "ste": {
+          "ability": "dex",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 2,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        },
+        "sur": {
+          "ability": "wis",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "value": 0,
+          "bonuses": {
+            "check": "",
+            "passive": ""
+          }
+        }
+      },
+      "tools": {},
+      "spells": {
+        "spell1": {
+          "value": 0,
+          "override": 0
+        },
+        "spell2": {
+          "value": 0,
+          "override": 0
+        },
+        "spell3": {
+          "value": 0,
+          "override": 0
+        },
+        "spell4": {
+          "value": 0,
+          "override": 0
+        },
+        "spell5": {
+          "value": 0,
+          "override": 0
+        },
+        "spell6": {
+          "value": 0,
+          "override": 0
+        },
+        "spell7": {
+          "value": 0,
+          "override": 0
+        },
+        "spell8": {
+          "value": 0,
+          "override": 0
+        },
+        "spell9": {
+          "value": 0,
+          "override": 0
+        },
+        "pact": {
+          "value": 0,
+          "override": 0
+        }
+      },
+      "attributes": {
+        "init": {
+          "ability": "",
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "bonus": ""
+        },
+        "movement": {
+          "units": "ft",
+          "hover": false,
+          "ignoredDifficultTerrain": [],
+          "speeds": {
+            "walk": "30"
+          }
+        },
+        "attunement": {
+          "max": 3
+        },
+        "senses": {
+          "units": "ft",
+          "ranges": {},
+          "special": ""
+        },
+        "spellcasting": "cha",
+        "exhaustion": 0,
+        "concentration": {
+          "ability": "con",
+          "roll": {
+            "mode": 0,
+            "min": null,
+            "max": null
+          },
+          "limit": 1
+        },
+        "ac": {
+          "flat": 17,
+          "calcs": [
+            "natural"
+          ],
+          "formulas": [],
+          "override": null
+        },
+        "hd": {
+          "spent": 0
+        },
+        "hp": {
+          "value": 104,
+          "max": 104,
+          "temp": 0,
+          "formula": "16d8 + 32"
+        },
+        "death": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          },
+          "success": 0,
+          "failure": 0,
+          "bonuses": {
+            "save": ""
+          }
+        },
+        "spell": {
+          "level": 0
+        },
+        "loyalty": {
+          "value": null
+        },
+        "price": {
+          "value": null,
+          "denomination": "gp"
+        }
+      },
+      "details": {
+        "alignment": "Не определено",
+        "ideal": "",
+        "bond": "",
+        "flaw": "",
+        "race": null,
+        "cr": 8,
+        "type": {
+          "value": "humanoid",
+          "subtype": "Человек",
+          "custom": "",
+          "swarm": ""
+        },
+        "habitat": {
+          "value": [],
+          "custom": ""
+        },
+        "treasure": {
+          "value": []
+        },
+        "biography": {
+          "public": "<p>Халид аль-Каир — обаятельный торговец и посредник с широкой улыбкой, янтарными круглыми очками и чёрно-бордовой одеждой. Остроумен, эксцентричен и уверен в себе, но умеет распознавать опасность и дорожит своей жизнью.</p>",
+          "value": "<p>Халид аль-Каир — обаятельный торговец и посредник с широкой улыбкой, янтарными круглыми очками и чёрно-бордовой одеждой. Остроумен, эксцентричен и уверен в себе, но умеет распознавать опасность и дорожит своей жизнью.</p>"
+        }
+      },
+      "resources": {
+        "legact": {
+          "max": 0,
+          "spent": 0
+        },
+        "legres": {
+          "max": 0,
+          "spent": 0
+        },
+        "lair": {
+          "value": false,
+          "inside": false,
+          "initiative": null
+        }
+      },
+      "source": {
+        "rules": "2024",
+        "custom": "Мир Ортес — авторский NPC"
+      },
+      "traits": {
+        "size": "med",
+        "di": {
+          "value": [],
+          "bypasses": [],
+          "custom": ""
+        },
+        "dr": {
+          "value": [],
+          "bypasses": [],
+          "custom": ""
+        },
+        "dv": {
+          "value": [],
+          "bypasses": [],
+          "custom": ""
+        },
+        "dm": {
+          "amount": {},
+          "bypasses": []
+        },
+        "ci": {
+          "value": [],
+          "custom": ""
+        },
+        "languages": {
+          "value": [
+            "common",
+            "elvish",
+            "dwarvish"
+          ],
+          "custom": "",
+          "communication": {}
+        },
+        "important": true
+      }
+    },
+    "prototypeToken": {
+      "name": "Халид аль-Каир",
+      "displayName": 20,
+      "actorLink": true,
+      "appendNumber": false,
+      "prependAdjective": false,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/bagrovoe-bleeding/assets/ragnaret/token.png",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "lockRotation": false,
+      "rotation": 0,
+      "alpha": 1,
+      "disposition": 0,
+      "displayBars": 20,
+      "bar1": {
+        "attribute": "attributes.hp"
+      },
+      "bar2": {
+        "attribute": null
+      },
+      "light": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 0,
+        "color": null,
+        "coloration": 1,
+        "dim": 0,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "sight": {
+        "enabled": false,
+        "range": 0,
+        "angle": 360,
+        "visionMode": "basic",
+        "color": null,
+        "attenuation": 0.1,
+        "brightness": 0,
+        "saturation": 0,
+        "contrast": 0
+      },
+      "detectionModes": {},
+      "occludable": {
+        "radius": 0
+      },
+      "ring": {
+        "enabled": false,
+        "colors": {
+          "ring": null,
+          "background": null
+        },
+        "effects": 1,
+        "subject": {
+          "scale": 2,
+          "texture": null
+        }
+      },
+      "randomImg": false,
+      "turnMarker": {
+        "mode": 1,
+        "animation": null,
+        "src": null,
+        "disposition": false
+      },
+      "movementAction": null,
+      "depth": 1,
+      "flags": {}
+    },
+    "items": [
+      {
+        "_id": "c160c8a85cf704cc",
+        "name": "Рапира",
+        "type": "feat",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "effects": [],
+        "flags": {},
+        "system": {
+          "identifier": "rapier",
+          "source": {
+            "rules": "2024"
+          },
+          "description": {
+            "value": "<p>Атака +8; урон 1к8+5 колющий. Досягаемость 5 футов.</p>",
+            "chat": ""
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "activities": {
+            "b7e6d5e444c11cd6": {
+              "_id": "b7e6d5e444c11cd6",
+              "type": "attack",
+              "name": "",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "ft",
+                "value": "5",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": true,
+                "override": true
+              },
+              "uses": {
+                "max": "",
+                "spent": 0,
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "attack": {
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                },
+                "ability": "dex",
+                "flat": true,
+                "bonus": "8",
+                "critical": {
+                  "threshold": null
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 8,
+                    "bonus": "5",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ],
+                "critical": {
+                  "bonus": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "_id": "458ed51a7196364e",
+        "name": "Кинжал",
+        "type": "feat",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "effects": [],
+        "flags": {},
+        "system": {
+          "identifier": "dagger",
+          "source": {
+            "rules": "2024"
+          },
+          "description": {
+            "value": "<p>Атака +8; урон 1к4+5 колющий. Досягаемость 5 футов.</p>",
+            "chat": ""
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "activities": {
+            "2cd5cb6f8498018e": {
+              "_id": "2cd5cb6f8498018e",
+              "type": "attack",
+              "name": "",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "ft",
+                "value": "5",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": true,
+                "override": true
+              },
+              "uses": {
+                "max": "",
+                "spent": 0,
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "attack": {
+                "type": {
+                  "value": "melee",
+                  "classification": "weapon"
+                },
+                "ability": "dex",
+                "flat": true,
+                "bonus": "8",
+                "critical": {
+                  "threshold": null
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 4,
+                    "bonus": "5",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ],
+                "critical": {
+                  "bonus": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "_id": "46fbdc976dfb122b",
+        "name": "Ручной арбалет",
+        "type": "feat",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "effects": [],
+        "flags": {},
+        "system": {
+          "identifier": "hand-crossbow",
+          "source": {
+            "rules": "2024"
+          },
+          "description": {
+            "value": "<p>Атака +8; урон 1к6+5 колющий. Дистанция 30/120 футов. Свойство «Перезарядка» ограничивает число выстрелов за действие одним.</p>",
+            "chat": ""
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "activities": {
+            "88cfbc0b29656d2b": {
+              "_id": "88cfbc0b29656d2b",
+              "type": "attack",
+              "name": "",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "value": "30",
+                "long": "120",
+                "units": "ft",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": true,
+                "override": true
+              },
+              "uses": {
+                "max": "",
+                "spent": 0,
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "attack": {
+                "type": {
+                  "value": "ranged",
+                  "classification": "weapon"
+                },
+                "ability": "dex",
+                "flat": true,
+                "bonus": "8",
+                "critical": {
+                  "threshold": null
+                }
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 1,
+                    "denomination": 6,
+                    "bonus": "5",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ],
+                "critical": {
+                  "bonus": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "_id": "089395c6103f7bc6",
+        "name": "Мультиатака",
+        "type": "feat",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "effects": [],
+        "flags": {},
+        "system": {
+          "identifier": "multiattack",
+          "source": {
+            "rules": "2024"
+          },
+          "description": {
+            "value": "<p>Две атаки рапирой или кинжалом. Одну можно заменить выстрелом из ручного арбалета; его перезарядка не позволяет сделать два выстрела одним действием.</p>",
+            "chat": ""
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "activities": {
+            "fde2bf4540c4b73c": {
+              "_id": "fde2bf4540c4b73c",
+              "type": "utility",
+              "name": "",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "ft",
+                "value": "5",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": true,
+                "override": true
+              },
+              "uses": {
+                "max": "",
+                "spent": 0,
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          }
+        }
+      },
+      {
+        "_id": "f3e01c0816656153",
+        "name": "Скрытая атака",
+        "type": "feat",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "effects": [],
+        "flags": {},
+        "system": {
+          "identifier": "sneak-attack",
+          "source": {
+            "rules": "2024"
+          },
+          "description": {
+            "value": "<p>Один раз за ход добавляет 4к6 урона при попадании фехтовальным или дальнобойным оружием с преимуществом. Преимущество не требуется, если в пределах 5 футов от цели находится другой её враг, он не недееспособен и атака Халида не имеет помехи. При критическом попадании кости удваиваются.</p>",
+            "chat": ""
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "activities": {
+            "44dc379887600259": {
+              "_id": "44dc379887600259",
+              "type": "damage",
+              "name": "",
+              "activation": {
+                "type": "special",
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "ft",
+                "value": "5",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": true,
+                "override": true
+              },
+              "uses": {
+                "max": "",
+                "spent": 0,
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              },
+              "damage": {
+                "includeBase": false,
+                "parts": [
+                  {
+                    "number": 4,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "piercing"
+                    ],
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "scaling": {
+                      "mode": "",
+                      "number": 0
+                    },
+                    "modifiers": []
+                  }
+                ],
+                "critical": {
+                  "bonus": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "_id": "bf61674c7268e6c4",
+        "name": "Хитрое действие",
+        "type": "feat",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "effects": [],
+        "flags": {},
+        "system": {
+          "identifier": "cunning-action",
+          "source": {
+            "rules": "2024"
+          },
+          "description": {
+            "value": "<p>Бонусным действием совершает Рывок, Отход или Засаду.</p>",
+            "chat": ""
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "activities": {
+            "1c1434868a7e03ff": {
+              "_id": "1c1434868a7e03ff",
+              "type": "utility",
+              "name": "",
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "ft",
+                "value": "5",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": true,
+                "override": true
+              },
+              "uses": {
+                "max": "",
+                "spent": 0,
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          }
+        }
+      },
+      {
+        "_id": "6c71c5eca3f715b4",
+        "name": "Изворотливость",
+        "type": "feat",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "effects": [],
+        "flags": {},
+        "system": {
+          "identifier": "evasion",
+          "source": {
+            "rules": "2024"
+          },
+          "description": {
+            "value": "<p>Если спасбросок Ловкости позволяет получить половину урона, при успехе получает 0, при провале — половину. Не действует при недееспособности.</p>",
+            "chat": ""
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "activities": {}
+        }
+      },
+      {
+        "_id": "daaa56d9a7725151",
+        "name": "Невероятное уклонение",
+        "type": "feat",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "effects": [],
+        "flags": {},
+        "system": {
+          "identifier": "uncanny-dodge",
+          "source": {
+            "rules": "2024"
+          },
+          "description": {
+            "value": "<p>Реакцией после попадания видимого атакующего уменьшает урон этой атаки вдвое. Примените уменьшение к одному попаданию.</p>",
+            "chat": ""
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "activities": {
+            "690f981779cdb529": {
+              "_id": "690f981779cdb529",
+              "type": "utility",
+              "name": "",
+              "activation": {
+                "type": "reaction",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "ft",
+                "value": "5",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": true,
+                "override": true
+              },
+              "uses": {
+                "max": "",
+                "spent": 0,
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          }
+        }
+      },
+      {
+        "_id": "95d230e55df588d2",
+        "name": "Знак исчезновения",
+        "type": "spell",
+        "img": "icons/creatures/magical/spirit-undead-ghost-purple.webp",
+        "effects": [
+          {
+            "_id": "9svfDetqjhsFP3ey",
+            "name": "Невидимость",
+            "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+            "type": "base",
+            "transfer": false,
+            "disabled": false,
+            "duration": {
+              "value": 3600,
+              "units": "seconds",
+              "expiry": "turnStart",
+              "expired": false
+            },
+            "statuses": [
+              "invisible"
+            ],
+            "changes": [],
+            "system": {
+              "magical": true,
+              "changes": []
+            },
+            "flags": {}
+          }
+        ],
+        "flags": {
+          "bagrovoe-bleeding": {
+            "category": "Магические татуировки",
+            "tattoo": true
+          }
+        },
+        "system": {
+          "description": {
+            "value": "<p>Касанием делает существо невидимым вместе с носимыми предметами. Концентрация, до 1 часа. Эффект для цели заканчивается сразу после её атаки, нанесения урона или сотворения заклинания. Ячейка 5-го круга позволяет выбрать четыре цели вместо одной на 2-м круге.</p><p>Одноразовая татуировка. После сотворения рисунок исчезает; отдых заряд не восстанавливает. Повторное изготовление — отдельная работа мастера.</p>",
+            "chat": ""
+          },
+          "source": {
+            "rules": "2024",
+            "custom": "D&D 2024 — адаптация для Раэсса Валира"
+          },
+          "activation": {
+            "type": "action",
+            "condition": "",
+            "value": null
+          },
+          "duration": {
+            "value": "1",
+            "units": "hour"
+          },
+          "target": {
+            "affects": {
+              "type": "creature",
+              "count": "@item.level - 1",
+              "choice": false,
+              "special": ""
+            },
+            "template": {
+              "units": "",
+              "contiguous": false,
+              "type": ""
+            }
+          },
+          "range": {
+            "units": "touch",
+            "special": ""
+          },
+          "uses": {
+            "max": "1",
+            "spent": 0,
+            "recovery": []
+          },
+          "level": 2,
+          "school": "ill",
+          "properties": [
+            "vocal",
+            "somatic",
+            "material",
+            "concentration"
+          ],
+          "materials": {
+            "value": "ресница в гуммиарабике",
+            "consumed": false,
+            "cost": 0,
+            "supply": 0
+          },
+          "activities": {
+            "dnd5eactivity000": {
+              "_id": "dnd5eactivity000",
+              "type": "utility",
+              "activation": {
+                "type": "action",
+                "value": null,
+                "override": false
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "target": "",
+                    "value": "1"
+                  }
+                ],
+                "scaling": {
+                  "allowed": false,
+                  "max": ""
+                },
+                "spellSlot": false
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "override": false
+              },
+              "effects": [
+                {
+                  "_id": "9svfDetqjhsFP3ey"
+                }
+              ],
+              "range": {
+                "override": false
+              },
+              "target": {
+                "prompt": true,
+                "template": {
+                  "contiguous": false,
+                  "units": "ft"
+                },
+                "affects": {
+                  "choice": false
+                },
+                "override": false
+              },
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": []
+              },
+              "sort": 0,
+              "flags": {},
+              "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+              "name": "Сотворить"
+            }
+          },
+          "identifier": "invisibility",
+          "ability": "cha",
+          "sourceItem": "",
+          "method": "innate",
+          "prepared": 1
+        }
+      },
+      {
+        "_id": "265174049273a615",
+        "name": "Руна отступления",
+        "type": "spell",
+        "img": "icons/magic/lightning/orb-ball-spiral-blue.webp",
+        "effects": [],
+        "flags": {
+          "bagrovoe-bleeding": {
+            "category": "Магические татуировки",
+            "tattoo": true
+          }
+        },
+        "system": {
+          "description": {
+            "value": "<p>Бонусным действием телепортируется в видимое свободное пространство не далее 30 футов.</p><p>Одноразовая татуировка. После сотворения рисунок исчезает; отдых заряд не восстанавливает. Повторное изготовление — отдельная работа мастера.</p>",
+            "chat": ""
+          },
+          "source": {
+            "rules": "2024",
+            "custom": "D&D 2024 — адаптация для Раэсса Валира"
+          },
+          "activation": {
+            "type": "bonus",
+            "condition": "",
+            "value": null
+          },
+          "duration": {
+            "value": "",
+            "units": "inst"
+          },
+          "target": {
+            "affects": {
+              "type": "space",
+              "count": "1",
+              "choice": false
+            },
+            "template": {
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "range": {
+            "units": "self"
+          },
+          "uses": {
+            "max": "1",
+            "spent": 0,
+            "recovery": []
+          },
+          "level": 2,
+          "school": "con",
+          "properties": [
+            "vocal"
+          ],
+          "materials": {
+            "value": "",
+            "consumed": false,
+            "cost": 0,
+            "supply": 0
+          },
+          "activities": {
+            "dnd5eactivity000": {
+              "_id": "dnd5eactivity000",
+              "type": "teleport",
+              "activation": {
+                "type": "action",
+                "value": null,
+                "override": false
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "target": "",
+                    "value": "1"
+                  }
+                ],
+                "scaling": {
+                  "allowed": false,
+                  "max": ""
+                },
+                "spellSlot": false
+              },
+              "description": {
+                "chatFlavor": "",
+                "value": ""
+              },
+              "duration": {
+                "units": "inst",
+                "override": false,
+                "concentration": false
+              },
+              "effects": [],
+              "range": {
+                "override": false,
+                "units": "self"
+              },
+              "target": {
+                "prompt": true,
+                "template": {
+                  "contiguous": false,
+                  "units": "ft",
+                  "stationary": false
+                },
+                "affects": {
+                  "choice": false
+                },
+                "override": false
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "sort": 0,
+              "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+              "name": "Туманный шаг",
+              "teleport": {
+                "override": true,
+                "value": "30",
+                "units": "ft"
+              },
+              "flags": {}
+            }
+          },
+          "identifier": "misty-step",
+          "method": "innate",
+          "prepared": 1,
+          "ability": "cha",
+          "sourceItem": ""
+        }
+      },
+      {
+        "_id": "434a069badccc6a1",
+        "name": "Печать отражения",
+        "type": "feat",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "effects": [],
+        "flags": {
+          "bagrovoe-bleeding": {
+            "category": "Магические татуировки",
+            "tattoo": true
+          }
+        },
+        "system": {
+          "identifier": "mirror-tattoo",
+          "source": {
+            "rules": "2024"
+          },
+          "description": {
+            "value": "<p>Одноразовая татуировка: действием сотворяет «Зеркальное отражение» на 1 минуту без концентрации. Три двойника. Когда атака попадает, бросьте к6 за каждого оставшегося двойника; если хотя бы один результат 3 или выше, вместо Халида уничтожается один двойник. Не защищает от незрячего противника, слепого или истинного зрения. После использования татуировка исчезает; отдых её не возвращает.</p>",
+            "chat": ""
+          },
+          "uses": {
+            "max": "1",
+            "spent": 0,
+            "recovery": []
+          },
+          "activities": {
+            "cc869c0a3fe18da4": {
+              "_id": "cc869c0a3fe18da4",
+              "type": "utility",
+              "name": "",
+              "activation": {
+                "type": "action",
+                "value": 1,
+                "override": true
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "target": "",
+                    "value": "1"
+                  }
+                ],
+                "spellSlot": false,
+                "scaling": {
+                  "allowed": false
+                }
+              },
+              "duration": {
+                "units": "inst",
+                "concentration": false,
+                "override": true
+              },
+              "range": {
+                "units": "ft",
+                "value": "5",
+                "override": true
+              },
+              "target": {
+                "affects": {
+                  "type": "creature",
+                  "count": "1"
+                },
+                "template": {},
+                "prompt": true,
+                "override": true
+              },
+              "uses": {
+                "max": "",
+                "spent": 0,
+                "recovery": []
+              },
+              "effects": [],
+              "flags": {},
+              "roll": {
+                "formula": "",
+                "prompt": false,
+                "visible": false
+              }
+            }
+          }
+        }
+      },
+      {
+        "_id": "8605dc0e79e4ceff",
+        "name": "Изумрудная вязь",
+        "type": "feat",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "effects": [],
+        "flags": {
+          "bagrovoe-bleeding": {
+            "category": "Магические татуировки",
+            "tattoo": true
+          }
+        },
+        "system": {
+          "identifier": "emerald-tattoo",
+          "source": {
+            "rules": "2024"
+          },
+          "description": {
+            "value": "<p>Постоянная татуировка: Ловкость +1, максимум 20. В Ловкости 20 Халида этот бонус уже учтён. Не прибавляйте повторно.</p>",
+            "chat": ""
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "activities": {}
+        }
+      }
+    ],
+    "effects": [],
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "keyNpc": true,
+        "namedNpc": true,
+        "ragnaret": true,
+        "category": "Тарсал",
+        "sourceSlug": "ragnaret-valkart",
+        "contentVersion": "6.12.0"
       }
     }
   }

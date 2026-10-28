@@ -182,5 +182,426 @@
         "recovery": []
       }
     }
+  },
+  {
+    "_id": "95d230e55df588d2",
+    "name": "Знак исчезновения",
+    "type": "spell",
+    "img": "icons/creatures/magical/spirit-undead-ghost-purple.webp",
+    "effects": [
+      {
+        "_id": "9svfDetqjhsFP3ey",
+        "name": "Невидимость",
+        "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+        "type": "base",
+        "transfer": false,
+        "disabled": false,
+        "duration": {
+          "value": 3600,
+          "units": "seconds",
+          "expiry": "turnStart",
+          "expired": false
+        },
+        "statuses": [
+          "invisible"
+        ],
+        "changes": [],
+        "system": {
+          "magical": true,
+          "changes": []
+        },
+        "flags": {}
+      }
+    ],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "category": "Магические татуировки",
+        "tattoo": true
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Касанием делает существо невидимым вместе с носимыми предметами. Концентрация, до 1 часа. Эффект для цели заканчивается сразу после её атаки, нанесения урона или сотворения заклинания. Ячейка 5-го круга позволяет выбрать четыре цели вместо одной на 2-м круге.</p><p>Одноразовая татуировка. После сотворения рисунок исчезает; отдых заряд не восстанавливает. Повторное изготовление — отдельная работа мастера.</p>",
+        "chat": ""
+      },
+      "source": {
+        "rules": "2024",
+        "custom": "D&D 2024 — адаптация для Раэсса Валира"
+      },
+      "activation": {
+        "type": "action",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "1",
+        "units": "hour"
+      },
+      "target": {
+        "affects": {
+          "type": "creature",
+          "count": "@item.level - 1",
+          "choice": false,
+          "special": ""
+        },
+        "template": {
+          "units": "",
+          "contiguous": false,
+          "type": ""
+        }
+      },
+      "range": {
+        "units": "touch",
+        "special": ""
+      },
+      "uses": {
+        "max": "1",
+        "spent": 0,
+        "recovery": []
+      },
+      "level": 2,
+      "school": "ill",
+      "properties": [
+        "vocal",
+        "somatic",
+        "material",
+        "concentration"
+      ],
+      "materials": {
+        "value": "ресница в гуммиарабике",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "activities": {
+        "dnd5eactivity000": {
+          "_id": "dnd5eactivity000",
+          "type": "utility",
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false
+          },
+          "consumption": {
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1"
+              }
+            ],
+            "scaling": {
+              "allowed": false,
+              "max": ""
+            },
+            "spellSlot": false
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "override": false
+          },
+          "effects": [
+            {
+              "_id": "9svfDetqjhsFP3ey"
+            }
+          ],
+          "range": {
+            "override": false
+          },
+          "target": {
+            "prompt": true,
+            "template": {
+              "contiguous": false,
+              "units": "ft"
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false
+          },
+          "roll": {
+            "formula": "",
+            "name": "",
+            "prompt": false,
+            "visible": false
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": []
+          },
+          "sort": 0,
+          "flags": {},
+          "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+          "name": "Сотворить"
+        }
+      },
+      "identifier": "invisibility",
+      "ability": "cha",
+      "sourceItem": "",
+      "method": "innate",
+      "prepared": 1
+    },
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "265174049273a615",
+    "name": "Руна отступления",
+    "type": "spell",
+    "img": "icons/magic/lightning/orb-ball-spiral-blue.webp",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "category": "Магические татуировки",
+        "tattoo": true
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Бонусным действием телепортируется в видимое свободное пространство не далее 30 футов.</p><p>Одноразовая татуировка. После сотворения рисунок исчезает; отдых заряд не восстанавливает. Повторное изготовление — отдельная работа мастера.</p>",
+        "chat": ""
+      },
+      "source": {
+        "rules": "2024",
+        "custom": "D&D 2024 — адаптация для Раэсса Валира"
+      },
+      "activation": {
+        "type": "bonus",
+        "condition": "",
+        "value": null
+      },
+      "duration": {
+        "value": "",
+        "units": "inst"
+      },
+      "target": {
+        "affects": {
+          "type": "space",
+          "count": "1",
+          "choice": false
+        },
+        "template": {
+          "units": "ft",
+          "contiguous": false,
+          "stationary": false
+        }
+      },
+      "range": {
+        "units": "self"
+      },
+      "uses": {
+        "max": "1",
+        "spent": 0,
+        "recovery": []
+      },
+      "level": 2,
+      "school": "con",
+      "properties": [
+        "vocal"
+      ],
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "activities": {
+        "dnd5eactivity000": {
+          "_id": "dnd5eactivity000",
+          "type": "teleport",
+          "activation": {
+            "type": "action",
+            "value": null,
+            "override": false
+          },
+          "consumption": {
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1"
+              }
+            ],
+            "scaling": {
+              "allowed": false,
+              "max": ""
+            },
+            "spellSlot": false
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "override": false,
+            "concentration": false
+          },
+          "effects": [],
+          "range": {
+            "override": false,
+            "units": "self"
+          },
+          "target": {
+            "prompt": true,
+            "template": {
+              "contiguous": false,
+              "units": "ft",
+              "stationary": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": false
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "sort": 0,
+          "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+          "name": "Туманный шаг",
+          "teleport": {
+            "override": true,
+            "value": "30",
+            "units": "ft"
+          },
+          "flags": {}
+        }
+      },
+      "identifier": "misty-step",
+      "method": "innate",
+      "prepared": 1,
+      "ability": "cha",
+      "sourceItem": ""
+    },
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "434a069badccc6a1",
+    "name": "Печать отражения",
+    "type": "feat",
+    "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "category": "Магические татуировки",
+        "tattoo": true
+      }
+    },
+    "system": {
+      "identifier": "mirror-tattoo",
+      "source": {
+        "rules": "2024"
+      },
+      "description": {
+        "value": "<p>Одноразовая татуировка: действием сотворяет «Зеркальное отражение» на 1 минуту без концентрации. Три двойника. Когда атака попадает, бросьте к6 за каждого оставшегося двойника; если хотя бы один результат 3 или выше, вместо Халида уничтожается один двойник. Не защищает от незрячего противника, слепого или истинного зрения. После использования татуировка исчезает; отдых её не возвращает.</p>",
+        "chat": ""
+      },
+      "uses": {
+        "max": "1",
+        "spent": 0,
+        "recovery": []
+      },
+      "activities": {
+        "cc869c0a3fe18da4": {
+          "_id": "cc869c0a3fe18da4",
+          "type": "utility",
+          "name": "",
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1"
+              }
+            ],
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            }
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "units": "ft",
+            "value": "5",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {},
+            "prompt": true,
+            "override": true
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "effects": [],
+          "flags": {},
+          "roll": {
+            "formula": "",
+            "prompt": false,
+            "visible": false
+          }
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "8605dc0e79e4ceff",
+    "name": "Изумрудная вязь",
+    "type": "feat",
+    "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+    "effects": [],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "category": "Магические татуировки",
+        "tattoo": true
+      }
+    },
+    "system": {
+      "identifier": "emerald-tattoo",
+      "source": {
+        "rules": "2024"
+      },
+      "description": {
+        "value": "<p>Постоянная татуировка: Ловкость +1, максимум 20. В Ловкости 20 Халида этот бонус уже учтён. Не прибавляйте повторно.</p>",
+        "chat": ""
+      },
+      "uses": {
+        "max": "",
+        "spent": 0,
+        "recovery": []
+      },
+      "activities": {}
+    },
+    "ownership": {
+      "default": 0
+    }
   }
 ]
