@@ -32,7 +32,7 @@ test('existing schema-3 economy refreshes pending event catalog on boot without 
  const d=await setup(),s=structuredClone(d.getFlag(MOD,'village'));delete s.eventCatalogVersion;
  s.developmentEvents=[{id:'cache:14',eventKey:'cache',status:'pending',title:'Старый тайник',text:'Старое',effects:{gold:150},day:14,elapsed:14}];
  await d.setFlag(MOD,'village',s);await clock.ensureClock();const out=d.getFlag(MOD,'village');
- assert.equal(out.eventCatalogVersion,2);assert.deepEqual(out.developmentEvents[0].effects,{treasury:50});assert.deepEqual(out.economy,s.economy);assert.equal(game.time.worldTime,0);assert.equal(nativeCalls.length,0);
+ assert.equal(out.eventCatalogVersion,3);assert.deepEqual(out.developmentEvents[0].effects,{treasury:50});assert.deepEqual(out.economy,s.economy);assert.equal(game.time.worldTime,0);assert.equal(nativeCalls.length,0);
  await clock.ensureClock();assert.equal(d.getFlag(MOD,'village').revision,out.revision);
 });
 

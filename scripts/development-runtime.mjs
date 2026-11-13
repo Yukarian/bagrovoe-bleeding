@@ -1,6 +1,6 @@
 import {editEconomy,adjustEconomy} from './village-economy.mjs';
 import {settlementEntries,settlementById,ensurePrivateStorage} from './village-storage.mjs';
-import {finance,quote,editProject,decideDevelopmentEvent,publicDevelopment} from './village-development.mjs';
+import {finance,quote,editProject,setEventLimit,decideDevelopmentEvent,publicDevelopment} from './village-development.mjs';
 import {publicClock,calendarAdvancing,calendarStatus} from './ortes-clock.mjs';
 const MOD='bagrovoe-bleeding';let commit,queue=Promise.resolve();
 export function installDevelopment(adapter){commit=adapter.commit;}
@@ -29,3 +29,5 @@ export async function reviewFunding(id,accept,approval){guard();const m=game.mes
 export function updateEconomy(village,input,expected){return serial(async()=>{guard();const d=developmentDoc(village);return commit(d,expected,s=>editEconomy(s,input));});}
 
 export function adjustVillageEconomy(village,input,expected){return serial(async()=>{guard();const d=developmentDoc(village);return commit(d,expected,s=>adjustEconomy(s,input,publicClock().day));});}
+
+export function updateEventLimit(village,key,value,expected){return serial(async()=>{guard();const d=developmentDoc(village);return commit(d,expected,s=>setEventLimit(s,key,value));});}

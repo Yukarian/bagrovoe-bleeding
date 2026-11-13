@@ -1,5 +1,6 @@
 // Current development/economy only. Legacy d100 tables remain archived for old saves.
-export const EVENT_CATALOG_VERSION=2;
+export const EVENT_CATALOG_VERSION=3;
+const ONCE=new Set(['cache','debt-return','relic','boundary','shore-find']);
 export const EVENTS=[
  ['harvest','good','Хороший урожай','Жители закончили сбор раньше и предлагают помощь текущим полевым работам.','agriculture',1,{days:-3}],
  ['master','good','Опытный мастер','Проезжий мастер помогает организовать текущие производственные работы.','production',1,{days:-4}],
@@ -50,8 +51,14 @@ export const EVENTS=[
  ['merchant-complaint','story','Спор о качестве','Покупатель недоволен товаром. Выслушайте стороны прежде, чем назначать возврат денег или компенсацию.',null,0,{}],
  ['shore-find','special','Клеймо старой пристани','После отлива обнаружена балка с неизвестным знаком. Это зацепка для исследования без гарантированной денежной награды.',null,0,{}],
  ['shared-dream','special','Одинаковый сон','Несколько жителей описывают одинаковый сон о дороге. Мастер определяет, совпадение ли это; штрафов нет.',null,0,{}],
- ['grove-message','special','Послание из рощи','На опушке оставлено приглашение к разговору. Оно не меняет отношения с друидами или показатели деревни автоматически.',null,0,{}]
-].map(([id,category,title,text,track,min,effects])=>({id,category,title,text,track,min,effects}));
+ ['grove-message','special','Послание из рощи','На опушке оставлено приглашение к разговору. Оно не меняет отношения с друидами или показатели деревни автоматически.',null,0,{}],
+ ['morkant-arrival','special','Приход Альдевальда Морканта','К деревне подъезжает роскошная карета. Альдевальд Моркант в человеческом облике и его спутники Нимраэль и Эзракиль просят ночлег и сведения о старых преданиях и искусстве возвращения к жизни. Разговор может стать первым знакомством; тайну Морканта гости не объявляют. Награды, сделки и дальнейшие визиты определяются в игре.',null,0,{}],
+ ['valkrein-visit','story','Визит Эдмунда Валькрейна','Эдмунд Валькрейн прибывает с товарами и интересуется нуждами деревни. Он готов обсудить покупку излишков, поставки и заказы. Ассортимент и цены берутся из его листа и оговариваются до сделки; казна и припасы сами не меняются. Каждую встречу можно посвятить новому предложению или выполнению прежнего заказа.',null,0,{}]
+].map(([id,category,title,text,track,min,effects])=>({id,category,title,text,track,min,effects,maxOccurrences:id==='morkant-arrival'||ONCE.has(id)?1:id==='valkrein-visit'?3:null}));
+
+export function eventLimit(s,e){const value=s.eventLimits?.[e.id];return value===undefined?(e.maxOccurrences??null):value===-1?null:value;}
+export function eventCount(s,key){return Math.max(s.eventCounts?.[key]??0,(s.eventHistory??[]).filter(e=>e.eventKey===key&&e.status==='applied').length);}
+export function eventRepeatText(s,e){const limit=eventLimit(s,e),count=eventCount(s,e.id);return limit===null?'Повторяемое':limit===0?'Выключено':limit===1?`Одноразовое · ${count}/1`:`Ограниченное · ${count}/${limit}`;}
 
 export function eventEffectText(e){
  const f=e.effects??{};

@@ -7,8 +7,8 @@ import {economySummary} from '../scripts/village-economy.mjs';
 import {developmentEventsHTML} from '../scripts/development-view.mjs';
 const fresh=()=>{const s=freshVillage('Вестерхольм');s.population=50;return migrateDevelopment(s);};
 const pending=(s,key)=>{const e=structuredClone(EVENTS.find(e=>e.id===key));s.developmentEvents.push({...e,id:key+':14',eventKey:key,status:'pending',day:14,elapsed:14,projectIndex:null});return key+':14';};
-test('fifty current events have unique identities and only supported effects',()=>{
- assert.equal(EVENTS.length,50);assert.equal(new Set(EVENTS.map(e=>e.id)).size,50);assert.equal(new Set(EVENTS.map(e=>e.title)).size,50);
+test('fifty-two current events have unique identities and only supported effects',()=>{
+ assert.equal(EVENTS.length,52);assert.equal(new Set(EVENTS.map(e=>e.id)).size,52);assert.equal(new Set(EVENTS.map(e=>e.title)).size,52);
  for(const e of EVENTS){assert.ok(['good','bad','story','special'].includes(e.category));assert.ok(Object.keys(e.effects).length<=1);for(const k of Object.keys(e.effects))assert.ok(['stock','materials','treasury','days','discount'].includes(k));if(e.effects.days||e.effects.discount)assert.ok(e.track);}
 });
 test('resource event changes current economy exactly once, not archived stocks or weekly rates',()=>{
@@ -41,6 +41,6 @@ test('old pending definitions refresh without overwriting history or paid receip
 });
 test('event UI previews village destinations instead of misleading character payment',()=>{
  const s=fresh();pending(s,'cache');pending(s,'fish-gift');
- const html=developmentEventsHTML(s,{months:Array(12).fill('Месяц')});assert.match(html,/Казна: \+50 зм/);assert.match(html,/Запас припасов: \+3/);assert.match(html,/50 вариантов/);assert.doesNotMatch(html,/Выбрать персонажа для расчёта/);
+ const html=developmentEventsHTML(s,{months:Array(12).fill('Месяц')});assert.match(html,/Казна: \+50 зм/);assert.match(html,/Запас припасов: \+3/);assert.match(html,/52 варианта/);assert.doesNotMatch(html,/Выбрать персонажа для расчёта/);
  assert.match(eventEffectText(EVENTS.find(e=>e.id==='lost-coins')),/полная сумма/);
 });

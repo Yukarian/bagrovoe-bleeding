@@ -1,0 +1,171 @@
+{
+  "_id": "gE3Ytz9H9cZMdw0W",
+  "name": "Пояс каменной ярости",
+  "type": "equipment",
+  "img": "icons/equipment/waist/belt-thick-gemmed-steel-grey.webp",
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "bagrovoe-bleeding": {
+      "stoneBelt": true,
+      "stoneBeltVersion": 1,
+      "category": "Чудесные предметы"
+    }
+  },
+  "system": {
+    "activities": {
+      "7e762b185ff74f2a": {
+        "_id": "7e762b185ff74f2a",
+        "type": "utility",
+        "sort": 0,
+        "activation": {
+          "type": "special",
+          "override": true
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1"
+            }
+          ],
+          "spellSlot": false,
+          "scaling": {
+            "allowed": false
+          }
+        },
+        "description": {
+          "chatFlavor": "",
+          "value": ""
+        },
+        "duration": {
+          "value": "1",
+          "units": "minute",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "units": "self",
+          "override": true
+        },
+        "target": {
+          "affects": {
+            "type": "self",
+            "count": "1"
+          },
+          "template": {},
+          "override": true,
+          "prompt": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Пробудить каменную ярость",
+          "formula": ""
+        },
+        "name": "Пробудить каменную ярость",
+        "flags": {},
+        "visibility": {},
+        "img": "icons/equipment/waist/belt-thick-gemmed-steel-grey.webp"
+      }
+    },
+    "uses": {
+      "max": "1",
+      "spent": 0,
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p><em>Чудесный предмет, необычный, требуется настройка варваром.</em></p><p>Пока вы носите и настроили этот пояс, вы получаете +1 к проверкам Силы (Атлетика).</p><p>Один раз за долгий отдых, когда вы входите в Ярость, вы можете пробудить силу камня на 1 минуту. Пока эффект активен, ваши рукопашные атаки оружием наносят дополнительно 1к4 дробящего урона. Дополнительное действие не требуется.</p><p>Включите Ярость, затем нажмите «Пробудить каменную ярость». Модуль применяет эффект на владельца и добавляет отдельный дробящий урон к броскам рукопашных атак оружием. Метательные атаки, безоружные удары и заклинания бонуса не получают. На критическом попадании кость удваивается штатным броском.</p>",
+      "chat": ""
+    },
+    "identifier": "stone-fury-belt",
+    "source": {
+      "rules": "2024",
+      "custom": "Мир Ортес"
+    },
+    "identified": true,
+    "unidentified": {
+      "description": ""
+    },
+    "container": null,
+    "quantity": 1,
+    "weight": {
+      "value": 1,
+      "units": "lb"
+    },
+    "price": {
+      "value": 400,
+      "denomination": "gp"
+    },
+    "attunement": "required",
+    "armor": {
+      "value": null,
+      "magicalBonus": "",
+      "dex": null
+    },
+    "cover": null,
+    "hp": {
+      "value": null,
+      "max": null,
+      "dt": null,
+      "conditions": ""
+    },
+    "type": {
+      "value": "wondrous",
+      "baseItem": ""
+    },
+    "properties": [
+      "mgc"
+    ],
+    "strength": null,
+    "proficient": null,
+    "crew": {
+      "value": []
+    },
+    "rarities": [
+      "uncommon"
+    ],
+    "attuned": false,
+    "equipped": false
+  },
+  "effects": [
+    {
+      "_id": "57281ba3a01d43e2",
+      "name": "Пояс каменной ярости: Атлетика +1",
+      "img": "icons/equipment/waist/belt-thick-gemmed-steel-grey.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": false,
+      "duration": {},
+      "statuses": [],
+      "changes": [],
+      "system": {
+        "magical": true,
+        "changes": [
+          {
+            "_id": "8cf579a150d949f1",
+            "key": "system.skills.ath.bonuses.check",
+            "value": 1,
+            "type": "add",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "flags": {}
+    }
+  ]
+}
