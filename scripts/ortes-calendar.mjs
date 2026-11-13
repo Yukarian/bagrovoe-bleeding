@@ -30,5 +30,5 @@ export function openCalendar(){calendarApp??=new OrtesCalendar();return calendar
 export function openEvents(){if(!game.user.isGM)return;return openDevelopment(undefined,'events');}
 export function refreshCalendar(){if(calendarApp?.rendered&&!calendarApp.busy)void calendarApp.render({force:true});}
 Hooks.once('init',()=>game.settings.registerMenu(MOD,'ortesCalendar',{name:'Календарь Ортеса',label:'Открыть календарь',icon:'fa-solid fa-calendar-days',type:OrtesCalendar,restricted:false}));
-Hooks.on('getSceneControlButtons',controls=>{if(controls.tokens)controls.tokens.tools.ortesCalendar={name:'ortesCalendar',title:'Календарь Ортеса',icon:'fa-solid fa-calendar-days',order:101,button:true,visible:true,onChange:openCalendar};});
+Hooks.on('getSceneControlButtons',controls=>{if(!controls.tokens)return;controls.tokens.tools.ortesCalendar={name:'ortesCalendar',title:'Календарь Ортеса',icon:'fa-solid fa-calendar-days',order:101,button:true,visible:true,onChange:openCalendar};if(game.user.isGM)controls.tokens.tools.ortesVillageEvents={name:'ortesVillageEvents',title:'События деревни',icon:'fa-solid fa-scroll',order:102,button:true,visible:true,onChange:openEvents};});
 for(const event of ['createJournalEntry','updateJournalEntry','deleteJournalEntry'])Hooks.on(event,refreshCalendar);
