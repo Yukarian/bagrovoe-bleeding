@@ -1,6 +1,6 @@
 import {editEconomy,adjustEconomy} from './village-economy.mjs';
 import {settlementEntries,settlementById,ensurePrivateStorage} from './village-storage.mjs';
-import {finance,quote,editProject,setEventLimit,decideDevelopmentEvent,publicDevelopment} from './village-development.mjs';
+import {finance,quote,editProject,editEventDefinition,editEventSettings,requestEvent,rollEvent,setEventLimit,decideDevelopmentEvent,publicDevelopment} from './village-development.mjs';
 import {publicClock,calendarAdvancing,calendarStatus} from './ortes-clock.mjs';
 const MOD='bagrovoe-bleeding';let commit,queue=Promise.resolve();
 export function installDevelopment(adapter){commit=adapter.commit;}
@@ -31,3 +31,5 @@ export function updateEconomy(village,input,expected){return serial(async()=>{gu
 export function adjustVillageEconomy(village,input,expected){return serial(async()=>{guard();const d=developmentDoc(village);return commit(d,expected,s=>adjustEconomy(s,input,publicClock().day));});}
 
 export function updateEventLimit(village,key,value,expected){return serial(async()=>{guard();const d=developmentDoc(village);return commit(d,expected,s=>setEventLimit(s,key,value));});}
+
+export function manageEvents(village,action,input,expected){return serial(async()=>{guard();const d=developmentDoc(village);return commit(d,expected,s=>{const day=publicClock().day;if(action==='edit')return editEventDefinition(s,input.key,input);if(action==='settings')return editEventSettings(s,input);if(action==='request')return requestEvent(s,input.key,day);if(action==='roll')return rollEvent(s,input.roll,day);throw Error('Неизвестное действие.');});});}

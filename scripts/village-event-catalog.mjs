@@ -69,3 +69,9 @@ export function eventEffectText(e){
  if(f.gold)return `Старое событие: расчёт ${Math.abs(f.gold)} зм с выбранным персонажем.`;
  return 'Сюжетное событие: автоматических изменений нет.';
 }
+
+// Village-owned definitions; existing pending/history entries remain immutable snapshots.
+export function eventDefinitions(s){return [...EVENTS,...(s.customEvents??[])].map(e=>({...structuredClone(e),...structuredClone(s.eventOverrides?.[e.id]??{}),id:e.id}));}
+export function eventRange(s,key){const index=eventDefinitions(s).findIndex(e=>e.id===key);return s.eventRanges?.[key]??(index>=0&&index<52?[index+1,index+1]:[0,0]);}
+export function eventSettings(s){return {mode:s.eventSettings?.mode??'legacy',interval:s.eventSettings?.interval??14,cooldown:s.eventSettings?.cooldown??60};}
+export function eventAtRoll(s,roll){return eventDefinitions(s).find(e=>{const [a,b]=eventRange(s,e.id);return a>0&&roll>=a&&roll<=b;});}
