@@ -119,3 +119,33 @@ test('blood seal stitch heals with Constitution but cannot heal undead or spend 
 test('blood seal refuses unknown powers, exhausted charges and unauthorised execution',async()=>{
  const h=setup('blood-gift-seal');gift(h,'bad');await assert.rejects(h.api.execute(h.item,h.actor,null,{},h.req),/Неизвестный/);gift(h,'ward');h.item.system.uses.spent=3;await assert.rejects(h.api.execute(h.item,h.actor,null,{},h.req),/Применения/);h.item.system.uses.spent=0;h.game.user.isGM=false;await assert.rejects(h.api.execute(h.item,h.actor,null,{},h.req),/ведущий/);assert.equal(h.klass.system.hd.spent,0);
 });
+
+const newKeys=['living-blood-beads','scarlet-tenacity','blood-formula-quill','crimson-trail-sight','crimson-exaction'];
+function prepareNew(h,key){
+ const source=h.source(key==='living-blood-beads'?'healing':key==='blood-formula-quill'?'save':'attack',!['scarlet-tenacity','crimson-trail-sight'].includes(key));
+ if(key==='blood-formula-quill')source.rolls[0].total=10;
+ h.target.actor.effects=[];h.target.actor.createEmbeddedDocuments=h.actor.createEmbeddedDocuments;h.target.actor.deleteEmbeddedDocuments=h.actor.deleteEmbeddedDocuments;
+ return {source:'source',confirmTrigger:'yes',priorState:'no'};
+}
+test('five player relics have approved rarity, two LR charges, no class restriction and exact exports',()=>{
+ for(const key of newKeys){const h=setup(key),d=JSON.parse(fs.readFileSync(new URL('../exports/'+key+'.json',import.meta.url)));assert.equal(d._id,h.item.id);assert.equal(d.system.uses.max,'2');assert.equal(d.system.uses.recovery[0].period,'lr');assert.equal(d.system.rarities[0],['living-blood-beads','crimson-trail-sight'].includes(key)?'uncommon':'rare');assert.equal(d.system.attunement,'required');assert.equal(Object.values(d.system.activities)[0].consumption.targets.length,0);}
+});
+test('four offensive relics deal die damage and start bleeding without a pre-existing wound',async()=>{
+ for(const key of newKeys.slice(1)){const h=setup(key),input=prepareNew(h,key);await h.api.execute(h.item,h.actor,h.target,input,h.req);assert.equal(h.target.actor.system.attributes.hp.value,6);assert.equal(h.bleeds.length,1);assert.equal(h.klass.system.hd.spent,1);assert.equal(h.item.system.uses.spent,1);assert.equal(h.target.actor.effects.length,0);}
+});
+test('enhanced branch uses confirmed state before event and never adds another bleed',async()=>{
+ for(const key of newKeys.slice(1)){const h=setup(key),input=prepareNew(h,key);input.priorState='yes';await h.api.execute(h.item,h.actor,h.target,input,h.req);assert.equal(h.bleeds.length,0);if(['scarlet-tenacity','crimson-exaction'].includes(key))assert.equal(h.actor.system.attributes.hp.temp,4);else{const f=h.target.actor.effects[0].flags[MOD];assert.equal(f.expires.start,true);assert.equal(f.healingBan,key==='blood-formula-quill');assert.equal(f.reactionBan,key==='crimson-trail-sight');}}
+});
+test('beads use pre-healing half HP confirmation, heal only selected target and grant nonstacking temp HP',async()=>{
+ const h=setup('living-blood-beads'),input=prepareNew(h,'living-blood-beads');input.priorState='yes';h.target.actor.system.attributes.hp.value=25;await h.api.execute(h.item,h.actor,h.target,input,h.req);assert.equal(h.target.actor.system.attributes.hp.value,29);assert.equal(h.target.actor.system.attributes.hp.temp,3);assert.equal(h.actor.system.attributes.hp.value,10);
+});
+test('ring rewards actual damage including resistance, not raw die',async()=>{
+ const h=setup('crimson-exaction'),input=prepareNew(h,'crimson-exaction');input.priorState='yes';h.actor.system.attributes.hp.temp=0;h.target.actor.applyDamage=async()=>{};await h.api.execute(h.item,h.actor,h.target,input,h.req);assert.equal(h.actor.system.attributes.hp.temp,0);
+});
+test('new relic rejects unconfirmed, duplicate source, depleted and off-turn activations before cost',async()=>{
+ for(const mode of ['confirmation','depleted','turn','source']){const h=setup('scarlet-tenacity'),input=prepareNew(h,'scarlet-tenacity');if(mode==='confirmation')input.confirmTrigger='no';if(mode==='depleted')h.item.system.uses.spent=2;if(mode==='turn')h.game.combat={started:true,combatant:{actor:{uuid:'Other'}}};if(mode==='source')input.source='missing';await assert.rejects(h.api.execute(h.item,h.actor,h.target,input,h.req));assert.equal(h.klass.system.hd.spent,0);}
+ const h=setup('scarlet-tenacity'),input=prepareNew(h,'scarlet-tenacity');await h.api.execute(h.item,h.actor,h.target,input,h.req);h.req.flags={};await assert.rejects(h.api.execute(h.item,h.actor,h.target,input,h.req));assert.equal(h.klass.system.hd.spent,1);
+});
+test('healing ban clamps HP increases but permits damage and temporary HP',()=>{
+ const h=setup('blood-formula-quill');h.target.actor.effects=[doc({flags:{[MOD]:{healingBan:true}}})];const f=h.hooks.get('preUpdateActor')[0],updates={'system.attributes.hp.value':20,'system.attributes.hp.temp':8};f(h.target.actor,updates);assert.equal(updates['system.attributes.hp.value'],10);assert.equal(updates['system.attributes.hp.temp'],8);const damage={'system.attributes.hp.value':3};f(h.target.actor,damage);assert.equal(damage['system.attributes.hp.value'],3);h.target.actor.effects[0].disabled=true;const heal={'system.attributes.hp.value':20};f(h.target.actor,heal);assert.equal(heal['system.attributes.hp.value'],20);
+});

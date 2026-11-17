@@ -1,0 +1,125 @@
+{
+  "_id": "ea5d42eaa0f820d3",
+  "name": "Наручи алого упорства",
+  "type": "equipment",
+  "img": "icons/commodities/gems/gem-cluster-red.webp",
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "bagrovoe-bleeding": {
+      "relicKey": "scarlet-tenacity",
+      "hitDiceCost": 1,
+      "category": "Кровавые реликвии"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Требуется настройка, без ограничения по классу. 2 заряда, все восстанавливаются после продолжительного отдыха. Каждая активация расходует 1 заряд и одну вашу неизрасходованную Кость Хитов: бросьте её без модификатора Телосложения. Она не лечит владельца. Без доступных костей активация невозможна. Дополнительного действия не требуется.</p><p><strong>Кровавый натиск.</strong> Раз в свой ход после попадания рукопашной атакой оружием цель получает дополнительный некротический урон в размере броска кости. Если до попадания она не кровоточила, наложите 1 уровень кровотечения. Если уже кровоточила, вместо этого получите временные хиты в размере броска кости. Работает во время ярости, не является заклинанием.</p><p>Состояние цели проверяется до исходного попадания, спасброска или лечения. Кровотечение использует иммунитеты и ограничения модуля; стандартная Сл Медицины 11. Временные хиты не складываются: можно сохранить прежние. Стоимость продажи не установлена.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "Багровое Причастие",
+      "rules": "2024",
+      "revision": 1
+    },
+    "identifier": "scarlet-tenacity",
+    "type": {
+      "value": "trinket"
+    },
+    "quantity": 1,
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarities": [
+      "rare"
+    ],
+    "attunement": "required",
+    "attuned": false,
+    "equipped": false,
+    "identified": true,
+    "properties": [
+      "mgc"
+    ],
+    "uses": {
+      "max": "2",
+      "spent": 0,
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ]
+    },
+    "activities": {
+      "ccfef2ad104c205a": {
+        "_id": "ccfef2ad104c205a",
+        "type": "utility",
+        "sort": 0,
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "spellSlot": false,
+          "scaling": {
+            "allowed": false
+          },
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "",
+          "value": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false,
+          "expiry": null
+        },
+        "range": {
+          "units": "any",
+          "override": true
+        },
+        "target": {
+          "override": true,
+          "prompt": true,
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "template": {
+            "type": "",
+            "units": "ft",
+            "contiguous": false,
+            "stationary": false
+          }
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "name": "Кровавый натиск",
+        "flags": {},
+        "visibility": {
+          "level": {},
+          "requireAttunement": false,
+          "requireIdentification": false,
+          "requireMagic": false
+        },
+        "img": "icons/commodities/gems/gem-cluster-red.webp",
+        "behaviors": []
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

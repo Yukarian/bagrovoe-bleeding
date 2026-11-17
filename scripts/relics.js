@@ -1,6 +1,8 @@
 const MOD='bagrovoe-bleeding';
 const KEYS=new Set(['last-stitch','scarlet-bracelet','crimson-lens','shared-pain','open-wound','living-ink','second-heart','blood-gift-seal']);
 const costs={'last-stitch':1,'scarlet-bracelet':1,'crimson-lens':0,'shared-pain':1,'open-wound':1,'living-ink':1,'second-heart':2,'blood-gift-seal':1};
+const PLAYER_RELICS=new Set(['living-blood-beads','scarlet-tenacity','blood-formula-quill','crimson-trail-sight','crimson-exaction']);
+for(const key of PLAYER_RELICS){KEYS.add(key);costs[key]=1;}
 const queues=new Map();
 const leader=()=>game.user?.isGM&&game.users?.activeGM?.id===game.user.id;
 const relicKey=i=>i?.getFlag?.(MOD,'relicKey');
@@ -29,6 +31,11 @@ function sourceCandidates(key,actor,target){
  const messages=[...(game.messages?.contents??[])].reverse();
  return messages.filter(m=>{
   const a=m.getAssociatedActivity?.();if(a?.item?.actor?.uuid!==actor.uuid)return false;
+  if(PLAYER_RELICS.has(key)){
+   if(key==='living-blood-beads')return m.type==='healing'&&a.item.type==='spell';
+   if(key==='blood-formula-quill')return m.type==='save'&&a.item.type==='spell'&&m.getAssociatedActor?.()?.uuid===target?.actor?.uuid&&!m.system.resisted&&!m.system.forceSuccess&&m.rolls?.[0]?.total<a.save?.dc?.value;
+   return m.type==='attack'&&a.item.type===(key==='crimson-exaction'?'spell':'weapon')&&(m.system.evaluatedTargets??[]).some(t=>t.token===target?.uuid&&t.isMiss===false);
+  }
   if(key==='open-wound')return m.type==='attack'&&(m.system.evaluatedTargets??[]).some(t=>t.token===target?.uuid&&t.isMiss===false);
   if(key==='shared-pain')return m.type==='healing'&&a.item.type==='spell';
   if(key==='living-ink')return m.type==='save'&&a.item.type==='spell'&&m.getAssociatedActor?.()?.uuid===target?.actor?.uuid&&!m.system.resisted&&!m.system.forceSuccess&&Number.isFinite(a.save?.dc?.value)&&m.rolls?.[0]?.total>=a.save.dc.value;
@@ -55,20 +62,22 @@ async function execute(item,actor,target,input,request){
  if(key==='blood-gift-seal'){if(!['needle','ward','stitch'].includes(gift))throw Error('Неизвестный дар печати.');if(gift!=='ward'&&!target?.actor)throw Error('Выберите цель токеном (T).');if(gift==='stitch'&&['undead','construct'].includes(target.actor.system.details?.type?.value))throw Error('Живой шов не лечит нежить и конструктов.');}
  if(!KEYS.has(key))throw Error('Неизвестная реликвия.');
  const api=game.modules.get(MOD).api;
+ const playerRelic=PLAYER_RELICS.has(key);
+ if(playerRelic&&(!target?.actor||input.confirmTrigger!=='yes'||!['yes','no'].includes(input.priorState)))throw Error('Подтвердите условие активации и состояние выбранной цели до исходного события.');
  if(['last-stitch','crimson-lens','shared-pain','open-wound','living-ink'].includes(key)&&!target?.actor)throw Error('Выберите цель токеном (T).');
  if(['shared-pain','second-heart'].includes(key)&&!self)throw Error('Токен владельца должен находиться на сцене.');
  if(key==='last-stitch'&&!bleeding(target))throw Error('Цель не кровоточит.');
  if(key==='crimson-lens'&&!bleeding(target))throw Error('Линза отмечает только кровоточащую цель.');
  if(key==='shared-pain'&&target.actor.uuid===actor.uuid)throw Error('Чётки усиливают лечение другого существа.');
- const source=['open-wound','shared-pain','living-ink'].includes(key)?sourceCandidates(key,actor,target).find(m=>m.id===input.source):null;
- if(['open-wound','shared-pain','living-ink'].includes(key)&&!source)throw Error('Подходящее событие не найдено или его результат изменился.');
+ const source=(['open-wound','shared-pain','living-ink'].includes(key)||PLAYER_RELICS.has(key))?sourceCandidates(key,actor,target).find(m=>m.id===input.source):null;
+ if((['open-wound','shared-pain','living-ink'].includes(key)||PLAYER_RELICS.has(key))&&!source)throw Error('Подходящее событие не найдено или его результат изменился.');
  const c=game.combat;
  const ownTurn=c?.turns?.findIndex(t=>t.actor?.uuid===actor.uuid)??-1;
  const reactionKey=c?.started?`${c.id}:${c.round-(c.turn<ownTurn?1:0)}`:request.id;
  if(['scarlet-bracelet','living-ink'].includes(key)&&actor.getFlag(MOD,'relicReaction')===reactionKey)throw Error('Реакция реликвии уже потрачена до начала следующего хода.');
- if(key==='open-wound'&&c?.started&&c.combatant?.actor?.uuid!==actor.uuid)throw Error('Перстень используется только в свой ход.');
+ if((key==='open-wound'||(playerRelic&&key!=='living-blood-beads'))&&c?.started&&c.combatant?.actor?.uuid!==actor.uuid)throw Error('Перстень используется только в свой ход.');
  const turn=turnKey(actor,source?.id??request.id);
- if(['open-wound','shared-pain'].includes(key)&&actor.getFlag(MOD,`relicTurns.${key}`)===turn)throw Error('Это свойство уже использовано в текущий ход.');
+ if((['open-wound','shared-pain'].includes(key)||(PLAYER_RELICS.has(key)&&key!=='living-blood-beads'))&&actor.getFlag(MOD,`relicTurns.${key}`)===turn)throw Error('Это свойство уже использовано в текущий ход.');
  const receiptKey=`${actor.uuid.replaceAll('.','_')}_${key}`;
  if(source&&source.getFlag(MOD,`relicUsed.${receiptKey}`))throw Error('Это событие уже использовано для реликвии.');
  const hp=actor.system.attributes.hp,damage=Number(input.damage);
@@ -80,7 +89,7 @@ async function execute(item,actor,target,input,request){
   castingMod=Number(actor.system.abilities[ability]?.mod??0);
  }
  const dice=planDice(actor,costs[key],input.pool);
- const rolled=[];if(['scarlet-bracelet','shared-pain','living-ink','second-heart','blood-gift-seal'].includes(key))for(const p of dice)for(let n=0;n<p.count;n++)rolled.push((await new Roll(`1d${p.size}`).evaluate()).total);
+ const rolled=[];if(playerRelic||['scarlet-bracelet','shared-pain','living-ink','second-heart','blood-gift-seal'].includes(key))for(const p of dice)for(let n=0;n<p.count;n++)rolled.push((await new Roll(`1d${p.size}`).evaluate()).total);
  const sum=rolled.reduce((n,v)=>n+v,0);
  const penalty=key==='living-ink'?(await new Roll('1d4').evaluate()).total:0;
  const saveData=key==='living-ink'?prepareSaveReduction(source.rolls[0],penalty):null;
@@ -90,7 +99,7 @@ async function execute(item,actor,target,input,request){
  const update={'system.uses.spent':Number(item.system.uses.spent??0)+1};
  if(key==='last-stitch') {update['system.quantity']=Math.max(0,item.system.quantity-1);update['system.uses.spent']=0;}
  await item.update(update);
- if(['open-wound','shared-pain'].includes(key))await actor.setFlag(MOD,`relicTurns.${key}`,turn);
+ if((['open-wound','shared-pain'].includes(key)||(PLAYER_RELICS.has(key)&&key!=='living-blood-beads')))await actor.setFlag(MOD,`relicTurns.${key}`,turn);
  if(source)await source.setFlag(MOD,`relicUsed.${receiptKey}`,request.id);
  if(['scarlet-bracelet','living-ink'].includes(key))await actor.setFlag(MOD,'relicReaction',reactionKey);
  let result='';
@@ -135,6 +144,30 @@ async function execute(item,actor,target,input,request){
   if(gift==='stitch'){await target.actor.applyDamage([{value:amount,type:'healing'}]);result=`Живой шов: лечение ${amount} хитов. Фактически восстановленные хиты останавливают кровотечение по правилам модуля.`;}
   if(gift==='needle'){const dc=8+Number(actor.system.attributes.prof)+con,rolls=await target.actor.rollSavingThrow({ability:'con',target:dc},{configure:false});if(!Number.isFinite(rolls?.[0]?.total))throw Error('Спасбросок не завершён; цена оплачена. Завершите эффект вручную.');const failed=rolls[0].total<dc,damage=failed?amount:Math.floor(amount/2);const before=Number(target.actor.system.attributes.hp.value)+Number(target.actor.system.attributes.hp.temp??0);await target.actor.applyDamage([{value:damage,type:'necrotic',properties:new Set(['mgc'])}]);const after=Number(target.actor.system.attributes.hp.value)+Number(target.actor.system.attributes.hp.temp??0);await concentration(target.actor,Math.max(0,before-after));if(failed)await api.apply(target,{levels:1,count:1,dc});result=`Кровавая игла: Телосложение ${rolls[0].total} против Сл ${dc}; ${damage} некротического урона до защит${failed?', +1 уровень кровотечения':''}. Урон уже применён.`;}
  }
+ if(playerRelic){
+  const prior=input.priorState==='yes';
+  const temp=async(a,n)=>a.update({'system.attributes.hp.temp':input.keepTemp==='yes'?Number(a.system.attributes.hp.temp??0):Math.max(Number(a.system.attributes.hp.temp??0),n)});
+  if(key==='living-blood-beads'){
+   await target.actor.applyDamage([{value:sum,type:'healing'}]);
+   if(prior)await temp(target.actor,Number(actor.system.attributes.prof));
+   result=`Дополнительное лечение: ${sum}; ${prior?'также временные хиты в размере бонуса мастерства':'без временных хитов'}.`;
+  }else{
+   const hpTotal=()=>Number(target.actor.system.attributes.hp.value)+Number(target.actor.system.attributes.hp.temp??0);
+   const before=hpTotal();await target.actor.applyDamage([{value:sum,type:'necrotic',properties:new Set(['mgc'])}]);
+   const actual=Math.max(0,before-hpTotal());await concentration(target.actor,actual);
+   if(!prior)await api.apply(target,{levels:1,count:1,dc:11});
+   else if(key==='scarlet-tenacity'||key==='crimson-exaction')await temp(actor,key==='scarlet-tenacity'?sum:actual);
+   else {
+    const sight=key==='crimson-trail-sight';
+    const old=target.actor.effects.filter(e=>e.getFlag(MOD,'playerRelicControl')===key);
+    if(old.length)await target.actor.deleteEmbeddedDocuments('ActiveEffect',old.map(e=>e.id));
+    await target.actor.createEmbeddedDocuments('ActiveEffect',[{name:sight?'Багровый след: скорость −10 футов, нет реакций':'Кровавая формула: восстановление хитов запрещено',img:item.img,origin:item.uuid,transfer:false,disabled:false,
+     changes:sight?['walk','fly','swim','climb','burrow'].map(k=>({key:'system.attributes.movement.speeds.'+k,mode:2,value:'-10',priority:20})):[],
+     flags:{[MOD]:{playerRelicControl:key,reactionBan:sight,healingBan:!sight,expires:{...globalThis.BagrovoeSpellRuntime.expiry(actor),start:true}}}}]);
+   }
+   result=`Дополнительный некротический урон: ${sum} до защит, фактически ${actual}. ${prior?'Применён усиленный эффект предмета.':'Наложение 1 уровня кровотечения обработано с учётом иммунитетов.'} Урон уже применён.`;
+  }
+ }
  await request.setFlag(MOD,'relicResolution',{status:'done',result});
  await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content:`<p><strong>${esc(item.name)}</strong>: ${result}</p><p>Потрачено Костей Хитов: ${costs[key]}${rolled.length?`; броски: ${rolled.join(', ')}`:''}.</p>`});
  return result;
@@ -153,7 +186,7 @@ async function processRequest(chat){
   if(descriptors.length>1)throw Error('Выберите не больше одной цели.');
   const target=descriptors[0]?.token?await fromUuid(descriptors[0].token):ownToken(actor);
   const sources=sourceCandidates(key,actor,target);
-  const needsSource=['open-wound','shared-pain','living-ink'].includes(key);
+  const needsSource=(['open-wound','shared-pain','living-ink'].includes(key)||PLAYER_RELICS.has(key));
   if(needsSource&&!sources.length)throw Error('Нет подходящего броска в чате. Сначала выполните атаку, лечение или спасбросок и выберите цель.');
   const all=pools(actor);
   let content=`<p><strong>${esc(actor.name)} — ${esc(item.name)}</strong></p><p>Ведущий: подтвердите дистанцию, видимость, доступность действия/реакции и условие активации. Цена: ${costs[key]} КХ; замены на HP нет.</p>`;
@@ -163,6 +196,7 @@ async function processRequest(chat){
   if(['scarlet-bracelet','second-heart'].includes(key))content+='<p>Только обычный входящий урон — не кровотечение и не кровавая цена. Введите урон ПОСЛЕ сопротивлений и других защит, ДО временных хитов. Он ещё не должен быть применён. Предмет сам учтёт этот удар.</p><label>Урон<input name="damage" type="number" min="1" step="1" required></label>';
   if(key==='living-ink')content+='<p>Спасбросок должен быть успешным, без легендарного сопротивления. Подтвердите наличие реакции и настройку заклинателем.</p>';
   if(key==='blood-gift-seal')content+='<p>Дар: '+esc(activity.name)+'. Подтвердите дальность 30 футов и видимость для Иглы либо касание и согласие для Шва. Покров действует на владельца.</p>';
+  if(PLAYER_RELICS.has(key))content+=`<p>Подтвердите исходное событие: для наручей — рукопашное оружие; для прицела — дальнобойная атака именно оружием с установленным прицелом; для пера — цель получила урон после провала спасброска; для чёток — цель получила лечение заклинанием; для перстня — попадание атакой заклинанием.</p><label>Условие выполнено<select name="confirmTrigger"><option value="no">Нет</option><option value="yes">Да</option></select></label><label>${key==='living-blood-beads'?'До лечения было не больше половины максимума хитов?':'Цель кровоточила ДО исходного попадания / спасброска?'}<select name="priorState"><option value="">Выберите состояние до события</option><option value="no">Нет</option><option value="yes">Да</option></select></label><label>Временные хиты<select name="keepTemp"><option value="no">Сохранить большее значение</option><option value="yes">Оставить прежние</option></select></label>`;
   const input=await foundry.applications.api.DialogV2.wait({window:{title:item.name},content,buttons:[
    {action:'apply',label:'Подтвердить и применить',callback:(_e,b)=>Object.fromEntries(new FormData(b.form).entries())},
    {action:'cancel',label:'Отмена',default:true,callback:()=>null}],rejectClose:false});
@@ -209,3 +243,13 @@ Hooks.on('renderChatMessageHTML',(chat,html)=>{
  const p=document.createElement('p');p.textContent=labels[status]??'Ожидает подтверждения ведущего.';html.append(p);
 });
 Hooks.once('ready',()=>{game.modules.get(MOD).api.relics={processRequest,execute,planDice,prepareSaveReduction,lensHit};});
+
+// Applies to ordinary healing, regeneration and direct HP updates; temporary HP are unaffected.
+Hooks.on('preUpdateActor',(actor,changes)=>{
+ if(!actor.effects?.some(e=>!e.disabled&&!e.isSuppressed&&e.getFlag(MOD,'healingBan')))return;
+ const value=changes['system.attributes.hp.value']??changes.system?.attributes?.hp?.value;
+ if(Number(value)>Number(actor.system.attributes.hp.value)){
+  if(changes.system?.attributes?.hp)changes.system.attributes.hp.value=actor.system.attributes.hp.value;
+  if('system.attributes.hp.value' in changes)changes['system.attributes.hp.value']=actor.system.attributes.hp.value;
+ }
+});

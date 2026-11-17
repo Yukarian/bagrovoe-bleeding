@@ -1651,5 +1651,630 @@
     "ownership": {
       "default": 0
     }
+  },
+  {
+    "_id": "94e8aabce04590a8",
+    "name": "Чётки живой крови",
+    "type": "equipment",
+    "img": "icons/commodities/gems/gem-cluster-red.webp",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "living-blood-beads",
+        "hitDiceCost": 1,
+        "category": "Кровавые реликвии"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Требуется настройка, без ограничения по классу. 2 заряда, все восстанавливаются после продолжительного отдыха. Каждая активация расходует 1 заряд и одну вашу неизрасходованную Кость Хитов: бросьте её без модификатора Телосложения. Она не лечит владельца. Без доступных костей активация невозможна. Дополнительного действия не требуется.</p><p><strong>Кровное причастие.</strong> Когда ваше заклинание восстанавливает хиты, одна получившая лечение цель дополнительно восстанавливает хиты в размере броска кости. Если до лечения у неё было не больше половины максимума хитов, она также получает временные хиты, равные вашему бонусу мастерства. При массовом лечении выбирается только одна цель.</p><p>Состояние цели проверяется до исходного попадания, спасброска или лечения. Кровотечение использует иммунитеты и ограничения модуля; стандартная Сл Медицины 11. Временные хиты не складываются: можно сохранить прежние. Стоимость продажи не установлена.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "living-blood-beads",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "uncommon"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "max": "2",
+        "spent": 0,
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "8f8b371eb003f7f4": {
+          "_id": "8f8b371eb003f7f4",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "special",
+            "value": null,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "units": "any",
+            "override": true
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Кровное причастие",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "icons/commodities/gems/gem-cluster-red.webp",
+          "behaviors": []
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "ea5d42eaa0f820d3",
+    "name": "Наручи алого упорства",
+    "type": "equipment",
+    "img": "icons/commodities/gems/gem-cluster-red.webp",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "scarlet-tenacity",
+        "hitDiceCost": 1,
+        "category": "Кровавые реликвии"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Требуется настройка, без ограничения по классу. 2 заряда, все восстанавливаются после продолжительного отдыха. Каждая активация расходует 1 заряд и одну вашу неизрасходованную Кость Хитов: бросьте её без модификатора Телосложения. Она не лечит владельца. Без доступных костей активация невозможна. Дополнительного действия не требуется.</p><p><strong>Кровавый натиск.</strong> Раз в свой ход после попадания рукопашной атакой оружием цель получает дополнительный некротический урон в размере броска кости. Если до попадания она не кровоточила, наложите 1 уровень кровотечения. Если уже кровоточила, вместо этого получите временные хиты в размере броска кости. Работает во время ярости, не является заклинанием.</p><p>Состояние цели проверяется до исходного попадания, спасброска или лечения. Кровотечение использует иммунитеты и ограничения модуля; стандартная Сл Медицины 11. Временные хиты не складываются: можно сохранить прежние. Стоимость продажи не установлена.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "scarlet-tenacity",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "rare"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "max": "2",
+        "spent": 0,
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "ccfef2ad104c205a": {
+          "_id": "ccfef2ad104c205a",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "special",
+            "value": null,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "units": "any",
+            "override": true
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Кровавый натиск",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "icons/commodities/gems/gem-cluster-red.webp",
+          "behaviors": []
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "9b01da32a258b353",
+    "name": "Перо кровавой формулы",
+    "type": "equipment",
+    "img": "icons/commodities/gems/gem-cluster-red.webp",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "blood-formula-quill",
+        "hitDiceCost": 1,
+        "category": "Кровавые реликвии"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Требуется настройка, без ограничения по классу. 2 заряда, все восстанавливаются после продолжительного отдыха. Каждая активация расходует 1 заряд и одну вашу неизрасходованную Кость Хитов: бросьте её без модификатора Телосложения. Она не лечит владельца. Без доступных костей активация невозможна. Дополнительного действия не требуется.</p><p><strong>Поправка кровью.</strong> Можно использовать как магическую фокусировку для заклинаний волшебника. Раз в свой ход, когда существо провалило спасбросок против вашего заклинания и получило от него урон, одна такая цель получает дополнительный некротический урон в размере броска кости. Если до разрешения спасброска она не кровоточила, наложите 1 уровень кровотечения. Если уже кровоточила, вместо этого она не может восстанавливать хиты до начала вашего следующего хода.</p><p>Состояние цели проверяется до исходного попадания, спасброска или лечения. Кровотечение использует иммунитеты и ограничения модуля; стандартная Сл Медицины 11. Временные хиты не складываются: можно сохранить прежние. Стоимость продажи не установлена.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "blood-formula-quill",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "rare"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "max": "2",
+        "spent": 0,
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "716028a2c7b9d8af": {
+          "_id": "716028a2c7b9d8af",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "special",
+            "value": null,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "units": "any",
+            "override": true
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Поправка кровью",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "icons/commodities/gems/gem-cluster-red.webp",
+          "behaviors": []
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "90efca98eff437ab",
+    "name": "Прицел багрового следа",
+    "type": "equipment",
+    "img": "icons/commodities/gems/gem-cluster-red.webp",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "crimson-trail-sight",
+        "hitDiceCost": 1,
+        "category": "Кровавые реликвии"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Требуется настройка, без ограничения по классу. 2 заряда, все восстанавливаются после продолжительного отдыха. Каждая активация расходует 1 заряд и одну вашу неизрасходованную Кость Хитов: бросьте её без модификатора Телосложения. Она не лечит владельца. Без доступных костей активация невозможна. Дополнительного действия не требуется.</p><p><strong>Ранящий выстрел.</strong> За короткий отдых закрепляется на одном луке, арбалете или огнестрельном оружии, в том числе магическом. Раз в свой ход после попадания дальнобойной атакой этим оружием цель получает дополнительный некротический урон в размере броска кости. Если до попадания она не кровоточила, наложите 1 уровень кровотечения. Если уже кровоточила, вместо этого все её скорости уменьшаются на 10 футов (минимум 0), и она не может совершать реакции до начала вашего следующего хода. Не даёт постоянных бонусов к атаке или урону.</p><p>Состояние цели проверяется до исходного попадания, спасброска или лечения. Кровотечение использует иммунитеты и ограничения модуля; стандартная Сл Медицины 11. Временные хиты не складываются: можно сохранить прежние. Стоимость продажи не установлена.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "crimson-trail-sight",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "uncommon"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "max": "2",
+        "spent": 0,
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "36eef6bb20cd8cd4": {
+          "_id": "36eef6bb20cd8cd4",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "special",
+            "value": null,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "units": "any",
+            "override": true
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Ранящий выстрел",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "icons/commodities/gems/gem-cluster-red.webp",
+          "behaviors": []
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    }
+  },
+  {
+    "_id": "0befb58a0599545b",
+    "name": "Перстень багрового взыскания",
+    "type": "equipment",
+    "img": "icons/commodities/gems/gem-cluster-red.webp",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "crimson-exaction",
+        "hitDiceCost": 1,
+        "category": "Кровавые реликвии"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Требуется настройка, без ограничения по классу. 2 заряда, все восстанавливаются после продолжительного отдыха. Каждая активация расходует 1 заряд и одну вашу неизрасходованную Кость Хитов: бросьте её без модификатора Телосложения. Она не лечит владельца. Без доступных костей активация невозможна. Дополнительного действия не требуется.</p><p><strong>Взыскание жизненной силы.</strong> Раз в свой ход после попадания атакой заклинанием цель получает дополнительный некротический урон в размере броска кости. Если до попадания она не кровоточила, наложите 1 уровень кровотечения. Если уже кровоточила, вместо этого получите временные хиты в размере некротического урона, фактически нанесённого этой активацией. При нескольких лучах усиливается одно попадание.</p><p>Состояние цели проверяется до исходного попадания, спасброска или лечения. Кровотечение использует иммунитеты и ограничения модуля; стандартная Сл Медицины 11. Временные хиты не складываются: можно сохранить прежние. Стоимость продажи не установлена.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "crimson-exaction",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 0,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "rare"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "max": "2",
+        "spent": 0,
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "989011eaf73b4982": {
+          "_id": "989011eaf73b4982",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "special",
+            "value": null,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "units": "any",
+            "override": true
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Взыскание жизненной силы",
+          "flags": {},
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "icons/commodities/gems/gem-cluster-red.webp",
+          "behaviors": []
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    }
   }
 ]
