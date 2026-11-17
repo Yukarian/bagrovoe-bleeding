@@ -10,7 +10,7 @@ function doc(d){return Object.assign({flags:{},getFlag(m,k){return get(this.flag
 function setup(key){
  const hooks=new Map(),documents=new Map(),output=[],bleeds=[],stopped=[];
  const klass=doc({id:'class',name:'Fighter',type:'class',system:{levels:5,hd:{denomination:'d10',spent:0}}});
- const item=doc(structuredClone(data.find(i=>i.flags[MOD].relicKey===key)));item.id=item._id;item.uuid='Actor.owner.Item.'+item.id;item.system.attuned=true;item.system.equipped=true;
+ const item=doc(structuredClone([...data,...JSON.parse(fs.readFileSync(new URL('../packs-src/world-items.json',import.meta.url)))].find(i=>i.flags[MOD]?.relicKey===key)));item.id=item._id;item.uuid='Actor.owner.Item.'+item.id;item.system.attuned=true;item.system.equipped=true;
  const actor=doc({uuid:'Actor.owner',id:'owner',name:'Owner',type:'character',effects:[],statuses:new Set(),system:{attributes:{prof:3,hp:{value:10,max:30,temp:2},spellcasting:'wis'},abilities:{con:{mod:2},wis:{mod:3},int:{mod:1},cha:{mod:4}}},testUserPermission:()=>true,
  async applyDamage(d){if(typeof d==='number'){const t=Math.min(this.system.attributes.hp.temp,d);this.system.attributes.hp.temp-=t;this.system.attributes.hp.value=Math.max(0,this.system.attributes.hp.value-(d-t));}else for(const v of d){this.system.attributes.hp.value=Math.min(30,this.system.attributes.hp.value+(v.type==='healing'?v.value:-v.value));}},
  async createEmbeddedDocuments(t,ds){for(const d of ds)this.effects.push(doc({id:'effect',...d}));},async deleteEmbeddedDocuments(t,ids){this.effects=this.effects.filter(e=>!ids.includes(e.id));},async toggleStatusEffect(s){this.statuses.add(s);},async endConcentration(){this.ended=true;}});
@@ -101,4 +101,21 @@ test('successful ring save consumes cost without inflicting bleeding',async()=>{
 test('all permanent relics recover uses only on long rest and depleted item is blocked',async()=>{
  for(const i of data.filter(i=>i.type==='equipment'))assert.deepEqual(i.system.uses.recovery,[{period:'lr',type:'recoverAll'}]);
  const h=setup('scarlet-bracelet');h.item.system.uses.spent=3;await assert.rejects(h.api.execute(h.item,h.actor,null,{damage:10},h.req),/Применения/);assert.equal(h.klass.system.hd.spent,0);
+});
+
+function gift(h,name){h.req.getAssociatedActivity=()=>({item:h.item,flags:{[MOD]:{bloodGift:name}}});}
+test('blood seal spends selected class die and one shared charge, ward never reduces existing temporary HP',async()=>{
+ const h=setup('blood-gift-seal');gift(h,'ward');h.actor.system.attributes.hp.temp=20;await h.api.execute(h.item,h.actor,null,{pool:'class'},h.req);assert.equal(h.klass.system.hd.spent,1);assert.equal(h.item.system.uses.spent,1);assert.equal(h.actor.system.attributes.hp.temp,20);assert.equal(h.bleeds.length,0);await assert.rejects(h.api.execute(h.item,h.actor,null,{},h.req),/обработан/);assert.equal(h.klass.system.hd.spent,1);
+});
+test('blood seal needle uses Constitution DC, actual die damage, bleed API and half on success',async()=>{
+ const h=setup('blood-gift-seal');gift(h,'needle');await h.api.execute(h.item,h.actor,h.target,{pool:'class'},h.req);assert.equal(h.target.actor.system.attributes.hp.value,4);assert.equal(h.bleeds[0].v.dc,13);assert.equal(h.bleeds[0].v.levels,1);
+ const ok=setup('blood-gift-seal');gift(ok,'needle');ok.target.actor.rollSavingThrow=async()=>[{total:20}];await ok.api.execute(ok.item,ok.actor,ok.target,{},ok.req);assert.equal(ok.target.actor.system.attributes.hp.value,7);assert.equal(ok.bleeds.length,0);
+});
+test('blood seal stitch heals with Constitution but cannot heal undead or spend missing Hit Dice',async()=>{
+ const h=setup('blood-gift-seal');gift(h,'stitch');await h.api.execute(h.item,h.actor,h.target,{},h.req);assert.equal(h.target.actor.system.attributes.hp.value,16);
+ const no=setup('blood-gift-seal');gift(no,'stitch');no.target.actor.system.details={type:{value:'undead'}};await assert.rejects(no.api.execute(no.item,no.actor,no.target,{},no.req),/не лечит/);assert.equal(no.klass.system.hd.spent,0);
+ const empty=setup('blood-gift-seal');gift(empty,'ward');empty.klass.system.hd.spent=5;await assert.rejects(empty.api.execute(empty.item,empty.actor,null,{},empty.req),/Недостаточно/);assert.equal(empty.item.system.uses.spent,0);
+});
+test('blood seal refuses unknown powers, exhausted charges and unauthorised execution',async()=>{
+ const h=setup('blood-gift-seal');gift(h,'bad');await assert.rejects(h.api.execute(h.item,h.actor,null,{},h.req),/Неизвестный/);gift(h,'ward');h.item.system.uses.spent=3;await assert.rejects(h.api.execute(h.item,h.actor,null,{},h.req),/Применения/);h.item.system.uses.spent=0;h.game.user.isGM=false;await assert.rejects(h.api.execute(h.item,h.actor,null,{},h.req),/ведущий/);assert.equal(h.klass.system.hd.spent,0);
 });

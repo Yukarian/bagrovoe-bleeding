@@ -1,0 +1,260 @@
+{
+  "_id": "e9ff09461e30f2e2",
+  "name": "Печать багрового дара",
+  "type": "equipment",
+  "img": "icons/commodities/gems/gem-cluster-red.webp",
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "bagrovoe-bleeding": {
+      "relicKey": "blood-gift-seal",
+      "hitDiceCost": 1,
+      "category": "Кровавые реликвии"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><strong>Редкий чудесный предмет, требуется настройка. Стоимость: 4 000 зм.</strong> Серебряный амулет с алой печатью позволяет направлять собственную кровь.</p><p>Имеет 3 заряда; все восстанавливаются после долгого отдыха. Каждая способность расходует 1 заряд и одну вашу доступную Кость Хитов. Бросьте потраченную кость без обычного лечения от отдыха. Если костей нет, способность недоступна: заменять цену потерей хитов нельзя.</p><p><strong>Кровавая игла — действие.</strong> Видимое существо в пределах 30 футов совершает спасбросок Телосложения (Сл 8 + бонус мастерства + модификатор Телосложения). При провале получает некротический урон, равный броску Кости Хитов + модификатору Телосложения (минимум 1), и 1 уровень кровотечения по правилам модуля с той же Сл. При успехе получает половину урона и не получает кровотечения.</p><p><strong>Алый покров — бонусное действие.</strong> Получите временные хиты, равные броску Кости Хитов + бонусу мастерства (минимум 1). Они не складываются с другими временными хитами и не останавливают кровотечение.</p><p><strong>Живой шов — действие.</strong> Коснитесь себя или согласного существа. Оно восстанавливает хиты, равные броску Кости Хитов + модификатору Телосложения (минимум 1). Если хиты действительно восстановлены, кровотечение прекращается по правилам модуля. Нежить и конструкты не получают этого лечения.</p><p>Предмет не открывает кровавое колдовство NPC, не крадёт чужие Кости Хитов и не восстанавливает потраченные кости.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "Багровое Причастие",
+      "rules": "2024",
+      "revision": 1
+    },
+    "identifier": "blood-gift-seal",
+    "type": {
+      "value": "trinket"
+    },
+    "quantity": 1,
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "price": {
+      "value": 4000,
+      "denomination": "gp"
+    },
+    "rarities": [
+      "rare"
+    ],
+    "attunement": "required",
+    "attuned": false,
+    "equipped": false,
+    "identified": true,
+    "properties": [
+      "mgc"
+    ],
+    "uses": {
+      "max": "3",
+      "spent": 0,
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ]
+    },
+    "activities": {
+      "c7439c58404a3922": {
+        "_id": "c7439c58404a3922",
+        "type": "utility",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "spellSlot": false,
+          "scaling": {
+            "allowed": false
+          },
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "",
+          "value": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false,
+          "expiry": null
+        },
+        "range": {
+          "units": "ft",
+          "value": "30",
+          "override": true
+        },
+        "target": {
+          "override": true,
+          "prompt": true,
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "template": {
+            "type": "",
+            "units": "ft",
+            "contiguous": false,
+            "stationary": false
+          }
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "name": "Кровавая игла",
+        "flags": {
+          "bagrovoe-bleeding": {
+            "bloodGift": "needle"
+          }
+        },
+        "visibility": {
+          "level": {},
+          "requireAttunement": false,
+          "requireIdentification": false,
+          "requireMagic": false
+        },
+        "img": "icons/commodities/gems/gem-cluster-red.webp",
+        "behaviors": []
+      },
+      "f8539fb73693904f": {
+        "_id": "f8539fb73693904f",
+        "type": "utility",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "spellSlot": false,
+          "scaling": {
+            "allowed": false
+          },
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "",
+          "value": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false,
+          "expiry": null
+        },
+        "range": {
+          "units": "self",
+          "override": true
+        },
+        "target": {
+          "override": true,
+          "prompt": false,
+          "affects": {
+            "type": "self",
+            "count": "1"
+          },
+          "template": {
+            "type": "",
+            "units": "ft",
+            "contiguous": false,
+            "stationary": false
+          }
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "name": "Алый покров",
+        "flags": {
+          "bagrovoe-bleeding": {
+            "bloodGift": "ward"
+          }
+        },
+        "visibility": {
+          "level": {},
+          "requireAttunement": false,
+          "requireIdentification": false,
+          "requireMagic": false
+        },
+        "img": "icons/commodities/gems/gem-cluster-red.webp",
+        "behaviors": []
+      },
+      "a5419fecafc9342d": {
+        "_id": "a5419fecafc9342d",
+        "type": "utility",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "spellSlot": false,
+          "scaling": {
+            "allowed": false
+          },
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "",
+          "value": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false,
+          "expiry": null
+        },
+        "range": {
+          "units": "touch",
+          "override": true
+        },
+        "target": {
+          "override": true,
+          "prompt": true,
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "template": {
+            "type": "",
+            "units": "ft",
+            "contiguous": false,
+            "stationary": false
+          }
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "name": "Живой шов",
+        "flags": {
+          "bagrovoe-bleeding": {
+            "bloodGift": "stitch"
+          }
+        },
+        "visibility": {
+          "level": {},
+          "requireAttunement": false,
+          "requireIdentification": false,
+          "requireMagic": false
+        },
+        "img": "icons/commodities/gems/gem-cluster-red.webp",
+        "behaviors": []
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

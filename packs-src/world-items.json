@@ -774,5 +774,882 @@
         "flags": {}
       }
     ]
+  },
+  {
+    "_id": "43af9c42cd171123",
+    "name": "Охотничья винтовка трёх рун",
+    "type": "weapon",
+    "img": "icons/weapons/guns/gun-topbarrel.webp",
+    "ownership": {
+      "default": 0
+    },
+    "effects": [
+      {
+        "_id": "cb106953a4388c53",
+        "name": "Руна Оков — скорость 0; нет реакций",
+        "img": "icons/svg/net.svg",
+        "type": "base",
+        "transfer": false,
+        "disabled": false,
+        "duration": {
+          "value": 1,
+          "units": "rounds",
+          "expiry": "sourceStart"
+        },
+        "statuses": [],
+        "changes": [],
+        "system": {
+          "magical": true,
+          "changes": [
+            {
+              "key": "system.attributes.movement.speeds.walk",
+              "value": 0,
+              "type": "override"
+            },
+            {
+              "key": "system.attributes.movement.speeds.fly",
+              "value": 0,
+              "type": "override"
+            },
+            {
+              "key": "system.attributes.movement.speeds.swim",
+              "value": 0,
+              "type": "override"
+            },
+            {
+              "key": "system.attributes.movement.speeds.climb",
+              "value": 0,
+              "type": "override"
+            },
+            {
+              "key": "system.attributes.movement.speeds.burrow",
+              "value": 0,
+              "type": "override"
+            }
+          ]
+        },
+        "flags": {}
+      },
+      {
+        "_id": "86c333a0cb7db004",
+        "name": "Руна Завесы — не видит дальше 5 футов",
+        "img": "icons/svg/eye.svg",
+        "type": "base",
+        "transfer": false,
+        "disabled": false,
+        "duration": {
+          "value": 1,
+          "units": "rounds",
+          "expiry": "sourceStart"
+        },
+        "statuses": [],
+        "changes": [],
+        "system": {
+          "magical": true,
+          "changes": []
+        },
+        "flags": {}
+      }
+    ],
+    "flags": {
+      "bagrovoe-bleeding": {
+        "threeRuneRifle": true,
+        "category": "Руническое оружие"
+      }
+    },
+    "system": {
+      "identifier": "three-rune-hunting-rifle",
+      "description": {
+        "value": "<p><strong>Редкое оружие, требуется настройка. Стоимость: 5 000 зм.</strong></p><p>Воинское дальнобойное оружие +1 к атаке и урону. Урон 2к10 колющего; дальность 80/240 футов; двуручное огнестрельное оружие. Магазин: 5 выстрелов. Перезарядка действием или бонусным действием; патроны необходимы.</p><p><strong>Рунические выстрелы.</strong> После попадания один раз в свой ход потратьте 1 из 3 зарядов и выберите одну руну. Все заряды восстанавливаются на рассвете. Один выстрел — одна руна; концентрация не требуется.</p><p><strong>Оковы.</strong> Спасбросок Силы Сл 15; при провале скорость цели равна 0 и она не совершает реакции до начала вашего следующего хода.</p><p><strong>Раскол.</strong> Основная цель получает дополнительно 2к6 урона силовым полем. Все остальные существа в пределах 5 футов от неё совершают спасбросок Ловкости Сл 15: тот же дополнительный урон при провале, половина при успехе.</p><p><strong>Завеса.</strong> Спасбросок Мудрости Сл 15; при провале цель не видит ничего дальше 5 футов от себя до начала вашего следующего хода.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Мир Ортес",
+        "rules": "2024",
+        "revision": 1
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 8,
+        "units": "lb"
+      },
+      "price": {
+        "value": 5000,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "rare"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "type": {
+        "value": "martialR",
+        "baseItem": ""
+      },
+      "ammunition": {
+        "type": "firearmBullet"
+      },
+      "damage": {
+        "base": {
+          "number": 2,
+          "denomination": 10,
+          "bonus": "",
+          "types": [
+            "piercing"
+          ],
+          "custom": {
+            "enabled": false,
+            "formula": ""
+          },
+          "scaling": {
+            "mode": "",
+            "number": 0
+          },
+          "modifiers": []
+        }
+      },
+      "magicalBonus": "1",
+      "properties": [
+        "amm",
+        "two",
+        "fir",
+        "mgc"
+      ],
+      "proficient": null,
+      "range": {
+        "value": 80,
+        "long": 240,
+        "units": "ft"
+      },
+      "mastery": "slow",
+      "uses": {
+        "max": "3",
+        "spent": 0,
+        "recovery": [
+          {
+            "period": "dawn",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "ae8d26cb3dcb31a8": {
+          "_id": "ae8d26cb3dcb31a8",
+          "name": "Выстрел",
+          "type": "attack",
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "targets": [
+              {
+                "type": "activityUses",
+                "target": "",
+                "value": "1"
+              }
+            ],
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            }
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "override": false
+          },
+          "target": {
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {},
+            "prompt": true,
+            "override": true
+          },
+          "uses": {
+            "max": "5",
+            "spent": 0,
+            "recovery": []
+          },
+          "effects": [],
+          "flags": {
+            "bagrovoe-bleeding": {
+              "threeRuneAction": "shot"
+            }
+          },
+          "attack": {
+            "ability": "",
+            "bonus": "",
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "weapon"
+            },
+            "critical": {
+              "threshold": null
+            }
+          },
+          "damage": {
+            "includeBase": true,
+            "parts": [],
+            "critical": {
+              "bonus": ""
+            }
+          },
+          "description": {
+            "value": "Один выстрел из магазина. Руну выбирайте отдельно после подтверждённого попадания."
+          }
+        },
+        "5259651087dc9898": {
+          "_id": "5259651087dc9898",
+          "name": "Перезарядка — действие",
+          "type": "utility",
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "targets": [],
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            }
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "units": "self",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "type": "self"
+            },
+            "template": {},
+            "prompt": false,
+            "override": true
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "effects": [],
+          "flags": {
+            "bagrovoe-bleeding": {
+              "threeRuneAction": "reload-action"
+            }
+          }
+        },
+        "fdbbfad1dd25e247": {
+          "_id": "fdbbfad1dd25e247",
+          "name": "Перезарядка — бонусное действие",
+          "type": "utility",
+          "activation": {
+            "type": "bonus",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "targets": [],
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            }
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "units": "self",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "type": "self"
+            },
+            "template": {},
+            "prompt": false,
+            "override": true
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "effects": [],
+          "flags": {
+            "bagrovoe-bleeding": {
+              "threeRuneAction": "reload-bonus"
+            }
+          }
+        },
+        "fb020a9950699667": {
+          "_id": "fb020a9950699667",
+          "name": "Руна Оков",
+          "type": "save",
+          "activation": {
+            "type": "special",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1"
+              }
+            ],
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            }
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "units": "ft",
+            "value": "240",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {},
+            "prompt": true,
+            "override": true
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "effects": [
+            {
+              "_id": "cb106953a4388c53",
+              "onSave": false
+            }
+          ],
+          "flags": {
+            "bagrovoe-bleeding": {
+              "threeRuneAction": "chains"
+            }
+          },
+          "save": {
+            "ability": [
+              "str"
+            ],
+            "dc": {
+              "calculation": "",
+              "formula": "15"
+            }
+          },
+          "damage": {
+            "parts": [],
+            "onSave": "none"
+          },
+          "description": {
+            "value": "После попадания. Эффект при провале спасброска — до начала вашего следующего хода. Запрет реакций учитывается вручную."
+          }
+        },
+        "0ccf8579cf0b5e3d": {
+          "_id": "0ccf8579cf0b5e3d",
+          "name": "Руна Завесы",
+          "type": "save",
+          "activation": {
+            "type": "special",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1"
+              }
+            ],
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            }
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "units": "ft",
+            "value": "240",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {},
+            "prompt": true,
+            "override": true
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "effects": [
+            {
+              "_id": "86c333a0cb7db004",
+              "onSave": false
+            }
+          ],
+          "flags": {
+            "bagrovoe-bleeding": {
+              "threeRuneAction": "veil"
+            }
+          },
+          "save": {
+            "ability": [
+              "wis"
+            ],
+            "dc": {
+              "calculation": "",
+              "formula": "15"
+            }
+          },
+          "damage": {
+            "parts": [],
+            "onSave": "none"
+          },
+          "description": {
+            "value": "После попадания. Эффект при провале спасброска — до начала вашего следующего хода. Это не полная слепота: цель видит в пределах 5 футов. Ведущий учитывает ограничение видимости."
+          }
+        },
+        "68ccd655b7effd60": {
+          "_id": "68ccd655b7effd60",
+          "name": "Руна Раскола — урон основной цели",
+          "type": "damage",
+          "activation": {
+            "type": "special",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "targets": [
+              {
+                "type": "itemUses",
+                "target": "",
+                "value": "1"
+              }
+            ],
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            }
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "units": "ft",
+            "value": "240",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {},
+            "prompt": true,
+            "override": true
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "effects": [],
+          "flags": {
+            "bagrovoe-bleeding": {
+              "threeRuneAction": "fracture"
+            }
+          },
+          "damage": {
+            "parts": [
+              {
+                "number": 2,
+                "denomination": 6,
+                "bonus": "",
+                "types": [
+                  "force"
+                ],
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "scaling": {
+                  "mode": "",
+                  "number": 0
+                },
+                "modifiers": []
+              }
+            ],
+            "critical": {
+              "allow": true
+            }
+          },
+          "description": {
+            "value": "После попадания: бросьте 2к6 один раз и примените к основной цели. Этим же результатом нанесите урон окружающим после их спасбросков. Основной урон винтовки повторно не бросается."
+          }
+        },
+        "d01830d448a0602f": {
+          "_id": "d01830d448a0602f",
+          "name": "Раскол — спасброски окружающих",
+          "type": "save",
+          "activation": {
+            "type": "special",
+            "value": 1,
+            "override": true
+          },
+          "consumption": {
+            "targets": [],
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            }
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": true
+          },
+          "range": {
+            "units": "ft",
+            "value": "240",
+            "override": true
+          },
+          "target": {
+            "affects": {
+              "type": "creature",
+              "count": ""
+            },
+            "template": {},
+            "prompt": true,
+            "override": true
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "effects": [],
+          "flags": {
+            "bagrovoe-bleeding": {
+              "threeRuneAction": "splash"
+            }
+          },
+          "save": {
+            "ability": [
+              "dex"
+            ],
+            "dc": {
+              "calculation": "",
+              "formula": "15"
+            }
+          },
+          "damage": {
+            "parts": [],
+            "onSave": "none"
+          },
+          "description": {
+            "value": "Выберите всех остальных существ в пределах 5 футов от основной цели, включая союзников. Используйте уже выпавший урон Раскола: при провале полностью, при успехе половина с округлением вниз. Эта кнопка не бросает урон заново и не тратит заряд."
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "e9ff09461e30f2e2",
+    "name": "Печать багрового дара",
+    "type": "equipment",
+    "img": "icons/commodities/gems/gem-cluster-red.webp",
+    "effects": [],
+    "folder": null,
+    "flags": {
+      "bagrovoe-bleeding": {
+        "relicKey": "blood-gift-seal",
+        "hitDiceCost": 1,
+        "category": "Кровавые реликвии"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p><strong>Редкий чудесный предмет, требуется настройка. Стоимость: 4 000 зм.</strong> Серебряный амулет с алой печатью позволяет направлять собственную кровь.</p><p>Имеет 3 заряда; все восстанавливаются после долгого отдыха. Каждая способность расходует 1 заряд и одну вашу доступную Кость Хитов. Бросьте потраченную кость без обычного лечения от отдыха. Если костей нет, способность недоступна: заменять цену потерей хитов нельзя.</p><p><strong>Кровавая игла — действие.</strong> Видимое существо в пределах 30 футов совершает спасбросок Телосложения (Сл 8 + бонус мастерства + модификатор Телосложения). При провале получает некротический урон, равный броску Кости Хитов + модификатору Телосложения (минимум 1), и 1 уровень кровотечения по правилам модуля с той же Сл. При успехе получает половину урона и не получает кровотечения.</p><p><strong>Алый покров — бонусное действие.</strong> Получите временные хиты, равные броску Кости Хитов + бонусу мастерства (минимум 1). Они не складываются с другими временными хитами и не останавливают кровотечение.</p><p><strong>Живой шов — действие.</strong> Коснитесь себя или согласного существа. Оно восстанавливает хиты, равные броску Кости Хитов + модификатору Телосложения (минимум 1). Если хиты действительно восстановлены, кровотечение прекращается по правилам модуля. Нежить и конструкты не получают этого лечения.</p><p>Предмет не открывает кровавое колдовство NPC, не крадёт чужие Кости Хитов и не восстанавливает потраченные кости.</p>",
+        "chat": ""
+      },
+      "source": {
+        "custom": "Багровое Причастие",
+        "rules": "2024",
+        "revision": 1
+      },
+      "identifier": "blood-gift-seal",
+      "type": {
+        "value": "trinket"
+      },
+      "quantity": 1,
+      "weight": {
+        "value": 0,
+        "units": "lb"
+      },
+      "price": {
+        "value": 4000,
+        "denomination": "gp"
+      },
+      "rarities": [
+        "rare"
+      ],
+      "attunement": "required",
+      "attuned": false,
+      "equipped": false,
+      "identified": true,
+      "properties": [
+        "mgc"
+      ],
+      "uses": {
+        "max": "3",
+        "spent": 0,
+        "recovery": [
+          {
+            "period": "lr",
+            "type": "recoverAll"
+          }
+        ]
+      },
+      "activities": {
+        "c7439c58404a3922": {
+          "_id": "c7439c58404a3922",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "units": "ft",
+            "value": "30",
+            "override": true
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Кровавая игла",
+          "flags": {
+            "bagrovoe-bleeding": {
+              "bloodGift": "needle"
+            }
+          },
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "icons/commodities/gems/gem-cluster-red.webp",
+          "behaviors": []
+        },
+        "f8539fb73693904f": {
+          "_id": "f8539fb73693904f",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "bonus",
+            "value": 1,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "units": "self",
+            "override": true
+          },
+          "target": {
+            "override": true,
+            "prompt": false,
+            "affects": {
+              "type": "self",
+              "count": "1"
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Алый покров",
+          "flags": {
+            "bagrovoe-bleeding": {
+              "bloodGift": "ward"
+            }
+          },
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "icons/commodities/gems/gem-cluster-red.webp",
+          "behaviors": []
+        },
+        "a5419fecafc9342d": {
+          "_id": "a5419fecafc9342d",
+          "type": "utility",
+          "sort": 0,
+          "activation": {
+            "type": "action",
+            "value": 1,
+            "override": true,
+            "condition": ""
+          },
+          "consumption": {
+            "spellSlot": false,
+            "scaling": {
+              "allowed": false
+            },
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "",
+            "value": ""
+          },
+          "duration": {
+            "units": "inst",
+            "concentration": false,
+            "override": false,
+            "expiry": null
+          },
+          "range": {
+            "units": "touch",
+            "override": true
+          },
+          "target": {
+            "override": true,
+            "prompt": true,
+            "affects": {
+              "type": "creature",
+              "count": "1"
+            },
+            "template": {
+              "type": "",
+              "units": "ft",
+              "contiguous": false,
+              "stationary": false
+            }
+          },
+          "uses": {
+            "max": "",
+            "spent": 0,
+            "recovery": []
+          },
+          "name": "Живой шов",
+          "flags": {
+            "bagrovoe-bleeding": {
+              "bloodGift": "stitch"
+            }
+          },
+          "visibility": {
+            "level": {},
+            "requireAttunement": false,
+            "requireIdentification": false,
+            "requireMagic": false
+          },
+          "img": "icons/commodities/gems/gem-cluster-red.webp",
+          "behaviors": []
+        }
+      }
+    },
+    "ownership": {
+      "default": 0
+    }
   }
 ]

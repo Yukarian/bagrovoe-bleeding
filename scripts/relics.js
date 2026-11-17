@@ -1,6 +1,6 @@
 const MOD='bagrovoe-bleeding';
-const KEYS=new Set(['last-stitch','scarlet-bracelet','crimson-lens','shared-pain','open-wound','living-ink','second-heart']);
-const costs={'last-stitch':1,'scarlet-bracelet':1,'crimson-lens':0,'shared-pain':1,'open-wound':1,'living-ink':1,'second-heart':2};
+const KEYS=new Set(['last-stitch','scarlet-bracelet','crimson-lens','shared-pain','open-wound','living-ink','second-heart','blood-gift-seal']);
+const costs={'last-stitch':1,'scarlet-bracelet':1,'crimson-lens':0,'shared-pain':1,'open-wound':1,'living-ink':1,'second-heart':2,'blood-gift-seal':1};
 const queues=new Map();
 const leader=()=>game.user?.isGM&&game.users?.activeGM?.id===game.user.id;
 const relicKey=i=>i?.getFlag?.(MOD,'relicKey');
@@ -51,7 +51,8 @@ async function concentration(actor,damage){
 async function execute(item,actor,target,input,request){
  if(!leader())throw Error('Реликвию применяет только активный ведущий.');
  if(request.getFlag(MOD,'relicResolution'))throw Error('Этот запрос уже обработан.');
- checkItem(item,actor);const key=relicKey(item),self=ownToken(actor);
+ checkItem(item,actor);const key=relicKey(item),self=ownToken(actor);const gift=request.getAssociatedActivity?.()?.flags?.[MOD]?.bloodGift;
+ if(key==='blood-gift-seal'){if(!['needle','ward','stitch'].includes(gift))throw Error('Неизвестный дар печати.');if(gift!=='ward'&&!target?.actor)throw Error('Выберите цель токеном (T).');if(gift==='stitch'&&['undead','construct'].includes(target.actor.system.details?.type?.value))throw Error('Живой шов не лечит нежить и конструктов.');}
  if(!KEYS.has(key))throw Error('Неизвестная реликвия.');
  const api=game.modules.get(MOD).api;
  if(['last-stitch','crimson-lens','shared-pain','open-wound','living-ink'].includes(key)&&!target?.actor)throw Error('Выберите цель токеном (T).');
@@ -79,7 +80,7 @@ async function execute(item,actor,target,input,request){
   castingMod=Number(actor.system.abilities[ability]?.mod??0);
  }
  const dice=planDice(actor,costs[key],input.pool);
- const rolled=[];if(['scarlet-bracelet','shared-pain','living-ink','second-heart'].includes(key))for(const p of dice)for(let n=0;n<p.count;n++)rolled.push((await new Roll(`1d${p.size}`).evaluate()).total);
+ const rolled=[];if(['scarlet-bracelet','shared-pain','living-ink','second-heart','blood-gift-seal'].includes(key))for(const p of dice)for(let n=0;n<p.count;n++)rolled.push((await new Roll(`1d${p.size}`).evaluate()).total);
  const sum=rolled.reduce((n,v)=>n+v,0);
  const penalty=key==='living-ink'?(await new Roll('1d4').evaluate()).total:0;
  const saveData=key==='living-ink'?prepareSaveReduction(source.rolls[0],penalty):null;
@@ -128,6 +129,12 @@ async function execute(item,actor,target,input,request){
   await api.apply(self,{levels:2,count:1,dc:11});
   result=`Вместо падения до нуля: 1 HP и ${sum} временных хитов, затем 2 уровня кровотечения. Входящий удар уже учтён: не применяйте его повторно.`;
  }
+ if(key==='blood-gift-seal'){
+  const con=Number(actor.system.abilities.con.mod),amount=Math.max(1,sum+con);
+  if(gift==='ward'){const temp=Math.max(1,sum+Number(actor.system.attributes.prof));await actor.update({'system.attributes.hp.temp':Math.max(Number(hp.temp??0),temp)});result=`Алый покров: ${temp} временных хитов; с прежними не складываются. Кровотечение сохраняется.`;}
+  if(gift==='stitch'){await target.actor.applyDamage([{value:amount,type:'healing'}]);result=`Живой шов: лечение ${amount} хитов. Фактически восстановленные хиты останавливают кровотечение по правилам модуля.`;}
+  if(gift==='needle'){const dc=8+Number(actor.system.attributes.prof)+con,rolls=await target.actor.rollSavingThrow({ability:'con',target:dc},{configure:false});if(!Number.isFinite(rolls?.[0]?.total))throw Error('Спасбросок не завершён; цена оплачена. Завершите эффект вручную.');const failed=rolls[0].total<dc,damage=failed?amount:Math.floor(amount/2);const before=Number(target.actor.system.attributes.hp.value)+Number(target.actor.system.attributes.hp.temp??0);await target.actor.applyDamage([{value:damage,type:'necrotic',properties:new Set(['mgc'])}]);const after=Number(target.actor.system.attributes.hp.value)+Number(target.actor.system.attributes.hp.temp??0);await concentration(target.actor,Math.max(0,before-after));if(failed)await api.apply(target,{levels:1,count:1,dc});result=`Кровавая игла: Телосложение ${rolls[0].total} против Сл ${dc}; ${damage} некротического урона до защит${failed?', +1 уровень кровотечения':''}. Урон уже применён.`;}
+ }
  await request.setFlag(MOD,'relicResolution',{status:'done',result});
  await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content:`<p><strong>${esc(item.name)}</strong>: ${result}</p><p>Потрачено Костей Хитов: ${costs[key]}${rolled.length?`; броски: ${rolled.join(', ')}`:''}.</p>`});
  return result;
@@ -155,6 +162,7 @@ async function processRequest(chat){
   if(key==='shared-pain')content+='<p>Подтвердите, что выбранная цель уже получила обычное лечение этого заклинания.</p><label>Характеристика<select name="ability"><option value="wis">Мудрость</option><option value="cha">Харизма</option><option value="int">Интеллект</option></select></label>';
   if(['scarlet-bracelet','second-heart'].includes(key))content+='<p>Только обычный входящий урон — не кровотечение и не кровавая цена. Введите урон ПОСЛЕ сопротивлений и других защит, ДО временных хитов. Он ещё не должен быть применён. Предмет сам учтёт этот удар.</p><label>Урон<input name="damage" type="number" min="1" step="1" required></label>';
   if(key==='living-ink')content+='<p>Спасбросок должен быть успешным, без легендарного сопротивления. Подтвердите наличие реакции и настройку заклинателем.</p>';
+  if(key==='blood-gift-seal')content+='<p>Дар: '+esc(activity.name)+'. Подтвердите дальность 30 футов и видимость для Иглы либо касание и согласие для Шва. Покров действует на владельца.</p>';
   const input=await foundry.applications.api.DialogV2.wait({window:{title:item.name},content,buttons:[
    {action:'apply',label:'Подтвердить и применить',callback:(_e,b)=>Object.fromEntries(new FormData(b.form).entries())},
    {action:'cancel',label:'Отмена',default:true,callback:()=>null}],rejectClose:false});
