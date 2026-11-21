@@ -221,3 +221,6 @@
 
 ## 6.17.0
 375 tests passed. All 11 packs verified; world-items contains 14 documents. New checks cover resource costs, both bleeding branches, half-HP healing, actual damage, source replay, off-turn rejection and healing prohibition. Live Foundry verification remains pending.
+
+## 6.18.0
+390 passing tests; 12 verified packs. Peace Domain tests cover advancement/skill choices, no spell grants, shared Channel Divinity, bond recast/expiry/range, original-roll preservation, per-turn limits, GM authorization, cancellation, teleport/damage, reactions and non-stacking resistance. Native V14 token positioning/movement and dnd5e 6.0.6 damage/uses APIs inspected. Live Foundry UI verification pending.
