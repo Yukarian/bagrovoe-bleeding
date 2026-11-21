@@ -134,3 +134,21 @@ test('native roll form renders usable checkbox without putting documents in clon
  h.ctx.buildPeaceRoll(app,roll,{get:()=>true},0);assert.equal(roll.parts[1],'1d4');
  h.ally.token.x=2000;const far={parts:['1d20'],options:{}};h.ctx.buildPeaceRoll(app,far,{get:()=>true},0);assert.equal(far.parts.length,1);
 });
+
+test('targeting only an ally includes caster and enables both bonus and protection',async()=>{
+ const h=harness(17);const req=h.request('bond','bond',[h.ally.token]);await h.ctx.processPeace(req);
+ const group=h.cleric.getFlag(MOD,'peaceBond');assert.equal(group.members.length,2);assert.ok(h.item('controls'));assert.ok(h.item('controls',h.ally));assert.equal(req.getFlag(MOD,'peaceResolved').status,'done');
+ const roll=h.roll();h.answers.push({confirmed:'on',roll:roll.id+':0'});await h.ctx.processPeace(h.request('controls','bonus',[],h.ally));assert.equal(roll.rolls[0].total,15);
+ h.answers.push({confirmed:'on',damage:'fire: 12'},{confirmed:'on'});await h.ctx.processPeace(h.request('protective','protect',[h.ally.token]));assert.equal(h.cleric.lastDamage,6);assert.equal(h.ally.system.attributes.hp.value,30);
+});
+test('caster counts toward cap, is not duplicated, and explicit exclusion remains possible',async()=>{
+ const h=harness();h.cleric.system.attributes.prof=2;await assert.rejects(h.ctx.processPeace(h.request('bond','bond',[h.ally.token,h.other.token])),/не больше 2/);assert.equal(h.item('bond').system.uses.spent,0);
+ await h.ctx.processPeace(h.request('bond','bond',[h.cleric.token,h.ally.token]));assert.equal(h.cleric.getFlag(MOD,'peaceBond').members.length,2);
+ await h.item('bond').setFlag(MOD,'peaceIncludeCaster',false);await h.ctx.processPeace(h.request('bond','bond',[h.ally.token,h.other.token]));assert.equal(h.item('controls'),undefined);assert.equal(h.cleric.getFlag(MOD,'peaceBond').members.length,2);
+});
+test('repair restores caster and missing member controls without spending uses or extending duration',async()=>{
+ const h=harness();await h.item('bond').setFlag(MOD,'peaceIncludeCaster',false);await h.ctx.processPeace(h.request('bond','bond',[h.ally.token]));const expires=h.cleric.getFlag(MOD,'peaceBond').expires;
+ await h.item('bond').unsetFlag(MOD,'peaceIncludeCaster');h.game.time.worldTime=150;await h.ctx.repairPeaceMembers();await h.ctx.repairPeaceMembers();
+ assert.equal(h.cleric.getFlag(MOD,'peaceBond').expires,expires);assert.equal(h.item('bond').system.uses.spent,1);assert.equal(h.cleric.items.filter(i=>i.flags[MOD]?.peaceFeature==='controls').length,1);assert.equal(h.cleric.effects[0].duration.seconds,550);
+ assert.equal(h.cleric.getFlag(MOD,'peaceBond').members.length,2);
+});

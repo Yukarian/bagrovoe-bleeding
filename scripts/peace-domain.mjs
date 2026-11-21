@@ -6,7 +6,7 @@ const owns=(a,u)=>u?.isGM||a?.testUserPermission?.(u,'OWNER');
 const now=()=>Number(game.time.worldTime);
 export const clericLevel=a=>Number(a.items.find(i=>i.type==='class'&&i.system.identifier==='cleric')?.system.levels??0);
 const has=(a,k)=>a.items.some(i=>feature(i)===k);
-const token=a=>a.token??a.getActiveTokens?.(true,true)?.[0]??null;
+const token=a=>{const t=a.token?.document??a.token;if(t?.parent?.id===canvas.scene?.id)return t;return a.getActiveTokens?.(true,true)?.find(t=>t.parent?.id===canvas.scene?.id)??null;};
 export function turnStamp(c){return c?.started?`${c.id}:${c.round}:${c.turn}`:null;}
 export function reactionStamp(c,a){const index=c?.turns?.findIndex(t=>t.actor?.uuid===a.uuid)??-1;return c?.started?`${c.id}:${c.round-(c.turn<index?1:0)}`:null;}
 export function bondRange(level){return level>=17?60:30;}
@@ -74,19 +74,46 @@ async function groupFor(item){
  return {source,group,self,others,nearby};
 }
 async function targets(req){const ids=[...new Set((flag(req,'peaceRequest')?.targets??req.system?.targets??[]).map(t=>typeof t==='string'?t:t.token).filter(Boolean))];return (await Promise.all(ids.map(id=>fromUuid(id)))).filter(t=>t?.actor);}
+async function controlTemplate(){
+ const pack=game.packs.get(PACK),index=await pack.getIndex();const template=await pack.getDocument(index.find(d=>d.name==='Ободряющая связь — управление')?._id);
+ if(!template)throw Error('Служебная особенность не найдена в компендии.');return template;
+}
+async function ensureMember(source,group,t,template,item){
+ const ref={id:group.id,source:source.uuid,token:t.uuid};
+ if(!t.actor.items.some(i=>feature(i)==='controls'&&flag(i,'peaceMember')?.id===group.id)){
+  const control=template.toObject();delete control._id;control.flags[MOD].peaceMember=ref;control.system.requirements='Участник Ободряющей связи';await t.actor.createEmbeddedDocuments('Item',[control]);
+ }
+ if(!t.actor.effects.some(e=>flag(e,'peaceMember')?.id===group.id))await t.actor.createEmbeddedDocuments('ActiveEffect',[{name:clericLevel(source)>=6?'Ободряющая и Защитная связь':'Ободряющая связь',img:item.img,origin:item.uuid,transfer:false,disabled:false,changes:[],duration:{seconds:Math.max(0,group.expires-now()),startTime:now()},flags:{[MOD]:{peaceMember:ref}}}]);
+}
+export async function repairPeaceMembers(){
+ if(!gm())return;
+ const actors=new Map((game.actors??[]).map(a=>[a.uuid,a]));for(const t of canvas.scene?.tokens??[])if(t.actor)actors.set(t.actor.uuid,t.actor);
+ let template;
+ for(const source of actors.values()){
+  let group=flag(source,'peaceBond');const item=source.items.find(i=>feature(i)==='bond');if(!item||!usableBond(group,now()))continue;
+  const self=token(source),max=Number(source.system.attributes.prof);
+  if(self&&flag(item,'peaceIncludeCaster')!==false&&!group.members.some(m=>m.actor===self.actor.uuid)&&group.members.length<max){
+   const ts=await Promise.all(group.members.map(m=>fromUuid(m.token)));if(!ts.some(t=>t&&close(self,t,30)))continue;
+   group={...group,members:[{token:self.uuid,actor:self.actor.uuid},...group.members]};await source.setFlag(MOD,'peaceBond',group);
+  }
+  template??=await controlTemplate();
+  for(const m of group.members){const t=await fromUuid(m.token);if(t?.actor)await ensureMember(source,group,t,template,item);}
+ }
+}
+for(const event of ['ready','canvasReady'])Hooks.on(event,()=>{void serial(repairPeaceMembers).catch(report);});
 async function makeBond(item,req){
  const actor=item.actor,ts=await targets(req),self=token(actor),max=Number(actor.system.attributes.prof);
+ if(self&&flag(item,'peaceIncludeCaster')!==false&&!ts.some(t=>t.actor.uuid===self.actor.uuid))ts.unshift(self);
+ if(ts.length>max)throw Error(`Включая жреца, можно связать не больше ${max} существ. Уберите лишнюю цель; применение не потрачено.`);
  const valid=()=>{awake(actor);if(!self||!ts.length||ts.length>max||new Set(ts.map(t=>t.actor.uuid)).size!==ts.length||ts.some(t=>!close(self,t,30)))throw Error('Выберите от 1 до бонуса мастерства разных существ в пределах 30 футов на сцене.');if(Number(item.system.uses.spent??0)>=max)throw Error('Применения связи закончились.');};valid();
- valid();
- const pack=game.packs.get(PACK),index=await pack.getIndex();const template=await pack.getDocument(index.find(d=>d.name==='Ободряющая связь — управление')?._id);if(!template)throw Error('Служебная особенность не найдена в компендии.');
+ const template=await controlTemplate();
  await begin(req);await spend(item,max);await clearBond(actor);
  const group={id:foundry.utils.randomID(),expires:now()+600,members:ts.map(t=>({token:t.uuid,actor:t.actor.uuid}))};
  await actor.setFlag(MOD,'peaceBond',group);
- for(const t of ts){const ref={id:group.id,source:actor.uuid,token:t.uuid},control=template.toObject();delete control._id;control.flags[MOD].peaceMember=ref;control.system.requirements='Участник Ободряющей связи';
-  await t.actor.createEmbeddedDocuments('Item',[control]);
-  await t.actor.createEmbeddedDocuments('ActiveEffect',[{name:clericLevel(actor)>=6?'Ободряющая и Защитная связь':'Ободряющая связь',img:item.img,origin:item.uuid,transfer:false,disabled:false,changes:[],duration:{seconds:600,startTime:now()},flags:{[MOD]:{peaceMember:ref}}}]);
- }
- await say(actor,'<strong>Ободряющая связь:</strong> '+ts.map(t=>esc(t.name)).join(', ')+'. Управление добавлено в листы участников.');await done(req);
+ for(const t of ts)await ensureMember(actor,group,t,template,item);
+ await done(req);
+ await say(actor,'<strong>Ободряющая связь:</strong> '+ts.map(t=>esc(t.name)).join(', ')+'.').catch(report);
+
 }
 function eligibleRoll(m,actor){return ['attack','check','save','initiative'].includes(m.type)&&m.getAssociatedActor?.()?.uuid===actor.uuid&&m.rolls?.some(r=>Number.isFinite(r.total));}
 async function addBonus(item,req,payload={}){
