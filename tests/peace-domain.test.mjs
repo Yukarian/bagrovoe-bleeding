@@ -84,3 +84,30 @@ test('roll ownership and active GM checks prevent forged cross-actor bonus',asyn
  const h=harness();await h.bond();const roll=h.roll(h.other);h.answers.push({confirmed:'on',roll:roll.id+':0'});await assert.rejects(h.ctx.processPeace(h.request('controls','bonus',[],h.ally)));assert.equal(roll.rolls[0].total,12);
  const r=h.request('balm','balm');h.game.user={id:'player'};await h.ctx.processPeace(r);assert.equal(h.channel.system.uses.spent,0);
 });
+
+test('player rolls a visible d4 and GM applies that same result without another dialog or roll',async()=>{
+ const h=harness();await h.bond();const original=h.roll();h.game.user={id:'player'};
+ await h.ctx.playerBonus(h.item('controls',h.ally),original);
+ const data=h.output.at(-1);assert.equal(data.rolls[0].formula,'1d4');assert.equal(data.flags[MOD].peaceRequest.playerDie,true);
+ const die=data.rolls[0];const req=doc({...data,id:'playerDie',author:{id:'player'},rolls:[{...die,toJSON:()=>die}]});
+ h.game.user={id:'gm',isGM:true};await h.ctx.processPeace(req);
+ assert.equal(original.rolls[0].total,15);assert.equal(original.rolls[0].terms[0].results[0].result,10);
+ assert.equal(req.getFlag(MOD,'peaceResolved').status,'done');
+ await h.ctx.processPeace(req);assert.equal(original.rolls[0].total,15);
+});
+test('protective feature has its own activity and explicit player requests carry targets',async()=>{
+ const h=harness();assert.ok(Object.values(h.item('protective').system.activities).some(a=>a.flags[MOD].peaceAction==='protect'));
+ await h.bond();h.answers.push({confirmed:'on',damage:'fire: 12'},{confirmed:'on'});
+ const req=doc({id:'protectPayload',author:{id:'player'},flags:{[MOD]:{peaceRequest:{kind:'protect',item:h.item('controls').uuid,targets:[h.ally.token.uuid]}}}});
+ await h.ctx.processPeace(req);assert.equal(h.cleric.token.x,200);assert.equal(h.cleric.lastDamage,12);assert.equal(h.ally.system.attributes.hp.value,30);
+});
+test('existing actor items migrate descriptions and protective activity without spending resources',async()=>{
+ const h=harness();const templates=items.map(i=>({getFlag:(_m,k)=>i.flags[MOD][k],toObject:()=>structuredClone(i)}));
+ h.game.packs.get(MOD+'.player-subclasses').getDocuments=async()=>templates;
+ h.item('protective').system.activities={};h.item('bond').system.description.value='Old instructions';h.item('bond').system.uses.spent=2;
+ await h.ctx.migratePeace();assert.ok(Object.values(h.item('protective').system.activities).length);assert.equal(h.item('bond').system.uses.spent,2);
+ assert.ok(!h.item('bond').system.description.value.includes('Old instructions'));assert.equal(h.item('bond').getFlag(MOD,'peaceRevision'),2);
+});
+test('ability descriptions contain rules instead of module instructions',()=>{
+ for(const item of items.filter(i=>i.type==='feat'))assert.doesNotMatch(item.system.description.value,/скрипт|токен|карточк|вручную|перетаскивайте|ведущий подтверждает/i);
+});

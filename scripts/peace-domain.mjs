@@ -73,7 +73,7 @@ async function groupFor(item){
  const nearby=others.filter(t=>close(self,t,bondRange(clericLevel(source))));
  return {source,group,self,others,nearby};
 }
-async function targets(req){const ids=[...new Set((req.system?.targets??[]).map(t=>t.token).filter(Boolean))];return (await Promise.all(ids.map(id=>fromUuid(id)))).filter(t=>t?.actor);}
+async function targets(req){const ids=[...new Set((flag(req,'peaceRequest')?.targets??req.system?.targets??[]).map(t=>typeof t==='string'?t:t.token).filter(Boolean))];return (await Promise.all(ids.map(id=>fromUuid(id)))).filter(t=>t?.actor);}
 async function makeBond(item,req){
  const actor=item.actor,ts=await targets(req),self=token(actor),max=Number(actor.system.attributes.prof);
  const valid=()=>{awake(actor);if(!self||!ts.length||ts.length>max||new Set(ts.map(t=>t.actor.uuid)).size!==ts.length||ts.some(t=>!close(self,t,30)))throw Error('Выберите от 1 до бонуса мастерства разных существ в пределах 30 футов на сцене.');if(Number(item.system.uses.spent??0)>=max)throw Error('Применения связи закончились.');};valid();
@@ -85,7 +85,7 @@ async function makeBond(item,req){
  await actor.setFlag(MOD,'peaceBond',group);
  for(const t of ts){const ref={id:group.id,source:actor.uuid,token:t.uuid},control=template.toObject();delete control._id;control.flags[MOD].peaceMember=ref;control.system.requirements='Участник Ободряющей связи';
   await t.actor.createEmbeddedDocuments('Item',[control]);
-  await t.actor.createEmbeddedDocuments('ActiveEffect',[{name:'Ободряющая связь',img:item.img,origin:item.uuid,transfer:false,disabled:false,changes:[],duration:{seconds:600,startTime:now()},flags:{[MOD]:{peaceMember:ref}}}]);
+  await t.actor.createEmbeddedDocuments('ActiveEffect',[{name:clericLevel(actor)>=6?'Ободряющая и Защитная связь':'Ободряющая связь',img:item.img,origin:item.uuid,transfer:false,disabled:false,changes:[],duration:{seconds:600,startTime:now()},flags:{[MOD]:{peaceMember:ref}}}]);
  }
  await say(actor,'<strong>Ободряющая связь:</strong> '+ts.map(t=>esc(t.name)).join(', ')+'. Управление добавлено в листы участников.');await done(req);
 }
@@ -94,16 +94,18 @@ async function addBonus(item,req,payload={}){
  const actor=item.actor;let context=await groupFor(item);if(!context.nearby.length)throw Error('Рядом нет другого участника связи.');
  const choices=game.messages.contents.filter(m=>eligibleRoll(m,actor)).slice(-20).reverse();
  const options=choices.flatMap(m=>m.rolls.map((r,i)=>`<option value="${m.id}:${i}" ${payload.roll===m.id&&Number(payload.index)===i?'selected':''}>${esc(m.flavor||m.getAssociatedActivity?.()?.name||m.type)}: ${r.total} (${m.id}, ${i+1})</option>`)).join('');if(!options)throw Error('Нет подходящего броска в чате.');
- const data=await form('Ободряющая связь: +к4',`<label>Бросок<select name="roll">${options}</select></label><p>К20 не перебрасывается. Одно применение за ход, включая чужие ходы. После изменения результата повторно проверьте попадание/спасбросок; уже применённый урон не отменяется.</p>`+confirmField('Бросок относится к текущему ходу; бонус связи ещё не применяли в этот ход.'));
+ const data=payload.playerDie?{confirmed:'on',roll:payload.roll+':'+payload.index}:await form('Ободряющая связь: +к4',`<label>Бросок<select name="roll">${options}</select></label><p>К20 не перебрасывается. Одно применение за ход, включая чужие ходы. После изменения результата повторно проверьте попадание/спасбросок; уже применённый урон не отменяется.</p>`+confirmField('Бросок относится к текущему ходу; бонус связи ещё не применяли в этот ход.'));
  if(!data)return cancel(req);requireConfirmed(data);context=await groupFor(item);if(!context.nearby.length)throw Error('Участники разошлись.');
  const [mid,n]=data.roll.split(':'),m=game.messages.get(mid),i=Number(n);if(!m||!eligibleRoll(m,actor)||!Number.isInteger(i)||!m.rolls[i])throw Error('Бросок недоступен.');
  const turn=turnStamp(game.combat),recorded=flag(m,'peaceRollTurn');
  if(turn&&recorded!==turn)throw Error('Бросок сделан не в текущий ход.');
  if(flag(m,'peaceBonus')||turn&&flag(actor,'peaceBonusTurn')===turn)throw Error('К4 уже использован для этого броска или хода.');
- const die=await new Roll('1d4').evaluate(),updated=augmentRoll(m.rolls[i],die);
+ const die=payload.playerDie?req.rolls?.[0]:await new Roll('1d4').evaluate();
+ if(!die||die.formula?.replace(/\s/g,'')!=='1d4'&&payload.playerDie||!(die.total>=1&&die.total<=4))throw Error('Нужен бросок 1к4.');
+ const updated=augmentRoll(m.rolls[i],die);
  await begin(req);if(turn)await actor.setFlag(MOD,'peaceBonusTurn',turn);
  await m.update({rolls:m.rolls.map((r,n)=>n===i?updated:r.toJSON()),[`flags.${MOD}.peaceBonus`]:{roll:i,value:die.total,request:req.id},[`flags.${MOD}.peaceOriginalRoll`]:m.rolls[i].toJSON()});
- await say(actor,`<strong>Ободряющая связь:</strong> +${die.total}; новый итог ${updated.total}. Проверьте результат исходной карточки.`);await done(req);
+ if(!payload.playerDie)await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),flavor:'Ободряющая связь',rolls:[die.toJSON()]});await done(req);
 }
 async function balm(item,req){
  const actor=item.actor,ts=[...new Map((await targets(req)).map(t=>[t.actor.uuid,t])).values()],channel=actor.items.find(i=>i.type==='feat'&&i.system.identifier==='channel-divinity-cleric');
@@ -158,7 +160,8 @@ async function protect(item,req){
 export async function processPeace(req){
  if(!gm()||flag(req,'peaceResolved'))return;
  const payload=flag(req,'peaceRequest');const activity=req.type==='usage'?req.getAssociatedActivity?.():null;
- const item=payload?await fromUuid(payload.item):activity?.item;
+ let item=payload?await fromUuid(payload.item):activity?.item;
+ if(feature(item)==='protective')item=item.actor?.items.find(i=>feature(i)==='controls'&&flag(i,'peaceMember'));
  if(!item?.actor||!owns(item.actor,req.author))return;
  const actor=item.actor,current=actor.items.get(item.id);if(!current)return;
  const action=payload?.kind??activity?.flags?.[MOD]?.peaceAction;if(!action)return;
@@ -178,13 +181,53 @@ export async function processPeace(req){
 }
 async function cleanup(){if(!gm())return;await serial(async()=>{const actors=new Map((game.actors??[]).map(a=>[a.uuid,a]));for(const s of game.scenes??[])for(const t of s.tokens??[])if(t.actor)actors.set(t.actor.uuid,t.actor);for(const actor of actors.values()){const group=flag(actor,'peaceBond');if(group&&(!usableBond(group,now())||!has(actor,'bond')))await clearBond(actor);for(const collection of [[actor.items,'Item'],[actor.effects,'ActiveEffect']]){const ids=[];for(const d of collection[0]){const ref=flag(d,'peaceMember');if(!ref)continue;const source=await fromUuid(ref.source),g=flag(source,'peaceBond');if(!usableBond(g,now())||g.id!==ref.id)ids.push(d.id);}if(ids.length)await actor.deleteEmbeddedDocuments(collection[1],ids);}}});}
 Hooks.on('dnd5e.calculateDamage',expansiveResistance);
-Hooks.on('dnd5e.preUseActivity',a=>{if(!a.flags?.[MOD]?.peaceAction)return;if(!game.users.activeGM){ui.notifications.warn('Для способностей Домена мира нужен активный ведущий.');return false;}});
+export async function playerBonus(item,original){
+ const actor=item.actor;if(!owns(actor,game.user))return;
+ if(!game.users.activeGM)throw Error('Нужен активный ведущий.');
+ const c=await groupFor(item);if(!c.nearby.length)return;
+ const turn=turnStamp(game.combat);if(turn&&flag(actor,'peaceBonusTurn')===turn)return;
+ let selected=original;
+ if(!selected){const choices=game.messages.contents.filter(m=>eligibleRoll(m,actor)&&!flag(m,'peaceBonus')&&(!turn||flag(m,'peaceRollTurn')===turn)).slice(-20).reverse();if(!choices.length)throw Error('Сначала совершите бросок атаки, проверки или спасброска.');
+  const data=await form('Ободряющая связь',`<label>Бросок<select name="roll">${choices.map(m=>`<option value="${m.id}">${esc(m.flavor||m.type)}: ${m.rolls[0].total}</option>`).join('')}</select></label>`);if(!data)return;selected=game.messages.get(data.roll);
+ }
+ if(!eligibleRoll(selected,actor)||flag(selected,'peaceBonus'))return;
+ const die=await new Roll('1d4').evaluate();
+ await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),flavor:'Ободряющая связь',rolls:[die.toJSON()],whisper:selected.whisper??[],blind:selected.blind??false,flags:{[MOD]:{peaceRequest:{kind:'bonus',item:item.uuid,roll:selected.id,index:0,playerDie:true}}}});
+}
+Hooks.on('dnd5e.preUseActivity',a=>{
+ const action=a.flags?.[MOD]?.peaceAction;if(!action)return;
+ if(!game.users.activeGM){ui.notifications.warn('Для способностей Домена мира нужен активный ведущий.');return false;}
+ if(action==='bonus'){void playerBonus(a.item).catch(report);return false;}
+ if(action==='protect'){
+  const item=feature(a.item)==='controls'?a.item:a.item.actor.items.find(i=>feature(i)==='controls'&&flag(i,'peaceMember'));
+  if(!item){ui.notifications.warn('Сначала создайте Ободряющую связь с этим участником.');return false;}
+  void ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:item.actor}),content:'<p>Защитная связь</p>',flags:{[MOD]:{peaceRequest:{kind:'protect',item:item.uuid,targets:[...game.user.targets].map(t=>t.document.uuid)}}}}).catch(report);return false;
+ }
+});
 Hooks.on('preCreateChatMessage',m=>{if(['attack','check','save','initiative'].includes(m.type))m.updateSource({[`flags.${MOD}.peaceRollTurn`]:turnStamp(game.combat)});});
-Hooks.on('createChatMessage',m=>{void processPeace(m).catch(report);});
+Hooks.on('createChatMessage',m=>{
+ void processPeace(m).catch(report);
+ if(m.author?.id!==game.user.id||flag(m,'peaceRequest'))return;
+ const actor=m.getAssociatedActor?.(),control=actor?.items.find(i=>feature(i)==='controls'&&flag(i,'peaceMember'));
+ if(!control||!eligibleRoll(m,actor))return;
+ void (async()=>{const c=await groupFor(control),turn=turnStamp(game.combat);if(!c.nearby.length||turn&&flag(actor,'peaceBonusTurn')===turn)return;
+ const yes=await foundry.applications.api.DialogV2.confirm({window:{title:'Ободряющая связь'},content:'<p>Бросить к4 и добавить к этому броску?</p>',rejectClose:false});if(yes)await playerBonus(control,m);
+ })().catch(report);
+});
 Hooks.on('renderChatMessageHTML',(m,html)=>{
  const actor=m.getAssociatedActor?.();if(actor&&owns(actor,game.user)&&eligibleRoll(m,actor)&&!flag(m,'peaceBonus')){
-  const control=actor.items.find(i=>feature(i)==='controls'&&flag(i,'peaceMember'));if(control){const b=document.createElement('button');b.type='button';b.textContent='Ободряющая связь: +к4';b.addEventListener('click',async()=>{b.disabled=true;try{if(!game.users.activeGM)throw Error('Нужен активный ведущий.');await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content:'<p>Запрос: Ободряющая связь +к4. Ожидает ведущего.</p>',flags:{[MOD]:{peaceRequest:{kind:'bonus',item:control.uuid,roll:m.id,index:0}}}});}catch(e){report(e);b.disabled=false;}});html.append(b);}
+  const control=actor.items.find(i=>feature(i)==='controls'&&flag(i,'peaceMember'));if(control){const b=document.createElement('button');b.type='button';b.textContent='Ободряющая связь: +к4';b.addEventListener('click',async()=>{b.disabled=true;try{if(!game.users.activeGM)throw Error('Нужен активный ведущий.');await playerBonus(control,m);}catch(e){report(e);b.disabled=false;}});html.append(b);}
  }
  if(flag(m,'peaceRequest')||m.getAssociatedActivity?.()?.flags?.[MOD]?.peaceAction){const state=flag(m,'peaceResolved'),p=document.createElement('p');p.textContent=({done:'Способность применена.',cancelled:'Отмена: ресурсы не потрачены.',applying:'Выполняется…',failed:'Выполнение прервано: проверьте уже потраченные ресурсы, перемещение и хиты. Не повторяйте запрос.',rejected:'Запрос отклонён: '+(state?.error??'')})[state?.status]??'Ожидает подтверждения ведущего.';html.append(p);}
 });
 for(const event of ['ready','updateWorldTime','deleteItem'])Hooks.on(event,()=>{void cleanup().catch(report);});
+
+// Update only module-owned rules text and activities, preserving uses and advancement choices.
+export async function migratePeace(){
+ if(!gm())return;const pack=game.packs.get(PACK);if(!pack?.getDocuments)return;
+ const templates=await pack.getDocuments(),byKey=new Map(templates.map(i=>[feature(i),i]));
+ const actors=new Map((game.actors??[]).map(a=>[a.uuid,a]));for(const scene of game.scenes??[])for(const t of scene.tokens??[])if(t.actor)actors.set(t.actor.uuid,t.actor);
+ for(const actor of actors.values())for(const item of actor.items){const template=byKey.get(feature(item));if(!template||Number(flag(item,'peaceRevision')??0)>=2)continue;
+ const data=template.toObject();await item.update({'system.description.value':data.system.description.value,'system.activities':data.system.activities??{},[`flags.${MOD}.peaceRevision`]:2});}
+}
+Hooks.on('ready',()=>{void migratePeace().catch(report);});
