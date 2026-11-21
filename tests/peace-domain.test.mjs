@@ -27,7 +27,7 @@ function harness(level=6){
  const controls=items.find(i=>i.flags[MOD].peaceFeature==='controls');game.packs.set(MOD+'.player-subclasses',{getIndex:async()=>[{_id:controls._id,name:controls.name}],getDocument:async()=>({toObject:()=>structuredClone(controls)})});
  const item=(key,a=cleric)=>a.items.find(i=>i.flags[MOD]?.peaceFeature===key);
  const request=(key,action,ts=[ally.token],a=cleric)=>doc({id:'request'+(++sequence),type:'usage',author:player,system:{targets:ts.map(t=>({token:t.uuid}))},getAssociatedActivity:()=>({item:item(key,a),flags:{[MOD]:{peaceAction:action}}})});
- const bond=async()=>{answers.push({confirmed:'on'});const req=request('bond','bond',[cleric.token,ally.token,other.token]);await ctx.processPeace(req);return req;};
+ const bond=async()=>{const req=request('bond','bond',[cleric.token,ally.token,other.token]);await ctx.processPeace(req);return req;};
  const roll=(a=ally)=>{const data={class:'D20Roll',formula:'1d20 + 2',total:12,terms:[{class:'Die',faces:20,number:1,results:[{result:10,active:true}],options:{}},{class:'OperatorTerm',operator:'+',options:{}},{class:'NumericTerm',number:2,options:{}}],options:{}};const m=doc({id:'roll'+(++sequence),type:'attack',rolls:[{total:12,toJSON:()=>structuredClone(data)}],getAssociatedActor:()=>a});m.flags[MOD]={peaceRollTurn:ctx.turnStamp(game.combat)};messages.push(m);return m;};
  return {ctx,game,cleric,ally,other,answers,item,request,bond,roll,channel,output,hooks,registry,scene};
 }
@@ -45,7 +45,7 @@ test('bond consumes one use, creates controls/effects and recast removes old gro
 });
 test('bond rejects range beyond 30 feet, too many targets, missing class and unauthorized author without charges',async()=>{
  for(const mode of ['range','class','author']){const h=harness(mode==='class'?2:6);if(mode==='range')h.ally.token.x=700;const r=h.request('bond','bond');if(mode==='author')r.author={id:'outsider'};if(mode==='author')await h.ctx.processPeace(r);else await assert.rejects(h.ctx.processPeace(r));assert.equal(h.item('bond').system.uses.spent,0);}
- const h=harness();h.answers.push(null);await h.ctx.processPeace(h.request('bond','bond'));assert.equal(h.item('bond').system.uses.spent,0);
+ const h=harness();await h.ctx.processPeace(h.request('bond','bond'));assert.equal(h.item('bond').system.uses.spent,1);assert.equal(h.answers.length,0);
 });
 test('60-foot range unlocks only at 17, initial casting range remains 30',async()=>{
  const h=harness(17);h.ally.token.x=700;h.answers.push({confirmed:'on'});await assert.rejects(h.ctx.processPeace(h.request('bond','bond')));assert.equal(h.ctx.bondRange(16),30);assert.equal(h.ctx.bondRange(17),60);assert.equal(h.ctx.usableBond({expires:100},100),false);
@@ -106,8 +106,21 @@ test('existing actor items migrate descriptions and protective activity without 
  h.game.packs.get(MOD+'.player-subclasses').getDocuments=async()=>templates;
  h.item('protective').system.activities={};h.item('bond').system.description.value='Old instructions';h.item('bond').system.uses.spent=2;
  await h.ctx.migratePeace();assert.ok(Object.values(h.item('protective').system.activities).length);assert.equal(h.item('bond').system.uses.spent,2);
- assert.ok(!h.item('bond').system.description.value.includes('Old instructions'));assert.equal(h.item('bond').getFlag(MOD,'peaceRevision'),2);
+ assert.ok(!h.item('bond').system.description.value.includes('Old instructions'));assert.equal(h.item('bond').getFlag(MOD,'peaceRevision'),3);
 });
 test('ability descriptions contain rules instead of module instructions',()=>{
  for(const item of items.filter(i=>i.type==='feat'))assert.doesNotMatch(item.system.description.value,/скрипт|токен|карточк|вручную|перетаскивайте|ведущий подтверждает/i);
+});
+
+test('native d20 config gets an optional d4 in the SAME roll, no post-roll request',async()=>{
+ const h=harness();await h.bond();const config={subject:h.ally,hookNames:['attack','d20Test'],rolls:[]};
+ h.ctx.setupPeaceRoll(config,{});assert.equal(config.ortesPeaceControl,h.item('controls',h.ally).uuid);
+ const roll={parts:['1d20','2'],options:{}};h.ctx.buildPeaceRoll({config},roll,{get:()=>true},0);assert.equal(roll.parts.join(' + '),'1d20 + 2 + 1d4');assert.ok(roll.options.ortesPeaceDie);
+ const no={parts:['1d20'],options:{}};h.ctx.buildPeaceRoll({config},no,{get:()=>false},0);assert.equal(no.parts.length,1);
+ const other={parts:['1d20'],options:{}};h.ctx.buildPeaceRoll({config},other,{get:()=>true},1);assert.equal(other.parts.length,1);
+});
+test('translated Channel Divinity resource heals without canonical identifier',async()=>{
+ const h=harness();h.channel.system.identifier='bozhestvennyy-kanal';h.channel.name='Божественный канал';h.answers.push({confirmed:'on'});
+ await h.ctx.processPeace(h.request('balm','balm',[h.ally.token]));assert.equal(h.ally.system.attributes.hp.value,40);assert.equal(h.channel.system.uses.spent,1);assert.equal(h.output.at(-1).rolls[0].formula,'2d6');
+ const activity=Object.values(h.item('balm').system.activities)[0];assert.equal(activity.type,'heal');assert.equal(activity.healing.number,2);assert.equal(activity.healing.denomination,6);assert.equal(h.item('balm').system.type.subtype,'channelDivinity');
 });

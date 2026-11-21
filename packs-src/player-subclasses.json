@@ -340,7 +340,8 @@
         "chat": ""
       },
       "type": {
-        "value": "class"
+        "value": "class",
+        "subtype": "channelDivinity"
       },
       "requirements": "Жрец 2024, Домен мира",
       "prerequisites": {
@@ -357,7 +358,7 @@
         "fccf428779d6ec2d": {
           "_id": "fccf428779d6ec2d",
           "name": "Применить Бальзам мира",
-          "type": "utility",
+          "type": "heal",
           "activation": {
             "type": "action",
             "value": 1,
@@ -399,6 +400,22 @@
           "flags": {
             "bagrovoe-bleeding": {
               "peaceAction": "balm"
+            }
+          },
+          "healing": {
+            "number": 2,
+            "denomination": 6,
+            "bonus": "@abilities.wis.mod",
+            "types": [
+              "healing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1
             }
           }
         }
