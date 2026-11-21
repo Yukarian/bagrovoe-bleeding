@@ -106,14 +106,6 @@ async function addBonus(item,req,payload={}){
  await m.update({rolls:m.rolls.map((r,n)=>n===i?updated:r.toJSON()),[`flags.${MOD}.peaceBonus`]:{roll:i,value:die.total,request:req.id},[`flags.${MOD}.peaceOriginalRoll`]:m.rolls[i].toJSON()});
  if(!payload.playerDie)await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),flavor:'Ободряющая связь',rolls:[die.toJSON()]});await done(req);
 }
-async function balm(item,req){
- const actor=item.actor,ts=[...new Map((await targets(req)).map(t=>[t.actor.uuid,t])).values()],channel=await channelResource(actor);
- const max=Number(channel.system.uses.max),valid=()=>{awake(actor);if(!Number.isFinite(max))throw Error('Не удалось вычислить ресурс Божественного канала.');if(!token(actor)||ts.some(t=>t.parent?.id!==token(actor).parent?.id))throw Error('Все цели должны находиться на сцене жреца.');if(!ts.length||ts.some(t=>t.actor.uuid===actor.uuid))throw Error('Выберите других существ, мимо которых прошли. Самолечение недоступно.');if(Number(channel.system.uses.spent??0)>=max)throw Error('Божественный канал израсходован.');};valid();
- const data=await form(item.name,`<p>Лечение: 2к6 + Мудрость каждому выбранному существу, один раз. Цели: ${ts.map(t=>esc(t.name)).join(', ')}.</p><p>Обозначьте или выполните на сцене дополнительное перемещение в пределах скорости без провоцированных атак.</p>`+confirmField('Действие доступно, маршрут не превышает скорость; жрец прошёл в пределах 5 футов от каждой цели.'));
- if(!data)return cancel(req);requireConfirmed(data);valid();await begin(req);await spend(channel,max);
- for(const t of ts){const roll=await new Roll('2d6').evaluate(),value=Math.max(1,roll.total+Number(actor.system.abilities.wis.mod));await t.actor.applyDamage([{value,type:'healing'}]);await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),flavor:`Бальзам мира: ${esc(t.name)} — восстановлено ${value} хитов (2к6 + ${Number(actor.system.abilities.wis.mod)}).`,rolls:[roll.toJSON()]});}
- await done(req);
-}
 async function pickPosition(self){
  if(!canvas.ready)throw Error('Откройте сцену с участниками.');
  ui.notifications.info('Щёлкните свободное место назначения защитника. Escape — отмена.');
@@ -160,7 +152,7 @@ export async function processPeace(req){
  const payload=flag(req,'peaceRequest');const activity=req.type==='usage'?req.getAssociatedActivity?.():null;
  let item=payload?await fromUuid(payload.item):activity?.item;
  if(feature(item)==='protective')item=item.actor?.items.find(i=>feature(i)==='controls'&&flag(i,'peaceMember'));
- if(!item?.actor||!owns(item.actor,req.author))return;
+ if(!item?.actor||feature(item)==='balm'||!owns(item.actor,req.author))return;
  const actor=item.actor,current=actor.items.get(item.id);if(!current)return;
  const action=payload?.kind??activity?.flags?.[MOD]?.peaceAction;if(!action)return;
  const expected={bond:'bond',end:'bond',balm:'balm',bonus:'controls',protect:'controls'};
@@ -170,7 +162,6 @@ export async function processPeace(req){
   try{
    if(['bond','end','balm'].includes(action)&&(clericLevel(actor)<3||!has(actor,'subclass')))throw Error('Нужен Домен мира и минимум 3 уровня жреца.');
    if(action==='bond')await makeBond(current,req);
-   if(action==='balm')await balm(current,req);
    if(action==='bonus')await addBonus(current,req,payload??{});
    if(action==='protect')await protect(current,req);
    if(action==='end'){const answer=await form('Завершить связь?',confirmField('Завершить текущую Ободряющую связь?'));if(!answer)return cancel(req);requireConfirmed(answer);await begin(req);await clearBond(actor);await done(req);}
@@ -182,21 +173,21 @@ Hooks.on('dnd5e.calculateDamage',expansiveResistance);
 export async function playerBonus(item,original){
  const actor=item.actor;if(!owns(actor,game.user))return;
  if(!game.users.activeGM)throw Error('Нужен активный ведущий.');
- const c=await groupFor(item);if(!c.nearby.length)return;
- const turn=turnStamp(game.combat);if(turn&&flag(actor,'peaceBonusTurn')===turn)return;
+ const c=await groupFor(item);if(!c.nearby.length)throw Error('Для к4 рядом нужен другой участник этой же связи: не дальше 30 футов (60 футов с 17-го уровня).');
+ const turn=turnStamp(game.combat);if(turn&&flag(actor,'peaceBonusTurn')===turn)throw Error('К4 связи уже использован в этот ход.');
  let selected=original;
  if(!selected){const choices=game.messages.contents.filter(m=>eligibleRoll(m,actor)&&!flag(m,'peaceBonus')&&(!turn||flag(m,'peaceRollTurn')===turn)).slice(-20).reverse();if(!choices.length)throw Error('Сначала совершите бросок атаки, проверки или спасброска.');
   const data=await form('Ободряющая связь',`<label>Бросок<select name="roll">${choices.map(m=>`<option value="${m.id}">${esc(m.flavor||m.type)}: ${m.rolls[0].total}</option>`).join('')}</select></label>`);if(!data)return;selected=game.messages.get(data.roll);
  }
- if(!eligibleRoll(selected,actor)||flag(selected,'peaceBonus'))return;
+ if(!eligibleRoll(selected,actor))throw Error('Выберите бросок атаки, проверки или спасброска этого участника.');if(flag(selected,'peaceBonus'))throw Error('К4 уже добавлен к этому броску.');
  const die=await new Roll('1d4').evaluate();
  await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),flavor:'Ободряющая связь',rolls:[die.toJSON()],whisper:selected.whisper??[],blind:selected.blind??false,flags:{[MOD]:{peaceRequest:{kind:'bonus',item:item.uuid,roll:selected.id,index:0,playerDie:true}}}});
 }
 Hooks.on('dnd5e.preUseActivity',a=>{
+ if(feature(a.item)==='balm'){bindBalmResource(a);return;}
  const action=a.flags?.[MOD]?.peaceAction;if(!action)return;
  if(!game.users.activeGM){ui.notifications.warn('Для способностей Домена мира нужен активный ведущий.');return false;}
  if(action==='bonus'){void playerBonus(a.item).catch(report);return false;}
- if(action==='balm'){void ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:a.item.actor}),content:'<p>Бальзам мира</p>',flags:{[MOD]:{peaceRequest:{kind:'balm',item:a.item.uuid,targets:[...game.user.targets].map(t=>t.document.uuid)}}}}).catch(report);return false;}
  if(action==='protect'){
   const item=feature(a.item)==='controls'?a.item:a.item.actor.items.find(i=>feature(i)==='controls'&&flag(i,'peaceMember'));
   if(!item){ui.notifications.warn('Сначала создайте Ободряющую связь с этим участником.');return false;}
@@ -213,9 +204,9 @@ Hooks.on('createChatMessage',m=>{
 });
 Hooks.on('renderChatMessageHTML',(m,html)=>{
  const actor=m.getAssociatedActor?.();if(actor&&owns(actor,game.user)&&eligibleRoll(m,actor)&&!flag(m,'peaceBonus')){
-  const control=actor.items.find(i=>feature(i)==='controls'&&flag(i,'peaceMember'));if(control){const b=document.createElement('button');b.type='button';b.textContent='Ободряющая связь: +к4';b.addEventListener('click',async()=>{b.disabled=true;try{if(!game.users.activeGM)throw Error('Нужен активный ведущий.');await playerBonus(control,m);}catch(e){report(e);b.disabled=false;}});html.append(b);}
+  const control=actor.items.find(i=>feature(i)==='controls'&&flag(i,'peaceMember'));if(control){const b=document.createElement('button');b.type='button';b.textContent='Ободряющая связь: +к4';b.addEventListener('click',()=>{void bonusClick(b,control,m);});html.append(b);}
  }
- if(flag(m,'peaceRequest')||m.getAssociatedActivity?.()?.flags?.[MOD]?.peaceAction){const state=flag(m,'peaceResolved'),p=document.createElement('p');p.textContent=({done:'Способность применена.',cancelled:'Отмена: ресурсы не потрачены.',applying:'Выполняется…',failed:'Выполнение прервано: проверьте уже потраченные ресурсы, перемещение и хиты. Не повторяйте запрос.',rejected:'Запрос отклонён: '+(state?.error??'')})[state?.status]??'Ожидает подтверждения ведущего.';html.append(p);}
+ if(flag(m,'peaceRequest')||feature(m.getAssociatedActivity?.()?.item)!=='balm'&&m.getAssociatedActivity?.()?.flags?.[MOD]?.peaceAction){const state=flag(m,'peaceResolved'),p=document.createElement('p');p.textContent=({done:'Способность применена.',cancelled:'Отмена: ресурсы не потрачены.',applying:'Выполняется…',failed:'Выполнение прервано: проверьте уже потраченные ресурсы, перемещение и хиты. Не повторяйте запрос.',rejected:'Запрос отклонён: '+(state?.error??'')})[state?.status]??'Ожидает подтверждения ведущего.';html.append(p);}
 });
 for(const event of ['ready','updateWorldTime','deleteItem'])Hooks.on(event,()=>{void cleanup().catch(report);});
 
@@ -224,25 +215,19 @@ export async function migratePeace(){
  if(!gm())return;const pack=game.packs.get(PACK);if(!pack?.getDocuments)return;
  const templates=await pack.getDocuments(),byKey=new Map(templates.map(i=>[feature(i),i]));
  const actors=new Map((game.actors??[]).map(a=>[a.uuid,a]));for(const scene of game.scenes??[])for(const t of scene.tokens??[])if(t.actor)actors.set(t.actor.uuid,t.actor);
- for(const actor of actors.values())for(const item of actor.items){const template=byKey.get(feature(item));if(!template||Number(flag(item,'peaceRevision')??0)>=3)continue;
- const data=template.toObject();await item.update({'system.description.value':data.system.description.value,'system.activities':data.system.activities??{},'system.type':data.system.type??item.system.type,[`flags.${MOD}.peaceRevision`]:3});}
+ for(const actor of actors.values())for(const item of actor.items){const template=byKey.get(feature(item));if(!template||Number(flag(item,'peaceRevision')??0)>=4)continue;
+ const data=template.toObject();await item.update({'system.description.value':data.system.description.value,'system.activities':data.system.activities??{},'system.type':data.system.type??item.system.type,[`flags.${MOD}.peaceRevision`]:4});}
 }
 Hooks.on('ready',()=>{void migratePeace().catch(report);});
 
-export async function channelResource(actor){
- const candidates=actor.items.filter(i=>i.type==='feat'&&feature(i)!=='balm'&&(Number(i.system.uses?.max)>0||String(i.system.uses?.max??'').includes('@'))&&(
-  /channel.?divinity/i.test(i.system.identifier??'')||/божественн[ыо]й канал|проведение энергии|channel divinity/i.test(i.name??'')||flag(i,'peaceChannelResource')));
- if(candidates.length===1)return candidates[0];
- if(candidates.length>1){const data=await form('Божественный канал',`<label>Общий ресурс<select name="resource">${candidates.map(i=>`<option value="${i.id}">${esc(i.name)} (${i.system.uses.max-Number(i.system.uses.spent??0)}/${i.system.uses.max})</option>`).join('')}</select></label>`);if(!data)throw Error('Выбор ресурса отменён.');return candidates.find(i=>i.id===data.resource);}
- // A translated or renamed resource can be linked once instead of creating a duplicate pool.
- const choices=actor.items.filter(i=>i.type==='feat'&&feature(i)!=='balm'&&Number(i.system.uses?.max)>0);
- const data=await form('Ресурс Божественного канала',`<p>Выберите существующий общий ресурс Божественного канала. Если его ещё нет, можно добавить ресурс жреца 2024. Укажите уже потраченные применения; это не восстанавливает ресурс.</p><label>Уже потрачено<input type="number" name="spent" min="0" max="4" value="0"></label><select name="resource"><option value="__create">Добавить отсутствующий Божественный канал 2024</option>${choices.map(i=>`<option value="${i.id}">${esc(i.name)}</option>`).join('')}</select>`);
- if(data?.resource==='__create'){
- const max=clericLevel(actor)>=18?4:clericLevel(actor)>=6?3:2,spent=Number(data.spent??0);
- if(!Number.isInteger(spent)||spent<0||spent>max)throw Error('Неверное число потраченных применений.');
- const [resource]=await actor.createEmbeddedDocuments('Item',[{name:'Божественный канал',type:'feat',img:'icons/magic/symbols/star-rising-purple.webp',flags:{[MOD]:{peaceChannelResource:true}},system:{identifier:'channel-divinity-cleric',source:{rules:'2024'},type:{value:'class',subtype:'channelDivinity'},description:{value:'<p>Вы направляете божественную энергию для создания эффектов Божественного канала. На 2-м уровне доступны 2 применения, на 6-м — 3, на 18-м — 4. После короткого отдыха восстанавливается одно применение, после продолжительного — все.</p>'},uses:{max:'2 + floor(min(6, @classes.cleric.levels) / 6) + floor(@classes.cleric.levels / 18)',spent,recovery:[{period:'lr',type:'recoverAll'},{period:'sr',type:'formula',formula:'1'}]},activities:{}}}]);return resource;
- }
- const chosen=data&&choices.find(i=>i.id===data.resource);if(!chosen)throw Error('Общий ресурс Божественного канала не выбран.');await chosen.setFlag(MOD,'peaceChannelResource',true);return chosen;
+export function bindBalmResource(activity){
+ const actor=activity.item.actor;
+ const resource=actor.items.find(i=>i!==activity.item&&(flag(i,'peaceChannelResource')||i.system.identifier==='channel-divinity-cleric'))??actor.items.find(i=>i!==activity.item&&Number(i.system.uses?.max)>0&&/божественный канал|проведение энергии|channel divinity/i.test(i.name??''));
+ const target=resource?.id??(Number(activity.item.system.uses?.max)>0?'':'feat:channel-divinity-cleric');
+ for(const c of activity.consumption?.targets??[])if(c.type==='itemUses')c.target=target;
+}
+export async function bonusClick(button,item,message){
+ button.disabled=true;try{await playerBonus(item,message);}catch(e){report(e);}finally{button.disabled=false;}
 }
 const nativeUses=new Map();
 function rollActor(config){const s=config?.subject;return s?.actor??(s?.items?s:null);}
@@ -254,16 +239,21 @@ export function setupPeaceRoll(config,dialog){
  // Preserve native dialog class (attack/check/save); add a field to that same form.
 }
 Hooks.on('dnd5e.preRoll',setupPeaceRoll);
-Hooks.on('renderApplicationV2',(app,element)=>{
+const rollContexts=new WeakMap();
+export async function renderPeaceRoll(app){
  const uuid=app.config?.ortesPeaceControl;if(!uuid||!app.form||app.form.querySelector('[name="ortesPeaceDie"]'))return;
- void (async()=>{const item=await fromUuid(uuid),c=await groupFor(item),turn=turnStamp(game.combat);if(!c.nearby.length||turn&&(flag(item.actor,'peaceBonusTurn')===turn||nativeUses.get(item.actor.uuid)===turn))return;
- const label=document.createElement('label');label.className='form-group';label.innerHTML='<input type="checkbox" name="ortesPeaceDie">Ободряющая связь: добавить 1к4 к броску к20';
- app.form.append(label);app.config.ortesPeaceContext=c;
- })().catch(report);
-});
+ const item=await fromUuid(uuid),c=await groupFor(item),turn=turnStamp(game.combat);
+ const reason=!c.nearby.length?'Рядом нет другого участника связи':turn&&(flag(item.actor,'peaceBonusTurn')===turn||nativeUses.get(item.actor.uuid)===turn)?'К4 уже использован в этот ход':'';
+ if(!app.form||app.form.querySelector('[name="ortesPeaceDie"]'))return;
+ const label=document.createElement('label');label.className='form-group';
+ label.innerHTML='<input type="checkbox" name="ortesPeaceDie"'+(reason?' disabled':'')+'>Ободряющая связь: добавить 1к4 к броску к20'+(reason?' — '+esc(reason):'');
+ app.form.prepend(label);rollContexts.set(app,c);
+}
+Hooks.on('renderApplicationV2',app=>{void renderPeaceRoll(app).catch(report);});
+Hooks.on('renderRollConfigurationDialog',app=>{void renderPeaceRoll(app).catch(report);});
 export function buildPeaceRoll(app,config,formData,index){
  if(index!==0||!app.config?.ortesPeaceControl||!formData?.get('ortesPeaceDie'))return;
- const c=app.config.ortesPeaceContext;if(c&&(!usableBond(flag(c.source,'peaceBond'),now())||!c.others.some(t=>close(c.self,t,bondRange(clericLevel(c.source))))))return;
+ const c=rollContexts.get(app);if(c&&(!usableBond(flag(c.source,'peaceBond'),now())||!c.others.some(t=>close(c.self,t,bondRange(clericLevel(c.source))))))return;
  config.parts.push('1d4');config.options??={};config.options.ortesPeaceDie=app.config.ortesPeaceControl;
 }
 Hooks.on('dnd5e.buildRollConfig',buildPeaceRoll);

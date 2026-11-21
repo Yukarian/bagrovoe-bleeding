@@ -38,7 +38,7 @@ test('subclass grants correct feature levels, skill choice and no spells or dupl
  assert.deepEqual(s.system.advancement.find(a=>a.type==='Trait').configuration.choices,[{count:1,pool:['skills:ins','skills:prf','skills:per']}]);
  assert.ok(!items.some(i=>/могущественное колдовство/i.test(i.name)));
  const b=items.find(i=>i.flags[MOD].peaceFeature==='bond');assert.equal(b.system.uses.max,'@prof');assert.equal(b.system.uses.recovery[0].period,'lr');
- assert.ok(items.flatMap(i=>Object.values(i.system.activities??{})).every(a=>a.consumption.targets.length===0));
+ assert.ok(items.filter(i=>i.flags[MOD].peaceFeature!=='balm').flatMap(i=>Object.values(i.system.activities??{})).every(a=>a.consumption.targets.length===0));
 });
 test('bond consumes one use, creates controls/effects and recast removes old group only',async()=>{
  const h=harness();await h.bond();assert.equal(h.item('bond').system.uses.spent,1);assert.ok(h.item('controls',h.ally));const first=h.cleric.getFlag(MOD,'peaceBond').id;await h.bond();assert.notEqual(h.cleric.getFlag(MOD,'peaceBond').id,first);assert.equal(h.ally.items.filter(i=>i.flags[MOD]?.peaceFeature==='controls').length,1);assert.equal(h.ally.effects.length,1);
@@ -57,12 +57,6 @@ test('bonus preserves original d20, adds die and blocks duplicate requests and t
 });
 test('bonus rejects expired bond, distant participants and prior-turn roll',async()=>{
  for(const mode of ['expired','far','old']){const h=harness();await h.bond();h.game.combat={id:'c',started:true,round:1,turn:0,turns:[]};const r=h.roll();if(mode==='expired')h.game.time.worldTime=701;if(mode==='far')h.ally.token.x=2000;if(mode==='old')h.game.combat.turn=1;h.answers.push({confirmed:'on',roll:r.id+':0'});await assert.rejects(h.ctx.processPeace(h.request('controls','bonus',[],h.ally)));assert.equal(r.rolls[0].total,12);}
-});
-test('balm consumes shared channel once and heals each distinct other creature exactly once',async()=>{
- const h=harness();h.answers.push({confirmed:'on'});const r=h.request('balm','balm',[h.ally.token,h.ally.token,h.other.token]);await h.ctx.processPeace(r);assert.equal(h.channel.system.uses.spent,1);assert.equal(h.ally.system.attributes.hp.value,40);assert.equal(h.other.system.attributes.hp.value,40);assert.equal(h.cleric.system.attributes.hp.value,30);await h.ctx.processPeace(r);assert.equal(h.channel.system.uses.spent,1);
-});
-test('balm forbids self-healing, exhausted channel and cancellation without cost',async()=>{
- for(const mode of ['self','empty','cancel']){const h=harness();if(mode==='empty')h.channel.system.uses.spent=2;const r=h.request('balm','balm',mode==='self'?[h.cleric.token]:[h.ally.token]);if(mode==='cancel')await h.ctx.processPeace(r);else await assert.rejects(h.ctx.processPeace(r));assert.equal(h.channel.system.uses.spent,mode==='empty'?2:0);assert.equal(h.ally.system.attributes.hp.value,30);}
 });
 test('protective bond teleports and damages only interceptor, recording reaction',async()=>{
  const h=harness(17);await h.bond();h.game.combat={id:'c',started:true,round:1,turn:0,turns:[{actor:h.cleric},{actor:h.ally}]};h.answers.push({confirmed:'on',damage:'fire: 13'},{confirmed:'on'});const r=h.request('controls','protect',[h.ally.token],h.cleric);await h.ctx.processPeace(r);assert.equal(h.cleric.token.x,200);assert.equal(h.cleric.system.attributes.hp.value,24);assert.equal(h.ally.system.attributes.hp.value,30);assert.ok(h.cleric.getFlag(MOD,'peaceReaction'));await h.ctx.processPeace(r);assert.equal(h.cleric.system.attributes.hp.value,24);
@@ -106,7 +100,7 @@ test('existing actor items migrate descriptions and protective activity without 
  h.game.packs.get(MOD+'.player-subclasses').getDocuments=async()=>templates;
  h.item('protective').system.activities={};h.item('bond').system.description.value='Old instructions';h.item('bond').system.uses.spent=2;
  await h.ctx.migratePeace();assert.ok(Object.values(h.item('protective').system.activities).length);assert.equal(h.item('bond').system.uses.spent,2);
- assert.ok(!h.item('bond').system.description.value.includes('Old instructions'));assert.equal(h.item('bond').getFlag(MOD,'peaceRevision'),3);
+ assert.ok(!h.item('bond').system.description.value.includes('Old instructions'));assert.equal(h.item('bond').getFlag(MOD,'peaceRevision'),4);
 });
 test('ability descriptions contain rules instead of module instructions',()=>{
  for(const item of items.filter(i=>i.type==='feat'))assert.doesNotMatch(item.system.description.value,/скрипт|токен|карточк|вручную|перетаскивайте|ведущий подтверждает/i);
@@ -119,8 +113,24 @@ test('native d20 config gets an optional d4 in the SAME roll, no post-roll reque
  const no={parts:['1d20'],options:{}};h.ctx.buildPeaceRoll({config},no,{get:()=>false},0);assert.equal(no.parts.length,1);
  const other={parts:['1d20'],options:{}};h.ctx.buildPeaceRoll({config},other,{get:()=>true},1);assert.equal(other.parts.length,1);
 });
-test('translated Channel Divinity resource heals without canonical identifier',async()=>{
- const h=harness();h.channel.system.identifier='bozhestvennyy-kanal';h.channel.name='Божественный канал';h.answers.push({confirmed:'on'});
- await h.ctx.processPeace(h.request('balm','balm',[h.ally.token]));assert.equal(h.ally.system.attributes.hp.value,40);assert.equal(h.channel.system.uses.spent,1);assert.equal(h.output.at(-1).rolls[0].formula,'2d6');
- const activity=Object.values(h.item('balm').system.activities)[0];assert.equal(activity.type,'heal');assert.equal(activity.healing.number,2);assert.equal(activity.healing.denomination,6);assert.equal(h.item('balm').system.type.subtype,'channelDivinity');
+
+test('Balm uses native healing and native shared resource consumption without intercepting activity',async()=>{
+ const h=harness();const item=h.item('balm'),activity={...structuredClone(Object.values(item.system.activities)[0]),item,consumption:{targets:[{type:'itemUses',value:'1',target:'feat:channel-divinity-cleric'}]}};
+ assert.equal(activity.type,'heal');assert.equal(activity.healing.number,2);assert.equal(activity.healing.denomination,6);assert.equal(activity.flags[MOD].peaceAction,undefined);
+ h.channel.system.identifier='translated';h.channel.name='Божественный канал';
+ for(const hook of h.hooks.get('dnd5e.preUseActivity'))assert.notEqual(hook(activity),false);
+ assert.equal(activity.consumption.targets[0].target,h.channel.id);assert.equal(activity.consumption.targets[0].value,'1');assert.equal(h.output.length,0);assert.equal(h.channel.system.uses.spent,0);
+ await h.ctx.processPeace(h.request('balm','balm'));assert.equal(h.output.length,0);assert.equal(h.channel.system.uses.spent,0);
+});
+test('d4 click unlocks button and explains missing nearby participant instead of silently returning',async()=>{
+ const h=harness();await h.bond();h.ally.token.x=2000;const errors=[];h.ctx.ui.notifications.error=m=>errors.push(m);const button={disabled:false};
+ await h.ctx.bonusClick(button,h.item('controls',h.ally),h.roll());assert.equal(button.disabled,false);assert.match(errors[0],/другой участник/);
+});
+test('native roll form renders usable checkbox without putting documents in cloned config',async()=>{
+ const h=harness();await h.bond();h.ctx.document.createElement=()=>({});const children=[];
+ const app={config:{ortesPeaceControl:h.item('controls',h.ally).uuid},form:{querySelector:()=>children[0],prepend:e=>children.push(e)}};
+ await h.ctx.renderPeaceRoll(app);assert.equal(children.length,1);assert.match(children[0].innerHTML,/ortesPeaceDie/);assert.doesNotMatch(children[0].innerHTML,/disabled/);
+ assert.deepEqual(Object.keys(app.config),['ortesPeaceControl']);const roll={parts:['1d20'],options:{}};
+ h.ctx.buildPeaceRoll(app,roll,{get:()=>true},0);assert.equal(roll.parts[1],'1d4');
+ h.ally.token.x=2000;const far={parts:['1d20'],options:{}};h.ctx.buildPeaceRoll(app,far,{get:()=>true},0);assert.equal(far.parts.length,1);
 });

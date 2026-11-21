@@ -16,6 +16,7 @@ const items=[
  feat('controls','Ободряющая связь — управление',0,'<p>Пока вы находитесь в пределах 30 футов от другого участника связи, вы можете бросить к4 и добавить результат к броску атаки, проверке характеристики или спасброску. Каждое существо может добавлять к4 не более одного раза за ход.</p>',[['bonus','Добавить к4 к броску'],['protect','Принять урон союзника']])
 ];
 const balmActivity=Object.values(items.find(i=>i.flags[MOD].peaceFeature==='balm').system.activities)[0];balmActivity.type='heal';balmActivity.healing={number:2,denomination:6,bonus:'@abilities.wis.mod',types:['healing'],custom:{enabled:false,formula:''},scaling:{mode:'',number:1}};
+delete balmActivity.flags[MOD].peaceAction;balmActivity.flags[MOD].peaceNativeHealing=true;balmActivity.consumption.targets=[{type:'itemUses',value:'1',target:'feat:channel-divinity-cleric'}];
 items.find(i=>i.flags[MOD].peaceFeature==='balm').system.type={value:'class',subtype:'channelDivinity'};
 items.find(i=>i.flags[MOD].peaceFeature==='bond').system.uses={max:'@prof',spent:0,recovery:[{period:'lr',type:'recoverAll'}]};
 const grants=(level,keys)=>({_id:id('grant:'+level),type:'ItemGrant',level,title:'Особенности Домена мира',configuration:{items:keys.map(k=>({uuid:`Compendium.${MOD}.${pack}.Item.${id(k)}`,optional:false})),optional:false,spell:null},value:{}});

@@ -367,7 +367,13 @@
           },
           "consumption": {
             "spellSlot": false,
-            "targets": [],
+            "targets": [
+              {
+                "type": "itemUses",
+                "value": "1",
+                "target": "feat:channel-divinity-cleric"
+              }
+            ],
             "scaling": {
               "allowed": false
             }
@@ -399,7 +405,7 @@
           },
           "flags": {
             "bagrovoe-bleeding": {
-              "peaceAction": "balm"
+              "peaceNativeHealing": true
             }
           },
           "healing": {
