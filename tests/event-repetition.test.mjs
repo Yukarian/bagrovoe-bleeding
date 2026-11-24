@@ -31,10 +31,10 @@ test('migration derives counters from applied history, preserves overrides and i
 });
 test('calendar selection respects disabled/exhausted visits and 60-day cooldown',()=>{
  let s=fresh();for(const e of EVENTS)s=setEventLimit(s,e.id,0);s=setEventLimit(s,'morkant-arrival',1);
- s=advanceDevelopment(s,14,0,die=>die===20?20:1);assert.equal(s.developmentEvents.length,1);assert.equal(s.developmentEvents[0].eventKey,'morkant-arrival');s=decideDevelopmentEvent(s,s.developmentEvents[0].id,'apply',14);
- s=advanceDevelopment(s,140,14,die=>die===20?20:1);assert.equal(s.developmentEvents.length,0);
+ s.eventSettings.mode='legacy';s=advanceDevelopment(s,7,0,die=>die===20?20:1);assert.equal(s.developmentEvents.length,1);assert.equal(s.developmentEvents[0].eventKey,'morkant-arrival');s=decideDevelopmentEvent(s,s.developmentEvents[0].id,'apply',14);
+ s=advanceDevelopment(s,140,7,die=>die===20?20:1);assert.equal(s.developmentEvents.length,0);
  s=setEventLimit(s,'valkrein-visit',-1);s=advanceDevelopment(s,14,s.calendarDay,die=>die===20?18:1);s=decideDevelopmentEvent(s,s.developmentEvents[0].id,'apply',s.calendarDay);
- s=advanceDevelopment(s,56,s.calendarDay,die=>die===20?18:1);assert.equal(s.developmentEvents.length,0);s=advanceDevelopment(s,14,s.calendarDay,die=>die===20?18:1);assert.equal(s.developmentEvents.length,1);
+ s=advanceDevelopment(s,42,s.calendarDay,die=>die===20?18:1);assert.equal(s.developmentEvents.length,0);s=advanceDevelopment(s,14,s.calendarDay,die=>die===20?18:1);assert.equal(s.developmentEvents.length,1);
 });
 test('failed resource consequence does not consume occurrence; state never leaks publicly',()=>{
  let s=fresh();s=setEventLimit(s,'lost-coins',1);s.economy.treasury=0;const id=pending(s,'lost-coins');assert.throws(()=>decideDevelopmentEvent(s,id,'apply',1),/полной суммы/);assert.equal(eventCount(s,'lost-coins'),0);
