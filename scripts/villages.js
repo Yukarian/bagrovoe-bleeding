@@ -42,7 +42,7 @@ export async function ensureWesterholm(){
 }
 
 export class VillageApp extends ApplicationV2{
- static DEFAULT_OPTIONS={id:'ortes-villages',classes:['ortes-villages'],window:{title:'Мир Ортес — Поселения',icon:'fa-solid fa-house-chimney',resizable:true},position:{width:980,height:760}};
+ static DEFAULT_OPTIONS={id:'ortes-villages',classes:['ortes-villages'],window:{title:'Мир Ортес — Бастион',icon:'fa-solid fa-house-chimney',resizable:true},position:{width:980,height:760}};
  selected=null;snapshot=null;busy=false;
  async _renderHTML(){
   if(!game.user.isGM)return '<p>Управление поселениями доступно ведущему.</p>';
@@ -71,12 +71,15 @@ export class VillageApp extends ApplicationV2{
    if(cmd==='create'){
     const fd=await form('Новое поселение',input('name','Название','Новая деревня'));if(!fd)return;
     const s=validate(migrateVillage(freshVillage(String(fd.get('name')).trim()),publicClock().day)),folder=await settlementFolder();
-    const doc=await JournalEntry.create({name:s.name,folder:folder.id,ownership:{default:0},pages:[{name:'Управление поселением',type:'text',text:{content:'<p>Откройте «Мир Ортес — Поселения» в настройках модуля или кнопкой домика на панели токенов.</p>',format:1}}],flags:{[MOD]:{[FLAG]:s}}});this.selected=doc.id;await ensurePrivateStorage();await publishDevelopment(settlementById(doc.id),s);
+    const doc=await JournalEntry.create({name:s.name,folder:folder.id,ownership:{default:0},pages:[{name:'Управление поселением',type:'text',text:{content:'<p>Откройте «Мир Ортес — Бастион» в настройках модуля или кнопкой домика на панели токенов.</p>',format:1}}],flags:{[MOD]:{[FLAG]:s}}});this.selected=doc.id;await ensurePrivateStorage();await publishDevelopment(settlementById(doc.id),s);
    }else{
     const s=copy(this.snapshot),doc=settlementById(this.selected);if(!doc||!s)throw Error('Выберите поселение.');
     if(s.schema!==3&&cmd!=='resolveTurn')throw Error('Сначала завершите прежний ход Оплота для переноса деревни.');
     const save=fn=>commitVillage(doc,s.revision,fn),edit=fn=>save(current=>editVillage(current,fn));
-    if(cmd==='adjustEconomy'){await adjustEconomyDialog(doc.id,s,id);
+    if(cmd==='nextWeek'){
+     const clock=publicClock();if(!await confirm('Следующая неделя?', '<p>Пройдёт 7 дней во всём мире. Продвинутся приказы всех связанных Оплотов и появятся недельные события. Последствия событий вы выбираете отдельно.</p>'))return;
+     await advanceCalendar(7,{expected:clock.revision});
+    }else if(cmd==='adjustEconomy'){await adjustEconomyDialog(doc.id,s,id);
     }else if(cmd==='deleteVillage'){
      if(await confirm('Удалить поселение?',`<p>Удалить «${esc(s.name)}» и его страницы? Листы персонажей и их Оплоты сохранятся.</p>`))await deleteVillage(doc.id,s.revision);
     }else if(cmd==='linkBastion'){
@@ -167,11 +170,11 @@ export class VillageApp extends ApplicationV2{
 }
 let app;
 function openVillages(){if(!game.user.isGM)return openDevelopment();app??=new VillageApp();return app.render({force:true});}
-Hooks.once('init',()=>{game.settings.registerMenu(MOD,'villages',{name:'Поселения Ортеса',label:'Открыть управление',hint:'Здания, жители, журнал и связь со штатными Оплотами D&D5e.',icon:'fa-solid fa-house-chimney',type:VillageApp,restricted:true});});
+Hooks.once('init',()=>{game.settings.registerMenu(MOD,'villages',{name:'Бастион Ортеса',label:'Открыть управление',hint:'Здания, жители, журнал и связь со штатными Оплотами D&D5e.',icon:'fa-solid fa-house-chimney',type:VillageApp,restricted:true});});
 function refreshVillages(){if(app?.rendered&&!app.busy)void app.render({force:true});}
 Hooks.once('ready',async()=>{globalThis.OrtesWorld={...(globalThis.OrtesWorld??{}),openVillages};game.modules.get(MOD).api??={};game.modules.get(MOD).api.villages={open:openVillages,remove:deleteVillage};installBridge({commit:commitVillage,refresh:refreshVillages});installDevelopment({commit:commitVillage});installOrtesClock({commit:commitVillage,flush:async()=>{await flushDevelopment();await queue.catch(()=>{});},nativeAdvance:nativeFacilityAdvance,refresh:()=>{refreshVillages();refreshCalendar();refreshDevelopment();}});enableSimpleClock({advance:days=>advanceCalendar(days,{expected:publicClock().revision})});try{await ensureWesterholm();await ensurePrivateStorage();await bootClock();await refreshWesterholmContent();if(game.user.isGM&&game.users.activeGM?.id===game.user.id)for(const d of settlementEntries().filter(d=>d.getFlag(MOD,'village')?.schema===3))await publishDevelopment(d,d.getFlag(MOD,'village'));refreshVillages();}catch(e){console.error('Ortes initialization',e);ui.notifications.error('Поселения: '+e.message);}});
 for(const event of ['createItem','updateItem','deleteItem','updateActor','deleteActor','updateJournalEntry','deleteJournalEntry'])Hooks.on(event,refreshVillages);
-Hooks.on('getSceneControlButtons',controls=>{if(controls.tokens)controls.tokens.tools.ortesVillage={name:'ortesVillage',title:'Мир Ортес — Поселения',icon:'fa-solid fa-house-chimney',order:100,button:true,visible:true,onChange:openVillages};});
+Hooks.on('getSceneControlButtons',controls=>{if(controls.tokens)controls.tokens.tools.ortesVillage={name:'ortesVillage',title:'Мир Ортес — Бастион',icon:'fa-solid fa-house-chimney',order:100,button:true,visible:game.user.isGM,onChange:openVillages};});
 
 export async function deleteVillage(id,expected){
  await flushDevelopment();
