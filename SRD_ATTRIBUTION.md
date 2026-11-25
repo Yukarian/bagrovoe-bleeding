@@ -1,5 +1,7 @@
 # Open rules attribution
 
+The Last Dawn temple adapts the Cultist, Cultist Fanatic, Archmage and Staff of Power from the D&D5e system SRD 5.2 compendiums. SRD 5.2 by Wizards of the Coast LLC is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Changes include names, biographies, inventory and encounter placement. Token art is referenced from the installed system. The temple map and three ambient recordings were generated for this adventure.
+
 This work includes material from the System Reference Document 5.1 (SRD 5.1) by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/legalcode.
 
 Laerin's open spell rules and Wild Shape data are adapted from the Foundry VTT D&D5e system's SRD compendiums, version 6.0.6, commit `87e94dbd9f930135e0694cd7e7d49f210603cd2c`: https://github.com/foundryvtt/dnd5e. Changes include Russian summaries, NPC-specific resources, art, icons, spell preparation and transformation settings. Original English SRD spell text is retained where indicated. This does not imply endorsement by Wizards of the Coast or Foundry Gaming.

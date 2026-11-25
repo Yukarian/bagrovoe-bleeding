@@ -4,6 +4,7 @@ const MOD='bagrovoe-bleeding';
 const id=value=>createHash('sha256').update(value).digest('hex').slice(0,16);
 const rarities={common:'Обычные',uncommon:'Необычные',rare:'Редкие',veryRare:'Очень редкие',legendary:'Легендарные'};
 export function category(pack,doc){
+  if(pack==='last-dawn')return 'Подземелья Ортеса';
   if(['valkrein','world-items','key-npc-lore','player-subclasses'].includes(pack))return doc.flags[MOD].category;
   if(pack==='westerholm-residents')return doc.flags[MOD].category;
   if(pack==='key-npcs')return doc.flags[MOD].category;

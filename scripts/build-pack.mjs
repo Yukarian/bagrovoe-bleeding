@@ -8,6 +8,7 @@ import { organizePack } from './pack-folders.mjs';
 const manifest = JSON.parse(fs.readFileSync('module.json', 'utf8'));
 const expected = { 'blood-spells': 30, actors: 17, abilities: 96, relics: 7, 'iron-hounds': 8, settlements: 4, 'suigu-residents': 8, 'key-npcs': 28, valkrein: 3, 'world-items': 14, 'key-npc-lore': 6, 'player-subclasses': 8, 'westerholm-residents': 9 };
 const scratch = fs.mkdtempSync(path.resolve('.build-'));
+expected['last-dawn'] = 1;
 const assetPrefix = `modules/${manifest.id}/`;
 function validate(value) {
   if (typeof value === 'string') {
@@ -44,8 +45,8 @@ try {
     for (const doc of docs) {
       if(pack.type==='Actor')applyResidentProfileSource(doc);
       assert.ok(!seen.has(doc._id));seen.add(doc._id);validate(doc);
-      assert.ok(pack.type === 'JournalEntry' ? Array.isArray(doc.pages) : pack.type === 'Actor' ? (doc.type === 'npc' || pack.name === 'key-npcs' && doc.type === 'character') : ['spell','feat','weapon','equipment','consumable','subclass'].includes(doc.type));
-      keys(doc, {Actor:'actors',Item:'items',JournalEntry:'journal'}[pack.type]);
+      assert.ok(pack.type === 'Adventure' ? doc.scenes.length && doc.actors.length && doc.journal.length : pack.type === 'JournalEntry' ? Array.isArray(doc.pages) : pack.type === 'Actor' ? (doc.type === 'npc' || pack.name === 'key-npcs' && doc.type === 'character') : ['spell','feat','weapon','equipment','consumable','subclass'].includes(doc.type));
+      keys(doc, {Actor:'actors',Item:'items',JournalEntry:'journal',Adventure:'adventures'}[pack.type]);
       fs.writeFileSync(path.join(src, doc._id + '.json'), JSON.stringify(doc));
     }
     for(const folder of folders){
