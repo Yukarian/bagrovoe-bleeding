@@ -2,7 +2,7 @@
   "id": "bagrovoe-bleeding",
   "title": "Мир Ортес",
   "description": "Мир Ортес: Багровое Причастие, Железные Гончие, бестиарий, предметы, простое управление поселениями, общий календарь и штатные Оплоты D&D5e.",
-  "version": "6.20.0",
+  "version": "6.21.0",
   "compatibility": {
     "minimum": "14.367",
     "verified": "14"
@@ -31,7 +31,8 @@
     "scripts/raess.mjs",
     "scripts/stone-belt.mjs",
     "scripts/runic-rifle.mjs",
-    "scripts/peace-domain.mjs"
+    "scripts/peace-domain.mjs",
+    "scripts/npc-directory.mjs"
   ],
   "relationships": {
     "systems": [
@@ -46,7 +47,7 @@
     ]
   },
   "manifest": "https://github.com/Yukarian/bagrovoe-bleeding/releases/latest/download/module.json",
-  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v6.20.0/bagrovoe-bleeding.zip",
+  "download": "https://github.com/Yukarian/bagrovoe-bleeding/releases/download/v6.21.0/bagrovoe-bleeding.zip",
   "url": "https://github.com/Yukarian/bagrovoe-bleeding",
   "packs": [
     {
@@ -64,7 +65,7 @@
     },
     {
       "name": "actors",
-      "label": "Багровое Причастие | Бестиарий",
+      "label": "Багровое Причастие — персонажи и существа",
       "path": "packs/actors",
       "type": "Actor",
       "system": "dnd5e",
@@ -103,7 +104,7 @@
     },
     {
       "name": "iron-hounds",
-      "label": "Железные Гончие | Разбойники",
+      "label": "Железные Гончие — противники",
       "path": "packs/iron-hounds",
       "type": "Actor",
       "system": "dnd5e",
@@ -128,7 +129,7 @@
     },
     {
       "name": "suigu-residents",
-      "label": "Суйгу | Жители",
+      "label": "Суйгу — жители",
       "path": "packs/suigu-residents",
       "type": "Actor",
       "system": "dnd5e",
@@ -141,7 +142,7 @@
     },
     {
       "name": "key-npcs",
-      "label": "Мир Ортес | Ключевые персонажи",
+      "label": "Личности и организации",
       "path": "packs/key-npcs",
       "type": "Actor",
       "system": "dnd5e",
@@ -201,6 +202,19 @@
         "ASSISTANT": "OWNER",
         "GAMEMASTER": "OWNER"
       }
+    },
+    {
+      "name": "westerholm-residents",
+      "label": "Вестерхольм — жители",
+      "path": "packs/westerholm-residents",
+      "type": "Actor",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER",
+        "GAMEMASTER": "OWNER"
+      }
     }
   ],
   "packFolders": [
@@ -211,17 +225,22 @@
       "packs": [],
       "folders": [
         {
+          "name": "NPC",
+          "sorting": "m",
+          "color": "#35564a",
+          "packs": [
+            "westerholm-residents",
+            "suigu-residents",
+            "key-npcs",
+            "actors",
+            "iron-hounds"
+          ]
+        },
+        {
           "name": "Багровое Причастие",
           "sorting": "m",
           "packs": [],
           "folders": [
-            {
-              "name": "Бестиарий",
-              "packs": [
-                "actors"
-              ],
-              "sorting": "a"
-            },
             {
               "name": "Способности",
               "packs": [
@@ -246,13 +265,6 @@
           ]
         },
         {
-          "name": "Железные Гончие",
-          "packs": [
-            "iron-hounds"
-          ],
-          "sorting": "a"
-        },
-        {
           "name": "Поселения и Бастион",
           "packs": [
             "settlements"
@@ -260,17 +272,9 @@
           "sorting": "a"
         },
         {
-          "name": "Суйгу",
-          "sorting": "a",
-          "packs": [
-            "suigu-residents"
-          ]
-        },
-        {
           "name": "Ключевые персонажи",
           "sorting": "a",
           "packs": [
-            "key-npcs",
             "key-npc-lore"
           ]
         },

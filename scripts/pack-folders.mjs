@@ -5,12 +5,14 @@ const id=value=>createHash('sha256').update(value).digest('hex').slice(0,16);
 const rarities={common:'Обычные',uncommon:'Необычные',rare:'Редкие',veryRare:'Очень редкие',legendary:'Легендарные'};
 export function category(pack,doc){
   if(['valkrein','world-items','key-npc-lore','player-subclasses'].includes(pack))return doc.flags[MOD].category;
+  if(pack==='westerholm-residents')return doc.flags[MOD].category;
   if(pack==='key-npcs')return doc.flags[MOD].category;
   if(pack==='suigu-residents')return doc.flags[MOD].district;
   if(pack==='settlements'&&doc.flags?.[MOD]?.adventure)return 'Приключения';
   if(pack==='settlements')return doc.flags?.[MOD]?.village?'Шаблоны поселений':'Правила и помощь';
   if(pack==='actors'){
-    if(doc.flags?.[MOD]?.namedNpc || ['edrik-valter','emili-yasati'].includes(doc.flags?.[MOD]?.sourceSlug))return 'Именные персонажи';
+    if(['edrik-valter','emili-yasati'].includes(doc.flags?.[MOD]?.sourceSlug))return 'Эдрик и Эмили — окрестности Вестерхольма';
+    if(doc.flags?.[MOD]?.namedNpc)return 'Именные персонажи';
     return doc.system.details.type.value==='humanoid'?'Гуманоиды':'Звери и чудовища';
   }
   if(pack==='iron-hounds')return ['Родерик Варн','Марта Грейвс','Гаррет Хольм','Сайлас Вейн'].includes(doc.name)?'Командование':'Разбойники — универсальные';
