@@ -1,3 +1,4 @@
+import {applyResidentProfileSource} from './resident-profiles.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -41,6 +42,7 @@ try {
     fs.mkdirSync(src);
     const seen = new Set();
     for (const doc of docs) {
+      if(pack.type==='Actor')applyResidentProfileSource(doc);
       assert.ok(!seen.has(doc._id));seen.add(doc._id);validate(doc);
       assert.ok(pack.type === 'JournalEntry' ? Array.isArray(doc.pages) : pack.type === 'Actor' ? (doc.type === 'npc' || pack.name === 'key-npcs' && doc.type === 'character') : ['spell','feat','weapon','equipment','consumable','subclass'].includes(doc.type));
       keys(doc, {Actor:'actors',Item:'items',JournalEntry:'journal'}[pack.type]);

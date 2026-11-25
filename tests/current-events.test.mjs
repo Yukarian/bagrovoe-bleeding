@@ -47,7 +47,7 @@ test('event UI previews village destinations instead of misleading character pay
 
 test('all 100 default d100 positions are populated and use only treasury or story consequences',()=>{
  const s=fresh();for(let n=1;n<=100;n++){const e=eventAtRoll(s,n);assert.ok(e);assert.equal(eventRange(s,e.id)[0],n);assert.equal(e.track,null);assert.deepEqual(Object.keys(e.effects).filter(k=>k!=='treasury'),[]);}
- assert.deepEqual(eventSettings(s),{mode:'table',interval:7,cooldown:60});
+ assert.deepEqual(eventSettings(s),{mode:'manual',interval:7,cooldown:60});
 });
 test('completed one-off becomes a recurring follow-up in the same slot without repeating reward',()=>{
  let s=fresh();const range=eventRange(s,'cache');s=requestEvent(s,'cache',0);s=decideDevelopmentEvent(s,s.developmentEvents[0].id,'apply',0);const coins=s.economy.treasury;
@@ -55,7 +55,7 @@ test('completed one-off becomes a recurring follow-up in the same slot without r
  s.eventHistory=[];s=migrateDevelopment(s);assert.equal(eventDefinitions(s).find(e=>e.id==='cache').continuation,true);assert.equal(eventRange(s,'cache')[0],range[0]);
 });
 test('one check per week including long advances, no early or retroactive checks on migration',()=>{
- let s=fresh(),calls=0;const draw=die=>{assert.equal(die,100);calls++;return 53;};s=advanceDevelopment(s,6,0,draw);assert.equal(calls,0);s=advanceDevelopment(s,15,6,draw);assert.equal(calls,3);assert.equal(s.nextEventElapsed,28);
+ let s=fresh(),calls=0;s.eventSettings.mode='table';const draw=die=>{assert.equal(die,100);calls++;return 53;};s=advanceDevelopment(s,6,0,draw);assert.equal(calls,0);s=advanceDevelopment(s,15,6,draw);assert.equal(calls,3);assert.equal(s.nextEventElapsed,28);
  s.eventCatalogVersion=3;s.eventSettings.interval=14;s=migrateDevelopment(s);assert.equal(s.nextEventElapsed,28);assert.equal(s.eventSettings.interval,7);assert.equal(calls,3);
 });
 test('Valkrein switches to messenger after three completed visits, skipped visit does not count',()=>{

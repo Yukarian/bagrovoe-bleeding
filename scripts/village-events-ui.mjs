@@ -21,7 +21,7 @@ export class VillageEventsApp extends DevelopmentApp{
   let html=`<div class="ortes-body"><header class="ortes-toolbar"><select data-village aria-label="Деревня">${choices.map(d=>`<option value="${esc(d.id)}" ${d.id===this.selected?'selected':''}>${esc(d.name)}</option>`).join('')}</select>${button('section','Ожидают решения','pending')}${button('section','Список событий','catalog')}${button('section','История','history')}</header>`;
   if(!this.selected)return html+'<p>Сначала создайте поселение.</p></div>';
   const s=developmentDoc(this.selected).getFlag(MOD,'village'),settings=eventSettings(s);
-  html+=`<h2>${esc(s.name)} — события</h2><p>Только ведущий. Автоматически: ${settings.mode==='table'?'таблица к100':'категории к20'} каждые ${settings.interval} дн. Перерыв: ${settings.cooldown} дн.</p><div class="ortes-actions">${button('eventSettings','Настройки бросков')}${button('rollTable','Бросить к100 сейчас')}${button('newEvent','Добавить событие')}</div>`;
+  html+=`<h2>${esc(s.name)} — события</h2><p>Только ведущий. ${settings.mode==='manual'?'Ручной запуск; напоминание':settings.mode==='table'?'Автоматически: таблица к100':'Автоматически: категории к20'} каждые ${settings.interval} дн. Перерыв: ${settings.cooldown} дн.</p><div class="ortes-actions">${button('eventSettings','Настройки бросков')}${button('rollTable','Бросить к100 сейчас')}${button('newEvent','Добавить событие')}${s.eventReminder?.weeks?button('dismissReminder','Убрать напоминание'):''}</div>`;
   if(s.lastEventRoll)html+=`<p>Последний к100: <strong>${s.lastEventRoll.roll}</strong> — ${esc(s.lastEventRoll.reason)}</p>`;
   if(this.section==='catalog'){
    html+=`<p>Диапазоны относятся к к100. Не занятые числа — без события. 0–0 — только ручной вызов. В режиме к20 используются категории, а не эти диапазоны.</p><input data-search aria-label="Поиск событий" placeholder="Поиск по названию и описанию" value="${esc(this.search)}">`;
@@ -41,8 +41,9 @@ export class VillageEventsApp extends DevelopmentApp{
   try{
    if(cmd==='section'){this.section=id;return;}
    const s=developmentDoc(this.selected).getFlag(MOD,'village'),rev=s.revision;
-   if(cmd==='eventSettings'){
-    const cfg=eventSettings(s),fd=await form('Броски событий',select('mode','Способ автоматического выбора',{legacy:'Прежние категории к20',table:'Моя таблица к100'},cfg.mode)+field('interval','Проверка каждые N игровых дней',cfg.interval,'number')+field('cooldown','Минимум дней между повторениями',cfg.cooldown,'number')+'<p>При изменении интервала следующая проверка отсчитывается от текущего дня. Бросок к100 сейчас всегда использует таблицу, даже в режиме к20.</p>');
+   if(cmd==='dismissReminder'){await manageEvents(this.selected,'dismissReminder',{},rev);
+   }else if(cmd==='eventSettings'){
+    const cfg=eventSettings(s),fd=await form('Броски событий',select('mode','Способ автоматического выбора',{manual:'Вручную — только напоминания',legacy:'Прежние категории к20',table:'Моя таблица к100'},cfg.mode)+field('interval','Проверка каждые N игровых дней',cfg.interval,'number')+field('cooldown','Минимум дней между повторениями',cfg.cooldown,'number')+'<p>При изменении интервала следующая проверка отсчитывается от текущего дня. Бросок к100 сейчас всегда использует таблицу, даже в режиме к20.</p>');
     if(fd)await manageEvents(this.selected,'settings',Object.fromEntries(fd),rev);
    }else if(cmd==='callEvent'){
     await manageEvents(this.selected,'request',{key:id},rev);this.section='pending';
