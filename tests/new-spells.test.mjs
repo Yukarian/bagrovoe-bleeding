@@ -31,7 +31,7 @@ test('transfusion cannot spend last HP or fractional HP',async()=>{
  for(const hp of [30,1.5,0,16]){const h=harness('transfusion',{choice:{hp}});await h.run();assert.equal(h.caster.system.attributes.hp.value,30);assert.equal(h.victim.damage.length,0);assert.equal(h.errors.length,1);}
 });
 test('execution pulse uses bleeding snapshot, halves successful save and then stops bleeding',async()=>{
- const h=harness('executioners-pulse',{level:5,save:30});await h.run();await h.run();assert.deepEqual(h.formulas,['9d8']);assert.equal(h.victim.damage[0][0].value,10);assert.equal(h.target.level,0);assert.equal(h.victim.damage.length,1);
+ const h=harness('executioners-pulse',{level:5,save:30});await h.run();await h.run();assert.deepEqual(h.formulas,['12d8']);assert.equal(h.victim.damage[0][0].value,10);assert.equal(h.target.level,0);assert.equal(h.victim.damage.length,1);
 });
 test('execution pulse requires a bleeding target',async()=>{const h=harness('executioners-pulse',{level:0});await h.run();assert.equal(h.formulas.length,0);assert.equal(h.errors.length,1);});
 test('harvest rewards failed bleeding saves and never reduces existing temp HP',async()=>{

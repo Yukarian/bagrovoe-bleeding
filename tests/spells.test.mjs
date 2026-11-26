@@ -90,7 +90,7 @@ for(const [level,available,hp,expectedSpent,expectedHP,casts] of [[2,8,40,2,40,1
 test('failed save applies one slow; success/legendary resistance removes only its effect',async()=>{
  const h=harness();h.load('spell-runtime.js');const item=flagged({uuid:'Actor.c.Item.s',actor:h.actor,name:'Slow',img:spells[8].img});await item.setFlag(MOD,'spellKey','muscle-constriction');
  const a={item,save:{dc:{value:17}}};const source={getAssociatedActivity:()=>a};h.docs.set('ChatMessage.origin',source);
- const chat=flagged({id:'save',type:'save',system:{origin:'origin'},rolls:[{total:12}],getAssociatedActivity:()=>a,getAssociatedActor:()=>h.actor});
+ const chat=flagged({id:'save',type:'save',system:{origin:source},rolls:[{total:12}],getAssociatedActivity:()=>a,getAssociatedActor:()=>h.actor});
  await Promise.all([h.ctx.BagrovoeSpellRuntime.applyControl(chat),h.ctx.BagrovoeSpellRuntime.applyControl(chat)]);
  assert.equal(h.actor.effects.length,1);assert.equal(h.actor.effects[0].changes[0].key,'system.attributes.movement.multiplier');
  assert.equal(h.actor.effects[0].changes[0].value,'0.5');
@@ -125,7 +125,7 @@ test('shield changes only incoming target AC once, spends once, does not change 
  const chat=flagged({id:'attack',type:'attack',rolls:[{total:16}],system:{targets:[{token:'Scene.s.Token.t',ac:15}]},async update(d){this.system.targets=d['system.targets'];}});
  Object.defineProperty(chat.system,'evaluatedTargets',{get(){return this.targets.map(t=>({...t,isMiss:16<t.ac}));}});
  await Promise.all([h.ctx.BagrovoeSpellRuntime.resolveAttack(chat),h.ctx.BagrovoeSpellRuntime.resolveAttack(chat)]);
- assert.equal(chat.system.targets[0].ac,18);assert.equal(chat.system.evaluatedTargets[0].isMiss,true);assert.equal(paid,1);assert.equal(used,1);
+ assert.equal(chat.system.targets[0].ac,21);assert.equal(chat.system.evaluatedTargets[0].isMiss,true);assert.equal(paid,1);assert.equal(used,1);
 });
 test('empty/excess buff targets and exhausted shields cannot charge resources',()=>{
  const h=harness();h.load('spell-runtime.js');const item=flagged({system:{target:{affects:{count:'1'}}}});item.flags={[MOD]:{spellKey:'vascular-pulse'}};

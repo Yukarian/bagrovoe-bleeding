@@ -15,7 +15,7 @@ function hdPools(actor) {
   const hd=actor.system.attributes.hd??{};
   const formula=actor.system.attributes.hp?.formula??"";
   const match=String(formula).match(/(\d+)d(\d+)/i);
-  return [{doc:actor,path:"flags.bagrovoe-bleeding.hitDiceSpent",size:Math.max(1,num(hd.denomination?.replace?.("d",""),num(match?.[2],8))),
+  return [{doc:actor,path:"flags.bagrovoe-bleeding.hitDiceSpent",size:Math.max(1,num(hd.denomination ? String(hd.denomination).replace(/^d/i,"") : undefined,num(match?.[2],8))),
     maximum:Math.max(0,num(hd.max,num(match?.[1],0))),spent:Math.max(0,num(actor.getFlag?.(MOD,"hitDiceSpent") ?? hd.spent))}];
 }
 function chooseDice(actor, count) {

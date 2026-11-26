@@ -110,7 +110,7 @@ test('penance retaliates once each own turn and repeat save ends the effect',asy
  h.target.saveTotal=99;await h.api.trigger(h.chat,'save');await assert.rejects(()=>h.api.trigger(h.chat,'trigger'),/закончилось/);
 });
 for(const key of ['crimson-thorns','cathedral-of-wounds'])test(`${key}: template geometry, saves, bleed and per-turn duplicate protection`,async()=>{
- const h=harness(key);h.chat.system.targets=[];h.t.bleeding=2;await h.concentrate();await h.cast();const template=flagged({uuid:'Scene.s.MeasuredTemplate.area',parent:h.scene,x:150,y:50,distance:20,flags:{dnd5e:{origin:h.activity.uuid}}});h.scene.templates.push(template);h.docs.set(template.uuid,template);
+ const h=harness(key);h.chat.system.targets=[];h.t.bleeding=2;await h.concentrate();await h.cast();const template=flagged({uuid:'Scene.s.Region.area',parent:h.scene,shapes:[{x:150,y:50,radius:400}],testPoint:p=>Math.hypot(p.x-150,p.y-50)<=400,flags:{dnd5e:{activity:h.activity.uuid}}});h.scene.regions=[template];delete h.scene.templates;h.docs.set(template.uuid,template);
  await h.api.trigger(h.chat,'trigger');assert.equal(h.damageCalls.length,1);assert.equal(h.t.bleeding,key==='crimson-thorns'?3:2);await assert.rejects(()=>h.api.trigger(h.chat,'trigger'),/уже обработан/);
  h.t.x=3000;await assert.rejects(()=>h.api.trigger(h.chat,'trigger'),/внутри области/);
 });

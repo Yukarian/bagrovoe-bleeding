@@ -1,3 +1,4 @@
+import {bloodBalancePatch} from './blood-balance.mjs';
 import {applyResidentProfileSource} from './resident-profiles.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -46,6 +47,12 @@ try {
     const seen = new Set();
     for (const doc of docs) {
       if(pack.type==='Actor')applyResidentProfileSource(doc);
+      for(const item of pack.type==='Actor' ? doc.items : [doc]){
+        for(const [path,value] of Object.entries(bloodBalancePatch(item))){
+          const parts=path.split('.'),last=parts.pop();
+          parts.reduce((obj,key)=>obj[key],item)[last]=value;
+        }
+      }
       assert.ok(!seen.has(doc._id));seen.add(doc._id);validate(doc);
       assert.ok(pack.type === 'Adventure' ? doc.scenes.length && doc.actors.length && doc.journal.length : pack.type === 'JournalEntry' ? Array.isArray(doc.pages) : pack.type === 'Actor' ? (doc.type === 'npc' || pack.name === 'key-npcs' && doc.type === 'character') : ['spell','feat','weapon','equipment','consumable','subclass'].includes(doc.type));
       keys(doc, {Actor:'actors',Item:'items',JournalEntry:'journal',Adventure:'adventures'}[pack.type]);

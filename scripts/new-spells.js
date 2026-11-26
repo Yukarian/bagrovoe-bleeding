@@ -110,7 +110,7 @@
   }
   if(['crimson-harvest','executioners-pulse'].includes(key)){
    const snapshots=targets.map(t=>({target:t,level:bleed(t)}));let bonus=0;
-   const formula=key==='crimson-harvest'?'4d6':`${Math.min(9,4+snapshots[0].level)}d8`;
+   const formula=key==='crimson-harvest'?'9d6':`${Math.min(12,7+snapshots[0].level)}d8`;
    const roll=await new Roll(formula).evaluate();
    await roll.toMessage({speaker:ChatMessage.getSpeaker({actor:caster}),flavor:`${activity.item.name}: урон обрабатывает модуль`,whisper:[...(chat.whisper??[])],blind:chat.blind});
    for(const {target:t,level} of snapshots){

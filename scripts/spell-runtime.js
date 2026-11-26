@@ -13,6 +13,10 @@ function serial(key, fn) {
 const report = error => { console.error(MOD,error);ui.notifications.error(`Багровое Причастие: ${error.message}`); };
 function validateUse(activity, usage, message) {
   const item=activity.item,key=keyOf(item),parry=item?.getFlag?.(MOD,'npcParry');if(!key&&!parry)return;
+  if(key && item.flags?.[MOD]?.bloodMagic && item.getFlag(MOD,'resourceMode')!=='slots' &&
+     !(item.actor?.type==='npc' && (item.actor.getFlag(MOD,'bloodMagic') || item.actor.system.details?.type?.subtype==='заражённый'))){
+    ui.notifications.warn('Для этого заклинания нужен заражённый NPC.');return false;
+  }
   if((shields.has(key)||parry) && !usage._bagrovoeReaction) {
     ui.notifications.info('Эта защита предлагается ведущему автоматически при попадании атаки по владельцу.');return false;
   }
@@ -39,9 +43,9 @@ async function resolveAttack(chat) {
 }
 async function resolveDefense(chat) {
     if(chat.getFlag(MOD,'defenseResolved'))return;
-    const roll=chat.rolls?.[0];if(!roll)return;
+    const roll=chat.rolls?.[0];if(!roll||!chat.system?.evaluatedTargets?.length)return;
     for(const hit of chat.system?.evaluatedTargets??[]) {
-      if(hit.isMiss!==false || roll.isCritical || hit.ac==null || roll.total>=hit.ac+3)continue;
+      if(hit.isMiss!==false || roll.isCritical || hit.ac==null || roll.total>=hit.ac+6)continue;
       const token=await fromUuid(hit.token),actor=token?.actor;if(!actor)continue;
       if(globalThis.BagrovoeExpandedSpells?.reactionBlocked(actor))continue;
       if(actor.type!=='npc'||!(actor.getFlag(MOD,'bloodMagic')||actor.system.details?.type?.subtype==='заражённый'))continue;
@@ -54,6 +58,7 @@ async function resolveDefense(chat) {
       for(const item of actor.items??[])if(shields.has(keyOf(item))||item.getFlag?.(MOD,'npcParry'))for(const a of item.system.activities??[]) {
         const parry=item.getFlag?.(MOD,'npcParry');
         if(parry&&chat.getAssociatedActivity?.()?.attack?.type?.value!=='melee')continue;
+        if(roll.total>=hit.ac+(parry?3:6))continue;
         const uses=parry?item.system.uses:a.uses;
         if(!uses?.max || Number(uses.spent??0)<Number(uses.max))options.push(a);
       }
@@ -73,7 +78,7 @@ async function resolveDefense(chat) {
       const result=await activity.use({_bagrovoePaid:true,_bagrovoeReaction:true,consume:{spellSlot:false}}, {configure:false});
       if(!result)continue;
       await actor.setFlag(MOD,'shieldReaction',reactionKey);
-      const targets=chat.system.targets.map(t=>({...t,ac:t.token===hit.token?t.ac+3:t.ac}));
+      const targets=chat.system.targets.map(t=>({...t,ac:t.token===hit.token?t.ac+(activity.item.getFlag?.(MOD,'npcParry')?3:6):t.ac}));
       await chat.update({'system.targets':targets});
     }
     await chat.setFlag(MOD,'defenseResolved',true);
@@ -92,11 +97,12 @@ async function applyControl(chat) {
   if(!controls.has(key)||!chat.system.origin)return;
   const roll=chat.rolls?.[0];if(!Number.isFinite(roll?.total))return;
   const actor=chat.getAssociatedActor?.();if(!actor)return;
-  const source=await fromUuid(`ChatMessage.${chat.system.origin}`);
+  const origin=chat.system.origin;
+  const source=typeof origin==='string'?await fromUuid(`ChatMessage.${origin}`):origin;
   if(!source||source.getAssociatedActivity?.()?.item?.uuid!==item.uuid)return;
   const dc=Number(activity.save?.dc?.value);
   if(!Number.isFinite(dc))return;
-  return serial(`control:${actor.uuid}`,async()=>{
+  return serial(`control:${chat.id}`,async()=>{
     const success=chat.system.forceSuccess || chat.system.resisted || roll.total>=dc;
     const existing=actor.effects.filter(e=>e.getFlag(MOD,'controlSave')===chat.id);
     if(success){if(existing.length)await actor.deleteEmbeddedDocuments('ActiveEffect',existing.map(e=>e.id));return;}
@@ -127,8 +133,10 @@ async function autoSaves(chat) {
       const token=await fromUuid(target.token),actor=token?.actor;if(!actor)continue;
       if(controls.has(keyOf(activity.item))&&(['undead','construct'].includes(actor.system.details?.type?.value)||actor.statuses?.has('dead')))continue;
       const key=target.token.replaceAll('.','_');if(chat.getFlag(MOD,'spellSaves')?.[key])continue;
-      const prior=game.messages?.contents?.some(m=>m.type==='save'&&m.system.origin===chat.id&&m.getAssociatedToken?.()?.uuid===target.token);
-      if(!prior)await actor.rollSavingThrow({ability,target:dc},{configure:false},{data:{speaker:ChatMessage.getSpeaker({token}),system:{...activity.messageSources,origin:chat.id},whisper:[...(chat.whisper??[])],blind:chat.blind}});
+      const prior=game.messages?.contents?.some(m=>m.type==='save'&&(m.system.origin?.id??m.system.origin)===chat.id&&m.getAssociatedToken?.()?.uuid===target.token);
+      if(!prior){const rolls=await actor.rollSavingThrow({ability,target:dc},{configure:false},{data:{speaker:ChatMessage.getSpeaker({token}),system:{...activity.messageSources,origin:chat.id},whisper:[...(chat.whisper??[])],blind:chat.blind}});
+        if(!rolls?.length)continue;
+      }
       await chat.setFlag(MOD,`spellSaves.${key}`,true);
     }
   });

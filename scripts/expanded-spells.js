@@ -124,7 +124,7 @@
    await t.actor.setFlag(MOD,'deferredDeathUsed',true);
    await damage(t.actor,input.damage,'final',{ortesDeathGuard:true});
   }else if(['pulse-disruption','vital-theft'].includes(key)){
-   const success=await save(t,'con',item,chat),amount=await roll(key==='pulse-disruption'?'3d6':'3d8',chat);
+   const success=await save(t,'con',item,chat),amount=await roll(key==='pulse-disruption'?'5d6':'6d8',chat);
    if(!success&&key==='vital-theft'&&living(t.actor)&&level(t))await blood().steal(item.actor,t.actor,1);
    await damage(t.actor,success?Math.floor(amount/2):amount);
    if(!success&&key==='pulse-disruption')await t.actor.createEmbeddedDocuments('ActiveEffect',[{name:'Срыв пульса: нет реакций',img:item.img,origin:item.uuid,transfer:false,changes:[],flags:{[MOD]:{reactionBan:true,expires:{...globalThis.BagrovoeSpellRuntime.expiry(item.actor),start:true}}}}]);
@@ -144,15 +144,21 @@
  function inArea(template,t){
   if(!template||template.parent.id!==t.parent.id)return false;
   const size=t.parent.grid.size,unit=t.parent.grid.distance;
+  if(template.testPoint){
+   if(t.level && template.levels?.size && !template.levels.has(t.level.id??t.level))return false;
+   return template.testPoint({x:t.x+t.width*size/2,y:t.y+t.height*size/2,elevation:t.elevation??0});
+  }
   return Math.hypot(t.x+t.width*size/2-template.x,t.y+t.height*size/2-template.y)*unit/size<=Number(template.distance)+0.001;
  }
  async function templateFor(chat,item,self){
   const current=state(chat);if(current.template){const t=await fromUuid(current.template);if(!t)throw Error('Шаблон области удалён');return t;}
   const origin=chat.getAssociatedActivity().uuid;
-  const matches=[...self.parent.templates].filter(t=>t.getFlag('dnd5e','origin')===origin);
+  const matches=[...(self.parent.regions??[])].filter(r=>r.getFlag('dnd5e','activity')===origin);
+  if(!matches.length)matches.push(...[...(self.parent.templates??[])].filter(t=>t.getFlag('dnd5e','origin')===origin));
   if(matches.length!==1)throw Error('Оставьте на сцене один шаблон этого заклинания и повторите действие');
   const t=matches[0],grid=self.parent.grid;
-  if(Math.hypot(t.x-(self.x+self.width*grid.size/2),t.y-(self.y+self.height*grid.size/2))*grid.distance/grid.size>spec(item).range)throw Error('Шаблон вне дистанции сотворения');
+  const center=t.shapes?.[0]??t;
+  if(Math.hypot(center.x-(self.x+self.width*grid.size/2),center.y-(self.y+self.height*grid.size/2))*grid.distance/grid.size>spec(item).range)throw Error('Шаблон вне дистанции сотворения');
   await chat.setFlag(MOD,'expandedState',{...current,template:t.uuid});return t;
  }
  async function trigger(chat,action){
@@ -209,7 +215,7 @@
    else await damage(ts[0].actor,await roll('2d6',chat));return;
   }
   for(const t of targets){
-   const success=await save(t,key==='crimson-thorns'?'dex':'con',item,chat),amount=await roll(key==='crimson-thorns'?'2d4':'3d8',chat);
+   const success=await save(t,key==='crimson-thorns'?'dex':'con',item,chat),amount=await roll(key==='crimson-thorns'?'3d4':'5d8',chat);
    if(key==='crimson-thorns'){
     if(!success){const old=api().get(t),n=level(t);await damage(t.actor,amount,'piercing');if(n>0)await api().set(t,{level:Math.min(5,n+1),count:old.getFlag(MOD,'count')??1,dc:old.getFlag(MOD,'dc')??11});}
    }else await damage(t.actor,success?Math.floor(amount/2):amount);
