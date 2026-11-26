@@ -6,7 +6,7 @@ import { compilePack, extractPack } from '@foundryvtt/foundryvtt-cli';
 import { organizePack } from './pack-folders.mjs';
 
 const manifest = JSON.parse(fs.readFileSync('module.json', 'utf8'));
-const expected = { 'blood-spells': 30, actors: 17, abilities: 96, relics: 7, 'iron-hounds': 8, settlements: 4, 'suigu-residents': 8, 'key-npcs': 28, valkrein: 3, 'world-items': 14, 'key-npc-lore': 6, 'player-subclasses': 8, 'westerholm-residents': 9 };
+const expected = { 'blood-spells': 30, actors: 17, abilities: 96, relics: 7, 'iron-hounds': 8, settlements: 4, 'suigu-residents': 8, 'key-npcs': 29, valkrein: 3, 'world-items': 14, 'key-npc-lore': 6, 'player-subclasses': 8, 'westerholm-residents': 9 };
 const scratch = fs.mkdtempSync(path.resolve('.build-'));
 expected['last-dawn'] = 1;
 const assetPrefix = `modules/${manifest.id}/`;
@@ -37,7 +37,9 @@ function stripKeys(v) {
 }
 try {
   for (const pack of manifest.packs) {
-    const {docs,folders} = organizePack(pack,JSON.parse(fs.readFileSync(`packs-src/${pack.name}.json`, 'utf8')));
+    const source = JSON.parse(fs.readFileSync(`packs-src/${pack.name}.json`, 'utf8'));
+    if (pack.name === 'key-npcs') source.push(JSON.parse(fs.readFileSync('exports/majima.json', 'utf8')));
+    const {docs,folders} = organizePack(pack,source);
     assert.equal(docs.length, expected[pack.name]);
     const src = path.join(scratch, pack.name), out = path.join(scratch, pack.name + '-roundtrip');
     fs.mkdirSync(src);
